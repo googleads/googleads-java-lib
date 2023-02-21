@@ -27,16 +27,15 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public abstract class HasDestinationUrlCreative  extends com.google.api.ads.admanager.axis.v202205.Creative  implements java.io.Serializable {
     /* The URL that the user is directed to if they click on the creative.
-     * This
-     *                     attribute is required unless the {@link destinationUrlType}
-     * is {@link DestinationUrlType#NONE},
-     *                     and has a maximum length of 1024 characters. */
+     * This attribute is required
+     *                     unless the {@link destinationUrlType} is {@link
+     * DestinationUrlType#NONE}, and has a maximum
+     *                     length of 1024 characters. */
     private java.lang.String destinationUrl;
 
     /* The action that should be performed if the user clicks on the
-     * creative.
-     *                     This attribute is optional and defaults to {@link
-     * DestinationUrlType#CLICK_TO_WEB}. */
+     * creative. This attribute is
+     *                     optional and defaults to {@link DestinationUrlType#CLICK_TO_WEB}. */
     private com.google.api.ads.admanager.axis.v202205.DestinationUrlType destinationUrlType;
 
     public HasDestinationUrlCreative() {
@@ -93,10 +92,10 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.adma
      * Gets the destinationUrl value for this HasDestinationUrlCreative.
      * 
      * @return destinationUrl   * The URL that the user is directed to if they click on the creative.
-     * This
-     *                     attribute is required unless the {@link destinationUrlType}
-     * is {@link DestinationUrlType#NONE},
-     *                     and has a maximum length of 1024 characters.
+     * This attribute is required
+     *                     unless the {@link destinationUrlType} is {@link
+     * DestinationUrlType#NONE}, and has a maximum
+     *                     length of 1024 characters.
      */
     public java.lang.String getDestinationUrl() {
         return destinationUrl;
@@ -107,10 +106,10 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.adma
      * Sets the destinationUrl value for this HasDestinationUrlCreative.
      * 
      * @param destinationUrl   * The URL that the user is directed to if they click on the creative.
-     * This
-     *                     attribute is required unless the {@link destinationUrlType}
-     * is {@link DestinationUrlType#NONE},
-     *                     and has a maximum length of 1024 characters.
+     * This attribute is required
+     *                     unless the {@link destinationUrlType} is {@link
+     * DestinationUrlType#NONE}, and has a maximum
+     *                     length of 1024 characters.
      */
     public void setDestinationUrl(java.lang.String destinationUrl) {
         this.destinationUrl = destinationUrl;
@@ -121,9 +120,8 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.adma
      * Gets the destinationUrlType value for this HasDestinationUrlCreative.
      * 
      * @return destinationUrlType   * The action that should be performed if the user clicks on the
-     * creative.
-     *                     This attribute is optional and defaults to {@link
-     * DestinationUrlType#CLICK_TO_WEB}.
+     * creative. This attribute is
+     *                     optional and defaults to {@link DestinationUrlType#CLICK_TO_WEB}.
      */
     public com.google.api.ads.admanager.axis.v202205.DestinationUrlType getDestinationUrlType() {
         return destinationUrlType;
@@ -134,9 +132,8 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.adma
      * Sets the destinationUrlType value for this HasDestinationUrlCreative.
      * 
      * @param destinationUrlType   * The action that should be performed if the user clicks on the
-     * creative.
-     *                     This attribute is optional and defaults to {@link
-     * DestinationUrlType#CLICK_TO_WEB}.
+     * creative. This attribute is
+     *                     optional and defaults to {@link DestinationUrlType#CLICK_TO_WEB}.
      */
     public void setDestinationUrlType(com.google.api.ads.admanager.axis.v202205.DestinationUrlType destinationUrlType) {
         this.destinationUrlType = destinationUrlType;

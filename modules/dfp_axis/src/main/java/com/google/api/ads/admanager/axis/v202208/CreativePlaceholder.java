@@ -24,21 +24,18 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A {@code CreativePlaceholder} describes a slot that a creative
- * is expected to
- *             fill. This is used primarily to help in forecasting, and
- * also to validate
- *             that the correct creatives are associated with the line
- * item. A
- *             {@code CreativePlaceholder} must contain a size, and it
- * can optionally
+ * is expected to fill. This is used
+ *             primarily to help in forecasting, and also to validate
+ * that the correct creatives are associated
+ *             with the line item. A {@code CreativePlaceholder} must
+ * contain a size, and it can optionally
  *             contain companions. Companions are only valid if the line
- * item's environment
- *             type is {@link EnvironmentType#VIDEO_PLAYER}.
+ * item's environment type is {@link
+ *             EnvironmentType#VIDEO_PLAYER}.
  */
 public class CreativePlaceholder  implements java.io.Serializable {
     /* The dimensions that the creative is expected to have. This
-     * attribute is
-     *                 required. */
+     * attribute is required. */
     private com.google.api.ads.admanager.axis.v202208.Size size;
 
     /* The native creative template ID.
@@ -48,11 +45,12 @@ public class CreativePlaceholder  implements java.io.Serializable {
     private java.lang.Long creativeTemplateId;
 
     /* The companions that the creative is expected to have. This
-     * attribute can
-     *                 only be set if the line item it belongs to has a
-     *                 {@link LineItem#environmentType} of {@link EnvironmentType#VIDEO_PLAYER}
-     * or
-     *                 {@link LineItem#roadblockingType} of {@link RoadblockingType#CREATIVE_SET}. */
+     * attribute can only be set if the
+     *                 line item it belongs to has a {@link LineItem#environmentType}
+     * of {@link
+     *                 EnvironmentType#VIDEO_PLAYER} or {@link LineItem#roadblockingType}
+     * of {@link
+     *                 RoadblockingType#CREATIVE_SET}. */
     private com.google.api.ads.admanager.axis.v202208.CreativePlaceholder[] companions;
 
     /* The set of label frequency caps applied directly to this creative
@@ -60,39 +58,35 @@ public class CreativePlaceholder  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202208.AppliedLabel[] appliedLabels;
 
     /* Contains the set of labels applied directly to this creative
-     * placeholder
-     *                 as well as those inherited from the creative template
-     * from which this
-     *                 creative placeholder was instantiated.  This field
-     * is readonly and is
-     *                 assigned by Google. */
+     * placeholder as well as those
+     *                 inherited from the creative template from which this
+     * creative placeholder was instantiated.
+     *                 This field is readonly and is assigned by Google. */
     private com.google.api.ads.admanager.axis.v202208.AppliedLabel[] effectiveAppliedLabels;
 
     /* Expected number of creatives that will be uploaded corresponding
-     * to this
-     *                 creative placeholder.  This estimate is used to improve
-     * the accuracy of
-     *                 forecasting; for example, if label frequency capping
-     * limits the number of
-     *                 times a creative may be served. */
+     * to this creative placeholder.
+     *                 This estimate is used to improve the accuracy of forecasting;
+     * for example, if label frequency
+     *                 capping limits the number of times a creative may
+     * be served. */
     private java.lang.Integer expectedCreativeCount;
 
     /* Describes the types of sizes a creative can be. By default,
-     * the creative's size
-     *                 is {@link CreativeSizeType#PIXEL}, which is a dimension
-     * based size (width-height pair). */
+     * the creative's size is {@link
+     *                 CreativeSizeType#PIXEL}, which is a dimension based
+     * size (width-height pair). */
     private com.google.api.ads.admanager.axis.v202208.CreativeSizeType creativeSizeType;
 
     /* The name of the {@link CreativeTargeting} for creatives this
      * placeholder represents.
      *                 
      *                 <p>This attribute is optional. Specifying creative
-     * targeting here is for forecasting
-     *                 purposes only and has no effect on serving. The same
-     * creative targeting should be specified on
-     *                 a {@link LineItemCreativeAssociation} when associating
-     * a {@link Creative} with the
-     *                 {@link LineItem}. */
+     * targeting here is for forecasting purposes
+     *                 only and has no effect on serving. The same creative
+     * targeting should be specified on a {@link
+     *                 LineItemCreativeAssociation} when associating a {@link
+     * Creative} with the {@link LineItem}. */
     private java.lang.String targetingName;
 
     /* Indicate if the expected creative of this placeholder has an
@@ -147,8 +141,7 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Gets the size value for this CreativePlaceholder.
      * 
      * @return size   * The dimensions that the creative is expected to have. This
-     * attribute is
-     *                 required.
+     * attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202208.Size getSize() {
         return size;
@@ -159,8 +152,7 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Sets the size value for this CreativePlaceholder.
      * 
      * @param size   * The dimensions that the creative is expected to have. This
-     * attribute is
-     *                 required.
+     * attribute is required.
      */
     public void setSize(com.google.api.ads.admanager.axis.v202208.Size size) {
         this.size = size;
@@ -197,11 +189,12 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Gets the companions value for this CreativePlaceholder.
      * 
      * @return companions   * The companions that the creative is expected to have. This
-     * attribute can
-     *                 only be set if the line item it belongs to has a
-     *                 {@link LineItem#environmentType} of {@link EnvironmentType#VIDEO_PLAYER}
-     * or
-     *                 {@link LineItem#roadblockingType} of {@link RoadblockingType#CREATIVE_SET}.
+     * attribute can only be set if the
+     *                 line item it belongs to has a {@link LineItem#environmentType}
+     * of {@link
+     *                 EnvironmentType#VIDEO_PLAYER} or {@link LineItem#roadblockingType}
+     * of {@link
+     *                 RoadblockingType#CREATIVE_SET}.
      */
     public com.google.api.ads.admanager.axis.v202208.CreativePlaceholder[] getCompanions() {
         return companions;
@@ -212,11 +205,12 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Sets the companions value for this CreativePlaceholder.
      * 
      * @param companions   * The companions that the creative is expected to have. This
-     * attribute can
-     *                 only be set if the line item it belongs to has a
-     *                 {@link LineItem#environmentType} of {@link EnvironmentType#VIDEO_PLAYER}
-     * or
-     *                 {@link LineItem#roadblockingType} of {@link RoadblockingType#CREATIVE_SET}.
+     * attribute can only be set if the
+     *                 line item it belongs to has a {@link LineItem#environmentType}
+     * of {@link
+     *                 EnvironmentType#VIDEO_PLAYER} or {@link LineItem#roadblockingType}
+     * of {@link
+     *                 RoadblockingType#CREATIVE_SET}.
      */
     public void setCompanions(com.google.api.ads.admanager.axis.v202208.CreativePlaceholder[] companions) {
         this.companions = companions;
@@ -265,12 +259,10 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Gets the effectiveAppliedLabels value for this CreativePlaceholder.
      * 
      * @return effectiveAppliedLabels   * Contains the set of labels applied directly to this creative
-     * placeholder
-     *                 as well as those inherited from the creative template
-     * from which this
-     *                 creative placeholder was instantiated.  This field
-     * is readonly and is
-     *                 assigned by Google.
+     * placeholder as well as those
+     *                 inherited from the creative template from which this
+     * creative placeholder was instantiated.
+     *                 This field is readonly and is assigned by Google.
      */
     public com.google.api.ads.admanager.axis.v202208.AppliedLabel[] getEffectiveAppliedLabels() {
         return effectiveAppliedLabels;
@@ -281,12 +273,10 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Sets the effectiveAppliedLabels value for this CreativePlaceholder.
      * 
      * @param effectiveAppliedLabels   * Contains the set of labels applied directly to this creative
-     * placeholder
-     *                 as well as those inherited from the creative template
-     * from which this
-     *                 creative placeholder was instantiated.  This field
-     * is readonly and is
-     *                 assigned by Google.
+     * placeholder as well as those
+     *                 inherited from the creative template from which this
+     * creative placeholder was instantiated.
+     *                 This field is readonly and is assigned by Google.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.admanager.axis.v202208.AppliedLabel[] effectiveAppliedLabels) {
         this.effectiveAppliedLabels = effectiveAppliedLabels;
@@ -305,12 +295,11 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Gets the expectedCreativeCount value for this CreativePlaceholder.
      * 
      * @return expectedCreativeCount   * Expected number of creatives that will be uploaded corresponding
-     * to this
-     *                 creative placeholder.  This estimate is used to improve
-     * the accuracy of
-     *                 forecasting; for example, if label frequency capping
-     * limits the number of
-     *                 times a creative may be served.
+     * to this creative placeholder.
+     *                 This estimate is used to improve the accuracy of forecasting;
+     * for example, if label frequency
+     *                 capping limits the number of times a creative may
+     * be served.
      */
     public java.lang.Integer getExpectedCreativeCount() {
         return expectedCreativeCount;
@@ -321,12 +310,11 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Sets the expectedCreativeCount value for this CreativePlaceholder.
      * 
      * @param expectedCreativeCount   * Expected number of creatives that will be uploaded corresponding
-     * to this
-     *                 creative placeholder.  This estimate is used to improve
-     * the accuracy of
-     *                 forecasting; for example, if label frequency capping
-     * limits the number of
-     *                 times a creative may be served.
+     * to this creative placeholder.
+     *                 This estimate is used to improve the accuracy of forecasting;
+     * for example, if label frequency
+     *                 capping limits the number of times a creative may
+     * be served.
      */
     public void setExpectedCreativeCount(java.lang.Integer expectedCreativeCount) {
         this.expectedCreativeCount = expectedCreativeCount;
@@ -337,9 +325,9 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Gets the creativeSizeType value for this CreativePlaceholder.
      * 
      * @return creativeSizeType   * Describes the types of sizes a creative can be. By default,
-     * the creative's size
-     *                 is {@link CreativeSizeType#PIXEL}, which is a dimension
-     * based size (width-height pair).
+     * the creative's size is {@link
+     *                 CreativeSizeType#PIXEL}, which is a dimension based
+     * size (width-height pair).
      */
     public com.google.api.ads.admanager.axis.v202208.CreativeSizeType getCreativeSizeType() {
         return creativeSizeType;
@@ -350,9 +338,9 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * Sets the creativeSizeType value for this CreativePlaceholder.
      * 
      * @param creativeSizeType   * Describes the types of sizes a creative can be. By default,
-     * the creative's size
-     *                 is {@link CreativeSizeType#PIXEL}, which is a dimension
-     * based size (width-height pair).
+     * the creative's size is {@link
+     *                 CreativeSizeType#PIXEL}, which is a dimension based
+     * size (width-height pair).
      */
     public void setCreativeSizeType(com.google.api.ads.admanager.axis.v202208.CreativeSizeType creativeSizeType) {
         this.creativeSizeType = creativeSizeType;
@@ -366,12 +354,11 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * placeholder represents.
      *                 
      *                 <p>This attribute is optional. Specifying creative
-     * targeting here is for forecasting
-     *                 purposes only and has no effect on serving. The same
-     * creative targeting should be specified on
-     *                 a {@link LineItemCreativeAssociation} when associating
-     * a {@link Creative} with the
-     *                 {@link LineItem}.
+     * targeting here is for forecasting purposes
+     *                 only and has no effect on serving. The same creative
+     * targeting should be specified on a {@link
+     *                 LineItemCreativeAssociation} when associating a {@link
+     * Creative} with the {@link LineItem}.
      */
     public java.lang.String getTargetingName() {
         return targetingName;
@@ -385,12 +372,11 @@ public class CreativePlaceholder  implements java.io.Serializable {
      * placeholder represents.
      *                 
      *                 <p>This attribute is optional. Specifying creative
-     * targeting here is for forecasting
-     *                 purposes only and has no effect on serving. The same
-     * creative targeting should be specified on
-     *                 a {@link LineItemCreativeAssociation} when associating
-     * a {@link Creative} with the
-     *                 {@link LineItem}.
+     * targeting here is for forecasting purposes
+     *                 only and has no effect on serving. The same creative
+     * targeting should be specified on a {@link
+     *                 LineItemCreativeAssociation} when associating a {@link
+     * Creative} with the {@link LineItem}.
      */
     public void setTargetingName(java.lang.String targetingName) {
         this.targetingName = targetingName;

@@ -25,10 +25,9 @@ public interface CreativeTemplateServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link CreativeTemplatePage} of {@link CreativeTemplate}
-     * objects that satisfy the
-     *         given {@link Statement#query}.  The following fields are supported
-     * for
-     *         filtering:
+     * objects that satisfy the given
+     *         {@link Statement#query}. The following fields are supported
+     * for filtering:
      *         
      *         <table>
      *         <tr>

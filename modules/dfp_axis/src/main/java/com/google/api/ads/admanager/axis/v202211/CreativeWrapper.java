@@ -24,34 +24,30 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * A {@code CreativeWrapper} allows the wrapping of HTML snippets
- * to be
- *             served along with {@code Creative} objects.
- *             <p>
- *             Creative wrappers must be associated with a
- *             {@link LabelType#CREATIVE_WRAPPER} label and applied to
- * ad units by
- *             {@link AdUnit#appliedLabels}.
+ * to be served along with {@code
+ *             Creative} objects.
+ *             
+ *             <p>Creative wrappers must be associated with a {@link
+ * LabelType#CREATIVE_WRAPPER} label and
+ *             applied to ad units by {@link AdUnit#appliedLabels}.
  */
 public class CreativeWrapper  implements java.io.Serializable {
     /* The unique ID of the {@code CreativeWrapper}. This value is
-     * readonly
-     *                 and is assigned by Google. */
+     * readonly and is assigned by Google. */
     private java.lang.Long id;
 
     /* The ID of the {@link Label} which will be used to label ad
-     * units. The
-     *                 {@code labelId} on a creative wrapper cannot be changed
-     * once it is
-     *                 created. */
+     * units. The {@code labelId} on a
+     *                 creative wrapper cannot be changed once it is created. */
     private java.lang.Long labelId;
 
     /* The creative wrapper type. If the creative wrapper type is
-     *                 {@link CreativeWrapperType#VIDEO_TRACKING_URL}, the
-     * {@code videoTrackingUrls} field must be
-     *                 set. If the creative wrapper type is {@link CreativeWrapperType#HTML},
-     * either the
-     *                 {@code header} or {@code footer} field must be set.
-     * This field is required. */
+     * {@link
+     *                 CreativeWrapperType#VIDEO_TRACKING_URL}, the {@code
+     * videoTrackingUrls} field must be set. If
+     *                 the creative wrapper type is {@link CreativeWrapperType#HTML},
+     * either the {@code header} or
+     *                 {@code footer} field must be set. This field is required. */
     private com.google.api.ads.admanager.axis.v202211.CreativeWrapperType creativeWrapperType;
 
     /* The header HTML snippet that this creative wrapper delivers. */
@@ -81,9 +77,9 @@ public class CreativeWrapper  implements java.io.Serializable {
      * creative. */
     private com.google.api.ads.admanager.axis.v202211.ThirdPartyDataDeclaration thirdPartyDataDeclaration;
 
-    /* If there are multiple wrappers for a creative, then
-     *                 {@code ordering} defines the order in which the HTML
-     * snippets are rendered. */
+    /* If there are multiple wrappers for a creative, then {@code
+     * ordering} defines the order in which
+     *                 the HTML snippets are rendered. */
     private com.google.api.ads.admanager.axis.v202211.CreativeWrapperOrdering ordering;
 
     /* The status of the {@code CreativeWrapper}. This attribute is
@@ -140,8 +136,7 @@ public class CreativeWrapper  implements java.io.Serializable {
      * Gets the id value for this CreativeWrapper.
      * 
      * @return id   * The unique ID of the {@code CreativeWrapper}. This value is
-     * readonly
-     *                 and is assigned by Google.
+     * readonly and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -152,8 +147,7 @@ public class CreativeWrapper  implements java.io.Serializable {
      * Sets the id value for this CreativeWrapper.
      * 
      * @param id   * The unique ID of the {@code CreativeWrapper}. This value is
-     * readonly
-     *                 and is assigned by Google.
+     * readonly and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -164,10 +158,8 @@ public class CreativeWrapper  implements java.io.Serializable {
      * Gets the labelId value for this CreativeWrapper.
      * 
      * @return labelId   * The ID of the {@link Label} which will be used to label ad
-     * units. The
-     *                 {@code labelId} on a creative wrapper cannot be changed
-     * once it is
-     *                 created.
+     * units. The {@code labelId} on a
+     *                 creative wrapper cannot be changed once it is created.
      */
     public java.lang.Long getLabelId() {
         return labelId;
@@ -178,10 +170,8 @@ public class CreativeWrapper  implements java.io.Serializable {
      * Sets the labelId value for this CreativeWrapper.
      * 
      * @param labelId   * The ID of the {@link Label} which will be used to label ad
-     * units. The
-     *                 {@code labelId} on a creative wrapper cannot be changed
-     * once it is
-     *                 created.
+     * units. The {@code labelId} on a
+     *                 creative wrapper cannot be changed once it is created.
      */
     public void setLabelId(java.lang.Long labelId) {
         this.labelId = labelId;
@@ -192,12 +182,12 @@ public class CreativeWrapper  implements java.io.Serializable {
      * Gets the creativeWrapperType value for this CreativeWrapper.
      * 
      * @return creativeWrapperType   * The creative wrapper type. If the creative wrapper type is
-     *                 {@link CreativeWrapperType#VIDEO_TRACKING_URL}, the
-     * {@code videoTrackingUrls} field must be
-     *                 set. If the creative wrapper type is {@link CreativeWrapperType#HTML},
-     * either the
-     *                 {@code header} or {@code footer} field must be set.
-     * This field is required.
+     * {@link
+     *                 CreativeWrapperType#VIDEO_TRACKING_URL}, the {@code
+     * videoTrackingUrls} field must be set. If
+     *                 the creative wrapper type is {@link CreativeWrapperType#HTML},
+     * either the {@code header} or
+     *                 {@code footer} field must be set. This field is required.
      */
     public com.google.api.ads.admanager.axis.v202211.CreativeWrapperType getCreativeWrapperType() {
         return creativeWrapperType;
@@ -208,12 +198,12 @@ public class CreativeWrapper  implements java.io.Serializable {
      * Sets the creativeWrapperType value for this CreativeWrapper.
      * 
      * @param creativeWrapperType   * The creative wrapper type. If the creative wrapper type is
-     *                 {@link CreativeWrapperType#VIDEO_TRACKING_URL}, the
-     * {@code videoTrackingUrls} field must be
-     *                 set. If the creative wrapper type is {@link CreativeWrapperType#HTML},
-     * either the
-     *                 {@code header} or {@code footer} field must be set.
-     * This field is required.
+     * {@link
+     *                 CreativeWrapperType#VIDEO_TRACKING_URL}, the {@code
+     * videoTrackingUrls} field must be set. If
+     *                 the creative wrapper type is {@link CreativeWrapperType#HTML},
+     * either the {@code header} or
+     *                 {@code footer} field must be set. This field is required.
      */
     public void setCreativeWrapperType(com.google.api.ads.admanager.axis.v202211.CreativeWrapperType creativeWrapperType) {
         this.creativeWrapperType = creativeWrapperType;
@@ -369,9 +359,9 @@ public class CreativeWrapper  implements java.io.Serializable {
     /**
      * Gets the ordering value for this CreativeWrapper.
      * 
-     * @return ordering   * If there are multiple wrappers for a creative, then
-     *                 {@code ordering} defines the order in which the HTML
-     * snippets are rendered.
+     * @return ordering   * If there are multiple wrappers for a creative, then {@code
+     * ordering} defines the order in which
+     *                 the HTML snippets are rendered.
      */
     public com.google.api.ads.admanager.axis.v202211.CreativeWrapperOrdering getOrdering() {
         return ordering;
@@ -381,9 +371,9 @@ public class CreativeWrapper  implements java.io.Serializable {
     /**
      * Sets the ordering value for this CreativeWrapper.
      * 
-     * @param ordering   * If there are multiple wrappers for a creative, then
-     *                 {@code ordering} defines the order in which the HTML
-     * snippets are rendered.
+     * @param ordering   * If there are multiple wrappers for a creative, then {@code
+     * ordering} defines the order in which
+     *                 the HTML snippets are rendered.
      */
     public void setOrdering(com.google.api.ads.admanager.axis.v202211.CreativeWrapperOrdering ordering) {
         this.ordering = ordering;

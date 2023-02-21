@@ -30,10 +30,9 @@ public interface ActivityServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets an {@link ActivityPage} of {@link Activity} objects that
-     * satisfy the given
-     *         {@link Statement#query}. The following fields are supported
-     * for filtering:
-     *         
+     * satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>

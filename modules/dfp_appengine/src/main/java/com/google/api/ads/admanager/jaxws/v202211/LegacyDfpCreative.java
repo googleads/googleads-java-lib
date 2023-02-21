@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} that isn't supported by Google DFP, but was migrated
- *             from DART. Creatives of this type cannot be created or modified.
+ *             A {@code Creative} that isn't supported by Google DFP, but was migrated from DART. Creatives of
+ *             this type cannot be created or modified.
  *           
  * 
  * <p>Java class for LegacyDfpCreative complex type.

@@ -27,33 +27,31 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTargetingInfo  implements java.io.Serializable {
     /* Uniquely identifies the {@code Placement}. This attribute is
-     * read-only and
-     *                     is assigned by Google when a placement is created. */
+     * read-only and is assigned by
+     *                     Google when a placement is created. */
     private java.lang.Long id;
 
     /* The name of the {@code Placement}. This value is required and
-     * has a maximum
-     *                     length of 255 characters. */
+     * has a maximum length of 255
+     *                     characters. */
     private java.lang.String name;
 
     /* A description of the {@code Placement}. This value is optional
-     * and its
-     *                     maximum length is 65,535 characters. */
+     * and its maximum length is 65,535
+     *                     characters. */
     private java.lang.String description;
 
     /* A string used to uniquely identify the {@code Placement} for
-     * purposes of
-     *                     serving the ad. This attribute is read-only and
-     * is assigned by Google when
-     *                     a placement is created. */
+     * purposes of serving the ad. This
+     *                     attribute is read-only and is assigned by Google
+     * when a placement is created. */
     private java.lang.String placementCode;
 
     /* The status of the {@code Placement}. This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202208.InventoryStatus status;
 
     /* The collection of {@code AdUnit} object IDs that constitute
-     * the {@code
-     *                     Placement}. */
+     * the {@code Placement}. */
     private java.lang.String[] targetedAdUnitIds;
 
     /* The date and time this placement was last modified. */
@@ -97,8 +95,8 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Gets the id value for this Placement.
      * 
      * @return id   * Uniquely identifies the {@code Placement}. This attribute is
-     * read-only and
-     *                     is assigned by Google when a placement is created.
+     * read-only and is assigned by
+     *                     Google when a placement is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -109,8 +107,8 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Sets the id value for this Placement.
      * 
      * @param id   * Uniquely identifies the {@code Placement}. This attribute is
-     * read-only and
-     *                     is assigned by Google when a placement is created.
+     * read-only and is assigned by
+     *                     Google when a placement is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -121,8 +119,8 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Gets the name value for this Placement.
      * 
      * @return name   * The name of the {@code Placement}. This value is required and
-     * has a maximum
-     *                     length of 255 characters.
+     * has a maximum length of 255
+     *                     characters.
      */
     public java.lang.String getName() {
         return name;
@@ -133,8 +131,8 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Sets the name value for this Placement.
      * 
      * @param name   * The name of the {@code Placement}. This value is required and
-     * has a maximum
-     *                     length of 255 characters.
+     * has a maximum length of 255
+     *                     characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -145,8 +143,8 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Gets the description value for this Placement.
      * 
      * @return description   * A description of the {@code Placement}. This value is optional
-     * and its
-     *                     maximum length is 65,535 characters.
+     * and its maximum length is 65,535
+     *                     characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -157,8 +155,8 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Sets the description value for this Placement.
      * 
      * @param description   * A description of the {@code Placement}. This value is optional
-     * and its
-     *                     maximum length is 65,535 characters.
+     * and its maximum length is 65,535
+     *                     characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -169,10 +167,9 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Gets the placementCode value for this Placement.
      * 
      * @return placementCode   * A string used to uniquely identify the {@code Placement} for
-     * purposes of
-     *                     serving the ad. This attribute is read-only and
-     * is assigned by Google when
-     *                     a placement is created.
+     * purposes of serving the ad. This
+     *                     attribute is read-only and is assigned by Google
+     * when a placement is created.
      */
     public java.lang.String getPlacementCode() {
         return placementCode;
@@ -183,10 +180,9 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Sets the placementCode value for this Placement.
      * 
      * @param placementCode   * A string used to uniquely identify the {@code Placement} for
-     * purposes of
-     *                     serving the ad. This attribute is read-only and
-     * is assigned by Google when
-     *                     a placement is created.
+     * purposes of serving the ad. This
+     *                     attribute is read-only and is assigned by Google
+     * when a placement is created.
      */
     public void setPlacementCode(java.lang.String placementCode) {
         this.placementCode = placementCode;
@@ -217,8 +213,7 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Gets the targetedAdUnitIds value for this Placement.
      * 
      * @return targetedAdUnitIds   * The collection of {@code AdUnit} object IDs that constitute
-     * the {@code
-     *                     Placement}.
+     * the {@code Placement}.
      */
     public java.lang.String[] getTargetedAdUnitIds() {
         return targetedAdUnitIds;
@@ -229,8 +224,7 @@ public class Placement  extends com.google.api.ads.admanager.axis.v202208.SiteTa
      * Sets the targetedAdUnitIds value for this Placement.
      * 
      * @param targetedAdUnitIds   * The collection of {@code AdUnit} object IDs that constitute
-     * the {@code
-     *                     Placement}.
+     * the {@code Placement}.
      */
     public void setTargetedAdUnitIds(java.lang.String[] targetedAdUnitIds) {
         this.targetedAdUnitIds = targetedAdUnitIds;

@@ -35,42 +35,40 @@ public class ProposalLineItem  implements java.io.Serializable {
     private java.lang.Long id;
 
     /* The unique ID of the {@link Proposal}, to which the {@code
-     * ProposalLineItem}
-     *                 belongs. This attribute is required for creation and
-     * then is readonly.
-     *                 <span class="constraint Required">This attribute is
-     * required.</span> */
+     * ProposalLineItem} belongs. This
+     *                 attribute is required for creation and then is readonly.
+     * <span class="constraint Required">This attribute is required.</span> */
     private java.lang.Long proposalId;
 
     /* The name of the {@code ProposalLineItem} which should be unique
-     * under the same
-     *                 {@link Proposal}. This attribute has a maximum length
-     * of 255 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * under the same {@link
+     *                 Proposal}. This attribute has a maximum length of
+     * 255 characters. This attribute can be
+     *                 configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      *                 <span class="constraint Required">This attribute is
      * required.</span> */
     private java.lang.String name;
 
     /* The date and time at which the line item associated with the
-     * {@code ProposalLineItem} is enabled to begin serving. This attribute
-     * is optional
-     *                 during creation, but required and must be in the future
-     * when it turns into a line item.
-     *                 The {@link DateTime#timeZoneID} is required if start
-     * date time is not {@code null}.
-     *                 This attribute becomes readonly once the {@code ProposalLineItem}
-     * has started delivering. */
+     * {@code ProposalLineItem} is
+     *                 enabled to begin serving. This attribute is optional
+     * during creation, but required and must be
+     *                 in the future when it turns into a line item. The
+     * {@link DateTime#timeZoneID} is required if
+     *                 start date time is not {@code null}. This attribute
+     * becomes readonly once the {@code
+     *                 ProposalLineItem} has started delivering. */
     private com.google.api.ads.admanager.axis.v202211.DateTime startDateTime;
 
     /* The date and time at which the line item associated with the
-     * {@code ProposalLineItem} stops beening served. This attribute is optional
-     * during creation,
-     *                 but required and must be after the {@link #startDateTime}.
-     * The {@link DateTime#timeZoneID} is
-     *                 required if end date time is not {@code null}. */
+     * {@code ProposalLineItem} stops
+     *                 beening served. This attribute is optional during
+     * creation, but required and must be after the
+     *                 {@link #startDateTime}. The {@link DateTime#timeZoneID}
+     * is required if end date time is not
+     *                 {@code null}. */
     private com.google.api.ads.admanager.axis.v202211.DateTime endDateTime;
 
     /* The time zone ID in tz database format (e.g. "America/Los_Angeles")
@@ -104,9 +102,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@link Goal#units} must be greater
      *                 than 0 when the proposal line item turns into a line
      * item, {@link Goal#goalType} and {@link
-     *                 Goal#unitType} are readonly.
-     *                 For a Preferred deal {@code ProposalLineItem}, the
-     * goal type can only be {@link GoalType#NONE}.
+     *                 Goal#unitType} are readonly. For a Preferred deal
+     * {@code ProposalLineItem}, the goal type can
+     *                 only be {@link GoalType#NONE}.
      *                 <span class="constraint Required">This attribute is
      * required.</span> */
     private com.google.api.ads.admanager.axis.v202211.Goal goal;
@@ -120,61 +118,52 @@ public class ProposalLineItem  implements java.io.Serializable {
      *                 empty list. */
     private com.google.api.ads.admanager.axis.v202211.Goal[] secondaryGoals;
 
-    /* The contracted number of impressions or clicks.
-     *                 If this is a {@link LineItemType#SPONSORSHIP} {@code
-     * ProposalLineItem}, has
-     *                 {@link RateType#CPD} as a rate type, and {@link #isProgrammatic}
-     * is false,
-     *                 then this represents the lifetime minimum impression.
-     * If this is a {@link LineItemType#SPONSORSHIP} {@code ProposalLineItem},
-     * has
-     *                 {@link RateType#CPD} as a rate type, and {@link #isProgrammatic}
-     * is true,
-     *                 then this represents the daily minimum impression.
-     * <p>This attribute is required for percentage-based-goal
-     *                 {@link ProposalLineItem proposal line items}.  It
-     * does not impact ad-serving and is for
-     *                 reporting purposes only. */
+    /* The contracted number of daily minimum impressions used for
+     * {@link LineItemType#SPONSORSHIP}
+     *                 {@code ProposalLineItem} deals with a rate type of
+     * {@link RateType#CPD}.
+     *                 
+     *                 <p>This attribute is required for percentage-based-goal
+     * {@link ProposalLineItem proposal line
+     *                 items}. It does not impact ad-serving and is for reporting
+     * purposes only. */
     private java.lang.Long contractedUnitsBought;
 
     /* The strategy for delivering ads over the course of the {@code
-     * ProposalLineItem}'s
-     *                 duration. This attribute is required.
-     *                 For a Preferred deal {@code ProposalLineItem}, the
-     * value can only be
-     *                 {@link DeliveryRateType#FRONTLOADED}. */
+     * ProposalLineItem}'s duration.
+     *                 This attribute is required. For a Preferred deal {@code
+     * ProposalLineItem}, the value can only
+     *                 be {@link DeliveryRateType#FRONTLOADED}. */
     private com.google.api.ads.admanager.axis.v202211.DeliveryRateType deliveryRateType;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
-     * where
-     *                 multiple creatives must be served together on a single
-     * web page. This attribute
-     *                 is optional during creation and defaults to the
-     *                 {@link Product#roadblockingType product's roadblocking
-     * type},
-     *                 or {@link RoadblockingType#ONE_OR_MORE} if not specified
-     * by the product. */
+     * where multiple creatives must be
+     *                 served together on a single web page. This attribute
+     * is optional during creation and defaults
+     *                 to the {@link Product#roadblockingType product's roadblocking
+     * type}, or {@link
+     *                 RoadblockingType#ONE_OR_MORE} if not specified by
+     * the product. */
     private com.google.api.ads.admanager.axis.v202211.RoadblockingType roadblockingType;
 
     /* The delivery option for companions. This is only valid if the
-     * roadblocking type is
-     *                 {@link RoadblockingType#CREATIVE_SET}. The default
-     * value for roadblocking creatives is
-     *                 {@link CompanionDeliveryOption#OPTIONAL}. The default
-     * value in other cases is
-     *                 {@link CompanionDeliveryOption#UNKNOWN}. Providing
-     * something other than
-     *                 {@link CompanionDeliveryOption#UNKNOWN} will cause
-     * an error. */
+     * roadblocking type is {@link
+     *                 RoadblockingType#CREATIVE_SET}. The default value
+     * for roadblocking creatives is {@link
+     *                 CompanionDeliveryOption#OPTIONAL}. The default value
+     * in other cases is {@link
+     *                 CompanionDeliveryOption#UNKNOWN}. Providing something
+     * other than {@link
+     *                 CompanionDeliveryOption#UNKNOWN} will cause an error. */
     private com.google.api.ads.admanager.axis.v202211.CompanionDeliveryOption companionDeliveryOption;
 
     /* The max duration of a video creative associated with this {@code
-     * ProposalLineItem}
-     *                 in milliseconds. This attribute is optional, defaults
-     * to the {@link Product#videoMaxDuration}
-     *                 on the {@link Product} it was created with, and only
-     * meaningful if this is a
-     *                 video proposal line item. */
+     * ProposalLineItem} in
+     *                 milliseconds. This attribute is optional, defaults
+     * to the {@link Product#videoMaxDuration} on
+     *                 the {@link Product} it was created with, and only
+     * meaningful if this is a video proposal line
+     *                 item. */
     private java.lang.Long videoMaxDuration;
 
     /* The proposal line item's creatives' skippability. This attribute
@@ -184,13 +173,11 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.SkippableAdType videoCreativeSkippableAdType;
 
     /* The set of frequency capping units for this {@code ProposalLineItem}.
-     * This
-     *                 attribute is optional during creation and defaults
-     * to the
-     *                 {@link Product#frequencyCaps product's frequency caps}
-     * if
-     *                 {@link Product#allowFrequencyCapsCustomization} is
-     * {@code false}. */
+     * This attribute is
+     *                 optional during creation and defaults to the {@link
+     * Product#frequencyCaps product's frequency
+     *                 caps} if {@link Product#allowFrequencyCapsCustomization}
+     * is {@code false}. */
     private com.google.api.ads.admanager.axis.v202211.FrequencyCap[] frequencyCaps;
 
     /* The unique ID of corresponding {@link LineItem}. This will
@@ -200,25 +187,26 @@ public class ProposalLineItem  implements java.io.Serializable {
     private java.lang.Long dfpLineItemId;
 
     /* The corresponding {@link LineItemType} of the {@code ProposalLineItem}.
-     * For a programmatic {@code ProposalLineItem}, the value can only be
-     * one of:
+     * For a programmatic
+     *                 {@code ProposalLineItem}, the value can only be one
+     * of:
+     *                 
      *                 <ul>
-     *                 <li>{@link LineItemType#SPONSORSHIP}</li>
-     *                 <li>{@link LineItemType#STANDARD}</li>
-     *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
+     *                 <li>{@link LineItemType#SPONSORSHIP}
+     *                 <li>{@link LineItemType#STANDARD}
+     *                 <li>{@link LineItemType#PREFERRED_DEAL}
      *                 </ul>
      *                 <span class="constraint Required">This attribute is
      * required.</span> */
     private com.google.api.ads.admanager.axis.v202211.LineItemType lineItemType;
 
     /* The priority for the corresponding {@link LineItem} of the
-     * {@code ProposalLineItem}.
-     *                 This attribute is optional during creation and defaults
-     * to the default priority of the
-     *                 {@link #lineItemType}. For forecasting, this attribute
-     * is optional and has a default value
-     *                 assigned by Google. See {@link LineItem#priority}
-     * for more information. */
+     * {@code ProposalLineItem}. This
+     *                 attribute is optional during creation and defaults
+     * to the default priority of the {@link
+     *                 #lineItemType}. For forecasting, this attribute is
+     * optional and has a default value assigned by
+     *                 Google. See {@link LineItem#priority} for more information. */
     private java.lang.Integer lineItemPriority;
 
     /* The method used for billing the {@code ProposalLineItem}.
@@ -236,16 +224,15 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.CreativePlaceholder[] creativePlaceholders;
 
     /* Contains the targeting criteria for the {@code ProposalLineItem}.
-     * This attribute is
-     *                 optional during creation and defaults to the {@link
-     * Product#targeting product's targeting}. */
+     * This attribute is optional
+     *                 during creation and defaults to the {@link Product#targeting
+     * product's targeting}. */
     private com.google.api.ads.admanager.axis.v202211.Targeting targeting;
 
     /* The values of the custom fields associated with the {@code
-     * ProposalLineItem}.
-     *                 This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
+     * ProposalLineItem}. This attribute is
+     *                 optional. This attribute can be configured as editable
+     * after the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration. */
     private com.google.api.ads.admanager.axis.v202211.BaseCustomFieldValue[] customFieldValues;
@@ -255,10 +242,9 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.AppliedLabel[] appliedLabels;
 
     /* Contains the set of labels applied directly to the proposal
-     * as well as those
-     *                 inherited ones. If a label has been negated, only
-     * the negated label
-     *                 is returned.
+     * as well as those inherited ones. If
+     *                 a label has been negated, only the negated label is
+     * returned.
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202211.AppliedLabel[] effectiveAppliedLabels;
 
@@ -312,14 +298,15 @@ public class ProposalLineItem  implements java.io.Serializable {
     /* Indicates how well the line item generated from this proposal
      * line item has been performing.
      *                 This will be {@code null} if the delivery indicator
-     * information is not available due to one
-     *                 of the following reasons:
+     * information is not available due to one of
+     *                 the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The proposal line item has not pushed to Ad Manager.</li>
-     * <li>The line item is not delivering.</li>
-     *                 <li>The line item has an unlimited goal or cap.</li>
-     * <li>The line item has a percentage based goal or cap.</li>
-     *                 </ol>
+     *                 <li>The proposal line item has not pushed to Ad Manager.
+     * <li>The line item is not delivering.
+     *                 <li>The line item has an unlimited goal or cap.
+     *                 <li>The line item has a percentage based goal or cap.
+     * </ol>
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202211.DeliveryIndicator deliveryIndicator;
 
@@ -329,21 +316,22 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 7 days. This will be {@code null} if the
      *                 delivery data cannot be computed due to one of the
      * following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The proposal line item has not pushed to Ad Manager.</li>
-     * <li>The line item is not deliverable.</li>
+     *                 <li>The proposal line item has not pushed to Ad Manager.
+     * <li>The line item is not deliverable.
      *                 <li>The line item has completed delivering more than
-     * 7 days ago.</li>
+     * 7 days ago.
      *                 <li>The line item has an absolute-based goal. {@link
-     * ProposalLineItem#deliveryIndicator} should
-     *                 be used to track its progress in this case.</li>
-     *                 This attribute is read-only. */
+     * ProposalLineItem#deliveryIndicator}
+     *                 should be used to track its progress in this case.
+     * This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202211.DeliveryData deliveryData;
 
     /* The status of the {@link LineItem} generated from this proposal
-     * line item.
-     *                 This will be {@code null} if the proposal line item
-     * has not pushed to Ad Manager.
+     * line item. This will be {@code
+     *                 null} if the proposal line item has not pushed to
+     * Ad Manager.
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202211.ComputedStatus computedStatus;
 
@@ -364,18 +352,17 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.DateTime lastReservationDateTime;
 
     /* The environment that the {@code ProposalLineItem} is targeting.
-     * The default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is {@link EnvironmentType#VIDEO_PLAYER},
-     *                 then this {@code ProposalLineItem} can only target
-     * {@link AdUnit ad units} that have
-     *                 {@link AdUnitSize sizes} whose {@link AdUnitSize#environmentType}
-     * is also
-     *                 {@link EnvironmentType#VIDEO_PLAYER}.
+     * The default value is {@link
+     *                 EnvironmentType#BROWSER}. If this value is {@link
+     * EnvironmentType#VIDEO_PLAYER}, then this
+     *                 {@code ProposalLineItem} can only target {@link AdUnit
+     * ad units} that have {@link AdUnitSize
+     *                 sizes} whose {@link AdUnitSize#environmentType} is
+     * also {@link EnvironmentType#VIDEO_PLAYER}.
      *                 
      *                 <p>This field is read-only and set to {@link Product#environmentType}
-     * of the product
-     *                 this proposal line item was created from. */
+     * of the product this
+     *                 proposal line item was created from. */
     private com.google.api.ads.admanager.axis.v202211.EnvironmentType environmentType;
 
     /* The set of {@link AllowedFormats} that this proposal line item
@@ -622,11 +609,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the proposalId value for this ProposalLineItem.
      * 
      * @return proposalId   * The unique ID of the {@link Proposal}, to which the {@code
-     * ProposalLineItem}
-     *                 belongs. This attribute is required for creation and
-     * then is readonly.
-     *                 <span class="constraint Required">This attribute is
-     * required.</span>
+     * ProposalLineItem} belongs. This
+     *                 attribute is required for creation and then is readonly.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public java.lang.Long getProposalId() {
         return proposalId;
@@ -637,11 +622,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the proposalId value for this ProposalLineItem.
      * 
      * @param proposalId   * The unique ID of the {@link Proposal}, to which the {@code
-     * ProposalLineItem}
-     *                 belongs. This attribute is required for creation and
-     * then is readonly.
-     *                 <span class="constraint Required">This attribute is
-     * required.</span>
+     * ProposalLineItem} belongs. This
+     *                 attribute is required for creation and then is readonly.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setProposalId(java.lang.Long proposalId) {
         this.proposalId = proposalId;
@@ -652,13 +635,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the name value for this ProposalLineItem.
      * 
      * @return name   * The name of the {@code ProposalLineItem} which should be unique
-     * under the same
-     *                 {@link Proposal}. This attribute has a maximum length
-     * of 255 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * under the same {@link
+     *                 Proposal}. This attribute has a maximum length of
+     * 255 characters. This attribute can be
+     *                 configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -671,13 +653,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the name value for this ProposalLineItem.
      * 
      * @param name   * The name of the {@code ProposalLineItem} which should be unique
-     * under the same
-     *                 {@link Proposal}. This attribute has a maximum length
-     * of 255 characters.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * under the same {@link
+     *                 Proposal}. This attribute has a maximum length of
+     * 255 characters. This attribute can be
+     *                 configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -690,14 +671,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the startDateTime value for this ProposalLineItem.
      * 
      * @return startDateTime   * The date and time at which the line item associated with the
-     * {@code ProposalLineItem} is enabled to begin serving. This attribute
-     * is optional
-     *                 during creation, but required and must be in the future
-     * when it turns into a line item.
-     *                 The {@link DateTime#timeZoneID} is required if start
-     * date time is not {@code null}.
-     *                 This attribute becomes readonly once the {@code ProposalLineItem}
-     * has started delivering.
+     * {@code ProposalLineItem} is
+     *                 enabled to begin serving. This attribute is optional
+     * during creation, but required and must be
+     *                 in the future when it turns into a line item. The
+     * {@link DateTime#timeZoneID} is required if
+     *                 start date time is not {@code null}. This attribute
+     * becomes readonly once the {@code
+     *                 ProposalLineItem} has started delivering.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getStartDateTime() {
         return startDateTime;
@@ -708,14 +689,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the startDateTime value for this ProposalLineItem.
      * 
      * @param startDateTime   * The date and time at which the line item associated with the
-     * {@code ProposalLineItem} is enabled to begin serving. This attribute
-     * is optional
-     *                 during creation, but required and must be in the future
-     * when it turns into a line item.
-     *                 The {@link DateTime#timeZoneID} is required if start
-     * date time is not {@code null}.
-     *                 This attribute becomes readonly once the {@code ProposalLineItem}
-     * has started delivering.
+     * {@code ProposalLineItem} is
+     *                 enabled to begin serving. This attribute is optional
+     * during creation, but required and must be
+     *                 in the future when it turns into a line item. The
+     * {@link DateTime#timeZoneID} is required if
+     *                 start date time is not {@code null}. This attribute
+     * becomes readonly once the {@code
+     *                 ProposalLineItem} has started delivering.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202211.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -726,11 +707,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the endDateTime value for this ProposalLineItem.
      * 
      * @return endDateTime   * The date and time at which the line item associated with the
-     * {@code ProposalLineItem} stops beening served. This attribute is optional
-     * during creation,
-     *                 but required and must be after the {@link #startDateTime}.
-     * The {@link DateTime#timeZoneID} is
-     *                 required if end date time is not {@code null}.
+     * {@code ProposalLineItem} stops
+     *                 beening served. This attribute is optional during
+     * creation, but required and must be after the
+     *                 {@link #startDateTime}. The {@link DateTime#timeZoneID}
+     * is required if end date time is not
+     *                 {@code null}.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getEndDateTime() {
         return endDateTime;
@@ -741,11 +723,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the endDateTime value for this ProposalLineItem.
      * 
      * @param endDateTime   * The date and time at which the line item associated with the
-     * {@code ProposalLineItem} stops beening served. This attribute is optional
-     * during creation,
-     *                 but required and must be after the {@link #startDateTime}.
-     * The {@link DateTime#timeZoneID} is
-     *                 required if end date time is not {@code null}.
+     * {@code ProposalLineItem} stops
+     *                 beening served. This attribute is optional during
+     * creation, but required and must be after the
+     *                 {@link #startDateTime}. The {@link DateTime#timeZoneID}
+     * is required if end date time is not
+     *                 {@code null}.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202211.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -853,9 +836,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@link Goal#units} must be greater
      *                 than 0 when the proposal line item turns into a line
      * item, {@link Goal#goalType} and {@link
-     *                 Goal#unitType} are readonly.
-     *                 For a Preferred deal {@code ProposalLineItem}, the
-     * goal type can only be {@link GoalType#NONE}.
+     *                 Goal#unitType} are readonly. For a Preferred deal
+     * {@code ProposalLineItem}, the goal type can
+     *                 only be {@link GoalType#NONE}.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -873,9 +856,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * {@link Goal#units} must be greater
      *                 than 0 when the proposal line item turns into a line
      * item, {@link Goal#goalType} and {@link
-     *                 Goal#unitType} are readonly.
-     *                 For a Preferred deal {@code ProposalLineItem}, the
-     * goal type can only be {@link GoalType#NONE}.
+     *                 Goal#unitType} are readonly. For a Preferred deal
+     * {@code ProposalLineItem}, the goal type can
+     *                 only be {@link GoalType#NONE}.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -927,21 +910,15 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Gets the contractedUnitsBought value for this ProposalLineItem.
      * 
-     * @return contractedUnitsBought   * The contracted number of impressions or clicks.
-     *                 If this is a {@link LineItemType#SPONSORSHIP} {@code
-     * ProposalLineItem}, has
-     *                 {@link RateType#CPD} as a rate type, and {@link #isProgrammatic}
-     * is false,
-     *                 then this represents the lifetime minimum impression.
-     * If this is a {@link LineItemType#SPONSORSHIP} {@code ProposalLineItem},
-     * has
-     *                 {@link RateType#CPD} as a rate type, and {@link #isProgrammatic}
-     * is true,
-     *                 then this represents the daily minimum impression.
-     * <p>This attribute is required for percentage-based-goal
-     *                 {@link ProposalLineItem proposal line items}.  It
-     * does not impact ad-serving and is for
-     *                 reporting purposes only.
+     * @return contractedUnitsBought   * The contracted number of daily minimum impressions used for
+     * {@link LineItemType#SPONSORSHIP}
+     *                 {@code ProposalLineItem} deals with a rate type of
+     * {@link RateType#CPD}.
+     *                 
+     *                 <p>This attribute is required for percentage-based-goal
+     * {@link ProposalLineItem proposal line
+     *                 items}. It does not impact ad-serving and is for reporting
+     * purposes only.
      */
     public java.lang.Long getContractedUnitsBought() {
         return contractedUnitsBought;
@@ -951,21 +928,15 @@ public class ProposalLineItem  implements java.io.Serializable {
     /**
      * Sets the contractedUnitsBought value for this ProposalLineItem.
      * 
-     * @param contractedUnitsBought   * The contracted number of impressions or clicks.
-     *                 If this is a {@link LineItemType#SPONSORSHIP} {@code
-     * ProposalLineItem}, has
-     *                 {@link RateType#CPD} as a rate type, and {@link #isProgrammatic}
-     * is false,
-     *                 then this represents the lifetime minimum impression.
-     * If this is a {@link LineItemType#SPONSORSHIP} {@code ProposalLineItem},
-     * has
-     *                 {@link RateType#CPD} as a rate type, and {@link #isProgrammatic}
-     * is true,
-     *                 then this represents the daily minimum impression.
-     * <p>This attribute is required for percentage-based-goal
-     *                 {@link ProposalLineItem proposal line items}.  It
-     * does not impact ad-serving and is for
-     *                 reporting purposes only.
+     * @param contractedUnitsBought   * The contracted number of daily minimum impressions used for
+     * {@link LineItemType#SPONSORSHIP}
+     *                 {@code ProposalLineItem} deals with a rate type of
+     * {@link RateType#CPD}.
+     *                 
+     *                 <p>This attribute is required for percentage-based-goal
+     * {@link ProposalLineItem proposal line
+     *                 items}. It does not impact ad-serving and is for reporting
+     * purposes only.
      */
     public void setContractedUnitsBought(java.lang.Long contractedUnitsBought) {
         this.contractedUnitsBought = contractedUnitsBought;
@@ -976,11 +947,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the deliveryRateType value for this ProposalLineItem.
      * 
      * @return deliveryRateType   * The strategy for delivering ads over the course of the {@code
-     * ProposalLineItem}'s
-     *                 duration. This attribute is required.
-     *                 For a Preferred deal {@code ProposalLineItem}, the
-     * value can only be
-     *                 {@link DeliveryRateType#FRONTLOADED}.
+     * ProposalLineItem}'s duration.
+     *                 This attribute is required. For a Preferred deal {@code
+     * ProposalLineItem}, the value can only
+     *                 be {@link DeliveryRateType#FRONTLOADED}.
      */
     public com.google.api.ads.admanager.axis.v202211.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -991,11 +961,10 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the deliveryRateType value for this ProposalLineItem.
      * 
      * @param deliveryRateType   * The strategy for delivering ads over the course of the {@code
-     * ProposalLineItem}'s
-     *                 duration. This attribute is required.
-     *                 For a Preferred deal {@code ProposalLineItem}, the
-     * value can only be
-     *                 {@link DeliveryRateType#FRONTLOADED}.
+     * ProposalLineItem}'s duration.
+     *                 This attribute is required. For a Preferred deal {@code
+     * ProposalLineItem}, the value can only
+     *                 be {@link DeliveryRateType#FRONTLOADED}.
      */
     public void setDeliveryRateType(com.google.api.ads.admanager.axis.v202211.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;
@@ -1006,14 +975,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the roadblockingType value for this ProposalLineItem.
      * 
      * @return roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
-     * where
-     *                 multiple creatives must be served together on a single
-     * web page. This attribute
-     *                 is optional during creation and defaults to the
-     *                 {@link Product#roadblockingType product's roadblocking
-     * type},
-     *                 or {@link RoadblockingType#ONE_OR_MORE} if not specified
-     * by the product.
+     * where multiple creatives must be
+     *                 served together on a single web page. This attribute
+     * is optional during creation and defaults
+     *                 to the {@link Product#roadblockingType product's roadblocking
+     * type}, or {@link
+     *                 RoadblockingType#ONE_OR_MORE} if not specified by
+     * the product.
      */
     public com.google.api.ads.admanager.axis.v202211.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -1024,14 +992,13 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the roadblockingType value for this ProposalLineItem.
      * 
      * @param roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
-     * where
-     *                 multiple creatives must be served together on a single
-     * web page. This attribute
-     *                 is optional during creation and defaults to the
-     *                 {@link Product#roadblockingType product's roadblocking
-     * type},
-     *                 or {@link RoadblockingType#ONE_OR_MORE} if not specified
-     * by the product.
+     * where multiple creatives must be
+     *                 served together on a single web page. This attribute
+     * is optional during creation and defaults
+     *                 to the {@link Product#roadblockingType product's roadblocking
+     * type}, or {@link
+     *                 RoadblockingType#ONE_OR_MORE} if not specified by
+     * the product.
      */
     public void setRoadblockingType(com.google.api.ads.admanager.axis.v202211.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;
@@ -1042,15 +1009,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the companionDeliveryOption value for this ProposalLineItem.
      * 
      * @return companionDeliveryOption   * The delivery option for companions. This is only valid if the
-     * roadblocking type is
-     *                 {@link RoadblockingType#CREATIVE_SET}. The default
-     * value for roadblocking creatives is
-     *                 {@link CompanionDeliveryOption#OPTIONAL}. The default
-     * value in other cases is
-     *                 {@link CompanionDeliveryOption#UNKNOWN}. Providing
-     * something other than
-     *                 {@link CompanionDeliveryOption#UNKNOWN} will cause
-     * an error.
+     * roadblocking type is {@link
+     *                 RoadblockingType#CREATIVE_SET}. The default value
+     * for roadblocking creatives is {@link
+     *                 CompanionDeliveryOption#OPTIONAL}. The default value
+     * in other cases is {@link
+     *                 CompanionDeliveryOption#UNKNOWN}. Providing something
+     * other than {@link
+     *                 CompanionDeliveryOption#UNKNOWN} will cause an error.
      */
     public com.google.api.ads.admanager.axis.v202211.CompanionDeliveryOption getCompanionDeliveryOption() {
         return companionDeliveryOption;
@@ -1061,15 +1027,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the companionDeliveryOption value for this ProposalLineItem.
      * 
      * @param companionDeliveryOption   * The delivery option for companions. This is only valid if the
-     * roadblocking type is
-     *                 {@link RoadblockingType#CREATIVE_SET}. The default
-     * value for roadblocking creatives is
-     *                 {@link CompanionDeliveryOption#OPTIONAL}. The default
-     * value in other cases is
-     *                 {@link CompanionDeliveryOption#UNKNOWN}. Providing
-     * something other than
-     *                 {@link CompanionDeliveryOption#UNKNOWN} will cause
-     * an error.
+     * roadblocking type is {@link
+     *                 RoadblockingType#CREATIVE_SET}. The default value
+     * for roadblocking creatives is {@link
+     *                 CompanionDeliveryOption#OPTIONAL}. The default value
+     * in other cases is {@link
+     *                 CompanionDeliveryOption#UNKNOWN}. Providing something
+     * other than {@link
+     *                 CompanionDeliveryOption#UNKNOWN} will cause an error.
      */
     public void setCompanionDeliveryOption(com.google.api.ads.admanager.axis.v202211.CompanionDeliveryOption companionDeliveryOption) {
         this.companionDeliveryOption = companionDeliveryOption;
@@ -1080,12 +1045,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the videoMaxDuration value for this ProposalLineItem.
      * 
      * @return videoMaxDuration   * The max duration of a video creative associated with this {@code
-     * ProposalLineItem}
-     *                 in milliseconds. This attribute is optional, defaults
-     * to the {@link Product#videoMaxDuration}
-     *                 on the {@link Product} it was created with, and only
-     * meaningful if this is a
-     *                 video proposal line item.
+     * ProposalLineItem} in
+     *                 milliseconds. This attribute is optional, defaults
+     * to the {@link Product#videoMaxDuration} on
+     *                 the {@link Product} it was created with, and only
+     * meaningful if this is a video proposal line
+     *                 item.
      */
     public java.lang.Long getVideoMaxDuration() {
         return videoMaxDuration;
@@ -1096,12 +1061,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the videoMaxDuration value for this ProposalLineItem.
      * 
      * @param videoMaxDuration   * The max duration of a video creative associated with this {@code
-     * ProposalLineItem}
-     *                 in milliseconds. This attribute is optional, defaults
-     * to the {@link Product#videoMaxDuration}
-     *                 on the {@link Product} it was created with, and only
-     * meaningful if this is a
-     *                 video proposal line item.
+     * ProposalLineItem} in
+     *                 milliseconds. This attribute is optional, defaults
+     * to the {@link Product#videoMaxDuration} on
+     *                 the {@link Product} it was created with, and only
+     * meaningful if this is a video proposal line
+     *                 item.
      */
     public void setVideoMaxDuration(java.lang.Long videoMaxDuration) {
         this.videoMaxDuration = videoMaxDuration;
@@ -1138,13 +1103,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the frequencyCaps value for this ProposalLineItem.
      * 
      * @return frequencyCaps   * The set of frequency capping units for this {@code ProposalLineItem}.
-     * This
-     *                 attribute is optional during creation and defaults
-     * to the
-     *                 {@link Product#frequencyCaps product's frequency caps}
-     * if
-     *                 {@link Product#allowFrequencyCapsCustomization} is
-     * {@code false}.
+     * This attribute is
+     *                 optional during creation and defaults to the {@link
+     * Product#frequencyCaps product's frequency
+     *                 caps} if {@link Product#allowFrequencyCapsCustomization}
+     * is {@code false}.
      */
     public com.google.api.ads.admanager.axis.v202211.FrequencyCap[] getFrequencyCaps() {
         return frequencyCaps;
@@ -1155,13 +1118,11 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the frequencyCaps value for this ProposalLineItem.
      * 
      * @param frequencyCaps   * The set of frequency capping units for this {@code ProposalLineItem}.
-     * This
-     *                 attribute is optional during creation and defaults
-     * to the
-     *                 {@link Product#frequencyCaps product's frequency caps}
-     * if
-     *                 {@link Product#allowFrequencyCapsCustomization} is
-     * {@code false}.
+     * This attribute is
+     *                 optional during creation and defaults to the {@link
+     * Product#frequencyCaps product's frequency
+     *                 caps} if {@link Product#allowFrequencyCapsCustomization}
+     * is {@code false}.
      */
     public void setFrequencyCaps(com.google.api.ads.admanager.axis.v202211.FrequencyCap[] frequencyCaps) {
         this.frequencyCaps = frequencyCaps;
@@ -1206,12 +1167,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the lineItemType value for this ProposalLineItem.
      * 
      * @return lineItemType   * The corresponding {@link LineItemType} of the {@code ProposalLineItem}.
-     * For a programmatic {@code ProposalLineItem}, the value can only be
-     * one of:
+     * For a programmatic
+     *                 {@code ProposalLineItem}, the value can only be one
+     * of:
+     *                 
      *                 <ul>
-     *                 <li>{@link LineItemType#SPONSORSHIP}</li>
-     *                 <li>{@link LineItemType#STANDARD}</li>
-     *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
+     *                 <li>{@link LineItemType#SPONSORSHIP}
+     *                 <li>{@link LineItemType#STANDARD}
+     *                 <li>{@link LineItemType#PREFERRED_DEAL}
      *                 </ul>
      *                 <span class="constraint Required">This attribute is
      * required.</span>
@@ -1225,12 +1188,14 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the lineItemType value for this ProposalLineItem.
      * 
      * @param lineItemType   * The corresponding {@link LineItemType} of the {@code ProposalLineItem}.
-     * For a programmatic {@code ProposalLineItem}, the value can only be
-     * one of:
+     * For a programmatic
+     *                 {@code ProposalLineItem}, the value can only be one
+     * of:
+     *                 
      *                 <ul>
-     *                 <li>{@link LineItemType#SPONSORSHIP}</li>
-     *                 <li>{@link LineItemType#STANDARD}</li>
-     *                 <li>{@link LineItemType#PREFERRED_DEAL}</li>
+     *                 <li>{@link LineItemType#SPONSORSHIP}
+     *                 <li>{@link LineItemType#STANDARD}
+     *                 <li>{@link LineItemType#PREFERRED_DEAL}
      *                 </ul>
      *                 <span class="constraint Required">This attribute is
      * required.</span>
@@ -1244,13 +1209,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the lineItemPriority value for this ProposalLineItem.
      * 
      * @return lineItemPriority   * The priority for the corresponding {@link LineItem} of the
-     * {@code ProposalLineItem}.
-     *                 This attribute is optional during creation and defaults
-     * to the default priority of the
-     *                 {@link #lineItemType}. For forecasting, this attribute
-     * is optional and has a default value
-     *                 assigned by Google. See {@link LineItem#priority}
-     * for more information.
+     * {@code ProposalLineItem}. This
+     *                 attribute is optional during creation and defaults
+     * to the default priority of the {@link
+     *                 #lineItemType}. For forecasting, this attribute is
+     * optional and has a default value assigned by
+     *                 Google. See {@link LineItem#priority} for more information.
      */
     public java.lang.Integer getLineItemPriority() {
         return lineItemPriority;
@@ -1261,13 +1225,12 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the lineItemPriority value for this ProposalLineItem.
      * 
      * @param lineItemPriority   * The priority for the corresponding {@link LineItem} of the
-     * {@code ProposalLineItem}.
-     *                 This attribute is optional during creation and defaults
-     * to the default priority of the
-     *                 {@link #lineItemType}. For forecasting, this attribute
-     * is optional and has a default value
-     *                 assigned by Google. See {@link LineItem#priority}
-     * for more information.
+     * {@code ProposalLineItem}. This
+     *                 attribute is optional during creation and defaults
+     * to the default priority of the {@link
+     *                 #lineItemType}. For forecasting, this attribute is
+     * optional and has a default value assigned by
+     *                 Google. See {@link LineItem#priority} for more information.
      */
     public void setLineItemPriority(java.lang.Integer lineItemPriority) {
         this.lineItemPriority = lineItemPriority;
@@ -1342,9 +1305,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the targeting value for this ProposalLineItem.
      * 
      * @return targeting   * Contains the targeting criteria for the {@code ProposalLineItem}.
-     * This attribute is
-     *                 optional during creation and defaults to the {@link
-     * Product#targeting product's targeting}.
+     * This attribute is optional
+     *                 during creation and defaults to the {@link Product#targeting
+     * product's targeting}.
      */
     public com.google.api.ads.admanager.axis.v202211.Targeting getTargeting() {
         return targeting;
@@ -1355,9 +1318,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the targeting value for this ProposalLineItem.
      * 
      * @param targeting   * Contains the targeting criteria for the {@code ProposalLineItem}.
-     * This attribute is
-     *                 optional during creation and defaults to the {@link
-     * Product#targeting product's targeting}.
+     * This attribute is optional
+     *                 during creation and defaults to the {@link Product#targeting
+     * product's targeting}.
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202211.Targeting targeting) {
         this.targeting = targeting;
@@ -1368,10 +1331,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the customFieldValues value for this ProposalLineItem.
      * 
      * @return customFieldValues   * The values of the custom fields associated with the {@code
-     * ProposalLineItem}.
-     *                 This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
+     * ProposalLineItem}. This attribute is
+     *                 optional. This attribute can be configured as editable
+     * after the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
      */
@@ -1384,10 +1346,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the customFieldValues value for this ProposalLineItem.
      * 
      * @param customFieldValues   * The values of the custom fields associated with the {@code
-     * ProposalLineItem}.
-     *                 This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
+     * ProposalLineItem}. This attribute is
+     *                 optional. This attribute can be configured as editable
+     * after the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
      */
@@ -1438,10 +1399,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the effectiveAppliedLabels value for this ProposalLineItem.
      * 
      * @return effectiveAppliedLabels   * Contains the set of labels applied directly to the proposal
-     * as well as those
-     *                 inherited ones. If a label has been negated, only
-     * the negated label
-     *                 is returned.
+     * as well as those inherited ones. If
+     *                 a label has been negated, only the negated label is
+     * returned.
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202211.AppliedLabel[] getEffectiveAppliedLabels() {
@@ -1453,10 +1413,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the effectiveAppliedLabels value for this ProposalLineItem.
      * 
      * @param effectiveAppliedLabels   * Contains the set of labels applied directly to the proposal
-     * as well as those
-     *                 inherited ones. If a label has been negated, only
-     * the negated label
-     *                 is returned.
+     * as well as those inherited ones. If
+     *                 a label has been negated, only the negated label is
+     * returned.
      *                 This attribute is read-only.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.admanager.axis.v202211.AppliedLabel[] effectiveAppliedLabels) {
@@ -1628,14 +1587,15 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @return deliveryIndicator   * Indicates how well the line item generated from this proposal
      * line item has been performing.
      *                 This will be {@code null} if the delivery indicator
-     * information is not available due to one
-     *                 of the following reasons:
+     * information is not available due to one of
+     *                 the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The proposal line item has not pushed to Ad Manager.</li>
-     * <li>The line item is not delivering.</li>
-     *                 <li>The line item has an unlimited goal or cap.</li>
-     * <li>The line item has a percentage based goal or cap.</li>
-     *                 </ol>
+     *                 <li>The proposal line item has not pushed to Ad Manager.
+     * <li>The line item is not delivering.
+     *                 <li>The line item has an unlimited goal or cap.
+     *                 <li>The line item has a percentage based goal or cap.
+     * </ol>
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202211.DeliveryIndicator getDeliveryIndicator() {
@@ -1649,14 +1609,15 @@ public class ProposalLineItem  implements java.io.Serializable {
      * @param deliveryIndicator   * Indicates how well the line item generated from this proposal
      * line item has been performing.
      *                 This will be {@code null} if the delivery indicator
-     * information is not available due to one
-     *                 of the following reasons:
+     * information is not available due to one of
+     *                 the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The proposal line item has not pushed to Ad Manager.</li>
-     * <li>The line item is not delivering.</li>
-     *                 <li>The line item has an unlimited goal or cap.</li>
-     * <li>The line item has a percentage based goal or cap.</li>
-     *                 </ol>
+     *                 <li>The proposal line item has not pushed to Ad Manager.
+     * <li>The line item is not delivering.
+     *                 <li>The line item has an unlimited goal or cap.
+     *                 <li>The line item has a percentage based goal or cap.
+     * </ol>
      *                 This attribute is read-only.
      */
     public void setDeliveryIndicator(com.google.api.ads.admanager.axis.v202211.DeliveryIndicator deliveryIndicator) {
@@ -1673,15 +1634,16 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 7 days. This will be {@code null} if the
      *                 delivery data cannot be computed due to one of the
      * following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The proposal line item has not pushed to Ad Manager.</li>
-     * <li>The line item is not deliverable.</li>
+     *                 <li>The proposal line item has not pushed to Ad Manager.
+     * <li>The line item is not deliverable.
      *                 <li>The line item has completed delivering more than
-     * 7 days ago.</li>
+     * 7 days ago.
      *                 <li>The line item has an absolute-based goal. {@link
-     * ProposalLineItem#deliveryIndicator} should
-     *                 be used to track its progress in this case.</li>
-     *                 This attribute is read-only.
+     * ProposalLineItem#deliveryIndicator}
+     *                 should be used to track its progress in this case.
+     * This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202211.DeliveryData getDeliveryData() {
         return deliveryData;
@@ -1697,15 +1659,16 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 7 days. This will be {@code null} if the
      *                 delivery data cannot be computed due to one of the
      * following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The proposal line item has not pushed to Ad Manager.</li>
-     * <li>The line item is not deliverable.</li>
+     *                 <li>The proposal line item has not pushed to Ad Manager.
+     * <li>The line item is not deliverable.
      *                 <li>The line item has completed delivering more than
-     * 7 days ago.</li>
+     * 7 days ago.
      *                 <li>The line item has an absolute-based goal. {@link
-     * ProposalLineItem#deliveryIndicator} should
-     *                 be used to track its progress in this case.</li>
-     *                 This attribute is read-only.
+     * ProposalLineItem#deliveryIndicator}
+     *                 should be used to track its progress in this case.
+     * This attribute is read-only.
      */
     public void setDeliveryData(com.google.api.ads.admanager.axis.v202211.DeliveryData deliveryData) {
         this.deliveryData = deliveryData;
@@ -1716,9 +1679,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the computedStatus value for this ProposalLineItem.
      * 
      * @return computedStatus   * The status of the {@link LineItem} generated from this proposal
-     * line item.
-     *                 This will be {@code null} if the proposal line item
-     * has not pushed to Ad Manager.
+     * line item. This will be {@code
+     *                 null} if the proposal line item has not pushed to
+     * Ad Manager.
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202211.ComputedStatus getComputedStatus() {
@@ -1730,9 +1693,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the computedStatus value for this ProposalLineItem.
      * 
      * @param computedStatus   * The status of the {@link LineItem} generated from this proposal
-     * line item.
-     *                 This will be {@code null} if the proposal line item
-     * has not pushed to Ad Manager.
+     * line item. This will be {@code
+     *                 null} if the proposal line item has not pushed to
+     * Ad Manager.
      *                 This attribute is read-only.
      */
     public void setComputedStatus(com.google.api.ads.admanager.axis.v202211.ComputedStatus computedStatus) {
@@ -1818,18 +1781,17 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the environmentType value for this ProposalLineItem.
      * 
      * @return environmentType   * The environment that the {@code ProposalLineItem} is targeting.
-     * The default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is {@link EnvironmentType#VIDEO_PLAYER},
-     *                 then this {@code ProposalLineItem} can only target
-     * {@link AdUnit ad units} that have
-     *                 {@link AdUnitSize sizes} whose {@link AdUnitSize#environmentType}
-     * is also
-     *                 {@link EnvironmentType#VIDEO_PLAYER}.
+     * The default value is {@link
+     *                 EnvironmentType#BROWSER}. If this value is {@link
+     * EnvironmentType#VIDEO_PLAYER}, then this
+     *                 {@code ProposalLineItem} can only target {@link AdUnit
+     * ad units} that have {@link AdUnitSize
+     *                 sizes} whose {@link AdUnitSize#environmentType} is
+     * also {@link EnvironmentType#VIDEO_PLAYER}.
      *                 
      *                 <p>This field is read-only and set to {@link Product#environmentType}
-     * of the product
-     *                 this proposal line item was created from.
+     * of the product this
+     *                 proposal line item was created from.
      */
     public com.google.api.ads.admanager.axis.v202211.EnvironmentType getEnvironmentType() {
         return environmentType;
@@ -1840,18 +1802,17 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the environmentType value for this ProposalLineItem.
      * 
      * @param environmentType   * The environment that the {@code ProposalLineItem} is targeting.
-     * The default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is {@link EnvironmentType#VIDEO_PLAYER},
-     *                 then this {@code ProposalLineItem} can only target
-     * {@link AdUnit ad units} that have
-     *                 {@link AdUnitSize sizes} whose {@link AdUnitSize#environmentType}
-     * is also
-     *                 {@link EnvironmentType#VIDEO_PLAYER}.
+     * The default value is {@link
+     *                 EnvironmentType#BROWSER}. If this value is {@link
+     * EnvironmentType#VIDEO_PLAYER}, then this
+     *                 {@code ProposalLineItem} can only target {@link AdUnit
+     * ad units} that have {@link AdUnitSize
+     *                 sizes} whose {@link AdUnitSize#environmentType} is
+     * also {@link EnvironmentType#VIDEO_PLAYER}.
      *                 
      *                 <p>This field is read-only and set to {@link Product#environmentType}
-     * of the product
-     *                 this proposal line item was created from.
+     * of the product this
+     *                 proposal line item was created from.
      */
     public void setEnvironmentType(com.google.api.ads.admanager.axis.v202211.EnvironmentType environmentType) {
         this.environmentType = environmentType;

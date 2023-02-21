@@ -28,14 +28,13 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class CreativeSet  implements java.io.Serializable {
     /* Uniquely identifies the {@code CreativeSet}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * set is created. */
+     * is read-only and is assigned by
+     *                 Google when a creative set is created. */
     private java.lang.Long id;
 
     /* The name of the creative set. This attribute is required and
-     * has a
-     *                 maximum length of 255 characters. */
+     * has a maximum length of 255
+     *                 characters. */
     private java.lang.String name;
 
     /* The ID of the master creative associated with this creative
@@ -82,9 +81,8 @@ public class CreativeSet  implements java.io.Serializable {
      * Gets the id value for this CreativeSet.
      * 
      * @return id   * Uniquely identifies the {@code CreativeSet}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * set is created.
+     * is read-only and is assigned by
+     *                 Google when a creative set is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -95,9 +93,8 @@ public class CreativeSet  implements java.io.Serializable {
      * Sets the id value for this CreativeSet.
      * 
      * @param id   * Uniquely identifies the {@code CreativeSet}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * set is created.
+     * is read-only and is assigned by
+     *                 Google when a creative set is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -108,8 +105,8 @@ public class CreativeSet  implements java.io.Serializable {
      * Gets the name value for this CreativeSet.
      * 
      * @return name   * The name of the creative set. This attribute is required and
-     * has a
-     *                 maximum length of 255 characters.
+     * has a maximum length of 255
+     *                 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -120,8 +117,8 @@ public class CreativeSet  implements java.io.Serializable {
      * Sets the name value for this CreativeSet.
      * 
      * @param name   * The name of the creative set. This attribute is required and
-     * has a
-     *                 maximum length of 255 characters.
+     * has a maximum length of 255
+     *                 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;

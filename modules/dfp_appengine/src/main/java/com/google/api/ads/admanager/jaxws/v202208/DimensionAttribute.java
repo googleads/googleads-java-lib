@@ -647,7 +647,7 @@ public enum DimensionAttribute {
      * 
      *                 Represents the {@link CmsContent#displayName} within the first element of {@link
      *                 Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
-     *                 <p>Corresponds to "Content source name" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Content source name" in the Ad Manager UI. Compatible with any of the following report types: Historical, YouTube consolidated.</p>
      *               
      * 
      */
@@ -657,7 +657,7 @@ public enum DimensionAttribute {
      * 
      *                 Represents the {@link CmsContent#cmsContentId} within the first element of {@link
      *                 Content#cmsContent} for {@link Dimension#CONTENT_NAME}.
-     *                 <p>Corresponds to "ID of the video in the content source" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "ID of the video in the content source" in the Ad Manager UI. Compatible with any of the following report types: Historical, YouTube consolidated.</p>
      *               
      * 
      */

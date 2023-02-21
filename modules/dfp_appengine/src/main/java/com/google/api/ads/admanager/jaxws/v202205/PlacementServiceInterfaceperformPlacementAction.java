@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Performs actions on {@link Placement} objects that match the given
- *             {@link Statement#query}.
+ *             Performs actions on {@link Placement} objects that match the given {@link Statement#query}.
  *           
  * 
  * <p>Java class for performPlacementAction element declaration.

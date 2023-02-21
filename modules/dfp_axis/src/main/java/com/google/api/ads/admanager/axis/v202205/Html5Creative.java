@@ -29,8 +29,8 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class Html5Creative  extends com.google.api.ads.admanager.axis.v202205.Creative  implements java.io.Serializable {
     /* Allows the creative size to differ from the actual HTML5 asset
-     * size. This
-     *                     attribute is optional. */
+     * size. This attribute is
+     *                     optional. */
     private java.lang.Boolean overrideSize;
 
     /* Impression tracking URLs to ping when this creative is displayed.
@@ -63,11 +63,11 @@ public class Html5Creative  extends com.google.api.ads.admanager.axis.v202205.Cr
     private java.lang.Boolean isSafeFrameCompatible;
 
     /* The HTML5 asset. To preview the HTML5 asset, use the {@link
-     * CreativeAsset#assetUrl}.
-     *                     In this field, the {@link CreativeAsset#assetByteArray}
-     * must be a zip bundle and the
-     *                     {@link CreativeAsset#fileName} must have a zip
-     * extension. This attribute is required. */
+     * CreativeAsset#assetUrl}. In this
+     *                     field, the {@link CreativeAsset#assetByteArray}
+     * must be a zip bundle and the {@link
+     *                     CreativeAsset#fileName} must have a zip extension.
+     * This attribute is required. */
     private com.google.api.ads.admanager.axis.v202205.CreativeAsset html5Asset;
 
     public Html5Creative() {
@@ -142,8 +142,8 @@ public class Html5Creative  extends com.google.api.ads.admanager.axis.v202205.Cr
      * Gets the overrideSize value for this Html5Creative.
      * 
      * @return overrideSize   * Allows the creative size to differ from the actual HTML5 asset
-     * size. This
-     *                     attribute is optional.
+     * size. This attribute is
+     *                     optional.
      */
     public java.lang.Boolean getOverrideSize() {
         return overrideSize;
@@ -154,8 +154,8 @@ public class Html5Creative  extends com.google.api.ads.admanager.axis.v202205.Cr
      * Sets the overrideSize value for this Html5Creative.
      * 
      * @param overrideSize   * Allows the creative size to differ from the actual HTML5 asset
-     * size. This
-     *                     attribute is optional.
+     * size. This attribute is
+     *                     optional.
      */
     public void setOverrideSize(java.lang.Boolean overrideSize) {
         this.overrideSize = overrideSize;
@@ -316,11 +316,11 @@ public class Html5Creative  extends com.google.api.ads.admanager.axis.v202205.Cr
      * Gets the html5Asset value for this Html5Creative.
      * 
      * @return html5Asset   * The HTML5 asset. To preview the HTML5 asset, use the {@link
-     * CreativeAsset#assetUrl}.
-     *                     In this field, the {@link CreativeAsset#assetByteArray}
-     * must be a zip bundle and the
-     *                     {@link CreativeAsset#fileName} must have a zip
-     * extension. This attribute is required.
+     * CreativeAsset#assetUrl}. In this
+     *                     field, the {@link CreativeAsset#assetByteArray}
+     * must be a zip bundle and the {@link
+     *                     CreativeAsset#fileName} must have a zip extension.
+     * This attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeAsset getHtml5Asset() {
         return html5Asset;
@@ -331,11 +331,11 @@ public class Html5Creative  extends com.google.api.ads.admanager.axis.v202205.Cr
      * Sets the html5Asset value for this Html5Creative.
      * 
      * @param html5Asset   * The HTML5 asset. To preview the HTML5 asset, use the {@link
-     * CreativeAsset#assetUrl}.
-     *                     In this field, the {@link CreativeAsset#assetByteArray}
-     * must be a zip bundle and the
-     *                     {@link CreativeAsset#fileName} must have a zip
-     * extension. This attribute is required.
+     * CreativeAsset#assetUrl}. In this
+     *                     field, the {@link CreativeAsset#assetByteArray}
+     * must be a zip bundle and the {@link
+     *                     CreativeAsset#fileName} must have a zip extension.
+     * This attribute is required.
      */
     public void setHtml5Asset(com.google.api.ads.admanager.axis.v202205.CreativeAsset html5Asset) {
         this.html5Asset = html5Asset;

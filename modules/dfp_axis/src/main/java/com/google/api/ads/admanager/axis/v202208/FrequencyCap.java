@@ -24,18 +24,16 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * Represents a limit on the number of times a single viewer can be
- * exposed to
- *             the same {@link LineItem} in a specified time period.
+ * exposed to the same {@link
+ *             LineItem} in a specified time period.
  */
 public class FrequencyCap  implements java.io.Serializable {
     /* The maximum number of impressions than can be served to a user
-     * within a
-     *                 specified time period. */
+     * within a specified time period. */
     private java.lang.Integer maxImpressions;
 
     /* The number of {@code FrequencyCap#timeUnit} to represent the
-     * total time
-     *                 period. */
+     * total time period. */
     private java.lang.Integer numTimeUnits;
 
     /* The unit of time for specifying the time period. */
@@ -67,8 +65,7 @@ public class FrequencyCap  implements java.io.Serializable {
      * Gets the maxImpressions value for this FrequencyCap.
      * 
      * @return maxImpressions   * The maximum number of impressions than can be served to a user
-     * within a
-     *                 specified time period.
+     * within a specified time period.
      */
     public java.lang.Integer getMaxImpressions() {
         return maxImpressions;
@@ -79,8 +76,7 @@ public class FrequencyCap  implements java.io.Serializable {
      * Sets the maxImpressions value for this FrequencyCap.
      * 
      * @param maxImpressions   * The maximum number of impressions than can be served to a user
-     * within a
-     *                 specified time period.
+     * within a specified time period.
      */
     public void setMaxImpressions(java.lang.Integer maxImpressions) {
         this.maxImpressions = maxImpressions;
@@ -91,8 +87,7 @@ public class FrequencyCap  implements java.io.Serializable {
      * Gets the numTimeUnits value for this FrequencyCap.
      * 
      * @return numTimeUnits   * The number of {@code FrequencyCap#timeUnit} to represent the
-     * total time
-     *                 period.
+     * total time period.
      */
     public java.lang.Integer getNumTimeUnits() {
         return numTimeUnits;
@@ -103,8 +98,7 @@ public class FrequencyCap  implements java.io.Serializable {
      * Sets the numTimeUnits value for this FrequencyCap.
      * 
      * @param numTimeUnits   * The number of {@code FrequencyCap#timeUnit} to represent the
-     * total time
-     *                 period.
+     * total time period.
      */
     public void setNumTimeUnits(java.lang.Integer numTimeUnits) {
         this.numTimeUnits = numTimeUnits;

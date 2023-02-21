@@ -25,10 +25,9 @@ public interface LineItemTemplateServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link LineItemTemplatePage} of {@link LineItemTemplate}
-     * objects
-     *         that satisfy the given {@link Statement#query}. The following
-     * fields are
-     *         supported for filtering:
+     * objects that satisfy the given
+     *         {@link Statement#query}. The following fields are supported
+     * for filtering:
      *         
      *         <table>
      *         <tr>

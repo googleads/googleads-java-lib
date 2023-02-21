@@ -31,9 +31,9 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
     /* Specifies the number of times a user's cookie must match the
      * segment rule before it's
      *                     associated with the audience segment. This is
-     * used in combination with
-     *                     {@link FirstPartyAudienceSegment#recencyDays}
-     * to determine eligibility of the association. This
+     * used in combination with {@link
+     *                     FirstPartyAudienceSegment#recencyDays} to determine
+     * eligibility of the association. This
      *                     attribute is required and can be between 1 and
      * 12. */
     private java.lang.Integer pageViews;
@@ -41,9 +41,9 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
     /* Specifies the number of days within which a user's cookie must
      * match the segment rule before
      *                     it's associated with the audience segment. This
-     * is used in combination with
-     *                     {@link FirstPartyAudienceSegment#pageViews} to
-     * determine eligibility of the association. This
+     * is used in combination with {@link
+     *                     FirstPartyAudienceSegment#pageViews} to determine
+     * eligibility of the association. This
      *                     attribute is required only if {@link FirstPartyAudienceSegment#pageViews}
      * is greater than 1.
      *                     When required, it can be between 1 and 90. */
@@ -120,9 +120,9 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
      * @return pageViews   * Specifies the number of times a user's cookie must match the
      * segment rule before it's
      *                     associated with the audience segment. This is
-     * used in combination with
-     *                     {@link FirstPartyAudienceSegment#recencyDays}
-     * to determine eligibility of the association. This
+     * used in combination with {@link
+     *                     FirstPartyAudienceSegment#recencyDays} to determine
+     * eligibility of the association. This
      *                     attribute is required and can be between 1 and
      * 12.
      */
@@ -137,9 +137,9 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
      * @param pageViews   * Specifies the number of times a user's cookie must match the
      * segment rule before it's
      *                     associated with the audience segment. This is
-     * used in combination with
-     *                     {@link FirstPartyAudienceSegment#recencyDays}
-     * to determine eligibility of the association. This
+     * used in combination with {@link
+     *                     FirstPartyAudienceSegment#recencyDays} to determine
+     * eligibility of the association. This
      *                     attribute is required and can be between 1 and
      * 12.
      */
@@ -154,9 +154,9 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
      * @return recencyDays   * Specifies the number of days within which a user's cookie must
      * match the segment rule before
      *                     it's associated with the audience segment. This
-     * is used in combination with
-     *                     {@link FirstPartyAudienceSegment#pageViews} to
-     * determine eligibility of the association. This
+     * is used in combination with {@link
+     *                     FirstPartyAudienceSegment#pageViews} to determine
+     * eligibility of the association. This
      *                     attribute is required only if {@link FirstPartyAudienceSegment#pageViews}
      * is greater than 1.
      *                     When required, it can be between 1 and 90.
@@ -172,9 +172,9 @@ public class RuleBasedFirstPartyAudienceSegmentSummary  extends com.google.api.a
      * @param recencyDays   * Specifies the number of days within which a user's cookie must
      * match the segment rule before
      *                     it's associated with the audience segment. This
-     * is used in combination with
-     *                     {@link FirstPartyAudienceSegment#pageViews} to
-     * determine eligibility of the association. This
+     * is used in combination with {@link
+     *                     FirstPartyAudienceSegment#pageViews} to determine
+     * eligibility of the association. This
      *                     attribute is required only if {@link FirstPartyAudienceSegment#pageViews}
      * is greater than 1.
      *                     When required, it can be between 1 and 90.

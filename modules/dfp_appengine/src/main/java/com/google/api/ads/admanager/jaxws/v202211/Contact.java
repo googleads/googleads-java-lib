@@ -23,10 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Contact} represents a person who is affiliated with a single
- *             {@link Company}. A contact can have a variety of contact information
- *             associated to it, and can be invited to view their company's orders, line
- *             items, creatives, and reports.
+ *             A {@code Contact} represents a person who is affiliated with a single {@link Company}. A contact
+ *             can have a variety of contact information associated to it, and can be invited to view their
+ *             company's orders, line items, creatives, and reports.
  *           
  * 
  * <p>Java class for Contact complex type.

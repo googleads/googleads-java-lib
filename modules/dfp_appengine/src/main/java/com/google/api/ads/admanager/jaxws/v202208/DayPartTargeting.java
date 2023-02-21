@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Modify the delivery times of line items for particular days of the week. By
- *             default, line items are served at all days and times.
+ *             Modify the delivery times of line items for particular days of the week. By default, line items
+ *             are served at all days and times.
  *           
  * 
  * <p>Java class for DayPartTargeting complex type.

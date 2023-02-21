@@ -24,10 +24,10 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Retrieves a page of the saved queries either created by or shared with the current user. Each
- *             {@link SavedQuery} in the page, if it is compatible with the current API version, will
- *             contain a {@link ReportQuery} object which can be optionally modified and used to create a
- *             {@link ReportJob}. This can then be passed to {@link ReportService#runReportJob}.
- *             The following fields are supported for filtering:
+ *             {@link SavedQuery} in the page, if it is compatible with the current API version, will contain
+ *             a {@link ReportQuery} object which can be optionally modified and used to create a {@link
+ *             ReportJob}. This can then be passed to {@link ReportService#runReportJob}. The following fields
+ *             are supported for filtering:
  *             
  *             <table>
  *             <tr>

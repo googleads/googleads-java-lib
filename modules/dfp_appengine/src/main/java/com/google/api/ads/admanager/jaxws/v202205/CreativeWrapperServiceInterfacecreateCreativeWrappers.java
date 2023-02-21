@@ -27,11 +27,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates a new {@code CreativeWrapper} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link CreativeWrapper#labelId}</li>
- *             <li>{@link CreativeWrapper#ordering}</li>
- *             <li>{@link CreativeWrapper#header} or {@link CreativeWrapper#footer}</li>
+ *             <li>{@link CreativeWrapper#labelId}
+ *             <li>{@link CreativeWrapper#ordering}
+ *             <li>{@link CreativeWrapper#header} or {@link CreativeWrapper#footer}
  *             </ul>
  *           
  * 

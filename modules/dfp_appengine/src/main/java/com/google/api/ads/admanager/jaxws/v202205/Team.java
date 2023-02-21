@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Team} defines a grouping of users and what entities they have access
- *             to. Users are added to teams with {@link UserTeamAssociation} objects.
+ *             A {@code Team} defines a grouping of users and what entities they have access to. Users are added
+ *             to teams with {@link UserTeamAssociation} objects.
  *           
  * 
  * <p>Java class for Team complex type.

@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Ad rule slot with optimized podding. Optimized pods are defined by a
- *             {@link BaseAdRuleSlot#maxPodDuration} and a {@link BaseAdRuleSlot#maxAdsInPod}, and the ad
- *             server chooses the best ads for the alloted duration.
+ *             Ad rule slot with optimized podding. Optimized pods are defined by a {@link
+ *             BaseAdRuleSlot#maxPodDuration} and a {@link BaseAdRuleSlot#maxAdsInPod}, and the ad server
+ *             chooses the best ads for the alloted duration.
  *           
  * 
  * <p>Java class for OptimizedPoddingAdRuleSlot complex type.

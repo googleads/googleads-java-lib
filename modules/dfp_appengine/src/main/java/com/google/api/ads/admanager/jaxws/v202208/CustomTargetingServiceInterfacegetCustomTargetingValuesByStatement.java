@@ -23,29 +23,23 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets a {@link CustomTargetingValuePage} of {@link CustomTargetingValue}
- *             objects that satisfy the given {@link Statement#query}.
- *             <p>
- *             The {@code WHERE} clause in the {@link Statement#query} must always contain
- *             {@link CustomTargetingValue#customTargetingKeyId} as one of its columns in
- *             a way that it is AND'ed with the rest of the query. So, if you want to
- *             retrieve values for a known set of key ids, valid {@link Statement#query}
- *             would look like:
- *             </p>
+ *             Gets a {@link CustomTargetingValuePage} of {@link CustomTargetingValue} objects that satisfy
+ *             the given {@link Statement#query}.
+ *             
+ *             <p>The {@code WHERE} clause in the {@link Statement#query} must always contain {@link
+ *             CustomTargetingValue#customTargetingKeyId} as one of its columns in a way that it is AND'ed
+ *             with the rest of the query. So, if you want to retrieve values for a known set of key ids,
+ *             valid {@link Statement#query} would look like:
+ *             
  *             <ol>
- *             <li>
- *             "WHERE customTargetingKeyId IN ('17','18','19')" retrieves all values that
- *             are associated with keys having ids 17, 18, 19.
- *             </li>
- *             <li>
- *             "WHERE customTargetingKeyId = '17' AND name = 'red'" retrieves values that
- *             are associated with keys having id 17 and value name is 'red'.
- *             </li>
+ *             <li>"WHERE customTargetingKeyId IN ('17','18','19')" retrieves all values that are associated
+ *             with keys having ids 17, 18, 19.
+ *             <li>"WHERE customTargetingKeyId = '17' AND name = 'red'" retrieves values that are associated
+ *             with keys having id 17 and value name is 'red'.
  *             </ol>
- *             </p>
- *             <p>
- *             The following fields are supported for filtering:
- *             </p>
+ *             
+ *             <p>The following fields are supported for filtering:
+ *             
  *             <table>
  *             <tr>
  *             <th scope="col">PQL Property</th>

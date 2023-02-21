@@ -27,13 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link LiveStreamEvent} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link LiveStreamEvent#name}</li>
- *             <li>{@link LiveStreamEvent#startDateTime}</li>
- *             <li>{@link LiveStreamEvent#endDateTime}</li>
- *             <li>{@link LiveStreamEvent#contentUrls}</li>
- *             <li>{@link LiveStreamEvent#adTags}</li>
+ *             <li>{@link LiveStreamEvent#name}
+ *             <li>{@link LiveStreamEvent#startDateTime}
+ *             <li>{@link LiveStreamEvent#endDateTime}
+ *             <li>{@link LiveStreamEvent#contentUrls}
+ *             <li>{@link LiveStreamEvent#adTags}
  *             </ul>
  *           
  * 

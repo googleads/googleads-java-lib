@@ -24,13 +24,12 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A {@link CustomFieldValue} for a {@link CustomField} that has a
- * {@link CustomField#dataType}
- *             of {@link CustomFieldDataType#DROP_DOWN}
+ * {@link CustomField#dataType} of
+ *             {@link CustomFieldDataType#DROP_DOWN}
  */
 public class DropDownCustomFieldValue  extends com.google.api.ads.admanager.axis.v202208.BaseCustomFieldValue  implements java.io.Serializable {
     /* The {@link CustomFieldOption#id ID} of the {@link CustomFieldOption}
-     * for
-     *                     this value. */
+     * for this value. */
     private java.lang.Long customFieldOptionId;
 
     public DropDownCustomFieldValue() {
@@ -57,8 +56,7 @@ public class DropDownCustomFieldValue  extends com.google.api.ads.admanager.axis
      * Gets the customFieldOptionId value for this DropDownCustomFieldValue.
      * 
      * @return customFieldOptionId   * The {@link CustomFieldOption#id ID} of the {@link CustomFieldOption}
-     * for
-     *                     this value.
+     * for this value.
      */
     public java.lang.Long getCustomFieldOptionId() {
         return customFieldOptionId;
@@ -69,8 +67,7 @@ public class DropDownCustomFieldValue  extends com.google.api.ads.admanager.axis
      * Sets the customFieldOptionId value for this DropDownCustomFieldValue.
      * 
      * @param customFieldOptionId   * The {@link CustomFieldOption#id ID} of the {@link CustomFieldOption}
-     * for
-     *                     this value.
+     * for this value.
      */
     public void setCustomFieldOptionId(java.lang.Long customFieldOptionId) {
         this.customFieldOptionId = customFieldOptionId;

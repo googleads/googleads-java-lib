@@ -24,8 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents operating systems that are being targeted or excluded by the
- *             {@link LineItem}.
+ *             Represents operating systems that are being targeted or excluded by the {@link LineItem}.
  *           
  * 
  * <p>Java class for OperatingSystemTargeting complex type.

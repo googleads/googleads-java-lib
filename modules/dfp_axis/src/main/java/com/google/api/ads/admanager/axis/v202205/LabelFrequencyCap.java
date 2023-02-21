@@ -24,18 +24,16 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * A {@code LabelFrequencyCap} assigns a frequency cap to a label.
- * The
- *             frequency cap will limit the cumulative number of impressions
- * of any ad
- *             units with this label that may be shown to a particular
- * user over a time
- *             unit.
+ * The frequency cap will limit the
+ *             cumulative number of impressions of any ad units with
+ * this label that may be shown to a
+ *             particular user over a time unit.
  */
 public class LabelFrequencyCap  implements java.io.Serializable {
-    /* The frequency cap to be applied with this label. */
+    /* The frequency cap to be applied with this label. * */
     private com.google.api.ads.admanager.axis.v202205.FrequencyCap frequencyCap;
 
-    /* ID of the label being capped on the {@link AdUnit}. */
+    /* ID of the label being capped on the {@link AdUnit}. * */
     private java.lang.Long labelId;
 
     public LabelFrequencyCap() {
@@ -60,7 +58,7 @@ public class LabelFrequencyCap  implements java.io.Serializable {
     /**
      * Gets the frequencyCap value for this LabelFrequencyCap.
      * 
-     * @return frequencyCap   * The frequency cap to be applied with this label.
+     * @return frequencyCap   * The frequency cap to be applied with this label. *
      */
     public com.google.api.ads.admanager.axis.v202205.FrequencyCap getFrequencyCap() {
         return frequencyCap;
@@ -70,7 +68,7 @@ public class LabelFrequencyCap  implements java.io.Serializable {
     /**
      * Sets the frequencyCap value for this LabelFrequencyCap.
      * 
-     * @param frequencyCap   * The frequency cap to be applied with this label.
+     * @param frequencyCap   * The frequency cap to be applied with this label. *
      */
     public void setFrequencyCap(com.google.api.ads.admanager.axis.v202205.FrequencyCap frequencyCap) {
         this.frequencyCap = frequencyCap;
@@ -80,7 +78,7 @@ public class LabelFrequencyCap  implements java.io.Serializable {
     /**
      * Gets the labelId value for this LabelFrequencyCap.
      * 
-     * @return labelId   * ID of the label being capped on the {@link AdUnit}.
+     * @return labelId   * ID of the label being capped on the {@link AdUnit}. *
      */
     public java.lang.Long getLabelId() {
         return labelId;
@@ -90,7 +88,7 @@ public class LabelFrequencyCap  implements java.io.Serializable {
     /**
      * Sets the labelId value for this LabelFrequencyCap.
      * 
-     * @param labelId   * ID of the label being capped on the {@link AdUnit}.
+     * @param labelId   * ID of the label being capped on the {@link AdUnit}. *
      */
     public void setLabelId(java.lang.Long labelId) {
         this.labelId = labelId;

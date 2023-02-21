@@ -25,12 +25,11 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code CreativePlaceholder} describes a slot that a creative is expected to
- *             fill. This is used primarily to help in forecasting, and also to validate
- *             that the correct creatives are associated with the line item. A
- *             {@code CreativePlaceholder} must contain a size, and it can optionally
- *             contain companions. Companions are only valid if the line item's environment
- *             type is {@link EnvironmentType#VIDEO_PLAYER}.
+ *             A {@code CreativePlaceholder} describes a slot that a creative is expected to fill. This is used
+ *             primarily to help in forecasting, and also to validate that the correct creatives are associated
+ *             with the line item. A {@code CreativePlaceholder} must contain a size, and it can optionally
+ *             contain companions. Companions are only valid if the line item's environment type is {@link
+ *             EnvironmentType#VIDEO_PLAYER}.
  *           
  * 
  * <p>Java class for CreativePlaceholder complex type.

@@ -30,22 +30,22 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class LineItemActivityAssociation  implements java.io.Serializable {
     /* The ID of the {@link Activity} to which the {@link LineItem}
-     * should be
-     *                 associated. This attribute is required. */
+     * should be associated. This
+     *                 attribute is required. */
     private java.lang.Integer activityId;
 
     /* The amount of money to attribute per click through conversion.
-     * This attribute is
-     *                 required for creating a {@code LineItemActivityAssociation}.
-     * The currency code is readonly
-     *                 and should match the {@link LineItem}. */
+     * This attribute is required for
+     *                 creating a {@code LineItemActivityAssociation}. The
+     * currency code is readonly and should match
+     *                 the {@link LineItem}. */
     private com.google.api.ads.admanager.axis.v202208.Money clickThroughConversionCost;
 
     /* The amount of money to attribute per view through conversion.
-     * This attribute is
-     *                 required for creating a {@code LineItemActivityAssociation}.
-     * The currency code is readonly
-     *                 and should match the {@link LineItem}. */
+     * This attribute is required for
+     *                 creating a {@code LineItemActivityAssociation}. The
+     * currency code is readonly and should match
+     *                 the {@link LineItem}. */
     private com.google.api.ads.admanager.axis.v202208.Money viewThroughConversionCost;
 
     public LineItemActivityAssociation() {
@@ -74,8 +74,8 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
      * Gets the activityId value for this LineItemActivityAssociation.
      * 
      * @return activityId   * The ID of the {@link Activity} to which the {@link LineItem}
-     * should be
-     *                 associated. This attribute is required.
+     * should be associated. This
+     *                 attribute is required.
      */
     public java.lang.Integer getActivityId() {
         return activityId;
@@ -86,8 +86,8 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
      * Sets the activityId value for this LineItemActivityAssociation.
      * 
      * @param activityId   * The ID of the {@link Activity} to which the {@link LineItem}
-     * should be
-     *                 associated. This attribute is required.
+     * should be associated. This
+     *                 attribute is required.
      */
     public void setActivityId(java.lang.Integer activityId) {
         this.activityId = activityId;
@@ -98,10 +98,10 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
      * Gets the clickThroughConversionCost value for this LineItemActivityAssociation.
      * 
      * @return clickThroughConversionCost   * The amount of money to attribute per click through conversion.
-     * This attribute is
-     *                 required for creating a {@code LineItemActivityAssociation}.
-     * The currency code is readonly
-     *                 and should match the {@link LineItem}.
+     * This attribute is required for
+     *                 creating a {@code LineItemActivityAssociation}. The
+     * currency code is readonly and should match
+     *                 the {@link LineItem}.
      */
     public com.google.api.ads.admanager.axis.v202208.Money getClickThroughConversionCost() {
         return clickThroughConversionCost;
@@ -112,10 +112,10 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
      * Sets the clickThroughConversionCost value for this LineItemActivityAssociation.
      * 
      * @param clickThroughConversionCost   * The amount of money to attribute per click through conversion.
-     * This attribute is
-     *                 required for creating a {@code LineItemActivityAssociation}.
-     * The currency code is readonly
-     *                 and should match the {@link LineItem}.
+     * This attribute is required for
+     *                 creating a {@code LineItemActivityAssociation}. The
+     * currency code is readonly and should match
+     *                 the {@link LineItem}.
      */
     public void setClickThroughConversionCost(com.google.api.ads.admanager.axis.v202208.Money clickThroughConversionCost) {
         this.clickThroughConversionCost = clickThroughConversionCost;
@@ -126,10 +126,10 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
      * Gets the viewThroughConversionCost value for this LineItemActivityAssociation.
      * 
      * @return viewThroughConversionCost   * The amount of money to attribute per view through conversion.
-     * This attribute is
-     *                 required for creating a {@code LineItemActivityAssociation}.
-     * The currency code is readonly
-     *                 and should match the {@link LineItem}.
+     * This attribute is required for
+     *                 creating a {@code LineItemActivityAssociation}. The
+     * currency code is readonly and should match
+     *                 the {@link LineItem}.
      */
     public com.google.api.ads.admanager.axis.v202208.Money getViewThroughConversionCost() {
         return viewThroughConversionCost;
@@ -140,10 +140,10 @@ public class LineItemActivityAssociation  implements java.io.Serializable {
      * Sets the viewThroughConversionCost value for this LineItemActivityAssociation.
      * 
      * @param viewThroughConversionCost   * The amount of money to attribute per view through conversion.
-     * This attribute is
-     *                 required for creating a {@code LineItemActivityAssociation}.
-     * The currency code is readonly
-     *                 and should match the {@link LineItem}.
+     * This attribute is required for
+     *                 creating a {@code LineItemActivityAssociation}. The
+     * currency code is readonly and should match
+     *                 the {@link LineItem}.
      */
     public void setViewThroughConversionCost(com.google.api.ads.admanager.axis.v202208.Money viewThroughConversionCost) {
         this.viewThroughConversionCost = viewThroughConversionCost;

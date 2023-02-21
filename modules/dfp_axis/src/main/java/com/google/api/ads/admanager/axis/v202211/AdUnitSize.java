@@ -24,11 +24,11 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * An {@code AdUnitSize} represents the size of an ad in an ad unit.
- * This also represents
- *             the environment and companions of a particular ad in an
- * ad unit. In most cases, it is
- *             a simple size with just a width and a height (sometimes
- * representing an aspect ratio).
+ * This also represents the
+ *             environment and companions of a particular ad in an ad
+ * unit. In most cases, it is a simple size
+ *             with just a width and a height (sometimes representing
+ * an aspect ratio).
  */
 public class AdUnitSize  implements java.io.Serializable {
     /* The permissible creative size that can be served inside this
@@ -36,21 +36,19 @@ public class AdUnitSize  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.Size size;
 
     /* The environment type of the ad unit size. The default value
-     * is
-     *                 {@link EnvironmentType#BROWSER}. */
+     * is {@link EnvironmentType#BROWSER}. */
     private com.google.api.ads.admanager.axis.v202211.EnvironmentType environmentType;
 
-    /* The companions for this ad unit size.
-     *                 Companions are only valid if the environment is {@link
-     * EnvironmentType#VIDEO_PLAYER}.
-     *                 If the environment is {@link EnvironmentType#BROWSER}
-     * including companions
-     *                 results in an error. */
+    /* The companions for this ad unit size. Companions are only valid
+     * if the environment is {@link
+     *                 EnvironmentType#VIDEO_PLAYER}. If the environment
+     * is {@link EnvironmentType#BROWSER} including
+     *                 companions results in an error. */
     private com.google.api.ads.admanager.axis.v202211.AdUnitSize[] companions;
 
     /* The full (including companion sizes, if applicable) display
-     * string of the size,
-     *                 e.g. {@code "300x250"} or {@code "300x250v (180x150)"} */
+     * string of the size, e.g. {@code
+     *                 "300x250"} or {@code "300x250v (180x150)"} */
     private java.lang.String fullDisplayString;
 
     /* Whether the inventory size is audio. If set to true, {@code
@@ -114,8 +112,7 @@ public class AdUnitSize  implements java.io.Serializable {
      * Gets the environmentType value for this AdUnitSize.
      * 
      * @return environmentType   * The environment type of the ad unit size. The default value
-     * is
-     *                 {@link EnvironmentType#BROWSER}.
+     * is {@link EnvironmentType#BROWSER}.
      */
     public com.google.api.ads.admanager.axis.v202211.EnvironmentType getEnvironmentType() {
         return environmentType;
@@ -126,8 +123,7 @@ public class AdUnitSize  implements java.io.Serializable {
      * Sets the environmentType value for this AdUnitSize.
      * 
      * @param environmentType   * The environment type of the ad unit size. The default value
-     * is
-     *                 {@link EnvironmentType#BROWSER}.
+     * is {@link EnvironmentType#BROWSER}.
      */
     public void setEnvironmentType(com.google.api.ads.admanager.axis.v202211.EnvironmentType environmentType) {
         this.environmentType = environmentType;
@@ -137,12 +133,11 @@ public class AdUnitSize  implements java.io.Serializable {
     /**
      * Gets the companions value for this AdUnitSize.
      * 
-     * @return companions   * The companions for this ad unit size.
-     *                 Companions are only valid if the environment is {@link
-     * EnvironmentType#VIDEO_PLAYER}.
-     *                 If the environment is {@link EnvironmentType#BROWSER}
-     * including companions
-     *                 results in an error.
+     * @return companions   * The companions for this ad unit size. Companions are only valid
+     * if the environment is {@link
+     *                 EnvironmentType#VIDEO_PLAYER}. If the environment
+     * is {@link EnvironmentType#BROWSER} including
+     *                 companions results in an error.
      */
     public com.google.api.ads.admanager.axis.v202211.AdUnitSize[] getCompanions() {
         return companions;
@@ -152,12 +147,11 @@ public class AdUnitSize  implements java.io.Serializable {
     /**
      * Sets the companions value for this AdUnitSize.
      * 
-     * @param companions   * The companions for this ad unit size.
-     *                 Companions are only valid if the environment is {@link
-     * EnvironmentType#VIDEO_PLAYER}.
-     *                 If the environment is {@link EnvironmentType#BROWSER}
-     * including companions
-     *                 results in an error.
+     * @param companions   * The companions for this ad unit size. Companions are only valid
+     * if the environment is {@link
+     *                 EnvironmentType#VIDEO_PLAYER}. If the environment
+     * is {@link EnvironmentType#BROWSER} including
+     *                 companions results in an error.
      */
     public void setCompanions(com.google.api.ads.admanager.axis.v202211.AdUnitSize[] companions) {
         this.companions = companions;
@@ -176,8 +170,8 @@ public class AdUnitSize  implements java.io.Serializable {
      * Gets the fullDisplayString value for this AdUnitSize.
      * 
      * @return fullDisplayString   * The full (including companion sizes, if applicable) display
-     * string of the size,
-     *                 e.g. {@code "300x250"} or {@code "300x250v (180x150)"}
+     * string of the size, e.g. {@code
+     *                 "300x250"} or {@code "300x250v (180x150)"}
      */
     public java.lang.String getFullDisplayString() {
         return fullDisplayString;
@@ -188,8 +182,8 @@ public class AdUnitSize  implements java.io.Serializable {
      * Sets the fullDisplayString value for this AdUnitSize.
      * 
      * @param fullDisplayString   * The full (including companion sizes, if applicable) display
-     * string of the size,
-     *                 e.g. {@code "300x250"} or {@code "300x250v (180x150)"}
+     * string of the size, e.g. {@code
+     *                 "300x250"} or {@code "300x250v (180x150)"}
      */
     public void setFullDisplayString(java.lang.String fullDisplayString) {
         this.fullDisplayString = fullDisplayString;

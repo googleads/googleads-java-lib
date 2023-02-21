@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} that is created by a Rich Media Studio. You cannot create this creative,
- *             but you can update some fields of this creative.
+ *             A {@code Creative} that is created by a Rich Media Studio. You cannot create this creative, but
+ *             you can update some fields of this creative.
  *           
  * 
  * <p>Java class for RichMediaStudioCreative complex type.

@@ -30,11 +30,9 @@ public interface LabelServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link LabelPage} of {@link Label} objects that satisfy
-     * the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
-     *         
+     * the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>

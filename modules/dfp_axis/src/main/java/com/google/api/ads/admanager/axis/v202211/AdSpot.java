@@ -65,8 +65,8 @@ public class AdSpot  implements java.io.Serializable {
     private java.lang.Boolean flexible;
 
     /* The maximum total duration for this {@link AdSpot}. This field
-     * is optional, defaults to 0,
-     *                 and supports precision to the nearest second. */
+     * is optional, defaults to 0, and
+     *                 supports precision to the nearest second. */
     private java.lang.Long maxDurationMillis;
 
     /* The maximum number of ads allowed in the {@link AdSpot}. This
@@ -287,8 +287,8 @@ public class AdSpot  implements java.io.Serializable {
      * Gets the maxDurationMillis value for this AdSpot.
      * 
      * @return maxDurationMillis   * The maximum total duration for this {@link AdSpot}. This field
-     * is optional, defaults to 0,
-     *                 and supports precision to the nearest second.
+     * is optional, defaults to 0, and
+     *                 supports precision to the nearest second.
      */
     public java.lang.Long getMaxDurationMillis() {
         return maxDurationMillis;
@@ -299,8 +299,8 @@ public class AdSpot  implements java.io.Serializable {
      * Sets the maxDurationMillis value for this AdSpot.
      * 
      * @param maxDurationMillis   * The maximum total duration for this {@link AdSpot}. This field
-     * is optional, defaults to 0,
-     *                 and supports precision to the nearest second.
+     * is optional, defaults to 0, and
+     *                 supports precision to the nearest second.
      */
     public void setMaxDurationMillis(java.lang.Long maxDurationMillis) {
         this.maxDurationMillis = maxDurationMillis;

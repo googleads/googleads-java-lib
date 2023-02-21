@@ -30,15 +30,15 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
     private java.lang.Long creativeTemplateId;
 
     /* {@code true} if this template instantiated creative is interstitial.
-     * This attribute is read-only and is assigned by Google based on
-     *                     the creative template. */
+     * This attribute is
+     *                     read-only and is assigned by Google based on the
+     * creative template. */
     private java.lang.Boolean isInterstitial;
 
     /* {@code true} if this template instantiated creative is eligible
-     * for native
-     *                     adserving. This attribute is read-only and is
-     * assigned by Google based on
-     *                     the creative template. */
+     * for native adserving. This
+     *                     attribute is read-only and is assigned by Google
+     * based on the creative template. */
     private java.lang.Boolean isNativeEligible;
 
     /* Whether the {@link Creative} is compatible for SafeFrame rendering.
@@ -48,11 +48,10 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
     private java.lang.Boolean isSafeFrameCompatible;
 
     /* The URL the user is directed to if they click on the creative.
-     * This
-     *                     attribute is only required if the template snippet
-     * contains the {@code %u}
-     *                     or {@code %%DEST_URL%%} macro. It has a maximum
-     * length of 1024 characters. */
+     * This attribute is only required
+     *                     if the template snippet contains the {@code %u}
+     * or {@code %%DEST_URL%%} macro. It has a maximum
+     *                     length of 1024 characters. */
     private java.lang.String destinationUrl;
 
     /* Stores values of {@link CreativeTemplateVariable} in the {@link
@@ -169,8 +168,9 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
      * Gets the isInterstitial value for this TemplateCreative.
      * 
      * @return isInterstitial   * {@code true} if this template instantiated creative is interstitial.
-     * This attribute is read-only and is assigned by Google based on
-     *                     the creative template.
+     * This attribute is
+     *                     read-only and is assigned by Google based on the
+     * creative template.
      */
     public java.lang.Boolean getIsInterstitial() {
         return isInterstitial;
@@ -181,8 +181,9 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
      * Sets the isInterstitial value for this TemplateCreative.
      * 
      * @param isInterstitial   * {@code true} if this template instantiated creative is interstitial.
-     * This attribute is read-only and is assigned by Google based on
-     *                     the creative template.
+     * This attribute is
+     *                     read-only and is assigned by Google based on the
+     * creative template.
      */
     public void setIsInterstitial(java.lang.Boolean isInterstitial) {
         this.isInterstitial = isInterstitial;
@@ -193,10 +194,9 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
      * Gets the isNativeEligible value for this TemplateCreative.
      * 
      * @return isNativeEligible   * {@code true} if this template instantiated creative is eligible
-     * for native
-     *                     adserving. This attribute is read-only and is
-     * assigned by Google based on
-     *                     the creative template.
+     * for native adserving. This
+     *                     attribute is read-only and is assigned by Google
+     * based on the creative template.
      */
     public java.lang.Boolean getIsNativeEligible() {
         return isNativeEligible;
@@ -207,10 +207,9 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
      * Sets the isNativeEligible value for this TemplateCreative.
      * 
      * @param isNativeEligible   * {@code true} if this template instantiated creative is eligible
-     * for native
-     *                     adserving. This attribute is read-only and is
-     * assigned by Google based on
-     *                     the creative template.
+     * for native adserving. This
+     *                     attribute is read-only and is assigned by Google
+     * based on the creative template.
      */
     public void setIsNativeEligible(java.lang.Boolean isNativeEligible) {
         this.isNativeEligible = isNativeEligible;
@@ -247,11 +246,10 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
      * Gets the destinationUrl value for this TemplateCreative.
      * 
      * @return destinationUrl   * The URL the user is directed to if they click on the creative.
-     * This
-     *                     attribute is only required if the template snippet
-     * contains the {@code %u}
-     *                     or {@code %%DEST_URL%%} macro. It has a maximum
-     * length of 1024 characters.
+     * This attribute is only required
+     *                     if the template snippet contains the {@code %u}
+     * or {@code %%DEST_URL%%} macro. It has a maximum
+     *                     length of 1024 characters.
      */
     public java.lang.String getDestinationUrl() {
         return destinationUrl;
@@ -262,11 +260,10 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202211
      * Sets the destinationUrl value for this TemplateCreative.
      * 
      * @param destinationUrl   * The URL the user is directed to if they click on the creative.
-     * This
-     *                     attribute is only required if the template snippet
-     * contains the {@code %u}
-     *                     or {@code %%DEST_URL%%} macro. It has a maximum
-     * length of 1024 characters.
+     * This attribute is only required
+     *                     if the template snippet contains the {@code %u}
+     * or {@code %%DEST_URL%%} macro. It has a maximum
+     *                     length of 1024 characters.
      */
     public void setDestinationUrl(java.lang.String destinationUrl) {
         this.destinationUrl = destinationUrl;

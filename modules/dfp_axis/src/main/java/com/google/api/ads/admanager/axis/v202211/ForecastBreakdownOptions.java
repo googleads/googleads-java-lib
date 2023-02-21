@@ -39,9 +39,9 @@ public class ForecastBreakdownOptions  implements java.io.Serializable {
      *                 order. */
     private com.google.api.ads.admanager.axis.v202211.DateTime[] timeWindows;
 
-    /* For each time window, these are the breakdown targets.
-     *                 If none specified, the targeting of the forecasted
-     * {@link LineItem} is assumed. */
+    /* For each time window, these are the breakdown targets. If none
+     * specified, the targeting of the
+     *                 forecasted {@link LineItem} is assumed. */
     private com.google.api.ads.admanager.axis.v202211.ForecastBreakdownTarget[] targets;
 
     public ForecastBreakdownOptions() {
@@ -114,9 +114,9 @@ public class ForecastBreakdownOptions  implements java.io.Serializable {
     /**
      * Gets the targets value for this ForecastBreakdownOptions.
      * 
-     * @return targets   * For each time window, these are the breakdown targets.
-     *                 If none specified, the targeting of the forecasted
-     * {@link LineItem} is assumed.
+     * @return targets   * For each time window, these are the breakdown targets. If none
+     * specified, the targeting of the
+     *                 forecasted {@link LineItem} is assumed.
      */
     public com.google.api.ads.admanager.axis.v202211.ForecastBreakdownTarget[] getTargets() {
         return targets;
@@ -126,9 +126,9 @@ public class ForecastBreakdownOptions  implements java.io.Serializable {
     /**
      * Sets the targets value for this ForecastBreakdownOptions.
      * 
-     * @param targets   * For each time window, these are the breakdown targets.
-     *                 If none specified, the targeting of the forecasted
-     * {@link LineItem} is assumed.
+     * @param targets   * For each time window, these are the breakdown targets. If none
+     * specified, the targeting of the
+     *                 forecasted {@link LineItem} is assumed.
      */
     public void setTargets(com.google.api.ads.admanager.axis.v202211.ForecastBreakdownTarget[] targets) {
         this.targets = targets;

@@ -23,9 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets a {@code TeamPage} of {@code Team} objects that satisfy the
- *             given {@link Statement#query}. The following fields are supported for
- *             filtering:
+ *             Gets a {@code TeamPage} of {@code Team} objects that satisfy the given {@link Statement#query}.
+ *             The following fields are supported for filtering:
  *             
  *             <table>
  *             <tr>

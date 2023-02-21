@@ -22,10 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents a mobile carrier.
- *             Carrier targeting is only available to Ad Manager mobile publishers.
- *             For a list of current mobile carriers, you can use
- *             {@link PublisherQueryLanguageService#mobile_carrier}.
+ *             Represents a mobile carrier. Carrier targeting is only available to Ad Manager mobile publishers.
+ *             For a list of current mobile carriers, you can use {@link
+ *             PublisherQueryLanguageService#mobile_carrier}.
  *           
  * 
  * <p>Java class for MobileCarrier complex type.

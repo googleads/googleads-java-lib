@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The {@code BuyerUserListTargeting} associated with a programmatic {@link LineItem}
- *             or {@link ProposalLineItem} object.
+ *             The {@code BuyerUserListTargeting} associated with a programmatic {@link LineItem} or {@link
+ *             ProposalLineItem} object.
  *           
  * 
  * <p>Java class for BuyerUserListTargeting complex type.

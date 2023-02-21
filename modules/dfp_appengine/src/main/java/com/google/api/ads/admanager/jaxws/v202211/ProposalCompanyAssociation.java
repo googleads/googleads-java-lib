@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code ProposalCompanyAssociation} represents a {@link Company} associated with the
- *             {@link Proposal} and a set of {@link Contact} objects belonging to the company.
+ *             A {@code ProposalCompanyAssociation} represents a {@link Company} associated with the {@link
+ *             Proposal} and a set of {@link Contact} objects belonging to the company.
  *           
  * 
  * <p>Java class for ProposalCompanyAssociation complex type.

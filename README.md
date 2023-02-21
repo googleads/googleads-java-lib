@@ -108,8 +108,8 @@ are in the package `com.google.api.ads.adwords.{version}`.
     `clientSecret`, and `refreshToken` for now. You'll set those in the next
     step.
 
-    *   [AdWords ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/resources/ads.properties)
-    *   [Ad Manager ads.properties](https://github.com/googleads/googleads-java-lib/blob/master/examples/admanager_axis/src/main/resources/ads.properties)
+    *   [AdWords ads.properties](https://github.com/googleads/googleads-java-lib/blob/main/examples/adwords_axis/src/main/resources/ads.properties)
+    *   [Ad Manager ads.properties](https://github.com/googleads/googleads-java-lib/blob/main/examples/admanager_axis/src/main/resources/ads.properties)
 
 3.  Setup your OAuth2 credentials.
 
@@ -292,7 +292,7 @@ If necessary, set this up in code by doing the following:
 
 ## Extensions
 
-*   The [AdWords API RateLimiter](https://github.com/googleads/googleads-java-lib/tree/master/extensions/adwords_rate_limiter)
+*   The [AdWords API RateLimiter](https://github.com/googleads/googleads-java-lib/tree/main/extensions/adwords_rate_limiter)
     contains a reference implementation for proper handling of rate limits,
     as described in the [Rate Limits guide](https://developers.google.com/adwords/api/docs/guides/rate-limits).
 

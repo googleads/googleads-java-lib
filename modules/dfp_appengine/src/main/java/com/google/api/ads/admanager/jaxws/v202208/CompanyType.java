@@ -48,8 +48,8 @@ public enum CompanyType {
 
     /**
      * 
-     *                 The publisher's own advertiser. When no outside advertiser buys its
-     *                 inventory, the publisher may run its own advertising campaigns.
+     *                 The publisher's own advertiser. When no outside advertiser buys its inventory, the publisher
+     *                 may run its own advertising campaigns.
      *               
      * 
      */
@@ -65,9 +65,8 @@ public enum CompanyType {
 
     /**
      * 
-     *                 A business entity that buys publisher inventory to run advertising
-     *                 campaigns. An advertiser is optionally associated with one or more
-     *                 agencies.
+     *                 A business entity that buys publisher inventory to run advertising campaigns. An advertiser
+     *                 is optionally associated with one or more agencies.
      *               
      * 
      */
@@ -75,8 +74,8 @@ public enum CompanyType {
 
     /**
      * 
-     *                 A business entity that offers services, such as advertising creation,
-     *                 placement, and management, to advertisers.
+     *                 A business entity that offers services, such as advertising creation, placement, and
+     *                 management, to advertisers.
      *               
      * 
      */
@@ -116,8 +115,7 @@ public enum CompanyType {
 
     /**
      * 
-     *                 The value returned if the actual value is not exposed by the requested API
-     *                 version.
+     *                 The value returned if the actual value is not exposed by the requested API version.
      *               
      * 
      */

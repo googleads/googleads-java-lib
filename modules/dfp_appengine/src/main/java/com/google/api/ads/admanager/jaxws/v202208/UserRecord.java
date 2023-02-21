@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The {@code UserRecord} represents the base class from which a {@code User} is
- *             derived.
+ *             The {@code UserRecord} represents the base class from which a {@code User} is derived.
  *           
  * 
  * <p>Java class for UserRecord complex type.

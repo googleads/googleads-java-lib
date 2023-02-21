@@ -24,30 +24,28 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * A {@code Team} defines a grouping of users and what entities they
- * have access
- *             to. Users are added to teams with {@link UserTeamAssociation}
- * objects.
+ * have access to. Users are added
+ *             to teams with {@link UserTeamAssociation} objects.
  */
 public class Team  implements java.io.Serializable {
     /* The unique ID of the {@code Team}. This value is readonly and
-     * is assigned
-     *                 by Google. Teams that are created by Google will have
-     * negative IDs. */
+     * is assigned by Google. Teams that
+     *                 are created by Google will have negative IDs. */
     private java.lang.Long id;
 
     /* The name of the {@code Team}. This value is required to create
-     * a team and
-     *                 has a maximum length of 106 characters. */
+     * a team and has a maximum length
+     *                 of 106 characters. */
     private java.lang.String name;
 
     /* The description of the {@code Team}. This value is optional
-     * and has a
-     *                 maximum length of 255 characters. */
+     * and has a maximum length of 255
+     *                 characters. */
     private java.lang.String description;
 
     /* The status of the {@link Team}. This value can be {@link TeamStatus#ACTIVE}
-     * (default) or
-     *                 {@link TeamStatus#INACTIVE} and determines the visibility
+     * (default) or {@link
+     *                 TeamStatus#INACTIVE} and determines the visibility
      * of the team in the UI. */
     private com.google.api.ads.admanager.axis.v202205.TeamStatus status;
 
@@ -104,9 +102,8 @@ public class Team  implements java.io.Serializable {
      * Gets the id value for this Team.
      * 
      * @return id   * The unique ID of the {@code Team}. This value is readonly and
-     * is assigned
-     *                 by Google. Teams that are created by Google will have
-     * negative IDs.
+     * is assigned by Google. Teams that
+     *                 are created by Google will have negative IDs.
      */
     public java.lang.Long getId() {
         return id;
@@ -117,9 +114,8 @@ public class Team  implements java.io.Serializable {
      * Sets the id value for this Team.
      * 
      * @param id   * The unique ID of the {@code Team}. This value is readonly and
-     * is assigned
-     *                 by Google. Teams that are created by Google will have
-     * negative IDs.
+     * is assigned by Google. Teams that
+     *                 are created by Google will have negative IDs.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -130,8 +126,8 @@ public class Team  implements java.io.Serializable {
      * Gets the name value for this Team.
      * 
      * @return name   * The name of the {@code Team}. This value is required to create
-     * a team and
-     *                 has a maximum length of 106 characters.
+     * a team and has a maximum length
+     *                 of 106 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -142,8 +138,8 @@ public class Team  implements java.io.Serializable {
      * Sets the name value for this Team.
      * 
      * @param name   * The name of the {@code Team}. This value is required to create
-     * a team and
-     *                 has a maximum length of 106 characters.
+     * a team and has a maximum length
+     *                 of 106 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -154,8 +150,8 @@ public class Team  implements java.io.Serializable {
      * Gets the description value for this Team.
      * 
      * @return description   * The description of the {@code Team}. This value is optional
-     * and has a
-     *                 maximum length of 255 characters.
+     * and has a maximum length of 255
+     *                 characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -166,8 +162,8 @@ public class Team  implements java.io.Serializable {
      * Sets the description value for this Team.
      * 
      * @param description   * The description of the {@code Team}. This value is optional
-     * and has a
-     *                 maximum length of 255 characters.
+     * and has a maximum length of 255
+     *                 characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -178,8 +174,8 @@ public class Team  implements java.io.Serializable {
      * Gets the status value for this Team.
      * 
      * @return status   * The status of the {@link Team}. This value can be {@link TeamStatus#ACTIVE}
-     * (default) or
-     *                 {@link TeamStatus#INACTIVE} and determines the visibility
+     * (default) or {@link
+     *                 TeamStatus#INACTIVE} and determines the visibility
      * of the team in the UI.
      */
     public com.google.api.ads.admanager.axis.v202205.TeamStatus getStatus() {
@@ -191,8 +187,8 @@ public class Team  implements java.io.Serializable {
      * Sets the status value for this Team.
      * 
      * @param status   * The status of the {@link Team}. This value can be {@link TeamStatus#ACTIVE}
-     * (default) or
-     *                 {@link TeamStatus#INACTIVE} and determines the visibility
+     * (default) or {@link
+     *                 TeamStatus#INACTIVE} and determines the visibility
      * of the team in the UI.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202205.TeamStatus status) {

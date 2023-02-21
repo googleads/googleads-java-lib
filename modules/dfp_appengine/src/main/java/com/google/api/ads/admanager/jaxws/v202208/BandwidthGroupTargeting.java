@@ -24,8 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents bandwidth groups that are being targeted or excluded by the
- *             {@link LineItem}.
+ *             Represents bandwidth groups that are being targeted or excluded by the {@link LineItem}.
  *           
  * 
  * <p>Java class for BandwidthGroupTargeting complex type.

@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents a group of bandwidths that are logically organized by some well
- *             known generic names such as 'Cable' or 'DSL'.
+ *             Represents a group of bandwidths that are logically organized by some well known generic names
+ *             such as 'Cable' or 'DSL'.
  *           
  * 
  * <p>Java class for BandwidthGroup complex type.

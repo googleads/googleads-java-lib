@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains statistics such as impressions, clicks delivered and cost
- *             for {@link LineItemCreativeAssociation} objects.
+ *             Contains statistics such as impressions, clicks delivered and cost for {@link
+ *             LineItemCreativeAssociation} objects.
  *           
  * 
  * <p>Java class for LineItemCreativeAssociationStats complex type.

@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets the delivery forecast for a list of existing {@link LineItem} objects in a single
- *             delivery simulation. A delivery forecast reports the number of units that will be delivered
- *             to each line item given the line item goals and contentions from other line items.
+ *             Gets the delivery forecast for a list of existing {@link LineItem} objects in a single delivery
+ *             simulation. A delivery forecast reports the number of units that will be delivered to each line
+ *             item given the line item goals and contentions from other line items.
  *           
  * 
  * <p>Java class for getDeliveryForecastByIds element declaration.

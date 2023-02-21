@@ -24,8 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents device manufacturer that are being targeted or excluded by the
- *             {@link LineItem}.
+ *             Represents device manufacturer that are being targeted or excluded by the {@link LineItem}.
  *           
  * 
  * <p>Java class for DeviceManufacturerTargeting complex type.

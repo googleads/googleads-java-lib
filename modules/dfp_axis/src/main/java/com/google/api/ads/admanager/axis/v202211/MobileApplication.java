@@ -30,8 +30,8 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class MobileApplication  implements java.io.Serializable {
     /* Uniquely identifies the mobile application. This attribute
-     * is read-only and is
-     *                 assigned by Google when a mobile application is claimed. */
+     * is read-only and is assigned by
+     *                 Google when a mobile application is claimed. */
     private java.lang.Long id;
 
     /* Uniquely identifies the mobile application. This attribute
@@ -42,13 +42,13 @@ public class MobileApplication  implements java.io.Serializable {
     private java.lang.Long applicationId;
 
     /* The display name of the mobile application. This attribute
-     * is required and
-     *                 has a maximum length of 255 characters. */
+     * is required and has a maximum length
+     *                 of 255 characters. */
     private java.lang.String displayName;
 
     /* The app store ID of the app to claim. This attribute is required
-     * for creation and
-     *                 then is read-only. */
+     * for creation and then is
+     *                 read-only. */
     private java.lang.String appStoreId;
 
     /* The app stores the mobile application belongs to. This attribute
@@ -61,8 +61,8 @@ public class MobileApplication  implements java.io.Serializable {
     private java.lang.Boolean isArchived;
 
     /* The name of the application on the app store. This attribute
-     * is read-only
-     *                 and populated by Google. */
+     * is read-only and populated by
+     *                 Google. */
     private java.lang.String appStoreName;
 
     /* The application code used to identify the app in the SDK. This
@@ -73,23 +73,23 @@ public class MobileApplication  implements java.io.Serializable {
     private java.lang.String applicationCode;
 
     /* The name of the developer of the mobile application. This attribute
-     * is read-only
-     *                 and populated by Google. */
+     * is read-only and populated
+     *                 by Google. */
     private java.lang.String developerName;
 
     /* The platform the mobile application runs on. This attribute
-     * is read-only
-     *                 and populated by Google. */
+     * is read-only and populated by
+     *                 Google. */
     private com.google.api.ads.admanager.axis.v202211.MobileApplicationPlatform platform;
 
     /* Whether the mobile application is free on the app store it
-     * belongs to.
-     *                 This attribute is read-only and populated by Google. */
+     * belongs to. This attribute is
+     *                 read-only and populated by Google. */
     private java.lang.Boolean isFree;
 
     /* The download URL of the mobile application on the app store
-     * it belongs to.
-     *                 This attribute is read-only and populated by Google. */
+     * it belongs to. This attribute is
+     *                 read-only and populated by Google. */
     private java.lang.String downloadUrl;
 
     public MobileApplication() {
@@ -145,8 +145,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the id value for this MobileApplication.
      * 
      * @return id   * Uniquely identifies the mobile application. This attribute
-     * is read-only and is
-     *                 assigned by Google when a mobile application is claimed.
+     * is read-only and is assigned by
+     *                 Google when a mobile application is claimed.
      */
     public java.lang.Long getId() {
         return id;
@@ -157,8 +157,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the id value for this MobileApplication.
      * 
      * @param id   * Uniquely identifies the mobile application. This attribute
-     * is read-only and is
-     *                 assigned by Google when a mobile application is claimed.
+     * is read-only and is assigned by
+     *                 Google when a mobile application is claimed.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -197,8 +197,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the displayName value for this MobileApplication.
      * 
      * @return displayName   * The display name of the mobile application. This attribute
-     * is required and
-     *                 has a maximum length of 255 characters.
+     * is required and has a maximum length
+     *                 of 255 characters.
      */
     public java.lang.String getDisplayName() {
         return displayName;
@@ -209,8 +209,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the displayName value for this MobileApplication.
      * 
      * @param displayName   * The display name of the mobile application. This attribute
-     * is required and
-     *                 has a maximum length of 255 characters.
+     * is required and has a maximum length
+     *                 of 255 characters.
      */
     public void setDisplayName(java.lang.String displayName) {
         this.displayName = displayName;
@@ -221,8 +221,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the appStoreId value for this MobileApplication.
      * 
      * @return appStoreId   * The app store ID of the app to claim. This attribute is required
-     * for creation and
-     *                 then is read-only.
+     * for creation and then is
+     *                 read-only.
      */
     public java.lang.String getAppStoreId() {
         return appStoreId;
@@ -233,8 +233,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the appStoreId value for this MobileApplication.
      * 
      * @param appStoreId   * The app store ID of the app to claim. This attribute is required
-     * for creation and
-     *                 then is read-only.
+     * for creation and then is
+     *                 read-only.
      */
     public void setAppStoreId(java.lang.String appStoreId) {
         this.appStoreId = appStoreId;
@@ -299,8 +299,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the appStoreName value for this MobileApplication.
      * 
      * @return appStoreName   * The name of the application on the app store. This attribute
-     * is read-only
-     *                 and populated by Google.
+     * is read-only and populated by
+     *                 Google.
      */
     public java.lang.String getAppStoreName() {
         return appStoreName;
@@ -311,8 +311,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the appStoreName value for this MobileApplication.
      * 
      * @param appStoreName   * The name of the application on the app store. This attribute
-     * is read-only
-     *                 and populated by Google.
+     * is read-only and populated by
+     *                 Google.
      */
     public void setAppStoreName(java.lang.String appStoreName) {
         this.appStoreName = appStoreName;
@@ -351,8 +351,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the developerName value for this MobileApplication.
      * 
      * @return developerName   * The name of the developer of the mobile application. This attribute
-     * is read-only
-     *                 and populated by Google.
+     * is read-only and populated
+     *                 by Google.
      */
     public java.lang.String getDeveloperName() {
         return developerName;
@@ -363,8 +363,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the developerName value for this MobileApplication.
      * 
      * @param developerName   * The name of the developer of the mobile application. This attribute
-     * is read-only
-     *                 and populated by Google.
+     * is read-only and populated
+     *                 by Google.
      */
     public void setDeveloperName(java.lang.String developerName) {
         this.developerName = developerName;
@@ -375,8 +375,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the platform value for this MobileApplication.
      * 
      * @return platform   * The platform the mobile application runs on. This attribute
-     * is read-only
-     *                 and populated by Google.
+     * is read-only and populated by
+     *                 Google.
      */
     public com.google.api.ads.admanager.axis.v202211.MobileApplicationPlatform getPlatform() {
         return platform;
@@ -387,8 +387,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the platform value for this MobileApplication.
      * 
      * @param platform   * The platform the mobile application runs on. This attribute
-     * is read-only
-     *                 and populated by Google.
+     * is read-only and populated by
+     *                 Google.
      */
     public void setPlatform(com.google.api.ads.admanager.axis.v202211.MobileApplicationPlatform platform) {
         this.platform = platform;
@@ -399,8 +399,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the isFree value for this MobileApplication.
      * 
      * @return isFree   * Whether the mobile application is free on the app store it
-     * belongs to.
-     *                 This attribute is read-only and populated by Google.
+     * belongs to. This attribute is
+     *                 read-only and populated by Google.
      */
     public java.lang.Boolean getIsFree() {
         return isFree;
@@ -411,8 +411,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the isFree value for this MobileApplication.
      * 
      * @param isFree   * Whether the mobile application is free on the app store it
-     * belongs to.
-     *                 This attribute is read-only and populated by Google.
+     * belongs to. This attribute is
+     *                 read-only and populated by Google.
      */
     public void setIsFree(java.lang.Boolean isFree) {
         this.isFree = isFree;
@@ -423,8 +423,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Gets the downloadUrl value for this MobileApplication.
      * 
      * @return downloadUrl   * The download URL of the mobile application on the app store
-     * it belongs to.
-     *                 This attribute is read-only and populated by Google.
+     * it belongs to. This attribute is
+     *                 read-only and populated by Google.
      */
     public java.lang.String getDownloadUrl() {
         return downloadUrl;
@@ -435,8 +435,8 @@ public class MobileApplication  implements java.io.Serializable {
      * Sets the downloadUrl value for this MobileApplication.
      * 
      * @param downloadUrl   * The download URL of the mobile application on the app store
-     * it belongs to.
-     *                 This attribute is read-only and populated by Google.
+     * it belongs to. This attribute is
+     *                 read-only and populated by Google.
      */
     public void setDownloadUrl(java.lang.String downloadUrl) {
         this.downloadUrl = downloadUrl;

@@ -24,10 +24,10 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * Ad rule slot with optimized podding. Optimized pods are defined
- * by a
- *             {@link BaseAdRuleSlot#maxPodDuration} and a {@link BaseAdRuleSlot#maxAdsInPod},
- * and the ad
- *             server chooses the best ads for the alloted duration.
+ * by a {@link
+ *             BaseAdRuleSlot#maxPodDuration} and a {@link BaseAdRuleSlot#maxAdsInPod},
+ * and the ad server
+ *             chooses the best ads for the alloted duration.
  */
 public class OptimizedPoddingAdRuleSlot  extends com.google.api.ads.admanager.axis.v202205.BaseAdRuleSlot  implements java.io.Serializable {
     public OptimizedPoddingAdRuleSlot() {

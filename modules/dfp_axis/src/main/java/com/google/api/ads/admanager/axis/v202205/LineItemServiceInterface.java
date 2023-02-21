@@ -30,11 +30,9 @@ public interface LineItemServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link LineItemPage} of {@link LineItem} objects that
-     * satisfy the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
-     *         
+     * satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tbody>
      *         <tr>
@@ -168,8 +166,7 @@ public interface LineItemServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link LineItem} objects that match the
-     * given
-     *         {@link Statement#query}.
+     * given {@link Statement#query}.
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performLineItemAction(com.google.api.ads.admanager.axis.v202205.LineItemAction lineItemAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 

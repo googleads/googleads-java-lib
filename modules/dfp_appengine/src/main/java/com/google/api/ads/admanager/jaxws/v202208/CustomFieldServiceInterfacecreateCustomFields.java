@@ -27,12 +27,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link CustomField} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link CustomField#name}</li>
- *             <li>{@link CustomField#entityType}</li>
- *             <li>{@link CustomField#dataType}</li>
- *             <li>{@link CustomField#visibility}</li>
+ *             <li>{@link CustomField#name}
+ *             <li>{@link CustomField#entityType}
+ *             <li>{@link CustomField#dataType}
+ *             <li>{@link CustomField#visibility}
  *             </ul>
  *           
  * 

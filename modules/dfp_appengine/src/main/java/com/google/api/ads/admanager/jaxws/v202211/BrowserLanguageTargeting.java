@@ -24,8 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents browser languages that are being targeted or excluded by the
- *             {@link LineItem}.
+ *             Represents browser languages that are being targeted or excluded by the {@link LineItem}.
  *           
  * 
  * <p>Java class for BrowserLanguageTargeting complex type.

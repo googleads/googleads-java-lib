@@ -27,9 +27,9 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class ImageCreative  extends com.google.api.ads.admanager.axis.v202205.BaseImageCreative  implements java.io.Serializable {
     /* Alternative text to be rendered along with the creative used
-     * mainly for accessibility.
-     *                     This field is optional and has a maximum length
-     * of 500 characters. */
+     * mainly for accessibility. This
+     *                     field is optional and has a maximum length of
+     * 500 characters. */
     private java.lang.String altText;
 
     /* An impression tracking URL to ping when this creative is displayed.
@@ -41,9 +41,8 @@ public class ImageCreative  extends com.google.api.ads.admanager.axis.v202205.Ba
      * This attribute is optional.
      *                     
      *                     <p>Secondary image assets can be used to store
-     * different resolution versions of the
-     *                     primary asset for use on non-standard density
-     * screens. */
+     * different resolution versions of the primary
+     *                     asset for use on non-standard density screens. */
     private com.google.api.ads.admanager.axis.v202205.CreativeAsset[] secondaryImageAssets;
 
     public ImageCreative() {
@@ -115,9 +114,9 @@ public class ImageCreative  extends com.google.api.ads.admanager.axis.v202205.Ba
      * Gets the altText value for this ImageCreative.
      * 
      * @return altText   * Alternative text to be rendered along with the creative used
-     * mainly for accessibility.
-     *                     This field is optional and has a maximum length
-     * of 500 characters.
+     * mainly for accessibility. This
+     *                     field is optional and has a maximum length of
+     * 500 characters.
      */
     public java.lang.String getAltText() {
         return altText;
@@ -128,9 +127,9 @@ public class ImageCreative  extends com.google.api.ads.admanager.axis.v202205.Ba
      * Sets the altText value for this ImageCreative.
      * 
      * @param altText   * Alternative text to be rendered along with the creative used
-     * mainly for accessibility.
-     *                     This field is optional and has a maximum length
-     * of 500 characters.
+     * mainly for accessibility. This
+     *                     field is optional and has a maximum length of
+     * 500 characters.
      */
     public void setAltText(java.lang.String altText) {
         this.altText = altText;
@@ -168,9 +167,8 @@ public class ImageCreative  extends com.google.api.ads.admanager.axis.v202205.Ba
      * This attribute is optional.
      *                     
      *                     <p>Secondary image assets can be used to store
-     * different resolution versions of the
-     *                     primary asset for use on non-standard density
-     * screens.
+     * different resolution versions of the primary
+     *                     asset for use on non-standard density screens.
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeAsset[] getSecondaryImageAssets() {
         return secondaryImageAssets;
@@ -184,9 +182,8 @@ public class ImageCreative  extends com.google.api.ads.admanager.axis.v202205.Ba
      * This attribute is optional.
      *                     
      *                     <p>Secondary image assets can be used to store
-     * different resolution versions of the
-     *                     primary asset for use on non-standard density
-     * screens.
+     * different resolution versions of the primary
+     *                     asset for use on non-standard density screens.
      */
     public void setSecondaryImageAssets(com.google.api.ads.admanager.axis.v202205.CreativeAsset[] secondaryImageAssets) {
         this.secondaryImageAssets = secondaryImageAssets;

@@ -24,21 +24,21 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * {@code UserRecordTeamAssociation} represents the association between
- * a
- *             {@link UserRecord} and a {@link Team}.
+ * a {@link UserRecord} and a
+ *             {@link Team}.
  */
 public abstract class UserRecordTeamAssociation  implements java.io.Serializable {
     /* The {@link Team#id} of the team. */
     private java.lang.Long teamId;
 
     /* The overridden team access type. This field is {@code null}
-     * if team access
-     *                 type is not overridden. */
+     * if team access type is not
+     *                 overridden. */
     private com.google.api.ads.admanager.axis.v202211.TeamAccessType overriddenTeamAccessType;
 
     /* The default team access type {@link Team#teamAccessType}. This
-     * field is
-     *                 read-only and is populated by Google. */
+     * field is read-only and is
+     *                 populated by Google. */
     private com.google.api.ads.admanager.axis.v202211.TeamAccessType defaultTeamAccessType;
 
     public UserRecordTeamAssociation() {
@@ -87,8 +87,8 @@ public abstract class UserRecordTeamAssociation  implements java.io.Serializable
      * Gets the overriddenTeamAccessType value for this UserRecordTeamAssociation.
      * 
      * @return overriddenTeamAccessType   * The overridden team access type. This field is {@code null}
-     * if team access
-     *                 type is not overridden.
+     * if team access type is not
+     *                 overridden.
      */
     public com.google.api.ads.admanager.axis.v202211.TeamAccessType getOverriddenTeamAccessType() {
         return overriddenTeamAccessType;
@@ -99,8 +99,8 @@ public abstract class UserRecordTeamAssociation  implements java.io.Serializable
      * Sets the overriddenTeamAccessType value for this UserRecordTeamAssociation.
      * 
      * @param overriddenTeamAccessType   * The overridden team access type. This field is {@code null}
-     * if team access
-     *                 type is not overridden.
+     * if team access type is not
+     *                 overridden.
      */
     public void setOverriddenTeamAccessType(com.google.api.ads.admanager.axis.v202211.TeamAccessType overriddenTeamAccessType) {
         this.overriddenTeamAccessType = overriddenTeamAccessType;
@@ -111,8 +111,8 @@ public abstract class UserRecordTeamAssociation  implements java.io.Serializable
      * Gets the defaultTeamAccessType value for this UserRecordTeamAssociation.
      * 
      * @return defaultTeamAccessType   * The default team access type {@link Team#teamAccessType}. This
-     * field is
-     *                 read-only and is populated by Google.
+     * field is read-only and is
+     *                 populated by Google.
      */
     public com.google.api.ads.admanager.axis.v202211.TeamAccessType getDefaultTeamAccessType() {
         return defaultTeamAccessType;
@@ -123,8 +123,8 @@ public abstract class UserRecordTeamAssociation  implements java.io.Serializable
      * Sets the defaultTeamAccessType value for this UserRecordTeamAssociation.
      * 
      * @param defaultTeamAccessType   * The default team access type {@link Team#teamAccessType}. This
-     * field is
-     *                 read-only and is populated by Google.
+     * field is read-only and is
+     *                 populated by Google.
      */
     public void setDefaultTeamAccessType(com.google.api.ads.admanager.axis.v202211.TeamAccessType defaultTeamAccessType) {
         this.defaultTeamAccessType = defaultTeamAccessType;

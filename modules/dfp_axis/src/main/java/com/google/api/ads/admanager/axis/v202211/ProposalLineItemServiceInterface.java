@@ -36,10 +36,9 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link ProposalLineItemPage} of {@link ProposalLineItem}
-     * objects
-     *         that satisfy the given {@link Statement#query}.  The following
-     * fields are supported for
-     *         filtering:
+     * objects that satisfy the given
+     *         {@link Statement#query}. The following fields are supported
+     * for filtering:
      *         
      *         <table>
      *         <tr>
@@ -83,7 +82,8 @@ public interface ProposalLineItemServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link ProposalLineItem} objects that match
-     * the given {@link Statement#query}.
+     * the given {@link
+     *         Statement#query}.
      */
     public com.google.api.ads.admanager.axis.v202211.UpdateResult performProposalLineItemAction(com.google.api.ads.admanager.axis.v202211.ProposalLineItemAction proposalLineItemAction, com.google.api.ads.admanager.axis.v202211.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 

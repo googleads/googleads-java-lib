@@ -30,18 +30,18 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
     private java.lang.Integer duration;
 
     /* Allows the creative duration to differ from the actual asset
-     * durations. This
-     *                     attribute is optional. */
+     * durations. This attribute is
+     *                     optional. */
     private java.lang.Boolean allowDurationOverride;
 
     /* A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional. */
+     * be pinged when the event
+     *                     happens. This attribute is optional. */
     private com.google.api.ads.admanager.axis.v202205.ConversionEvent_TrackingUrlsMapEntry[] trackingUrls;
 
     /* The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional. */
+     * this creative. This attribute is
+     *                     optional. */
     private long[] companionCreativeIds;
 
     /* A comma separated key=value list of parameters that will be
@@ -64,8 +64,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
     private com.google.api.ads.admanager.axis.v202205.SkippableAdType skippableAdType;
 
     /* An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only. */
+     * specific to this creative.
+     *                     This attribute is read-only. */
     private java.lang.String vastPreviewUrl;
 
     /* The SSL compatibility scan result of this creative.
@@ -187,8 +187,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Gets the allowDurationOverride value for this BaseAudioCreative.
      * 
      * @return allowDurationOverride   * Allows the creative duration to differ from the actual asset
-     * durations. This
-     *                     attribute is optional.
+     * durations. This attribute is
+     *                     optional.
      */
     public java.lang.Boolean getAllowDurationOverride() {
         return allowDurationOverride;
@@ -199,8 +199,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Sets the allowDurationOverride value for this BaseAudioCreative.
      * 
      * @param allowDurationOverride   * Allows the creative duration to differ from the actual asset
-     * durations. This
-     *                     attribute is optional.
+     * durations. This attribute is
+     *                     optional.
      */
     public void setAllowDurationOverride(java.lang.Boolean allowDurationOverride) {
         this.allowDurationOverride = allowDurationOverride;
@@ -211,8 +211,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Gets the trackingUrls value for this BaseAudioCreative.
      * 
      * @return trackingUrls   * A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional.
+     * be pinged when the event
+     *                     happens. This attribute is optional.
      */
     public com.google.api.ads.admanager.axis.v202205.ConversionEvent_TrackingUrlsMapEntry[] getTrackingUrls() {
         return trackingUrls;
@@ -223,8 +223,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Sets the trackingUrls value for this BaseAudioCreative.
      * 
      * @param trackingUrls   * A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional.
+     * be pinged when the event
+     *                     happens. This attribute is optional.
      */
     public void setTrackingUrls(com.google.api.ads.admanager.axis.v202205.ConversionEvent_TrackingUrlsMapEntry[] trackingUrls) {
         this.trackingUrls = trackingUrls;
@@ -243,8 +243,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Gets the companionCreativeIds value for this BaseAudioCreative.
      * 
      * @return companionCreativeIds   * The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional.
+     * this creative. This attribute is
+     *                     optional.
      */
     public long[] getCompanionCreativeIds() {
         return companionCreativeIds;
@@ -255,8 +255,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Sets the companionCreativeIds value for this BaseAudioCreative.
      * 
      * @param companionCreativeIds   * The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional.
+     * this creative. This attribute is
+     *                     optional.
      */
     public void setCompanionCreativeIds(long[] companionCreativeIds) {
         this.companionCreativeIds = companionCreativeIds;
@@ -369,8 +369,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Gets the vastPreviewUrl value for this BaseAudioCreative.
      * 
      * @return vastPreviewUrl   * An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only.
+     * specific to this creative.
+     *                     This attribute is read-only.
      */
     public java.lang.String getVastPreviewUrl() {
         return vastPreviewUrl;
@@ -381,8 +381,8 @@ public abstract class BaseAudioCreative  extends com.google.api.ads.admanager.ax
      * Sets the vastPreviewUrl value for this BaseAudioCreative.
      * 
      * @param vastPreviewUrl   * An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only.
+     * specific to this creative.
+     *                     This attribute is read-only.
      */
     public void setVastPreviewUrl(java.lang.String vastPreviewUrl) {
         this.vastPreviewUrl = vastPreviewUrl;

@@ -25,16 +25,16 @@ public interface MobileApplicationServiceInterface extends java.rmi.Remote {
 
     /**
      * Creates and claims {@link MobileApplication mobile applications}
-     * to be used for targeting in the network.
+     * to be used for targeting in
+     *         the network.
      */
     public com.google.api.ads.admanager.axis.v202211.MobileApplication[] createMobileApplications(com.google.api.ads.admanager.axis.v202211.MobileApplication[] mobileApplications) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
     /**
      * Gets a {@link MobileApplicationPage mobileApplicationPage}
-     * of
-     *         {@link MobileApplication mobile applications} that satisfy
-     * the given {@link Statement}.
-     *         The following fields are supported for
+     * of {@link MobileApplication mobile
+     *         applications} that satisfy the given {@link Statement}. The
+     * following fields are supported for
      *         filtering:
      *         
      *         <table>

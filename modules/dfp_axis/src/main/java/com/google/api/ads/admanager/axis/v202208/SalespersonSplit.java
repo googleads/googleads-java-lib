@@ -27,8 +27,7 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class SalespersonSplit  implements java.io.Serializable {
     /* The unique ID of the {@link User} responsible for the sales
-     * of the
-     *                 {@link Proposal}.
+     * of the {@link Proposal}.
      *                 <span class="constraint Required">This attribute is
      * required.</span> */
     private java.lang.Long userId;
@@ -53,8 +52,7 @@ public class SalespersonSplit  implements java.io.Serializable {
      * Gets the userId value for this SalespersonSplit.
      * 
      * @return userId   * The unique ID of the {@link User} responsible for the sales
-     * of the
-     *                 {@link Proposal}.
+     * of the {@link Proposal}.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -67,8 +65,7 @@ public class SalespersonSplit  implements java.io.Serializable {
      * Sets the userId value for this SalespersonSplit.
      * 
      * @param userId   * The unique ID of the {@link User} responsible for the sales
-     * of the
-     *                 {@link Proposal}.
+     * of the {@link Proposal}.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */

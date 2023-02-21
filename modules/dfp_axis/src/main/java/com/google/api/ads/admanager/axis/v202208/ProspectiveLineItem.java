@@ -29,27 +29,27 @@ public class ProspectiveLineItem  implements java.io.Serializable {
     /* The target of the forecast. If {@link LineItem#id} is null
      * or no line item exists with that ID,
      *                 then a forecast is computed for the subject, predicting
-     * what would happen if it were added
-     *                 to the network. If a line item already exists with
-     * {@link LineItem#id}, the forecast is
-     *                 computed for the subject, predicting what would happen
-     * if the existing line item's settings
-     *                 were modified to match the subject. */
+     * what would happen if it were added to
+     *                 the network. If a line item already exists with {@link
+     * LineItem#id}, the forecast is computed
+     *                 for the subject, predicting what would happen if the
+     * existing line item's settings were
+     *                 modified to match the subject. */
     private com.google.api.ads.admanager.axis.v202208.LineItem lineItem;
 
     /* The target of the forecast if this prospective line item is
      * a proposal line item.
      *                 
      *                 <p>If {@link ProposalLineItem#id} is null or no proposal
-     * line item exists with that ID,
-     *                 then a forecast is computed for the subject, predicting
-     * what would happen if it were added
-     *                 to the network. If a proposal line item already exists
-     * with {@link ProposalLineItem#id},
-     *                 the forecast is computed for the subject, predicting
-     * what would happen if the existing proposal
-     *                 line item's settings were modified to match the subject.
-     * 
+     * line item exists with that ID, then a
+     *                 forecast is computed for the subject, predicting what
+     * would happen if it were added to the
+     *                 network. If a proposal line item already exists with
+     * {@link ProposalLineItem#id}, the forecast
+     *                 is computed for the subject, predicting what would
+     * happen if the existing proposal line item's
+     *                 settings were modified to match the subject.
+     *                 
      *                 <p>A proposal line item can optionally correspond
      * to an order {@link LineItem}, in which case,
      *                 by forecasting a proposal line item, the corresponding
@@ -95,12 +95,12 @@ public class ProspectiveLineItem  implements java.io.Serializable {
      * @return lineItem   * The target of the forecast. If {@link LineItem#id} is null
      * or no line item exists with that ID,
      *                 then a forecast is computed for the subject, predicting
-     * what would happen if it were added
-     *                 to the network. If a line item already exists with
-     * {@link LineItem#id}, the forecast is
-     *                 computed for the subject, predicting what would happen
-     * if the existing line item's settings
-     *                 were modified to match the subject.
+     * what would happen if it were added to
+     *                 the network. If a line item already exists with {@link
+     * LineItem#id}, the forecast is computed
+     *                 for the subject, predicting what would happen if the
+     * existing line item's settings were
+     *                 modified to match the subject.
      */
     public com.google.api.ads.admanager.axis.v202208.LineItem getLineItem() {
         return lineItem;
@@ -113,12 +113,12 @@ public class ProspectiveLineItem  implements java.io.Serializable {
      * @param lineItem   * The target of the forecast. If {@link LineItem#id} is null
      * or no line item exists with that ID,
      *                 then a forecast is computed for the subject, predicting
-     * what would happen if it were added
-     *                 to the network. If a line item already exists with
-     * {@link LineItem#id}, the forecast is
-     *                 computed for the subject, predicting what would happen
-     * if the existing line item's settings
-     *                 were modified to match the subject.
+     * what would happen if it were added to
+     *                 the network. If a line item already exists with {@link
+     * LineItem#id}, the forecast is computed
+     *                 for the subject, predicting what would happen if the
+     * existing line item's settings were
+     *                 modified to match the subject.
      */
     public void setLineItem(com.google.api.ads.admanager.axis.v202208.LineItem lineItem) {
         this.lineItem = lineItem;
@@ -132,15 +132,15 @@ public class ProspectiveLineItem  implements java.io.Serializable {
      * a proposal line item.
      *                 
      *                 <p>If {@link ProposalLineItem#id} is null or no proposal
-     * line item exists with that ID,
-     *                 then a forecast is computed for the subject, predicting
-     * what would happen if it were added
-     *                 to the network. If a proposal line item already exists
-     * with {@link ProposalLineItem#id},
-     *                 the forecast is computed for the subject, predicting
-     * what would happen if the existing proposal
-     *                 line item's settings were modified to match the subject.
-     * 
+     * line item exists with that ID, then a
+     *                 forecast is computed for the subject, predicting what
+     * would happen if it were added to the
+     *                 network. If a proposal line item already exists with
+     * {@link ProposalLineItem#id}, the forecast
+     *                 is computed for the subject, predicting what would
+     * happen if the existing proposal line item's
+     *                 settings were modified to match the subject.
+     *                 
      *                 <p>A proposal line item can optionally correspond
      * to an order {@link LineItem}, in which case,
      *                 by forecasting a proposal line item, the corresponding
@@ -162,15 +162,15 @@ public class ProspectiveLineItem  implements java.io.Serializable {
      * a proposal line item.
      *                 
      *                 <p>If {@link ProposalLineItem#id} is null or no proposal
-     * line item exists with that ID,
-     *                 then a forecast is computed for the subject, predicting
-     * what would happen if it were added
-     *                 to the network. If a proposal line item already exists
-     * with {@link ProposalLineItem#id},
-     *                 the forecast is computed for the subject, predicting
-     * what would happen if the existing proposal
-     *                 line item's settings were modified to match the subject.
-     * 
+     * line item exists with that ID, then a
+     *                 forecast is computed for the subject, predicting what
+     * would happen if it were added to the
+     *                 network. If a proposal line item already exists with
+     * {@link ProposalLineItem#id}, the forecast
+     *                 is computed for the subject, predicting what would
+     * happen if the existing proposal line item's
+     *                 settings were modified to match the subject.
+     *                 
      *                 <p>A proposal line item can optionally correspond
      * to an order {@link LineItem}, in which case,
      *                 by forecasting a proposal line item, the corresponding

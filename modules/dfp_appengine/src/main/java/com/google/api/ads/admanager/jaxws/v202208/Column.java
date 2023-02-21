@@ -1325,7 +1325,7 @@ public enum Column {
     /**
      * 
      *                 The number of partner-sold impressions served to the YouTube partner ad inventory.
-     *                 <p>Corresponds to "Partner-sold impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner-sold impressions" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1334,7 +1334,7 @@ public enum Column {
     /**
      * 
      *                 The number of times the ad server responded to a request for the YouTube partner ad inventory.
-     *                 <p>Corresponds to "Partner-sold code served count" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Partner-sold code served count" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1343,7 +1343,7 @@ public enum Column {
     /**
      * 
      *                 The number of Google-sold impressions served to the YouTube partner ad inventory.
-     *                 <p>Corresponds to "Google-sold impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Google-sold impressions" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1352,7 +1352,7 @@ public enum Column {
     /**
      * 
      *                 The number of Google-sold reservation impressions served to the YouTube partner ad inventory.
-     *                 <p>Corresponds to "Google-sold reservation impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Google-sold reservation impressions" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1361,7 +1361,7 @@ public enum Column {
     /**
      * 
      *                 The number of Google-sold auction impressions served to the YouTube partner ad inventory.
-     *                 <p>Corresponds to "Google-sold auction impressions" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Google-sold auction impressions" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1371,7 +1371,7 @@ public enum Column {
      * 
      *                 The total number of ad requests that were eligible to serve to the YouTube partner ad
      *                 inventory.
-     *                 <p>Corresponds to "Total ad requests" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Total ad requests" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1383,7 +1383,7 @@ public enum Column {
      *                 ad. This includes both partner-sold and Google-sold requests.
      *                 
      *                 <p>Google-sold can fill at most 2 ads, while partner-sold can fill at most 1 ad.
-     *                 <p>Corresponds to "Filled ad requests" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Filled ad requests" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1392,7 +1392,7 @@ public enum Column {
     /**
      * 
      *                 The fill rate percentage of filled requests to total ad requests.
-     *                 <p>Corresponds to "Fill rate" in the Ad Manager UI.</p>
+     *                 <p>Corresponds to "Fill rate" in the Ad Manager UI. Compatible with the "YouTube consolidated" report type.</p>
      *               
      * 
      */
@@ -1592,7 +1592,7 @@ public enum Column {
 
     /**
      * 
-     *                 The number of times a rich media video was played upto midpoint.
+     *                 The number of times a rich media video was played up to midpoint.
      *                 <p>Corresponds to "Midpoint" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 

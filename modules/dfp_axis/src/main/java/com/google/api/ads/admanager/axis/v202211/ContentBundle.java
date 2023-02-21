@@ -26,14 +26,14 @@ package com.google.api.ads.admanager.axis.v202211;
  * A {@code ContentBundle} is a grouping of individual {@link Content}.
  * A {@code ContentBundle} is
  *             defined as including the {@code Content} that match certain
- * filter rules, along with the
- *             option to explicitly include or exclude certain {@code
- * Content} IDs.
+ * filter rules, along with the option
+ *             to explicitly include or exclude certain {@code Content}
+ * IDs.
  */
 public class ContentBundle  implements java.io.Serializable {
     /* ID that uniquely identifies the {@code ContentBundle}. This
-     * attribute is read-only and
-     *                 is assigned by Google when a content bundle is created. */
+     * attribute is read-only and is
+     *                 assigned by Google when a content bundle is created. */
     private java.lang.Long id;
 
     /* The name of the {@code ContentBundle}. This attribute is required
@@ -81,8 +81,8 @@ public class ContentBundle  implements java.io.Serializable {
      * Gets the id value for this ContentBundle.
      * 
      * @return id   * ID that uniquely identifies the {@code ContentBundle}. This
-     * attribute is read-only and
-     *                 is assigned by Google when a content bundle is created.
+     * attribute is read-only and is
+     *                 assigned by Google when a content bundle is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -93,8 +93,8 @@ public class ContentBundle  implements java.io.Serializable {
      * Sets the id value for this ContentBundle.
      * 
      * @param id   * ID that uniquely identifies the {@code ContentBundle}. This
-     * attribute is read-only and
-     *                 is assigned by Google when a content bundle is created.
+     * attribute is read-only and is
+     *                 assigned by Google when a content bundle is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;

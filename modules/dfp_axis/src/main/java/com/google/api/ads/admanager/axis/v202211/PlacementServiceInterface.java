@@ -30,11 +30,9 @@ public interface PlacementServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link PlacementPage} of {@link Placement} objects that
-     * satisfy the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
-     *         
+     * satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
@@ -69,8 +67,7 @@ public interface PlacementServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link Placement} objects that match the
-     * given
-     *         {@link Statement#query}.
+     * given {@link Statement#query}.
      */
     public com.google.api.ads.admanager.axis.v202211.UpdateResult performPlacementAction(com.google.api.ads.admanager.axis.v202211.PlacementAction placementAction, com.google.api.ads.admanager.axis.v202211.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 

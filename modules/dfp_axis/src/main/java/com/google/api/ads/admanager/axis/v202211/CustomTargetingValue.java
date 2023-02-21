@@ -32,34 +32,28 @@ public class CustomTargetingValue  implements java.io.Serializable {
     private java.lang.Long customTargetingKeyId;
 
     /* The ID of the {@code CustomTargetingValue}. This value is readonly
-     * and is
-     *                 populated by Google. */
+     * and is populated by Google. */
     private java.lang.Long id;
 
     /* Name of the value. This can be used for encoding . If you don't
-     * want users
-     *                 to be able to see potentially sensitive targeting
-     * information in the ad
-     *                 tags of your site, you can encode your key/values.
-     * For example, you can
-     *                 create key/value g1=abc to represent gender=female.
-     * Values can contain up
-     *                 to 40 characters each. You can use alphanumeric characters
-     * and symbols
-     *                 other than the following: ", ', =, !, +, #, *, ~,
-     * ;, ^, (, ), <, >, [, ].
-     *                 Values are not data-specific; all values are treated
-     * as string. For
-     *                 example, instead of using "age>=18 AND <=34", try
-     * "18-34" */
+     * want users to be able to see
+     *                 potentially sensitive targeting information in the
+     * ad tags of your site, you can encode your
+     *                 key/values. For example, you can create key/value
+     * g1=abc to represent gender=female. Values can
+     *                 contain up to 40 characters each. You can use alphanumeric
+     * characters and symbols other than
+     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
+     * <, >, [, ]. Values are not data-specific;
+     *                 all values are treated as string. For example, instead
+     * of using "age>=18 AND <=34", try "18-34" */
     private java.lang.String name;
 
     /* Descriptive name for the value. */
     private java.lang.String displayName;
 
     /* The way in which the {@link CustomTargetingValue#name} strings
-     * will be
-     *                 matched. */
+     * will be matched. */
     private com.google.api.ads.admanager.axis.v202211.CustomTargetingValueMatchType matchType;
 
     /* Status of the {@code CustomTargetingValue}. This field is read-only.
@@ -124,8 +118,7 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Gets the id value for this CustomTargetingValue.
      * 
      * @return id   * The ID of the {@code CustomTargetingValue}. This value is readonly
-     * and is
-     *                 populated by Google.
+     * and is populated by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -136,8 +129,7 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Sets the id value for this CustomTargetingValue.
      * 
      * @param id   * The ID of the {@code CustomTargetingValue}. This value is readonly
-     * and is
-     *                 populated by Google.
+     * and is populated by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -148,21 +140,17 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Gets the name value for this CustomTargetingValue.
      * 
      * @return name   * Name of the value. This can be used for encoding . If you don't
-     * want users
-     *                 to be able to see potentially sensitive targeting
-     * information in the ad
-     *                 tags of your site, you can encode your key/values.
-     * For example, you can
-     *                 create key/value g1=abc to represent gender=female.
-     * Values can contain up
-     *                 to 40 characters each. You can use alphanumeric characters
-     * and symbols
-     *                 other than the following: ", ', =, !, +, #, *, ~,
-     * ;, ^, (, ), <, >, [, ].
-     *                 Values are not data-specific; all values are treated
-     * as string. For
-     *                 example, instead of using "age>=18 AND <=34", try
-     * "18-34"
+     * want users to be able to see
+     *                 potentially sensitive targeting information in the
+     * ad tags of your site, you can encode your
+     *                 key/values. For example, you can create key/value
+     * g1=abc to represent gender=female. Values can
+     *                 contain up to 40 characters each. You can use alphanumeric
+     * characters and symbols other than
+     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
+     * <, >, [, ]. Values are not data-specific;
+     *                 all values are treated as string. For example, instead
+     * of using "age>=18 AND <=34", try "18-34"
      */
     public java.lang.String getName() {
         return name;
@@ -173,21 +161,17 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Sets the name value for this CustomTargetingValue.
      * 
      * @param name   * Name of the value. This can be used for encoding . If you don't
-     * want users
-     *                 to be able to see potentially sensitive targeting
-     * information in the ad
-     *                 tags of your site, you can encode your key/values.
-     * For example, you can
-     *                 create key/value g1=abc to represent gender=female.
-     * Values can contain up
-     *                 to 40 characters each. You can use alphanumeric characters
-     * and symbols
-     *                 other than the following: ", ', =, !, +, #, *, ~,
-     * ;, ^, (, ), <, >, [, ].
-     *                 Values are not data-specific; all values are treated
-     * as string. For
-     *                 example, instead of using "age>=18 AND <=34", try
-     * "18-34"
+     * want users to be able to see
+     *                 potentially sensitive targeting information in the
+     * ad tags of your site, you can encode your
+     *                 key/values. For example, you can create key/value
+     * g1=abc to represent gender=female. Values can
+     *                 contain up to 40 characters each. You can use alphanumeric
+     * characters and symbols other than
+     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
+     * <, >, [, ]. Values are not data-specific;
+     *                 all values are treated as string. For example, instead
+     * of using "age>=18 AND <=34", try "18-34"
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -218,8 +202,7 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Gets the matchType value for this CustomTargetingValue.
      * 
      * @return matchType   * The way in which the {@link CustomTargetingValue#name} strings
-     * will be
-     *                 matched.
+     * will be matched.
      */
     public com.google.api.ads.admanager.axis.v202211.CustomTargetingValueMatchType getMatchType() {
         return matchType;
@@ -230,8 +213,7 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * Sets the matchType value for this CustomTargetingValue.
      * 
      * @param matchType   * The way in which the {@link CustomTargetingValue#name} strings
-     * will be
-     *                 matched.
+     * will be matched.
      */
     public void setMatchType(com.google.api.ads.admanager.axis.v202211.CustomTargetingValueMatchType matchType) {
         this.matchType = matchType;

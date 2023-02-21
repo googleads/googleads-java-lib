@@ -190,8 +190,7 @@ public interface AdRuleServiceInterface {
 
     /**
      * 
-     *         Performs actions on {@link AdRule} objects that match the given
-     *         {@link Statement#query}.
+     *         Performs actions on {@link AdRule} objects that match the given {@link Statement#query}.
      *       
      * 
      * @param filterStatement

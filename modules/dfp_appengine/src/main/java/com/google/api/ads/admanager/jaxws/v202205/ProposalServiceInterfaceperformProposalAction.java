@@ -25,11 +25,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Performs actions on {@link Proposal} objects that match the given {@link Statement#query}.
  *             
- *             The following fields are also required when submitting proposals for approval:
+ *             <p>The following fields are also required when submitting proposals for approval:
+ *             
  *             <ul>
- *             <li>{@link Proposal#advertiser}</li>
- *             <li>{@link Proposal#primarySalesperson}</li>
- *             <li>{@link Proposal#primaryTraffickerId}</li>
+ *             <li>{@link Proposal#advertiser}
+ *             <li>{@link Proposal#primarySalesperson}
+ *             <li>{@link Proposal#primaryTraffickerId}
  *             </ul>
  *           
  * 

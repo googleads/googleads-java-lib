@@ -23,8 +23,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Returns the {@link Role} objects that are defined for the users of the
- *             network.
+ *             Returns the {@link Role} objects that are defined for the users of the network.
  *           
  * 
  * <p>Java class for getAllRoles element declaration.

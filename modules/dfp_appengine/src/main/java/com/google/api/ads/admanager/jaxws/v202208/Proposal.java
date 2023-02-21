@@ -26,9 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Proposal} represents an agreement between an interactive
- *             advertising seller and a buyer that specifies the details of an
- *             advertising campaign.
+ *             A {@code Proposal} represents an agreement between an interactive advertising seller and a buyer
+ *             that specifies the details of an advertising campaign.
  *           
  * 
  * <p>Java class for Proposal complex type.

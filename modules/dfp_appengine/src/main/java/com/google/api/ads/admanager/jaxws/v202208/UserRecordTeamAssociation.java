@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@code UserRecordTeamAssociation} represents the association between a
- *             {@link UserRecord} and a {@link Team}.
+ *             {@code UserRecordTeamAssociation} represents the association between a {@link UserRecord} and a
+ *             {@link Team}.
  *           
  * 
  * <p>Java class for UserRecordTeamAssociation complex type.

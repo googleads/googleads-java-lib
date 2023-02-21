@@ -22,9 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code CustomCreativeAsset} is an association between a
- *             {@link CustomCreative} and an asset. Any assets that are associated with a
- *             creative can be inserted into its HTML snippet.
+ *             A {@code CustomCreativeAsset} is an association between a {@link CustomCreative} and an asset.
+ *             Any assets that are associated with a creative can be inserted into its HTML snippet.
  *           
  * 
  * <p>Java class for CustomCreativeAsset complex type.

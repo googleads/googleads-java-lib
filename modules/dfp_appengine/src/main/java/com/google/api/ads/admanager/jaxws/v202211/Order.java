@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An {@code Order} represents a grouping of individual {@link LineItem}
- *             objects, each of which fulfill an ad request from a particular advertiser.
+ *             An {@code Order} represents a grouping of individual {@link LineItem} objects, each of which
+ *             fulfill an ad request from a particular advertiser.
  *           
  * 
  * <p>Java class for Order complex type.

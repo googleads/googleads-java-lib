@@ -22,10 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code LabelFrequencyCap} assigns a frequency cap to a label.  The
- *             frequency cap will limit the cumulative number of impressions of any ad
- *             units with this label that may be shown to a particular user over a time
- *             unit.
+ *             A {@code LabelFrequencyCap} assigns a frequency cap to a label. The frequency cap will limit the
+ *             cumulative number of impressions of any ad units with this label that may be shown to a
+ *             particular user over a time unit.
  *           
  * 
  * <p>Java class for LabelFrequencyCap complex type.

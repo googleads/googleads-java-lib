@@ -24,9 +24,9 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * A {@code ProposalCompanyAssociation} represents a {@link Company}
- * associated with the
- *             {@link Proposal} and a set of {@link Contact} objects
- * belonging to the company.
+ * associated with the {@link
+ *             Proposal} and a set of {@link Contact} objects belonging
+ * to the company.
  */
 public class ProposalCompanyAssociation  implements java.io.Serializable {
     /* The unique ID of the {@link Company} associated with the {@link

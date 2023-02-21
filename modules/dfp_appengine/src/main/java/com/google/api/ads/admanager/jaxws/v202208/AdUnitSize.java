@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An {@code AdUnitSize} represents the size of an ad in an ad unit. This also represents
- *             the environment and companions of a particular ad in an ad unit. In most cases, it is
- *             a simple size with just a width and a height (sometimes representing an aspect ratio).
+ *             An {@code AdUnitSize} represents the size of an ad in an ad unit. This also represents the
+ *             environment and companions of a particular ad in an ad unit. In most cases, it is a simple size
+ *             with just a width and a height (sometimes representing an aspect ratio).
  *           
  * 
  * <p>Java class for AdUnitSize complex type.

@@ -30,8 +30,9 @@ public interface UserTeamAssociationServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link UserTeamAssociationPage} of {@link UserTeamAssociation}
-     * objects that satisfy the given {@link Statement#query}. The following
-     * fields are supported for filtering:
+     * objects that satisfy the
+     *         given {@link Statement#query}. The following fields are supported
+     * for filtering:
      *         
      *         <table>
      *         <tr>
@@ -51,8 +52,8 @@ public interface UserTeamAssociationServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link UserTeamAssociation} objects that
-     * match the
-     *         given {@link Statement#query}.
+     * match the given {@link
+     *         Statement#query}.
      */
     public com.google.api.ads.admanager.axis.v202211.UpdateResult performUserTeamAssociationAction(com.google.api.ads.admanager.axis.v202211.UserTeamAssociationAction userTeamAssociationAction, com.google.api.ads.admanager.axis.v202211.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 

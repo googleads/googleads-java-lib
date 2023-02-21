@@ -24,11 +24,10 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A creative that is used for tracking clicks on ads that are served
- * directly
- *             from the customers' web servers or media servers.
- *             NOTE: The size attribute is not used for click tracking
- * creative and it will
- *             not be persisted upon save.
+ * directly from the customers'
+ *             web servers or media servers. NOTE: The size attribute
+ * is not used for click tracking creative
+ *             and it will not be persisted upon save.
  */
 public class ClickTrackingCreative  extends com.google.api.ads.admanager.axis.v202208.Creative  implements java.io.Serializable {
     /* The click tracking URL. This attribute is required. */

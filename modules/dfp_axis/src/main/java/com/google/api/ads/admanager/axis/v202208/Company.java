@@ -28,57 +28,55 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class Company  implements java.io.Serializable {
     /* Uniquely identifies the {@code Company}. This value is read-only
-     * and is
-     *                 assigned by Google when the company is created. This
-     * attribute is required
-     *                 for updates. */
+     * and is assigned by Google when
+     *                 the company is created. This attribute is required
+     * for updates. */
     private java.lang.Long id;
 
     /* The full name of the company. This attribute is required and
-     * has a maximum
-     *                 length of 127 characters. */
+     * has a maximum length of 127
+     *                 characters. */
     private java.lang.String name;
 
     /* Specifies what kind of company this is. This attribute is required. */
     private com.google.api.ads.admanager.axis.v202208.CompanyType type;
 
     /* Specifies the address of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 65,535 characters. */
+     * and has a maximum length of
+     *                 65,535 characters. */
     private java.lang.String address;
 
     /* Specifies the email of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 128 characters. */
+     * and has a maximum length of 128
+     *                 characters. */
     private java.lang.String email;
 
     /* Specifies the fax phone number of the company. This attribute
-     * is optional
-     *                 and has a maximum length of 63 characters. */
+     * is optional and has a maximum
+     *                 length of 63 characters. */
     private java.lang.String faxPhone;
 
     /* Specifies the primary phone number of the company. This attribute
-     * is
-     *                 optional and has a maximum length of 63 characters. */
+     * is optional and has a maximum
+     *                 length of 63 characters. */
     private java.lang.String primaryPhone;
 
     /* Specifies the external ID of the company. This attribute is
-     * optional and
-     *                 has a maximum length of 255 characters. */
+     * optional and has a maximum length
+     *                 of 255 characters. */
     private java.lang.String externalId;
 
     /* Specifies the comment of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 1024 characters. */
+     * and has a maximum length of
+     *                 1024 characters. */
     private java.lang.String comment;
 
     /* Specifies the company's credit status. This attribute is optional
-     * and
-     *                 defaults to {@link CreditStatus#ACTIVE} when basic
-     * credit status settings
-     *                 are enabled, and {@link CreditStatus#ON_HOLD} when
-     * advanced credit status
-     *                 settings are enabled. */
+     * and defaults to {@link
+     *                 CreditStatus#ACTIVE} when basic credit status settings
+     * are enabled, and {@link
+     *                 CreditStatus#ON_HOLD} when advanced credit status
+     * settings are enabled. */
     private com.google.api.ads.admanager.axis.v202208.CompanyCreditStatus creditStatus;
 
     /* Specifies the default billing settings of this {@code Company}.
@@ -89,16 +87,16 @@ public class Company  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202208.AppliedLabel[] appliedLabels;
 
     /* The ID of the {@link Contact} who is acting as the primary
-     * contact for this
-     *                 company. This attribute is optional. */
+     * contact for this company. This
+     *                 attribute is optional. */
     private java.lang.Long primaryContactId;
 
     /* The IDs of all teams that this company is on directly. */
     private long[] appliedTeamIds;
 
     /* Specifies the ID of the Google-recognized canonicalized form
-     * of this
-     *                 company. This attribute is optional. */
+     * of this company. This attribute is
+     *                 optional. */
     private java.lang.Integer thirdPartyCompanyId;
 
     /* The date and time this company was last modified. */
@@ -181,10 +179,9 @@ public class Company  implements java.io.Serializable {
      * Gets the id value for this Company.
      * 
      * @return id   * Uniquely identifies the {@code Company}. This value is read-only
-     * and is
-     *                 assigned by Google when the company is created. This
-     * attribute is required
-     *                 for updates.
+     * and is assigned by Google when
+     *                 the company is created. This attribute is required
+     * for updates.
      */
     public java.lang.Long getId() {
         return id;
@@ -195,10 +192,9 @@ public class Company  implements java.io.Serializable {
      * Sets the id value for this Company.
      * 
      * @param id   * Uniquely identifies the {@code Company}. This value is read-only
-     * and is
-     *                 assigned by Google when the company is created. This
-     * attribute is required
-     *                 for updates.
+     * and is assigned by Google when
+     *                 the company is created. This attribute is required
+     * for updates.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -209,8 +205,8 @@ public class Company  implements java.io.Serializable {
      * Gets the name value for this Company.
      * 
      * @return name   * The full name of the company. This attribute is required and
-     * has a maximum
-     *                 length of 127 characters.
+     * has a maximum length of 127
+     *                 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -221,8 +217,8 @@ public class Company  implements java.io.Serializable {
      * Sets the name value for this Company.
      * 
      * @param name   * The full name of the company. This attribute is required and
-     * has a maximum
-     *                 length of 127 characters.
+     * has a maximum length of 127
+     *                 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -253,8 +249,8 @@ public class Company  implements java.io.Serializable {
      * Gets the address value for this Company.
      * 
      * @return address   * Specifies the address of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 65,535 characters.
+     * and has a maximum length of
+     *                 65,535 characters.
      */
     public java.lang.String getAddress() {
         return address;
@@ -265,8 +261,8 @@ public class Company  implements java.io.Serializable {
      * Sets the address value for this Company.
      * 
      * @param address   * Specifies the address of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 65,535 characters.
+     * and has a maximum length of
+     *                 65,535 characters.
      */
     public void setAddress(java.lang.String address) {
         this.address = address;
@@ -277,8 +273,8 @@ public class Company  implements java.io.Serializable {
      * Gets the email value for this Company.
      * 
      * @return email   * Specifies the email of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 128 characters.
+     * and has a maximum length of 128
+     *                 characters.
      */
     public java.lang.String getEmail() {
         return email;
@@ -289,8 +285,8 @@ public class Company  implements java.io.Serializable {
      * Sets the email value for this Company.
      * 
      * @param email   * Specifies the email of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 128 characters.
+     * and has a maximum length of 128
+     *                 characters.
      */
     public void setEmail(java.lang.String email) {
         this.email = email;
@@ -301,8 +297,8 @@ public class Company  implements java.io.Serializable {
      * Gets the faxPhone value for this Company.
      * 
      * @return faxPhone   * Specifies the fax phone number of the company. This attribute
-     * is optional
-     *                 and has a maximum length of 63 characters.
+     * is optional and has a maximum
+     *                 length of 63 characters.
      */
     public java.lang.String getFaxPhone() {
         return faxPhone;
@@ -313,8 +309,8 @@ public class Company  implements java.io.Serializable {
      * Sets the faxPhone value for this Company.
      * 
      * @param faxPhone   * Specifies the fax phone number of the company. This attribute
-     * is optional
-     *                 and has a maximum length of 63 characters.
+     * is optional and has a maximum
+     *                 length of 63 characters.
      */
     public void setFaxPhone(java.lang.String faxPhone) {
         this.faxPhone = faxPhone;
@@ -325,8 +321,8 @@ public class Company  implements java.io.Serializable {
      * Gets the primaryPhone value for this Company.
      * 
      * @return primaryPhone   * Specifies the primary phone number of the company. This attribute
-     * is
-     *                 optional and has a maximum length of 63 characters.
+     * is optional and has a maximum
+     *                 length of 63 characters.
      */
     public java.lang.String getPrimaryPhone() {
         return primaryPhone;
@@ -337,8 +333,8 @@ public class Company  implements java.io.Serializable {
      * Sets the primaryPhone value for this Company.
      * 
      * @param primaryPhone   * Specifies the primary phone number of the company. This attribute
-     * is
-     *                 optional and has a maximum length of 63 characters.
+     * is optional and has a maximum
+     *                 length of 63 characters.
      */
     public void setPrimaryPhone(java.lang.String primaryPhone) {
         this.primaryPhone = primaryPhone;
@@ -349,8 +345,8 @@ public class Company  implements java.io.Serializable {
      * Gets the externalId value for this Company.
      * 
      * @return externalId   * Specifies the external ID of the company. This attribute is
-     * optional and
-     *                 has a maximum length of 255 characters.
+     * optional and has a maximum length
+     *                 of 255 characters.
      */
     public java.lang.String getExternalId() {
         return externalId;
@@ -361,8 +357,8 @@ public class Company  implements java.io.Serializable {
      * Sets the externalId value for this Company.
      * 
      * @param externalId   * Specifies the external ID of the company. This attribute is
-     * optional and
-     *                 has a maximum length of 255 characters.
+     * optional and has a maximum length
+     *                 of 255 characters.
      */
     public void setExternalId(java.lang.String externalId) {
         this.externalId = externalId;
@@ -373,8 +369,8 @@ public class Company  implements java.io.Serializable {
      * Gets the comment value for this Company.
      * 
      * @return comment   * Specifies the comment of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 1024 characters.
+     * and has a maximum length of
+     *                 1024 characters.
      */
     public java.lang.String getComment() {
         return comment;
@@ -385,8 +381,8 @@ public class Company  implements java.io.Serializable {
      * Sets the comment value for this Company.
      * 
      * @param comment   * Specifies the comment of the company. This attribute is optional
-     * and has a
-     *                 maximum length of 1024 characters.
+     * and has a maximum length of
+     *                 1024 characters.
      */
     public void setComment(java.lang.String comment) {
         this.comment = comment;
@@ -397,12 +393,11 @@ public class Company  implements java.io.Serializable {
      * Gets the creditStatus value for this Company.
      * 
      * @return creditStatus   * Specifies the company's credit status. This attribute is optional
-     * and
-     *                 defaults to {@link CreditStatus#ACTIVE} when basic
-     * credit status settings
-     *                 are enabled, and {@link CreditStatus#ON_HOLD} when
-     * advanced credit status
-     *                 settings are enabled.
+     * and defaults to {@link
+     *                 CreditStatus#ACTIVE} when basic credit status settings
+     * are enabled, and {@link
+     *                 CreditStatus#ON_HOLD} when advanced credit status
+     * settings are enabled.
      */
     public com.google.api.ads.admanager.axis.v202208.CompanyCreditStatus getCreditStatus() {
         return creditStatus;
@@ -413,12 +408,11 @@ public class Company  implements java.io.Serializable {
      * Sets the creditStatus value for this Company.
      * 
      * @param creditStatus   * Specifies the company's credit status. This attribute is optional
-     * and
-     *                 defaults to {@link CreditStatus#ACTIVE} when basic
-     * credit status settings
-     *                 are enabled, and {@link CreditStatus#ON_HOLD} when
-     * advanced credit status
-     *                 settings are enabled.
+     * and defaults to {@link
+     *                 CreditStatus#ACTIVE} when basic credit status settings
+     * are enabled, and {@link
+     *                 CreditStatus#ON_HOLD} when advanced credit status
+     * settings are enabled.
      */
     public void setCreditStatus(com.google.api.ads.admanager.axis.v202208.CompanyCreditStatus creditStatus) {
         this.creditStatus = creditStatus;
@@ -479,8 +473,8 @@ public class Company  implements java.io.Serializable {
      * Gets the primaryContactId value for this Company.
      * 
      * @return primaryContactId   * The ID of the {@link Contact} who is acting as the primary
-     * contact for this
-     *                 company. This attribute is optional.
+     * contact for this company. This
+     *                 attribute is optional.
      */
     public java.lang.Long getPrimaryContactId() {
         return primaryContactId;
@@ -491,8 +485,8 @@ public class Company  implements java.io.Serializable {
      * Sets the primaryContactId value for this Company.
      * 
      * @param primaryContactId   * The ID of the {@link Contact} who is acting as the primary
-     * contact for this
-     *                 company. This attribute is optional.
+     * contact for this company. This
+     *                 attribute is optional.
      */
     public void setPrimaryContactId(java.lang.Long primaryContactId) {
         this.primaryContactId = primaryContactId;
@@ -531,8 +525,8 @@ public class Company  implements java.io.Serializable {
      * Gets the thirdPartyCompanyId value for this Company.
      * 
      * @return thirdPartyCompanyId   * Specifies the ID of the Google-recognized canonicalized form
-     * of this
-     *                 company. This attribute is optional.
+     * of this company. This attribute is
+     *                 optional.
      */
     public java.lang.Integer getThirdPartyCompanyId() {
         return thirdPartyCompanyId;
@@ -543,8 +537,8 @@ public class Company  implements java.io.Serializable {
      * Sets the thirdPartyCompanyId value for this Company.
      * 
      * @param thirdPartyCompanyId   * Specifies the ID of the Google-recognized canonicalized form
-     * of this
-     *                 company. This attribute is optional.
+     * of this company. This attribute is
+     *                 optional.
      */
     public void setThirdPartyCompanyId(java.lang.Integer thirdPartyCompanyId) {
         this.thirdPartyCompanyId = thirdPartyCompanyId;

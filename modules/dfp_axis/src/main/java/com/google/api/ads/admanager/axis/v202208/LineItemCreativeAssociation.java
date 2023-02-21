@@ -30,96 +30,91 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class LineItemCreativeAssociation  implements java.io.Serializable {
     /* The ID of the {@link LineItem} to which the {@link Creative}
-     * should be
-     *                 associated. This attribute is required. */
+     * should be associated. This
+     *                 attribute is required. */
     private java.lang.Long lineItemId;
 
     /* The ID of the {@link Creative} being associated with a {@link
      * LineItem}.
-     *                 <p>
-     *                 This attribute is required if this is an association
+     *                 
+     *                 <p>This attribute is required if this is an association
      * between a line item and a creative.
      *                 <br>
      *                 This attribute is ignored if this is an association
      * between a line item and a creative set.
-     *                 <p>
+     *                 
+     *                 <p>If this is an association between a line item and
+     * a creative, when retrieving the line item
+     *                 creative association, the {@link #creativeId} will
+     * be the creative's ID. <br>
      *                 If this is an association between a line item and
-     * a creative, when retrieving the
-     *                 line item creative association, the {@link #creativeId}
-     * will be the creative's ID.
-     *                 <br>
-     *                 If this is an association between a line item and
-     * a creative set, when retrieving the
-     *                 line item creative association, the {@link #creativeId}
-     * will be the ID of the
-     *                 {@link CreativeSet#masterCreativeId master creative}. */
+     * a creative set, when retrieving the line item
+     *                 creative association, the {@link #creativeId} will
+     * be the ID of the {@link
+     *                 CreativeSet#masterCreativeId master creative}. */
     private java.lang.Long creativeId;
 
     /* The ID of the {@link CreativeSet} being associated with a {@link
-     * LineItem}.
-     *                 This attribute is required if this is an association
-     * between a line item and a creative set.
-     *                 <p>
-     *                 This field will be {@code null} when retrieving associations
-     * between line items and
+     * LineItem}. This attribute is
+     *                 required if this is an association between a line
+     * item and a creative set.
+     *                 
+     *                 <p>This field will be {@code null} when retrieving
+     * associations between line items and
      *                 creatives not belonging to a set. */
     private java.lang.Long creativeSetId;
 
     /* The weight of the {@link Creative}. This value is only used
-     * if the line
-     *                 item's {@code creativeRotationType} is set to
-     *                 {@link CreativeRotationType#MANUAL}. This attribute
-     * is optional and
-     *                 defaults to 10. */
+     * if the line item's {@code
+     *                 creativeRotationType} is set to {@link CreativeRotationType#MANUAL}.
+     * This attribute is optional
+     *                 and defaults to 10. */
     private java.lang.Double manualCreativeRotationWeight;
 
-    /* The sequential rotation index of the {@link Creative}.
-     *                 This value is used only if
-     *                 the associated line item's {@link LineItem#creativeRotationType}
-     * is set to
-     *                 {@link CreativeRotationType#SEQUENTIAL}. This attribute
-     * is optional and
-     *                 defaults to 1. */
+    /* The sequential rotation index of the {@link Creative}. This
+     * value is used only if the
+     *                 associated line item's {@link LineItem#creativeRotationType}
+     * is set to {@link
+     *                 CreativeRotationType#SEQUENTIAL}. This attribute is
+     * optional and defaults to 1. */
     private java.lang.Integer sequentialCreativeRotationIndex;
 
     /* Overrides the value set for {@link LineItem#startDateTime}.
-     * This value is
-     *                 optional and is only valid for Ad Manager 360 networks. */
+     * This value is optional and is only
+     *                 valid for Ad Manager 360 networks. */
     private com.google.api.ads.admanager.axis.v202208.DateTime startDateTime;
 
-    /* Specifies whether to start serving to the
-     *                 {@code LineItemCreativeAssociation} right away, in
-     * an hour, etc. This
-     *                 attribute is optional and defaults to
-     *                 {@link StartDateTimeType#USE_START_DATE_TIME}. */
+    /* Specifies whether to start serving to the {@code LineItemCreativeAssociation}
+     * right away, in an
+     *                 hour, etc. This attribute is optional and defaults
+     * to {@link
+     *                 StartDateTimeType#USE_START_DATE_TIME}. */
     private com.google.api.ads.admanager.axis.v202208.StartDateTimeType startDateTimeType;
 
     /* Overrides {@link LineItem#endDateTime}. This value is optional
-     * and is only
-     *                 valid for Ad Manager 360 networks. */
+     * and is only valid for Ad Manager
+     *                 360 networks. */
     private com.google.api.ads.admanager.axis.v202208.DateTime endDateTime;
 
-    /* Overrides the value set for
-     *                 {@link HasDestinationUrlCreative#destinationUrl}.
-     * This value is optional
-     *                 and is only valid for Ad Manager 360 networks. */
+    /* Overrides the value set for {@link HasDestinationUrlCreative#destinationUrl}.
+     * This value is
+     *                 optional and is only valid for Ad Manager 360 networks. */
     private java.lang.String destinationUrl;
 
     /* Overrides the value set for {@link Creative#size}, which allows
-     * the
-     *                 creative to be served to ad units that would otherwise
-     * not be compatible
-     *                 for its actual size. This value is optional. */
+     * the creative to be served to ad
+     *                 units that would otherwise not be compatible for its
+     * actual size. This value is optional. */
     private com.google.api.ads.admanager.axis.v202208.Size[] sizes;
 
     /* The status of the association. This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociationStatus status;
 
     /* Contains trafficking statistics for the association. This attribute
-     * is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} in case
-     *                 there are no statistics for the association yet. */
+     * is readonly and is
+     *                 populated by Google. This will be {@code null} in
+     * case there are no statistics for the
+     *                 association yet. */
     private com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociationStats stats;
 
     /* The date and time this association was last modified. */
@@ -131,8 +126,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      *                 <p>This attribute is optional. It should match the
      * creative targeting specified on the
      *                 corresponding {@link CreativePlaceholder} in the {@link
-     * LineItem} that is being associated
-     *                 with the {@link Creative}. */
+     * LineItem} that is being associated with
+     *                 the {@link Creative}. */
     private java.lang.String targetingName;
 
     public LineItemCreativeAssociation() {
@@ -194,8 +189,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the lineItemId value for this LineItemCreativeAssociation.
      * 
      * @return lineItemId   * The ID of the {@link LineItem} to which the {@link Creative}
-     * should be
-     *                 associated. This attribute is required.
+     * should be associated. This
+     *                 attribute is required.
      */
     public java.lang.Long getLineItemId() {
         return lineItemId;
@@ -206,8 +201,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the lineItemId value for this LineItemCreativeAssociation.
      * 
      * @param lineItemId   * The ID of the {@link LineItem} to which the {@link Creative}
-     * should be
-     *                 associated. This attribute is required.
+     * should be associated. This
+     *                 attribute is required.
      */
     public void setLineItemId(java.lang.Long lineItemId) {
         this.lineItemId = lineItemId;
@@ -219,23 +214,22 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * 
      * @return creativeId   * The ID of the {@link Creative} being associated with a {@link
      * LineItem}.
-     *                 <p>
-     *                 This attribute is required if this is an association
+     *                 
+     *                 <p>This attribute is required if this is an association
      * between a line item and a creative.
      *                 <br>
      *                 This attribute is ignored if this is an association
      * between a line item and a creative set.
-     *                 <p>
+     *                 
+     *                 <p>If this is an association between a line item and
+     * a creative, when retrieving the line item
+     *                 creative association, the {@link #creativeId} will
+     * be the creative's ID. <br>
      *                 If this is an association between a line item and
-     * a creative, when retrieving the
-     *                 line item creative association, the {@link #creativeId}
-     * will be the creative's ID.
-     *                 <br>
-     *                 If this is an association between a line item and
-     * a creative set, when retrieving the
-     *                 line item creative association, the {@link #creativeId}
-     * will be the ID of the
-     *                 {@link CreativeSet#masterCreativeId master creative}.
+     * a creative set, when retrieving the line item
+     *                 creative association, the {@link #creativeId} will
+     * be the ID of the {@link
+     *                 CreativeSet#masterCreativeId master creative}.
      */
     public java.lang.Long getCreativeId() {
         return creativeId;
@@ -247,23 +241,22 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * 
      * @param creativeId   * The ID of the {@link Creative} being associated with a {@link
      * LineItem}.
-     *                 <p>
-     *                 This attribute is required if this is an association
+     *                 
+     *                 <p>This attribute is required if this is an association
      * between a line item and a creative.
      *                 <br>
      *                 This attribute is ignored if this is an association
      * between a line item and a creative set.
-     *                 <p>
+     *                 
+     *                 <p>If this is an association between a line item and
+     * a creative, when retrieving the line item
+     *                 creative association, the {@link #creativeId} will
+     * be the creative's ID. <br>
      *                 If this is an association between a line item and
-     * a creative, when retrieving the
-     *                 line item creative association, the {@link #creativeId}
-     * will be the creative's ID.
-     *                 <br>
-     *                 If this is an association between a line item and
-     * a creative set, when retrieving the
-     *                 line item creative association, the {@link #creativeId}
-     * will be the ID of the
-     *                 {@link CreativeSet#masterCreativeId master creative}.
+     * a creative set, when retrieving the line item
+     *                 creative association, the {@link #creativeId} will
+     * be the ID of the {@link
+     *                 CreativeSet#masterCreativeId master creative}.
      */
     public void setCreativeId(java.lang.Long creativeId) {
         this.creativeId = creativeId;
@@ -274,12 +267,12 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the creativeSetId value for this LineItemCreativeAssociation.
      * 
      * @return creativeSetId   * The ID of the {@link CreativeSet} being associated with a {@link
-     * LineItem}.
-     *                 This attribute is required if this is an association
-     * between a line item and a creative set.
-     *                 <p>
-     *                 This field will be {@code null} when retrieving associations
-     * between line items and
+     * LineItem}. This attribute is
+     *                 required if this is an association between a line
+     * item and a creative set.
+     *                 
+     *                 <p>This field will be {@code null} when retrieving
+     * associations between line items and
      *                 creatives not belonging to a set.
      */
     public java.lang.Long getCreativeSetId() {
@@ -291,12 +284,12 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the creativeSetId value for this LineItemCreativeAssociation.
      * 
      * @param creativeSetId   * The ID of the {@link CreativeSet} being associated with a {@link
-     * LineItem}.
-     *                 This attribute is required if this is an association
-     * between a line item and a creative set.
-     *                 <p>
-     *                 This field will be {@code null} when retrieving associations
-     * between line items and
+     * LineItem}. This attribute is
+     *                 required if this is an association between a line
+     * item and a creative set.
+     *                 
+     *                 <p>This field will be {@code null} when retrieving
+     * associations between line items and
      *                 creatives not belonging to a set.
      */
     public void setCreativeSetId(java.lang.Long creativeSetId) {
@@ -308,11 +301,10 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the manualCreativeRotationWeight value for this LineItemCreativeAssociation.
      * 
      * @return manualCreativeRotationWeight   * The weight of the {@link Creative}. This value is only used
-     * if the line
-     *                 item's {@code creativeRotationType} is set to
-     *                 {@link CreativeRotationType#MANUAL}. This attribute
-     * is optional and
-     *                 defaults to 10.
+     * if the line item's {@code
+     *                 creativeRotationType} is set to {@link CreativeRotationType#MANUAL}.
+     * This attribute is optional
+     *                 and defaults to 10.
      */
     public java.lang.Double getManualCreativeRotationWeight() {
         return manualCreativeRotationWeight;
@@ -323,11 +315,10 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the manualCreativeRotationWeight value for this LineItemCreativeAssociation.
      * 
      * @param manualCreativeRotationWeight   * The weight of the {@link Creative}. This value is only used
-     * if the line
-     *                 item's {@code creativeRotationType} is set to
-     *                 {@link CreativeRotationType#MANUAL}. This attribute
-     * is optional and
-     *                 defaults to 10.
+     * if the line item's {@code
+     *                 creativeRotationType} is set to {@link CreativeRotationType#MANUAL}.
+     * This attribute is optional
+     *                 and defaults to 10.
      */
     public void setManualCreativeRotationWeight(java.lang.Double manualCreativeRotationWeight) {
         this.manualCreativeRotationWeight = manualCreativeRotationWeight;
@@ -337,13 +328,12 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
     /**
      * Gets the sequentialCreativeRotationIndex value for this LineItemCreativeAssociation.
      * 
-     * @return sequentialCreativeRotationIndex   * The sequential rotation index of the {@link Creative}.
-     *                 This value is used only if
-     *                 the associated line item's {@link LineItem#creativeRotationType}
-     * is set to
-     *                 {@link CreativeRotationType#SEQUENTIAL}. This attribute
-     * is optional and
-     *                 defaults to 1.
+     * @return sequentialCreativeRotationIndex   * The sequential rotation index of the {@link Creative}. This
+     * value is used only if the
+     *                 associated line item's {@link LineItem#creativeRotationType}
+     * is set to {@link
+     *                 CreativeRotationType#SEQUENTIAL}. This attribute is
+     * optional and defaults to 1.
      */
     public java.lang.Integer getSequentialCreativeRotationIndex() {
         return sequentialCreativeRotationIndex;
@@ -353,13 +343,12 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
     /**
      * Sets the sequentialCreativeRotationIndex value for this LineItemCreativeAssociation.
      * 
-     * @param sequentialCreativeRotationIndex   * The sequential rotation index of the {@link Creative}.
-     *                 This value is used only if
-     *                 the associated line item's {@link LineItem#creativeRotationType}
-     * is set to
-     *                 {@link CreativeRotationType#SEQUENTIAL}. This attribute
-     * is optional and
-     *                 defaults to 1.
+     * @param sequentialCreativeRotationIndex   * The sequential rotation index of the {@link Creative}. This
+     * value is used only if the
+     *                 associated line item's {@link LineItem#creativeRotationType}
+     * is set to {@link
+     *                 CreativeRotationType#SEQUENTIAL}. This attribute is
+     * optional and defaults to 1.
      */
     public void setSequentialCreativeRotationIndex(java.lang.Integer sequentialCreativeRotationIndex) {
         this.sequentialCreativeRotationIndex = sequentialCreativeRotationIndex;
@@ -370,8 +359,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the startDateTime value for this LineItemCreativeAssociation.
      * 
      * @return startDateTime   * Overrides the value set for {@link LineItem#startDateTime}.
-     * This value is
-     *                 optional and is only valid for Ad Manager 360 networks.
+     * This value is optional and is only
+     *                 valid for Ad Manager 360 networks.
      */
     public com.google.api.ads.admanager.axis.v202208.DateTime getStartDateTime() {
         return startDateTime;
@@ -382,8 +371,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the startDateTime value for this LineItemCreativeAssociation.
      * 
      * @param startDateTime   * Overrides the value set for {@link LineItem#startDateTime}.
-     * This value is
-     *                 optional and is only valid for Ad Manager 360 networks.
+     * This value is optional and is only
+     *                 valid for Ad Manager 360 networks.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202208.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -393,11 +382,11 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
     /**
      * Gets the startDateTimeType value for this LineItemCreativeAssociation.
      * 
-     * @return startDateTimeType   * Specifies whether to start serving to the
-     *                 {@code LineItemCreativeAssociation} right away, in
-     * an hour, etc. This
-     *                 attribute is optional and defaults to
-     *                 {@link StartDateTimeType#USE_START_DATE_TIME}.
+     * @return startDateTimeType   * Specifies whether to start serving to the {@code LineItemCreativeAssociation}
+     * right away, in an
+     *                 hour, etc. This attribute is optional and defaults
+     * to {@link
+     *                 StartDateTimeType#USE_START_DATE_TIME}.
      */
     public com.google.api.ads.admanager.axis.v202208.StartDateTimeType getStartDateTimeType() {
         return startDateTimeType;
@@ -407,11 +396,11 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
     /**
      * Sets the startDateTimeType value for this LineItemCreativeAssociation.
      * 
-     * @param startDateTimeType   * Specifies whether to start serving to the
-     *                 {@code LineItemCreativeAssociation} right away, in
-     * an hour, etc. This
-     *                 attribute is optional and defaults to
-     *                 {@link StartDateTimeType#USE_START_DATE_TIME}.
+     * @param startDateTimeType   * Specifies whether to start serving to the {@code LineItemCreativeAssociation}
+     * right away, in an
+     *                 hour, etc. This attribute is optional and defaults
+     * to {@link
+     *                 StartDateTimeType#USE_START_DATE_TIME}.
      */
     public void setStartDateTimeType(com.google.api.ads.admanager.axis.v202208.StartDateTimeType startDateTimeType) {
         this.startDateTimeType = startDateTimeType;
@@ -422,8 +411,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the endDateTime value for this LineItemCreativeAssociation.
      * 
      * @return endDateTime   * Overrides {@link LineItem#endDateTime}. This value is optional
-     * and is only
-     *                 valid for Ad Manager 360 networks.
+     * and is only valid for Ad Manager
+     *                 360 networks.
      */
     public com.google.api.ads.admanager.axis.v202208.DateTime getEndDateTime() {
         return endDateTime;
@@ -434,8 +423,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the endDateTime value for this LineItemCreativeAssociation.
      * 
      * @param endDateTime   * Overrides {@link LineItem#endDateTime}. This value is optional
-     * and is only
-     *                 valid for Ad Manager 360 networks.
+     * and is only valid for Ad Manager
+     *                 360 networks.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202208.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -445,10 +434,9 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
     /**
      * Gets the destinationUrl value for this LineItemCreativeAssociation.
      * 
-     * @return destinationUrl   * Overrides the value set for
-     *                 {@link HasDestinationUrlCreative#destinationUrl}.
-     * This value is optional
-     *                 and is only valid for Ad Manager 360 networks.
+     * @return destinationUrl   * Overrides the value set for {@link HasDestinationUrlCreative#destinationUrl}.
+     * This value is
+     *                 optional and is only valid for Ad Manager 360 networks.
      */
     public java.lang.String getDestinationUrl() {
         return destinationUrl;
@@ -458,10 +446,9 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
     /**
      * Sets the destinationUrl value for this LineItemCreativeAssociation.
      * 
-     * @param destinationUrl   * Overrides the value set for
-     *                 {@link HasDestinationUrlCreative#destinationUrl}.
-     * This value is optional
-     *                 and is only valid for Ad Manager 360 networks.
+     * @param destinationUrl   * Overrides the value set for {@link HasDestinationUrlCreative#destinationUrl}.
+     * This value is
+     *                 optional and is only valid for Ad Manager 360 networks.
      */
     public void setDestinationUrl(java.lang.String destinationUrl) {
         this.destinationUrl = destinationUrl;
@@ -472,10 +459,9 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the sizes value for this LineItemCreativeAssociation.
      * 
      * @return sizes   * Overrides the value set for {@link Creative#size}, which allows
-     * the
-     *                 creative to be served to ad units that would otherwise
-     * not be compatible
-     *                 for its actual size. This value is optional.
+     * the creative to be served to ad
+     *                 units that would otherwise not be compatible for its
+     * actual size. This value is optional.
      */
     public com.google.api.ads.admanager.axis.v202208.Size[] getSizes() {
         return sizes;
@@ -486,10 +472,9 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the sizes value for this LineItemCreativeAssociation.
      * 
      * @param sizes   * Overrides the value set for {@link Creative#size}, which allows
-     * the
-     *                 creative to be served to ad units that would otherwise
-     * not be compatible
-     *                 for its actual size. This value is optional.
+     * the creative to be served to ad
+     *                 units that would otherwise not be compatible for its
+     * actual size. This value is optional.
      */
     public void setSizes(com.google.api.ads.admanager.axis.v202208.Size[] sizes) {
         this.sizes = sizes;
@@ -528,10 +513,10 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Gets the stats value for this LineItemCreativeAssociation.
      * 
      * @return stats   * Contains trafficking statistics for the association. This attribute
-     * is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} in case
-     *                 there are no statistics for the association yet.
+     * is readonly and is
+     *                 populated by Google. This will be {@code null} in
+     * case there are no statistics for the
+     *                 association yet.
      */
     public com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociationStats getStats() {
         return stats;
@@ -542,10 +527,10 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * Sets the stats value for this LineItemCreativeAssociation.
      * 
      * @param stats   * Contains trafficking statistics for the association. This attribute
-     * is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} in case
-     *                 there are no statistics for the association yet.
+     * is readonly and is
+     *                 populated by Google. This will be {@code null} in
+     * case there are no statistics for the
+     *                 association yet.
      */
     public void setStats(com.google.api.ads.admanager.axis.v202208.LineItemCreativeAssociationStats stats) {
         this.stats = stats;
@@ -581,8 +566,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      *                 <p>This attribute is optional. It should match the
      * creative targeting specified on the
      *                 corresponding {@link CreativePlaceholder} in the {@link
-     * LineItem} that is being associated
-     *                 with the {@link Creative}.
+     * LineItem} that is being associated with
+     *                 the {@link Creative}.
      */
     public java.lang.String getTargetingName() {
         return targetingName;
@@ -598,8 +583,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      *                 <p>This attribute is optional. It should match the
      * creative targeting specified on the
      *                 corresponding {@link CreativePlaceholder} in the {@link
-     * LineItem} that is being associated
-     *                 with the {@link Creative}.
+     * LineItem} that is being associated with
+     *                 the {@link Creative}.
      */
     public void setTargetingName(java.lang.String targetingName) {
         this.targetingName = targetingName;

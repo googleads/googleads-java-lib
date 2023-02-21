@@ -50,13 +50,12 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class AvailabilityForecast  implements java.io.Serializable {
     /* Uniquely identifies this availability forecast. This value
-     * is read-only
-     *                 and is assigned by Google when the forecast is created.
-     * The
-     *                 attribute will be either the ID of the {@link LineItem}
-     * object it
-     *                 represents, or {@code null} if the forecast represents
-     * a prospective line item. */
+     * is read-only and is assigned by
+     *                 Google when the forecast is created. The attribute
+     * will be either the ID of the {@link
+     *                 LineItem} object it represents, or {@code null} if
+     * the forecast represents a prospective line
+     *                 item. */
     private java.lang.Long lineItemId;
 
     /* The unique ID for the {@link Order} object that this line item
@@ -66,42 +65,41 @@ public class AvailabilityForecast  implements java.io.Serializable {
     private java.lang.Long orderId;
 
     /* The unit with which the goal or cap of the {@link LineItem}
-     * is defined.
-     *                 Will be the same value as {@link Goal#unitType} for
-     * both a set line
-     *                 item or a prospective one. */
+     * is defined. Will be the same value
+     *                 as {@link Goal#unitType} for both a set line item
+     * or a prospective one. */
     private com.google.api.ads.admanager.axis.v202205.UnitType unitType;
 
     /* The number of units, defined by {@link Goal#unitType}, that
-     * can be
-     *                 booked without affecting the delivery of any reserved
-     * line items. Exceeding
-     *                 this value will not cause an overbook, but lower priority
-     * line items may
-     *                 not run. */
+     * can be booked without affecting the
+     *                 delivery of any reserved line items. Exceeding this
+     * value will not cause an overbook, but lower
+     *                 priority line items may not run. */
     private java.lang.Long availableUnits;
 
     /* The number of units, defined by {@link Goal#unitType}, that
-     * have already been served if the reservation is already running. */
+     * have already been served if the
+     *                 reservation is already running. */
     private java.lang.Long deliveredUnits;
 
     /* The number of units, defined by {@link Goal#unitType}, that
-     * match the
-     *                 specified targeting and delivery settings. */
+     * match the specified targeting and
+     *                 delivery settings. */
     private java.lang.Long matchedUnits;
 
     /* The maximum number of units, defined by {@link Goal#unitType},
-     * that could be booked by
-     *                 taking inventory away from lower priority line items
-     * and some same priority line items.
+     * that could be booked by taking
+     *                 inventory away from lower priority line items and
+     * some same priority line items.
+     *                 
      *                 <p>Please note: booking this number may cause lower
      * priority line items and some same priority
      *                 line items to underdeliver. */
     private java.lang.Long possibleUnits;
 
     /* The number of reserved units, defined by {@link Goal#unitType},
-     * requested.
-     *                 This can be an absolute or percentage value. */
+     * requested. This can be an
+     *                 absolute or percentage value. */
     private java.lang.Long reservedUnits;
 
     /* The breakdowns for each time window defined in {@link ForecastBreakdownOptions#timeWindows}.
@@ -238,13 +236,12 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the lineItemId value for this AvailabilityForecast.
      * 
      * @return lineItemId   * Uniquely identifies this availability forecast. This value
-     * is read-only
-     *                 and is assigned by Google when the forecast is created.
-     * The
-     *                 attribute will be either the ID of the {@link LineItem}
-     * object it
-     *                 represents, or {@code null} if the forecast represents
-     * a prospective line item.
+     * is read-only and is assigned by
+     *                 Google when the forecast is created. The attribute
+     * will be either the ID of the {@link
+     *                 LineItem} object it represents, or {@code null} if
+     * the forecast represents a prospective line
+     *                 item.
      */
     public java.lang.Long getLineItemId() {
         return lineItemId;
@@ -255,13 +252,12 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the lineItemId value for this AvailabilityForecast.
      * 
      * @param lineItemId   * Uniquely identifies this availability forecast. This value
-     * is read-only
-     *                 and is assigned by Google when the forecast is created.
-     * The
-     *                 attribute will be either the ID of the {@link LineItem}
-     * object it
-     *                 represents, or {@code null} if the forecast represents
-     * a prospective line item.
+     * is read-only and is assigned by
+     *                 Google when the forecast is created. The attribute
+     * will be either the ID of the {@link
+     *                 LineItem} object it represents, or {@code null} if
+     * the forecast represents a prospective line
+     *                 item.
      */
     public void setLineItemId(java.lang.Long lineItemId) {
         this.lineItemId = lineItemId;
@@ -298,10 +294,9 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the unitType value for this AvailabilityForecast.
      * 
      * @return unitType   * The unit with which the goal or cap of the {@link LineItem}
-     * is defined.
-     *                 Will be the same value as {@link Goal#unitType} for
-     * both a set line
-     *                 item or a prospective one.
+     * is defined. Will be the same value
+     *                 as {@link Goal#unitType} for both a set line item
+     * or a prospective one.
      */
     public com.google.api.ads.admanager.axis.v202205.UnitType getUnitType() {
         return unitType;
@@ -312,10 +307,9 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the unitType value for this AvailabilityForecast.
      * 
      * @param unitType   * The unit with which the goal or cap of the {@link LineItem}
-     * is defined.
-     *                 Will be the same value as {@link Goal#unitType} for
-     * both a set line
-     *                 item or a prospective one.
+     * is defined. Will be the same value
+     *                 as {@link Goal#unitType} for both a set line item
+     * or a prospective one.
      */
     public void setUnitType(com.google.api.ads.admanager.axis.v202205.UnitType unitType) {
         this.unitType = unitType;
@@ -326,12 +320,10 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the availableUnits value for this AvailabilityForecast.
      * 
      * @return availableUnits   * The number of units, defined by {@link Goal#unitType}, that
-     * can be
-     *                 booked without affecting the delivery of any reserved
-     * line items. Exceeding
-     *                 this value will not cause an overbook, but lower priority
-     * line items may
-     *                 not run.
+     * can be booked without affecting the
+     *                 delivery of any reserved line items. Exceeding this
+     * value will not cause an overbook, but lower
+     *                 priority line items may not run.
      */
     public java.lang.Long getAvailableUnits() {
         return availableUnits;
@@ -342,12 +334,10 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the availableUnits value for this AvailabilityForecast.
      * 
      * @param availableUnits   * The number of units, defined by {@link Goal#unitType}, that
-     * can be
-     *                 booked without affecting the delivery of any reserved
-     * line items. Exceeding
-     *                 this value will not cause an overbook, but lower priority
-     * line items may
-     *                 not run.
+     * can be booked without affecting the
+     *                 delivery of any reserved line items. Exceeding this
+     * value will not cause an overbook, but lower
+     *                 priority line items may not run.
      */
     public void setAvailableUnits(java.lang.Long availableUnits) {
         this.availableUnits = availableUnits;
@@ -358,7 +348,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the deliveredUnits value for this AvailabilityForecast.
      * 
      * @return deliveredUnits   * The number of units, defined by {@link Goal#unitType}, that
-     * have already been served if the reservation is already running.
+     * have already been served if the
+     *                 reservation is already running.
      */
     public java.lang.Long getDeliveredUnits() {
         return deliveredUnits;
@@ -369,7 +360,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the deliveredUnits value for this AvailabilityForecast.
      * 
      * @param deliveredUnits   * The number of units, defined by {@link Goal#unitType}, that
-     * have already been served if the reservation is already running.
+     * have already been served if the
+     *                 reservation is already running.
      */
     public void setDeliveredUnits(java.lang.Long deliveredUnits) {
         this.deliveredUnits = deliveredUnits;
@@ -380,8 +372,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the matchedUnits value for this AvailabilityForecast.
      * 
      * @return matchedUnits   * The number of units, defined by {@link Goal#unitType}, that
-     * match the
-     *                 specified targeting and delivery settings.
+     * match the specified targeting and
+     *                 delivery settings.
      */
     public java.lang.Long getMatchedUnits() {
         return matchedUnits;
@@ -392,8 +384,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the matchedUnits value for this AvailabilityForecast.
      * 
      * @param matchedUnits   * The number of units, defined by {@link Goal#unitType}, that
-     * match the
-     *                 specified targeting and delivery settings.
+     * match the specified targeting and
+     *                 delivery settings.
      */
     public void setMatchedUnits(java.lang.Long matchedUnits) {
         this.matchedUnits = matchedUnits;
@@ -404,9 +396,10 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the possibleUnits value for this AvailabilityForecast.
      * 
      * @return possibleUnits   * The maximum number of units, defined by {@link Goal#unitType},
-     * that could be booked by
-     *                 taking inventory away from lower priority line items
-     * and some same priority line items.
+     * that could be booked by taking
+     *                 inventory away from lower priority line items and
+     * some same priority line items.
+     *                 
      *                 <p>Please note: booking this number may cause lower
      * priority line items and some same priority
      *                 line items to underdeliver.
@@ -420,9 +413,10 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the possibleUnits value for this AvailabilityForecast.
      * 
      * @param possibleUnits   * The maximum number of units, defined by {@link Goal#unitType},
-     * that could be booked by
-     *                 taking inventory away from lower priority line items
-     * and some same priority line items.
+     * that could be booked by taking
+     *                 inventory away from lower priority line items and
+     * some same priority line items.
+     *                 
      *                 <p>Please note: booking this number may cause lower
      * priority line items and some same priority
      *                 line items to underdeliver.
@@ -436,8 +430,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Gets the reservedUnits value for this AvailabilityForecast.
      * 
      * @return reservedUnits   * The number of reserved units, defined by {@link Goal#unitType},
-     * requested.
-     *                 This can be an absolute or percentage value.
+     * requested. This can be an
+     *                 absolute or percentage value.
      */
     public java.lang.Long getReservedUnits() {
         return reservedUnits;
@@ -448,8 +442,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      * Sets the reservedUnits value for this AvailabilityForecast.
      * 
      * @param reservedUnits   * The number of reserved units, defined by {@link Goal#unitType},
-     * requested.
-     *                 This can be an absolute or percentage value.
+     * requested. This can be an
+     *                 absolute or percentage value.
      */
     public void setReservedUnits(java.lang.Long reservedUnits) {
         this.reservedUnits = reservedUnits;

@@ -28,13 +28,13 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class GrpDemographicBreakdown  implements java.io.Serializable {
     /* The number of units matching the demographic breakdown that
-     * can be booked without affecting
-     *                 the delivery of any reserved line items. */
+     * can be booked without affecting the
+     *                 delivery of any reserved line items. */
     private java.lang.Long availableUnits;
 
     /* The number of units matching the demographic and matching specified
-     * targeting and
-     *                 delivery settings. */
+     * targeting and delivery
+     *                 settings. */
     private java.lang.Long matchedUnits;
 
     /* The {@link GrpUnitType} associated with this demographic breakdown. */
@@ -78,8 +78,8 @@ public class GrpDemographicBreakdown  implements java.io.Serializable {
      * Gets the availableUnits value for this GrpDemographicBreakdown.
      * 
      * @return availableUnits   * The number of units matching the demographic breakdown that
-     * can be booked without affecting
-     *                 the delivery of any reserved line items.
+     * can be booked without affecting the
+     *                 delivery of any reserved line items.
      */
     public java.lang.Long getAvailableUnits() {
         return availableUnits;
@@ -90,8 +90,8 @@ public class GrpDemographicBreakdown  implements java.io.Serializable {
      * Sets the availableUnits value for this GrpDemographicBreakdown.
      * 
      * @param availableUnits   * The number of units matching the demographic breakdown that
-     * can be booked without affecting
-     *                 the delivery of any reserved line items.
+     * can be booked without affecting the
+     *                 delivery of any reserved line items.
      */
     public void setAvailableUnits(java.lang.Long availableUnits) {
         this.availableUnits = availableUnits;
@@ -102,8 +102,8 @@ public class GrpDemographicBreakdown  implements java.io.Serializable {
      * Gets the matchedUnits value for this GrpDemographicBreakdown.
      * 
      * @return matchedUnits   * The number of units matching the demographic and matching specified
-     * targeting and
-     *                 delivery settings.
+     * targeting and delivery
+     *                 settings.
      */
     public java.lang.Long getMatchedUnits() {
         return matchedUnits;
@@ -114,8 +114,8 @@ public class GrpDemographicBreakdown  implements java.io.Serializable {
      * Sets the matchedUnits value for this GrpDemographicBreakdown.
      * 
      * @param matchedUnits   * The number of units matching the demographic and matching specified
-     * targeting and
-     *                 delivery settings.
+     * targeting and delivery
+     *                 settings.
      */
     public void setMatchedUnits(java.lang.Long matchedUnits) {
         this.matchedUnits = matchedUnits;

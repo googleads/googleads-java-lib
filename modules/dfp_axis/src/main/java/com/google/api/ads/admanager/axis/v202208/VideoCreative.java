@@ -24,8 +24,7 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A {@code Creative} that contains Ad Manager hosted video ads and
- * is served
- *             via VAST XML.
+ * is served via VAST XML.
  */
 public class VideoCreative  extends com.google.api.ads.admanager.axis.v202208.BaseVideoCreative  implements java.io.Serializable {
     /* A URL that points to the source media that will be used for

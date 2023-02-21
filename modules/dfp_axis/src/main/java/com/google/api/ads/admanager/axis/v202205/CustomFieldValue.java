@@ -24,15 +24,14 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * The value of a {@link CustomField} that does not have a {@link
- * CustomField#dataType}
- *             of {@link CustomFieldDataType#DROP_DOWN}.
+ * CustomField#dataType} of {@link
+ *             CustomFieldDataType#DROP_DOWN}.
  */
 public class CustomFieldValue  extends com.google.api.ads.admanager.axis.v202205.BaseCustomFieldValue  implements java.io.Serializable {
     /* The value for this field. The appropriate type of {@code Value}
-     * is
-     *                     determined by the {@link CustomField#dataType}
-     * of the {@code CustomField}
-     *                     that this conforms to.
+     * is determined by the {@link
+     *                     CustomField#dataType} of the {@code CustomField}
+     * that this conforms to.
      *                     
      *                     <table>
      *                     <tr><th>{@link CustomFieldDataType}</th><th>{@link
@@ -70,10 +69,9 @@ public class CustomFieldValue  extends com.google.api.ads.admanager.axis.v202205
      * Gets the value value for this CustomFieldValue.
      * 
      * @return value   * The value for this field. The appropriate type of {@code Value}
-     * is
-     *                     determined by the {@link CustomField#dataType}
-     * of the {@code CustomField}
-     *                     that this conforms to.
+     * is determined by the {@link
+     *                     CustomField#dataType} of the {@code CustomField}
+     * that this conforms to.
      *                     
      *                     <table>
      *                     <tr><th>{@link CustomFieldDataType}</th><th>{@link
@@ -95,10 +93,9 @@ public class CustomFieldValue  extends com.google.api.ads.admanager.axis.v202205
      * Sets the value value for this CustomFieldValue.
      * 
      * @param value   * The value for this field. The appropriate type of {@code Value}
-     * is
-     *                     determined by the {@link CustomField#dataType}
-     * of the {@code CustomField}
-     *                     that this conforms to.
+     * is determined by the {@link
+     *                     CustomField#dataType} of the {@code CustomField}
+     * that this conforms to.
      *                     
      *                     <table>
      *                     <tr><th>{@link CustomFieldDataType}</th><th>{@link

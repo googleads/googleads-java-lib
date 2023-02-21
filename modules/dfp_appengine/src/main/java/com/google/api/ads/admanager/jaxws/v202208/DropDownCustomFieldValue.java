@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@link CustomFieldValue} for a {@link CustomField} that has a {@link CustomField#dataType}
- *             of {@link CustomFieldDataType#DROP_DOWN}
+ *             A {@link CustomFieldValue} for a {@link CustomField} that has a {@link CustomField#dataType} of
+ *             {@link CustomFieldDataType#DROP_DOWN}
  *           
  * 
  * <p>Java class for DropDownCustomFieldValue complex type.

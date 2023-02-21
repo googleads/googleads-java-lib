@@ -26,13 +26,14 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
     /**
      * Creates new {@link LiveStreamEvent} objects.
      *         
-     *         The following fields are required:
+     *         <p>The following fields are required:
+     *         
      *         <ul>
-     *         <li>{@link LiveStreamEvent#name}</li>
-     *         <li>{@link LiveStreamEvent#startDateTime}</li>
-     *         <li>{@link LiveStreamEvent#endDateTime}</li>
-     *         <li>{@link LiveStreamEvent#contentUrls}</li>
-     *         <li>{@link LiveStreamEvent#adTags}</li>
+     *         <li>{@link LiveStreamEvent#name}
+     *         <li>{@link LiveStreamEvent#startDateTime}
+     *         <li>{@link LiveStreamEvent#endDateTime}
+     *         <li>{@link LiveStreamEvent#contentUrls}
+     *         <li>{@link LiveStreamEvent#adTags}
      *         </ul>
      */
     public com.google.api.ads.admanager.axis.v202208.LiveStreamEvent[] createLiveStreamEvents(com.google.api.ads.admanager.axis.v202208.LiveStreamEvent[] liveStreamEvents) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
@@ -41,17 +42,16 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
      * Create new slates.
      *         
      *         <p>A slate creative is served as backup content in a live
-     * stream event when no other
-     *         creatives are eligible to be served.
+     * stream event when no other creatives
+     *         are eligible to be served.
      */
     public com.google.api.ads.admanager.axis.v202208.Slate[] createSlates(com.google.api.ads.admanager.axis.v202208.Slate[] slates) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 
     /**
      * Gets a {@link LiveStreamEventPage} of {@link LiveStreamEvent}
-     * objects that
-     *         satisfy the given {@link Statement#query}. The following fields
-     * are
-     *         supported for filtering:
+     * objects that satisfy the given
+     *         {@link Statement#query}. The following fields are supported
+     * for filtering:
      *         
      *         <table>
      *         <tr>
@@ -99,11 +99,9 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link SlatePage} of {@link Slate} objects that satisfy
-     * the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
-     *         
+     * the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
@@ -126,8 +124,8 @@ public interface LiveStreamEventServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link LiveStreamEvent} objects that match
-     * the given
-     *         {@link Statement#query}.
+     * the given {@link
+     *         Statement#query}.
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performLiveStreamEventAction(com.google.api.ads.admanager.axis.v202208.LiveStreamEventAction liveStreamEventAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
 

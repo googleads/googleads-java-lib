@@ -44,8 +44,8 @@ public interface MobileApplicationServiceInterface {
 
     /**
      * 
-     *         Creates and claims {@link MobileApplication mobile applications}
-     *         to be used for targeting in the network.
+     *         Creates and claims {@link MobileApplication mobile applications} to be used for targeting in
+     *         the network.
      *       
      * 
      * @param mobileApplications
@@ -65,9 +65,8 @@ public interface MobileApplicationServiceInterface {
 
     /**
      * 
-     *         Gets a {@link MobileApplicationPage mobileApplicationPage} of
-     *         {@link MobileApplication mobile applications} that satisfy the given {@link Statement}.
-     *         The following fields are supported for
+     *         Gets a {@link MobileApplicationPage mobileApplicationPage} of {@link MobileApplication mobile
+     *         applications} that satisfy the given {@link Statement}. The following fields are supported for
      *         filtering:
      *         
      *         <table>

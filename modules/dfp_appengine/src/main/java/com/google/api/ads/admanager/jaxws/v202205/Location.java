@@ -22,10 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@link Location} represents a geographical entity that can be targeted. If
- *             a location type is not available because of the API version you are using,
- *             the location will be represented as just the base class, otherwise it will be
- *             sub-classed correctly.
+ *             A {@link Location} represents a geographical entity that can be targeted. If a location type is
+ *             not available because of the API version you are using, the location will be represented as just
+ *             the base class, otherwise it will be sub-classed correctly.
  *           
  * 
  * <p>Java class for Location complex type.

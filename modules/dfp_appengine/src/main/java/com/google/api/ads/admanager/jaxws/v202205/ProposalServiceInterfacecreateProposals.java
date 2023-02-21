@@ -27,9 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link Proposal} objects.
  *             
- *             For each proposal, the following fields are required:
+ *             <p>For each proposal, the following fields are required:
+ *             
  *             <ul>
- *             <li>{@link Proposal#name}</li>
+ *             <li>{@link Proposal#name}
  *             </ul>
  *           
  * 

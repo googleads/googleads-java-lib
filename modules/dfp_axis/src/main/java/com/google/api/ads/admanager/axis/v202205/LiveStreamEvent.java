@@ -35,31 +35,27 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class LiveStreamEvent  implements java.io.Serializable {
     /* The unique ID of the {@code LiveStreamEvent}. This value is
-     * read-only and
-     *                 is assigned by Google. */
+     * read-only and is assigned by
+     *                 Google. */
     private java.lang.Long id;
 
     /* The name of the {@code LiveStreamEvent}. This value is required
-     * to create
-     *                 a live stream event and has a maximum length of 255
-     * characters. */
+     * to create a live stream event
+     *                 and has a maximum length of 255 characters. */
     private java.lang.String name;
 
     /* The status of this {@code LiveStreamEvent}. This attribute
-     * is read-only
-     *                 and is assigned by Google. Live stream events are
-     * created in the
-     *                 {@link LiveStreamEventStatus#PAUSED} state. */
+     * is read-only and is assigned by
+     *                 Google. Live stream events are created in the {@link
+     * LiveStreamEventStatus#PAUSED} state. */
     private com.google.api.ads.admanager.axis.v202205.LiveStreamEventStatus status;
 
     /* The date and time this {@code LiveStreamEvent} was created.
-     * This attribute
-     *                 is read-only. */
+     * This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.DateTime creationDateTime;
 
     /* The date and time this {@code LiveStreamEvent} was last modified.
-     * This
-     *                 attribute is read-only. */
+     * This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.DateTime lastModifiedDateTime;
 
     /* The start date and time of this {@code LiveStreamEvent}. This
@@ -72,9 +68,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202205.DateTime startDateTime;
 
     /* Specifies whether to start the {@link LiveStreamEvent} right
-     * away, in an hour, etc.
-     *                 This attribute is optional and defaults to {@link
-     * StartDateTimeType#USE_START_DATE_TIME}. */
+     * away, in an hour, etc. This
+     *                 attribute is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}. */
     private com.google.api.ads.admanager.axis.v202205.StartDateTimeType startDateTimeType;
 
     /* The scheduled end date and time of this {@code LiveStreamEvent}.
@@ -86,8 +81,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202205.DateTime endDateTime;
 
     /* Whether the {@link LiveStreamEvent} has an end time. This attribute
-     * is optional and defaults
-     *                 to false. If this field is true, {@code endDateTime}
+     * is optional and defaults to
+     *                 false. If this field is true, {@code endDateTime}
      * is ignored. */
     private java.lang.Boolean unlimitedEndDateTime;
 
@@ -113,13 +108,13 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /* This code is used in constructing a live stream event master
      * playlist URL. This attribute is
      *                 read-only and is assigned by Google. {@code liveStreamEventCode}
-     * was
-     *                 renamed {@code assetKey} in v201911. */
+     * was renamed {@code assetKey}
+     *                 in v201911. */
     private java.lang.String assetKey;
 
     /* ID corresponding to the slate for this live event. If not set,
-     * network default value
-     *                 will be used. */
+     * network default value will be
+     *                 used. */
     private java.lang.Long slateCreativeId;
 
     /* Length of the DVR window in seconds. This value is optional.
@@ -151,8 +146,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /* The duration (in seconds), starting from the time the user
      * enters the DAI stream, for which
      *                 mid-roll decisioning will be skipped. This field is
-     * only applicable when an ad holiday
-     *                 is requested in the stream create request. This value
+     * only applicable when an ad holiday is
+     *                 requested in the stream create request. This value
      * is optional and defaults to 0. */
     private java.lang.Long adHolidayDuration;
 
@@ -171,16 +166,15 @@ public class LiveStreamEvent  implements java.io.Serializable {
     private java.lang.Long maxFillerDuration;
 
     /* Whether there will be durationless ad breaks in this live stream.
-     * If true,
-     *                 {@code defaultAdBreakDuration} should be specified.
-     * This field is optional and defaults to
-     *                 false; */
+     * If true, {@code
+     *                 defaultAdBreakDuration} should be specified. This
+     * field is optional and defaults to false; */
     private java.lang.Boolean enableDurationlessAdBreaks;
 
     /* The default ad pod duration (in seconds) that will be requested
-     * when an ad break cue-out
-     *                 does not specify a duration. This field is optional
-     * and defaults to 0; */
+     * when an ad break cue-out does
+     *                 not specify a duration. This field is optional and
+     * defaults to 0; */
     private java.lang.Long defaultAdBreakDuration;
 
     /* The list of {@link DaiAuthenticationKey} IDs used to authenticate
@@ -281,14 +275,15 @@ public class LiveStreamEvent  implements java.io.Serializable {
     private long[] segmentUrlAuthenticationKeyIds;
 
     /* The formats that will be recognized as ad break start/end markers.
-     * This field is ignored if {@code adBreakMarkupTypesEnabled} is false */
+     * This field is ignored if
+     *                 {@code adBreakMarkupTypesEnabled} is false */
     private com.google.api.ads.admanager.axis.v202205.AdBreakMarkupType[] adBreakMarkups;
 
     /* Whether this {@link LiveStreamEvent} is specifying a subset
-     * of supported
-     *                 {@code adBreakMarkups}. If this field is false, all
-     * supported formats will be treated as ad
-     *                 break start/end markers. */
+     * of supported {@code
+     *                 adBreakMarkups}. If this field is false, all supported
+     * formats will be treated as ad break
+     *                 start/end markers. */
     private java.lang.Boolean adBreakMarkupTypesEnabled;
 
     /* Whether ads on this {@link LiveStreamEvent} are served by Google
@@ -433,8 +428,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the id value for this LiveStreamEvent.
      * 
      * @return id   * The unique ID of the {@code LiveStreamEvent}. This value is
-     * read-only and
-     *                 is assigned by Google.
+     * read-only and is assigned by
+     *                 Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -445,8 +440,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the id value for this LiveStreamEvent.
      * 
      * @param id   * The unique ID of the {@code LiveStreamEvent}. This value is
-     * read-only and
-     *                 is assigned by Google.
+     * read-only and is assigned by
+     *                 Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -457,9 +452,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the name value for this LiveStreamEvent.
      * 
      * @return name   * The name of the {@code LiveStreamEvent}. This value is required
-     * to create
-     *                 a live stream event and has a maximum length of 255
-     * characters.
+     * to create a live stream event
+     *                 and has a maximum length of 255 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -470,9 +464,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the name value for this LiveStreamEvent.
      * 
      * @param name   * The name of the {@code LiveStreamEvent}. This value is required
-     * to create
-     *                 a live stream event and has a maximum length of 255
-     * characters.
+     * to create a live stream event
+     *                 and has a maximum length of 255 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -483,10 +476,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the status value for this LiveStreamEvent.
      * 
      * @return status   * The status of this {@code LiveStreamEvent}. This attribute
-     * is read-only
-     *                 and is assigned by Google. Live stream events are
-     * created in the
-     *                 {@link LiveStreamEventStatus#PAUSED} state.
+     * is read-only and is assigned by
+     *                 Google. Live stream events are created in the {@link
+     * LiveStreamEventStatus#PAUSED} state.
      */
     public com.google.api.ads.admanager.axis.v202205.LiveStreamEventStatus getStatus() {
         return status;
@@ -497,10 +489,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the status value for this LiveStreamEvent.
      * 
      * @param status   * The status of this {@code LiveStreamEvent}. This attribute
-     * is read-only
-     *                 and is assigned by Google. Live stream events are
-     * created in the
-     *                 {@link LiveStreamEventStatus#PAUSED} state.
+     * is read-only and is assigned by
+     *                 Google. Live stream events are created in the {@link
+     * LiveStreamEventStatus#PAUSED} state.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202205.LiveStreamEventStatus status) {
         this.status = status;
@@ -511,8 +502,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the creationDateTime value for this LiveStreamEvent.
      * 
      * @return creationDateTime   * The date and time this {@code LiveStreamEvent} was created.
-     * This attribute
-     *                 is read-only.
+     * This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.DateTime getCreationDateTime() {
         return creationDateTime;
@@ -523,8 +513,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the creationDateTime value for this LiveStreamEvent.
      * 
      * @param creationDateTime   * The date and time this {@code LiveStreamEvent} was created.
-     * This attribute
-     *                 is read-only.
+     * This attribute is read-only.
      */
     public void setCreationDateTime(com.google.api.ads.admanager.axis.v202205.DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
@@ -535,8 +524,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the lastModifiedDateTime value for this LiveStreamEvent.
      * 
      * @return lastModifiedDateTime   * The date and time this {@code LiveStreamEvent} was last modified.
-     * This
-     *                 attribute is read-only.
+     * This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -547,8 +535,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the lastModifiedDateTime value for this LiveStreamEvent.
      * 
      * @param lastModifiedDateTime   * The date and time this {@code LiveStreamEvent} was last modified.
-     * This
-     *                 attribute is read-only.
+     * This attribute is read-only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.admanager.axis.v202205.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;
@@ -591,9 +578,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the startDateTimeType value for this LiveStreamEvent.
      * 
      * @return startDateTimeType   * Specifies whether to start the {@link LiveStreamEvent} right
-     * away, in an hour, etc.
-     *                 This attribute is optional and defaults to {@link
-     * StartDateTimeType#USE_START_DATE_TIME}.
+     * away, in an hour, etc. This
+     *                 attribute is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}.
      */
     public com.google.api.ads.admanager.axis.v202205.StartDateTimeType getStartDateTimeType() {
         return startDateTimeType;
@@ -604,9 +590,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the startDateTimeType value for this LiveStreamEvent.
      * 
      * @param startDateTimeType   * Specifies whether to start the {@link LiveStreamEvent} right
-     * away, in an hour, etc.
-     *                 This attribute is optional and defaults to {@link
-     * StartDateTimeType#USE_START_DATE_TIME}.
+     * away, in an hour, etc. This
+     *                 attribute is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}.
      */
     public void setStartDateTimeType(com.google.api.ads.admanager.axis.v202205.StartDateTimeType startDateTimeType) {
         this.startDateTimeType = startDateTimeType;
@@ -647,8 +632,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the unlimitedEndDateTime value for this LiveStreamEvent.
      * 
      * @return unlimitedEndDateTime   * Whether the {@link LiveStreamEvent} has an end time. This attribute
-     * is optional and defaults
-     *                 to false. If this field is true, {@code endDateTime}
+     * is optional and defaults to
+     *                 false. If this field is true, {@code endDateTime}
      * is ignored.
      */
     public java.lang.Boolean getUnlimitedEndDateTime() {
@@ -660,8 +645,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the unlimitedEndDateTime value for this LiveStreamEvent.
      * 
      * @param unlimitedEndDateTime   * Whether the {@link LiveStreamEvent} has an end time. This attribute
-     * is optional and defaults
-     *                 to false. If this field is true, {@code endDateTime}
+     * is optional and defaults to
+     *                 false. If this field is true, {@code endDateTime}
      * is ignored.
      */
     public void setUnlimitedEndDateTime(java.lang.Boolean unlimitedEndDateTime) {
@@ -771,8 +756,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * @return assetKey   * This code is used in constructing a live stream event master
      * playlist URL. This attribute is
      *                 read-only and is assigned by Google. {@code liveStreamEventCode}
-     * was
-     *                 renamed {@code assetKey} in v201911.
+     * was renamed {@code assetKey}
+     *                 in v201911.
      */
     public java.lang.String getAssetKey() {
         return assetKey;
@@ -785,8 +770,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * @param assetKey   * This code is used in constructing a live stream event master
      * playlist URL. This attribute is
      *                 read-only and is assigned by Google. {@code liveStreamEventCode}
-     * was
-     *                 renamed {@code assetKey} in v201911.
+     * was renamed {@code assetKey}
+     *                 in v201911.
      */
     public void setAssetKey(java.lang.String assetKey) {
         this.assetKey = assetKey;
@@ -797,8 +782,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the slateCreativeId value for this LiveStreamEvent.
      * 
      * @return slateCreativeId   * ID corresponding to the slate for this live event. If not set,
-     * network default value
-     *                 will be used.
+     * network default value will be
+     *                 used.
      */
     public java.lang.Long getSlateCreativeId() {
         return slateCreativeId;
@@ -809,8 +794,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the slateCreativeId value for this LiveStreamEvent.
      * 
      * @param slateCreativeId   * ID corresponding to the slate for this live event. If not set,
-     * network default value
-     *                 will be used.
+     * network default value will be
+     *                 used.
      */
     public void setSlateCreativeId(java.lang.Long slateCreativeId) {
         this.slateCreativeId = slateCreativeId;
@@ -931,8 +916,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * @return adHolidayDuration   * The duration (in seconds), starting from the time the user
      * enters the DAI stream, for which
      *                 mid-roll decisioning will be skipped. This field is
-     * only applicable when an ad holiday
-     *                 is requested in the stream create request. This value
+     * only applicable when an ad holiday is
+     *                 requested in the stream create request. This value
      * is optional and defaults to 0.
      */
     public java.lang.Long getAdHolidayDuration() {
@@ -946,8 +931,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * @param adHolidayDuration   * The duration (in seconds), starting from the time the user
      * enters the DAI stream, for which
      *                 mid-roll decisioning will be skipped. This field is
-     * only applicable when an ad holiday
-     *                 is requested in the stream create request. This value
+     * only applicable when an ad holiday is
+     *                 requested in the stream create request. This value
      * is optional and defaults to 0.
      */
     public void setAdHolidayDuration(java.lang.Long adHolidayDuration) {
@@ -1015,10 +1000,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the enableDurationlessAdBreaks value for this LiveStreamEvent.
      * 
      * @return enableDurationlessAdBreaks   * Whether there will be durationless ad breaks in this live stream.
-     * If true,
-     *                 {@code defaultAdBreakDuration} should be specified.
-     * This field is optional and defaults to
-     *                 false;
+     * If true, {@code
+     *                 defaultAdBreakDuration} should be specified. This
+     * field is optional and defaults to false;
      */
     public java.lang.Boolean getEnableDurationlessAdBreaks() {
         return enableDurationlessAdBreaks;
@@ -1029,10 +1013,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the enableDurationlessAdBreaks value for this LiveStreamEvent.
      * 
      * @param enableDurationlessAdBreaks   * Whether there will be durationless ad breaks in this live stream.
-     * If true,
-     *                 {@code defaultAdBreakDuration} should be specified.
-     * This field is optional and defaults to
-     *                 false;
+     * If true, {@code
+     *                 defaultAdBreakDuration} should be specified. This
+     * field is optional and defaults to false;
      */
     public void setEnableDurationlessAdBreaks(java.lang.Boolean enableDurationlessAdBreaks) {
         this.enableDurationlessAdBreaks = enableDurationlessAdBreaks;
@@ -1043,9 +1026,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the defaultAdBreakDuration value for this LiveStreamEvent.
      * 
      * @return defaultAdBreakDuration   * The default ad pod duration (in seconds) that will be requested
-     * when an ad break cue-out
-     *                 does not specify a duration. This field is optional
-     * and defaults to 0;
+     * when an ad break cue-out does
+     *                 not specify a duration. This field is optional and
+     * defaults to 0;
      */
     public java.lang.Long getDefaultAdBreakDuration() {
         return defaultAdBreakDuration;
@@ -1056,9 +1039,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the defaultAdBreakDuration value for this LiveStreamEvent.
      * 
      * @param defaultAdBreakDuration   * The default ad pod duration (in seconds) that will be requested
-     * when an ad break cue-out
-     *                 does not specify a duration. This field is optional
-     * and defaults to 0;
+     * when an ad break cue-out does
+     *                 not specify a duration. This field is optional and
+     * defaults to 0;
      */
     public void setDefaultAdBreakDuration(java.lang.Long defaultAdBreakDuration) {
         this.defaultAdBreakDuration = defaultAdBreakDuration;
@@ -1491,7 +1474,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the adBreakMarkups value for this LiveStreamEvent.
      * 
      * @return adBreakMarkups   * The formats that will be recognized as ad break start/end markers.
-     * This field is ignored if {@code adBreakMarkupTypesEnabled} is false
+     * This field is ignored if
+     *                 {@code adBreakMarkupTypesEnabled} is false
      */
     public com.google.api.ads.admanager.axis.v202205.AdBreakMarkupType[] getAdBreakMarkups() {
         return adBreakMarkups;
@@ -1502,7 +1486,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the adBreakMarkups value for this LiveStreamEvent.
      * 
      * @param adBreakMarkups   * The formats that will be recognized as ad break start/end markers.
-     * This field is ignored if {@code adBreakMarkupTypesEnabled} is false
+     * This field is ignored if
+     *                 {@code adBreakMarkupTypesEnabled} is false
      */
     public void setAdBreakMarkups(com.google.api.ads.admanager.axis.v202205.AdBreakMarkupType[] adBreakMarkups) {
         this.adBreakMarkups = adBreakMarkups;
@@ -1521,10 +1506,10 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Gets the adBreakMarkupTypesEnabled value for this LiveStreamEvent.
      * 
      * @return adBreakMarkupTypesEnabled   * Whether this {@link LiveStreamEvent} is specifying a subset
-     * of supported
-     *                 {@code adBreakMarkups}. If this field is false, all
-     * supported formats will be treated as ad
-     *                 break start/end markers.
+     * of supported {@code
+     *                 adBreakMarkups}. If this field is false, all supported
+     * formats will be treated as ad break
+     *                 start/end markers.
      */
     public java.lang.Boolean getAdBreakMarkupTypesEnabled() {
         return adBreakMarkupTypesEnabled;
@@ -1535,10 +1520,10 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * Sets the adBreakMarkupTypesEnabled value for this LiveStreamEvent.
      * 
      * @param adBreakMarkupTypesEnabled   * Whether this {@link LiveStreamEvent} is specifying a subset
-     * of supported
-     *                 {@code adBreakMarkups}. If this field is false, all
-     * supported formats will be treated as ad
-     *                 break start/end markers.
+     * of supported {@code
+     *                 adBreakMarkups}. If this field is false, all supported
+     * formats will be treated as ad break
+     *                 start/end markers.
      */
     public void setAdBreakMarkupTypesEnabled(java.lang.Boolean adBreakMarkupTypesEnabled) {
         this.adBreakMarkupTypesEnabled = adBreakMarkupTypesEnabled;

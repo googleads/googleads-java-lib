@@ -23,9 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Gets a {@link CreativeWrapperPage} of {@link CreativeWrapper}
- *             objects that satisfy the given {@link Statement#query}. The following
- *             fields are supported for filtering:
+ *             Gets a {@link CreativeWrapperPage} of {@link CreativeWrapper} objects that satisfy the given
+ *             {@link Statement#query}. The following fields are supported for filtering:
  *             
  *             <table>
  *             <tr>

@@ -27,8 +27,8 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public abstract class BaseImageCreative  extends com.google.api.ads.admanager.axis.v202205.HasDestinationUrlCreative  implements java.io.Serializable {
     /* Allows the creative size to differ from the actual image asset
-     * size. This
-     *                     attribute is optional. */
+     * size. This attribute is
+     *                     optional. */
     private java.lang.Boolean overrideSize;
 
     /* The primary image asset associated with this creative. This
@@ -95,8 +95,8 @@ public abstract class BaseImageCreative  extends com.google.api.ads.admanager.ax
      * Gets the overrideSize value for this BaseImageCreative.
      * 
      * @return overrideSize   * Allows the creative size to differ from the actual image asset
-     * size. This
-     *                     attribute is optional.
+     * size. This attribute is
+     *                     optional.
      */
     public java.lang.Boolean getOverrideSize() {
         return overrideSize;
@@ -107,8 +107,8 @@ public abstract class BaseImageCreative  extends com.google.api.ads.admanager.ax
      * Sets the overrideSize value for this BaseImageCreative.
      * 
      * @param overrideSize   * Allows the creative size to differ from the actual image asset
-     * size. This
-     *                     attribute is optional.
+     * size. This attribute is
+     *                     optional.
      */
     public void setOverrideSize(java.lang.Boolean overrideSize) {
         this.overrideSize = overrideSize;

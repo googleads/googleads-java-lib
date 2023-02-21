@@ -22,9 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} that isn't supported by this version of the API.
- *             This object is readonly and when encountered should be reported
- *             on the Ad Manager API forum.
+ *             A {@code Creative} that isn't supported by this version of the API. This object is readonly and
+ *             when encountered should be reported on the Ad Manager API forum.
  *           
  * 
  * <p>Java class for UnsupportedCreative complex type.

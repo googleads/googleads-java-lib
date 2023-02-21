@@ -27,14 +27,14 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class AdExchangeCreative  extends com.google.api.ads.admanager.axis.v202211.HasHtmlSnippetDynamicAllocationCreative  implements java.io.Serializable {
     /* Whether this creative is eligible for native ad-serving. This
-     * value is
-     *                     optional and defaults to {@code false}. */
+     * value is optional and defaults to
+     *                     {@code false}. */
     private java.lang.Boolean isNativeEligible;
 
     /* {@code true} if this creative is interstitial. An interstitial
-     * creative will not consider an impression served until it is fully
-     * rendered
-     *                     in the browser. */
+     * creative will not consider an
+     *                     impression served until it is fully rendered in
+     * the browser. */
     private java.lang.Boolean isInterstitial;
 
     /* {@code true} if this creative is eligible for all requested
@@ -101,8 +101,8 @@ public class AdExchangeCreative  extends com.google.api.ads.admanager.axis.v2022
      * Gets the isNativeEligible value for this AdExchangeCreative.
      * 
      * @return isNativeEligible   * Whether this creative is eligible for native ad-serving. This
-     * value is
-     *                     optional and defaults to {@code false}.
+     * value is optional and defaults to
+     *                     {@code false}.
      */
     public java.lang.Boolean getIsNativeEligible() {
         return isNativeEligible;
@@ -113,8 +113,8 @@ public class AdExchangeCreative  extends com.google.api.ads.admanager.axis.v2022
      * Sets the isNativeEligible value for this AdExchangeCreative.
      * 
      * @param isNativeEligible   * Whether this creative is eligible for native ad-serving. This
-     * value is
-     *                     optional and defaults to {@code false}.
+     * value is optional and defaults to
+     *                     {@code false}.
      */
     public void setIsNativeEligible(java.lang.Boolean isNativeEligible) {
         this.isNativeEligible = isNativeEligible;
@@ -125,9 +125,9 @@ public class AdExchangeCreative  extends com.google.api.ads.admanager.axis.v2022
      * Gets the isInterstitial value for this AdExchangeCreative.
      * 
      * @return isInterstitial   * {@code true} if this creative is interstitial. An interstitial
-     * creative will not consider an impression served until it is fully
-     * rendered
-     *                     in the browser.
+     * creative will not consider an
+     *                     impression served until it is fully rendered in
+     * the browser.
      */
     public java.lang.Boolean getIsInterstitial() {
         return isInterstitial;
@@ -138,9 +138,9 @@ public class AdExchangeCreative  extends com.google.api.ads.admanager.axis.v2022
      * Sets the isInterstitial value for this AdExchangeCreative.
      * 
      * @param isInterstitial   * {@code true} if this creative is interstitial. An interstitial
-     * creative will not consider an impression served until it is fully
-     * rendered
-     *                     in the browser.
+     * creative will not consider an
+     *                     impression served until it is fully rendered in
+     * the browser.
      */
     public void setIsInterstitial(java.lang.Boolean isInterstitial) {
         this.isInterstitial = isInterstitial;

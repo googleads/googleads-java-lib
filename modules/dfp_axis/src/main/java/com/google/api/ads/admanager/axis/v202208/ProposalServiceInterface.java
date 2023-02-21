@@ -26,9 +26,10 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
     /**
      * Creates new {@link Proposal} objects.
      *         
-     *         For each proposal, the following fields are required:
+     *         <p>For each proposal, the following fields are required:
+     *         
      *         <ul>
-     *         <li>{@link Proposal#name}</li>
+     *         <li>{@link Proposal#name}
      *         </ul>
      */
     public com.google.api.ads.admanager.axis.v202208.Proposal[] createProposals(com.google.api.ads.admanager.axis.v202208.Proposal[] proposals) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;
@@ -68,10 +69,9 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link ProposalPage} of {@link Proposal} objects that
-     * satisfy the given
-     *         {@link Statement#query}. The following fields are supported
-     * for filtering:
-     *         
+     * satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th>
@@ -128,12 +128,13 @@ public interface ProposalServiceInterface extends java.rmi.Remote {
      * Performs actions on {@link Proposal} objects that match the
      * given {@link Statement#query}.
      *         
-     *         The following fields are also required when submitting proposals
-     * for approval:
+     *         <p>The following fields are also required when submitting
+     * proposals for approval:
+     *         
      *         <ul>
-     *         <li>{@link Proposal#advertiser}</li>
-     *         <li>{@link Proposal#primarySalesperson}</li>
-     *         <li>{@link Proposal#primaryTraffickerId}</li>
+     *         <li>{@link Proposal#advertiser}
+     *         <li>{@link Proposal#primarySalesperson}
+     *         <li>{@link Proposal#primaryTraffickerId}
      *         </ul>
      */
     public com.google.api.ads.admanager.axis.v202208.UpdateResult performProposalAction(com.google.api.ads.admanager.axis.v202208.ProposalAction proposalAction, com.google.api.ads.admanager.axis.v202208.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202208.ApiException;

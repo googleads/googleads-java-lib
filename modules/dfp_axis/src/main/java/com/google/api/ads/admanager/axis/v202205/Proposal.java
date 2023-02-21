@@ -24,8 +24,8 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * A {@code Proposal} represents an agreement between an interactive
- * advertising seller and a buyer that specifies the details of an
- *             advertising campaign.
+ * advertising seller and a buyer
+ *             that specifies the details of an advertising campaign.
  */
 public class Proposal  implements java.io.Serializable {
     /* The unique ID of the {@code Proposal}.
@@ -37,45 +37,42 @@ public class Proposal  implements java.io.Serializable {
      *                 default to {@code false}. */
     private java.lang.Boolean isProgrammatic;
 
-    /* The unique ID of corresponding {@link Order}.
-     *                 This will be {@code null} if the {@code Proposal}
-     * has not been pushed to Ad Manager.
+    /* The unique ID of corresponding {@link Order}. This will be
+     * {@code null} if the {@code Proposal}
+     *                 has not been pushed to Ad Manager.
      *                 This attribute is read-only. */
     private java.lang.Long dfpOrderId;
 
     /* The name of the {@code Proposal}. This value has a maximum
      * length of 255 characters. This value
      *                 is copied to {@link Order#name} when the proposal
-     * turns into an order.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * turns into an order. This attribute can be
+     *                 configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      *                 <span class="constraint Required">This attribute is
      * required.</span> */
     private java.lang.String name;
 
     /* The date and time at which the order and line items associated
-     * with
-     *                 the {@code Proposal} are eligible to begin serving.
-     * This attribute
-     *                 is derived from the proposal line item of the proposal
-     * which has the earliest
-     *                 {@link ProposalLineItem#startDateTime}. This attribute
-     * will be null,
-     *                 if this proposal has no related line items, or none
-     * of its line items have a start time.
+     * with the {@code Proposal} are
+     *                 eligible to begin serving. This attribute is derived
+     * from the proposal line item of the
+     *                 proposal which has the earliest {@link ProposalLineItem#startDateTime}.
+     * This attribute will be
+     *                 null, if this proposal has no related line items,
+     * or none of its line items have a start time.
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.DateTime startDateTime;
 
     /* The date and time at which the order and line items associated
-     * with
-     *                 the {@code Proposal} stop being served. This attribute
-     * is derived from the proposal line item of the proposal which has the
-     * latest {@link ProposalLineItem#endDateTime}. This attribute will be
-     * null,
-     *                 if this proposal has no related line items, or none
-     * of its line items have an end time.
+     * with the {@code Proposal} stop
+     *                 being served. This attribute is derived from the proposal
+     * line item of the proposal which has
+     *                 the latest {@link ProposalLineItem#endDateTime}. This
+     * attribute will be null, if this proposal
+     *                 has no related line items, or none of its line items
+     * have an end time.
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.DateTime endDateTime;
 
@@ -88,36 +85,29 @@ public class Proposal  implements java.io.Serializable {
     private java.lang.Boolean isArchived;
 
     /* The advertiser, to which this {@code Proposal} belongs, and
-     * a set of
-     *                 {@link Contact} objects associated with the advertiser.
-     * The
-     *                 {@link ProposalCompanyAssociation#type} of this attribute
-     * should be
-     *                 {@link ProposalCompanyAssociationType#ADVERTISER}.
-     * This attribute is
-     *                 required when the proposal turns into an order, and
-     * its
-     *                 {@link ProposalCompanyAssociation#companyId} will
-     * be copied to
-     *                 {@link Order#advertiserId}.
-     *                 This attribute becomes readonly once the {@code Proposal}
-     * has been pushed. */
+     * a set of {@link Contact} objects
+     *                 associated with the advertiser. The {@link ProposalCompanyAssociation#type}
+     * of this attribute
+     *                 should be {@link ProposalCompanyAssociationType#ADVERTISER}.
+     * This attribute is required when
+     *                 the proposal turns into an order, and its {@link ProposalCompanyAssociation#companyId}
+     * will be
+     *                 copied to {@link Order#advertiserId}. This attribute
+     * becomes readonly once the {@code Proposal}
+     *                 has been pushed. */
     private com.google.api.ads.admanager.axis.v202205.ProposalCompanyAssociation advertiser;
 
     /* List of agencies and the set of {@link Contact} objects associated
-     * with each agency.
-     *                 This attribute is optional. A {@code Proposal} only
-     * has at most one
-     *                 {@link Company} with {@link ProposalCompanyAssociationType#PRIMARY_AGENCY}
-     * type,
-     *                 but a {@link Company} can appear more than once with
-     * different
-     *                 {@link ProposalCompanyAssociationType} values. If
-     * primary
-     *                 agency exists, its {@link ProposalCompanyAssociation#companyId}
-     * will be copied to
-     *                 {@link Order#agencyId} when the proposal turns into
-     * an order. */
+     * with each agency. This
+     *                 attribute is optional. A {@code Proposal} only has
+     * at most one {@link Company} with {@link
+     *                 ProposalCompanyAssociationType#PRIMARY_AGENCY} type,
+     * but a {@link Company} can appear more than
+     *                 once with different {@link ProposalCompanyAssociationType}
+     * values. If primary agency exists,
+     *                 its {@link ProposalCompanyAssociation#companyId} will
+     * be copied to {@link Order#agencyId} when
+     *                 the proposal turns into an order. */
     private com.google.api.ads.admanager.axis.v202205.ProposalCompanyAssociation[] agencies;
 
     /* Provides any additional notes that may annotate the {@code
@@ -130,54 +120,49 @@ public class Proposal  implements java.io.Serializable {
     private java.lang.String internalNotes;
 
     /* The primary salesperson who brokered the transaction with the
-     * {@link #advertiser}.
-     *                 This attribute is required when the proposal turns
-     * into an order.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * {@link #advertiser}. This
+     *                 attribute is required when the proposal turns into
+     * an order. This attribute can be configured
+     *                 as editable after the proposal has been submitted.
+     * Please check with your network administrator
+     *                 for editable fields configuration. */
     private com.google.api.ads.admanager.axis.v202205.SalespersonSplit primarySalesperson;
 
     /* List of unique IDs of {@link User} objects who are the sales
-     * planners of
-     *                 the {@code Proposal}. This attribute is optional.
-     * A proposal could have
-     *                 8 sales planners at most.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * planners of the {@code Proposal}.
+     *                 This attribute is optional. A proposal could have
+     * 8 sales planners at most. This attribute can
+     *                 be configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration. */
     private long[] salesPlannerIds;
 
     /* The unique ID of the {@link User} who is primary trafficker
-     * and is responsible for
-     *                 trafficking the {@code Proposal}. This attribute is
-     * required when the proposal
-     *                 turns into an order, and will be copied to {@link
-     * Order#primaryTraffickerId} .
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * and is responsible for trafficking
+     *                 the {@code Proposal}. This attribute is required when
+     * the proposal turns into an order, and
+     *                 will be copied to {@link Order#primaryTraffickerId}
+     * . This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration. */
     private java.lang.Long primaryTraffickerId;
 
     /* {@link User users} who are the seller's contacts. */
     private long[] sellerContactIds;
 
     /* The IDs of all teams that the {@code Proposal} is on directly.
-     * This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration. */
+     * This attribute is optional. This
+     *                 attribute can be configured as editable after the
+     * proposal has been submitted. Please check
+     *                 with your network administrator for editable fields
+     * configuration. */
     private long[] appliedTeamIds;
 
     /* The values of the custom fields associated with the {@code
-     * Proposal}.
-     *                 This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
+     * Proposal}. This attribute is
+     *                 optional. This attribute can be configured as editable
+     * after the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration. */
     private com.google.api.ads.admanager.axis.v202205.BaseCustomFieldValue[] customFieldValues;
@@ -187,10 +172,9 @@ public class Proposal  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202205.AppliedLabel[] appliedLabels;
 
     /* Contains the set of labels applied directly to the proposal
-     * as well as those
-     *                 inherited ones. If a label has been negated, only
-     * the negated label
-     *                 is returned.
+     * as well as those inherited ones. If
+     *                 a label has been negated, only the negated label is
+     * returned.
      *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.AppliedLabel[] effectiveAppliedLabels;
 
@@ -372,9 +356,9 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Gets the dfpOrderId value for this Proposal.
      * 
-     * @return dfpOrderId   * The unique ID of corresponding {@link Order}.
-     *                 This will be {@code null} if the {@code Proposal}
-     * has not been pushed to Ad Manager.
+     * @return dfpOrderId   * The unique ID of corresponding {@link Order}. This will be
+     * {@code null} if the {@code Proposal}
+     *                 has not been pushed to Ad Manager.
      *                 This attribute is read-only.
      */
     public java.lang.Long getDfpOrderId() {
@@ -385,9 +369,9 @@ public class Proposal  implements java.io.Serializable {
     /**
      * Sets the dfpOrderId value for this Proposal.
      * 
-     * @param dfpOrderId   * The unique ID of corresponding {@link Order}.
-     *                 This will be {@code null} if the {@code Proposal}
-     * has not been pushed to Ad Manager.
+     * @param dfpOrderId   * The unique ID of corresponding {@link Order}. This will be
+     * {@code null} if the {@code Proposal}
+     *                 has not been pushed to Ad Manager.
      *                 This attribute is read-only.
      */
     public void setDfpOrderId(java.lang.Long dfpOrderId) {
@@ -401,11 +385,10 @@ public class Proposal  implements java.io.Serializable {
      * @return name   * The name of the {@code Proposal}. This value has a maximum
      * length of 255 characters. This value
      *                 is copied to {@link Order#name} when the proposal
-     * turns into an order.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * turns into an order. This attribute can be
+     *                 configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -420,11 +403,10 @@ public class Proposal  implements java.io.Serializable {
      * @param name   * The name of the {@code Proposal}. This value has a maximum
      * length of 255 characters. This value
      *                 is copied to {@link Order#name} when the proposal
-     * turns into an order.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * turns into an order. This attribute can be
+     *                 configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      *                 <span class="constraint Required">This attribute is
      * required.</span>
      */
@@ -437,15 +419,13 @@ public class Proposal  implements java.io.Serializable {
      * Gets the startDateTime value for this Proposal.
      * 
      * @return startDateTime   * The date and time at which the order and line items associated
-     * with
-     *                 the {@code Proposal} are eligible to begin serving.
-     * This attribute
-     *                 is derived from the proposal line item of the proposal
-     * which has the earliest
-     *                 {@link ProposalLineItem#startDateTime}. This attribute
-     * will be null,
-     *                 if this proposal has no related line items, or none
-     * of its line items have a start time.
+     * with the {@code Proposal} are
+     *                 eligible to begin serving. This attribute is derived
+     * from the proposal line item of the
+     *                 proposal which has the earliest {@link ProposalLineItem#startDateTime}.
+     * This attribute will be
+     *                 null, if this proposal has no related line items,
+     * or none of its line items have a start time.
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.DateTime getStartDateTime() {
@@ -457,15 +437,13 @@ public class Proposal  implements java.io.Serializable {
      * Sets the startDateTime value for this Proposal.
      * 
      * @param startDateTime   * The date and time at which the order and line items associated
-     * with
-     *                 the {@code Proposal} are eligible to begin serving.
-     * This attribute
-     *                 is derived from the proposal line item of the proposal
-     * which has the earliest
-     *                 {@link ProposalLineItem#startDateTime}. This attribute
-     * will be null,
-     *                 if this proposal has no related line items, or none
-     * of its line items have a start time.
+     * with the {@code Proposal} are
+     *                 eligible to begin serving. This attribute is derived
+     * from the proposal line item of the
+     *                 proposal which has the earliest {@link ProposalLineItem#startDateTime}.
+     * This attribute will be
+     *                 null, if this proposal has no related line items,
+     * or none of its line items have a start time.
      *                 This attribute is read-only.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202205.DateTime startDateTime) {
@@ -477,13 +455,13 @@ public class Proposal  implements java.io.Serializable {
      * Gets the endDateTime value for this Proposal.
      * 
      * @return endDateTime   * The date and time at which the order and line items associated
-     * with
-     *                 the {@code Proposal} stop being served. This attribute
-     * is derived from the proposal line item of the proposal which has the
-     * latest {@link ProposalLineItem#endDateTime}. This attribute will be
-     * null,
-     *                 if this proposal has no related line items, or none
-     * of its line items have an end time.
+     * with the {@code Proposal} stop
+     *                 being served. This attribute is derived from the proposal
+     * line item of the proposal which has
+     *                 the latest {@link ProposalLineItem#endDateTime}. This
+     * attribute will be null, if this proposal
+     *                 has no related line items, or none of its line items
+     * have an end time.
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.DateTime getEndDateTime() {
@@ -495,13 +473,13 @@ public class Proposal  implements java.io.Serializable {
      * Sets the endDateTime value for this Proposal.
      * 
      * @param endDateTime   * The date and time at which the order and line items associated
-     * with
-     *                 the {@code Proposal} stop being served. This attribute
-     * is derived from the proposal line item of the proposal which has the
-     * latest {@link ProposalLineItem#endDateTime}. This attribute will be
-     * null,
-     *                 if this proposal has no related line items, or none
-     * of its line items have an end time.
+     * with the {@code Proposal} stop
+     *                 being served. This attribute is derived from the proposal
+     * line item of the proposal which has
+     *                 the latest {@link ProposalLineItem#endDateTime}. This
+     * attribute will be null, if this proposal
+     *                 has no related line items, or none of its line items
+     * have an end time.
      *                 This attribute is read-only.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202205.DateTime endDateTime) {
@@ -557,20 +535,16 @@ public class Proposal  implements java.io.Serializable {
      * Gets the advertiser value for this Proposal.
      * 
      * @return advertiser   * The advertiser, to which this {@code Proposal} belongs, and
-     * a set of
-     *                 {@link Contact} objects associated with the advertiser.
-     * The
-     *                 {@link ProposalCompanyAssociation#type} of this attribute
-     * should be
-     *                 {@link ProposalCompanyAssociationType#ADVERTISER}.
-     * This attribute is
-     *                 required when the proposal turns into an order, and
-     * its
-     *                 {@link ProposalCompanyAssociation#companyId} will
-     * be copied to
-     *                 {@link Order#advertiserId}.
-     *                 This attribute becomes readonly once the {@code Proposal}
-     * has been pushed.
+     * a set of {@link Contact} objects
+     *                 associated with the advertiser. The {@link ProposalCompanyAssociation#type}
+     * of this attribute
+     *                 should be {@link ProposalCompanyAssociationType#ADVERTISER}.
+     * This attribute is required when
+     *                 the proposal turns into an order, and its {@link ProposalCompanyAssociation#companyId}
+     * will be
+     *                 copied to {@link Order#advertiserId}. This attribute
+     * becomes readonly once the {@code Proposal}
+     *                 has been pushed.
      */
     public com.google.api.ads.admanager.axis.v202205.ProposalCompanyAssociation getAdvertiser() {
         return advertiser;
@@ -581,20 +555,16 @@ public class Proposal  implements java.io.Serializable {
      * Sets the advertiser value for this Proposal.
      * 
      * @param advertiser   * The advertiser, to which this {@code Proposal} belongs, and
-     * a set of
-     *                 {@link Contact} objects associated with the advertiser.
-     * The
-     *                 {@link ProposalCompanyAssociation#type} of this attribute
-     * should be
-     *                 {@link ProposalCompanyAssociationType#ADVERTISER}.
-     * This attribute is
-     *                 required when the proposal turns into an order, and
-     * its
-     *                 {@link ProposalCompanyAssociation#companyId} will
-     * be copied to
-     *                 {@link Order#advertiserId}.
-     *                 This attribute becomes readonly once the {@code Proposal}
-     * has been pushed.
+     * a set of {@link Contact} objects
+     *                 associated with the advertiser. The {@link ProposalCompanyAssociation#type}
+     * of this attribute
+     *                 should be {@link ProposalCompanyAssociationType#ADVERTISER}.
+     * This attribute is required when
+     *                 the proposal turns into an order, and its {@link ProposalCompanyAssociation#companyId}
+     * will be
+     *                 copied to {@link Order#advertiserId}. This attribute
+     * becomes readonly once the {@code Proposal}
+     *                 has been pushed.
      */
     public void setAdvertiser(com.google.api.ads.admanager.axis.v202205.ProposalCompanyAssociation advertiser) {
         this.advertiser = advertiser;
@@ -605,19 +575,16 @@ public class Proposal  implements java.io.Serializable {
      * Gets the agencies value for this Proposal.
      * 
      * @return agencies   * List of agencies and the set of {@link Contact} objects associated
-     * with each agency.
-     *                 This attribute is optional. A {@code Proposal} only
-     * has at most one
-     *                 {@link Company} with {@link ProposalCompanyAssociationType#PRIMARY_AGENCY}
-     * type,
-     *                 but a {@link Company} can appear more than once with
-     * different
-     *                 {@link ProposalCompanyAssociationType} values. If
-     * primary
-     *                 agency exists, its {@link ProposalCompanyAssociation#companyId}
-     * will be copied to
-     *                 {@link Order#agencyId} when the proposal turns into
-     * an order.
+     * with each agency. This
+     *                 attribute is optional. A {@code Proposal} only has
+     * at most one {@link Company} with {@link
+     *                 ProposalCompanyAssociationType#PRIMARY_AGENCY} type,
+     * but a {@link Company} can appear more than
+     *                 once with different {@link ProposalCompanyAssociationType}
+     * values. If primary agency exists,
+     *                 its {@link ProposalCompanyAssociation#companyId} will
+     * be copied to {@link Order#agencyId} when
+     *                 the proposal turns into an order.
      */
     public com.google.api.ads.admanager.axis.v202205.ProposalCompanyAssociation[] getAgencies() {
         return agencies;
@@ -628,19 +595,16 @@ public class Proposal  implements java.io.Serializable {
      * Sets the agencies value for this Proposal.
      * 
      * @param agencies   * List of agencies and the set of {@link Contact} objects associated
-     * with each agency.
-     *                 This attribute is optional. A {@code Proposal} only
-     * has at most one
-     *                 {@link Company} with {@link ProposalCompanyAssociationType#PRIMARY_AGENCY}
-     * type,
-     *                 but a {@link Company} can appear more than once with
-     * different
-     *                 {@link ProposalCompanyAssociationType} values. If
-     * primary
-     *                 agency exists, its {@link ProposalCompanyAssociation#companyId}
-     * will be copied to
-     *                 {@link Order#agencyId} when the proposal turns into
-     * an order.
+     * with each agency. This
+     *                 attribute is optional. A {@code Proposal} only has
+     * at most one {@link Company} with {@link
+     *                 ProposalCompanyAssociationType#PRIMARY_AGENCY} type,
+     * but a {@link Company} can appear more than
+     *                 once with different {@link ProposalCompanyAssociationType}
+     * values. If primary agency exists,
+     *                 its {@link ProposalCompanyAssociation#companyId} will
+     * be copied to {@link Order#agencyId} when
+     *                 the proposal turns into an order.
      */
     public void setAgencies(com.google.api.ads.admanager.axis.v202205.ProposalCompanyAssociation[] agencies) {
         this.agencies = agencies;
@@ -691,13 +655,12 @@ public class Proposal  implements java.io.Serializable {
      * Gets the primarySalesperson value for this Proposal.
      * 
      * @return primarySalesperson   * The primary salesperson who brokered the transaction with the
-     * {@link #advertiser}.
-     *                 This attribute is required when the proposal turns
-     * into an order.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * {@link #advertiser}. This
+     *                 attribute is required when the proposal turns into
+     * an order. This attribute can be configured
+     *                 as editable after the proposal has been submitted.
+     * Please check with your network administrator
+     *                 for editable fields configuration.
      */
     public com.google.api.ads.admanager.axis.v202205.SalespersonSplit getPrimarySalesperson() {
         return primarySalesperson;
@@ -708,13 +671,12 @@ public class Proposal  implements java.io.Serializable {
      * Sets the primarySalesperson value for this Proposal.
      * 
      * @param primarySalesperson   * The primary salesperson who brokered the transaction with the
-     * {@link #advertiser}.
-     *                 This attribute is required when the proposal turns
-     * into an order.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * {@link #advertiser}. This
+     *                 attribute is required when the proposal turns into
+     * an order. This attribute can be configured
+     *                 as editable after the proposal has been submitted.
+     * Please check with your network administrator
+     *                 for editable fields configuration.
      */
     public void setPrimarySalesperson(com.google.api.ads.admanager.axis.v202205.SalespersonSplit primarySalesperson) {
         this.primarySalesperson = primarySalesperson;
@@ -725,14 +687,12 @@ public class Proposal  implements java.io.Serializable {
      * Gets the salesPlannerIds value for this Proposal.
      * 
      * @return salesPlannerIds   * List of unique IDs of {@link User} objects who are the sales
-     * planners of
-     *                 the {@code Proposal}. This attribute is optional.
-     * A proposal could have
-     *                 8 sales planners at most.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * planners of the {@code Proposal}.
+     *                 This attribute is optional. A proposal could have
+     * 8 sales planners at most. This attribute can
+     *                 be configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      */
     public long[] getSalesPlannerIds() {
         return salesPlannerIds;
@@ -743,14 +703,12 @@ public class Proposal  implements java.io.Serializable {
      * Sets the salesPlannerIds value for this Proposal.
      * 
      * @param salesPlannerIds   * List of unique IDs of {@link User} objects who are the sales
-     * planners of
-     *                 the {@code Proposal}. This attribute is optional.
-     * A proposal could have
-     *                 8 sales planners at most.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * planners of the {@code Proposal}.
+     *                 This attribute is optional. A proposal could have
+     * 8 sales planners at most. This attribute can
+     *                 be configured as editable after the proposal has been
+     * submitted. Please check with your network
+     *                 administrator for editable fields configuration.
      */
     public void setSalesPlannerIds(long[] salesPlannerIds) {
         this.salesPlannerIds = salesPlannerIds;
@@ -769,15 +727,14 @@ public class Proposal  implements java.io.Serializable {
      * Gets the primaryTraffickerId value for this Proposal.
      * 
      * @return primaryTraffickerId   * The unique ID of the {@link User} who is primary trafficker
-     * and is responsible for
-     *                 trafficking the {@code Proposal}. This attribute is
-     * required when the proposal
-     *                 turns into an order, and will be copied to {@link
-     * Order#primaryTraffickerId} .
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * and is responsible for trafficking
+     *                 the {@code Proposal}. This attribute is required when
+     * the proposal turns into an order, and
+     *                 will be copied to {@link Order#primaryTraffickerId}
+     * . This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration.
      */
     public java.lang.Long getPrimaryTraffickerId() {
         return primaryTraffickerId;
@@ -788,15 +745,14 @@ public class Proposal  implements java.io.Serializable {
      * Sets the primaryTraffickerId value for this Proposal.
      * 
      * @param primaryTraffickerId   * The unique ID of the {@link User} who is primary trafficker
-     * and is responsible for
-     *                 trafficking the {@code Proposal}. This attribute is
-     * required when the proposal
-     *                 turns into an order, and will be copied to {@link
-     * Order#primaryTraffickerId} .
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * and is responsible for trafficking
+     *                 the {@code Proposal}. This attribute is required when
+     * the proposal turns into an order, and
+     *                 will be copied to {@link Order#primaryTraffickerId}
+     * . This attribute can be configured as
+     *                 editable after the proposal has been submitted. Please
+     * check with your network administrator
+     *                 for editable fields configuration.
      */
     public void setPrimaryTraffickerId(java.lang.Long primaryTraffickerId) {
         this.primaryTraffickerId = primaryTraffickerId;
@@ -835,11 +791,11 @@ public class Proposal  implements java.io.Serializable {
      * Gets the appliedTeamIds value for this Proposal.
      * 
      * @return appliedTeamIds   * The IDs of all teams that the {@code Proposal} is on directly.
-     * This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * This attribute is optional. This
+     *                 attribute can be configured as editable after the
+     * proposal has been submitted. Please check
+     *                 with your network administrator for editable fields
+     * configuration.
      */
     public long[] getAppliedTeamIds() {
         return appliedTeamIds;
@@ -850,11 +806,11 @@ public class Proposal  implements java.io.Serializable {
      * Sets the appliedTeamIds value for this Proposal.
      * 
      * @param appliedTeamIds   * The IDs of all teams that the {@code Proposal} is on directly.
-     * This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
-     *                 Please check with your network administrator for editable
-     * fields configuration.
+     * This attribute is optional. This
+     *                 attribute can be configured as editable after the
+     * proposal has been submitted. Please check
+     *                 with your network administrator for editable fields
+     * configuration.
      */
     public void setAppliedTeamIds(long[] appliedTeamIds) {
         this.appliedTeamIds = appliedTeamIds;
@@ -873,10 +829,9 @@ public class Proposal  implements java.io.Serializable {
      * Gets the customFieldValues value for this Proposal.
      * 
      * @return customFieldValues   * The values of the custom fields associated with the {@code
-     * Proposal}.
-     *                 This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
+     * Proposal}. This attribute is
+     *                 optional. This attribute can be configured as editable
+     * after the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
      */
@@ -889,10 +844,9 @@ public class Proposal  implements java.io.Serializable {
      * Sets the customFieldValues value for this Proposal.
      * 
      * @param customFieldValues   * The values of the custom fields associated with the {@code
-     * Proposal}.
-     *                 This attribute is optional.
-     *                 This attribute can be configured as editable after
-     * the proposal has been submitted.
+     * Proposal}. This attribute is
+     *                 optional. This attribute can be configured as editable
+     * after the proposal has been submitted.
      *                 Please check with your network administrator for editable
      * fields configuration.
      */
@@ -943,10 +897,9 @@ public class Proposal  implements java.io.Serializable {
      * Gets the effectiveAppliedLabels value for this Proposal.
      * 
      * @return effectiveAppliedLabels   * Contains the set of labels applied directly to the proposal
-     * as well as those
-     *                 inherited ones. If a label has been negated, only
-     * the negated label
-     *                 is returned.
+     * as well as those inherited ones. If
+     *                 a label has been negated, only the negated label is
+     * returned.
      *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.AppliedLabel[] getEffectiveAppliedLabels() {
@@ -958,10 +911,9 @@ public class Proposal  implements java.io.Serializable {
      * Sets the effectiveAppliedLabels value for this Proposal.
      * 
      * @param effectiveAppliedLabels   * Contains the set of labels applied directly to the proposal
-     * as well as those
-     *                 inherited ones. If a label has been negated, only
-     * the negated label
-     *                 is returned.
+     * as well as those inherited ones. If
+     *                 a label has been negated, only the negated label is
+     * returned.
      *                 This attribute is read-only.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.admanager.axis.v202205.AppliedLabel[] effectiveAppliedLabels) {

@@ -23,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Returns the list of {@link Network} objects to which the current login has
- *             access.
- *             <p>
- *             Intended to be used without a network code in the SOAP header when the
- *             login may have more than one network associated with it.
- *             </p>
+ *             Returns the list of {@link Network} objects to which the current login has access.
+ *             
+ *             <p>Intended to be used without a network code in the SOAP header when the login may have more
+ *             than one network associated with it.
  *           
  * 
  * <p>Java class for getAllNetworks element declaration.

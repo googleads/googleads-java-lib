@@ -30,8 +30,7 @@ public interface UserServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns the {@link Role} objects that are defined for the users
-     * of the
-     *         network.
+     * of the network.
      */
     public com.google.api.ads.admanager.axis.v202211.Role[] getAllRoles() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
@@ -42,9 +41,8 @@ public interface UserServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link UserPage} of {@link User} objects that satisfy
-     * the given
-     *         {@link Statement#query}. The following fields are supported
-     * for filtering:
+     * the given {@link Statement#query}.
+     *         The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>

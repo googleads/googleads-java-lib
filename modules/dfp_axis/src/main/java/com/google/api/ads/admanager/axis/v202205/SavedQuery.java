@@ -34,20 +34,19 @@ public class SavedQuery  implements java.io.Serializable {
     private java.lang.String name;
 
     /* The {@link ReportQuery} representing the selection criteria
-     * for the saved query.
-     *                 This will be non-null if and only if {@link SavedQuery#isCompatibleWithApiVersion}
-     * is
-     *                 {@code true}. */
+     * for the saved query. This will be
+     *                 non-null if and only if {@link SavedQuery#isCompatibleWithApiVersion}
+     * is {@code true}. */
     private com.google.api.ads.admanager.axis.v202205.ReportQuery reportQuery;
 
     /* Whether or not the saved query is compatible with the current
-     * API version.
-     *                 This will be {@code true} if and only if {@link SavedQuery#reportQuery}
-     * is non-null.
-     *                 A saved query will be incompatible with the API if
-     * it uses columns, dimensions, or other
-     *                 reporting features from the UI that are not available
-     * in the {@link ReportQuery} entity. */
+     * API version. This will be {@code
+     *                 true} if and only if {@link SavedQuery#reportQuery}
+     * is non-null. A saved query will be
+     *                 incompatible with the API if it uses columns, dimensions,
+     * or other reporting features from the
+     *                 UI that are not available in the {@link ReportQuery}
+     * entity. */
     private java.lang.Boolean isCompatibleWithApiVersion;
 
     public SavedQuery() {
@@ -119,10 +118,9 @@ public class SavedQuery  implements java.io.Serializable {
      * Gets the reportQuery value for this SavedQuery.
      * 
      * @return reportQuery   * The {@link ReportQuery} representing the selection criteria
-     * for the saved query.
-     *                 This will be non-null if and only if {@link SavedQuery#isCompatibleWithApiVersion}
-     * is
-     *                 {@code true}.
+     * for the saved query. This will be
+     *                 non-null if and only if {@link SavedQuery#isCompatibleWithApiVersion}
+     * is {@code true}.
      */
     public com.google.api.ads.admanager.axis.v202205.ReportQuery getReportQuery() {
         return reportQuery;
@@ -133,10 +131,9 @@ public class SavedQuery  implements java.io.Serializable {
      * Sets the reportQuery value for this SavedQuery.
      * 
      * @param reportQuery   * The {@link ReportQuery} representing the selection criteria
-     * for the saved query.
-     *                 This will be non-null if and only if {@link SavedQuery#isCompatibleWithApiVersion}
-     * is
-     *                 {@code true}.
+     * for the saved query. This will be
+     *                 non-null if and only if {@link SavedQuery#isCompatibleWithApiVersion}
+     * is {@code true}.
      */
     public void setReportQuery(com.google.api.ads.admanager.axis.v202205.ReportQuery reportQuery) {
         this.reportQuery = reportQuery;
@@ -147,13 +144,13 @@ public class SavedQuery  implements java.io.Serializable {
      * Gets the isCompatibleWithApiVersion value for this SavedQuery.
      * 
      * @return isCompatibleWithApiVersion   * Whether or not the saved query is compatible with the current
-     * API version.
-     *                 This will be {@code true} if and only if {@link SavedQuery#reportQuery}
-     * is non-null.
-     *                 A saved query will be incompatible with the API if
-     * it uses columns, dimensions, or other
-     *                 reporting features from the UI that are not available
-     * in the {@link ReportQuery} entity.
+     * API version. This will be {@code
+     *                 true} if and only if {@link SavedQuery#reportQuery}
+     * is non-null. A saved query will be
+     *                 incompatible with the API if it uses columns, dimensions,
+     * or other reporting features from the
+     *                 UI that are not available in the {@link ReportQuery}
+     * entity.
      */
     public java.lang.Boolean getIsCompatibleWithApiVersion() {
         return isCompatibleWithApiVersion;
@@ -164,13 +161,13 @@ public class SavedQuery  implements java.io.Serializable {
      * Sets the isCompatibleWithApiVersion value for this SavedQuery.
      * 
      * @param isCompatibleWithApiVersion   * Whether or not the saved query is compatible with the current
-     * API version.
-     *                 This will be {@code true} if and only if {@link SavedQuery#reportQuery}
-     * is non-null.
-     *                 A saved query will be incompatible with the API if
-     * it uses columns, dimensions, or other
-     *                 reporting features from the UI that are not available
-     * in the {@link ReportQuery} entity.
+     * API version. This will be {@code
+     *                 true} if and only if {@link SavedQuery#reportQuery}
+     * is non-null. A saved query will be
+     *                 incompatible with the API if it uses columns, dimensions,
+     * or other reporting features from the
+     *                 UI that are not available in the {@link ReportQuery}
+     * entity.
      */
     public void setIsCompatibleWithApiVersion(java.lang.Boolean isCompatibleWithApiVersion) {
         this.isCompatibleWithApiVersion = isCompatibleWithApiVersion;

@@ -48,8 +48,8 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The CUE-OUT/CUE-IN ad break marker type.
-     *                 This mark up type is only applicable for HLS live streams.
+     *                 The CUE-OUT/CUE-IN ad break marker type. This mark up type is only applicable for HLS live
+     *                 streams.
      *               
      * 
      */
@@ -57,8 +57,8 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The CUE (Adobe/Azure Prime Time) ad break marker type.
-     *                 This mark up type is only applicable for HLS live streams.
+     *                 The CUE (Adobe/Azure Prime Time) ad break marker type. This mark up type is only applicable for
+     *                 HLS live streams.
      *               
      * 
      */
@@ -66,8 +66,8 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The DATERANGE (Anvato) ad break marker type.
-     *                 This mark up type is only applicable for HLS live streams.
+     *                 The DATERANGE (Anvato) ad break marker type. This mark up type is only applicable for HLS live
+     *                 streams.
      *               
      * 
      */
@@ -75,8 +75,8 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The SCTE35 XML Splice In/Out ad break marker type.
-     *                 This markup type is only applicable for DASH live streams.
+     *                 The SCTE35 XML Splice In/Out ad break marker type. This markup type is only applicable for DASH
+     *                 live streams.
      *               
      * 
      */
@@ -85,8 +85,8 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The SCTE35 Binary Splice Insert ad break marker type.
-     *                 This mark up type is only applicable for HLS and DASH live streams.
+     *                 The SCTE35 Binary Splice Insert ad break marker type. This mark up type is only applicable for
+     *                 HLS and DASH live streams.
      *               
      * 
      */
@@ -95,8 +95,8 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The SCTE35 Binary Time Signal: Provider Ad Start/End ad break marker type.
-     *                 This mark up type is only applicable for HLS and DASH live streams.
+     *                 The SCTE35 Binary Time Signal: Provider Ad Start/End ad break marker type. This mark up type is
+     *                 only applicable for HLS and DASH live streams.
      *               
      * 
      */
@@ -105,7 +105,7 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The SCTE35 Binary Time Signal: Provider Placement Opportunity  Start/End ad break marker type.
+     *                 The SCTE35 Binary Time Signal: Provider Placement Opportunity Start/End ad break marker type.
      *                 This mark up type is only applicable for HLS and DASH live streams.
      *               
      * 
@@ -115,8 +115,7 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The value returned if the actual value is not exposed by the requested API
-     *                 version.
+     *                 The value returned if the actual value is not exposed by the requested API version.
      *               
      * 
      */

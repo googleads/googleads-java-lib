@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An ad rule slot with standard podding. A standard pod is a series of video ads played
- *             back to back. Standard pods are defined by a {@link BaseAdRuleSlot#maxAdsInPod} and a
- *             {@link BaseAdRuleSlot#maxVideoAdDuration}.
+ *             An ad rule slot with standard podding. A standard pod is a series of video ads played back to
+ *             back. Standard pods are defined by a {@link BaseAdRuleSlot#maxAdsInPod} and a {@link
+ *             BaseAdRuleSlot#maxVideoAdDuration}.
  *           
  * 
  * <p>Java class for StandardPoddingAdRuleSlot complex type.

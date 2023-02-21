@@ -26,10 +26,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An {@code AdUnit} represents a chunk of identified inventory for the
- *             publisher. It contains all the settings that need to be associated with
- *             inventory in order to serve ads to it. An {@code AdUnit} can also be the
- *             parent of other ad units in the inventory hierarchy.
+ *             An {@code AdUnit} represents a chunk of identified inventory for the publisher. It contains all
+ *             the settings that need to be associated with inventory in order to serve ads to it. An {@code
+ *             AdUnit} can also be the parent of other ad units in the inventory hierarchy.
  *           
  * 
  * <p>Java class for AdUnit complex type.

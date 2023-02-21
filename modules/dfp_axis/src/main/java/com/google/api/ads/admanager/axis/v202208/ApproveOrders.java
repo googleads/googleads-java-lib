@@ -28,7 +28,7 @@ package com.google.api.ads.admanager.axis.v202208;
  *             objects within the order will be approved as well. For
  * more information on what happens to an
  *             order and its line items when it is approved, see the
- *             <a href="https://support.google.com/dfp_premium/answer/177334">Ad
+ *             <a href="https://support.google.com/admanager/answer/177334">Ad
  * Manager Help Center</a>.
  *             </p>
  */

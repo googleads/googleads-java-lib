@@ -24,10 +24,9 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A {@code Creative} that isn't supported by this version of the
- * API.
- *             This object is readonly and when encountered should be
- * reported
- *             on the Ad Manager API forum.
+ * API. This object is readonly and
+ *             when encountered should be reported on the Ad Manager
+ * API forum.
  */
 public class UnsupportedCreative  extends com.google.api.ads.admanager.axis.v202208.Creative  implements java.io.Serializable {
     /* The creative type that is unsupported by this API version. */

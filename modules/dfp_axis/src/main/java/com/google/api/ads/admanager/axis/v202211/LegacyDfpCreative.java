@@ -24,9 +24,8 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * A {@code Creative} that isn't supported by Google DFP, but was
- * migrated
- *             from DART. Creatives of this type cannot be created or
- * modified.
+ * migrated from DART. Creatives of
+ *             this type cannot be created or modified.
  */
 public class LegacyDfpCreative  extends com.google.api.ads.admanager.axis.v202211.Creative  implements java.io.Serializable {
     public LegacyDfpCreative() {

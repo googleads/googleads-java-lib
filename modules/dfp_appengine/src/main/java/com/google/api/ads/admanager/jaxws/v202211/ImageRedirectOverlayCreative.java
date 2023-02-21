@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An overlay {@code Creative} that loads an image asset from a specified URL
- *             and is served via VAST XML. Overlays cover part of the video content
- *             they are displayed on top of.  This creative is read only.
+ *             An overlay {@code Creative} that loads an image asset from a specified URL and is served via VAST
+ *             XML. Overlays cover part of the video content they are displayed on top of. This creative is read
+ *             only.
  *           
  * 
  * <p>Java class for ImageRedirectOverlayCreative complex type.

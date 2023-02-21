@@ -30,8 +30,8 @@ public interface NativeStyleServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link NativeStylePage NativeStylePage} of {@link NativeStyle}
-     * objects that satisfy
-     *         the given {@link Statement}. The following fields are supported
+     * objects that satisfy the
+     *         given {@link Statement}. The following fields are supported
      * for filtering:
      *         
      *         <table>

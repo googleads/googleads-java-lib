@@ -24,12 +24,12 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * An option represents a permitted value for a custom field that
- *             has a {@link CustomField#dataType} of {@link CustomFieldDataType#DROP_DOWN}.
+ * has a {@link CustomField#dataType}
+ *             of {@link CustomFieldDataType#DROP_DOWN}.
  */
 public class CustomFieldOption  implements java.io.Serializable {
     /* Unique ID of this option. This value is readonly and is assigned
-     * by
-     *                 Google. */
+     * by Google. */
     private java.lang.Long id;
 
     /* The id of the custom field this option belongs to. */
@@ -64,8 +64,7 @@ public class CustomFieldOption  implements java.io.Serializable {
      * Gets the id value for this CustomFieldOption.
      * 
      * @return id   * Unique ID of this option. This value is readonly and is assigned
-     * by
-     *                 Google.
+     * by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -76,8 +75,7 @@ public class CustomFieldOption  implements java.io.Serializable {
      * Sets the id value for this CustomFieldOption.
      * 
      * @param id   * Unique ID of this option. This value is readonly and is assigned
-     * by
-     *                 Google.
+     * by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;

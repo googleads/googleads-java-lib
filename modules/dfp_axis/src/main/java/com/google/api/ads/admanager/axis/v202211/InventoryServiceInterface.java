@@ -38,10 +38,9 @@ public interface InventoryServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link AdUnitPage} of {@link AdUnit} objects that satisfy
-     * the given
-     *         {@link Statement#query}. The following fields are supported
-     * for filtering:
-     *         
+     * the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>

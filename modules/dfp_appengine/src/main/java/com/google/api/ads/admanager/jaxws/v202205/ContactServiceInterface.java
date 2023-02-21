@@ -64,8 +64,8 @@ public interface ContactServiceInterface {
 
     /**
      * 
-     *         Gets a {@link ContactPage} of {@link Contact} objects that satisfy the given
-     *         {@link Statement#query}. The following fields are supported for filtering:
+     *         Gets a {@link ContactPage} of {@link Contact} objects that satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>

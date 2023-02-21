@@ -34,20 +34,20 @@ public class VideoMetadata  implements java.io.Serializable {
     private java.lang.Integer duration;
 
     /* The bit rate of the asset in kbps. If the asset can play at
-     * a range of bit rates (such
-     *                 as an Http Live Streaming video), then set the bit
-     * rate to zero and populate the minimum
-     *                 and maximum bit rate instead. */
+     * a range of bit rates (such as an
+     *                 Http Live Streaming video), then set the bit rate
+     * to zero and populate the minimum and maximum
+     *                 bit rate instead. */
     private java.lang.Integer bitRate;
 
-    /* The minimum bitrate of the video in kbps.  Only set this if
-     * the asset can play at a
-     *                 range of bit rates. */
+    /* The minimum bitrate of the video in kbps. Only set this if
+     * the asset can play at a range of bit
+     *                 rates. */
     private java.lang.Integer minimumBitRate;
 
-    /* The maximum bitrate of the video in kbps.  Only set this if
-     * the asset can play at a
-     *                 range of bit rates. */
+    /* The maximum bitrate of the video in kbps. Only set this if
+     * the asset can play at a range of bit
+     *                 rates. */
     private java.lang.Integer maximumBitRate;
 
     /* The size (width and height) of the asset. This attribute is
@@ -150,10 +150,10 @@ public class VideoMetadata  implements java.io.Serializable {
      * Gets the bitRate value for this VideoMetadata.
      * 
      * @return bitRate   * The bit rate of the asset in kbps. If the asset can play at
-     * a range of bit rates (such
-     *                 as an Http Live Streaming video), then set the bit
-     * rate to zero and populate the minimum
-     *                 and maximum bit rate instead.
+     * a range of bit rates (such as an
+     *                 Http Live Streaming video), then set the bit rate
+     * to zero and populate the minimum and maximum
+     *                 bit rate instead.
      */
     public java.lang.Integer getBitRate() {
         return bitRate;
@@ -164,10 +164,10 @@ public class VideoMetadata  implements java.io.Serializable {
      * Sets the bitRate value for this VideoMetadata.
      * 
      * @param bitRate   * The bit rate of the asset in kbps. If the asset can play at
-     * a range of bit rates (such
-     *                 as an Http Live Streaming video), then set the bit
-     * rate to zero and populate the minimum
-     *                 and maximum bit rate instead.
+     * a range of bit rates (such as an
+     *                 Http Live Streaming video), then set the bit rate
+     * to zero and populate the minimum and maximum
+     *                 bit rate instead.
      */
     public void setBitRate(java.lang.Integer bitRate) {
         this.bitRate = bitRate;
@@ -177,9 +177,9 @@ public class VideoMetadata  implements java.io.Serializable {
     /**
      * Gets the minimumBitRate value for this VideoMetadata.
      * 
-     * @return minimumBitRate   * The minimum bitrate of the video in kbps.  Only set this if
-     * the asset can play at a
-     *                 range of bit rates.
+     * @return minimumBitRate   * The minimum bitrate of the video in kbps. Only set this if
+     * the asset can play at a range of bit
+     *                 rates.
      */
     public java.lang.Integer getMinimumBitRate() {
         return minimumBitRate;
@@ -189,9 +189,9 @@ public class VideoMetadata  implements java.io.Serializable {
     /**
      * Sets the minimumBitRate value for this VideoMetadata.
      * 
-     * @param minimumBitRate   * The minimum bitrate of the video in kbps.  Only set this if
-     * the asset can play at a
-     *                 range of bit rates.
+     * @param minimumBitRate   * The minimum bitrate of the video in kbps. Only set this if
+     * the asset can play at a range of bit
+     *                 rates.
      */
     public void setMinimumBitRate(java.lang.Integer minimumBitRate) {
         this.minimumBitRate = minimumBitRate;
@@ -201,9 +201,9 @@ public class VideoMetadata  implements java.io.Serializable {
     /**
      * Gets the maximumBitRate value for this VideoMetadata.
      * 
-     * @return maximumBitRate   * The maximum bitrate of the video in kbps.  Only set this if
-     * the asset can play at a
-     *                 range of bit rates.
+     * @return maximumBitRate   * The maximum bitrate of the video in kbps. Only set this if
+     * the asset can play at a range of bit
+     *                 rates.
      */
     public java.lang.Integer getMaximumBitRate() {
         return maximumBitRate;
@@ -213,9 +213,9 @@ public class VideoMetadata  implements java.io.Serializable {
     /**
      * Sets the maximumBitRate value for this VideoMetadata.
      * 
-     * @param maximumBitRate   * The maximum bitrate of the video in kbps.  Only set this if
-     * the asset can play at a
-     *                 range of bit rates.
+     * @param maximumBitRate   * The maximum bitrate of the video in kbps. Only set this if
+     * the asset can play at a range of bit
+     *                 rates.
      */
     public void setMaximumBitRate(java.lang.Integer maximumBitRate) {
         this.maximumBitRate = maximumBitRate;

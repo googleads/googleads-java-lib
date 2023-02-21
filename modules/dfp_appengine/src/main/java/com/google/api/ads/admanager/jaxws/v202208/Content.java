@@ -26,11 +26,11 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Content} represents video metadata from a publisher's
- *             Content Management System (CMS) that has been synced to Ad Manager.
- *             <p>
- *             Video line items can be targeted to {@code Content}
- *             to indicate what ads should match when the {@code Content} is being played.
+ *             A {@code Content} represents video metadata from a publisher's Content Management System (CMS)
+ *             that has been synced to Ad Manager.
+ *             
+ *             <p>Video line items can be targeted to {@code Content} to indicate what ads should match when the
+ *             {@code Content} is being played.
  *           
  * 
  * <p>Java class for Content complex type.

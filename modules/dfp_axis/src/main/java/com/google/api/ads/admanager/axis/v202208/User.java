@@ -24,20 +24,18 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * Represents a user of the system.
- *             <p>
- *             Users may be assigned at most one {@link Role} per network.
- * Each role
- *             provides a user with permissions to perform specific operations.
- * Without a
- *             role, they will not be able to perform any actions.
- *             </p>
+ *             
+ *             <p>Users may be assigned at most one {@link Role} per
+ * network. Each role provides a user with
+ *             permissions to perform specific operations. Without a
+ * role, they will not be able to perform any
+ *             actions.
  */
 public class User  extends com.google.api.ads.admanager.axis.v202208.UserRecord  implements java.io.Serializable {
     /* Specifies whether or not the {@code User} is active. An inactive
-     * user
-     *                     cannot log in to the system or perform any operations.
-     * This attribute is
-     *                     read-only. */
+     * user cannot log in to the
+     *                     system or perform any operations. This attribute
+     * is read-only. */
     private java.lang.Boolean isActive;
 
     /* Specifies whether or not the {@code User} wants to permit the
@@ -60,14 +58,14 @@ public class User  extends com.google.api.ads.admanager.axis.v202208.UserRecord 
     /* The long format timezone id (e.g. "America/Los_Angeles") used
      * in the orders and line items UI
      *                     for this {@code User}. Set this to {@code null}
-     * to indicate that no such value is defined
-     *                     for the {@code User} - UI then defaults to using
-     * the Network's timezone.
+     * to indicate that no such value is defined for
+     *                     the {@code User} - UI then defaults to using the
+     * Network's timezone.
      *                     
-     *                     This setting only affects the UI for this user
-     * and does not in
-     *                     particular affect the timezone of any dates and
-     * times returned in API responses. */
+     *                     <p>This setting only affects the UI for this user
+     * and does not in particular affect the
+     *                     timezone of any dates and times returned in API
+     * responses. */
     private java.lang.String ordersUiLocalTimeZoneId;
 
     public User() {
@@ -118,10 +116,9 @@ public class User  extends com.google.api.ads.admanager.axis.v202208.UserRecord 
      * Gets the isActive value for this User.
      * 
      * @return isActive   * Specifies whether or not the {@code User} is active. An inactive
-     * user
-     *                     cannot log in to the system or perform any operations.
-     * This attribute is
-     *                     read-only.
+     * user cannot log in to the
+     *                     system or perform any operations. This attribute
+     * is read-only.
      */
     public java.lang.Boolean getIsActive() {
         return isActive;
@@ -132,10 +129,9 @@ public class User  extends com.google.api.ads.admanager.axis.v202208.UserRecord 
      * Sets the isActive value for this User.
      * 
      * @param isActive   * Specifies whether or not the {@code User} is active. An inactive
-     * user
-     *                     cannot log in to the system or perform any operations.
-     * This attribute is
-     *                     read-only.
+     * user cannot log in to the
+     *                     system or perform any operations. This attribute
+     * is read-only.
      */
     public void setIsActive(java.lang.Boolean isActive) {
         this.isActive = isActive;
@@ -224,14 +220,14 @@ public class User  extends com.google.api.ads.admanager.axis.v202208.UserRecord 
      * @return ordersUiLocalTimeZoneId   * The long format timezone id (e.g. "America/Los_Angeles") used
      * in the orders and line items UI
      *                     for this {@code User}. Set this to {@code null}
-     * to indicate that no such value is defined
-     *                     for the {@code User} - UI then defaults to using
-     * the Network's timezone.
+     * to indicate that no such value is defined for
+     *                     the {@code User} - UI then defaults to using the
+     * Network's timezone.
      *                     
-     *                     This setting only affects the UI for this user
-     * and does not in
-     *                     particular affect the timezone of any dates and
-     * times returned in API responses.
+     *                     <p>This setting only affects the UI for this user
+     * and does not in particular affect the
+     *                     timezone of any dates and times returned in API
+     * responses.
      */
     public java.lang.String getOrdersUiLocalTimeZoneId() {
         return ordersUiLocalTimeZoneId;
@@ -244,14 +240,14 @@ public class User  extends com.google.api.ads.admanager.axis.v202208.UserRecord 
      * @param ordersUiLocalTimeZoneId   * The long format timezone id (e.g. "America/Los_Angeles") used
      * in the orders and line items UI
      *                     for this {@code User}. Set this to {@code null}
-     * to indicate that no such value is defined
-     *                     for the {@code User} - UI then defaults to using
-     * the Network's timezone.
+     * to indicate that no such value is defined for
+     *                     the {@code User} - UI then defaults to using the
+     * Network's timezone.
      *                     
-     *                     This setting only affects the UI for this user
-     * and does not in
-     *                     particular affect the timezone of any dates and
-     * times returned in API responses.
+     *                     <p>This setting only affects the UI for this user
+     * and does not in particular affect the
+     *                     timezone of any dates and times returned in API
+     * responses.
      */
     public void setOrdersUiLocalTimeZoneId(java.lang.String ordersUiLocalTimeZoneId) {
         this.ordersUiLocalTimeZoneId = ordersUiLocalTimeZoneId;

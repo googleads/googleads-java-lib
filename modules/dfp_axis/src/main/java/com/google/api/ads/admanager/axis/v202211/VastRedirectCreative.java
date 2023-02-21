@@ -24,8 +24,8 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * A {@code Creative} that points to an externally hosted VAST ad
- * and is
- *             served via VAST XML as a VAST Wrapper.
+ * and is served via VAST XML as a
+ *             VAST Wrapper.
  */
 public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v202211.Creative  implements java.io.Serializable {
     /* The URL where the 3rd party VAST XML is hosted. This attribute
@@ -41,18 +41,18 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
     private java.lang.Integer duration;
 
     /* The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional. */
+     * this creative. This attribute is
+     *                     optional. */
     private long[] companionCreativeIds;
 
     /* A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional. */
+     * be pinged when the event
+     *                     happens. This attribute is optional. */
     private com.google.api.ads.admanager.axis.v202211.ConversionEvent_TrackingUrlsMapEntry[] trackingUrls;
 
     /* An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only. */
+     * specific to this creative.
+     *                     This attribute is read-only. */
     private java.lang.String vastPreviewUrl;
 
     /* The SSL compatibility scan result for this creative.
@@ -213,8 +213,8 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the companionCreativeIds value for this VastRedirectCreative.
      * 
      * @return companionCreativeIds   * The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional.
+     * this creative. This attribute is
+     *                     optional.
      */
     public long[] getCompanionCreativeIds() {
         return companionCreativeIds;
@@ -225,8 +225,8 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the companionCreativeIds value for this VastRedirectCreative.
      * 
      * @param companionCreativeIds   * The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional.
+     * this creative. This attribute is
+     *                     optional.
      */
     public void setCompanionCreativeIds(long[] companionCreativeIds) {
         this.companionCreativeIds = companionCreativeIds;
@@ -245,8 +245,8 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the trackingUrls value for this VastRedirectCreative.
      * 
      * @return trackingUrls   * A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional.
+     * be pinged when the event
+     *                     happens. This attribute is optional.
      */
     public com.google.api.ads.admanager.axis.v202211.ConversionEvent_TrackingUrlsMapEntry[] getTrackingUrls() {
         return trackingUrls;
@@ -257,8 +257,8 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the trackingUrls value for this VastRedirectCreative.
      * 
      * @param trackingUrls   * A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional.
+     * be pinged when the event
+     *                     happens. This attribute is optional.
      */
     public void setTrackingUrls(com.google.api.ads.admanager.axis.v202211.ConversionEvent_TrackingUrlsMapEntry[] trackingUrls) {
         this.trackingUrls = trackingUrls;
@@ -277,8 +277,8 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the vastPreviewUrl value for this VastRedirectCreative.
      * 
      * @return vastPreviewUrl   * An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only.
+     * specific to this creative.
+     *                     This attribute is read-only.
      */
     public java.lang.String getVastPreviewUrl() {
         return vastPreviewUrl;
@@ -289,8 +289,8 @@ public class VastRedirectCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the vastPreviewUrl value for this VastRedirectCreative.
      * 
      * @param vastPreviewUrl   * An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only.
+     * specific to this creative.
+     *                     This attribute is read-only.
      */
     public void setVastPreviewUrl(java.lang.String vastPreviewUrl) {
         this.vastPreviewUrl = vastPreviewUrl;

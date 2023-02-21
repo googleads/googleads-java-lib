@@ -22,10 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A creative that is used for tracking clicks on ads that are served directly
- *             from the customers' web servers or media servers.
- *             NOTE: The size attribute is not used for click tracking creative and it will
- *             not be persisted upon save.
+ *             A creative that is used for tracking clicks on ads that are served directly from the customers'
+ *             web servers or media servers. NOTE: The size attribute is not used for click tracking creative
+ *             and it will not be persisted upon save.
  *           
  * 
  * <p>Java class for ClickTrackingCreative complex type.

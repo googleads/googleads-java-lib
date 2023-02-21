@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents a limit on the number of times a single viewer can be exposed to
- *             the same {@link LineItem} in a specified time period.
+ *             Represents a limit on the number of times a single viewer can be exposed to the same {@link
+ *             LineItem} in a specified time period.
  *           
  * 
  * <p>Java class for FrequencyCap complex type.

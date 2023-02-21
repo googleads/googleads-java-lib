@@ -24,24 +24,23 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Provides line items the ability to target geographical locations. By default,
- *             line items target all countries and their subdivisions. With geographical
- *             targeting, you can target line items to specific countries, regions, metro
- *             areas, and cities. You can also exclude the same.
- *             <p>
- *             The following rules apply for geographical targeting:
- *             </p>
+ *             Provides line items the ability to target geographical locations. By default, line items target
+ *             all countries and their subdivisions. With geographical targeting, you can target line items to
+ *             specific countries, regions, metro areas, and cities. You can also exclude the same.
+ *             
+ *             <p>The following rules apply for geographical targeting:
+ *             
  *             <ul>
- *             <li>You cannot target and exclude the same location.</li>
- *             <li>You cannot target a child whose parent has been excluded. For example, if the state
- *             of Illinois has been excluded, then you cannot target Chicago.</li>
- *             <li>You must not target a location if you are also targeting its parent.
- *             For example, if you are targeting New York City, you must not have the state of New
- *             York as one of the targeted locations.</li>
- *             <li>You cannot explicitly define inclusions or exclusions that are already implicit. For example,
- *             if you explicitly include California, you implicitly exclude all other states. You therefore
- *             cannot explicitly exclude Florida, because it is already implicitly excluded. Conversely if you
- *             explicitly exclude Florida, you cannot explicitly include California.</li>
+ *             <li>You cannot target and exclude the same location.
+ *             <li>You cannot target a child whose parent has been excluded. For example, if the state of
+ *             Illinois has been excluded, then you cannot target Chicago.
+ *             <li>You must not target a location if you are also targeting its parent. For example, if you
+ *             are targeting New York City, you must not have the state of New York as one of the targeted
+ *             locations.
+ *             <li>You cannot explicitly define inclusions or exclusions that are already implicit. For
+ *             example, if you explicitly include California, you implicitly exclude all other states. You
+ *             therefore cannot explicitly exclude Florida, because it is already implicitly excluded.
+ *             Conversely if you explicitly exclude Florida, you cannot explicitly include California.
  *             </ul>
  *           
  * 

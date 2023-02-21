@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An overlay {@code Creative} that displays an image and is served via VAST
- *             2.0 XML. Overlays cover part of the video content they are displayed on
- *             top of. This creative is read only prior to v201705.
+ *             An overlay {@code Creative} that displays an image and is served via VAST 2.0 XML. Overlays cover
+ *             part of the video content they are displayed on top of. This creative is read only prior to
+ *             v201705.
  *           
  * 
  * <p>Java class for ImageOverlayCreative complex type.

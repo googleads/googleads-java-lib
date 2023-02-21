@@ -24,8 +24,8 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * {@code Stats} contains trafficking statistics for {@link LineItem}
- * and
- *             {@link LineItemCreativeAssociation} objects
+ * and {@link
+ *             LineItemCreativeAssociation} objects
  */
 public class Stats  implements java.io.Serializable {
     /* The number of impressions delivered. */

@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@link CustomCriteria} object is used to perform custom criteria targeting
- *             on custom targeting keys of type {@link CustomTargetingKey.Type#PREDEFINED}
- *             or {@link CustomTargetingKey.Type#FREEFORM}.
+ *             A {@link CustomCriteria} object is used to perform custom criteria targeting on custom targeting
+ *             keys of type {@link CustomTargetingKey.Type#PREDEFINED} or {@link
+ *             CustomTargetingKey.Type#FREEFORM}.
  *           
  * 
  * <p>Java class for CustomCriteria complex type.

@@ -28,18 +28,16 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class Label  implements java.io.Serializable {
     /* Unique ID of the {@code Label}. This value is readonly and
-     * is assigned by
-     *                 Google. */
+     * is assigned by Google. */
     private java.lang.Long id;
 
     /* Name of the {@code Label}. This is value is required to create
-     * a label and
-     *                 has a maximum length of 127 characters. */
+     * a label and has a maximum length
+     *                 of 127 characters. */
     private java.lang.String name;
 
     /* A description of the label. This value is optional and its
-     * maximum length
-     *                 is 255 characters. */
+     * maximum length is 255 characters. */
     private java.lang.String description;
 
     /* Specifies whether or not the label is active. This attribute
@@ -87,8 +85,7 @@ public class Label  implements java.io.Serializable {
      * Gets the id value for this Label.
      * 
      * @return id   * Unique ID of the {@code Label}. This value is readonly and
-     * is assigned by
-     *                 Google.
+     * is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -99,8 +96,7 @@ public class Label  implements java.io.Serializable {
      * Sets the id value for this Label.
      * 
      * @param id   * Unique ID of the {@code Label}. This value is readonly and
-     * is assigned by
-     *                 Google.
+     * is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -111,8 +107,8 @@ public class Label  implements java.io.Serializable {
      * Gets the name value for this Label.
      * 
      * @return name   * Name of the {@code Label}. This is value is required to create
-     * a label and
-     *                 has a maximum length of 127 characters.
+     * a label and has a maximum length
+     *                 of 127 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -123,8 +119,8 @@ public class Label  implements java.io.Serializable {
      * Sets the name value for this Label.
      * 
      * @param name   * Name of the {@code Label}. This is value is required to create
-     * a label and
-     *                 has a maximum length of 127 characters.
+     * a label and has a maximum length
+     *                 of 127 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -135,8 +131,7 @@ public class Label  implements java.io.Serializable {
      * Gets the description value for this Label.
      * 
      * @return description   * A description of the label. This value is optional and its
-     * maximum length
-     *                 is 255 characters.
+     * maximum length is 255 characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -147,8 +142,7 @@ public class Label  implements java.io.Serializable {
      * Sets the description value for this Label.
      * 
      * @param description   * A description of the label. This value is optional and its
-     * maximum length
-     *                 is 255 characters.
+     * maximum length is 255 characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;

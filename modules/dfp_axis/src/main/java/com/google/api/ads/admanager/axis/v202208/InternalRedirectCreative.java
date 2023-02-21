@@ -36,22 +36,20 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
     /* A locked orientation for this creative to be displayed in. */
     private com.google.api.ads.admanager.axis.v202208.LockedOrientation lockedOrientation;
 
-    /* The asset size of an internal redirect creative.
-     *                     Note that this may differ from {@code size} if
-     * users set {@code overrideSize} to true.
-     *                     This attribute is read-only and is populated 
-     * by Google. */
+    /* The asset size of an internal redirect creative. Note that
+     * this may differ from {@code size} if
+     *                     users set {@code overrideSize} to true. This attribute
+     * is read-only and is populated by Google. */
     private com.google.api.ads.admanager.axis.v202208.Size assetSize;
 
     /* The internal redirect URL of the DFA or DART for Publishers
-     * hosted creative.
-     *                     This attribute is required and has a maximum length
-     * of 1024 characters. */
+     * hosted creative. This attribute is
+     *                     required and has a maximum length of 1024 characters. */
     private java.lang.String internalRedirectUrl;
 
     /* Allows the creative size to differ from the actual size specified
-     * in the
-     *                     internal redirect's url. This attribute is optional. */
+     * in the internal redirect's
+     *                     url. This attribute is optional. */
     private java.lang.Boolean overrideSize;
 
     /* {@code true} if this internal redirect creative is interstitial. */
@@ -165,11 +163,10 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
     /**
      * Gets the assetSize value for this InternalRedirectCreative.
      * 
-     * @return assetSize   * The asset size of an internal redirect creative.
-     *                     Note that this may differ from {@code size} if
-     * users set {@code overrideSize} to true.
-     *                     This attribute is read-only and is populated 
-     * by Google.
+     * @return assetSize   * The asset size of an internal redirect creative. Note that
+     * this may differ from {@code size} if
+     *                     users set {@code overrideSize} to true. This attribute
+     * is read-only and is populated by Google.
      */
     public com.google.api.ads.admanager.axis.v202208.Size getAssetSize() {
         return assetSize;
@@ -179,11 +176,10 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
     /**
      * Sets the assetSize value for this InternalRedirectCreative.
      * 
-     * @param assetSize   * The asset size of an internal redirect creative.
-     *                     Note that this may differ from {@code size} if
-     * users set {@code overrideSize} to true.
-     *                     This attribute is read-only and is populated 
-     * by Google.
+     * @param assetSize   * The asset size of an internal redirect creative. Note that
+     * this may differ from {@code size} if
+     *                     users set {@code overrideSize} to true. This attribute
+     * is read-only and is populated by Google.
      */
     public void setAssetSize(com.google.api.ads.admanager.axis.v202208.Size assetSize) {
         this.assetSize = assetSize;
@@ -194,9 +190,8 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
      * Gets the internalRedirectUrl value for this InternalRedirectCreative.
      * 
      * @return internalRedirectUrl   * The internal redirect URL of the DFA or DART for Publishers
-     * hosted creative.
-     *                     This attribute is required and has a maximum length
-     * of 1024 characters.
+     * hosted creative. This attribute is
+     *                     required and has a maximum length of 1024 characters.
      */
     public java.lang.String getInternalRedirectUrl() {
         return internalRedirectUrl;
@@ -207,9 +202,8 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
      * Sets the internalRedirectUrl value for this InternalRedirectCreative.
      * 
      * @param internalRedirectUrl   * The internal redirect URL of the DFA or DART for Publishers
-     * hosted creative.
-     *                     This attribute is required and has a maximum length
-     * of 1024 characters.
+     * hosted creative. This attribute is
+     *                     required and has a maximum length of 1024 characters.
      */
     public void setInternalRedirectUrl(java.lang.String internalRedirectUrl) {
         this.internalRedirectUrl = internalRedirectUrl;
@@ -220,8 +214,8 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
      * Gets the overrideSize value for this InternalRedirectCreative.
      * 
      * @return overrideSize   * Allows the creative size to differ from the actual size specified
-     * in the
-     *                     internal redirect's url. This attribute is optional.
+     * in the internal redirect's
+     *                     url. This attribute is optional.
      */
     public java.lang.Boolean getOverrideSize() {
         return overrideSize;
@@ -232,8 +226,8 @@ public class InternalRedirectCreative  extends com.google.api.ads.admanager.axis
      * Sets the overrideSize value for this InternalRedirectCreative.
      * 
      * @param overrideSize   * Allows the creative size to differ from the actual size specified
-     * in the
-     *                     internal redirect's url. This attribute is optional.
+     * in the internal redirect's
+     *                     url. This attribute is optional.
      */
     public void setOverrideSize(java.lang.Boolean overrideSize) {
         this.overrideSize = overrideSize;

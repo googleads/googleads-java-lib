@@ -28,34 +28,32 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class Goal  implements java.io.Serializable {
     /* The type of the goal for the {@code LineItem}. It defines the
-     * period over which the goal
-     *                 for {@code LineItem} should be reached. */
+     * period over which the goal for
+     *                 {@code LineItem} should be reached. */
     private com.google.api.ads.admanager.axis.v202205.GoalType goalType;
 
     /* The type of the goal unit for the {@code LineItem}. */
     private com.google.api.ads.admanager.axis.v202205.UnitType unitType;
 
     /* If this is a primary goal, it represents the number or percentage
-     * of impressions or clicks
-     *                 that will be reserved for the {@code LineItem}. If
-     * the line item is of type
-     *                 {@link LineItemType#SPONSORSHIP}, it represents the
-     * percentage of available impressions
-     *                 reserved. If the line item is of type {@link LineItemType#BULK}
-     * or
-     *                 {@link LineItemType#PRICE_PRIORITY}, it represents
-     * the number of remaining impressions
-     *                 reserved. If the line item is of type {@link LineItemType#NETWORK}
-     * or
-     *                 {@link LineItemType#HOUSE}, it represents the percentage
-     * of remaining impressions
-     *                 reserved.
+     * of impressions or clicks that
+     *                 will be reserved for the {@code LineItem}. If the
+     * line item is of type {@link
+     *                 LineItemType#SPONSORSHIP}, it represents the percentage
+     * of available impressions reserved. If
+     *                 the line item is of type {@link LineItemType#BULK}
+     * or {@link LineItemType#PRICE_PRIORITY}, it
+     *                 represents the number of remaining impressions reserved.
+     * If the line item is of type {@link
+     *                 LineItemType#NETWORK} or {@link LineItemType#HOUSE},
+     * it represents the percentage of remaining
+     *                 impressions reserved.
      *                 
      *                 <p>If this is a secondary goal, it represents the
-     * number of impressions or conversions that
-     *                 the line item will stop serving at if reached. For
-     * valid line item types, see
-     *                 {@link LineItem#secondaryGoals}. */
+     * number of impressions or conversions that the
+     *                 line item will stop serving at if reached. For valid
+     * line item types, see {@link
+     *                 LineItem#secondaryGoals}. */
     private java.lang.Long units;
 
     public Goal() {
@@ -84,8 +82,8 @@ public class Goal  implements java.io.Serializable {
      * Gets the goalType value for this Goal.
      * 
      * @return goalType   * The type of the goal for the {@code LineItem}. It defines the
-     * period over which the goal
-     *                 for {@code LineItem} should be reached.
+     * period over which the goal for
+     *                 {@code LineItem} should be reached.
      */
     public com.google.api.ads.admanager.axis.v202205.GoalType getGoalType() {
         return goalType;
@@ -96,8 +94,8 @@ public class Goal  implements java.io.Serializable {
      * Sets the goalType value for this Goal.
      * 
      * @param goalType   * The type of the goal for the {@code LineItem}. It defines the
-     * period over which the goal
-     *                 for {@code LineItem} should be reached.
+     * period over which the goal for
+     *                 {@code LineItem} should be reached.
      */
     public void setGoalType(com.google.api.ads.admanager.axis.v202205.GoalType goalType) {
         this.goalType = goalType;
@@ -128,26 +126,24 @@ public class Goal  implements java.io.Serializable {
      * Gets the units value for this Goal.
      * 
      * @return units   * If this is a primary goal, it represents the number or percentage
-     * of impressions or clicks
-     *                 that will be reserved for the {@code LineItem}. If
-     * the line item is of type
-     *                 {@link LineItemType#SPONSORSHIP}, it represents the
-     * percentage of available impressions
-     *                 reserved. If the line item is of type {@link LineItemType#BULK}
-     * or
-     *                 {@link LineItemType#PRICE_PRIORITY}, it represents
-     * the number of remaining impressions
-     *                 reserved. If the line item is of type {@link LineItemType#NETWORK}
-     * or
-     *                 {@link LineItemType#HOUSE}, it represents the percentage
-     * of remaining impressions
-     *                 reserved.
+     * of impressions or clicks that
+     *                 will be reserved for the {@code LineItem}. If the
+     * line item is of type {@link
+     *                 LineItemType#SPONSORSHIP}, it represents the percentage
+     * of available impressions reserved. If
+     *                 the line item is of type {@link LineItemType#BULK}
+     * or {@link LineItemType#PRICE_PRIORITY}, it
+     *                 represents the number of remaining impressions reserved.
+     * If the line item is of type {@link
+     *                 LineItemType#NETWORK} or {@link LineItemType#HOUSE},
+     * it represents the percentage of remaining
+     *                 impressions reserved.
      *                 
      *                 <p>If this is a secondary goal, it represents the
-     * number of impressions or conversions that
-     *                 the line item will stop serving at if reached. For
-     * valid line item types, see
-     *                 {@link LineItem#secondaryGoals}.
+     * number of impressions or conversions that the
+     *                 line item will stop serving at if reached. For valid
+     * line item types, see {@link
+     *                 LineItem#secondaryGoals}.
      */
     public java.lang.Long getUnits() {
         return units;
@@ -158,26 +154,24 @@ public class Goal  implements java.io.Serializable {
      * Sets the units value for this Goal.
      * 
      * @param units   * If this is a primary goal, it represents the number or percentage
-     * of impressions or clicks
-     *                 that will be reserved for the {@code LineItem}. If
-     * the line item is of type
-     *                 {@link LineItemType#SPONSORSHIP}, it represents the
-     * percentage of available impressions
-     *                 reserved. If the line item is of type {@link LineItemType#BULK}
-     * or
-     *                 {@link LineItemType#PRICE_PRIORITY}, it represents
-     * the number of remaining impressions
-     *                 reserved. If the line item is of type {@link LineItemType#NETWORK}
-     * or
-     *                 {@link LineItemType#HOUSE}, it represents the percentage
-     * of remaining impressions
-     *                 reserved.
+     * of impressions or clicks that
+     *                 will be reserved for the {@code LineItem}. If the
+     * line item is of type {@link
+     *                 LineItemType#SPONSORSHIP}, it represents the percentage
+     * of available impressions reserved. If
+     *                 the line item is of type {@link LineItemType#BULK}
+     * or {@link LineItemType#PRICE_PRIORITY}, it
+     *                 represents the number of remaining impressions reserved.
+     * If the line item is of type {@link
+     *                 LineItemType#NETWORK} or {@link LineItemType#HOUSE},
+     * it represents the percentage of remaining
+     *                 impressions reserved.
      *                 
      *                 <p>If this is a secondary goal, it represents the
-     * number of impressions or conversions that
-     *                 the line item will stop serving at if reached. For
-     * valid line item types, see
-     *                 {@link LineItem#secondaryGoals}.
+     * number of impressions or conversions that the
+     *                 line item will stop serving at if reached. For valid
+     * line item types, see {@link
+     *                 LineItem#secondaryGoals}.
      */
     public void setUnits(java.lang.Long units) {
         this.units = units;

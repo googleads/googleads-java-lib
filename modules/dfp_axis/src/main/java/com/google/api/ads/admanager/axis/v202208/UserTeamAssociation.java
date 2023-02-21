@@ -24,9 +24,8 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * {@code UserTeamAssociation} associates a {@link User} with a {@link
- * Team}
- *             to provide the user access to the entities that belong
- * to the team.
+ * Team} to provide the user
+ *             access to the entities that belong to the team.
  */
 public class UserTeamAssociation  extends com.google.api.ads.admanager.axis.v202208.UserRecordTeamAssociation  implements java.io.Serializable {
     /* Refers to the {@link User#id}. */

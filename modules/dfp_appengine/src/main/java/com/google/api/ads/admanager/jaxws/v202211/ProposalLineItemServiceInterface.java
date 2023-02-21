@@ -84,9 +84,8 @@ public interface ProposalLineItemServiceInterface {
 
     /**
      * 
-     *         Gets a {@link ProposalLineItemPage} of {@link ProposalLineItem} objects
-     *         that satisfy the given {@link Statement#query}.  The following fields are supported for
-     *         filtering:
+     *         Gets a {@link ProposalLineItemPage} of {@link ProposalLineItem} objects that satisfy the given
+     *         {@link Statement#query}. The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>
@@ -144,8 +143,8 @@ public interface ProposalLineItemServiceInterface {
 
     /**
      * 
-     *         Performs actions on {@link ProposalLineItem} objects that match
-     *         the given {@link Statement#query}.
+     *         Performs actions on {@link ProposalLineItem} objects that match the given {@link
+     *         Statement#query}.
      *       
      * 
      * @param filterStatement

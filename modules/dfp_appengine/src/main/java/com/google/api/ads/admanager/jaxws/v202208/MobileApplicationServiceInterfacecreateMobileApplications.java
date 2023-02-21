@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Creates and claims {@link MobileApplication mobile applications}
- *             to be used for targeting in the network.
+ *             Creates and claims {@link MobileApplication mobile applications} to be used for targeting in
+ *             the network.
  *           
  * 
  * <p>Java class for createMobileApplications element declaration.

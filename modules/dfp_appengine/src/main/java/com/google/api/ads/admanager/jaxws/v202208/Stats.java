@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@code Stats} contains trafficking statistics for {@link LineItem} and
- *             {@link LineItemCreativeAssociation} objects
+ *             {@code Stats} contains trafficking statistics for {@link LineItem} and {@link
+ *             LineItemCreativeAssociation} objects
  *           
  * 
  * <p>Java class for Stats complex type.

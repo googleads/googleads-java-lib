@@ -56,8 +56,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      *                     content is displayed. Behaves like the {@code
      * /imp} URL that DART used to track impressions.
      *                     This URL can't exceed 1024 characters and must
-     * start with http:// or https://.
-     *                     This attribute is optional and updatable. */
+     * start with http:// or https://. This attribute
+     *                     is optional and updatable. */
     private java.lang.String allImpressionsUrl;
 
     /* The tracking URL to be triggered when any rich media artwork
@@ -69,19 +69,19 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
     private java.lang.String richMediaImpressionsUrl;
 
     /* The tracking URL to be triggered when the Rich Media backup
-     * image is served.
-     *                     This attribute is optional and updatable. */
+     * image is served. This attribute is
+     *                     optional and updatable. */
     private java.lang.String backupImageImpressionsUrl;
 
     /* The override CSS. You can put custom CSS code here to repair
-     * creative styling;
-     *                     e.g. {@code tr td { background-color:#FBB; }}.
-     * This attribute is optional and updatable. */
+     * creative styling; e.g. {@code tr
+     *                     td { background-color:#FBB; }}. This attribute
+     * is optional and updatable. */
     private java.lang.String overrideCss;
 
     /* The Flash plugin version required to view this creative; e.g.
-     * {@code Flash 10.2/AS 3}.
-     *                     This attribute is read only. */
+     * {@code Flash 10.2/AS 3}. This
+     *                     attribute is read only. */
     private java.lang.String requiredFlashPluginVersion;
 
     /* The duration of the creative in milliseconds. This attribute
@@ -375,8 +375,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      *                     content is displayed. Behaves like the {@code
      * /imp} URL that DART used to track impressions.
      *                     This URL can't exceed 1024 characters and must
-     * start with http:// or https://.
-     *                     This attribute is optional and updatable.
+     * start with http:// or https://. This attribute
+     *                     is optional and updatable.
      */
     public java.lang.String getAllImpressionsUrl() {
         return allImpressionsUrl;
@@ -391,8 +391,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      *                     content is displayed. Behaves like the {@code
      * /imp} URL that DART used to track impressions.
      *                     This URL can't exceed 1024 characters and must
-     * start with http:// or https://.
-     *                     This attribute is optional and updatable.
+     * start with http:// or https://. This attribute
+     *                     is optional and updatable.
      */
     public void setAllImpressionsUrl(java.lang.String allImpressionsUrl) {
         this.allImpressionsUrl = allImpressionsUrl;
@@ -433,8 +433,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      * Gets the backupImageImpressionsUrl value for this BaseRichMediaStudioCreative.
      * 
      * @return backupImageImpressionsUrl   * The tracking URL to be triggered when the Rich Media backup
-     * image is served.
-     *                     This attribute is optional and updatable.
+     * image is served. This attribute is
+     *                     optional and updatable.
      */
     public java.lang.String getBackupImageImpressionsUrl() {
         return backupImageImpressionsUrl;
@@ -445,8 +445,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      * Sets the backupImageImpressionsUrl value for this BaseRichMediaStudioCreative.
      * 
      * @param backupImageImpressionsUrl   * The tracking URL to be triggered when the Rich Media backup
-     * image is served.
-     *                     This attribute is optional and updatable.
+     * image is served. This attribute is
+     *                     optional and updatable.
      */
     public void setBackupImageImpressionsUrl(java.lang.String backupImageImpressionsUrl) {
         this.backupImageImpressionsUrl = backupImageImpressionsUrl;
@@ -457,9 +457,9 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      * Gets the overrideCss value for this BaseRichMediaStudioCreative.
      * 
      * @return overrideCss   * The override CSS. You can put custom CSS code here to repair
-     * creative styling;
-     *                     e.g. {@code tr td { background-color:#FBB; }}.
-     * This attribute is optional and updatable.
+     * creative styling; e.g. {@code tr
+     *                     td { background-color:#FBB; }}. This attribute
+     * is optional and updatable.
      */
     public java.lang.String getOverrideCss() {
         return overrideCss;
@@ -470,9 +470,9 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      * Sets the overrideCss value for this BaseRichMediaStudioCreative.
      * 
      * @param overrideCss   * The override CSS. You can put custom CSS code here to repair
-     * creative styling;
-     *                     e.g. {@code tr td { background-color:#FBB; }}.
-     * This attribute is optional and updatable.
+     * creative styling; e.g. {@code tr
+     *                     td { background-color:#FBB; }}. This attribute
+     * is optional and updatable.
      */
     public void setOverrideCss(java.lang.String overrideCss) {
         this.overrideCss = overrideCss;
@@ -483,8 +483,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      * Gets the requiredFlashPluginVersion value for this BaseRichMediaStudioCreative.
      * 
      * @return requiredFlashPluginVersion   * The Flash plugin version required to view this creative; e.g.
-     * {@code Flash 10.2/AS 3}.
-     *                     This attribute is read only.
+     * {@code Flash 10.2/AS 3}. This
+     *                     attribute is read only.
      */
     public java.lang.String getRequiredFlashPluginVersion() {
         return requiredFlashPluginVersion;
@@ -495,8 +495,8 @@ public abstract class BaseRichMediaStudioCreative  extends com.google.api.ads.ad
      * Sets the requiredFlashPluginVersion value for this BaseRichMediaStudioCreative.
      * 
      * @param requiredFlashPluginVersion   * The Flash plugin version required to view this creative; e.g.
-     * {@code Flash 10.2/AS 3}.
-     *                     This attribute is read only.
+     * {@code Flash 10.2/AS 3}. This
+     *                     attribute is read only.
      */
     public void setRequiredFlashPluginVersion(java.lang.String requiredFlashPluginVersion) {
         this.requiredFlashPluginVersion = requiredFlashPluginVersion;

@@ -24,31 +24,29 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * An overlay {@code Creative} that displays an image and is served
- * via VAST
- *             2.0 XML. Overlays cover part of the video content they
- * are displayed on
- *             top of. This creative is read only prior to v201705.
+ * via VAST 2.0 XML. Overlays cover
+ *             part of the video content they are displayed on top of.
+ * This creative is read only prior to
+ *             v201705.
  */
 public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v202205.BaseImageCreative  implements java.io.Serializable {
     /* The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional. This attribute is
-     * read-only. */
+     * this creative. This attribute is
+     *                     optional. This attribute is read-only. */
     private long[] companionCreativeIds;
 
     /* A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional. */
+     * be pinged when the event
+     *                     happens. This attribute is optional. */
     private com.google.api.ads.admanager.axis.v202205.ConversionEvent_TrackingUrlsMapEntry[] trackingUrls;
 
     /* A locked orientation for this creative to be displayed in. */
     private com.google.api.ads.admanager.axis.v202205.LockedOrientation lockedOrientation;
 
     /* A comma separated key=value list of parameters that will be
-     * supplied to
-     *                     the creative, written into the VAST {@code AdParameters}
-     * node.
-     *                     This attribute is optional. */
+     * supplied to the creative, written
+     *                     into the VAST {@code AdParameters} node. This
+     * attribute is optional. */
     private java.lang.String customParameters;
 
     /* Minimum suggested duration in milliseconds. This attribute
@@ -56,8 +54,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
     private java.lang.Integer duration;
 
     /* An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only. */
+     * specific to this creative.
+     *                     This attribute is read-only. */
     private java.lang.String vastPreviewUrl;
 
     public ImageOverlayCreative() {
@@ -138,9 +136,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the companionCreativeIds value for this ImageOverlayCreative.
      * 
      * @return companionCreativeIds   * The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional. This attribute is
-     * read-only.
+     * this creative. This attribute is
+     *                     optional. This attribute is read-only.
      */
     public long[] getCompanionCreativeIds() {
         return companionCreativeIds;
@@ -151,9 +148,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the companionCreativeIds value for this ImageOverlayCreative.
      * 
      * @param companionCreativeIds   * The IDs of the companion creatives that are associated with
-     * this creative.
-     *                     This attribute is optional. This attribute is
-     * read-only.
+     * this creative. This attribute is
+     *                     optional. This attribute is read-only.
      */
     public void setCompanionCreativeIds(long[] companionCreativeIds) {
         this.companionCreativeIds = companionCreativeIds;
@@ -172,8 +168,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the trackingUrls value for this ImageOverlayCreative.
      * 
      * @return trackingUrls   * A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional.
+     * be pinged when the event
+     *                     happens. This attribute is optional.
      */
     public com.google.api.ads.admanager.axis.v202205.ConversionEvent_TrackingUrlsMapEntry[] getTrackingUrls() {
         return trackingUrls;
@@ -184,8 +180,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the trackingUrls value for this ImageOverlayCreative.
      * 
      * @param trackingUrls   * A map from {@code ConversionEvent} to a list of URLs that will
-     * be pinged
-     *                     when the event happens. This attribute is optional.
+     * be pinged when the event
+     *                     happens. This attribute is optional.
      */
     public void setTrackingUrls(com.google.api.ads.admanager.axis.v202205.ConversionEvent_TrackingUrlsMapEntry[] trackingUrls) {
         this.trackingUrls = trackingUrls;
@@ -224,10 +220,9 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the customParameters value for this ImageOverlayCreative.
      * 
      * @return customParameters   * A comma separated key=value list of parameters that will be
-     * supplied to
-     *                     the creative, written into the VAST {@code AdParameters}
-     * node.
-     *                     This attribute is optional.
+     * supplied to the creative, written
+     *                     into the VAST {@code AdParameters} node. This
+     * attribute is optional.
      */
     public java.lang.String getCustomParameters() {
         return customParameters;
@@ -238,10 +233,9 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the customParameters value for this ImageOverlayCreative.
      * 
      * @param customParameters   * A comma separated key=value list of parameters that will be
-     * supplied to
-     *                     the creative, written into the VAST {@code AdParameters}
-     * node.
-     *                     This attribute is optional.
+     * supplied to the creative, written
+     *                     into the VAST {@code AdParameters} node. This
+     * attribute is optional.
      */
     public void setCustomParameters(java.lang.String customParameters) {
         this.customParameters = customParameters;
@@ -274,8 +268,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Gets the vastPreviewUrl value for this ImageOverlayCreative.
      * 
      * @return vastPreviewUrl   * An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only.
+     * specific to this creative.
+     *                     This attribute is read-only.
      */
     public java.lang.String getVastPreviewUrl() {
         return vastPreviewUrl;
@@ -286,8 +280,8 @@ public class ImageOverlayCreative  extends com.google.api.ads.admanager.axis.v20
      * Sets the vastPreviewUrl value for this ImageOverlayCreative.
      * 
      * @param vastPreviewUrl   * An ad tag URL that will return a preview of the VAST XML response
-     * specific
-     *                     to this creative.  This attribute is read-only.
+     * specific to this creative.
+     *                     This attribute is read-only.
      */
     public void setVastPreviewUrl(java.lang.String vastPreviewUrl) {
         this.vastPreviewUrl = vastPreviewUrl;

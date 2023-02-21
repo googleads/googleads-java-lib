@@ -27,8 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The {@code LineItemSummary} represents the base class from which a {@code
- *             LineItem} is derived.
+ *             The {@code LineItemSummary} represents the base class from which a {@code LineItem} is derived.
  *           
  * 
  * <p>Java class for LineItemSummary complex type.

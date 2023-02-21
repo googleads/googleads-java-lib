@@ -27,9 +27,9 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class ImageRedirectCreative  extends com.google.api.ads.admanager.axis.v202205.BaseImageRedirectCreative  implements java.io.Serializable {
     /* Alternative text to be rendered along with the creative used
-     * mainly for accessibility.
-     *                     This field is optional and has a maximum length
-     * of 500 characters. */
+     * mainly for accessibility. This
+     *                     field is optional and has a maximum length of
+     * 500 characters. */
     private java.lang.String altText;
 
     /* An impression tracking URL to ping when this creative is displayed.
@@ -100,9 +100,9 @@ public class ImageRedirectCreative  extends com.google.api.ads.admanager.axis.v2
      * Gets the altText value for this ImageRedirectCreative.
      * 
      * @return altText   * Alternative text to be rendered along with the creative used
-     * mainly for accessibility.
-     *                     This field is optional and has a maximum length
-     * of 500 characters.
+     * mainly for accessibility. This
+     *                     field is optional and has a maximum length of
+     * 500 characters.
      */
     public java.lang.String getAltText() {
         return altText;
@@ -113,9 +113,9 @@ public class ImageRedirectCreative  extends com.google.api.ads.admanager.axis.v2
      * Sets the altText value for this ImageRedirectCreative.
      * 
      * @param altText   * Alternative text to be rendered along with the creative used
-     * mainly for accessibility.
-     *                     This field is optional and has a maximum length
-     * of 500 characters.
+     * mainly for accessibility. This
+     *                     field is optional and has a maximum length of
+     * 500 characters.
      */
     public void setAltText(java.lang.String altText) {
         this.altText = altText;

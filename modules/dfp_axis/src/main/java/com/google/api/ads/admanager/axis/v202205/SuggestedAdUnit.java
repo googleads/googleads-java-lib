@@ -63,10 +63,9 @@ public class SuggestedAdUnit  implements java.io.Serializable {
      * This attribute is read-only and is
      *                 populated by Google.
      *                 
-     *                 <p>
-     *                 <strong>Note:</strong> The ad unit code for each of
-     * the parent ad units will not be provided.
-     *                 </p> */
+     *                 <p><strong>Note:</strong> The ad unit code for each
+     * of the parent ad units will not be
+     *                 provided. */
     private com.google.api.ads.admanager.axis.v202205.AdUnitParent[] parentPath;
 
     /* The {@code target} attribute of the underlying ad tag, as defined
@@ -229,10 +228,9 @@ public class SuggestedAdUnit  implements java.io.Serializable {
      * This attribute is read-only and is
      *                 populated by Google.
      *                 
-     *                 <p>
-     *                 <strong>Note:</strong> The ad unit code for each of
-     * the parent ad units will not be provided.
-     *                 </p>
+     *                 <p><strong>Note:</strong> The ad unit code for each
+     * of the parent ad units will not be
+     *                 provided.
      */
     public com.google.api.ads.admanager.axis.v202205.AdUnitParent[] getParentPath() {
         return parentPath;
@@ -250,10 +248,9 @@ public class SuggestedAdUnit  implements java.io.Serializable {
      * This attribute is read-only and is
      *                 populated by Google.
      *                 
-     *                 <p>
-     *                 <strong>Note:</strong> The ad unit code for each of
-     * the parent ad units will not be provided.
-     *                 </p>
+     *                 <p><strong>Note:</strong> The ad unit code for each
+     * of the parent ad units will not be
+     *                 provided.
      */
     public void setParentPath(com.google.api.ads.admanager.axis.v202205.AdUnitParent[] parentPath) {
         this.parentPath = parentPath;

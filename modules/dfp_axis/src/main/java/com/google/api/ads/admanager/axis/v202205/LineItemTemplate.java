@@ -28,9 +28,8 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class LineItemTemplate  implements java.io.Serializable {
     /* Uniquely identifies the {@code LineItemTemplate}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a template
-     * is created. */
+     * is read-only and is assigned
+     *                 by Google when a template is created. */
     private java.lang.Long id;
 
     /* The name of the {@code LineItemTemplate}. This attribute is
@@ -38,49 +37,45 @@ public class LineItemTemplate  implements java.io.Serializable {
     private java.lang.String name;
 
     /* Whether or not the {@code LineItemTemplate} represents the
-     * default choices
-     *                 for creating a {@code LineItem}. Only one default
-     * {@code LineItemTemplate}
-     *                 is allowed per {@code Network}. This attribute is
-     * readonly. */
+     * default choices for creating a
+     *                 {@code LineItem}. Only one default {@code LineItemTemplate}
+     * is allowed per {@code Network}.
+     *                 This attribute is readonly. */
     private java.lang.Boolean isDefault;
 
     /* The default {@link LineItem#name name} of a new {@code LineItem}.
-     * This
-     *                 attribute is optional and has a maximum length of
-     * 127 characters. */
+     * This attribute is optional
+     *                 and has a maximum length of 127 characters. */
     private java.lang.String lineItemName;
 
-    /* The default value for the
-     *                 {@link LineItem#enabledForSameAdvertiserException}
+    /* The default value for the {@link LineItem#enabledForSameAdvertiserException}
      * field of a new
      *                 {@code LineItem}. This attribute is required. */
     private java.lang.Boolean enabledForSameAdvertiserException;
 
     /* The default {@link LineItem#notes notes} for a new {@code LineItem}.
-     * This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters. */
+     * This attribute is optional
+     *                 and has a maximum length of 65,535 characters. */
     private java.lang.String notes;
 
     /* The default {@link LineItem#lineItemType type} of a new {@code
-     * LineItem}.
-     *                 This attribute is required. */
+     * LineItem}. This attribute is
+     *                 required. */
     private com.google.api.ads.admanager.axis.v202205.LineItemType lineItemType;
 
     /* The default {@link LineItem#deliveryRateType delivery strategy}
-     * for a new
-     *                 {@code LineItem}. This attribute is required. */
+     * for a new {@code LineItem}.
+     *                 This attribute is required. */
     private com.google.api.ads.admanager.axis.v202205.DeliveryRateType deliveryRateType;
 
     /* The default {@link LineItem#roadblockingType roadblocking strategy}
-     * for a
-     *                 new {@code LineItem}. This attribute is required. */
+     * for a new {@code LineItem}.
+     *                 This attribute is required. */
     private com.google.api.ads.admanager.axis.v202205.RoadblockingType roadblockingType;
 
     /* The default {@link LineItem#creativeRotationType creative rotation
-     * strategy}
-     *                 for a new {@code LineItem}. This attribute is required. */
+     * strategy} for a new {@code
+     *                 LineItem}. This attribute is required. */
     private com.google.api.ads.admanager.axis.v202205.CreativeRotationType creativeRotationType;
 
     public LineItemTemplate() {
@@ -130,9 +125,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the id value for this LineItemTemplate.
      * 
      * @return id   * Uniquely identifies the {@code LineItemTemplate}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a template
-     * is created.
+     * is read-only and is assigned
+     *                 by Google when a template is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -143,9 +137,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the id value for this LineItemTemplate.
      * 
      * @param id   * Uniquely identifies the {@code LineItemTemplate}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a template
-     * is created.
+     * is read-only and is assigned
+     *                 by Google when a template is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -178,11 +171,10 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the isDefault value for this LineItemTemplate.
      * 
      * @return isDefault   * Whether or not the {@code LineItemTemplate} represents the
-     * default choices
-     *                 for creating a {@code LineItem}. Only one default
-     * {@code LineItemTemplate}
-     *                 is allowed per {@code Network}. This attribute is
-     * readonly.
+     * default choices for creating a
+     *                 {@code LineItem}. Only one default {@code LineItemTemplate}
+     * is allowed per {@code Network}.
+     *                 This attribute is readonly.
      */
     public java.lang.Boolean getIsDefault() {
         return isDefault;
@@ -193,11 +185,10 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the isDefault value for this LineItemTemplate.
      * 
      * @param isDefault   * Whether or not the {@code LineItemTemplate} represents the
-     * default choices
-     *                 for creating a {@code LineItem}. Only one default
-     * {@code LineItemTemplate}
-     *                 is allowed per {@code Network}. This attribute is
-     * readonly.
+     * default choices for creating a
+     *                 {@code LineItem}. Only one default {@code LineItemTemplate}
+     * is allowed per {@code Network}.
+     *                 This attribute is readonly.
      */
     public void setIsDefault(java.lang.Boolean isDefault) {
         this.isDefault = isDefault;
@@ -208,9 +199,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the lineItemName value for this LineItemTemplate.
      * 
      * @return lineItemName   * The default {@link LineItem#name name} of a new {@code LineItem}.
-     * This
-     *                 attribute is optional and has a maximum length of
-     * 127 characters.
+     * This attribute is optional
+     *                 and has a maximum length of 127 characters.
      */
     public java.lang.String getLineItemName() {
         return lineItemName;
@@ -221,9 +211,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the lineItemName value for this LineItemTemplate.
      * 
      * @param lineItemName   * The default {@link LineItem#name name} of a new {@code LineItem}.
-     * This
-     *                 attribute is optional and has a maximum length of
-     * 127 characters.
+     * This attribute is optional
+     *                 and has a maximum length of 127 characters.
      */
     public void setLineItemName(java.lang.String lineItemName) {
         this.lineItemName = lineItemName;
@@ -233,8 +222,7 @@ public class LineItemTemplate  implements java.io.Serializable {
     /**
      * Gets the enabledForSameAdvertiserException value for this LineItemTemplate.
      * 
-     * @return enabledForSameAdvertiserException   * The default value for the
-     *                 {@link LineItem#enabledForSameAdvertiserException}
+     * @return enabledForSameAdvertiserException   * The default value for the {@link LineItem#enabledForSameAdvertiserException}
      * field of a new
      *                 {@code LineItem}. This attribute is required.
      */
@@ -246,8 +234,7 @@ public class LineItemTemplate  implements java.io.Serializable {
     /**
      * Sets the enabledForSameAdvertiserException value for this LineItemTemplate.
      * 
-     * @param enabledForSameAdvertiserException   * The default value for the
-     *                 {@link LineItem#enabledForSameAdvertiserException}
+     * @param enabledForSameAdvertiserException   * The default value for the {@link LineItem#enabledForSameAdvertiserException}
      * field of a new
      *                 {@code LineItem}. This attribute is required.
      */
@@ -260,9 +247,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the notes value for this LineItemTemplate.
      * 
      * @return notes   * The default {@link LineItem#notes notes} for a new {@code LineItem}.
-     * This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
+     * This attribute is optional
+     *                 and has a maximum length of 65,535 characters.
      */
     public java.lang.String getNotes() {
         return notes;
@@ -273,9 +259,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the notes value for this LineItemTemplate.
      * 
      * @param notes   * The default {@link LineItem#notes notes} for a new {@code LineItem}.
-     * This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
+     * This attribute is optional
+     *                 and has a maximum length of 65,535 characters.
      */
     public void setNotes(java.lang.String notes) {
         this.notes = notes;
@@ -286,8 +271,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the lineItemType value for this LineItemTemplate.
      * 
      * @return lineItemType   * The default {@link LineItem#lineItemType type} of a new {@code
-     * LineItem}.
-     *                 This attribute is required.
+     * LineItem}. This attribute is
+     *                 required.
      */
     public com.google.api.ads.admanager.axis.v202205.LineItemType getLineItemType() {
         return lineItemType;
@@ -298,8 +283,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the lineItemType value for this LineItemTemplate.
      * 
      * @param lineItemType   * The default {@link LineItem#lineItemType type} of a new {@code
-     * LineItem}.
-     *                 This attribute is required.
+     * LineItem}. This attribute is
+     *                 required.
      */
     public void setLineItemType(com.google.api.ads.admanager.axis.v202205.LineItemType lineItemType) {
         this.lineItemType = lineItemType;
@@ -310,8 +295,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the deliveryRateType value for this LineItemTemplate.
      * 
      * @return deliveryRateType   * The default {@link LineItem#deliveryRateType delivery strategy}
-     * for a new
-     *                 {@code LineItem}. This attribute is required.
+     * for a new {@code LineItem}.
+     *                 This attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202205.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -322,8 +307,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the deliveryRateType value for this LineItemTemplate.
      * 
      * @param deliveryRateType   * The default {@link LineItem#deliveryRateType delivery strategy}
-     * for a new
-     *                 {@code LineItem}. This attribute is required.
+     * for a new {@code LineItem}.
+     *                 This attribute is required.
      */
     public void setDeliveryRateType(com.google.api.ads.admanager.axis.v202205.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;
@@ -334,8 +319,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the roadblockingType value for this LineItemTemplate.
      * 
      * @return roadblockingType   * The default {@link LineItem#roadblockingType roadblocking strategy}
-     * for a
-     *                 new {@code LineItem}. This attribute is required.
+     * for a new {@code LineItem}.
+     *                 This attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202205.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -346,8 +331,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the roadblockingType value for this LineItemTemplate.
      * 
      * @param roadblockingType   * The default {@link LineItem#roadblockingType roadblocking strategy}
-     * for a
-     *                 new {@code LineItem}. This attribute is required.
+     * for a new {@code LineItem}.
+     *                 This attribute is required.
      */
     public void setRoadblockingType(com.google.api.ads.admanager.axis.v202205.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;
@@ -358,8 +343,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Gets the creativeRotationType value for this LineItemTemplate.
      * 
      * @return creativeRotationType   * The default {@link LineItem#creativeRotationType creative rotation
-     * strategy}
-     *                 for a new {@code LineItem}. This attribute is required.
+     * strategy} for a new {@code
+     *                 LineItem}. This attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeRotationType getCreativeRotationType() {
         return creativeRotationType;
@@ -370,8 +355,8 @@ public class LineItemTemplate  implements java.io.Serializable {
      * Sets the creativeRotationType value for this LineItemTemplate.
      * 
      * @param creativeRotationType   * The default {@link LineItem#creativeRotationType creative rotation
-     * strategy}
-     *                 for a new {@code LineItem}. This attribute is required.
+     * strategy} for a new {@code
+     *                 LineItem}. This attribute is required.
      */
     public void setCreativeRotationType(com.google.api.ads.admanager.axis.v202205.CreativeRotationType creativeRotationType) {
         this.creativeRotationType = creativeRotationType;

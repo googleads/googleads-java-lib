@@ -57,9 +57,9 @@ public interface SuggestedAdUnitServiceInterface {
 
     /**
      * 
-     *         Gets a {@link SuggestedAdUnitPage} of {@link SuggestedAdUnit} objects that
-     *         satisfy the filter query.  There is a system-enforced limit of 1000 on the number of suggested
-     *         ad units that are suggested at any one time.
+     *         Gets a {@link SuggestedAdUnitPage} of {@link SuggestedAdUnit} objects that satisfy the filter
+     *         query. There is a system-enforced limit of 1000 on the number of suggested ad units that are
+     *         suggested at any one time.
      *         
      *         <table>
      *         <tr>
@@ -96,8 +96,8 @@ public interface SuggestedAdUnitServiceInterface {
 
     /**
      * 
-     *         Performs actions on {@link SuggestedAdUnit} objects that match the given
-     *         {@link Statement#query}.  The following fields are supported for filtering:
+     *         Performs actions on {@link SuggestedAdUnit} objects that match the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>

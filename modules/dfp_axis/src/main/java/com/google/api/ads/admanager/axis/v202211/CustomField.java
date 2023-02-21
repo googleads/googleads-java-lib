@@ -27,18 +27,16 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class CustomField  implements java.io.Serializable {
     /* Unique ID of the {@code CustomField}. This value is readonly
-     * and is assigned by
-     *                 Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* Name of the {@code CustomField}. This is value is required
-     * to create a custom field. The
-     *                 max length is 127 characters. */
+     * to create a custom field. The max
+     *                 length is 127 characters. */
     private java.lang.String name;
 
     /* A description of the custom field. This value is optional.
-     * The maximum length is 511
-     *                 characters */
+     * The maximum length is 511 characters */
     private java.lang.String description;
 
     /* Specifies whether or not the custom fields is active. This
@@ -46,15 +44,13 @@ public class CustomField  implements java.io.Serializable {
     private java.lang.Boolean isActive;
 
     /* The type of entity that this custom field is associated with.
-     * This attribute is read-only
-     *                 if there exists a {@link CustomFieldValue} for this
-     * field. */
+     * This attribute is read-only if
+     *                 there exists a {@link CustomFieldValue} for this field. */
     private com.google.api.ads.admanager.axis.v202211.CustomFieldEntityType entityType;
 
     /* The type of data this custom field contains. This attribute
-     * is read-only
-     *                 if there exists a {@link CustomFieldValue} for this
-     * field. */
+     * is read-only if there exists a
+     *                 {@link CustomFieldValue} for this field. */
     private com.google.api.ads.admanager.axis.v202211.CustomFieldDataType dataType;
 
     /* How visible/accessible this field is in the UI. */
@@ -98,8 +94,7 @@ public class CustomField  implements java.io.Serializable {
      * Gets the id value for this CustomField.
      * 
      * @return id   * Unique ID of the {@code CustomField}. This value is readonly
-     * and is assigned by
-     *                 Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -110,8 +105,7 @@ public class CustomField  implements java.io.Serializable {
      * Sets the id value for this CustomField.
      * 
      * @param id   * Unique ID of the {@code CustomField}. This value is readonly
-     * and is assigned by
-     *                 Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -122,8 +116,8 @@ public class CustomField  implements java.io.Serializable {
      * Gets the name value for this CustomField.
      * 
      * @return name   * Name of the {@code CustomField}. This is value is required
-     * to create a custom field. The
-     *                 max length is 127 characters.
+     * to create a custom field. The max
+     *                 length is 127 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -134,8 +128,8 @@ public class CustomField  implements java.io.Serializable {
      * Sets the name value for this CustomField.
      * 
      * @param name   * Name of the {@code CustomField}. This is value is required
-     * to create a custom field. The
-     *                 max length is 127 characters.
+     * to create a custom field. The max
+     *                 length is 127 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -146,8 +140,7 @@ public class CustomField  implements java.io.Serializable {
      * Gets the description value for this CustomField.
      * 
      * @return description   * A description of the custom field. This value is optional.
-     * The maximum length is 511
-     *                 characters
+     * The maximum length is 511 characters
      */
     public java.lang.String getDescription() {
         return description;
@@ -158,8 +151,7 @@ public class CustomField  implements java.io.Serializable {
      * Sets the description value for this CustomField.
      * 
      * @param description   * A description of the custom field. This value is optional.
-     * The maximum length is 511
-     *                 characters
+     * The maximum length is 511 characters
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -192,9 +184,8 @@ public class CustomField  implements java.io.Serializable {
      * Gets the entityType value for this CustomField.
      * 
      * @return entityType   * The type of entity that this custom field is associated with.
-     * This attribute is read-only
-     *                 if there exists a {@link CustomFieldValue} for this
-     * field.
+     * This attribute is read-only if
+     *                 there exists a {@link CustomFieldValue} for this field.
      */
     public com.google.api.ads.admanager.axis.v202211.CustomFieldEntityType getEntityType() {
         return entityType;
@@ -205,9 +196,8 @@ public class CustomField  implements java.io.Serializable {
      * Sets the entityType value for this CustomField.
      * 
      * @param entityType   * The type of entity that this custom field is associated with.
-     * This attribute is read-only
-     *                 if there exists a {@link CustomFieldValue} for this
-     * field.
+     * This attribute is read-only if
+     *                 there exists a {@link CustomFieldValue} for this field.
      */
     public void setEntityType(com.google.api.ads.admanager.axis.v202211.CustomFieldEntityType entityType) {
         this.entityType = entityType;
@@ -218,9 +208,8 @@ public class CustomField  implements java.io.Serializable {
      * Gets the dataType value for this CustomField.
      * 
      * @return dataType   * The type of data this custom field contains. This attribute
-     * is read-only
-     *                 if there exists a {@link CustomFieldValue} for this
-     * field.
+     * is read-only if there exists a
+     *                 {@link CustomFieldValue} for this field.
      */
     public com.google.api.ads.admanager.axis.v202211.CustomFieldDataType getDataType() {
         return dataType;
@@ -231,9 +220,8 @@ public class CustomField  implements java.io.Serializable {
      * Sets the dataType value for this CustomField.
      * 
      * @param dataType   * The type of data this custom field contains. This attribute
-     * is read-only
-     *                 if there exists a {@link CustomFieldValue} for this
-     * field.
+     * is read-only if there exists a
+     *                 {@link CustomFieldValue} for this field.
      */
     public void setDataType(com.google.api.ads.admanager.axis.v202211.CustomFieldDataType dataType) {
         this.dataType = dataType;

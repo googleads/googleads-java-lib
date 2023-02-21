@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Performs actions on {@link SuggestedAdUnit} objects that match the given
- *             {@link Statement#query}.  The following fields are supported for filtering:
+ *             Performs actions on {@link SuggestedAdUnit} objects that match the given {@link
+ *             Statement#query}. The following fields are supported for filtering:
  *             
  *             <table>
  *             <tr>

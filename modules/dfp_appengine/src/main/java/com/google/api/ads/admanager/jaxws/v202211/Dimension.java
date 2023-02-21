@@ -230,7 +230,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by month and year in the network time zone. Can be used to filter on
      *                 month using ISO 4601 format 'YYYY-MM'.
-     *                 <p>Corresponds to "Month and year" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Partner finance.</p>
+     *                 <p>Corresponds to "Month and year" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Partner finance, YouTube consolidated.</p>
      *               
      * 
      */
@@ -240,7 +240,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by week of the year in the network time zone. Cannot be used for
      *                 filtering.
-     *                 <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
+     *                 <p>Corresponds to "Week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, YouTube consolidated.</p>
      *               
      * 
      */
@@ -250,7 +250,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by date in the network time zone. Can be used to filter by date
      *                 using ISO 8601's format 'YYYY-MM-DD'".
-     *                 <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, YouTube consolidated.</p>
      *               
      * 
      */
@@ -261,7 +261,7 @@ public enum Dimension {
      *                 Breaks down reporting data by day of the week in the network time zone. Can
      *                 be used to filter by day of the week using the index of the day (from 1 for
      *                 Monday is 1 to 7 for Sunday).
-     *                 <p>Corresponds to "Day of week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach.</p>
+     *                 <p>Corresponds to "Day of week" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, YouTube consolidated.</p>
      *               
      * 
      */
@@ -607,7 +607,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by country criteria ID. Can be used to filter by
      *                 country criteria ID.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, YouTube consolidated.</p>
      *               
      * 
      */
@@ -627,7 +627,7 @@ public enum Dimension {
      *                 Breaks down reporting data by country name. The country name and the
      *                 country criteria ID are automatically included as columns in the report.
      *                 Can be used to filter by country name using the US English name.
-     *                 <p>Corresponds to "Country" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Corresponds to "Country" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, YouTube consolidated.</p>
      *               
      * 
      */
@@ -807,7 +807,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link Content#id}. Can be used to filter by
      *                 {@link Content#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, YouTube consolidated.</p>
      *               
      * 
      */
@@ -818,7 +818,7 @@ public enum Dimension {
      *                 Breaks down reporting data by content. {@link Content#name} and
      *                 {@link Content#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link Content#name}.
-     *                 <p>Corresponds to "Content" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through.</p>
+     *                 <p>Corresponds to "Content" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, YouTube consolidated.</p>
      *               
      * 
      */
@@ -828,7 +828,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link ContentBundle#id}. Can be used to filter
      *                 by {@link ContentBundle#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, YouTube consolidated.</p>
      *               
      * 
      */
@@ -839,7 +839,7 @@ public enum Dimension {
      *                 Breaks down reporting data by content bundle. {@link ContentBundle#name} and
      *                 {@link ContentBundle#id} are automatically included as columns in the
      *                 report. Can be used to filter by {@link ContentBundle#name}.
-     *                 <p>Corresponds to "Content bundle" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through.</p>
+     *                 <p>Corresponds to "Content bundle" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, YouTube consolidated.</p>
      *               
      * 
      */

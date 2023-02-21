@@ -27,32 +27,27 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public class CustomTargetingKey  implements java.io.Serializable {
     /* The ID of the {@code CustomTargetingKey}. This value is readonly
-     * and is
-     *                 populated by Google. */
+     * and is populated by Google. */
     private java.lang.Long id;
 
     /* Name of the key. This can be used for encoding . If you don't
-     * want users to
-     *                 be able to see potentially sensitive targeting information
-     * in the ad tags
-     *                 of your site, you can encode your key/values. For
-     * example, you can create
-     *                 key/value g1=abc to represent gender=female. Keys
-     * can contain up to 10
-     *                 characters each. You can use alphanumeric characters
-     * and symbols other than
+     * want users to be able to see
+     *                 potentially sensitive targeting information in the
+     * ad tags of your site, you can encode your
+     *                 key/values. For example, you can create key/value
+     * g1=abc to represent gender=female. Keys can
+     *                 contain up to 10 characters each. You can use alphanumeric
+     * characters and symbols other than
      *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ], the white
-     *                 space character. */
+     * <, >, [, ], the white space character. */
     private java.lang.String name;
 
     /* Descriptive name for the key. */
     private java.lang.String displayName;
 
     /* Indicates whether users will select from predefined values
-     * or create new
-     *                 targeting values, while specifying targeting criteria
-     * for a line item. */
+     * or create new targeting values,
+     *                 while specifying targeting criteria for a line item. */
     private com.google.api.ads.admanager.axis.v202211.CustomTargetingKeyType type;
 
     /* Status of the {@code CustomTargetingKey}. This field is read-only.
@@ -99,8 +94,7 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Gets the id value for this CustomTargetingKey.
      * 
      * @return id   * The ID of the {@code CustomTargetingKey}. This value is readonly
-     * and is
-     *                 populated by Google.
+     * and is populated by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -111,8 +105,7 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Sets the id value for this CustomTargetingKey.
      * 
      * @param id   * The ID of the {@code CustomTargetingKey}. This value is readonly
-     * and is
-     *                 populated by Google.
+     * and is populated by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -123,18 +116,15 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Gets the name value for this CustomTargetingKey.
      * 
      * @return name   * Name of the key. This can be used for encoding . If you don't
-     * want users to
-     *                 be able to see potentially sensitive targeting information
-     * in the ad tags
-     *                 of your site, you can encode your key/values. For
-     * example, you can create
-     *                 key/value g1=abc to represent gender=female. Keys
-     * can contain up to 10
-     *                 characters each. You can use alphanumeric characters
-     * and symbols other than
+     * want users to be able to see
+     *                 potentially sensitive targeting information in the
+     * ad tags of your site, you can encode your
+     *                 key/values. For example, you can create key/value
+     * g1=abc to represent gender=female. Keys can
+     *                 contain up to 10 characters each. You can use alphanumeric
+     * characters and symbols other than
      *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ], the white
-     *                 space character.
+     * <, >, [, ], the white space character.
      */
     public java.lang.String getName() {
         return name;
@@ -145,18 +135,15 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Sets the name value for this CustomTargetingKey.
      * 
      * @param name   * Name of the key. This can be used for encoding . If you don't
-     * want users to
-     *                 be able to see potentially sensitive targeting information
-     * in the ad tags
-     *                 of your site, you can encode your key/values. For
-     * example, you can create
-     *                 key/value g1=abc to represent gender=female. Keys
-     * can contain up to 10
-     *                 characters each. You can use alphanumeric characters
-     * and symbols other than
+     * want users to be able to see
+     *                 potentially sensitive targeting information in the
+     * ad tags of your site, you can encode your
+     *                 key/values. For example, you can create key/value
+     * g1=abc to represent gender=female. Keys can
+     *                 contain up to 10 characters each. You can use alphanumeric
+     * characters and symbols other than
      *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ], the white
-     *                 space character.
+     * <, >, [, ], the white space character.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -187,9 +174,8 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Gets the type value for this CustomTargetingKey.
      * 
      * @return type   * Indicates whether users will select from predefined values
-     * or create new
-     *                 targeting values, while specifying targeting criteria
-     * for a line item.
+     * or create new targeting values,
+     *                 while specifying targeting criteria for a line item.
      */
     public com.google.api.ads.admanager.axis.v202211.CustomTargetingKeyType getType() {
         return type;
@@ -200,9 +186,8 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * Sets the type value for this CustomTargetingKey.
      * 
      * @param type   * Indicates whether users will select from predefined values
-     * or create new
-     *                 targeting values, while specifying targeting criteria
-     * for a line item.
+     * or create new targeting values,
+     *                 while specifying targeting criteria for a line item.
      */
     public void setType(com.google.api.ads.admanager.axis.v202211.CustomTargetingKeyType type) {
         this.type = type;

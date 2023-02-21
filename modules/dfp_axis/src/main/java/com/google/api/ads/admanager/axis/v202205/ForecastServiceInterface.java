@@ -61,11 +61,11 @@ public interface ForecastServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets the delivery forecast for a list of existing {@link LineItem}
-     * objects in a single
-     *         delivery simulation. A delivery forecast reports the number
-     * of units that will be delivered
-     *         to each line item given the line item goals and contentions
-     * from other line items.
+     * objects in a single delivery
+     *         simulation. A delivery forecast reports the number of units
+     * that will be delivered to each line
+     *         item given the line item goals and contentions from other
+     * line items.
      */
     public com.google.api.ads.admanager.axis.v202205.DeliveryForecast getDeliveryForecastByIds(long[] lineItemIds, com.google.api.ads.admanager.axis.v202205.DeliveryForecastOptions forecastOptions) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 

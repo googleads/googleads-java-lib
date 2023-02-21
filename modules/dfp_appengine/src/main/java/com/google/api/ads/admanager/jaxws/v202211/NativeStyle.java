@@ -23,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Used to define the look and feel of native ads, for both web and apps.
- *             Native styles determine how native creatives look for a segment of inventory.
+ *             Used to define the look and feel of native ads, for both web and apps. Native styles determine
+ *             how native creatives look for a segment of inventory.
  *           
  * 
  * <p>Java class for NativeStyle complex type.

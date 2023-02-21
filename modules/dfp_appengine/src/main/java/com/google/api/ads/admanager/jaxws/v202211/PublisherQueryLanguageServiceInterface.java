@@ -363,8 +363,7 @@ public interface PublisherQueryLanguageServiceInterface {
 
     /**
      * 
-     *         Retrieves rows of data that satisfy the given {@link Statement#query} from
-     *         the system.
+     *         Retrieves rows of data that satisfy the given {@link Statement#query} from the system.
      *       
      * 
      * @param selectStatement

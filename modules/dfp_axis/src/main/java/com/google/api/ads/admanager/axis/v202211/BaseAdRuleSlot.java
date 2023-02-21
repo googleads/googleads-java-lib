@@ -24,64 +24,62 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * Simple object representing an ad slot within an {@link AdRule}.
- * Ad rule slots
- *             contain information about the types/number of ads to display,
- * as well
- *             as additional information on how the ad server will generate
- * playlists.
+ * Ad rule slots contain information
+ *             about the types/number of ads to display, as well as additional
+ * information on how the ad server
+ *             will generate playlists.
  */
 public abstract class BaseAdRuleSlot  implements java.io.Serializable {
     /* The {@link AdRuleSlotBehavior} for video ads for this slot.
-     * This
-     *                 attribute is optional and defaults to {@link AdRuleSlotBehavior#DEFER}.
-     * 
+     * This attribute is optional and
+     *                 defaults to {@link AdRuleSlotBehavior#DEFER}.
+     *                 
      *                 <p>Indicates whether video ads are allowed for this
-     * slot, or if the
-     *                 decision is deferred to a lower-priority ad rule. */
+     * slot, or if the decision is deferred to a
+     *                 lower-priority ad rule. */
     private com.google.api.ads.admanager.axis.v202211.AdRuleSlotBehavior slotBehavior;
 
     /* The maximum duration in milliseconds of video ads within this
-     * slot. This
-     *                 attribute is optional and defaults to 0. */
+     * slot. This attribute is optional
+     *                 and defaults to 0. */
     private java.lang.Long maxVideoAdDuration;
 
     /* The frequency type for video ads in this ad rule slot. This
-     * attribute
-     *                 is required for mid-rolls, but if this is not a mid-roll,
-     * the value is set to
-     *                 {@link MidrollFrequencyType#NONE}. */
+     * attribute is required for
+     *                 mid-rolls, but if this is not a mid-roll, the value
+     * is set to {@link
+     *                 MidrollFrequencyType#NONE}. */
     private com.google.api.ads.admanager.axis.v202211.MidrollFrequencyType videoMidrollFrequencyType;
 
     /* The mid-roll frequency of this ad rule slot for video ads.
-     * This attribute is
-     *                 required for mid-rolls, but if {@link MidrollFrequencyType}
-     * is set to
-     *                 {@link MidrollFrequencyType#NONE}, this value should
-     * be ignored. For example,
-     *                 if this slot has a frequency type of {@link MidrollFrequencyType#EVERY_N_SECONDS}
-     * and {@code #videoMidrollFrequency} = "60", this would mean " play
-     * a mid-roll every 60
-     *                 seconds." */
+     * This attribute is required for
+     *                 mid-rolls, but if {@link MidrollFrequencyType} is
+     * set to {@link MidrollFrequencyType#NONE},
+     *                 this value should be ignored. For example, if this
+     * slot has a frequency type of {@link
+     *                 MidrollFrequencyType#EVERY_N_SECONDS} and {@code #videoMidrollFrequency}
+     * = "60", this would
+     *                 mean " play a mid-roll every 60 seconds." */
     private java.lang.String videoMidrollFrequency;
 
     /* The {@link AdRuleSlotBumper} for this slot. This attribute
-     * is optional and
-     *                 defaults to {@link AdRuleSlotBumper#NONE}. */
+     * is optional and defaults to {@link
+     *                 AdRuleSlotBumper#NONE}. */
     private com.google.api.ads.admanager.axis.v202211.AdRuleSlotBumper bumper;
 
     /* The maximum duration of bumper ads within this slot. This attribute
-     * is
-     *                 optional and defaults to 0. */
+     * is optional and defaults to
+     *                 0. */
     private java.lang.Long maxBumperDuration;
 
     /* The maximum pod duration in milliseconds for this slot. This
-     * attribute is
-     *                 optional and defaults to 0. */
+     * attribute is optional and defaults
+     *                 to 0. */
     private java.lang.Long maxPodDuration;
 
     /* The maximum number of ads allowed in a pod in this slot. This
-     * attribute is
-     *                 optional and defaults to 0. */
+     * attribute is optional and
+     *                 defaults to 0. */
     private java.lang.Integer maxAdsInPod;
 
     /* ID of a {@link BreakTemplate} that defines what kinds of ads
@@ -135,12 +133,12 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the slotBehavior value for this BaseAdRuleSlot.
      * 
      * @return slotBehavior   * The {@link AdRuleSlotBehavior} for video ads for this slot.
-     * This
-     *                 attribute is optional and defaults to {@link AdRuleSlotBehavior#DEFER}.
-     * 
+     * This attribute is optional and
+     *                 defaults to {@link AdRuleSlotBehavior#DEFER}.
+     *                 
      *                 <p>Indicates whether video ads are allowed for this
-     * slot, or if the
-     *                 decision is deferred to a lower-priority ad rule.
+     * slot, or if the decision is deferred to a
+     *                 lower-priority ad rule.
      */
     public com.google.api.ads.admanager.axis.v202211.AdRuleSlotBehavior getSlotBehavior() {
         return slotBehavior;
@@ -151,12 +149,12 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the slotBehavior value for this BaseAdRuleSlot.
      * 
      * @param slotBehavior   * The {@link AdRuleSlotBehavior} for video ads for this slot.
-     * This
-     *                 attribute is optional and defaults to {@link AdRuleSlotBehavior#DEFER}.
-     * 
+     * This attribute is optional and
+     *                 defaults to {@link AdRuleSlotBehavior#DEFER}.
+     *                 
      *                 <p>Indicates whether video ads are allowed for this
-     * slot, or if the
-     *                 decision is deferred to a lower-priority ad rule.
+     * slot, or if the decision is deferred to a
+     *                 lower-priority ad rule.
      */
     public void setSlotBehavior(com.google.api.ads.admanager.axis.v202211.AdRuleSlotBehavior slotBehavior) {
         this.slotBehavior = slotBehavior;
@@ -167,8 +165,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the maxVideoAdDuration value for this BaseAdRuleSlot.
      * 
      * @return maxVideoAdDuration   * The maximum duration in milliseconds of video ads within this
-     * slot. This
-     *                 attribute is optional and defaults to 0.
+     * slot. This attribute is optional
+     *                 and defaults to 0.
      */
     public java.lang.Long getMaxVideoAdDuration() {
         return maxVideoAdDuration;
@@ -179,8 +177,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the maxVideoAdDuration value for this BaseAdRuleSlot.
      * 
      * @param maxVideoAdDuration   * The maximum duration in milliseconds of video ads within this
-     * slot. This
-     *                 attribute is optional and defaults to 0.
+     * slot. This attribute is optional
+     *                 and defaults to 0.
      */
     public void setMaxVideoAdDuration(java.lang.Long maxVideoAdDuration) {
         this.maxVideoAdDuration = maxVideoAdDuration;
@@ -191,10 +189,10 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the videoMidrollFrequencyType value for this BaseAdRuleSlot.
      * 
      * @return videoMidrollFrequencyType   * The frequency type for video ads in this ad rule slot. This
-     * attribute
-     *                 is required for mid-rolls, but if this is not a mid-roll,
-     * the value is set to
-     *                 {@link MidrollFrequencyType#NONE}.
+     * attribute is required for
+     *                 mid-rolls, but if this is not a mid-roll, the value
+     * is set to {@link
+     *                 MidrollFrequencyType#NONE}.
      */
     public com.google.api.ads.admanager.axis.v202211.MidrollFrequencyType getVideoMidrollFrequencyType() {
         return videoMidrollFrequencyType;
@@ -205,10 +203,10 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the videoMidrollFrequencyType value for this BaseAdRuleSlot.
      * 
      * @param videoMidrollFrequencyType   * The frequency type for video ads in this ad rule slot. This
-     * attribute
-     *                 is required for mid-rolls, but if this is not a mid-roll,
-     * the value is set to
-     *                 {@link MidrollFrequencyType#NONE}.
+     * attribute is required for
+     *                 mid-rolls, but if this is not a mid-roll, the value
+     * is set to {@link
+     *                 MidrollFrequencyType#NONE}.
      */
     public void setVideoMidrollFrequencyType(com.google.api.ads.admanager.axis.v202211.MidrollFrequencyType videoMidrollFrequencyType) {
         this.videoMidrollFrequencyType = videoMidrollFrequencyType;
@@ -219,15 +217,14 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the videoMidrollFrequency value for this BaseAdRuleSlot.
      * 
      * @return videoMidrollFrequency   * The mid-roll frequency of this ad rule slot for video ads.
-     * This attribute is
-     *                 required for mid-rolls, but if {@link MidrollFrequencyType}
-     * is set to
-     *                 {@link MidrollFrequencyType#NONE}, this value should
-     * be ignored. For example,
-     *                 if this slot has a frequency type of {@link MidrollFrequencyType#EVERY_N_SECONDS}
-     * and {@code #videoMidrollFrequency} = "60", this would mean " play
-     * a mid-roll every 60
-     *                 seconds."
+     * This attribute is required for
+     *                 mid-rolls, but if {@link MidrollFrequencyType} is
+     * set to {@link MidrollFrequencyType#NONE},
+     *                 this value should be ignored. For example, if this
+     * slot has a frequency type of {@link
+     *                 MidrollFrequencyType#EVERY_N_SECONDS} and {@code #videoMidrollFrequency}
+     * = "60", this would
+     *                 mean " play a mid-roll every 60 seconds."
      */
     public java.lang.String getVideoMidrollFrequency() {
         return videoMidrollFrequency;
@@ -238,15 +235,14 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the videoMidrollFrequency value for this BaseAdRuleSlot.
      * 
      * @param videoMidrollFrequency   * The mid-roll frequency of this ad rule slot for video ads.
-     * This attribute is
-     *                 required for mid-rolls, but if {@link MidrollFrequencyType}
-     * is set to
-     *                 {@link MidrollFrequencyType#NONE}, this value should
-     * be ignored. For example,
-     *                 if this slot has a frequency type of {@link MidrollFrequencyType#EVERY_N_SECONDS}
-     * and {@code #videoMidrollFrequency} = "60", this would mean " play
-     * a mid-roll every 60
-     *                 seconds."
+     * This attribute is required for
+     *                 mid-rolls, but if {@link MidrollFrequencyType} is
+     * set to {@link MidrollFrequencyType#NONE},
+     *                 this value should be ignored. For example, if this
+     * slot has a frequency type of {@link
+     *                 MidrollFrequencyType#EVERY_N_SECONDS} and {@code #videoMidrollFrequency}
+     * = "60", this would
+     *                 mean " play a mid-roll every 60 seconds."
      */
     public void setVideoMidrollFrequency(java.lang.String videoMidrollFrequency) {
         this.videoMidrollFrequency = videoMidrollFrequency;
@@ -257,8 +253,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the bumper value for this BaseAdRuleSlot.
      * 
      * @return bumper   * The {@link AdRuleSlotBumper} for this slot. This attribute
-     * is optional and
-     *                 defaults to {@link AdRuleSlotBumper#NONE}.
+     * is optional and defaults to {@link
+     *                 AdRuleSlotBumper#NONE}.
      */
     public com.google.api.ads.admanager.axis.v202211.AdRuleSlotBumper getBumper() {
         return bumper;
@@ -269,8 +265,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the bumper value for this BaseAdRuleSlot.
      * 
      * @param bumper   * The {@link AdRuleSlotBumper} for this slot. This attribute
-     * is optional and
-     *                 defaults to {@link AdRuleSlotBumper#NONE}.
+     * is optional and defaults to {@link
+     *                 AdRuleSlotBumper#NONE}.
      */
     public void setBumper(com.google.api.ads.admanager.axis.v202211.AdRuleSlotBumper bumper) {
         this.bumper = bumper;
@@ -281,8 +277,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the maxBumperDuration value for this BaseAdRuleSlot.
      * 
      * @return maxBumperDuration   * The maximum duration of bumper ads within this slot. This attribute
-     * is
-     *                 optional and defaults to 0.
+     * is optional and defaults to
+     *                 0.
      */
     public java.lang.Long getMaxBumperDuration() {
         return maxBumperDuration;
@@ -293,8 +289,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the maxBumperDuration value for this BaseAdRuleSlot.
      * 
      * @param maxBumperDuration   * The maximum duration of bumper ads within this slot. This attribute
-     * is
-     *                 optional and defaults to 0.
+     * is optional and defaults to
+     *                 0.
      */
     public void setMaxBumperDuration(java.lang.Long maxBumperDuration) {
         this.maxBumperDuration = maxBumperDuration;
@@ -305,8 +301,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the maxPodDuration value for this BaseAdRuleSlot.
      * 
      * @return maxPodDuration   * The maximum pod duration in milliseconds for this slot. This
-     * attribute is
-     *                 optional and defaults to 0.
+     * attribute is optional and defaults
+     *                 to 0.
      */
     public java.lang.Long getMaxPodDuration() {
         return maxPodDuration;
@@ -317,8 +313,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the maxPodDuration value for this BaseAdRuleSlot.
      * 
      * @param maxPodDuration   * The maximum pod duration in milliseconds for this slot. This
-     * attribute is
-     *                 optional and defaults to 0.
+     * attribute is optional and defaults
+     *                 to 0.
      */
     public void setMaxPodDuration(java.lang.Long maxPodDuration) {
         this.maxPodDuration = maxPodDuration;
@@ -329,8 +325,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Gets the maxAdsInPod value for this BaseAdRuleSlot.
      * 
      * @return maxAdsInPod   * The maximum number of ads allowed in a pod in this slot. This
-     * attribute is
-     *                 optional and defaults to 0.
+     * attribute is optional and
+     *                 defaults to 0.
      */
     public java.lang.Integer getMaxAdsInPod() {
         return maxAdsInPod;
@@ -341,8 +337,8 @@ public abstract class BaseAdRuleSlot  implements java.io.Serializable {
      * Sets the maxAdsInPod value for this BaseAdRuleSlot.
      * 
      * @param maxAdsInPod   * The maximum number of ads allowed in a pod in this slot. This
-     * attribute is
-     *                 optional and defaults to 0.
+     * attribute is optional and
+     *                 defaults to 0.
      */
     public void setMaxAdsInPod(java.lang.Integer maxAdsInPod) {
         this.maxAdsInPod = maxAdsInPod;

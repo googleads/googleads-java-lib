@@ -24,31 +24,28 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A {@code Creative} intended for mobile platforms that displays
- * an image,
- *             whose {@link LineItem#creativePlaceholders size} is defined
- * as an
- *             {@link CreativeSizeType#ASPECT_RATIO aspect ratio}, i.e.
- * {@link Size#isAspectRatio}. It can have multiple images whose dimensions
- * conform to that aspect ratio.
+ * an image, whose {@link
+ *             LineItem#creativePlaceholders size} is defined as an {@link
+ * CreativeSizeType#ASPECT_RATIO aspect
+ *             ratio}, i.e. {@link Size#isAspectRatio}. It can have multiple
+ * images whose dimensions conform to
+ *             that aspect ratio.
  */
 public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis.v202208.HasDestinationUrlCreative  implements java.io.Serializable {
     /* The images associated with this creative. The ad server will
-     * choose one
-     *                     based on the capabilities of the device. Each
-     * asset should have a size
-     *                     which is of the same aspect ratio as the {@link
-     * Creative#size}. This
-     *                     attribute is required and must have at least one
-     * asset. */
+     * choose one based on the
+     *                     capabilities of the device. Each asset should
+     * have a size which is of the same aspect ratio as
+     *                     the {@link Creative#size}. This attribute is required
+     * and must have at least one asset. */
     private com.google.api.ads.admanager.axis.v202208.CreativeAsset[] imageAssets;
 
     /* The text that is served along with the image creative, primarily
-     * for
-     *                     accessibility. If no suitable image size is available
-     * for the device, this
-     *                     text replaces the image completely. This field
-     * is optional and has a
-     *                     maximum length of 500 characters. */
+     * for accessibility. If no
+     *                     suitable image size is available for the device,
+     * this text replaces the image completely. This
+     *                     field is optional and has a maximum length of
+     * 500 characters. */
     private java.lang.String altText;
 
     /* An impression tracking URL to ping when this creative is displayed.
@@ -57,8 +54,8 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
     private java.lang.String thirdPartyImpressionUrl;
 
     /* Allows the actual image asset sizes to differ from the creative
-     * size.
-     *                     This attribute is optional. */
+     * size. This attribute is
+     *                     optional. */
     private java.lang.Boolean overrideSize;
 
     public AspectRatioImageCreative() {
@@ -127,13 +124,11 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
      * Gets the imageAssets value for this AspectRatioImageCreative.
      * 
      * @return imageAssets   * The images associated with this creative. The ad server will
-     * choose one
-     *                     based on the capabilities of the device. Each
-     * asset should have a size
-     *                     which is of the same aspect ratio as the {@link
-     * Creative#size}. This
-     *                     attribute is required and must have at least one
-     * asset.
+     * choose one based on the
+     *                     capabilities of the device. Each asset should
+     * have a size which is of the same aspect ratio as
+     *                     the {@link Creative#size}. This attribute is required
+     * and must have at least one asset.
      */
     public com.google.api.ads.admanager.axis.v202208.CreativeAsset[] getImageAssets() {
         return imageAssets;
@@ -144,13 +139,11 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
      * Sets the imageAssets value for this AspectRatioImageCreative.
      * 
      * @param imageAssets   * The images associated with this creative. The ad server will
-     * choose one
-     *                     based on the capabilities of the device. Each
-     * asset should have a size
-     *                     which is of the same aspect ratio as the {@link
-     * Creative#size}. This
-     *                     attribute is required and must have at least one
-     * asset.
+     * choose one based on the
+     *                     capabilities of the device. Each asset should
+     * have a size which is of the same aspect ratio as
+     *                     the {@link Creative#size}. This attribute is required
+     * and must have at least one asset.
      */
     public void setImageAssets(com.google.api.ads.admanager.axis.v202208.CreativeAsset[] imageAssets) {
         this.imageAssets = imageAssets;
@@ -169,12 +162,11 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
      * Gets the altText value for this AspectRatioImageCreative.
      * 
      * @return altText   * The text that is served along with the image creative, primarily
-     * for
-     *                     accessibility. If no suitable image size is available
-     * for the device, this
-     *                     text replaces the image completely. This field
-     * is optional and has a
-     *                     maximum length of 500 characters.
+     * for accessibility. If no
+     *                     suitable image size is available for the device,
+     * this text replaces the image completely. This
+     *                     field is optional and has a maximum length of
+     * 500 characters.
      */
     public java.lang.String getAltText() {
         return altText;
@@ -185,12 +177,11 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
      * Sets the altText value for this AspectRatioImageCreative.
      * 
      * @param altText   * The text that is served along with the image creative, primarily
-     * for
-     *                     accessibility. If no suitable image size is available
-     * for the device, this
-     *                     text replaces the image completely. This field
-     * is optional and has a
-     *                     maximum length of 500 characters.
+     * for accessibility. If no
+     *                     suitable image size is available for the device,
+     * this text replaces the image completely. This
+     *                     field is optional and has a maximum length of
+     * 500 characters.
      */
     public void setAltText(java.lang.String altText) {
         this.altText = altText;
@@ -225,8 +216,8 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
      * Gets the overrideSize value for this AspectRatioImageCreative.
      * 
      * @return overrideSize   * Allows the actual image asset sizes to differ from the creative
-     * size.
-     *                     This attribute is optional.
+     * size. This attribute is
+     *                     optional.
      */
     public java.lang.Boolean getOverrideSize() {
         return overrideSize;
@@ -237,8 +228,8 @@ public class AspectRatioImageCreative  extends com.google.api.ads.admanager.axis
      * Sets the overrideSize value for this AspectRatioImageCreative.
      * 
      * @param overrideSize   * Allows the actual image asset sizes to differ from the creative
-     * size.
-     *                     This attribute is optional.
+     * size. This attribute is
+     *                     optional.
      */
     public void setOverrideSize(java.lang.Boolean overrideSize) {
         this.overrideSize = overrideSize;

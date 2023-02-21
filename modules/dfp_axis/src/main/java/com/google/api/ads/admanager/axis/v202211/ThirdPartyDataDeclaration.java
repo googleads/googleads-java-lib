@@ -24,8 +24,8 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * Represents a set of declarations about what (if any) third party
- * companies are
- *             associated with a given creative.
+ * companies are associated with a
+ *             given creative.
  *             
  *             <p>This can be set at the network level, as a default
  * for all creatives, or overridden for a

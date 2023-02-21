@@ -27,8 +27,7 @@ package com.google.api.ads.admanager.axis.v202211;
  */
 public abstract class BaseCustomFieldValue  implements java.io.Serializable {
     /* Id of the {@code CustomField} to which this value belongs.
-     * This attribute
-     *                 is required. */
+     * This attribute is required. */
     private java.lang.Long customFieldId;
 
     public BaseCustomFieldValue() {
@@ -51,8 +50,7 @@ public abstract class BaseCustomFieldValue  implements java.io.Serializable {
      * Gets the customFieldId value for this BaseCustomFieldValue.
      * 
      * @return customFieldId   * Id of the {@code CustomField} to which this value belongs.
-     * This attribute
-     *                 is required.
+     * This attribute is required.
      */
     public java.lang.Long getCustomFieldId() {
         return customFieldId;
@@ -63,8 +61,7 @@ public abstract class BaseCustomFieldValue  implements java.io.Serializable {
      * Sets the customFieldId value for this BaseCustomFieldValue.
      * 
      * @param customFieldId   * Id of the {@code CustomField} to which this value belongs.
-     * This attribute
-     *                 is required.
+     * This attribute is required.
      */
     public void setCustomFieldId(java.lang.Long customFieldId) {
         this.customFieldId = customFieldId;

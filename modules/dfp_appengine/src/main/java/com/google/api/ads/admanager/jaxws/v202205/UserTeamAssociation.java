@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             {@code UserTeamAssociation} associates a {@link User} with a {@link Team}
- *             to provide the user access to the entities that belong to the team.
+ *             {@code UserTeamAssociation} associates a {@link User} with a {@link Team} to provide the user
+ *             access to the entities that belong to the team.
  *           
  * 
  * <p>Java class for UserTeamAssociation complex type.

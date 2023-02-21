@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Provides {@link LineItem} objects the ability to target or exclude
- *             technologies.
+ *             Provides {@link LineItem} objects the ability to target or exclude technologies.
  *           
  * 
  * <p>Java class for TechnologyTargeting complex type.

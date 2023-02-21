@@ -24,27 +24,24 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * An {@code AdUnit} represents a chunk of identified inventory for
- * the
- *             publisher. It contains all the settings that need to be
- * associated with
- *             inventory in order to serve ads to it. An {@code AdUnit}
- * can also be the
- *             parent of other ad units in the inventory hierarchy.
+ * the publisher. It contains all
+ *             the settings that need to be associated with inventory
+ * in order to serve ads to it. An {@code
+ *             AdUnit} can also be the parent of other ad units in the
+ * inventory hierarchy.
  */
 public class AdUnit  implements java.io.Serializable {
     /* Uniquely identifies the {@code AdUnit}. This value is read-only
-     * and is
-     *                 assigned by Google when an ad unit is created. This
-     * attribute is required
-     *                 for updates. */
+     * and is assigned by Google when
+     *                 an ad unit is created. This attribute is required
+     * for updates. */
     private java.lang.String id;
 
     /* The ID of the ad unit's parent. Every ad unit has a parent
-     * except for the
-     *                 root ad unit, which is created by Google. This attribute
-     * is required when
-     *                 creating the ad unit. Once the ad unit is created
-     * this value will be read-only. */
+     * except for the root ad unit, which
+     *                 is created by Google. This attribute is required when
+     * creating the ad unit. Once the ad unit is
+     *                 created this value will be read-only. */
     private java.lang.String parentId;
 
     /* This field is set to {@code true} if the ad unit has any children.
@@ -65,38 +62,36 @@ public class AdUnit  implements java.io.Serializable {
     private java.lang.String name;
 
     /* A description of the ad unit. This value is optional and its
-     * maximum length
-     *                 is 65,535 characters. */
+     * maximum length is 65,535
+     *                 characters. */
     private java.lang.String description;
 
     /* The value to use for the HTML link's {@code target} attribute.
-     * This value
-     *                 is optional and will be interpreted as {@link TargetWindow#TOP}
-     * if left
-     *                 blank. */
+     * This value is optional and will
+     *                 be interpreted as {@link TargetWindow#TOP} if left
+     * blank. */
     private com.google.api.ads.admanager.axis.v202208.AdUnitTargetWindow targetWindow;
 
-    /* The status of this ad unit.  It defaults to {@link InventoryStatus#ACTIVE}.
-     * This value cannot be updated directly using {@link InventoryService#updateAdUnit}.
-     * It can only be modified by performing actions via
-     *                 {@link InventoryService#performAdUnitAction}. */
+    /* The status of this ad unit. It defaults to {@link InventoryStatus#ACTIVE}.
+     * This value cannot be
+     *                 updated directly using {@link InventoryService#updateAdUnit}.
+     * It can only be modified by
+     *                 performing actions via {@link InventoryService#performAdUnitAction}. */
     private com.google.api.ads.admanager.axis.v202208.InventoryStatus status;
 
     /* A string used to uniquely identify the ad unit for the purposes
      * of serving the ad. This
      *                 attribute is optional and can be set during ad unit
-     * creation. If it is not
-     *                 provided, it will be assigned by Google based off
-     * of the inventory unit ID. Once an ad
-     *                 unit is created, its {@code adUnitCode} cannot be
-     * changed. */
+     * creation. If it is not provided, it will be
+     *                 assigned by Google based off of the inventory unit
+     * ID. Once an ad unit is created, its {@code
+     *                 adUnitCode} cannot be changed. */
     private java.lang.String adUnitCode;
 
     /* The permissible creative sizes that can be served inside this
-     * ad unit. This
-     *                 attribute is optional. This attribute replaces the
-     * {@code sizes}
-     *                 attribute. */
+     * ad unit. This attribute is
+     *                 optional. This attribute replaces the {@code sizes}
+     * attribute. */
     private com.google.api.ads.admanager.axis.v202208.AdUnitSize[] adUnitSizes;
 
     /* Whether this is an interstitial ad unit. */
@@ -109,18 +104,17 @@ public class AdUnit  implements java.io.Serializable {
     private java.lang.Boolean isFluid;
 
     /* If this field is set to {@code true}, then the {@code AdUnit}
-     * will not be
-     *                 implicitly targeted when its parent is. Traffickers
-     * must explicitly
-     *                 target such an ad unit or else no line items will
-     * serve to it. This
-     *                 feature is only available for Ad Manager 360 accounts. */
+     * will not be implicitly targeted
+     *                 when its parent is. Traffickers must explicitly target
+     * such an ad unit or else no line items
+     *                 will serve to it. This feature is only available for
+     * Ad Manager 360 accounts. */
     private java.lang.Boolean explicitlyTargeted;
 
     /* AdSense specific settings. To overwrite this, set the {@link
-     * #adSenseSettingsSource} to
-     *                 {@link PropertySourceType#DIRECTLY_SPECIFIED} when
-     * setting the value of this field. */
+     * #adSenseSettingsSource} to {@link
+     *                 PropertySourceType#DIRECTLY_SPECIFIED} when setting
+     * the value of this field. */
     private com.google.api.ads.admanager.axis.v202208.AdSenseSettings adSenseSettings;
 
     /* Specifies the source of {@link #adSenseSettings} value. To
@@ -129,33 +123,29 @@ public class AdUnit  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202208.ValueSourceType adSenseSettingsSource;
 
     /* The set of label frequency caps applied directly to this ad
-     * unit.  There
-     *                 is a limit of 10 label frequency caps per ad unit. */
+     * unit. There is a limit of 10 label
+     *                 frequency caps per ad unit. */
     private com.google.api.ads.admanager.axis.v202208.LabelFrequencyCap[] appliedLabelFrequencyCaps;
 
     /* Contains the set of labels applied directly to the ad unit
-     * as well as
-     *                 those inherited from parent ad units.  This field
-     * is readonly and is
-     *                 assigned by Google. */
+     * as well as those inherited from
+     *                 parent ad units. This field is readonly and is assigned
+     * by Google. */
     private com.google.api.ads.admanager.axis.v202208.LabelFrequencyCap[] effectiveLabelFrequencyCaps;
 
     /* The set of labels applied directly to this ad unit. */
     private com.google.api.ads.admanager.axis.v202208.AppliedLabel[] appliedLabels;
 
     /* Contains the set of labels applied directly to the ad unit
-     * as well as
-     *                 those inherited from the parent ad units. If a label
-     * has been negated, only the
-     *                 negated label is returned. This field is readonly
-     * and is assigned by
-     *                 Google. */
+     * as well as those inherited from the
+     *                 parent ad units. If a label has been negated, only
+     * the negated label is returned. This field is
+     *                 readonly and is assigned by Google. */
     private com.google.api.ads.admanager.axis.v202208.AppliedLabel[] effectiveAppliedLabels;
 
     /* The IDs of all teams that this ad unit is on as well as those
-     * inherited
-     *                 from parent ad units. This value is read-only and
-     * is set by Google. */
+     * inherited from parent ad units.
+     *                 This value is read-only and is set by Google. */
     private long[] effectiveTeamIds;
 
     /* The IDs of all teams that this ad unit is on directly. */
@@ -185,8 +175,8 @@ public class AdUnit  implements java.io.Serializable {
     private java.lang.String externalSetTopBoxChannelId;
 
     /* Flag that specifies whether this ad unit represents an external
-     * set-top box channel.
-     *                 This attribute is read-only. */
+     * set-top box channel. This
+     *                 attribute is read-only. */
     private java.lang.Boolean isSetTopBoxEnabled;
 
     /* The {@link MobileApplication#applicationId} for the CTV application
@@ -295,10 +285,9 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the id value for this AdUnit.
      * 
      * @return id   * Uniquely identifies the {@code AdUnit}. This value is read-only
-     * and is
-     *                 assigned by Google when an ad unit is created. This
-     * attribute is required
-     *                 for updates.
+     * and is assigned by Google when
+     *                 an ad unit is created. This attribute is required
+     * for updates.
      */
     public java.lang.String getId() {
         return id;
@@ -309,10 +298,9 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the id value for this AdUnit.
      * 
      * @param id   * Uniquely identifies the {@code AdUnit}. This value is read-only
-     * and is
-     *                 assigned by Google when an ad unit is created. This
-     * attribute is required
-     *                 for updates.
+     * and is assigned by Google when
+     *                 an ad unit is created. This attribute is required
+     * for updates.
      */
     public void setId(java.lang.String id) {
         this.id = id;
@@ -323,11 +311,10 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the parentId value for this AdUnit.
      * 
      * @return parentId   * The ID of the ad unit's parent. Every ad unit has a parent
-     * except for the
-     *                 root ad unit, which is created by Google. This attribute
-     * is required when
-     *                 creating the ad unit. Once the ad unit is created
-     * this value will be read-only.
+     * except for the root ad unit, which
+     *                 is created by Google. This attribute is required when
+     * creating the ad unit. Once the ad unit is
+     *                 created this value will be read-only.
      */
     public java.lang.String getParentId() {
         return parentId;
@@ -338,11 +325,10 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the parentId value for this AdUnit.
      * 
      * @param parentId   * The ID of the ad unit's parent. Every ad unit has a parent
-     * except for the
-     *                 root ad unit, which is created by Google. This attribute
-     * is required when
-     *                 creating the ad unit. Once the ad unit is created
-     * this value will be read-only.
+     * except for the root ad unit, which
+     *                 is created by Google. This attribute is required when
+     * creating the ad unit. Once the ad unit is
+     *                 created this value will be read-only.
      */
     public void setParentId(java.lang.String parentId) {
         this.parentId = parentId;
@@ -437,8 +423,8 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the description value for this AdUnit.
      * 
      * @return description   * A description of the ad unit. This value is optional and its
-     * maximum length
-     *                 is 65,535 characters.
+     * maximum length is 65,535
+     *                 characters.
      */
     public java.lang.String getDescription() {
         return description;
@@ -449,8 +435,8 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the description value for this AdUnit.
      * 
      * @param description   * A description of the ad unit. This value is optional and its
-     * maximum length
-     *                 is 65,535 characters.
+     * maximum length is 65,535
+     *                 characters.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -461,10 +447,9 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the targetWindow value for this AdUnit.
      * 
      * @return targetWindow   * The value to use for the HTML link's {@code target} attribute.
-     * This value
-     *                 is optional and will be interpreted as {@link TargetWindow#TOP}
-     * if left
-     *                 blank.
+     * This value is optional and will
+     *                 be interpreted as {@link TargetWindow#TOP} if left
+     * blank.
      */
     public com.google.api.ads.admanager.axis.v202208.AdUnitTargetWindow getTargetWindow() {
         return targetWindow;
@@ -475,10 +460,9 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the targetWindow value for this AdUnit.
      * 
      * @param targetWindow   * The value to use for the HTML link's {@code target} attribute.
-     * This value
-     *                 is optional and will be interpreted as {@link TargetWindow#TOP}
-     * if left
-     *                 blank.
+     * This value is optional and will
+     *                 be interpreted as {@link TargetWindow#TOP} if left
+     * blank.
      */
     public void setTargetWindow(com.google.api.ads.admanager.axis.v202208.AdUnitTargetWindow targetWindow) {
         this.targetWindow = targetWindow;
@@ -488,10 +472,11 @@ public class AdUnit  implements java.io.Serializable {
     /**
      * Gets the status value for this AdUnit.
      * 
-     * @return status   * The status of this ad unit.  It defaults to {@link InventoryStatus#ACTIVE}.
-     * This value cannot be updated directly using {@link InventoryService#updateAdUnit}.
-     * It can only be modified by performing actions via
-     *                 {@link InventoryService#performAdUnitAction}.
+     * @return status   * The status of this ad unit. It defaults to {@link InventoryStatus#ACTIVE}.
+     * This value cannot be
+     *                 updated directly using {@link InventoryService#updateAdUnit}.
+     * It can only be modified by
+     *                 performing actions via {@link InventoryService#performAdUnitAction}.
      */
     public com.google.api.ads.admanager.axis.v202208.InventoryStatus getStatus() {
         return status;
@@ -501,10 +486,11 @@ public class AdUnit  implements java.io.Serializable {
     /**
      * Sets the status value for this AdUnit.
      * 
-     * @param status   * The status of this ad unit.  It defaults to {@link InventoryStatus#ACTIVE}.
-     * This value cannot be updated directly using {@link InventoryService#updateAdUnit}.
-     * It can only be modified by performing actions via
-     *                 {@link InventoryService#performAdUnitAction}.
+     * @param status   * The status of this ad unit. It defaults to {@link InventoryStatus#ACTIVE}.
+     * This value cannot be
+     *                 updated directly using {@link InventoryService#updateAdUnit}.
+     * It can only be modified by
+     *                 performing actions via {@link InventoryService#performAdUnitAction}.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202208.InventoryStatus status) {
         this.status = status;
@@ -517,11 +503,10 @@ public class AdUnit  implements java.io.Serializable {
      * @return adUnitCode   * A string used to uniquely identify the ad unit for the purposes
      * of serving the ad. This
      *                 attribute is optional and can be set during ad unit
-     * creation. If it is not
-     *                 provided, it will be assigned by Google based off
-     * of the inventory unit ID. Once an ad
-     *                 unit is created, its {@code adUnitCode} cannot be
-     * changed.
+     * creation. If it is not provided, it will be
+     *                 assigned by Google based off of the inventory unit
+     * ID. Once an ad unit is created, its {@code
+     *                 adUnitCode} cannot be changed.
      */
     public java.lang.String getAdUnitCode() {
         return adUnitCode;
@@ -534,11 +519,10 @@ public class AdUnit  implements java.io.Serializable {
      * @param adUnitCode   * A string used to uniquely identify the ad unit for the purposes
      * of serving the ad. This
      *                 attribute is optional and can be set during ad unit
-     * creation. If it is not
-     *                 provided, it will be assigned by Google based off
-     * of the inventory unit ID. Once an ad
-     *                 unit is created, its {@code adUnitCode} cannot be
-     * changed.
+     * creation. If it is not provided, it will be
+     *                 assigned by Google based off of the inventory unit
+     * ID. Once an ad unit is created, its {@code
+     *                 adUnitCode} cannot be changed.
      */
     public void setAdUnitCode(java.lang.String adUnitCode) {
         this.adUnitCode = adUnitCode;
@@ -549,10 +533,9 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the adUnitSizes value for this AdUnit.
      * 
      * @return adUnitSizes   * The permissible creative sizes that can be served inside this
-     * ad unit. This
-     *                 attribute is optional. This attribute replaces the
-     * {@code sizes}
-     *                 attribute.
+     * ad unit. This attribute is
+     *                 optional. This attribute replaces the {@code sizes}
+     * attribute.
      */
     public com.google.api.ads.admanager.axis.v202208.AdUnitSize[] getAdUnitSizes() {
         return adUnitSizes;
@@ -563,10 +546,9 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the adUnitSizes value for this AdUnit.
      * 
      * @param adUnitSizes   * The permissible creative sizes that can be served inside this
-     * ad unit. This
-     *                 attribute is optional. This attribute replaces the
-     * {@code sizes}
-     *                 attribute.
+     * ad unit. This attribute is
+     *                 optional. This attribute replaces the {@code sizes}
+     * attribute.
      */
     public void setAdUnitSizes(com.google.api.ads.admanager.axis.v202208.AdUnitSize[] adUnitSizes) {
         this.adUnitSizes = adUnitSizes;
@@ -645,12 +627,11 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the explicitlyTargeted value for this AdUnit.
      * 
      * @return explicitlyTargeted   * If this field is set to {@code true}, then the {@code AdUnit}
-     * will not be
-     *                 implicitly targeted when its parent is. Traffickers
-     * must explicitly
-     *                 target such an ad unit or else no line items will
-     * serve to it. This
-     *                 feature is only available for Ad Manager 360 accounts.
+     * will not be implicitly targeted
+     *                 when its parent is. Traffickers must explicitly target
+     * such an ad unit or else no line items
+     *                 will serve to it. This feature is only available for
+     * Ad Manager 360 accounts.
      */
     public java.lang.Boolean getExplicitlyTargeted() {
         return explicitlyTargeted;
@@ -661,12 +642,11 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the explicitlyTargeted value for this AdUnit.
      * 
      * @param explicitlyTargeted   * If this field is set to {@code true}, then the {@code AdUnit}
-     * will not be
-     *                 implicitly targeted when its parent is. Traffickers
-     * must explicitly
-     *                 target such an ad unit or else no line items will
-     * serve to it. This
-     *                 feature is only available for Ad Manager 360 accounts.
+     * will not be implicitly targeted
+     *                 when its parent is. Traffickers must explicitly target
+     * such an ad unit or else no line items
+     *                 will serve to it. This feature is only available for
+     * Ad Manager 360 accounts.
      */
     public void setExplicitlyTargeted(java.lang.Boolean explicitlyTargeted) {
         this.explicitlyTargeted = explicitlyTargeted;
@@ -677,9 +657,9 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the adSenseSettings value for this AdUnit.
      * 
      * @return adSenseSettings   * AdSense specific settings. To overwrite this, set the {@link
-     * #adSenseSettingsSource} to
-     *                 {@link PropertySourceType#DIRECTLY_SPECIFIED} when
-     * setting the value of this field.
+     * #adSenseSettingsSource} to {@link
+     *                 PropertySourceType#DIRECTLY_SPECIFIED} when setting
+     * the value of this field.
      */
     public com.google.api.ads.admanager.axis.v202208.AdSenseSettings getAdSenseSettings() {
         return adSenseSettings;
@@ -690,9 +670,9 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the adSenseSettings value for this AdUnit.
      * 
      * @param adSenseSettings   * AdSense specific settings. To overwrite this, set the {@link
-     * #adSenseSettingsSource} to
-     *                 {@link PropertySourceType#DIRECTLY_SPECIFIED} when
-     * setting the value of this field.
+     * #adSenseSettingsSource} to {@link
+     *                 PropertySourceType#DIRECTLY_SPECIFIED} when setting
+     * the value of this field.
      */
     public void setAdSenseSettings(com.google.api.ads.admanager.axis.v202208.AdSenseSettings adSenseSettings) {
         this.adSenseSettings = adSenseSettings;
@@ -727,8 +707,8 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the appliedLabelFrequencyCaps value for this AdUnit.
      * 
      * @return appliedLabelFrequencyCaps   * The set of label frequency caps applied directly to this ad
-     * unit.  There
-     *                 is a limit of 10 label frequency caps per ad unit.
+     * unit. There is a limit of 10 label
+     *                 frequency caps per ad unit.
      */
     public com.google.api.ads.admanager.axis.v202208.LabelFrequencyCap[] getAppliedLabelFrequencyCaps() {
         return appliedLabelFrequencyCaps;
@@ -739,8 +719,8 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the appliedLabelFrequencyCaps value for this AdUnit.
      * 
      * @param appliedLabelFrequencyCaps   * The set of label frequency caps applied directly to this ad
-     * unit.  There
-     *                 is a limit of 10 label frequency caps per ad unit.
+     * unit. There is a limit of 10 label
+     *                 frequency caps per ad unit.
      */
     public void setAppliedLabelFrequencyCaps(com.google.api.ads.admanager.axis.v202208.LabelFrequencyCap[] appliedLabelFrequencyCaps) {
         this.appliedLabelFrequencyCaps = appliedLabelFrequencyCaps;
@@ -759,10 +739,9 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the effectiveLabelFrequencyCaps value for this AdUnit.
      * 
      * @return effectiveLabelFrequencyCaps   * Contains the set of labels applied directly to the ad unit
-     * as well as
-     *                 those inherited from parent ad units.  This field
-     * is readonly and is
-     *                 assigned by Google.
+     * as well as those inherited from
+     *                 parent ad units. This field is readonly and is assigned
+     * by Google.
      */
     public com.google.api.ads.admanager.axis.v202208.LabelFrequencyCap[] getEffectiveLabelFrequencyCaps() {
         return effectiveLabelFrequencyCaps;
@@ -773,10 +752,9 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the effectiveLabelFrequencyCaps value for this AdUnit.
      * 
      * @param effectiveLabelFrequencyCaps   * Contains the set of labels applied directly to the ad unit
-     * as well as
-     *                 those inherited from parent ad units.  This field
-     * is readonly and is
-     *                 assigned by Google.
+     * as well as those inherited from
+     *                 parent ad units. This field is readonly and is assigned
+     * by Google.
      */
     public void setEffectiveLabelFrequencyCaps(com.google.api.ads.admanager.axis.v202208.LabelFrequencyCap[] effectiveLabelFrequencyCaps) {
         this.effectiveLabelFrequencyCaps = effectiveLabelFrequencyCaps;
@@ -823,12 +801,10 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the effectiveAppliedLabels value for this AdUnit.
      * 
      * @return effectiveAppliedLabels   * Contains the set of labels applied directly to the ad unit
-     * as well as
-     *                 those inherited from the parent ad units. If a label
-     * has been negated, only the
-     *                 negated label is returned. This field is readonly
-     * and is assigned by
-     *                 Google.
+     * as well as those inherited from the
+     *                 parent ad units. If a label has been negated, only
+     * the negated label is returned. This field is
+     *                 readonly and is assigned by Google.
      */
     public com.google.api.ads.admanager.axis.v202208.AppliedLabel[] getEffectiveAppliedLabels() {
         return effectiveAppliedLabels;
@@ -839,12 +815,10 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the effectiveAppliedLabels value for this AdUnit.
      * 
      * @param effectiveAppliedLabels   * Contains the set of labels applied directly to the ad unit
-     * as well as
-     *                 those inherited from the parent ad units. If a label
-     * has been negated, only the
-     *                 negated label is returned. This field is readonly
-     * and is assigned by
-     *                 Google.
+     * as well as those inherited from the
+     *                 parent ad units. If a label has been negated, only
+     * the negated label is returned. This field is
+     *                 readonly and is assigned by Google.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.admanager.axis.v202208.AppliedLabel[] effectiveAppliedLabels) {
         this.effectiveAppliedLabels = effectiveAppliedLabels;
@@ -863,9 +837,8 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the effectiveTeamIds value for this AdUnit.
      * 
      * @return effectiveTeamIds   * The IDs of all teams that this ad unit is on as well as those
-     * inherited
-     *                 from parent ad units. This value is read-only and
-     * is set by Google.
+     * inherited from parent ad units.
+     *                 This value is read-only and is set by Google.
      */
     public long[] getEffectiveTeamIds() {
         return effectiveTeamIds;
@@ -876,9 +849,8 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the effectiveTeamIds value for this AdUnit.
      * 
      * @param effectiveTeamIds   * The IDs of all teams that this ad unit is on as well as those
-     * inherited
-     *                 from parent ad units. This value is read-only and
-     * is set by Google.
+     * inherited from parent ad units.
+     *                 This value is read-only and is set by Google.
      */
     public void setEffectiveTeamIds(long[] effectiveTeamIds) {
         this.effectiveTeamIds = effectiveTeamIds;
@@ -1027,8 +999,8 @@ public class AdUnit  implements java.io.Serializable {
      * Gets the isSetTopBoxEnabled value for this AdUnit.
      * 
      * @return isSetTopBoxEnabled   * Flag that specifies whether this ad unit represents an external
-     * set-top box channel.
-     *                 This attribute is read-only.
+     * set-top box channel. This
+     *                 attribute is read-only.
      */
     public java.lang.Boolean getIsSetTopBoxEnabled() {
         return isSetTopBoxEnabled;
@@ -1039,8 +1011,8 @@ public class AdUnit  implements java.io.Serializable {
      * Sets the isSetTopBoxEnabled value for this AdUnit.
      * 
      * @param isSetTopBoxEnabled   * Flag that specifies whether this ad unit represents an external
-     * set-top box channel.
-     *                 This attribute is read-only.
+     * set-top box channel. This
+     *                 attribute is read-only.
      */
     public void setIsSetTopBoxEnabled(java.lang.Boolean isSetTopBoxEnabled) {
         this.isSetTopBoxEnabled = isSetTopBoxEnabled;

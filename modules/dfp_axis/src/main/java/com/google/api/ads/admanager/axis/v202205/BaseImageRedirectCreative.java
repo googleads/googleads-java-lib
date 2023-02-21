@@ -28,8 +28,8 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public abstract class BaseImageRedirectCreative  extends com.google.api.ads.admanager.axis.v202205.HasDestinationUrlCreative  implements java.io.Serializable {
     /* The URL where the actual asset resides. This attribute is required
-     * and
-     *                     has a maximum length of 1024 characters. */
+     * and has a maximum length of
+     *                     1024 characters. */
     private java.lang.String imageUrl;
 
     public BaseImageRedirectCreative() {
@@ -89,8 +89,8 @@ public abstract class BaseImageRedirectCreative  extends com.google.api.ads.adma
      * Gets the imageUrl value for this BaseImageRedirectCreative.
      * 
      * @return imageUrl   * The URL where the actual asset resides. This attribute is required
-     * and
-     *                     has a maximum length of 1024 characters.
+     * and has a maximum length of
+     *                     1024 characters.
      */
     public java.lang.String getImageUrl() {
         return imageUrl;
@@ -101,8 +101,8 @@ public abstract class BaseImageRedirectCreative  extends com.google.api.ads.adma
      * Sets the imageUrl value for this BaseImageRedirectCreative.
      * 
      * @param imageUrl   * The URL where the actual asset resides. This attribute is required
-     * and
-     *                     has a maximum length of 1024 characters.
+     * and has a maximum length of
+     *                     1024 characters.
      */
     public void setImageUrl(java.lang.String imageUrl) {
         this.imageUrl = imageUrl;

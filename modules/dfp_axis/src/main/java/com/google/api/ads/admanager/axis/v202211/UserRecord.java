@@ -24,13 +24,11 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * The {@code UserRecord} represents the base class from which a {@code
- * User} is
- *             derived.
+ * User} is derived.
  */
 public class UserRecord  implements java.io.Serializable {
     /* The unique ID of the {@code User}. This attribute is readonly
-     * and is
-     *                 assigned by Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* The name of the {@code User}. It has a maximum length of 128
@@ -38,20 +36,18 @@ public class UserRecord  implements java.io.Serializable {
     private java.lang.String name;
 
     /* The email or login of the {@code User}. In order to create
-     * a new user, you must
-     *                 already have a <a
-     *                 href="https://www.google.com/accounts/ManageAccount">Google
+     * a new user, you must already have a
+     *                 <a href="https://www.google.com/accounts/ManageAccount">Google
      * Account</a>. */
     private java.lang.String email;
 
     /* The unique role ID of the {@code User}. Roles that are created
-     * by Google
-     *                 will have negative IDs. */
+     * by Google will have negative
+     *                 IDs. */
     private java.lang.Long roleId;
 
     /* The name of the role assigned to the {@code User}. This attribute
-     * is
-     *                 readonly. */
+     * is readonly. */
     private java.lang.String roleName;
 
     public UserRecord() {
@@ -86,8 +82,7 @@ public class UserRecord  implements java.io.Serializable {
      * Gets the id value for this UserRecord.
      * 
      * @return id   * The unique ID of the {@code User}. This attribute is readonly
-     * and is
-     *                 assigned by Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -98,8 +93,7 @@ public class UserRecord  implements java.io.Serializable {
      * Sets the id value for this UserRecord.
      * 
      * @param id   * The unique ID of the {@code User}. This attribute is readonly
-     * and is
-     *                 assigned by Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -132,9 +126,8 @@ public class UserRecord  implements java.io.Serializable {
      * Gets the email value for this UserRecord.
      * 
      * @return email   * The email or login of the {@code User}. In order to create
-     * a new user, you must
-     *                 already have a <a
-     *                 href="https://www.google.com/accounts/ManageAccount">Google
+     * a new user, you must already have a
+     *                 <a href="https://www.google.com/accounts/ManageAccount">Google
      * Account</a>.
      */
     public java.lang.String getEmail() {
@@ -146,9 +139,8 @@ public class UserRecord  implements java.io.Serializable {
      * Sets the email value for this UserRecord.
      * 
      * @param email   * The email or login of the {@code User}. In order to create
-     * a new user, you must
-     *                 already have a <a
-     *                 href="https://www.google.com/accounts/ManageAccount">Google
+     * a new user, you must already have a
+     *                 <a href="https://www.google.com/accounts/ManageAccount">Google
      * Account</a>.
      */
     public void setEmail(java.lang.String email) {
@@ -160,8 +152,8 @@ public class UserRecord  implements java.io.Serializable {
      * Gets the roleId value for this UserRecord.
      * 
      * @return roleId   * The unique role ID of the {@code User}. Roles that are created
-     * by Google
-     *                 will have negative IDs.
+     * by Google will have negative
+     *                 IDs.
      */
     public java.lang.Long getRoleId() {
         return roleId;
@@ -172,8 +164,8 @@ public class UserRecord  implements java.io.Serializable {
      * Sets the roleId value for this UserRecord.
      * 
      * @param roleId   * The unique role ID of the {@code User}. Roles that are created
-     * by Google
-     *                 will have negative IDs.
+     * by Google will have negative
+     *                 IDs.
      */
     public void setRoleId(java.lang.Long roleId) {
         this.roleId = roleId;
@@ -184,8 +176,7 @@ public class UserRecord  implements java.io.Serializable {
      * Gets the roleName value for this UserRecord.
      * 
      * @return roleName   * The name of the role assigned to the {@code User}. This attribute
-     * is
-     *                 readonly.
+     * is readonly.
      */
     public java.lang.String getRoleName() {
         return roleName;
@@ -196,8 +187,7 @@ public class UserRecord  implements java.io.Serializable {
      * Sets the roleName value for this UserRecord.
      * 
      * @param roleName   * The name of the role assigned to the {@code User}. This attribute
-     * is
-     *                 readonly.
+     * is readonly.
      */
     public void setRoleName(java.lang.String roleName) {
         this.roleName = roleName;

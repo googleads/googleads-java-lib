@@ -24,8 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             A {@code ContentBundle} is a grouping of individual {@link Content}. A {@code ContentBundle} is
- *             defined as including the {@code Content} that match certain filter rules, along with the
- *             option to explicitly include or exclude certain {@code Content} IDs.
+ *             defined as including the {@code Content} that match certain filter rules, along with the option
+ *             to explicitly include or exclude certain {@code Content} IDs.
  *           
  * 
  * <p>Java class for ContentBundle complex type.

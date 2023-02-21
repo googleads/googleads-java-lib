@@ -30,11 +30,9 @@ public interface CreativeServiceInterface extends java.rmi.Remote {
 
     /**
      * Gets a {@link CreativePage} of {@link Creative} objects that
-     * satisfy the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
-     *         
+     * satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
+     * 
      *         <table>
      *         <tr>
      *         <th scope="col">PQL Property</th> <th scope="col">Object Property</th>

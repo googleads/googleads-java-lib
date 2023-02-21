@@ -24,23 +24,22 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * Contains statistics such as impressions, clicks delivered and cost
- * for {@link LineItemCreativeAssociation} objects.
+ * for {@link
+ *             LineItemCreativeAssociation} objects.
  */
 public class LineItemCreativeAssociationStats  implements java.io.Serializable {
     /* A {@link Stats} object that holds delivered impressions and
-     * clicks
-     *                 statistics. */
+     * clicks statistics. */
     private com.google.api.ads.admanager.axis.v202205.Stats stats;
 
     /* A map containing {@link Stats} objects for each creative belonging
-     * to
-     *                 a creative set, {@code null} for non creative set
-     * associations. */
+     * to a creative set, {@code
+     *                 null} for non creative set associations. */
     private com.google.api.ads.admanager.axis.v202205.Long_StatsMapEntry[] creativeSetStats;
 
     /* The revenue generated thus far by the creative from its association
-     * with
-     *                 the particular line item in the publisher's currency. */
+     * with the particular line
+     *                 item in the publisher's currency. */
     private com.google.api.ads.admanager.axis.v202205.Money costInOrderCurrency;
 
     public LineItemCreativeAssociationStats() {
@@ -69,8 +68,7 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
      * Gets the stats value for this LineItemCreativeAssociationStats.
      * 
      * @return stats   * A {@link Stats} object that holds delivered impressions and
-     * clicks
-     *                 statistics.
+     * clicks statistics.
      */
     public com.google.api.ads.admanager.axis.v202205.Stats getStats() {
         return stats;
@@ -81,8 +79,7 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
      * Sets the stats value for this LineItemCreativeAssociationStats.
      * 
      * @param stats   * A {@link Stats} object that holds delivered impressions and
-     * clicks
-     *                 statistics.
+     * clicks statistics.
      */
     public void setStats(com.google.api.ads.admanager.axis.v202205.Stats stats) {
         this.stats = stats;
@@ -93,9 +90,8 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
      * Gets the creativeSetStats value for this LineItemCreativeAssociationStats.
      * 
      * @return creativeSetStats   * A map containing {@link Stats} objects for each creative belonging
-     * to
-     *                 a creative set, {@code null} for non creative set
-     * associations.
+     * to a creative set, {@code
+     *                 null} for non creative set associations.
      */
     public com.google.api.ads.admanager.axis.v202205.Long_StatsMapEntry[] getCreativeSetStats() {
         return creativeSetStats;
@@ -106,9 +102,8 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
      * Sets the creativeSetStats value for this LineItemCreativeAssociationStats.
      * 
      * @param creativeSetStats   * A map containing {@link Stats} objects for each creative belonging
-     * to
-     *                 a creative set, {@code null} for non creative set
-     * associations.
+     * to a creative set, {@code
+     *                 null} for non creative set associations.
      */
     public void setCreativeSetStats(com.google.api.ads.admanager.axis.v202205.Long_StatsMapEntry[] creativeSetStats) {
         this.creativeSetStats = creativeSetStats;
@@ -127,8 +122,8 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
      * Gets the costInOrderCurrency value for this LineItemCreativeAssociationStats.
      * 
      * @return costInOrderCurrency   * The revenue generated thus far by the creative from its association
-     * with
-     *                 the particular line item in the publisher's currency.
+     * with the particular line
+     *                 item in the publisher's currency.
      */
     public com.google.api.ads.admanager.axis.v202205.Money getCostInOrderCurrency() {
         return costInOrderCurrency;
@@ -139,8 +134,8 @@ public class LineItemCreativeAssociationStats  implements java.io.Serializable {
      * Sets the costInOrderCurrency value for this LineItemCreativeAssociationStats.
      * 
      * @param costInOrderCurrency   * The revenue generated thus far by the creative from its association
-     * with
-     *                 the particular line item in the publisher's currency.
+     * with the particular line
+     *                 item in the publisher's currency.
      */
     public void setCostInOrderCurrency(com.google.api.ads.admanager.axis.v202205.Money costInOrderCurrency) {
         this.costInOrderCurrency = costInOrderCurrency;

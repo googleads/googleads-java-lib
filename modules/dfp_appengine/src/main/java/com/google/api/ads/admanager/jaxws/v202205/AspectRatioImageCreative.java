@@ -24,11 +24,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} intended for mobile platforms that displays an image,
- *             whose {@link LineItem#creativePlaceholders size} is defined as an
- *             {@link CreativeSizeType#ASPECT_RATIO aspect ratio}, i.e.
- *             {@link Size#isAspectRatio}. It can have multiple images whose dimensions
- *             conform to that aspect ratio.
+ *             A {@code Creative} intended for mobile platforms that displays an image, whose {@link
+ *             LineItem#creativePlaceholders size} is defined as an {@link CreativeSizeType#ASPECT_RATIO aspect
+ *             ratio}, i.e. {@link Size#isAspectRatio}. It can have multiple images whose dimensions conform to
+ *             that aspect ratio.
  *           
  * 
  * <p>Java class for AspectRatioImageCreative complex type.

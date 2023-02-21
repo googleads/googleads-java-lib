@@ -31,47 +31,45 @@ public class CreativeAsset  implements java.io.Serializable {
     private java.lang.Long assetId;
 
     /* The content of the asset as a byte array. This attribute is
-     * required when
-     *                 creating the creative that contains this asset if
-     * an {@code assetId} is not provided.
-     *                 <p/>
-     *                 When updating the content, pass a new byte array,
+     * required when creating the creative
+     *                 that contains this asset if an {@code assetId} is
+     * not provided.
+     *                 
+     *                 <p>When updating the content, pass a new byte array,
      * and set {@code assetId} to null.
      *                 Otherwise, this field can be null.
-     *                 <p/>
-     *                 The {@code assetByteArray} will be {@code null} when
-     * the creative is
-     *                 retrieved. */
+     *                 
+     *                 <p>The {@code assetByteArray} will be {@code null}
+     * when the creative is retrieved. */
     private byte[] assetByteArray;
 
     /* The file name of the asset. This attribute is required when
-     * creating a new asset (e.g. when {@link #assetByteArray} is not null). */
+     * creating a new asset (e.g. when
+     *                 {@link #assetByteArray} is not null). */
     private java.lang.String fileName;
 
     /* The file size of the asset in bytes. This attribute is read-only. */
     private java.lang.Long fileSize;
 
     /* A URL where the asset can be previewed at. This field is read-only
-     * and
-     *                 set by Google. */
+     * and set by Google. */
     private java.lang.String assetUrl;
 
     /* The size of the asset. Note that this may not always reflect
-     * the actual physical
-     *                 size of the asset, but may reflect the expected size.
-     * This attribute is read-only and is
-     *                 populated by Google. */
+     * the actual physical size of the
+     *                 asset, but may reflect the expected size. This attribute
+     * is read-only and is populated by
+     *                 Google. */
     private com.google.api.ads.admanager.axis.v202205.Size size;
 
     /* The click tags of the asset. This field is read-only. */
     private com.google.api.ads.admanager.axis.v202205.ClickTag[] clickTags;
 
     /* The display density of the image. This is the ratio between
-     * a dimension in pixels
-     *                 of the image and the dimension in pixels that it should
-     * occupy in device-independent pixels
-     *                 when displayed. This attribute is optional and defaults
-     * to ONE_TO_ONE. */
+     * a dimension in pixels of the image
+     *                 and the dimension in pixels that it should occupy
+     * in device-independent pixels when displayed.
+     *                 This attribute is optional and defaults to ONE_TO_ONE. */
     private com.google.api.ads.admanager.axis.v202205.ImageDensity imageDensity;
 
     public CreativeAsset() {
@@ -137,17 +135,16 @@ public class CreativeAsset  implements java.io.Serializable {
      * Gets the assetByteArray value for this CreativeAsset.
      * 
      * @return assetByteArray   * The content of the asset as a byte array. This attribute is
-     * required when
-     *                 creating the creative that contains this asset if
-     * an {@code assetId} is not provided.
-     *                 <p/>
-     *                 When updating the content, pass a new byte array,
+     * required when creating the creative
+     *                 that contains this asset if an {@code assetId} is
+     * not provided.
+     *                 
+     *                 <p>When updating the content, pass a new byte array,
      * and set {@code assetId} to null.
      *                 Otherwise, this field can be null.
-     *                 <p/>
-     *                 The {@code assetByteArray} will be {@code null} when
-     * the creative is
-     *                 retrieved.
+     *                 
+     *                 <p>The {@code assetByteArray} will be {@code null}
+     * when the creative is retrieved.
      */
     public byte[] getAssetByteArray() {
         return assetByteArray;
@@ -158,17 +155,16 @@ public class CreativeAsset  implements java.io.Serializable {
      * Sets the assetByteArray value for this CreativeAsset.
      * 
      * @param assetByteArray   * The content of the asset as a byte array. This attribute is
-     * required when
-     *                 creating the creative that contains this asset if
-     * an {@code assetId} is not provided.
-     *                 <p/>
-     *                 When updating the content, pass a new byte array,
+     * required when creating the creative
+     *                 that contains this asset if an {@code assetId} is
+     * not provided.
+     *                 
+     *                 <p>When updating the content, pass a new byte array,
      * and set {@code assetId} to null.
      *                 Otherwise, this field can be null.
-     *                 <p/>
-     *                 The {@code assetByteArray} will be {@code null} when
-     * the creative is
-     *                 retrieved.
+     *                 
+     *                 <p>The {@code assetByteArray} will be {@code null}
+     * when the creative is retrieved.
      */
     public void setAssetByteArray(byte[] assetByteArray) {
         this.assetByteArray = assetByteArray;
@@ -179,7 +175,8 @@ public class CreativeAsset  implements java.io.Serializable {
      * Gets the fileName value for this CreativeAsset.
      * 
      * @return fileName   * The file name of the asset. This attribute is required when
-     * creating a new asset (e.g. when {@link #assetByteArray} is not null).
+     * creating a new asset (e.g. when
+     *                 {@link #assetByteArray} is not null).
      */
     public java.lang.String getFileName() {
         return fileName;
@@ -190,7 +187,8 @@ public class CreativeAsset  implements java.io.Serializable {
      * Sets the fileName value for this CreativeAsset.
      * 
      * @param fileName   * The file name of the asset. This attribute is required when
-     * creating a new asset (e.g. when {@link #assetByteArray} is not null).
+     * creating a new asset (e.g. when
+     *                 {@link #assetByteArray} is not null).
      */
     public void setFileName(java.lang.String fileName) {
         this.fileName = fileName;
@@ -221,8 +219,7 @@ public class CreativeAsset  implements java.io.Serializable {
      * Gets the assetUrl value for this CreativeAsset.
      * 
      * @return assetUrl   * A URL where the asset can be previewed at. This field is read-only
-     * and
-     *                 set by Google.
+     * and set by Google.
      */
     public java.lang.String getAssetUrl() {
         return assetUrl;
@@ -233,8 +230,7 @@ public class CreativeAsset  implements java.io.Serializable {
      * Sets the assetUrl value for this CreativeAsset.
      * 
      * @param assetUrl   * A URL where the asset can be previewed at. This field is read-only
-     * and
-     *                 set by Google.
+     * and set by Google.
      */
     public void setAssetUrl(java.lang.String assetUrl) {
         this.assetUrl = assetUrl;
@@ -245,10 +241,10 @@ public class CreativeAsset  implements java.io.Serializable {
      * Gets the size value for this CreativeAsset.
      * 
      * @return size   * The size of the asset. Note that this may not always reflect
-     * the actual physical
-     *                 size of the asset, but may reflect the expected size.
-     * This attribute is read-only and is
-     *                 populated by Google.
+     * the actual physical size of the
+     *                 asset, but may reflect the expected size. This attribute
+     * is read-only and is populated by
+     *                 Google.
      */
     public com.google.api.ads.admanager.axis.v202205.Size getSize() {
         return size;
@@ -259,10 +255,10 @@ public class CreativeAsset  implements java.io.Serializable {
      * Sets the size value for this CreativeAsset.
      * 
      * @param size   * The size of the asset. Note that this may not always reflect
-     * the actual physical
-     *                 size of the asset, but may reflect the expected size.
-     * This attribute is read-only and is
-     *                 populated by Google.
+     * the actual physical size of the
+     *                 asset, but may reflect the expected size. This attribute
+     * is read-only and is populated by
+     *                 Google.
      */
     public void setSize(com.google.api.ads.admanager.axis.v202205.Size size) {
         this.size = size;
@@ -301,11 +297,10 @@ public class CreativeAsset  implements java.io.Serializable {
      * Gets the imageDensity value for this CreativeAsset.
      * 
      * @return imageDensity   * The display density of the image. This is the ratio between
-     * a dimension in pixels
-     *                 of the image and the dimension in pixels that it should
-     * occupy in device-independent pixels
-     *                 when displayed. This attribute is optional and defaults
-     * to ONE_TO_ONE.
+     * a dimension in pixels of the image
+     *                 and the dimension in pixels that it should occupy
+     * in device-independent pixels when displayed.
+     *                 This attribute is optional and defaults to ONE_TO_ONE.
      */
     public com.google.api.ads.admanager.axis.v202205.ImageDensity getImageDensity() {
         return imageDensity;
@@ -316,11 +311,10 @@ public class CreativeAsset  implements java.io.Serializable {
      * Sets the imageDensity value for this CreativeAsset.
      * 
      * @param imageDensity   * The display density of the image. This is the ratio between
-     * a dimension in pixels
-     *                 of the image and the dimension in pixels that it should
-     * occupy in device-independent pixels
-     *                 when displayed. This attribute is optional and defaults
-     * to ONE_TO_ONE.
+     * a dimension in pixels of the image
+     *                 and the dimension in pixels that it should occupy
+     * in device-independent pixels when displayed.
+     *                 This attribute is optional and defaults to ONE_TO_ONE.
      */
     public void setImageDensity(com.google.api.ads.admanager.axis.v202205.ImageDensity imageDensity) {
         this.imageDensity = imageDensity;

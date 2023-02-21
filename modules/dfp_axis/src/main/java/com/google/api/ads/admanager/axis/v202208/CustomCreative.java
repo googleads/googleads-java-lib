@@ -32,14 +32,14 @@ public class CustomCreative  extends com.google.api.ads.admanager.axis.v202208.H
     private java.lang.String htmlSnippet;
 
     /* A list of file assets that are associated with this creative,
-     * and can be
-     *                     referenced in the snippet. */
+     * and can be referenced in the
+     *                     snippet. */
     private com.google.api.ads.admanager.axis.v202208.CustomCreativeAsset[] customCreativeAssets;
 
     /* {@code true} if this custom creative is interstitial. An interstitial
-     * creative will not consider an impression served until it is fully
-     * rendered
-     *                     in the browser. */
+     * creative will not
+     *                     consider an impression served until it is fully
+     * rendered in the browser. */
     private java.lang.Boolean isInterstitial;
 
     /* A locked orientation for this creative to be displayed in. */
@@ -168,8 +168,8 @@ public class CustomCreative  extends com.google.api.ads.admanager.axis.v202208.H
      * Gets the customCreativeAssets value for this CustomCreative.
      * 
      * @return customCreativeAssets   * A list of file assets that are associated with this creative,
-     * and can be
-     *                     referenced in the snippet.
+     * and can be referenced in the
+     *                     snippet.
      */
     public com.google.api.ads.admanager.axis.v202208.CustomCreativeAsset[] getCustomCreativeAssets() {
         return customCreativeAssets;
@@ -180,8 +180,8 @@ public class CustomCreative  extends com.google.api.ads.admanager.axis.v202208.H
      * Sets the customCreativeAssets value for this CustomCreative.
      * 
      * @param customCreativeAssets   * A list of file assets that are associated with this creative,
-     * and can be
-     *                     referenced in the snippet.
+     * and can be referenced in the
+     *                     snippet.
      */
     public void setCustomCreativeAssets(com.google.api.ads.admanager.axis.v202208.CustomCreativeAsset[] customCreativeAssets) {
         this.customCreativeAssets = customCreativeAssets;
@@ -200,9 +200,9 @@ public class CustomCreative  extends com.google.api.ads.admanager.axis.v202208.H
      * Gets the isInterstitial value for this CustomCreative.
      * 
      * @return isInterstitial   * {@code true} if this custom creative is interstitial. An interstitial
-     * creative will not consider an impression served until it is fully
-     * rendered
-     *                     in the browser.
+     * creative will not
+     *                     consider an impression served until it is fully
+     * rendered in the browser.
      */
     public java.lang.Boolean getIsInterstitial() {
         return isInterstitial;
@@ -213,9 +213,9 @@ public class CustomCreative  extends com.google.api.ads.admanager.axis.v202208.H
      * Sets the isInterstitial value for this CustomCreative.
      * 
      * @param isInterstitial   * {@code true} if this custom creative is interstitial. An interstitial
-     * creative will not consider an impression served until it is fully
-     * rendered
-     *                     in the browser.
+     * creative will not
+     *                     consider an impression served until it is fully
+     * rendered in the browser.
      */
     public void setIsInterstitial(java.lang.Boolean isInterstitial) {
         this.isInterstitial = isInterstitial;

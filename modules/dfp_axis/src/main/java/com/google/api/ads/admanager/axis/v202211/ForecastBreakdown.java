@@ -34,7 +34,8 @@ public class ForecastBreakdown  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.DateTime endTime;
 
     /* The forecast breakdown entries in the same order as in the
-     *                 {@link ForecastBreakdownOptions#targets} field. */
+     * {@link
+     *                 ForecastBreakdownOptions#targets} field. */
     private com.google.api.ads.admanager.axis.v202211.ForecastBreakdownEntry[] breakdownEntries;
 
     public ForecastBreakdown() {
@@ -103,7 +104,8 @@ public class ForecastBreakdown  implements java.io.Serializable {
      * Gets the breakdownEntries value for this ForecastBreakdown.
      * 
      * @return breakdownEntries   * The forecast breakdown entries in the same order as in the
-     *                 {@link ForecastBreakdownOptions#targets} field.
+     * {@link
+     *                 ForecastBreakdownOptions#targets} field.
      */
     public com.google.api.ads.admanager.axis.v202211.ForecastBreakdownEntry[] getBreakdownEntries() {
         return breakdownEntries;
@@ -114,7 +116,8 @@ public class ForecastBreakdown  implements java.io.Serializable {
      * Sets the breakdownEntries value for this ForecastBreakdown.
      * 
      * @param breakdownEntries   * The forecast breakdown entries in the same order as in the
-     *                 {@link ForecastBreakdownOptions#targets} field.
+     * {@link
+     *                 ForecastBreakdownOptions#targets} field.
      */
     public void setBreakdownEntries(com.google.api.ads.admanager.axis.v202211.ForecastBreakdownEntry[] breakdownEntries) {
         this.breakdownEntries = breakdownEntries;

@@ -67,8 +67,8 @@ public interface ContentBundleServiceInterface {
 
     /**
      * 
-     *         Gets a {@link ContentBundlePage} of {@link ContentBundle} objects that satisfy the
-     *         given {@link Statement#query}. The following fields are supported for filtering:
+     *         Gets a {@link ContentBundlePage} of {@link ContentBundle} objects that satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>
@@ -106,8 +106,7 @@ public interface ContentBundleServiceInterface {
 
     /**
      * 
-     *         Performs actions on {@link ContentBundle} objects that match the given
-     *         {@link Statement#query}.
+     *         Performs actions on {@link ContentBundle} objects that match the given {@link Statement#query}.
      *       
      * 
      * @param filterStatement

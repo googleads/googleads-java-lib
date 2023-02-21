@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code Creative} that points to an externally hosted VAST ad and is
- *             served via VAST XML as a VAST Wrapper.
+ *             A {@code Creative} that points to an externally hosted VAST ad and is served via VAST XML as a
+ *             VAST Wrapper.
  *           
  * 
  * <p>Java class for VastRedirectCreative complex type.

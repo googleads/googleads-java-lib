@@ -64,9 +64,8 @@ public interface CompanyServiceInterface {
 
     /**
      * 
-     *         Gets a {@link CompanyPage} of {@link Company} objects that satisfy the
-     *         given {@link Statement#query}. The following fields are supported for
-     *         filtering:
+     *         Gets a {@link CompanyPage} of {@link Company} objects that satisfy the given {@link
+     *         Statement#query}. The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>

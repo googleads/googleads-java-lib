@@ -32,22 +32,19 @@ public class AdRule  implements java.io.Serializable {
     private java.lang.Long id;
 
     /* The unique name of the {@link AdRule}. This attribute is required
-     * to create an
-     *                 ad rule and has a maximum length of 255 characters. */
+     * to create an ad rule and has
+     *                 a maximum length of 255 characters. */
     private java.lang.String name;
 
     /* The priority of the {@link AdRule}. This attribute is required
-     * and can range
-     *                 from 1 to 1000, with 1 being the highest possible
-     * priority.
+     * and can range from 1 to 1000,
+     *                 with 1 being the highest possible priority.
      *                 
      *                 <p>Changing an ad rule's priority can affect the priorities
-     * of other ad
-     *                 rules. For example, increasing an ad rule's priority
-     * from 5 to 1 will
-     *                 shift the ad rules that were previously in priority
-     * positions 1 through 4
-     *                 down one. */
+     * of other ad rules. For example,
+     *                 increasing an ad rule's priority from 5 to 1 will
+     * shift the ad rules that were previously in
+     *                 priority positions 1 through 4 down one. */
     private java.lang.Integer priority;
 
     /* The targeting criteria of the {@link AdRule}. This attribute
@@ -55,46 +52,45 @@ public class AdRule  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.Targeting targeting;
 
     /* This {@link AdRule} object's start date and time. This attribute
-     * is required and must be
-     *                 a date in the future for new ad rules. */
+     * is required and must be a date
+     *                 in the future for new ad rules. */
     private com.google.api.ads.admanager.axis.v202211.DateTime startDateTime;
 
     /* Specifies whether to start using the {@link AdRule} right away,
-     * in an hour, etc.
-     *                 This attribute is optional and defaults to {@link
-     * StartDateTimeType#USE_START_DATE_TIME}. */
+     * in an hour, etc. This attribute
+     *                 is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}. */
     private com.google.api.ads.admanager.axis.v202211.StartDateTimeType startDateTimeType;
 
     /* This {@link AdRule} object's end date and time. This attribute
-     * is required unless
-     *                 {@code unlimitedEndDateTime} is set to {@code true}.
-     * If specified, it
-     *                 must be after the {@code startDateTime}. */
+     * is required unless {@code
+     *                 unlimitedEndDateTime} is set to {@code true}. If specified,
+     * it must be after the {@code
+     *                 startDateTime}. */
     private com.google.api.ads.admanager.axis.v202211.DateTime endDateTime;
 
     /* Specifies whether the {@link AdRule} has an end time. This
-     * attribute is optional
-     *                 and defaults to false. */
+     * attribute is optional and defaults
+     *                 to false. */
     private java.lang.Boolean unlimitedEndDateTime;
 
     /* The {@link AdRuleStatus} of the ad rule. This attribute is
-     * read-only and
-     *                 defaults to {@link AdRuleStatus#INACTIVE}. */
+     * read-only and defaults to {@link
+     *                 AdRuleStatus#INACTIVE}. */
     private com.google.api.ads.admanager.axis.v202211.AdRuleStatus status;
 
     /* The {@link FrequencyCapBehavior} of the {@link AdRule}. This
-     * attribute is
-     *                 optional and defaults to {@link FrequencyCapBehavior#DEFER}. */
+     * attribute is optional and defaults
+     *                 to {@link FrequencyCapBehavior#DEFER}. */
     private com.google.api.ads.admanager.axis.v202211.FrequencyCapBehavior frequencyCapBehavior;
 
     /* This {@link AdRule} object's frequency cap for the maximum
-     * impressions per stream.
-     *                 This attribute is optional and defaults to 0. */
+     * impressions per stream. This
+     *                 attribute is optional and defaults to 0. */
     private java.lang.Integer maxImpressionsPerLineItemPerStream;
 
     /* This {@link AdRule} object's frequency cap for the maximum
-     * impressions per pod. This
-     *                 attribute is optional and defaults to 0. */
+     * impressions per pod. This attribute
+     *                 is optional and defaults to 0. */
     private java.lang.Integer maxImpressionsPerLineItemPerPod;
 
     /* This {@link AdRule} object's pre-roll slot. This attribute
@@ -193,8 +189,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the name value for this AdRule.
      * 
      * @return name   * The unique name of the {@link AdRule}. This attribute is required
-     * to create an
-     *                 ad rule and has a maximum length of 255 characters.
+     * to create an ad rule and has
+     *                 a maximum length of 255 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -205,8 +201,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the name value for this AdRule.
      * 
      * @param name   * The unique name of the {@link AdRule}. This attribute is required
-     * to create an
-     *                 ad rule and has a maximum length of 255 characters.
+     * to create an ad rule and has
+     *                 a maximum length of 255 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -217,17 +213,14 @@ public class AdRule  implements java.io.Serializable {
      * Gets the priority value for this AdRule.
      * 
      * @return priority   * The priority of the {@link AdRule}. This attribute is required
-     * and can range
-     *                 from 1 to 1000, with 1 being the highest possible
-     * priority.
+     * and can range from 1 to 1000,
+     *                 with 1 being the highest possible priority.
      *                 
      *                 <p>Changing an ad rule's priority can affect the priorities
-     * of other ad
-     *                 rules. For example, increasing an ad rule's priority
-     * from 5 to 1 will
-     *                 shift the ad rules that were previously in priority
-     * positions 1 through 4
-     *                 down one.
+     * of other ad rules. For example,
+     *                 increasing an ad rule's priority from 5 to 1 will
+     * shift the ad rules that were previously in
+     *                 priority positions 1 through 4 down one.
      */
     public java.lang.Integer getPriority() {
         return priority;
@@ -238,17 +231,14 @@ public class AdRule  implements java.io.Serializable {
      * Sets the priority value for this AdRule.
      * 
      * @param priority   * The priority of the {@link AdRule}. This attribute is required
-     * and can range
-     *                 from 1 to 1000, with 1 being the highest possible
-     * priority.
+     * and can range from 1 to 1000,
+     *                 with 1 being the highest possible priority.
      *                 
      *                 <p>Changing an ad rule's priority can affect the priorities
-     * of other ad
-     *                 rules. For example, increasing an ad rule's priority
-     * from 5 to 1 will
-     *                 shift the ad rules that were previously in priority
-     * positions 1 through 4
-     *                 down one.
+     * of other ad rules. For example,
+     *                 increasing an ad rule's priority from 5 to 1 will
+     * shift the ad rules that were previously in
+     *                 priority positions 1 through 4 down one.
      */
     public void setPriority(java.lang.Integer priority) {
         this.priority = priority;
@@ -281,8 +271,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the startDateTime value for this AdRule.
      * 
      * @return startDateTime   * This {@link AdRule} object's start date and time. This attribute
-     * is required and must be
-     *                 a date in the future for new ad rules.
+     * is required and must be a date
+     *                 in the future for new ad rules.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getStartDateTime() {
         return startDateTime;
@@ -293,8 +283,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the startDateTime value for this AdRule.
      * 
      * @param startDateTime   * This {@link AdRule} object's start date and time. This attribute
-     * is required and must be
-     *                 a date in the future for new ad rules.
+     * is required and must be a date
+     *                 in the future for new ad rules.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202211.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -305,9 +295,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the startDateTimeType value for this AdRule.
      * 
      * @return startDateTimeType   * Specifies whether to start using the {@link AdRule} right away,
-     * in an hour, etc.
-     *                 This attribute is optional and defaults to {@link
-     * StartDateTimeType#USE_START_DATE_TIME}.
+     * in an hour, etc. This attribute
+     *                 is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}.
      */
     public com.google.api.ads.admanager.axis.v202211.StartDateTimeType getStartDateTimeType() {
         return startDateTimeType;
@@ -318,9 +307,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the startDateTimeType value for this AdRule.
      * 
      * @param startDateTimeType   * Specifies whether to start using the {@link AdRule} right away,
-     * in an hour, etc.
-     *                 This attribute is optional and defaults to {@link
-     * StartDateTimeType#USE_START_DATE_TIME}.
+     * in an hour, etc. This attribute
+     *                 is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}.
      */
     public void setStartDateTimeType(com.google.api.ads.admanager.axis.v202211.StartDateTimeType startDateTimeType) {
         this.startDateTimeType = startDateTimeType;
@@ -331,10 +319,10 @@ public class AdRule  implements java.io.Serializable {
      * Gets the endDateTime value for this AdRule.
      * 
      * @return endDateTime   * This {@link AdRule} object's end date and time. This attribute
-     * is required unless
-     *                 {@code unlimitedEndDateTime} is set to {@code true}.
-     * If specified, it
-     *                 must be after the {@code startDateTime}.
+     * is required unless {@code
+     *                 unlimitedEndDateTime} is set to {@code true}. If specified,
+     * it must be after the {@code
+     *                 startDateTime}.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getEndDateTime() {
         return endDateTime;
@@ -345,10 +333,10 @@ public class AdRule  implements java.io.Serializable {
      * Sets the endDateTime value for this AdRule.
      * 
      * @param endDateTime   * This {@link AdRule} object's end date and time. This attribute
-     * is required unless
-     *                 {@code unlimitedEndDateTime} is set to {@code true}.
-     * If specified, it
-     *                 must be after the {@code startDateTime}.
+     * is required unless {@code
+     *                 unlimitedEndDateTime} is set to {@code true}. If specified,
+     * it must be after the {@code
+     *                 startDateTime}.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202211.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -359,8 +347,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the unlimitedEndDateTime value for this AdRule.
      * 
      * @return unlimitedEndDateTime   * Specifies whether the {@link AdRule} has an end time. This
-     * attribute is optional
-     *                 and defaults to false.
+     * attribute is optional and defaults
+     *                 to false.
      */
     public java.lang.Boolean getUnlimitedEndDateTime() {
         return unlimitedEndDateTime;
@@ -371,8 +359,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the unlimitedEndDateTime value for this AdRule.
      * 
      * @param unlimitedEndDateTime   * Specifies whether the {@link AdRule} has an end time. This
-     * attribute is optional
-     *                 and defaults to false.
+     * attribute is optional and defaults
+     *                 to false.
      */
     public void setUnlimitedEndDateTime(java.lang.Boolean unlimitedEndDateTime) {
         this.unlimitedEndDateTime = unlimitedEndDateTime;
@@ -383,8 +371,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the status value for this AdRule.
      * 
      * @return status   * The {@link AdRuleStatus} of the ad rule. This attribute is
-     * read-only and
-     *                 defaults to {@link AdRuleStatus#INACTIVE}.
+     * read-only and defaults to {@link
+     *                 AdRuleStatus#INACTIVE}.
      */
     public com.google.api.ads.admanager.axis.v202211.AdRuleStatus getStatus() {
         return status;
@@ -395,8 +383,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the status value for this AdRule.
      * 
      * @param status   * The {@link AdRuleStatus} of the ad rule. This attribute is
-     * read-only and
-     *                 defaults to {@link AdRuleStatus#INACTIVE}.
+     * read-only and defaults to {@link
+     *                 AdRuleStatus#INACTIVE}.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202211.AdRuleStatus status) {
         this.status = status;
@@ -407,8 +395,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the frequencyCapBehavior value for this AdRule.
      * 
      * @return frequencyCapBehavior   * The {@link FrequencyCapBehavior} of the {@link AdRule}. This
-     * attribute is
-     *                 optional and defaults to {@link FrequencyCapBehavior#DEFER}.
+     * attribute is optional and defaults
+     *                 to {@link FrequencyCapBehavior#DEFER}.
      */
     public com.google.api.ads.admanager.axis.v202211.FrequencyCapBehavior getFrequencyCapBehavior() {
         return frequencyCapBehavior;
@@ -419,8 +407,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the frequencyCapBehavior value for this AdRule.
      * 
      * @param frequencyCapBehavior   * The {@link FrequencyCapBehavior} of the {@link AdRule}. This
-     * attribute is
-     *                 optional and defaults to {@link FrequencyCapBehavior#DEFER}.
+     * attribute is optional and defaults
+     *                 to {@link FrequencyCapBehavior#DEFER}.
      */
     public void setFrequencyCapBehavior(com.google.api.ads.admanager.axis.v202211.FrequencyCapBehavior frequencyCapBehavior) {
         this.frequencyCapBehavior = frequencyCapBehavior;
@@ -431,8 +419,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the maxImpressionsPerLineItemPerStream value for this AdRule.
      * 
      * @return maxImpressionsPerLineItemPerStream   * This {@link AdRule} object's frequency cap for the maximum
-     * impressions per stream.
-     *                 This attribute is optional and defaults to 0.
+     * impressions per stream. This
+     *                 attribute is optional and defaults to 0.
      */
     public java.lang.Integer getMaxImpressionsPerLineItemPerStream() {
         return maxImpressionsPerLineItemPerStream;
@@ -443,8 +431,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the maxImpressionsPerLineItemPerStream value for this AdRule.
      * 
      * @param maxImpressionsPerLineItemPerStream   * This {@link AdRule} object's frequency cap for the maximum
-     * impressions per stream.
-     *                 This attribute is optional and defaults to 0.
+     * impressions per stream. This
+     *                 attribute is optional and defaults to 0.
      */
     public void setMaxImpressionsPerLineItemPerStream(java.lang.Integer maxImpressionsPerLineItemPerStream) {
         this.maxImpressionsPerLineItemPerStream = maxImpressionsPerLineItemPerStream;
@@ -455,8 +443,8 @@ public class AdRule  implements java.io.Serializable {
      * Gets the maxImpressionsPerLineItemPerPod value for this AdRule.
      * 
      * @return maxImpressionsPerLineItemPerPod   * This {@link AdRule} object's frequency cap for the maximum
-     * impressions per pod. This
-     *                 attribute is optional and defaults to 0.
+     * impressions per pod. This attribute
+     *                 is optional and defaults to 0.
      */
     public java.lang.Integer getMaxImpressionsPerLineItemPerPod() {
         return maxImpressionsPerLineItemPerPod;
@@ -467,8 +455,8 @@ public class AdRule  implements java.io.Serializable {
      * Sets the maxImpressionsPerLineItemPerPod value for this AdRule.
      * 
      * @param maxImpressionsPerLineItemPerPod   * This {@link AdRule} object's frequency cap for the maximum
-     * impressions per pod. This
-     *                 attribute is optional and defaults to 0.
+     * impressions per pod. This attribute
+     *                 is optional and defaults to 0.
      */
     public void setMaxImpressionsPerLineItemPerPod(java.lang.Integer maxImpressionsPerLineItemPerPod) {
         this.maxImpressionsPerLineItemPerPod = maxImpressionsPerLineItemPerPod;

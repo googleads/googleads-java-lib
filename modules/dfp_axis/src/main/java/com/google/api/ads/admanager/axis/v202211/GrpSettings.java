@@ -41,8 +41,8 @@ public class GrpSettings  implements java.io.Serializable {
     private java.lang.Long maxTargetAge;
 
     /* Specifies the target gender of the {@link LineItem}. This field
-     * is only applicable if
-     *                 {@link #provider} is not null. */
+     * is only applicable if {@link
+     *                 #provider} is not null. */
     private com.google.api.ads.admanager.axis.v202211.GrpTargetGender targetGender;
 
     /* Specifies the GRP provider of the {@link LineItem}. */
@@ -173,8 +173,8 @@ public class GrpSettings  implements java.io.Serializable {
      * Gets the targetGender value for this GrpSettings.
      * 
      * @return targetGender   * Specifies the target gender of the {@link LineItem}. This field
-     * is only applicable if
-     *                 {@link #provider} is not null.
+     * is only applicable if {@link
+     *                 #provider} is not null.
      */
     public com.google.api.ads.admanager.axis.v202211.GrpTargetGender getTargetGender() {
         return targetGender;
@@ -185,8 +185,8 @@ public class GrpSettings  implements java.io.Serializable {
      * Sets the targetGender value for this GrpSettings.
      * 
      * @param targetGender   * Specifies the target gender of the {@link LineItem}. This field
-     * is only applicable if
-     *                 {@link #provider} is not null.
+     * is only applicable if {@link
+     *                 #provider} is not null.
      */
     public void setTargetGender(com.google.api.ads.admanager.axis.v202211.GrpTargetGender targetGender) {
         this.targetGender = targetGender;

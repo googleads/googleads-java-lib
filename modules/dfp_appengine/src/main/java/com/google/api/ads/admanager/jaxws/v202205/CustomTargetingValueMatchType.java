@@ -46,8 +46,8 @@ public enum CustomTargetingValueMatchType {
 
     /**
      * 
-     *                 Used for exact matching. For example, the targeting value {@code
-     *                 car=honda} will only match to the ad request {@code car=honda}.
+     *                 Used for exact matching. For example, the targeting value {@code car=honda} will only match
+     *                 to the ad request {@code car=honda}.
      *               
      * 
      */
@@ -55,14 +55,13 @@ public enum CustomTargetingValueMatchType {
 
     /**
      * 
-     *                 Used for lenient matching when at least one of the words in the ad
-     *                 request matches the targeted value. The targeting value {@code car=honda}
-     *                 will match to ad requests containing the word {@code honda}. So ad
-     *                 requests {@code car=honda} or {@code car=honda civic} or {@code car=buy
-     *                 honda} or {@code car=how much does a honda cost} will all have the line
-     *                 item delivered.
+     *                 Used for lenient matching when at least one of the words in the ad request matches the
+     *                 targeted value. The targeting value {@code car=honda} will match to ad requests containing
+     *                 the word {@code honda}. So ad requests {@code car=honda} or {@code car=honda civic} or {@code
+     *                 car=buy honda} or {@code car=how much does a honda cost} will all have the line item
+     *                 delivered.
      *                 
-     *                 <p>This match type can not be used within an audience segment rule.</p>
+     *                 <p>This match type can not be used within an audience segment rule.
      *               
      * 
      */
@@ -70,10 +69,10 @@ public enum CustomTargetingValueMatchType {
 
     /**
      * 
-     *                 Used for 'starts with' matching when the first few characters in the ad
-     *                 request match all of the characters in the targeted value. The targeting
-     *                 value {@code car=honda} will match to ad requests {@code car=honda} or
-     *                 {@code car=hondas for sale} but not to {@code car=I want a honda}.
+     *                 Used for 'starts with' matching when the first few characters in the ad request match all of
+     *                 the characters in the targeted value. The targeting value {@code car=honda} will match to ad
+     *                 requests {@code car=honda} or {@code car=hondas for sale} but not to {@code car=I want a
+     *                 honda}.
      *               
      * 
      */
@@ -81,12 +80,11 @@ public enum CustomTargetingValueMatchType {
 
     /**
      * 
-     *                 This is a combination of {@code MatchType#BROAD} and {@code
-     *                 MatchType#PREFIX} matching. The targeting value {@code car=honda} will
-     *                 match to ad requests that contain words that start with the characters in
-     *                 the targeted value, for example with {@code car=civic hondas}.
+     *                 This is a combination of {@code MatchType#BROAD} and {@code MatchType#PREFIX} matching. The
+     *                 targeting value {@code car=honda} will match to ad requests that contain words that start
+     *                 with the characters in the targeted value, for example with {@code car=civic hondas}.
      *                 
-     *                 <p>This match type can not be used within an audience segment rule.</p>
+     *                 <p>This match type can not be used within an audience segment rule.
      *               
      * 
      */

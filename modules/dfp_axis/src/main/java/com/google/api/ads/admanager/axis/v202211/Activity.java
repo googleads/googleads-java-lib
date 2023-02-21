@@ -23,23 +23,22 @@ package com.google.api.ads.admanager.axis.v202211;
 
 
 /**
- * <p>An activity is a specific user action that an advertiser wants
- * to track, such as the
- *             completion of a purchase or a visit to a webpage. You
- * create and manage activities in Ad Manager.
- *             When a user performs the action after seeing an advertiser's
- * ad, that's a conversion.</p>
+ * An activity is a specific user action that an advertiser wants
+ * to track, such as the completion
+ *             of a purchase or a visit to a webpage. You create and
+ * manage activities in Ad Manager. When a
+ *             user performs the action after seeing an advertiser's
+ * ad, that's a conversion.
  *             
  *             <p>For example, you set up an activity in Ad Manager to
  * track how many users visit an
  *             advertiser's promotional website after viewing or clicking
  * on an ad. When a user views an ad,
- *             then visits the page, that's one conversion.</p>
+ *             then visits the page, that's one conversion.
  */
 public class Activity  implements java.io.Serializable {
     /* The unique ID of the {@code Activity}. This value is readonly
-     * and is assigned
-     *                 by Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* The ID of the {@link ActivityGroup} that this {@link Activity}
@@ -98,8 +97,7 @@ public class Activity  implements java.io.Serializable {
      * Gets the id value for this Activity.
      * 
      * @return id   * The unique ID of the {@code Activity}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -110,8 +108,7 @@ public class Activity  implements java.io.Serializable {
      * Sets the id value for this Activity.
      * 
      * @param id   * The unique ID of the {@code Activity}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;

@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Contains targeting criteria for {@link LineItem} objects. See
- *             {@link LineItem#targeting}.
+ *             Contains targeting criteria for {@link LineItem} objects. See {@link LineItem#targeting}.
  *           
  * 
  * <p>Java class for Targeting complex type.

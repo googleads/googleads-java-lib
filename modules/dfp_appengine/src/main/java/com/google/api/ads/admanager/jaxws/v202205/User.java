@@ -23,11 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * 
  *             Represents a user of the system.
- *             <p>
- *             Users may be assigned at most one {@link Role} per network. Each role
- *             provides a user with permissions to perform specific operations. Without a
- *             role, they will not be able to perform any actions.
- *             </p>
+ *             
+ *             <p>Users may be assigned at most one {@link Role} per network. Each role provides a user with
+ *             permissions to perform specific operations. Without a role, they will not be able to perform any
+ *             actions.
  *           
  * 
  * <p>Java class for User complex type.

@@ -28,9 +28,8 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class Role  implements java.io.Serializable {
     /* The unique ID of the role. This value is readonly and is assigned
-     * by
-     *                 Google. Roles that are created by Google will have
-     * negative IDs. */
+     * by Google. Roles that are
+     *                 created by Google will have negative IDs. */
     private java.lang.Long id;
 
     /* The name of the role. This value is readonly and is assigned
@@ -38,15 +37,14 @@ public class Role  implements java.io.Serializable {
     private java.lang.String name;
 
     /* The description of the role. This value is readonly and is
-     * assigned by
-     *                 Google. */
+     * assigned by Google. */
     private java.lang.String description;
 
     /* The status of the {@link Role}. This field is read-only and
-     * can have the values
-     *                 {@link RoleStatus#ACTIVE} (default) or {@link RoleStatus#INACTIVE},
-     * which determines the
-     *                 visibility of the role in the UI. */
+     * can have the values {@link
+     *                 RoleStatus#ACTIVE} (default) or {@link RoleStatus#INACTIVE},
+     * which determines the visibility of
+     *                 the role in the UI. */
     private com.google.api.ads.admanager.axis.v202208.RoleStatus status;
 
     public Role() {
@@ -78,9 +76,8 @@ public class Role  implements java.io.Serializable {
      * Gets the id value for this Role.
      * 
      * @return id   * The unique ID of the role. This value is readonly and is assigned
-     * by
-     *                 Google. Roles that are created by Google will have
-     * negative IDs.
+     * by Google. Roles that are
+     *                 created by Google will have negative IDs.
      */
     public java.lang.Long getId() {
         return id;
@@ -91,9 +88,8 @@ public class Role  implements java.io.Serializable {
      * Sets the id value for this Role.
      * 
      * @param id   * The unique ID of the role. This value is readonly and is assigned
-     * by
-     *                 Google. Roles that are created by Google will have
-     * negative IDs.
+     * by Google. Roles that are
+     *                 created by Google will have negative IDs.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -126,8 +122,7 @@ public class Role  implements java.io.Serializable {
      * Gets the description value for this Role.
      * 
      * @return description   * The description of the role. This value is readonly and is
-     * assigned by
-     *                 Google.
+     * assigned by Google.
      */
     public java.lang.String getDescription() {
         return description;
@@ -138,8 +133,7 @@ public class Role  implements java.io.Serializable {
      * Sets the description value for this Role.
      * 
      * @param description   * The description of the role. This value is readonly and is
-     * assigned by
-     *                 Google.
+     * assigned by Google.
      */
     public void setDescription(java.lang.String description) {
         this.description = description;
@@ -150,10 +144,10 @@ public class Role  implements java.io.Serializable {
      * Gets the status value for this Role.
      * 
      * @return status   * The status of the {@link Role}. This field is read-only and
-     * can have the values
-     *                 {@link RoleStatus#ACTIVE} (default) or {@link RoleStatus#INACTIVE},
-     * which determines the
-     *                 visibility of the role in the UI.
+     * can have the values {@link
+     *                 RoleStatus#ACTIVE} (default) or {@link RoleStatus#INACTIVE},
+     * which determines the visibility of
+     *                 the role in the UI.
      */
     public com.google.api.ads.admanager.axis.v202208.RoleStatus getStatus() {
         return status;
@@ -164,10 +158,10 @@ public class Role  implements java.io.Serializable {
      * Sets the status value for this Role.
      * 
      * @param status   * The status of the {@link Role}. This field is read-only and
-     * can have the values
-     *                 {@link RoleStatus#ACTIVE} (default) or {@link RoleStatus#INACTIVE},
-     * which determines the
-     *                 visibility of the role in the UI.
+     * can have the values {@link
+     *                 RoleStatus#ACTIVE} (default) or {@link RoleStatus#INACTIVE},
+     * which determines the visibility of
+     *                 the role in the UI.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202208.RoleStatus status) {
         this.status = status;

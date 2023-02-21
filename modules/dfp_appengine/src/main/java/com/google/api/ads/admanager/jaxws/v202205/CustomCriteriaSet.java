@@ -25,11 +25,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@link CustomCriteriaSet} comprises of a set of {@link CustomCriteriaNode}
- *             objects combined by the
- *             {@link CustomCriteriaSet.LogicalOperator#logicalOperator}. The custom
- *             criteria targeting tree is subject to the rules defined on
- *             {@link Targeting#customTargeting}.
+ *             A {@link CustomCriteriaSet} comprises of a set of {@link CustomCriteriaNode} objects combined by
+ *             the {@link CustomCriteriaSet.LogicalOperator#logicalOperator}. The custom criteria targeting tree
+ *             is subject to the rules defined on {@link Targeting#customTargeting}.
  *           
  * 
  * <p>Java class for CustomCriteriaSet complex type.

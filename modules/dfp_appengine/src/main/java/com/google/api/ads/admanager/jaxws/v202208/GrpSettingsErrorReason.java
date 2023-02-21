@@ -62,7 +62,7 @@ public enum GrpSettingsErrorReason {
     /**
      * 
      *                 Age range for GRP audience is not valid. Please see the
-     *                 <a href="https://support.google.com/dfp_premium/answer/6135438">Ad Manager Help Center</a>
+     *                 <a href="https://support.google.com/admanager/answer/6135438">Ad Manager Help Center</a>
      *                 for more information.
      *               
      * 

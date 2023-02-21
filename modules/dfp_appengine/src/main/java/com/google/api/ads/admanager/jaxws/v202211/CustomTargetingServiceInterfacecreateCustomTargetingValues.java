@@ -27,10 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link CustomTargetingValue} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link CustomTargetingValue#customTargetingKeyId}</li>
- *             <li>{@link CustomTargetingValue#name}</li>
+ *             <li>{@link CustomTargetingValue#customTargetingKeyId}
+ *             <li>{@link CustomTargetingValue#name}
  *             </ul>
  *           
  * 

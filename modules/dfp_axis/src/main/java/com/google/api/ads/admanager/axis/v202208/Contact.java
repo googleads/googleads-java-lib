@@ -24,27 +24,23 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * A {@code Contact} represents a person who is affiliated with a
- * single
- *             {@link Company}. A contact can have a variety of contact
- * information
- *             associated to it, and can be invited to view their company's
- * orders, line
- *             items, creatives, and reports.
+ * single {@link Company}. A contact
+ *             can have a variety of contact information associated to
+ * it, and can be invited to view their
+ *             company's orders, line items, creatives, and reports.
  */
 public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseContact  implements java.io.Serializable {
     /* The unique ID of the {@code Contact}. This value is readonly
-     * and is assigned
-     *                     by Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* The name of the contact. This attribute is required and has
-     * a maximum
-     *                     length of 127 characters. */
+     * a maximum length of 127 characters. */
     private java.lang.String name;
 
     /* The ID of the {@link Company} that this contact is associated
-     * with. This
-     *                     attribute is required and immutable. */
+     * with. This attribute is required
+     *                     and immutable. */
     private java.lang.Long companyId;
 
     /* The status of the contact. This attribute is readonly and is
@@ -57,13 +53,12 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
     private java.lang.String address;
 
     /* The cell phone number where the contact can be reached. This
-     * attribute is
-     *                     optional. */
+     * attribute is optional. */
     private java.lang.String cellPhone;
 
     /* A free-form text comment for the contact. This attribute is
-     * optional and has a maximum
-     *                     length of 1024 characters. */
+     * optional and has a maximum length
+     *                     of 1024 characters. */
     private java.lang.String comment;
 
     /* The e-mail address where the contact can be reached. This attribute
@@ -133,8 +128,7 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Gets the id value for this Contact.
      * 
      * @return id   * The unique ID of the {@code Contact}. This value is readonly
-     * and is assigned
-     *                     by Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -145,8 +139,7 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Sets the id value for this Contact.
      * 
      * @param id   * The unique ID of the {@code Contact}. This value is readonly
-     * and is assigned
-     *                     by Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -157,8 +150,7 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Gets the name value for this Contact.
      * 
      * @return name   * The name of the contact. This attribute is required and has
-     * a maximum
-     *                     length of 127 characters.
+     * a maximum length of 127 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -169,8 +161,7 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Sets the name value for this Contact.
      * 
      * @param name   * The name of the contact. This attribute is required and has
-     * a maximum
-     *                     length of 127 characters.
+     * a maximum length of 127 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -181,8 +172,8 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Gets the companyId value for this Contact.
      * 
      * @return companyId   * The ID of the {@link Company} that this contact is associated
-     * with. This
-     *                     attribute is required and immutable.
+     * with. This attribute is required
+     *                     and immutable.
      */
     public java.lang.Long getCompanyId() {
         return companyId;
@@ -193,8 +184,8 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Sets the companyId value for this Contact.
      * 
      * @param companyId   * The ID of the {@link Company} that this contact is associated
-     * with. This
-     *                     attribute is required and immutable.
+     * with. This attribute is required
+     *                     and immutable.
      */
     public void setCompanyId(java.lang.Long companyId) {
         this.companyId = companyId;
@@ -251,8 +242,7 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Gets the cellPhone value for this Contact.
      * 
      * @return cellPhone   * The cell phone number where the contact can be reached. This
-     * attribute is
-     *                     optional.
+     * attribute is optional.
      */
     public java.lang.String getCellPhone() {
         return cellPhone;
@@ -263,8 +253,7 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Sets the cellPhone value for this Contact.
      * 
      * @param cellPhone   * The cell phone number where the contact can be reached. This
-     * attribute is
-     *                     optional.
+     * attribute is optional.
      */
     public void setCellPhone(java.lang.String cellPhone) {
         this.cellPhone = cellPhone;
@@ -275,8 +264,8 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Gets the comment value for this Contact.
      * 
      * @return comment   * A free-form text comment for the contact. This attribute is
-     * optional and has a maximum
-     *                     length of 1024 characters.
+     * optional and has a maximum length
+     *                     of 1024 characters.
      */
     public java.lang.String getComment() {
         return comment;
@@ -287,8 +276,8 @@ public class Contact  extends com.google.api.ads.admanager.axis.v202208.BaseCont
      * Sets the comment value for this Contact.
      * 
      * @param comment   * A free-form text comment for the contact. This attribute is
-     * optional and has a maximum
-     *                     length of 1024 characters.
+     * optional and has a maximum length
+     *                     of 1024 characters.
      */
     public void setComment(java.lang.String comment) {
         this.comment = comment;

@@ -27,9 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link Team} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link Team#name}</li>
+ *             <li>{@link Team#name}
  *             </ul>
  *           
  * 

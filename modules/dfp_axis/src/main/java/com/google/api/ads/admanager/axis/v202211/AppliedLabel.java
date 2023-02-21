@@ -34,8 +34,7 @@ public class AppliedLabel  implements java.io.Serializable {
     private java.lang.Long labelId;
 
     /* {@code isNegated} should be set to {@code true} to negate the
-     * effects of
-     *                 {@code labelId}. */
+     * effects of {@code labelId}. */
     private java.lang.Boolean isNegated;
 
     public AppliedLabel() {
@@ -81,8 +80,7 @@ public class AppliedLabel  implements java.io.Serializable {
      * Gets the isNegated value for this AppliedLabel.
      * 
      * @return isNegated   * {@code isNegated} should be set to {@code true} to negate the
-     * effects of
-     *                 {@code labelId}.
+     * effects of {@code labelId}.
      */
     public java.lang.Boolean getIsNegated() {
         return isNegated;
@@ -93,8 +91,7 @@ public class AppliedLabel  implements java.io.Serializable {
      * Sets the isNegated value for this AppliedLabel.
      * 
      * @param isNegated   * {@code isNegated} should be set to {@code true} to negate the
-     * effects of
-     *                 {@code labelId}.
+     * effects of {@code labelId}.
      */
     public void setIsNegated(java.lang.Boolean isNegated) {
         this.isNegated = isNegated;

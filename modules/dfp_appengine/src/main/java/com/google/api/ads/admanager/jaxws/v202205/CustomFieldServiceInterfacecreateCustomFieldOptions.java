@@ -27,10 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Creates new {@link CustomFieldOption} objects.
  *             
- *             The following fields are required:
+ *             <p>The following fields are required:
+ *             
  *             <ul>
- *             <li>{@link CustomFieldOption#displayName}</li>
- *             <li>{@link CustomFieldOption#customFieldId}</li>
+ *             <li>{@link CustomFieldOption#displayName}
+ *             <li>{@link CustomFieldOption#customFieldId}
  *             </ul>
  *           
  * 

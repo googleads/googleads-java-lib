@@ -34,13 +34,12 @@ public class ProposalLineItemMakegoodInfo  implements java.io.Serializable {
     /* The publisher-provided reason why this makegood was initiated.
      * This is free form text.
      *                 
-     *                 The following predefined values can be used to render
-     * predefined options in the UI.
+     *                 <p>The following predefined values can be used to
+     * render predefined options in the UI.
      *                 
-     *                 UNDERDELIVERY: 'Impression underdelivery',
-     *                 SECONDARY_DELIVERY_TERMS: 'Did not meet secondary
-     * delivery terms ',
-     *                 PERFORMANCE: 'Performance issues', */
+     *                 <p>UNDERDELIVERY: 'Impression underdelivery', SECONDARY_DELIVERY_TERMS:
+     * 'Did not meet secondary
+     *                 delivery terms ', PERFORMANCE: 'Performance issues', */
     private java.lang.String reason;
 
     public ProposalLineItemMakegoodInfo() {
@@ -92,13 +91,12 @@ public class ProposalLineItemMakegoodInfo  implements java.io.Serializable {
      * @return reason   * The publisher-provided reason why this makegood was initiated.
      * This is free form text.
      *                 
-     *                 The following predefined values can be used to render
-     * predefined options in the UI.
+     *                 <p>The following predefined values can be used to
+     * render predefined options in the UI.
      *                 
-     *                 UNDERDELIVERY: 'Impression underdelivery',
-     *                 SECONDARY_DELIVERY_TERMS: 'Did not meet secondary
-     * delivery terms ',
-     *                 PERFORMANCE: 'Performance issues',
+     *                 <p>UNDERDELIVERY: 'Impression underdelivery', SECONDARY_DELIVERY_TERMS:
+     * 'Did not meet secondary
+     *                 delivery terms ', PERFORMANCE: 'Performance issues',
      */
     public java.lang.String getReason() {
         return reason;
@@ -111,13 +109,12 @@ public class ProposalLineItemMakegoodInfo  implements java.io.Serializable {
      * @param reason   * The publisher-provided reason why this makegood was initiated.
      * This is free form text.
      *                 
-     *                 The following predefined values can be used to render
-     * predefined options in the UI.
+     *                 <p>The following predefined values can be used to
+     * render predefined options in the UI.
      *                 
-     *                 UNDERDELIVERY: 'Impression underdelivery',
-     *                 SECONDARY_DELIVERY_TERMS: 'Did not meet secondary
-     * delivery terms ',
-     *                 PERFORMANCE: 'Performance issues',
+     *                 <p>UNDERDELIVERY: 'Impression underdelivery', SECONDARY_DELIVERY_TERMS:
+     * 'Did not meet secondary
+     *                 delivery terms ', PERFORMANCE: 'Performance issues',
      */
     public void setReason(java.lang.String reason) {
         this.reason = reason;

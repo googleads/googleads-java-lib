@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             An option represents a permitted value for a custom field that
- *             has a {@link CustomField#dataType} of {@link CustomFieldDataType#DROP_DOWN}.
+ *             An option represents a permitted value for a custom field that has a {@link CustomField#dataType}
+ *             of {@link CustomFieldDataType#DROP_DOWN}.
  *           
  * 
  * <p>Java class for CustomFieldOption complex type.

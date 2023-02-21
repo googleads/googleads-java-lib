@@ -26,19 +26,21 @@ public interface CreativeWrapperServiceInterface extends java.rmi.Remote {
     /**
      * Creates a new {@code CreativeWrapper} objects.
      *         
-     *         The following fields are required:
+     *         <p>The following fields are required:
+     *         
      *         <ul>
-     *         <li>{@link CreativeWrapper#labelId}</li>
-     *         <li>{@link CreativeWrapper#ordering}</li>
-     *         <li>{@link CreativeWrapper#header} or {@link CreativeWrapper#footer}</li>
+     *         <li>{@link CreativeWrapper#labelId}
+     *         <li>{@link CreativeWrapper#ordering}
+     *         <li>{@link CreativeWrapper#header} or {@link CreativeWrapper#footer}
      * </ul>
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeWrapper[] createCreativeWrappers(com.google.api.ads.admanager.axis.v202205.CreativeWrapper[] creativeWrappers) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 
     /**
      * Gets a {@link CreativeWrapperPage} of {@link CreativeWrapper}
-     * objects that satisfy the given {@link Statement#query}. The following
-     * fields are supported for filtering:
+     * objects that satisfy the given
+     *         {@link Statement#query}. The following fields are supported
+     * for filtering:
      *         
      *         <table>
      *         <tr>
@@ -66,8 +68,8 @@ public interface CreativeWrapperServiceInterface extends java.rmi.Remote {
 
     /**
      * Performs actions on {@link CreativeWrapper} objects that match
-     * the
-     *         given {@link Statement#query}.
+     * the given {@link
+     *         Statement#query}.
      */
     public com.google.api.ads.admanager.axis.v202205.UpdateResult performCreativeWrapperAction(com.google.api.ads.admanager.axis.v202205.CreativeWrapperAction creativeWrapperAction, com.google.api.ads.admanager.axis.v202205.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202205.ApiException;
 

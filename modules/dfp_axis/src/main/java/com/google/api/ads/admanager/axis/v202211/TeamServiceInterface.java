@@ -26,19 +26,18 @@ public interface TeamServiceInterface extends java.rmi.Remote {
     /**
      * Creates new {@link Team} objects.
      *         
-     *         The following fields are required:
+     *         <p>The following fields are required:
+     *         
      *         <ul>
-     *         <li>{@link Team#name}</li>
+     *         <li>{@link Team#name}
      *         </ul>
      */
     public com.google.api.ads.admanager.axis.v202211.Team[] createTeams(com.google.api.ads.admanager.axis.v202211.Team[] teams) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
     /**
      * Gets a {@code TeamPage} of {@code Team} objects that satisfy
-     * the
-     *         given {@link Statement#query}. The following fields are supported
-     * for
-     *         filtering:
+     * the given {@link Statement#query}.
+     *         The following fields are supported for filtering:
      *         
      *         <table>
      *         <tr>

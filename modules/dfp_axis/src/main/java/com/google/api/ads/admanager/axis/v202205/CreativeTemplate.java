@@ -27,14 +27,13 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class CreativeTemplate  implements java.io.Serializable {
     /* Uniquely identifies the {@code CreativeTemplate}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * template is created. */
+     * is read-only and is assigned
+     *                 by Google when a creative template is created. */
     private java.lang.Long id;
 
     /* The name of the creative template. This attribute is required
-     * and has a
-     *                 maximum length of 255 characters. */
+     * and has a maximum length of 255
+     *                 characters. */
     private java.lang.String name;
 
     /* The description of the creative template. This attribute is
@@ -51,13 +50,12 @@ public class CreativeTemplate  implements java.io.Serializable {
     private java.lang.String snippet;
 
     /* The status of the {@code CreativeTemplate}. This attribute
-     * is read-only
-     *                 and is assigned by Google. */
+     * is read-only and is assigned by
+     *                 Google. */
     private com.google.api.ads.admanager.axis.v202205.CreativeTemplateStatus status;
 
     /* The type of the {@code CreativeTemplate}. Publisher can only
-     * create
-     *                 user-defined template */
+     * create user-defined template */
     private com.google.api.ads.admanager.axis.v202205.CreativeTemplateType type;
 
     /* {@code true} if this creative template produces interstitial
@@ -122,9 +120,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Gets the id value for this CreativeTemplate.
      * 
      * @return id   * Uniquely identifies the {@code CreativeTemplate}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * template is created.
+     * is read-only and is assigned
+     *                 by Google when a creative template is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -135,9 +132,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Sets the id value for this CreativeTemplate.
      * 
      * @param id   * Uniquely identifies the {@code CreativeTemplate}. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * template is created.
+     * is read-only and is assigned
+     *                 by Google when a creative template is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -148,8 +144,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Gets the name value for this CreativeTemplate.
      * 
      * @return name   * The name of the creative template. This attribute is required
-     * and has a
-     *                 maximum length of 255 characters.
+     * and has a maximum length of 255
+     *                 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -160,8 +156,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Sets the name value for this CreativeTemplate.
      * 
      * @param name   * The name of the creative template. This attribute is required
-     * and has a
-     *                 maximum length of 255 characters.
+     * and has a maximum length of 255
+     *                 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -248,8 +244,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Gets the status value for this CreativeTemplate.
      * 
      * @return status   * The status of the {@code CreativeTemplate}. This attribute
-     * is read-only
-     *                 and is assigned by Google.
+     * is read-only and is assigned by
+     *                 Google.
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeTemplateStatus getStatus() {
         return status;
@@ -260,8 +256,8 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Sets the status value for this CreativeTemplate.
      * 
      * @param status   * The status of the {@code CreativeTemplate}. This attribute
-     * is read-only
-     *                 and is assigned by Google.
+     * is read-only and is assigned by
+     *                 Google.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202205.CreativeTemplateStatus status) {
         this.status = status;
@@ -272,8 +268,7 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Gets the type value for this CreativeTemplate.
      * 
      * @return type   * The type of the {@code CreativeTemplate}. Publisher can only
-     * create
-     *                 user-defined template
+     * create user-defined template
      */
     public com.google.api.ads.admanager.axis.v202205.CreativeTemplateType getType() {
         return type;
@@ -284,8 +279,7 @@ public class CreativeTemplate  implements java.io.Serializable {
      * Sets the type value for this CreativeTemplate.
      * 
      * @param type   * The type of the {@code CreativeTemplate}. Publisher can only
-     * create
-     *                 user-defined template
+     * create user-defined template
      */
     public void setType(com.google.api.ads.admanager.axis.v202205.CreativeTemplateType type) {
         this.type = type;

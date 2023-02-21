@@ -1,3 +1,14 @@
+4.21.0 - 02/21/2023
+-------------------
+AdWords:
+ - No changes.
+
+Ad Manager:
+ - Added support for v202302.
+ - Removed support for v202202.
+ - Removed examples fo v202205.
+
+
 4.20.0 - 11/02/2022
 -------------------
 AdWords:
@@ -322,7 +333,7 @@ AdWords:
     unmarshalling responses from `AdGroupAdService` that contain template
     ads. Fixes https://github.com/googleads/googleads-java-lib/issues/145.
   - Added an overload of `downloadBatchJobMutateResponse` in
-    [`BatchJobHelperInterface`](https://github.com/googleads/googleads-java-lib/blob/master/modules/ads_lib/src/main/java/com/google/api/ads/adwords/lib/utils/BatchJobHelperInterface.java)
+    [`BatchJobHelperInterface`](https://github.com/googleads/googleads-java-lib/blob/main/modules/ads_lib/src/main/java/com/google/api/ads/adwords/lib/utils/BatchJobHelperInterface.java)
     to support retrieving batch job results in chunks. The new method takes
     `startIndex` and `numberResults` parameters, similar to paging options
     for `get` requests.  This new feature is only available in the Axis
@@ -1130,7 +1141,7 @@ AdWords:
   - Added support for the [skipColumnHeader option](https://developers.google.com/adwords/api/docs/guides/reporting#optional-headers)
     introduced in v201502.
   - Removed reference to `MarginalCpc` selector field in
-    [GetKeywordBidSimulations](https://github.com/googleads/googleads-java-lib/blob/master/examples/adwords_axis/src/main/java/adwords/axis/v201502/optimization/GetKeywordBidSimulations.java).
+    [GetKeywordBidSimulations](https://github.com/googleads/googleads-java-lib/blob/main/examples/adwords_axis/src/main/java/adwords/axis/v201502/optimization/GetKeywordBidSimulations.java).
     This field was removed from `DataService` in [v201502](https://developers.google.com/adwords/api/docs/guides/migration/v201502).
   - Added Java enums that represent all the fields for all the entity services available on each API
     version.

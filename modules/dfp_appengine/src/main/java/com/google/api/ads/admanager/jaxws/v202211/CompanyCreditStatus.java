@@ -44,9 +44,8 @@ public enum CompanyCreditStatus {
 
     /**
      * 
-     *                 When the credit status is active, all line items in all orders
-     *                 belonging to the company will be served. This is a Basic as well as an
-     *                 Advanced Credit Status setting.
+     *                 When the credit status is active, all line items in all orders belonging to the company will
+     *                 be served. This is a Basic as well as an Advanced Credit Status setting.
      *               
      * 
      */
@@ -54,10 +53,10 @@ public enum CompanyCreditStatus {
 
     /**
      * 
-     *                 When the credit status is on hold, the publisher cannot activate new line
-     *                 items of the company. However, line items that were activated before the
-     *                 credit status change will remain active. You can still create orders and
-     *                 line items for the company. This is an Advanced Credit Status setting.
+     *                 When the credit status is on hold, the publisher cannot activate new line items of the
+     *                 company. However, line items that were activated before the credit status change will remain
+     *                 active. You can still create orders and line items for the company. This is an Advanced
+     *                 Credit Status setting.
      *               
      * 
      */
@@ -65,11 +64,10 @@ public enum CompanyCreditStatus {
 
     /**
      * 
-     *                 When the credit status is credit stop, the publisher cannot activate new
-     *                 line items of the company. However, line items that were activated before
-     *                 the credit status change will remain active. You cannot create any new
-     *                 orders or line items for the company. This is an Advanced Credit Status
-     *                 setting.
+     *                 When the credit status is credit stop, the publisher cannot activate new line items of the
+     *                 company. However, line items that were activated before the credit status change will remain
+     *                 active. You cannot create any new orders or line items for the company. This is an Advanced
+     *                 Credit Status setting.
      *               
      * 
      */
@@ -77,13 +75,11 @@ public enum CompanyCreditStatus {
 
     /**
      * 
-     *                 When the credit status is inactive, the publisher cannot activate new
-     *                 line items of the company. However, line items that were activated before
-     *                 the credit status change will remain active. You cannot create any new
-     *                 orders or line items for the company. It is used to mark companies with
-     *                 which business is to be discontinued. Such companies are not listed in
-     *                 Ad Manager web site. This is a Basic as well as an
-     *                 Advanced Credit Status setting.
+     *                 When the credit status is inactive, the publisher cannot activate new line items of the
+     *                 company. However, line items that were activated before the credit status change will remain
+     *                 active. You cannot create any new orders or line items for the company. It is used to mark
+     *                 companies with which business is to be discontinued. Such companies are not listed in Ad
+     *                 Manager web site. This is a Basic as well as an Advanced Credit Status setting.
      *               
      * 
      */
@@ -91,11 +87,10 @@ public enum CompanyCreditStatus {
 
     /**
      * 
-     *                 When the credit status of a company is marked blocked, then all active
-     *                 line items belonging to the company will stop serving with immediate
-     *                 effect. You cannot active new line items of the company nor can you
-     *                 create any new orders or line items belonging to the company. This is an
-     *                 Advanced Credit Status setting.
+     *                 When the credit status of a company is marked blocked, then all active line items belonging
+     *                 to the company will stop serving with immediate effect. You cannot active new line items of
+     *                 the company nor can you create any new orders or line items belonging to the company. This is
+     *                 an Advanced Credit Status setting.
      *               
      * 
      */

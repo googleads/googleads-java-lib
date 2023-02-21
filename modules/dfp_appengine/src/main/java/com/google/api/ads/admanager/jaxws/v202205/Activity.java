@@ -23,13 +23,13 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             <p>An activity is a specific user action that an advertiser wants to track, such as the
- *             completion of a purchase or a visit to a webpage. You create and manage activities in Ad Manager.
- *             When a user performs the action after seeing an advertiser's ad, that's a conversion.</p>
+ *             An activity is a specific user action that an advertiser wants to track, such as the completion
+ *             of a purchase or a visit to a webpage. You create and manage activities in Ad Manager. When a
+ *             user performs the action after seeing an advertiser's ad, that's a conversion.
  *             
  *             <p>For example, you set up an activity in Ad Manager to track how many users visit an
  *             advertiser's promotional website after viewing or clicking on an ad. When a user views an ad,
- *             then visits the page, that's one conversion.</p>
+ *             then visits the page, that's one conversion.
  *           
  * 
  * <p>Java class for Activity complex type.

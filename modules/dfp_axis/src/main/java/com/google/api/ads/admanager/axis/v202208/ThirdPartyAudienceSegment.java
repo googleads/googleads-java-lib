@@ -35,9 +35,9 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.admanager.axi
      * readonly and is assigned by the
      *                     data provider.
      *                     
-     *                     <p> The CPM cost comes from the active pricing,
-     * if there is one;
-     *                     otherwise it comes from the latest pricing. */
+     *                     <p>The CPM cost comes from the active pricing,
+     * if there is one; otherwise it comes from the
+     *                     latest pricing. */
     private com.google.api.ads.admanager.axis.v202208.Money cost;
 
     /* Specifies the license type of the external segment. This attribute
@@ -147,9 +147,9 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.admanager.axi
      * readonly and is assigned by the
      *                     data provider.
      *                     
-     *                     <p> The CPM cost comes from the active pricing,
-     * if there is one;
-     *                     otherwise it comes from the latest pricing.
+     *                     <p>The CPM cost comes from the active pricing,
+     * if there is one; otherwise it comes from the
+     *                     latest pricing.
      */
     public com.google.api.ads.admanager.axis.v202208.Money getCost() {
         return cost;
@@ -163,9 +163,9 @@ public class ThirdPartyAudienceSegment  extends com.google.api.ads.admanager.axi
      * readonly and is assigned by the
      *                     data provider.
      *                     
-     *                     <p> The CPM cost comes from the active pricing,
-     * if there is one;
-     *                     otherwise it comes from the latest pricing.
+     *                     <p>The CPM cost comes from the active pricing,
+     * if there is one; otherwise it comes from the
+     *                     latest pricing.
      */
     public void setCost(com.google.api.ads.admanager.axis.v202208.Money cost) {
         this.cost = cost;

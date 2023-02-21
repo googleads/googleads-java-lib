@@ -29,7 +29,7 @@ package com.google.api.ads.admanager.axis.v202205;
  * on what happens to an order and
  *             its line items when it is approved and overbooked, see
  * the
- *             <a href="https://support.google.com/dfp_premium/answer/177334">Ad
+ *             <a href="https://support.google.com/admanager/answer/177334">Ad
  * Manager Help Center</a>.
  */
 public class ApproveAndOverbookOrders  extends com.google.api.ads.admanager.axis.v202205.ApproveOrders  implements java.io.Serializable {

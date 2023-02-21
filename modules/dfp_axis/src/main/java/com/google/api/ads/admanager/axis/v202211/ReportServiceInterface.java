@@ -25,21 +25,22 @@ public interface ReportServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns the URL at which the report file can be downloaded.
-     * <p>
-     *         The report will be generated as a gzip archive, containing
+     * 
+     *         <p>The report will be generated as a gzip archive, containing
      * the report file itself.
      */
     public java.lang.String getReportDownloadURL(java.lang.Long reportJobId, com.google.api.ads.admanager.axis.v202211.ExportFormat exportFormat) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
     /**
      * Returns the URL at which the report file can be downloaded,
-     * and allows for customization
-     *         of the downloaded report.
-     *         <p>
-     *         By default, the report will be generated as a gzip archive,
-     * containing the report file itself.
-     *         This can be changed by setting {@link ReportDownloadOptions#useGzipCompression}
-     * to false.
+     * and allows for customization of the
+     *         downloaded report.
+     *         
+     *         <p>By default, the report will be generated as a gzip archive,
+     * containing the report file
+     *         itself. This can be changed by setting {@link ReportDownloadOptions#useGzipCompression}
+     * to
+     *         false.
      */
     public java.lang.String getReportDownloadUrlWithOptions(java.lang.Long reportJobId, com.google.api.ads.admanager.axis.v202211.ReportDownloadOptions reportDownloadOptions) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
@@ -53,11 +54,12 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      * Retrieves a page of the saved queries either created by or
      * shared with the current user. Each
      *         {@link SavedQuery} in the page, if it is compatible with the
-     * current API version, will
-     *         contain a {@link ReportQuery} object which can be optionally
-     * modified and used to create a
-     *         {@link ReportJob}. This can then be passed to {@link ReportService#runReportJob}.
-     * The following fields are supported for filtering:
+     * current API version, will contain
+     *         a {@link ReportQuery} object which can be optionally modified
+     * and used to create a {@link
+     *         ReportJob}. This can then be passed to {@link ReportService#runReportJob}.
+     * The following fields
+     *         are supported for filtering:
      *         
      *         <table>
      *         <tr>
@@ -79,8 +81,9 @@ public interface ReportServiceInterface extends java.rmi.Remote {
      * Initiates the execution of a {@link ReportQuery} on the server.
      * 
      *         <p>The following fields are required:
+     *         
      *         <ul>
-     *         <li>{@link ReportJob#reportQuery}</li>
+     *         <li>{@link ReportJob#reportQuery}
      *         </ul>
      */
     public com.google.api.ads.admanager.axis.v202211.ReportJob runReportJob(com.google.api.ads.admanager.axis.v202211.ReportJob reportJob) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;

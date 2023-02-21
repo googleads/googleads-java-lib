@@ -31,8 +31,8 @@ public class ThirdPartyCreative  extends com.google.api.ads.admanager.axis.v2022
     private java.lang.String snippet;
 
     /* The HTML snippet that this creative delivers with macros expanded.
-     * This
-     *                     attribute is read-only and is set by Google. */
+     * This attribute is read-only
+     *                     and is set by Google. */
     private java.lang.String expandedSnippet;
 
     /* The SSL compatibility scan result for this creative.
@@ -158,8 +158,8 @@ public class ThirdPartyCreative  extends com.google.api.ads.admanager.axis.v2022
      * Gets the expandedSnippet value for this ThirdPartyCreative.
      * 
      * @return expandedSnippet   * The HTML snippet that this creative delivers with macros expanded.
-     * This
-     *                     attribute is read-only and is set by Google.
+     * This attribute is read-only
+     *                     and is set by Google.
      */
     public java.lang.String getExpandedSnippet() {
         return expandedSnippet;
@@ -170,8 +170,8 @@ public class ThirdPartyCreative  extends com.google.api.ads.admanager.axis.v2022
      * Sets the expandedSnippet value for this ThirdPartyCreative.
      * 
      * @param expandedSnippet   * The HTML snippet that this creative delivers with macros expanded.
-     * This
-     *                     attribute is read-only and is set by Google.
+     * This attribute is read-only
+     *                     and is set by Google.
      */
     public void setExpandedSnippet(java.lang.String expandedSnippet) {
         this.expandedSnippet = expandedSnippet;

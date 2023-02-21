@@ -25,37 +25,34 @@ package com.google.api.ads.admanager.axis.v202211;
 /**
  * A {@code Creative} represents the media for the ad being served.
  * 
- *             <p>Read more about creatives on the
- *             <a href="https://support.google.com/dfp_premium/answer/3185155">Ad
- * Manager Help Center</a>.</p>
+ *             <p>Read more about creatives on the <a
+ *             href="https://support.google.com/admanager/answer/3185155">Ad
+ * Manager Help Center</a>.
  */
 public abstract class Creative  implements java.io.Serializable {
     /* The ID of the advertiser that owns the creative. This attribute
-     * is
-     *                 required. */
+     * is required. */
     private java.lang.Long advertiserId;
 
     /* Uniquely identifies the {@code Creative}. This value is read-only
-     * and is
-     *                 assigned by Google when the creative is created. This
-     * attribute is required
-     *                 for updates. */
+     * and is assigned by Google
+     *                 when the creative is created. This attribute is required
+     * for updates. */
     private java.lang.Long id;
 
     /* The name of the creative. This attribute is required and has
-     * a maximum
-     *                 length of 255 characters. */
+     * a maximum length of 255
+     *                 characters. */
     private java.lang.String name;
 
     /* The {@link Size} of the creative. This attribute is required
-     * for creation
-     *                 and then is read-only. */
+     * for creation and then is
+     *                 read-only. */
     private com.google.api.ads.admanager.axis.v202211.Size size;
 
     /* The URL of the creative for previewing the media. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * is created. */
+     * is read-only and is assigned
+     *                 by Google when a creative is created. */
     private java.lang.String previewUrl;
 
     /* Set of policy labels detected for this creative.
@@ -124,8 +121,7 @@ public abstract class Creative  implements java.io.Serializable {
      * Gets the advertiserId value for this Creative.
      * 
      * @return advertiserId   * The ID of the advertiser that owns the creative. This attribute
-     * is
-     *                 required.
+     * is required.
      */
     public java.lang.Long getAdvertiserId() {
         return advertiserId;
@@ -136,8 +132,7 @@ public abstract class Creative  implements java.io.Serializable {
      * Sets the advertiserId value for this Creative.
      * 
      * @param advertiserId   * The ID of the advertiser that owns the creative. This attribute
-     * is
-     *                 required.
+     * is required.
      */
     public void setAdvertiserId(java.lang.Long advertiserId) {
         this.advertiserId = advertiserId;
@@ -148,10 +143,9 @@ public abstract class Creative  implements java.io.Serializable {
      * Gets the id value for this Creative.
      * 
      * @return id   * Uniquely identifies the {@code Creative}. This value is read-only
-     * and is
-     *                 assigned by Google when the creative is created. This
-     * attribute is required
-     *                 for updates.
+     * and is assigned by Google
+     *                 when the creative is created. This attribute is required
+     * for updates.
      */
     public java.lang.Long getId() {
         return id;
@@ -162,10 +156,9 @@ public abstract class Creative  implements java.io.Serializable {
      * Sets the id value for this Creative.
      * 
      * @param id   * Uniquely identifies the {@code Creative}. This value is read-only
-     * and is
-     *                 assigned by Google when the creative is created. This
-     * attribute is required
-     *                 for updates.
+     * and is assigned by Google
+     *                 when the creative is created. This attribute is required
+     * for updates.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -176,8 +169,8 @@ public abstract class Creative  implements java.io.Serializable {
      * Gets the name value for this Creative.
      * 
      * @return name   * The name of the creative. This attribute is required and has
-     * a maximum
-     *                 length of 255 characters.
+     * a maximum length of 255
+     *                 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -188,8 +181,8 @@ public abstract class Creative  implements java.io.Serializable {
      * Sets the name value for this Creative.
      * 
      * @param name   * The name of the creative. This attribute is required and has
-     * a maximum
-     *                 length of 255 characters.
+     * a maximum length of 255
+     *                 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -200,8 +193,8 @@ public abstract class Creative  implements java.io.Serializable {
      * Gets the size value for this Creative.
      * 
      * @return size   * The {@link Size} of the creative. This attribute is required
-     * for creation
-     *                 and then is read-only.
+     * for creation and then is
+     *                 read-only.
      */
     public com.google.api.ads.admanager.axis.v202211.Size getSize() {
         return size;
@@ -212,8 +205,8 @@ public abstract class Creative  implements java.io.Serializable {
      * Sets the size value for this Creative.
      * 
      * @param size   * The {@link Size} of the creative. This attribute is required
-     * for creation
-     *                 and then is read-only.
+     * for creation and then is
+     *                 read-only.
      */
     public void setSize(com.google.api.ads.admanager.axis.v202211.Size size) {
         this.size = size;
@@ -224,9 +217,8 @@ public abstract class Creative  implements java.io.Serializable {
      * Gets the previewUrl value for this Creative.
      * 
      * @return previewUrl   * The URL of the creative for previewing the media. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * is created.
+     * is read-only and is assigned
+     *                 by Google when a creative is created.
      */
     public java.lang.String getPreviewUrl() {
         return previewUrl;
@@ -237,9 +229,8 @@ public abstract class Creative  implements java.io.Serializable {
      * Sets the previewUrl value for this Creative.
      * 
      * @param previewUrl   * The URL of the creative for previewing the media. This attribute
-     * is
-     *                 read-only and is assigned by Google when a creative
-     * is created.
+     * is read-only and is assigned
+     *                 by Google when a creative is created.
      */
     public void setPreviewUrl(java.lang.String previewUrl) {
         this.previewUrl = previewUrl;

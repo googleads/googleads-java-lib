@@ -32,10 +32,8 @@ import javax.xml.ws.ResponseWrapper;
  *       
  *       <p>An example query text might be {@code "select CountryCode, Name from Geo_Target"}, where
  *       {@code CountryCode} and {@code Name} are columns of interest and {@code Geo_Target} is the table.
- *       </p>
  *       
- *       <p>The following tables are supported: </p>
- *       
+ *       <p>The following tables are supported:
  *       
  *       <h2>Geo_Target</h2>
  *       
@@ -122,7 +120,7 @@ import javax.xml.ws.ResponseWrapper;
  *       <h2>Browser</h2>
  *       
  *       <p>Note: this table only contains browsers that are available in the Ad Manager UI targeting
- *       picker.</p>
+ *       picker.
  *       
  *       <table>
  *       <tr>
@@ -365,8 +363,7 @@ public interface PublisherQueryLanguageServiceInterface {
 
     /**
      * 
-     *         Retrieves rows of data that satisfy the given {@link Statement#query} from
-     *         the system.
+     *         Retrieves rows of data that satisfy the given {@link Statement#query} from the system.
      *       
      * 
      * @param selectStatement

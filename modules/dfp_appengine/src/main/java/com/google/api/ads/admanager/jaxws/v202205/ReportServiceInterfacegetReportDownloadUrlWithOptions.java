@@ -23,11 +23,12 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Returns the URL at which the report file can be downloaded, and allows for customization
- *             of the downloaded report.
- *             <p>
- *             By default, the report will be generated as a gzip archive, containing the report file itself.
- *             This can be changed by setting {@link ReportDownloadOptions#useGzipCompression} to false.
+ *             Returns the URL at which the report file can be downloaded, and allows for customization of the
+ *             downloaded report.
+ *             
+ *             <p>By default, the report will be generated as a gzip archive, containing the report file
+ *             itself. This can be changed by setting {@link ReportDownloadOptions#useGzipCompression} to
+ *             false.
  *           
  * 
  * <p>Java class for getReportDownloadUrlWithOptions element declaration.

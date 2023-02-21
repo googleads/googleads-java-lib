@@ -24,9 +24,8 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * Used to define the look and feel of native ads, for both web and
- * apps.
- *             Native styles determine how native creatives look for
- * a segment of inventory.
+ * apps. Native styles determine
+ *             how native creatives look for a segment of inventory.
  */
 public class NativeStyle  implements java.io.Serializable {
     /* Uniquely identifies the {@code NativeStyle}. This attribute
@@ -40,8 +39,8 @@ public class NativeStyle  implements java.io.Serializable {
     private java.lang.String name;
 
     /* The HTML snippet of the native style with placeholders for
-     * the associated variables.
-     *                 This attribute is required. */
+     * the associated variables. This
+     *                 attribute is required. */
     private java.lang.String htmlSnippet;
 
     /* The CSS snippet of the native style, with placeholders for
@@ -58,9 +57,9 @@ public class NativeStyle  implements java.io.Serializable {
      * this must be used with 1x1 size. */
     private java.lang.Boolean isFluid;
 
-    /* The targeting criteria for this native style.
-     *                 Only ad unit and key-value targeting are supported
-     * at this time. */
+    /* The targeting criteria for this native style. Only ad unit
+     * and key-value targeting are
+     *                 supported at this time. */
     private com.google.api.ads.admanager.axis.v202208.Targeting targeting;
 
     /* The status of the native style. This attribute is read-only. */
@@ -161,8 +160,8 @@ public class NativeStyle  implements java.io.Serializable {
      * Gets the htmlSnippet value for this NativeStyle.
      * 
      * @return htmlSnippet   * The HTML snippet of the native style with placeholders for
-     * the associated variables.
-     *                 This attribute is required.
+     * the associated variables. This
+     *                 attribute is required.
      */
     public java.lang.String getHtmlSnippet() {
         return htmlSnippet;
@@ -173,8 +172,8 @@ public class NativeStyle  implements java.io.Serializable {
      * Sets the htmlSnippet value for this NativeStyle.
      * 
      * @param htmlSnippet   * The HTML snippet of the native style with placeholders for
-     * the associated variables.
-     *                 This attribute is required.
+     * the associated variables. This
+     *                 attribute is required.
      */
     public void setHtmlSnippet(java.lang.String htmlSnippet) {
         this.htmlSnippet = htmlSnippet;
@@ -254,9 +253,9 @@ public class NativeStyle  implements java.io.Serializable {
     /**
      * Gets the targeting value for this NativeStyle.
      * 
-     * @return targeting   * The targeting criteria for this native style.
-     *                 Only ad unit and key-value targeting are supported
-     * at this time.
+     * @return targeting   * The targeting criteria for this native style. Only ad unit
+     * and key-value targeting are
+     *                 supported at this time.
      */
     public com.google.api.ads.admanager.axis.v202208.Targeting getTargeting() {
         return targeting;
@@ -266,9 +265,9 @@ public class NativeStyle  implements java.io.Serializable {
     /**
      * Sets the targeting value for this NativeStyle.
      * 
-     * @param targeting   * The targeting criteria for this native style.
-     *                 Only ad unit and key-value targeting are supported
-     * at this time.
+     * @param targeting   * The targeting criteria for this native style. Only ad unit
+     * and key-value targeting are
+     *                 supported at this time.
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202208.Targeting targeting) {
         this.targeting = targeting;

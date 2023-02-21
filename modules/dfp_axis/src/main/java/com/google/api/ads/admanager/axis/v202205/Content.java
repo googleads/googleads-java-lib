@@ -24,17 +24,17 @@ package com.google.api.ads.admanager.axis.v202205;
 
 /**
  * A {@code Content} represents video metadata from a publisher's
- *             Content Management System (CMS) that has been synced to
- * Ad Manager.
- *             <p>
- *             Video line items can be targeted to {@code Content}
- *             to indicate what ads should match when the {@code Content}
- * is being played.
+ * Content Management System (CMS)
+ *             that has been synced to Ad Manager.
+ *             
+ *             <p>Video line items can be targeted to {@code Content}
+ * to indicate what ads should match when the
+ *             {@code Content} is being played.
  */
 public class Content  implements java.io.Serializable {
     /* Uniquely identifies the {@code Content}. This attribute is
-     * read-only and
-     *                 is assigned by Google when the content is created. */
+     * read-only and is assigned by Google
+     *                 when the content is created. */
     private java.lang.Long id;
 
     /* The name of the {@code Content}. This attribute is read-only. */
@@ -44,9 +44,8 @@ public class Content  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202205.ContentStatus status;
 
     /* Whether the content status was defined by the user, or by the
-     * source CMS
-     *                 from which the content was ingested. This attribute
-     * is read-only. */
+     * source CMS from which the content
+     *                 was ingested. This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.ContentStatusDefinedBy statusDefinedBy;
 
     /* The current DAI ingest status of the HLS media for the {@code
@@ -108,8 +107,7 @@ public class Content  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202205.DateTime lastModifiedDateTime;
 
     /* Information about the content from the CMS it was ingested
-     * from.
-     *                 This attribute is read-only. */
+     * from. This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202205.CmsContent[] cmsSources;
 
     /* IDs of the {@link ContentBundle} of which this content is a
@@ -191,8 +189,8 @@ public class Content  implements java.io.Serializable {
      * Gets the id value for this Content.
      * 
      * @return id   * Uniquely identifies the {@code Content}. This attribute is
-     * read-only and
-     *                 is assigned by Google when the content is created.
+     * read-only and is assigned by Google
+     *                 when the content is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -203,8 +201,8 @@ public class Content  implements java.io.Serializable {
      * Sets the id value for this Content.
      * 
      * @param id   * Uniquely identifies the {@code Content}. This attribute is
-     * read-only and
-     *                 is assigned by Google when the content is created.
+     * read-only and is assigned by Google
+     *                 when the content is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -255,9 +253,8 @@ public class Content  implements java.io.Serializable {
      * Gets the statusDefinedBy value for this Content.
      * 
      * @return statusDefinedBy   * Whether the content status was defined by the user, or by the
-     * source CMS
-     *                 from which the content was ingested. This attribute
-     * is read-only.
+     * source CMS from which the content
+     *                 was ingested. This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.ContentStatusDefinedBy getStatusDefinedBy() {
         return statusDefinedBy;
@@ -268,9 +265,8 @@ public class Content  implements java.io.Serializable {
      * Sets the statusDefinedBy value for this Content.
      * 
      * @param statusDefinedBy   * Whether the content status was defined by the user, or by the
-     * source CMS
-     *                 from which the content was ingested. This attribute
-     * is read-only.
+     * source CMS from which the content
+     *                 was ingested. This attribute is read-only.
      */
     public void setStatusDefinedBy(com.google.api.ads.admanager.axis.v202205.ContentStatusDefinedBy statusDefinedBy) {
         this.statusDefinedBy = statusDefinedBy;
@@ -525,8 +521,7 @@ public class Content  implements java.io.Serializable {
      * Gets the cmsSources value for this Content.
      * 
      * @return cmsSources   * Information about the content from the CMS it was ingested
-     * from.
-     *                 This attribute is read-only.
+     * from. This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202205.CmsContent[] getCmsSources() {
         return cmsSources;
@@ -537,8 +532,7 @@ public class Content  implements java.io.Serializable {
      * Sets the cmsSources value for this Content.
      * 
      * @param cmsSources   * Information about the content from the CMS it was ingested
-     * from.
-     *                 This attribute is read-only.
+     * from. This attribute is read-only.
      */
     public void setCmsSources(com.google.api.ads.admanager.axis.v202205.CmsContent[] cmsSources) {
         this.cmsSources = cmsSources;

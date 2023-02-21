@@ -23,10 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@link CustomCriteriaNode} is a node in the custom targeting tree. A custom
- *             criteria node can either be a {@link CustomCriteriaSet} (a non-leaf node) or
- *             a {@link CustomCriteria} (a leaf node). The custom criteria targeting tree is
- *             subject to the rules defined on {@link Targeting#customTargeting}.
+ *             A {@link CustomCriteriaNode} is a node in the custom targeting tree. A custom criteria node can
+ *             either be a {@link CustomCriteriaSet} (a non-leaf node) or a {@link CustomCriteria} (a leaf
+ *             node). The custom criteria targeting tree is subject to the rules defined on {@link
+ *             Targeting#customTargeting}.
  *           
  * 
  * <p>Java class for CustomCriteriaNode complex type.

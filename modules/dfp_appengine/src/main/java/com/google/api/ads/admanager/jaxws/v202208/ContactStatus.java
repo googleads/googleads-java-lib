@@ -54,8 +54,7 @@ public enum ContactStatus {
 
     /**
      * 
-     *                 The contact has been invited to see their orders, but has not yet
-     *                 accepted the invitation.
+     *                 The contact has been invited to see their orders, but has not yet accepted the invitation.
      *               
      * 
      */
@@ -63,8 +62,7 @@ public enum ContactStatus {
 
     /**
      * 
-     *                 The contact has been invited to see their orders, but the invitation
-     *                 has already expired.
+     *                 The contact has been invited to see their orders, but the invitation has already expired.
      *               
      * 
      */
@@ -72,8 +70,7 @@ public enum ContactStatus {
 
     /**
      * 
-     *                 The contact was invited to see their orders, but the invitation was
-     *                 cancelled.
+     *                 The contact was invited to see their orders, but the invitation was cancelled.
      *               
      * 
      */
@@ -89,8 +86,7 @@ public enum ContactStatus {
 
     /**
      * 
-     *                 The contact accepted an invitation to see their orders, but their
-     *                 access was later revoked.
+     *                 The contact accepted an invitation to see their orders, but their access was later revoked.
      *               
      * 
      */

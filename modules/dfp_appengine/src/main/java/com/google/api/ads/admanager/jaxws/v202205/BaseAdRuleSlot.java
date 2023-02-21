@@ -24,9 +24,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Simple object representing an ad slot within an {@link AdRule}. Ad rule slots
- *             contain information about the types/number of ads to display, as well
- *             as additional information on how the ad server will generate playlists.
+ *             Simple object representing an ad slot within an {@link AdRule}. Ad rule slots contain information
+ *             about the types/number of ads to display, as well as additional information on how the ad server
+ *             will generate playlists.
  *           
  * 
  * <p>Java class for BaseAdRuleSlot complex type.

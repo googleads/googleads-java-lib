@@ -27,7 +27,8 @@ package com.google.api.ads.admanager.axis.v202208;
  */
 public class ForecastBreakdownEntry  implements java.io.Serializable {
     /* The optional name of this entry, as specified in the corresponding
-     * {@link ForecastBreakdownTarget#name} field. */
+     * {@link
+     *                 ForecastBreakdownTarget#name} field. */
     private java.lang.String name;
 
     /* The forecast of this entry. */
@@ -56,7 +57,8 @@ public class ForecastBreakdownEntry  implements java.io.Serializable {
      * Gets the name value for this ForecastBreakdownEntry.
      * 
      * @return name   * The optional name of this entry, as specified in the corresponding
-     * {@link ForecastBreakdownTarget#name} field.
+     * {@link
+     *                 ForecastBreakdownTarget#name} field.
      */
     public java.lang.String getName() {
         return name;
@@ -67,7 +69,8 @@ public class ForecastBreakdownEntry  implements java.io.Serializable {
      * Sets the name value for this ForecastBreakdownEntry.
      * 
      * @param name   * The optional name of this entry, as specified in the corresponding
-     * {@link ForecastBreakdownTarget#name} field.
+     * {@link
+     *                 ForecastBreakdownTarget#name} field.
      */
     public void setName(java.lang.String name) {
         this.name = name;

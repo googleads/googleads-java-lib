@@ -1448,7 +1448,7 @@ public enum Column {
 
     /**
      * 
-     *                 The number of times a rich media video was played upto midpoint.
+     *                 The number of times a rich media video was played up to midpoint.
      *                 <p>Corresponds to "Midpoint" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 

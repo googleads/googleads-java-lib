@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Activities are organized within activity groups, which are sets of activities that share the
- *             same configuration. You create and manage activities from within activity groups.
+ *             Activities are organized within activity groups, which are sets of activities that share the same
+ *             configuration. You create and manage activities from within activity groups.
  *           
  * 
  * <p>Java class for ActivityGroup complex type.

@@ -24,40 +24,38 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * An {@code Order} represents a grouping of individual {@link LineItem}
- * objects, each of which fulfill an ad request from a particular advertiser.
+ * objects, each of which
+ *             fulfill an ad request from a particular advertiser.
  */
 public class Order  implements java.io.Serializable {
     /* The unique ID of the {@code Order}. This value is readonly
-     * and is assigned
-     *                 by Google. */
+     * and is assigned by Google. */
     private java.lang.Long id;
 
     /* The name of the {@code Order}. This value is required to create
-     * an order
-     *                 and has a maximum length of 255 characters. */
+     * an order and has a maximum
+     *                 length of 255 characters. */
     private java.lang.String name;
 
     /* The date and time at which the {@code Order} and its associated
-     * line items
-     *                 are eligible to begin serving. This attribute is readonly
-     * and is derived
-     *                 from the line item of the order which has the earliest
-     * {@link LineItem#startDateTime}. */
+     * line items are eligible to
+     *                 begin serving. This attribute is readonly and is derived
+     * from the line item of the order which
+     *                 has the earliest {@link LineItem#startDateTime}. */
     private com.google.api.ads.admanager.axis.v202208.DateTime startDateTime;
 
     /* The date and time at which the {@code Order} and its associated
-     * line items
-     *                 stop being served. This attribute is readonly and
-     * is derived from the line
-     *                 item of the order which has the latest {@link LineItem#endDateTime}. */
+     * line items stop being served.
+     *                 This attribute is readonly and is derived from the
+     * line item of the order which has the latest
+     *                 {@link LineItem#endDateTime}. */
     private com.google.api.ads.admanager.axis.v202208.DateTime endDateTime;
 
     /* Specifies whether or not the {@code Order} has an unlimited
-     * end date. This
-     *                 attribute is readonly and is {@code true} if any of
-     * the order's line items
-     *                 has {@link LineItem#unlimitedEndDateTime} set to {@code
-     * true}. */
+     * end date. This attribute is
+     *                 readonly and is {@code true} if any of the order's
+     * line items has {@link
+     *                 LineItem#unlimitedEndDateTime} set to {@code true}. */
     private java.lang.Boolean unlimitedEndDateTime;
 
     /* The status of the {@code Order}. This attribute is read-only. */
@@ -68,93 +66,86 @@ public class Order  implements java.io.Serializable {
     private java.lang.Boolean isArchived;
 
     /* Provides any additional notes that may annotate the {@code
-     * Order}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters. */
+     * Order}. This attribute is optional
+     *                 and has a maximum length of 65,535 characters. */
     private java.lang.String notes;
 
     /* An arbitrary ID to associate to the {@code Order}, which can
-     * be used as a
-     *                 key to an external system. This value is optional. */
+     * be used as a key to an external
+     *                 system. This value is optional. */
     private java.lang.Integer externalOrderId;
 
     /* The purchase order number for the {@code Order}. This value
-     * is optional
-     *                 and has a maximum length of 63 characters. */
+     * is optional and has a maximum
+     *                 length of 63 characters. */
     private java.lang.String poNumber;
 
     /* The ISO currency code for the currency used by the {@code Order}.
-     * This
-     *                 value is read-only and is the network's currency code. */
+     * This value is read-only and
+     *                 is the network's currency code. */
     private java.lang.String currencyCode;
 
-    /* The unique ID of the {@link Company}, which is of type
-     *                 {@link Company.Type#ADVERTISER}, to which this order
-     * belongs. This
-     *                 attribute is required. */
+    /* The unique ID of the {@link Company}, which is of type {@link
+     * Company.Type#ADVERTISER}, to
+     *                 which this order belongs. This attribute is required. */
     private java.lang.Long advertiserId;
 
     /* List of IDs for advertiser contacts of the order. */
     private long[] advertiserContactIds;
 
-    /* The unique ID of the {@link Company}, which is of type
-     *                 {@link Company.Type#AGENCY}, with which this order
-     * is associated. This
-     *                 attribute is optional. */
+    /* The unique ID of the {@link Company}, which is of type {@link
+     * Company.Type#AGENCY}, with which
+     *                 this order is associated. This attribute is optional. */
     private java.lang.Long agencyId;
 
     /* List of IDs for agency contacts of the order. */
     private long[] agencyContactIds;
 
     /* The unique ID of the {@link User} who created the {@code Order}
-     * on behalf
-     *                 of the advertiser. This value is readonly and is assigned
-     * by Google. */
+     * on behalf of the advertiser.
+     *                 This value is readonly and is assigned by Google. */
     private java.lang.Long creatorId;
 
     /* The unique ID of the {@link User} responsible for trafficking
-     * the {@code
-     *                 Order}. This value is required for creating an order. */
+     * the {@code Order}. This value is
+     *                 required for creating an order. */
     private java.lang.Long traffickerId;
 
     /* The IDs of the secondary traffickers associated with the order.
-     * This value
-     *                 is optional. */
+     * This value is optional. */
     private long[] secondaryTraffickerIds;
 
     /* The unique ID of the {@link User} responsible for the sales
-     * of the {@code
-     *                 Order}. This value is optional. */
+     * of the {@code Order}. This value is
+     *                 optional. */
     private java.lang.Long salespersonId;
 
     /* The IDs of the secondary salespeople associated with the order.
-     * This value
-     *                 is optional. */
+     * This value is optional. */
     private long[] secondarySalespersonIds;
 
     /* Total impressions delivered for all line items of this {@code
-     * Order}. This
-     *                 value is read-only and is assigned by Google. */
+     * Order}. This value is read-only
+     *                 and is assigned by Google. */
     private java.lang.Long totalImpressionsDelivered;
 
     /* Total clicks delivered for all line items of this {@code Order}.
-     * This value
-     *                 is read-only and is assigned by Google. */
+     * This value is read-only and is
+     *                 assigned by Google. */
     private java.lang.Long totalClicksDelivered;
 
     /* Total viewable impressions delivered for all line items of
-     * this {@code Order}.
-     *                 This value is read-only and is assigned by Google.
-     * Starting in v201705, this will be {@code null} when the order does
-     * not have line items
-     *                 trafficked against a viewable impressions goal. */
+     * this {@code Order}. This value is
+     *                 read-only and is assigned by Google. Starting in v201705,
+     * this will be {@code null} when the
+     *                 order does not have line items trafficked against
+     * a viewable impressions goal. */
     private java.lang.Long totalViewableImpressionsDelivered;
 
     /* Total budget for all line items of this {@code Order}. This
-     * value is a
-     *                 readonly field assigned by Google and is calculated
-     * from the associated
-     *                 {@link LineItem#costPerUnit} values. */
+     * value is a readonly field assigned
+     *                 by Google and is calculated from the associated {@link
+     * LineItem#costPerUnit} values. */
     private com.google.api.ads.admanager.axis.v202208.Money totalBudget;
 
     /* The set of labels applied directly to this order. */
@@ -168,13 +159,13 @@ public class Order  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202208.AppliedLabel[] effectiveAppliedLabels;
 
     /* The application which modified this order. This attribute is
-     * read only and
-     *                 is assigned by Google. */
+     * read only and is assigned by
+     *                 Google. */
     private java.lang.String lastModifiedByApp;
 
     /* Specifies whether or not the {@code Order} is a programmatic
-     * order. This
-     *                 value is optional and defaults to false. */
+     * order. This value is optional and
+     *                 defaults to false. */
     private java.lang.Boolean isProgrammatic;
 
     /* The IDs of all teams that this order is on directly. */
@@ -296,8 +287,7 @@ public class Order  implements java.io.Serializable {
      * Gets the id value for this Order.
      * 
      * @return id   * The unique ID of the {@code Order}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google.
      */
     public java.lang.Long getId() {
         return id;
@@ -308,8 +298,7 @@ public class Order  implements java.io.Serializable {
      * Sets the id value for this Order.
      * 
      * @param id   * The unique ID of the {@code Order}. This value is readonly
-     * and is assigned
-     *                 by Google.
+     * and is assigned by Google.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -320,8 +309,8 @@ public class Order  implements java.io.Serializable {
      * Gets the name value for this Order.
      * 
      * @return name   * The name of the {@code Order}. This value is required to create
-     * an order
-     *                 and has a maximum length of 255 characters.
+     * an order and has a maximum
+     *                 length of 255 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -332,8 +321,8 @@ public class Order  implements java.io.Serializable {
      * Sets the name value for this Order.
      * 
      * @param name   * The name of the {@code Order}. This value is required to create
-     * an order
-     *                 and has a maximum length of 255 characters.
+     * an order and has a maximum
+     *                 length of 255 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -344,11 +333,10 @@ public class Order  implements java.io.Serializable {
      * Gets the startDateTime value for this Order.
      * 
      * @return startDateTime   * The date and time at which the {@code Order} and its associated
-     * line items
-     *                 are eligible to begin serving. This attribute is readonly
-     * and is derived
-     *                 from the line item of the order which has the earliest
-     * {@link LineItem#startDateTime}.
+     * line items are eligible to
+     *                 begin serving. This attribute is readonly and is derived
+     * from the line item of the order which
+     *                 has the earliest {@link LineItem#startDateTime}.
      */
     public com.google.api.ads.admanager.axis.v202208.DateTime getStartDateTime() {
         return startDateTime;
@@ -359,11 +347,10 @@ public class Order  implements java.io.Serializable {
      * Sets the startDateTime value for this Order.
      * 
      * @param startDateTime   * The date and time at which the {@code Order} and its associated
-     * line items
-     *                 are eligible to begin serving. This attribute is readonly
-     * and is derived
-     *                 from the line item of the order which has the earliest
-     * {@link LineItem#startDateTime}.
+     * line items are eligible to
+     *                 begin serving. This attribute is readonly and is derived
+     * from the line item of the order which
+     *                 has the earliest {@link LineItem#startDateTime}.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202208.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -374,10 +361,10 @@ public class Order  implements java.io.Serializable {
      * Gets the endDateTime value for this Order.
      * 
      * @return endDateTime   * The date and time at which the {@code Order} and its associated
-     * line items
-     *                 stop being served. This attribute is readonly and
-     * is derived from the line
-     *                 item of the order which has the latest {@link LineItem#endDateTime}.
+     * line items stop being served.
+     *                 This attribute is readonly and is derived from the
+     * line item of the order which has the latest
+     *                 {@link LineItem#endDateTime}.
      */
     public com.google.api.ads.admanager.axis.v202208.DateTime getEndDateTime() {
         return endDateTime;
@@ -388,10 +375,10 @@ public class Order  implements java.io.Serializable {
      * Sets the endDateTime value for this Order.
      * 
      * @param endDateTime   * The date and time at which the {@code Order} and its associated
-     * line items
-     *                 stop being served. This attribute is readonly and
-     * is derived from the line
-     *                 item of the order which has the latest {@link LineItem#endDateTime}.
+     * line items stop being served.
+     *                 This attribute is readonly and is derived from the
+     * line item of the order which has the latest
+     *                 {@link LineItem#endDateTime}.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202208.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -402,11 +389,10 @@ public class Order  implements java.io.Serializable {
      * Gets the unlimitedEndDateTime value for this Order.
      * 
      * @return unlimitedEndDateTime   * Specifies whether or not the {@code Order} has an unlimited
-     * end date. This
-     *                 attribute is readonly and is {@code true} if any of
-     * the order's line items
-     *                 has {@link LineItem#unlimitedEndDateTime} set to {@code
-     * true}.
+     * end date. This attribute is
+     *                 readonly and is {@code true} if any of the order's
+     * line items has {@link
+     *                 LineItem#unlimitedEndDateTime} set to {@code true}.
      */
     public java.lang.Boolean getUnlimitedEndDateTime() {
         return unlimitedEndDateTime;
@@ -417,11 +403,10 @@ public class Order  implements java.io.Serializable {
      * Sets the unlimitedEndDateTime value for this Order.
      * 
      * @param unlimitedEndDateTime   * Specifies whether or not the {@code Order} has an unlimited
-     * end date. This
-     *                 attribute is readonly and is {@code true} if any of
-     * the order's line items
-     *                 has {@link LineItem#unlimitedEndDateTime} set to {@code
-     * true}.
+     * end date. This attribute is
+     *                 readonly and is {@code true} if any of the order's
+     * line items has {@link
+     *                 LineItem#unlimitedEndDateTime} set to {@code true}.
      */
     public void setUnlimitedEndDateTime(java.lang.Boolean unlimitedEndDateTime) {
         this.unlimitedEndDateTime = unlimitedEndDateTime;
@@ -474,9 +459,8 @@ public class Order  implements java.io.Serializable {
      * Gets the notes value for this Order.
      * 
      * @return notes   * Provides any additional notes that may annotate the {@code
-     * Order}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
+     * Order}. This attribute is optional
+     *                 and has a maximum length of 65,535 characters.
      */
     public java.lang.String getNotes() {
         return notes;
@@ -487,9 +471,8 @@ public class Order  implements java.io.Serializable {
      * Sets the notes value for this Order.
      * 
      * @param notes   * Provides any additional notes that may annotate the {@code
-     * Order}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
+     * Order}. This attribute is optional
+     *                 and has a maximum length of 65,535 characters.
      */
     public void setNotes(java.lang.String notes) {
         this.notes = notes;
@@ -500,8 +483,8 @@ public class Order  implements java.io.Serializable {
      * Gets the externalOrderId value for this Order.
      * 
      * @return externalOrderId   * An arbitrary ID to associate to the {@code Order}, which can
-     * be used as a
-     *                 key to an external system. This value is optional.
+     * be used as a key to an external
+     *                 system. This value is optional.
      */
     public java.lang.Integer getExternalOrderId() {
         return externalOrderId;
@@ -512,8 +495,8 @@ public class Order  implements java.io.Serializable {
      * Sets the externalOrderId value for this Order.
      * 
      * @param externalOrderId   * An arbitrary ID to associate to the {@code Order}, which can
-     * be used as a
-     *                 key to an external system. This value is optional.
+     * be used as a key to an external
+     *                 system. This value is optional.
      */
     public void setExternalOrderId(java.lang.Integer externalOrderId) {
         this.externalOrderId = externalOrderId;
@@ -524,8 +507,8 @@ public class Order  implements java.io.Serializable {
      * Gets the poNumber value for this Order.
      * 
      * @return poNumber   * The purchase order number for the {@code Order}. This value
-     * is optional
-     *                 and has a maximum length of 63 characters.
+     * is optional and has a maximum
+     *                 length of 63 characters.
      */
     public java.lang.String getPoNumber() {
         return poNumber;
@@ -536,8 +519,8 @@ public class Order  implements java.io.Serializable {
      * Sets the poNumber value for this Order.
      * 
      * @param poNumber   * The purchase order number for the {@code Order}. This value
-     * is optional
-     *                 and has a maximum length of 63 characters.
+     * is optional and has a maximum
+     *                 length of 63 characters.
      */
     public void setPoNumber(java.lang.String poNumber) {
         this.poNumber = poNumber;
@@ -548,8 +531,8 @@ public class Order  implements java.io.Serializable {
      * Gets the currencyCode value for this Order.
      * 
      * @return currencyCode   * The ISO currency code for the currency used by the {@code Order}.
-     * This
-     *                 value is read-only and is the network's currency code.
+     * This value is read-only and
+     *                 is the network's currency code.
      */
     public java.lang.String getCurrencyCode() {
         return currencyCode;
@@ -560,8 +543,8 @@ public class Order  implements java.io.Serializable {
      * Sets the currencyCode value for this Order.
      * 
      * @param currencyCode   * The ISO currency code for the currency used by the {@code Order}.
-     * This
-     *                 value is read-only and is the network's currency code.
+     * This value is read-only and
+     *                 is the network's currency code.
      */
     public void setCurrencyCode(java.lang.String currencyCode) {
         this.currencyCode = currencyCode;
@@ -571,10 +554,9 @@ public class Order  implements java.io.Serializable {
     /**
      * Gets the advertiserId value for this Order.
      * 
-     * @return advertiserId   * The unique ID of the {@link Company}, which is of type
-     *                 {@link Company.Type#ADVERTISER}, to which this order
-     * belongs. This
-     *                 attribute is required.
+     * @return advertiserId   * The unique ID of the {@link Company}, which is of type {@link
+     * Company.Type#ADVERTISER}, to
+     *                 which this order belongs. This attribute is required.
      */
     public java.lang.Long getAdvertiserId() {
         return advertiserId;
@@ -584,10 +566,9 @@ public class Order  implements java.io.Serializable {
     /**
      * Sets the advertiserId value for this Order.
      * 
-     * @param advertiserId   * The unique ID of the {@link Company}, which is of type
-     *                 {@link Company.Type#ADVERTISER}, to which this order
-     * belongs. This
-     *                 attribute is required.
+     * @param advertiserId   * The unique ID of the {@link Company}, which is of type {@link
+     * Company.Type#ADVERTISER}, to
+     *                 which this order belongs. This attribute is required.
      */
     public void setAdvertiserId(java.lang.Long advertiserId) {
         this.advertiserId = advertiserId;
@@ -625,10 +606,9 @@ public class Order  implements java.io.Serializable {
     /**
      * Gets the agencyId value for this Order.
      * 
-     * @return agencyId   * The unique ID of the {@link Company}, which is of type
-     *                 {@link Company.Type#AGENCY}, with which this order
-     * is associated. This
-     *                 attribute is optional.
+     * @return agencyId   * The unique ID of the {@link Company}, which is of type {@link
+     * Company.Type#AGENCY}, with which
+     *                 this order is associated. This attribute is optional.
      */
     public java.lang.Long getAgencyId() {
         return agencyId;
@@ -638,10 +618,9 @@ public class Order  implements java.io.Serializable {
     /**
      * Sets the agencyId value for this Order.
      * 
-     * @param agencyId   * The unique ID of the {@link Company}, which is of type
-     *                 {@link Company.Type#AGENCY}, with which this order
-     * is associated. This
-     *                 attribute is optional.
+     * @param agencyId   * The unique ID of the {@link Company}, which is of type {@link
+     * Company.Type#AGENCY}, with which
+     *                 this order is associated. This attribute is optional.
      */
     public void setAgencyId(java.lang.Long agencyId) {
         this.agencyId = agencyId;
@@ -680,9 +659,8 @@ public class Order  implements java.io.Serializable {
      * Gets the creatorId value for this Order.
      * 
      * @return creatorId   * The unique ID of the {@link User} who created the {@code Order}
-     * on behalf
-     *                 of the advertiser. This value is readonly and is assigned
-     * by Google.
+     * on behalf of the advertiser.
+     *                 This value is readonly and is assigned by Google.
      */
     public java.lang.Long getCreatorId() {
         return creatorId;
@@ -693,9 +671,8 @@ public class Order  implements java.io.Serializable {
      * Sets the creatorId value for this Order.
      * 
      * @param creatorId   * The unique ID of the {@link User} who created the {@code Order}
-     * on behalf
-     *                 of the advertiser. This value is readonly and is assigned
-     * by Google.
+     * on behalf of the advertiser.
+     *                 This value is readonly and is assigned by Google.
      */
     public void setCreatorId(java.lang.Long creatorId) {
         this.creatorId = creatorId;
@@ -706,8 +683,8 @@ public class Order  implements java.io.Serializable {
      * Gets the traffickerId value for this Order.
      * 
      * @return traffickerId   * The unique ID of the {@link User} responsible for trafficking
-     * the {@code
-     *                 Order}. This value is required for creating an order.
+     * the {@code Order}. This value is
+     *                 required for creating an order.
      */
     public java.lang.Long getTraffickerId() {
         return traffickerId;
@@ -718,8 +695,8 @@ public class Order  implements java.io.Serializable {
      * Sets the traffickerId value for this Order.
      * 
      * @param traffickerId   * The unique ID of the {@link User} responsible for trafficking
-     * the {@code
-     *                 Order}. This value is required for creating an order.
+     * the {@code Order}. This value is
+     *                 required for creating an order.
      */
     public void setTraffickerId(java.lang.Long traffickerId) {
         this.traffickerId = traffickerId;
@@ -730,8 +707,7 @@ public class Order  implements java.io.Serializable {
      * Gets the secondaryTraffickerIds value for this Order.
      * 
      * @return secondaryTraffickerIds   * The IDs of the secondary traffickers associated with the order.
-     * This value
-     *                 is optional.
+     * This value is optional.
      */
     public long[] getSecondaryTraffickerIds() {
         return secondaryTraffickerIds;
@@ -742,8 +718,7 @@ public class Order  implements java.io.Serializable {
      * Sets the secondaryTraffickerIds value for this Order.
      * 
      * @param secondaryTraffickerIds   * The IDs of the secondary traffickers associated with the order.
-     * This value
-     *                 is optional.
+     * This value is optional.
      */
     public void setSecondaryTraffickerIds(long[] secondaryTraffickerIds) {
         this.secondaryTraffickerIds = secondaryTraffickerIds;
@@ -762,8 +737,8 @@ public class Order  implements java.io.Serializable {
      * Gets the salespersonId value for this Order.
      * 
      * @return salespersonId   * The unique ID of the {@link User} responsible for the sales
-     * of the {@code
-     *                 Order}. This value is optional.
+     * of the {@code Order}. This value is
+     *                 optional.
      */
     public java.lang.Long getSalespersonId() {
         return salespersonId;
@@ -774,8 +749,8 @@ public class Order  implements java.io.Serializable {
      * Sets the salespersonId value for this Order.
      * 
      * @param salespersonId   * The unique ID of the {@link User} responsible for the sales
-     * of the {@code
-     *                 Order}. This value is optional.
+     * of the {@code Order}. This value is
+     *                 optional.
      */
     public void setSalespersonId(java.lang.Long salespersonId) {
         this.salespersonId = salespersonId;
@@ -786,8 +761,7 @@ public class Order  implements java.io.Serializable {
      * Gets the secondarySalespersonIds value for this Order.
      * 
      * @return secondarySalespersonIds   * The IDs of the secondary salespeople associated with the order.
-     * This value
-     *                 is optional.
+     * This value is optional.
      */
     public long[] getSecondarySalespersonIds() {
         return secondarySalespersonIds;
@@ -798,8 +772,7 @@ public class Order  implements java.io.Serializable {
      * Sets the secondarySalespersonIds value for this Order.
      * 
      * @param secondarySalespersonIds   * The IDs of the secondary salespeople associated with the order.
-     * This value
-     *                 is optional.
+     * This value is optional.
      */
     public void setSecondarySalespersonIds(long[] secondarySalespersonIds) {
         this.secondarySalespersonIds = secondarySalespersonIds;
@@ -818,8 +791,8 @@ public class Order  implements java.io.Serializable {
      * Gets the totalImpressionsDelivered value for this Order.
      * 
      * @return totalImpressionsDelivered   * Total impressions delivered for all line items of this {@code
-     * Order}. This
-     *                 value is read-only and is assigned by Google.
+     * Order}. This value is read-only
+     *                 and is assigned by Google.
      */
     public java.lang.Long getTotalImpressionsDelivered() {
         return totalImpressionsDelivered;
@@ -830,8 +803,8 @@ public class Order  implements java.io.Serializable {
      * Sets the totalImpressionsDelivered value for this Order.
      * 
      * @param totalImpressionsDelivered   * Total impressions delivered for all line items of this {@code
-     * Order}. This
-     *                 value is read-only and is assigned by Google.
+     * Order}. This value is read-only
+     *                 and is assigned by Google.
      */
     public void setTotalImpressionsDelivered(java.lang.Long totalImpressionsDelivered) {
         this.totalImpressionsDelivered = totalImpressionsDelivered;
@@ -842,8 +815,8 @@ public class Order  implements java.io.Serializable {
      * Gets the totalClicksDelivered value for this Order.
      * 
      * @return totalClicksDelivered   * Total clicks delivered for all line items of this {@code Order}.
-     * This value
-     *                 is read-only and is assigned by Google.
+     * This value is read-only and is
+     *                 assigned by Google.
      */
     public java.lang.Long getTotalClicksDelivered() {
         return totalClicksDelivered;
@@ -854,8 +827,8 @@ public class Order  implements java.io.Serializable {
      * Sets the totalClicksDelivered value for this Order.
      * 
      * @param totalClicksDelivered   * Total clicks delivered for all line items of this {@code Order}.
-     * This value
-     *                 is read-only and is assigned by Google.
+     * This value is read-only and is
+     *                 assigned by Google.
      */
     public void setTotalClicksDelivered(java.lang.Long totalClicksDelivered) {
         this.totalClicksDelivered = totalClicksDelivered;
@@ -866,11 +839,11 @@ public class Order  implements java.io.Serializable {
      * Gets the totalViewableImpressionsDelivered value for this Order.
      * 
      * @return totalViewableImpressionsDelivered   * Total viewable impressions delivered for all line items of
-     * this {@code Order}.
-     *                 This value is read-only and is assigned by Google.
-     * Starting in v201705, this will be {@code null} when the order does
-     * not have line items
-     *                 trafficked against a viewable impressions goal.
+     * this {@code Order}. This value is
+     *                 read-only and is assigned by Google. Starting in v201705,
+     * this will be {@code null} when the
+     *                 order does not have line items trafficked against
+     * a viewable impressions goal.
      */
     public java.lang.Long getTotalViewableImpressionsDelivered() {
         return totalViewableImpressionsDelivered;
@@ -881,11 +854,11 @@ public class Order  implements java.io.Serializable {
      * Sets the totalViewableImpressionsDelivered value for this Order.
      * 
      * @param totalViewableImpressionsDelivered   * Total viewable impressions delivered for all line items of
-     * this {@code Order}.
-     *                 This value is read-only and is assigned by Google.
-     * Starting in v201705, this will be {@code null} when the order does
-     * not have line items
-     *                 trafficked against a viewable impressions goal.
+     * this {@code Order}. This value is
+     *                 read-only and is assigned by Google. Starting in v201705,
+     * this will be {@code null} when the
+     *                 order does not have line items trafficked against
+     * a viewable impressions goal.
      */
     public void setTotalViewableImpressionsDelivered(java.lang.Long totalViewableImpressionsDelivered) {
         this.totalViewableImpressionsDelivered = totalViewableImpressionsDelivered;
@@ -896,10 +869,9 @@ public class Order  implements java.io.Serializable {
      * Gets the totalBudget value for this Order.
      * 
      * @return totalBudget   * Total budget for all line items of this {@code Order}. This
-     * value is a
-     *                 readonly field assigned by Google and is calculated
-     * from the associated
-     *                 {@link LineItem#costPerUnit} values.
+     * value is a readonly field assigned
+     *                 by Google and is calculated from the associated {@link
+     * LineItem#costPerUnit} values.
      */
     public com.google.api.ads.admanager.axis.v202208.Money getTotalBudget() {
         return totalBudget;
@@ -910,10 +882,9 @@ public class Order  implements java.io.Serializable {
      * Sets the totalBudget value for this Order.
      * 
      * @param totalBudget   * Total budget for all line items of this {@code Order}. This
-     * value is a
-     *                 readonly field assigned by Google and is calculated
-     * from the associated
-     *                 {@link LineItem#costPerUnit} values.
+     * value is a readonly field assigned
+     *                 by Google and is calculated from the associated {@link
+     * LineItem#costPerUnit} values.
      */
     public void setTotalBudget(com.google.api.ads.admanager.axis.v202208.Money totalBudget) {
         this.totalBudget = totalBudget;
@@ -988,8 +959,8 @@ public class Order  implements java.io.Serializable {
      * Gets the lastModifiedByApp value for this Order.
      * 
      * @return lastModifiedByApp   * The application which modified this order. This attribute is
-     * read only and
-     *                 is assigned by Google.
+     * read only and is assigned by
+     *                 Google.
      */
     public java.lang.String getLastModifiedByApp() {
         return lastModifiedByApp;
@@ -1000,8 +971,8 @@ public class Order  implements java.io.Serializable {
      * Sets the lastModifiedByApp value for this Order.
      * 
      * @param lastModifiedByApp   * The application which modified this order. This attribute is
-     * read only and
-     *                 is assigned by Google.
+     * read only and is assigned by
+     *                 Google.
      */
     public void setLastModifiedByApp(java.lang.String lastModifiedByApp) {
         this.lastModifiedByApp = lastModifiedByApp;
@@ -1012,8 +983,8 @@ public class Order  implements java.io.Serializable {
      * Gets the isProgrammatic value for this Order.
      * 
      * @return isProgrammatic   * Specifies whether or not the {@code Order} is a programmatic
-     * order. This
-     *                 value is optional and defaults to false.
+     * order. This value is optional and
+     *                 defaults to false.
      */
     public java.lang.Boolean getIsProgrammatic() {
         return isProgrammatic;
@@ -1024,8 +995,8 @@ public class Order  implements java.io.Serializable {
      * Sets the isProgrammatic value for this Order.
      * 
      * @param isProgrammatic   * Specifies whether or not the {@code Order} is a programmatic
-     * order. This
-     *                 value is optional and defaults to false.
+     * order. This value is optional and
+     *                 defaults to false.
      */
     public void setIsProgrammatic(java.lang.Boolean isProgrammatic) {
         this.isProgrammatic = isProgrammatic;

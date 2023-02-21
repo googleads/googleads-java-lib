@@ -23,17 +23,16 @@ package com.google.api.ads.admanager.axis.v202208;
 
 
 /**
- * A {@code CustomCreativeAsset} is an association between a
- *             {@link CustomCreative} and an asset. Any assets that are
- * associated with a
- *             creative can be inserted into its HTML snippet.
+ * A {@code CustomCreativeAsset} is an association between a {@link
+ * CustomCreative} and an asset.
+ *             Any assets that are associated with a creative can be
+ * inserted into its HTML snippet.
  */
 public class CustomCreativeAsset  implements java.io.Serializable {
     /* The name by which the associated asset will be referenced.
-     * For example,
-     *                 if the value is "foo", then the asset can be inserted
-     * into an HTML snippet
-     *                 using the macro: "%%FILE:foo%%". */
+     * For example, if the value is "foo",
+     *                 then the asset can be inserted into an HTML snippet
+     * using the macro: "%%FILE:foo%%". */
     private java.lang.String macroName;
 
     /* The asset. This attribute is required. To view the asset, use
@@ -63,10 +62,9 @@ public class CustomCreativeAsset  implements java.io.Serializable {
      * Gets the macroName value for this CustomCreativeAsset.
      * 
      * @return macroName   * The name by which the associated asset will be referenced.
-     * For example,
-     *                 if the value is "foo", then the asset can be inserted
-     * into an HTML snippet
-     *                 using the macro: "%%FILE:foo%%".
+     * For example, if the value is "foo",
+     *                 then the asset can be inserted into an HTML snippet
+     * using the macro: "%%FILE:foo%%".
      */
     public java.lang.String getMacroName() {
         return macroName;
@@ -77,10 +75,9 @@ public class CustomCreativeAsset  implements java.io.Serializable {
      * Sets the macroName value for this CustomCreativeAsset.
      * 
      * @param macroName   * The name by which the associated asset will be referenced.
-     * For example,
-     *                 if the value is "foo", then the asset can be inserted
-     * into an HTML snippet
-     *                 using the macro: "%%FILE:foo%%".
+     * For example, if the value is "foo",
+     *                 then the asset can be inserted into an HTML snippet
+     * using the macro: "%%FILE:foo%%".
      */
     public void setMacroName(java.lang.String macroName) {
         this.macroName = macroName;

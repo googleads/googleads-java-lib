@@ -24,10 +24,10 @@ package com.google.api.ads.admanager.axis.v202208;
 
 /**
  * An ad rule slot with standard podding. A standard pod is a series
- * of video ads played
- *             back to back. Standard pods are defined by a {@link BaseAdRuleSlot#maxAdsInPod}
- * and a
- *             {@link BaseAdRuleSlot#maxVideoAdDuration}.
+ * of video ads played back to
+ *             back. Standard pods are defined by a {@link BaseAdRuleSlot#maxAdsInPod}
+ * and a {@link
+ *             BaseAdRuleSlot#maxVideoAdDuration}.
  */
 public class StandardPoddingAdRuleSlot  extends com.google.api.ads.admanager.axis.v202208.BaseAdRuleSlot  implements java.io.Serializable {
     public StandardPoddingAdRuleSlot() {

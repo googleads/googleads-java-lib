@@ -27,106 +27,90 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class AdSenseSettings  implements java.io.Serializable {
     /* Specifies whether or not the {@link AdUnit} is enabled for
-     * serving ads from
-     *                 the AdSense content network. This attribute is optional
-     * and defaults to the
-     *                 ad unit's parent or ancestor's setting if one has
-     * been set. If no ancestor
-     *                 of the ad unit has set {@code adSenseEnabled}, the
-     * attribute is
-     *                 defaulted to {@code true}. */
+     * serving ads from the AdSense content
+     *                 network. This attribute is optional and defaults to
+     * the ad unit's parent or ancestor's setting
+     *                 if one has been set. If no ancestor of the ad unit
+     * has set {@code adSenseEnabled}, the
+     *                 attribute is defaulted to {@code true}. */
     private java.lang.Boolean adSenseEnabled;
 
     /* Specifies the Hexadecimal border color, from {@code 000000}
-     * to {@code
-     *                 FFFFFF}. This attribute is optional and defaults to
-     * the ad unit's parent or
-     *                 ancestor's setting if one has been set. If no ancestor
-     * of the ad unit has
-     *                 set {@code borderColor}, the attribute is defaulted
-     * to {@code FFFFFF}. */
+     * to {@code FFFFFF}. This attribute
+     *                 is optional and defaults to the ad unit's parent or
+     * ancestor's setting if one has been set. If
+     *                 no ancestor of the ad unit has set {@code borderColor},
+     * the attribute is defaulted to {@code
+     *                 FFFFFF}. */
     private java.lang.String borderColor;
 
     /* Specifies the Hexadecimal title color of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the
-     *                 ad unit has set {@code titleColor}, the attribute
-     * is defaulted to {@code
-     *                 0000FF}. */
+     * 000000} to {@code FFFFFF}. This
+     *                 attribute is optional and defaults to the ad unit's
+     * parent or ancestor's setting if one has
+     *                 been set. If no ancestor of the ad unit has set {@code
+     * titleColor}, the attribute is defaulted
+     *                 to {@code 0000FF}. */
     private java.lang.String titleColor;
 
     /* Specifies the Hexadecimal background color of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code backgroundColor}, the attribute
-     * is defaulted to {@code
-     *                 FFFFFF}. */
+     * 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code backgroundColor}, the attribute is
+     *                 defaulted to {@code FFFFFF}. */
     private java.lang.String backgroundColor;
 
     /* Specifies the Hexadecimal color of the text of an ad, from
-     * {@code 000000}
-     *                 to {@code FFFFFF}. This attribute is optional and
-     * defaults to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code textColor}, the attribute is defaulted
-     * to {@code
-     *                 000000}. */
+     * {@code 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code textColor}, the attribute is
+     *                 defaulted to {@code 000000}. */
     private java.lang.String textColor;
 
     /* Specifies the Hexadecimal color of the URL of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code urlColor}, the attribute is defaulted
-     * to {@code 008000}
-     *                 . */
+     * 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code urlColor}, the attribute is
+     *                 defaulted to {@code 008000} . */
     private java.lang.String urlColor;
 
     /* Specifies what kind of ad can be served by this {@link AdUnit}
-     * from the
-     *                 AdSense Content Network. This attribute is optional
-     * and defaults to the ad
-     *                 unit's parent or ancestor's setting if one has been
-     * set. If no ancestor of
-     *                 the ad unit has set {@code adType}, the attribute
-     * is defaulted to {@link
-     *                 AdType#TEXT_AND_IMAGE}. */
+     * from the AdSense Content
+     *                 Network. This attribute is optional and defaults to
+     * the ad unit's parent or ancestor's setting
+     *                 if one has been set. If no ancestor of the ad unit
+     * has set {@code adType}, the attribute is
+     *                 defaulted to {@link AdType#TEXT_AND_IMAGE}. */
     private com.google.api.ads.admanager.axis.v202205.AdSenseSettingsAdType adType;
 
     /* Specifies the border-style of the {@link AdUnit}. This attribute
-     * is
-     *                 optional and defaults to the ad unit's parent or ancestor's
-     * setting if one
-     *                 has been set. If no ancestor of the ad unit has set
-     * {@code borderStyle},
-     *                 the attribute is defaulted to {@link BorderStyle#DEFAULT}. */
+     * is optional and defaults to
+     *                 the ad unit's parent or ancestor's setting if one
+     * has been set. If no ancestor of the ad unit
+     *                 has set {@code borderStyle}, the attribute is defaulted
+     * to {@link BorderStyle#DEFAULT}. */
     private com.google.api.ads.admanager.axis.v202205.AdSenseSettingsBorderStyle borderStyle;
 
     /* Specifies the font family of the {@link AdUnit}. This attribute
-     * is optional
-     *                 and defaults to the ad unit's parent or ancestor's
-     * setting if one has been
-     *                 set. If no ancestor of the ad unit has set {@code
-     * fontFamily}, the
-     *                 attribute is defaulted to {@link FontFamily#DEFAULT}. */
+     * is optional and defaults to the
+     *                 ad unit's parent or ancestor's setting if one has
+     * been set. If no ancestor of the ad unit has
+     *                 set {@code fontFamily}, the attribute is defaulted
+     * to {@link FontFamily#DEFAULT}. */
     private com.google.api.ads.admanager.axis.v202205.AdSenseSettingsFontFamily fontFamily;
 
     /* Specifies the font size of the {@link AdUnit}. This attribute
-     * is optional
-     *                 and defaults to the ad unit's parent or ancestor's
-     * setting if one has been
-     *                 set. If no ancestor of the ad unit has set {@code
-     * fontSize}, the
-     *                 attribute is defaulted to {@link FontSize#DEFAULT}. */
+     * is optional and defaults to the
+     *                 ad unit's parent or ancestor's setting if one has
+     * been set. If no ancestor of the ad unit has
+     *                 set {@code fontSize}, the attribute is defaulted to
+     * {@link FontSize#DEFAULT}. */
     private com.google.api.ads.admanager.axis.v202205.AdSenseSettingsFontSize fontSize;
 
     public AdSenseSettings() {
@@ -176,14 +160,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the adSenseEnabled value for this AdSenseSettings.
      * 
      * @return adSenseEnabled   * Specifies whether or not the {@link AdUnit} is enabled for
-     * serving ads from
-     *                 the AdSense content network. This attribute is optional
-     * and defaults to the
-     *                 ad unit's parent or ancestor's setting if one has
-     * been set. If no ancestor
-     *                 of the ad unit has set {@code adSenseEnabled}, the
-     * attribute is
-     *                 defaulted to {@code true}.
+     * serving ads from the AdSense content
+     *                 network. This attribute is optional and defaults to
+     * the ad unit's parent or ancestor's setting
+     *                 if one has been set. If no ancestor of the ad unit
+     * has set {@code adSenseEnabled}, the
+     *                 attribute is defaulted to {@code true}.
      */
     public java.lang.Boolean getAdSenseEnabled() {
         return adSenseEnabled;
@@ -194,14 +176,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the adSenseEnabled value for this AdSenseSettings.
      * 
      * @param adSenseEnabled   * Specifies whether or not the {@link AdUnit} is enabled for
-     * serving ads from
-     *                 the AdSense content network. This attribute is optional
-     * and defaults to the
-     *                 ad unit's parent or ancestor's setting if one has
-     * been set. If no ancestor
-     *                 of the ad unit has set {@code adSenseEnabled}, the
-     * attribute is
-     *                 defaulted to {@code true}.
+     * serving ads from the AdSense content
+     *                 network. This attribute is optional and defaults to
+     * the ad unit's parent or ancestor's setting
+     *                 if one has been set. If no ancestor of the ad unit
+     * has set {@code adSenseEnabled}, the
+     *                 attribute is defaulted to {@code true}.
      */
     public void setAdSenseEnabled(java.lang.Boolean adSenseEnabled) {
         this.adSenseEnabled = adSenseEnabled;
@@ -212,13 +192,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the borderColor value for this AdSenseSettings.
      * 
      * @return borderColor   * Specifies the Hexadecimal border color, from {@code 000000}
-     * to {@code
-     *                 FFFFFF}. This attribute is optional and defaults to
-     * the ad unit's parent or
-     *                 ancestor's setting if one has been set. If no ancestor
-     * of the ad unit has
-     *                 set {@code borderColor}, the attribute is defaulted
-     * to {@code FFFFFF}.
+     * to {@code FFFFFF}. This attribute
+     *                 is optional and defaults to the ad unit's parent or
+     * ancestor's setting if one has been set. If
+     *                 no ancestor of the ad unit has set {@code borderColor},
+     * the attribute is defaulted to {@code
+     *                 FFFFFF}.
      */
     public java.lang.String getBorderColor() {
         return borderColor;
@@ -229,13 +208,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the borderColor value for this AdSenseSettings.
      * 
      * @param borderColor   * Specifies the Hexadecimal border color, from {@code 000000}
-     * to {@code
-     *                 FFFFFF}. This attribute is optional and defaults to
-     * the ad unit's parent or
-     *                 ancestor's setting if one has been set. If no ancestor
-     * of the ad unit has
-     *                 set {@code borderColor}, the attribute is defaulted
-     * to {@code FFFFFF}.
+     * to {@code FFFFFF}. This attribute
+     *                 is optional and defaults to the ad unit's parent or
+     * ancestor's setting if one has been set. If
+     *                 no ancestor of the ad unit has set {@code borderColor},
+     * the attribute is defaulted to {@code
+     *                 FFFFFF}.
      */
     public void setBorderColor(java.lang.String borderColor) {
         this.borderColor = borderColor;
@@ -246,14 +224,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the titleColor value for this AdSenseSettings.
      * 
      * @return titleColor   * Specifies the Hexadecimal title color of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the
-     *                 ad unit has set {@code titleColor}, the attribute
-     * is defaulted to {@code
-     *                 0000FF}.
+     * 000000} to {@code FFFFFF}. This
+     *                 attribute is optional and defaults to the ad unit's
+     * parent or ancestor's setting if one has
+     *                 been set. If no ancestor of the ad unit has set {@code
+     * titleColor}, the attribute is defaulted
+     *                 to {@code 0000FF}.
      */
     public java.lang.String getTitleColor() {
         return titleColor;
@@ -264,14 +240,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the titleColor value for this AdSenseSettings.
      * 
      * @param titleColor   * Specifies the Hexadecimal title color of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the
-     *                 ad unit has set {@code titleColor}, the attribute
-     * is defaulted to {@code
-     *                 0000FF}.
+     * 000000} to {@code FFFFFF}. This
+     *                 attribute is optional and defaults to the ad unit's
+     * parent or ancestor's setting if one has
+     *                 been set. If no ancestor of the ad unit has set {@code
+     * titleColor}, the attribute is defaulted
+     *                 to {@code 0000FF}.
      */
     public void setTitleColor(java.lang.String titleColor) {
         this.titleColor = titleColor;
@@ -282,14 +256,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the backgroundColor value for this AdSenseSettings.
      * 
      * @return backgroundColor   * Specifies the Hexadecimal background color of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code backgroundColor}, the attribute
-     * is defaulted to {@code
-     *                 FFFFFF}.
+     * 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code backgroundColor}, the attribute is
+     *                 defaulted to {@code FFFFFF}.
      */
     public java.lang.String getBackgroundColor() {
         return backgroundColor;
@@ -300,14 +272,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the backgroundColor value for this AdSenseSettings.
      * 
      * @param backgroundColor   * Specifies the Hexadecimal background color of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code backgroundColor}, the attribute
-     * is defaulted to {@code
-     *                 FFFFFF}.
+     * 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code backgroundColor}, the attribute is
+     *                 defaulted to {@code FFFFFF}.
      */
     public void setBackgroundColor(java.lang.String backgroundColor) {
         this.backgroundColor = backgroundColor;
@@ -318,14 +288,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the textColor value for this AdSenseSettings.
      * 
      * @return textColor   * Specifies the Hexadecimal color of the text of an ad, from
-     * {@code 000000}
-     *                 to {@code FFFFFF}. This attribute is optional and
-     * defaults to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code textColor}, the attribute is defaulted
-     * to {@code
-     *                 000000}.
+     * {@code 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code textColor}, the attribute is
+     *                 defaulted to {@code 000000}.
      */
     public java.lang.String getTextColor() {
         return textColor;
@@ -336,14 +304,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the textColor value for this AdSenseSettings.
      * 
      * @param textColor   * Specifies the Hexadecimal color of the text of an ad, from
-     * {@code 000000}
-     *                 to {@code FFFFFF}. This attribute is optional and
-     * defaults to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code textColor}, the attribute is defaulted
-     * to {@code
-     *                 000000}.
+     * {@code 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code textColor}, the attribute is
+     *                 defaulted to {@code 000000}.
      */
     public void setTextColor(java.lang.String textColor) {
         this.textColor = textColor;
@@ -354,14 +320,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the urlColor value for this AdSenseSettings.
      * 
      * @return urlColor   * Specifies the Hexadecimal color of the URL of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code urlColor}, the attribute is defaulted
-     * to {@code 008000}
-     *                 .
+     * 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code urlColor}, the attribute is
+     *                 defaulted to {@code 008000} .
      */
     public java.lang.String getUrlColor() {
         return urlColor;
@@ -372,14 +336,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the urlColor value for this AdSenseSettings.
      * 
      * @param urlColor   * Specifies the Hexadecimal color of the URL of an ad, from {@code
-     * 000000} to
-     *                 {@code FFFFFF}. This attribute is optional and defaults
-     * to the ad unit's
-     *                 parent or ancestor's setting if one has been set.
-     * If no ancestor of the ad
-     *                 unit has set {@code urlColor}, the attribute is defaulted
-     * to {@code 008000}
-     *                 .
+     * 000000} to {@code FFFFFF}.
+     *                 This attribute is optional and defaults to the ad
+     * unit's parent or ancestor's setting if one
+     *                 has been set. If no ancestor of the ad unit has set
+     * {@code urlColor}, the attribute is
+     *                 defaulted to {@code 008000} .
      */
     public void setUrlColor(java.lang.String urlColor) {
         this.urlColor = urlColor;
@@ -390,14 +352,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the adType value for this AdSenseSettings.
      * 
      * @return adType   * Specifies what kind of ad can be served by this {@link AdUnit}
-     * from the
-     *                 AdSense Content Network. This attribute is optional
-     * and defaults to the ad
-     *                 unit's parent or ancestor's setting if one has been
-     * set. If no ancestor of
-     *                 the ad unit has set {@code adType}, the attribute
-     * is defaulted to {@link
-     *                 AdType#TEXT_AND_IMAGE}.
+     * from the AdSense Content
+     *                 Network. This attribute is optional and defaults to
+     * the ad unit's parent or ancestor's setting
+     *                 if one has been set. If no ancestor of the ad unit
+     * has set {@code adType}, the attribute is
+     *                 defaulted to {@link AdType#TEXT_AND_IMAGE}.
      */
     public com.google.api.ads.admanager.axis.v202205.AdSenseSettingsAdType getAdType() {
         return adType;
@@ -408,14 +368,12 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the adType value for this AdSenseSettings.
      * 
      * @param adType   * Specifies what kind of ad can be served by this {@link AdUnit}
-     * from the
-     *                 AdSense Content Network. This attribute is optional
-     * and defaults to the ad
-     *                 unit's parent or ancestor's setting if one has been
-     * set. If no ancestor of
-     *                 the ad unit has set {@code adType}, the attribute
-     * is defaulted to {@link
-     *                 AdType#TEXT_AND_IMAGE}.
+     * from the AdSense Content
+     *                 Network. This attribute is optional and defaults to
+     * the ad unit's parent or ancestor's setting
+     *                 if one has been set. If no ancestor of the ad unit
+     * has set {@code adType}, the attribute is
+     *                 defaulted to {@link AdType#TEXT_AND_IMAGE}.
      */
     public void setAdType(com.google.api.ads.admanager.axis.v202205.AdSenseSettingsAdType adType) {
         this.adType = adType;
@@ -426,12 +384,11 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the borderStyle value for this AdSenseSettings.
      * 
      * @return borderStyle   * Specifies the border-style of the {@link AdUnit}. This attribute
-     * is
-     *                 optional and defaults to the ad unit's parent or ancestor's
-     * setting if one
-     *                 has been set. If no ancestor of the ad unit has set
-     * {@code borderStyle},
-     *                 the attribute is defaulted to {@link BorderStyle#DEFAULT}.
+     * is optional and defaults to
+     *                 the ad unit's parent or ancestor's setting if one
+     * has been set. If no ancestor of the ad unit
+     *                 has set {@code borderStyle}, the attribute is defaulted
+     * to {@link BorderStyle#DEFAULT}.
      */
     public com.google.api.ads.admanager.axis.v202205.AdSenseSettingsBorderStyle getBorderStyle() {
         return borderStyle;
@@ -442,12 +399,11 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the borderStyle value for this AdSenseSettings.
      * 
      * @param borderStyle   * Specifies the border-style of the {@link AdUnit}. This attribute
-     * is
-     *                 optional and defaults to the ad unit's parent or ancestor's
-     * setting if one
-     *                 has been set. If no ancestor of the ad unit has set
-     * {@code borderStyle},
-     *                 the attribute is defaulted to {@link BorderStyle#DEFAULT}.
+     * is optional and defaults to
+     *                 the ad unit's parent or ancestor's setting if one
+     * has been set. If no ancestor of the ad unit
+     *                 has set {@code borderStyle}, the attribute is defaulted
+     * to {@link BorderStyle#DEFAULT}.
      */
     public void setBorderStyle(com.google.api.ads.admanager.axis.v202205.AdSenseSettingsBorderStyle borderStyle) {
         this.borderStyle = borderStyle;
@@ -458,12 +414,11 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the fontFamily value for this AdSenseSettings.
      * 
      * @return fontFamily   * Specifies the font family of the {@link AdUnit}. This attribute
-     * is optional
-     *                 and defaults to the ad unit's parent or ancestor's
-     * setting if one has been
-     *                 set. If no ancestor of the ad unit has set {@code
-     * fontFamily}, the
-     *                 attribute is defaulted to {@link FontFamily#DEFAULT}.
+     * is optional and defaults to the
+     *                 ad unit's parent or ancestor's setting if one has
+     * been set. If no ancestor of the ad unit has
+     *                 set {@code fontFamily}, the attribute is defaulted
+     * to {@link FontFamily#DEFAULT}.
      */
     public com.google.api.ads.admanager.axis.v202205.AdSenseSettingsFontFamily getFontFamily() {
         return fontFamily;
@@ -474,12 +429,11 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the fontFamily value for this AdSenseSettings.
      * 
      * @param fontFamily   * Specifies the font family of the {@link AdUnit}. This attribute
-     * is optional
-     *                 and defaults to the ad unit's parent or ancestor's
-     * setting if one has been
-     *                 set. If no ancestor of the ad unit has set {@code
-     * fontFamily}, the
-     *                 attribute is defaulted to {@link FontFamily#DEFAULT}.
+     * is optional and defaults to the
+     *                 ad unit's parent or ancestor's setting if one has
+     * been set. If no ancestor of the ad unit has
+     *                 set {@code fontFamily}, the attribute is defaulted
+     * to {@link FontFamily#DEFAULT}.
      */
     public void setFontFamily(com.google.api.ads.admanager.axis.v202205.AdSenseSettingsFontFamily fontFamily) {
         this.fontFamily = fontFamily;
@@ -490,12 +444,11 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Gets the fontSize value for this AdSenseSettings.
      * 
      * @return fontSize   * Specifies the font size of the {@link AdUnit}. This attribute
-     * is optional
-     *                 and defaults to the ad unit's parent or ancestor's
-     * setting if one has been
-     *                 set. If no ancestor of the ad unit has set {@code
-     * fontSize}, the
-     *                 attribute is defaulted to {@link FontSize#DEFAULT}.
+     * is optional and defaults to the
+     *                 ad unit's parent or ancestor's setting if one has
+     * been set. If no ancestor of the ad unit has
+     *                 set {@code fontSize}, the attribute is defaulted to
+     * {@link FontSize#DEFAULT}.
      */
     public com.google.api.ads.admanager.axis.v202205.AdSenseSettingsFontSize getFontSize() {
         return fontSize;
@@ -506,12 +459,11 @@ public class AdSenseSettings  implements java.io.Serializable {
      * Sets the fontSize value for this AdSenseSettings.
      * 
      * @param fontSize   * Specifies the font size of the {@link AdUnit}. This attribute
-     * is optional
-     *                 and defaults to the ad unit's parent or ancestor's
-     * setting if one has been
-     *                 set. If no ancestor of the ad unit has set {@code
-     * fontSize}, the
-     *                 attribute is defaulted to {@link FontSize#DEFAULT}.
+     * is optional and defaults to the
+     *                 ad unit's parent or ancestor's setting if one has
+     * been set. If no ancestor of the ad unit has
+     *                 set {@code fontSize}, the attribute is defaulted to
+     * {@link FontSize#DEFAULT}.
      */
     public void setFontSize(com.google.api.ads.admanager.axis.v202205.AdSenseSettingsFontSize fontSize) {
         this.fontSize = fontSize;

@@ -30,11 +30,11 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * are opened for edit. A proposal that
      *                 is open for edit will not receive buyer updates from
      * Marketplace. If the buyer updates the
-     *                 proposal while this is open for local editing,
-     *                 Google will set {@link #isNewVersionFromBuyer} to
-     * {@code true}. You will then need to call
-     *                 {@link DiscardProposalDrafts} to revert your edits
-     * to get the buyer's latest changes.
+     *                 proposal while this is open for local editing, Google
+     * will set {@link #isNewVersionFromBuyer}
+     *                 to {@code true}. You will then need to call {@link
+     * DiscardProposalDrafts} to revert your edits
+     *                 to get the buyer's latest changes.
      *                 This attribute is read-only. */
     private java.lang.Boolean hasLocalVersionEdits;
 
@@ -48,8 +48,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
     /* Indicates that the buyer has made updates to the proposal on
      * Marketplace. This attribute is
      *                 only meaningful if the proposal is open for edit (i.e.,
-     * {@link #hasLocalVersionEdits}
-     *                 is {@code true})
+     * {@link #hasLocalVersionEdits} is {@code
+     *                 true})
      *                 This attribute is read-only. */
     private java.lang.Boolean isNewVersionFromBuyer;
 
@@ -104,11 +104,11 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * are opened for edit. A proposal that
      *                 is open for edit will not receive buyer updates from
      * Marketplace. If the buyer updates the
-     *                 proposal while this is open for local editing,
-     *                 Google will set {@link #isNewVersionFromBuyer} to
-     * {@code true}. You will then need to call
-     *                 {@link DiscardProposalDrafts} to revert your edits
-     * to get the buyer's latest changes.
+     *                 proposal while this is open for local editing, Google
+     * will set {@link #isNewVersionFromBuyer}
+     *                 to {@code true}. You will then need to call {@link
+     * DiscardProposalDrafts} to revert your edits
+     *                 to get the buyer's latest changes.
      *                 This attribute is read-only.
      */
     public java.lang.Boolean getHasLocalVersionEdits() {
@@ -123,11 +123,11 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * are opened for edit. A proposal that
      *                 is open for edit will not receive buyer updates from
      * Marketplace. If the buyer updates the
-     *                 proposal while this is open for local editing,
-     *                 Google will set {@link #isNewVersionFromBuyer} to
-     * {@code true}. You will then need to call
-     *                 {@link DiscardProposalDrafts} to revert your edits
-     * to get the buyer's latest changes.
+     *                 proposal while this is open for local editing, Google
+     * will set {@link #isNewVersionFromBuyer}
+     *                 to {@code true}. You will then need to call {@link
+     * DiscardProposalDrafts} to revert your edits
+     *                 to get the buyer's latest changes.
      *                 This attribute is read-only.
      */
     public void setHasLocalVersionEdits(java.lang.Boolean hasLocalVersionEdits) {
@@ -183,8 +183,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * @return isNewVersionFromBuyer   * Indicates that the buyer has made updates to the proposal on
      * Marketplace. This attribute is
      *                 only meaningful if the proposal is open for edit (i.e.,
-     * {@link #hasLocalVersionEdits}
-     *                 is {@code true})
+     * {@link #hasLocalVersionEdits} is {@code
+     *                 true})
      *                 This attribute is read-only.
      */
     public java.lang.Boolean getIsNewVersionFromBuyer() {
@@ -198,8 +198,8 @@ public class ProposalMarketplaceInfo  implements java.io.Serializable {
      * @param isNewVersionFromBuyer   * Indicates that the buyer has made updates to the proposal on
      * Marketplace. This attribute is
      *                 only meaningful if the proposal is open for edit (i.e.,
-     * {@link #hasLocalVersionEdits}
-     *                 is {@code true})
+     * {@link #hasLocalVersionEdits} is {@code
+     *                 true})
      *                 This attribute is read-only.
      */
     public void setIsNewVersionFromBuyer(java.lang.Boolean isNewVersionFromBuyer) {

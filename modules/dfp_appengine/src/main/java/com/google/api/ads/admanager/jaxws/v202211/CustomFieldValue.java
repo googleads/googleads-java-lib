@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             The value of a {@link CustomField} that does not have a {@link CustomField#dataType}
- *             of {@link CustomFieldDataType#DROP_DOWN}.
+ *             The value of a {@link CustomField} that does not have a {@link CustomField#dataType} of {@link
+ *             CustomFieldDataType#DROP_DOWN}.
  *           
  * 
  * <p>Java class for CustomFieldValue complex type.

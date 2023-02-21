@@ -24,17 +24,17 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * A {@code Creative} that is created by a Rich Media Studio. You
- * cannot create this creative,
- *             but you can update some fields of this creative.
+ * cannot create this creative, but
+ *             you can update some fields of this creative.
  */
 public class RichMediaStudioCreative  extends com.google.api.ads.admanager.axis.v202211.BaseRichMediaStudioCreative  implements java.io.Serializable {
     /* A locked orientation for this creative to be displayed in. */
     private com.google.api.ads.admanager.axis.v202211.LockedOrientation lockedOrientation;
 
     /* {@code true} if this is interstitial. An interstitial creative
-     * will not consider an
-     *                     impression served until it is fully rendered in
-     * the browser. This attribute is readonly. */
+     * will not consider an impression
+     *                     served until it is fully rendered in the browser.
+     * This attribute is readonly. */
     private java.lang.Boolean isInterstitial;
 
     public RichMediaStudioCreative() {
@@ -162,9 +162,9 @@ public class RichMediaStudioCreative  extends com.google.api.ads.admanager.axis.
      * Gets the isInterstitial value for this RichMediaStudioCreative.
      * 
      * @return isInterstitial   * {@code true} if this is interstitial. An interstitial creative
-     * will not consider an
-     *                     impression served until it is fully rendered in
-     * the browser. This attribute is readonly.
+     * will not consider an impression
+     *                     served until it is fully rendered in the browser.
+     * This attribute is readonly.
      */
     public java.lang.Boolean getIsInterstitial() {
         return isInterstitial;
@@ -175,9 +175,9 @@ public class RichMediaStudioCreative  extends com.google.api.ads.admanager.axis.
      * Sets the isInterstitial value for this RichMediaStudioCreative.
      * 
      * @param isInterstitial   * {@code true} if this is interstitial. An interstitial creative
-     * will not consider an
-     *                     impression served until it is fully rendered in
-     * the browser. This attribute is readonly.
+     * will not consider an impression
+     *                     served until it is fully rendered in the browser.
+     * This attribute is readonly.
      */
     public void setIsInterstitial(java.lang.Boolean isInterstitial) {
         this.isInterstitial = isInterstitial;

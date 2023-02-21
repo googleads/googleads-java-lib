@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  *             Create new slates.
  *             
- *             <p>A slate creative is served as backup content in a live stream event when no other
- *             creatives are eligible to be served.
+ *             <p>A slate creative is served as backup content in a live stream event when no other creatives
+ *             are eligible to be served.
  *           
  * 
  * <p>Java class for createSlates element declaration.

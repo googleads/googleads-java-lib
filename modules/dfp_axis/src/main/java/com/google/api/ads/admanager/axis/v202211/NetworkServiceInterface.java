@@ -25,13 +25,11 @@ public interface NetworkServiceInterface extends java.rmi.Remote {
 
     /**
      * Returns the list of {@link Network} objects to which the current
-     * login has
-     *         access.
-     *         <p>
-     *         Intended to be used without a network code in the SOAP header
-     * when the
-     *         login may have more than one network associated with it.
-     *         </p>
+     * login has access.
+     *         
+     *         <p>Intended to be used without a network code in the SOAP
+     * header when the login may have more
+     *         than one network associated with it.
      */
     public com.google.api.ads.admanager.axis.v202211.Network[] getAllNetworks() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
@@ -51,42 +49,37 @@ public interface NetworkServiceInterface extends java.rmi.Remote {
     /**
      * Creates a new blank network for testing purposes using the
      * current login.
-     *         <p>
-     *         Each login(i.e. email address) can only have one test network.
-     * Data from
-     *         any of your existing networks will not be transferred to the
-     * new test network.
-     *         Once the test network is created, the test network can be
-     * used in the API
-     *         by supplying the {@link Network#networkCode} in the SOAP header
-     * or by
-     *         logging into the Ad Manager UI.
-     *         <p>
-     *         Test networks are limited in the following ways:
+     *         
+     *         <p>Each login(i.e. email address) can only have one test network.
+     * Data from any of your
+     *         existing networks will not be transferred to the new test
+     * network. Once the test network is
+     *         created, the test network can be used in the API by supplying
+     * the {@link Network#networkCode}
+     *         in the SOAP header or by logging into the Ad Manager UI.
+     *         
+     *         <p>Test networks are limited in the following ways:
+     *         
      *         <ul>
-     *         <li>Test networks cannot serve ads.</li>
+     *         <li>Test networks cannot serve ads.
      *         <li>Because test networks cannot serve ads, reports will always
-     * come
-     *         back without data.</li>
+     * come back without data.
      *         <li>Since forecasting requires serving history, forecast service
-     * results
-     *         will be faked. See {@link ForecastService} for more info.</li>
-     * <li>Test networks are, by default, Ad Manager networks and don't have
-     * any features
-     *         from Ad Manager 360. To have additional features turned on,
-     * please contact your
-     *         account manager. </li>
+     * results will be faked. See
+     *         {@link ForecastService} for more info.
+     *         <li>Test networks are, by default, Ad Manager networks and
+     * don't have any features from Ad
+     *         Manager 360. To have additional features turned on, please
+     * contact your account manager.
      *         <li>Test networks are limited to 10,000 objects per entity
-     * type.</li>
+     * type.
      *         </ul>
-     *         </p>
      */
     public com.google.api.ads.admanager.axis.v202211.Network makeTestNetwork() throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 
     /**
      * Updates the specified network. Currently, only the network
-     * display name can
-     *         be updated.
+     * display name can be updated.
      */
     public com.google.api.ads.admanager.axis.v202211.Network updateNetwork(com.google.api.ads.admanager.axis.v202211.Network network) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202211.ApiException;
 }

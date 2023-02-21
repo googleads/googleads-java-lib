@@ -29,49 +29,40 @@ package com.google.api.ads.admanager.axis.v202205;
  */
 public class FirstPartyAudienceSegmentRule  implements java.io.Serializable {
     /* Specifies the inventory (i.e. ad units and placements) that
-     * are part of the rule of a
-     *                 {@link FirstPartyAudienceSegment}. This attribute
-     * is required. */
+     * are part of the rule of a {@link
+     *                 FirstPartyAudienceSegment}. This attribute is required. */
     private com.google.api.ads.admanager.axis.v202205.InventoryTargeting inventoryRule;
 
     /* Specifies the collection of custom criteria that are part of
-     * the rule of a
-     *                 {@link FirstPartyAudienceSegment}.
+     * the rule of a {@link
+     *                 FirstPartyAudienceSegment}.
      *                 
-     *                 <p>
-     *                 Once the {@link FirstPartyAudienceSegment} is updated
+     *                 <p>Once the {@link FirstPartyAudienceSegment} is updated
      * or modified with custom criteria, the
      *                 server may return a normalized, but equivalent representation
      * of the custom criteria rule.
-     *                 </p>
      *                 
      *                 <ul>
      *                 {@code customCriteriaRule} will have up to three levels
      * including itself.
-     *                 <li>
-     *                 The top level {@link CustomCriteriaSet} i.e. the {@code
-     * customTargeting} object can only
+     *                 <li>The top level {@link CustomCriteriaSet} i.e. the
+     * {@code customTargeting} object can only
      *                 contain a {@link CustomCriteriaSet.LogicalOperator#OR}
      * of all its children.
-     *                 <li>
-     *                 The second level of {@link CustomCriteriaSet} objects
-     * can only contain
-     *                 {@link CustomCriteriaSet.LogicalOperator#AND} of all
-     * their children. If a
-     *                 {@link CustomCriteria} is placed on this level, the
-     * server will wrap it in a
-     *                 {@link CustomCriteriaSet}.
-     *                 <li>
-     *                 The third level can only comprise of {@link CustomCriteria}
+     *                 <li>The second level of {@link CustomCriteriaSet}
+     * objects can only contain {@link
+     *                 CustomCriteriaSet.LogicalOperator#AND} of all their
+     * children. If a {@link CustomCriteria}
+     *                 is placed on this level, the server will wrap it in
+     * a {@link CustomCriteriaSet}.
+     *                 <li>The third level can only comprise of {@link CustomCriteria}
      * objects.
      *                 </ul>
      *                 
-     *                 <p>
-     *                 The resulting custom criteria rule would be of the
-     * form: <br>
+     *                 <p>The resulting custom criteria rule would be of
+     * the form: <br>
      *                 <img
-     *                 src="https://chart.apis.google.com/chart?cht=gv&chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&chs=450x200"/>
-     * </p> */
+     *                 src="https://chart.apis.google.com/chart?cht=gv&chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&chs=450x200"/> */
     private com.google.api.ads.admanager.axis.v202205.CustomCriteriaSet customCriteriaRule;
 
     public FirstPartyAudienceSegmentRule() {
@@ -97,9 +88,8 @@ public class FirstPartyAudienceSegmentRule  implements java.io.Serializable {
      * Gets the inventoryRule value for this FirstPartyAudienceSegmentRule.
      * 
      * @return inventoryRule   * Specifies the inventory (i.e. ad units and placements) that
-     * are part of the rule of a
-     *                 {@link FirstPartyAudienceSegment}. This attribute
-     * is required.
+     * are part of the rule of a {@link
+     *                 FirstPartyAudienceSegment}. This attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202205.InventoryTargeting getInventoryRule() {
         return inventoryRule;
@@ -110,9 +100,8 @@ public class FirstPartyAudienceSegmentRule  implements java.io.Serializable {
      * Sets the inventoryRule value for this FirstPartyAudienceSegmentRule.
      * 
      * @param inventoryRule   * Specifies the inventory (i.e. ad units and placements) that
-     * are part of the rule of a
-     *                 {@link FirstPartyAudienceSegment}. This attribute
-     * is required.
+     * are part of the rule of a {@link
+     *                 FirstPartyAudienceSegment}. This attribute is required.
      */
     public void setInventoryRule(com.google.api.ads.admanager.axis.v202205.InventoryTargeting inventoryRule) {
         this.inventoryRule = inventoryRule;
@@ -123,43 +112,35 @@ public class FirstPartyAudienceSegmentRule  implements java.io.Serializable {
      * Gets the customCriteriaRule value for this FirstPartyAudienceSegmentRule.
      * 
      * @return customCriteriaRule   * Specifies the collection of custom criteria that are part of
-     * the rule of a
-     *                 {@link FirstPartyAudienceSegment}.
+     * the rule of a {@link
+     *                 FirstPartyAudienceSegment}.
      *                 
-     *                 <p>
-     *                 Once the {@link FirstPartyAudienceSegment} is updated
+     *                 <p>Once the {@link FirstPartyAudienceSegment} is updated
      * or modified with custom criteria, the
      *                 server may return a normalized, but equivalent representation
      * of the custom criteria rule.
-     *                 </p>
      *                 
      *                 <ul>
      *                 {@code customCriteriaRule} will have up to three levels
      * including itself.
-     *                 <li>
-     *                 The top level {@link CustomCriteriaSet} i.e. the {@code
-     * customTargeting} object can only
+     *                 <li>The top level {@link CustomCriteriaSet} i.e. the
+     * {@code customTargeting} object can only
      *                 contain a {@link CustomCriteriaSet.LogicalOperator#OR}
      * of all its children.
-     *                 <li>
-     *                 The second level of {@link CustomCriteriaSet} objects
-     * can only contain
-     *                 {@link CustomCriteriaSet.LogicalOperator#AND} of all
-     * their children. If a
-     *                 {@link CustomCriteria} is placed on this level, the
-     * server will wrap it in a
-     *                 {@link CustomCriteriaSet}.
-     *                 <li>
-     *                 The third level can only comprise of {@link CustomCriteria}
+     *                 <li>The second level of {@link CustomCriteriaSet}
+     * objects can only contain {@link
+     *                 CustomCriteriaSet.LogicalOperator#AND} of all their
+     * children. If a {@link CustomCriteria}
+     *                 is placed on this level, the server will wrap it in
+     * a {@link CustomCriteriaSet}.
+     *                 <li>The third level can only comprise of {@link CustomCriteria}
      * objects.
      *                 </ul>
      *                 
-     *                 <p>
-     *                 The resulting custom criteria rule would be of the
-     * form: <br>
+     *                 <p>The resulting custom criteria rule would be of
+     * the form: <br>
      *                 <img
      *                 src="https://chart.apis.google.com/chart?cht=gv&chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&chs=450x200"/>
-     * </p>
      */
     public com.google.api.ads.admanager.axis.v202205.CustomCriteriaSet getCustomCriteriaRule() {
         return customCriteriaRule;
@@ -170,43 +151,35 @@ public class FirstPartyAudienceSegmentRule  implements java.io.Serializable {
      * Sets the customCriteriaRule value for this FirstPartyAudienceSegmentRule.
      * 
      * @param customCriteriaRule   * Specifies the collection of custom criteria that are part of
-     * the rule of a
-     *                 {@link FirstPartyAudienceSegment}.
+     * the rule of a {@link
+     *                 FirstPartyAudienceSegment}.
      *                 
-     *                 <p>
-     *                 Once the {@link FirstPartyAudienceSegment} is updated
+     *                 <p>Once the {@link FirstPartyAudienceSegment} is updated
      * or modified with custom criteria, the
      *                 server may return a normalized, but equivalent representation
      * of the custom criteria rule.
-     *                 </p>
      *                 
      *                 <ul>
      *                 {@code customCriteriaRule} will have up to three levels
      * including itself.
-     *                 <li>
-     *                 The top level {@link CustomCriteriaSet} i.e. the {@code
-     * customTargeting} object can only
+     *                 <li>The top level {@link CustomCriteriaSet} i.e. the
+     * {@code customTargeting} object can only
      *                 contain a {@link CustomCriteriaSet.LogicalOperator#OR}
      * of all its children.
-     *                 <li>
-     *                 The second level of {@link CustomCriteriaSet} objects
-     * can only contain
-     *                 {@link CustomCriteriaSet.LogicalOperator#AND} of all
-     * their children. If a
-     *                 {@link CustomCriteria} is placed on this level, the
-     * server will wrap it in a
-     *                 {@link CustomCriteriaSet}.
-     *                 <li>
-     *                 The third level can only comprise of {@link CustomCriteria}
+     *                 <li>The second level of {@link CustomCriteriaSet}
+     * objects can only contain {@link
+     *                 CustomCriteriaSet.LogicalOperator#AND} of all their
+     * children. If a {@link CustomCriteria}
+     *                 is placed on this level, the server will wrap it in
+     * a {@link CustomCriteriaSet}.
+     *                 <li>The third level can only comprise of {@link CustomCriteria}
      * objects.
      *                 </ul>
      *                 
-     *                 <p>
-     *                 The resulting custom criteria rule would be of the
-     * form: <br>
+     *                 <p>The resulting custom criteria rule would be of
+     * the form: <br>
      *                 <img
      *                 src="https://chart.apis.google.com/chart?cht=gv&chl=digraph{customTargeting_LogicalOperator_OR-%3ECustomCriteriaSet_LogicalOperator_AND_1-%3ECustomCriteria_1;CustomCriteriaSet_LogicalOperator_AND_1-%3Eellipsis1;customTargeting_LogicalOperator_OR-%3Eellipsis2;ellipsis1[label=%22...%22,shape=none,fontsize=32];ellipsis2[label=%22...%22,shape=none,fontsize=32]}&chs=450x200"/>
-     * </p>
      */
     public void setCustomCriteriaRule(com.google.api.ads.admanager.axis.v202205.CustomCriteriaSet customCriteriaRule) {
         this.customCriteriaRule = customCriteriaRule;

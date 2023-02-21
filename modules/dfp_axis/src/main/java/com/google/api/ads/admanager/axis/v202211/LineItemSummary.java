@@ -24,84 +24,76 @@ package com.google.api.ads.admanager.axis.v202211;
 
 /**
  * The {@code LineItemSummary} represents the base class from which
- * a {@code
- *             LineItem} is derived.
+ * a {@code LineItem} is derived.
  */
 public class LineItemSummary  implements java.io.Serializable {
     /* The ID of the {@link Order} to which the {@code LineItem} belongs.
-     * This
-     *                 attribute is required. */
+     * This attribute is required. */
     private java.lang.Long orderId;
 
     /* Uniquely identifies the {@code LineItem}. This attribute is
-     * read-only and is
-     *                 assigned by Google when a line item is created. */
+     * read-only and is assigned by Google
+     *                 when a line item is created. */
     private java.lang.Long id;
 
     /* The name of the line item. This attribute is required and has
-     * a maximum
-     *                 length of 255 characters. */
+     * a maximum length of 255
+     *                 characters. */
     private java.lang.String name;
 
     /* An identifier for the {@code LineItem} that is meaningful to
-     * the publisher.
-     *                 This attribute is optional and has a maximum length
-     * of 255 characters. */
+     * the publisher. This attribute is
+     *                 optional and has a maximum length of 255 characters. */
     private java.lang.String externalId;
 
     /* The name of the {@link Order}. This value is read-only. */
     private java.lang.String orderName;
 
     /* The date and time on which the {@code LineItem} is enabled
-     * to begin
-     *                 serving. This attribute is required and must be in
-     * the future. */
+     * to begin serving. This attribute is
+     *                 required and must be in the future. */
     private com.google.api.ads.admanager.axis.v202211.DateTime startDateTime;
 
     /* Specifies whether to start serving to the {@code LineItem}
-     * right away, in
-     *                 an hour, etc. This attribute is optional and defaults
-     * to
-     *                 {@link StartDateTimeType#USE_START_DATE_TIME}. */
+     * right away, in an hour, etc. This
+     *                 attribute is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}. */
     private com.google.api.ads.admanager.axis.v202211.StartDateTimeType startDateTimeType;
 
     /* The date and time on which the {@code LineItem} will stop serving.
-     * This
-     *                 attribute is required unless {@link LineItem#unlimitedEndDateTime}
-     * is set
-     *                 to {@code true}. If specified, it must be after the
-     * {@link LineItem#startDateTime}. This end date and time does not include
-     * auto extension days. */
+     * This attribute is required
+     *                 unless {@link LineItem#unlimitedEndDateTime} is set
+     * to {@code true}. If specified, it must be
+     *                 after the {@link LineItem#startDateTime}. This end
+     * date and time does not include auto
+     *                 extension days. */
     private com.google.api.ads.admanager.axis.v202211.DateTime endDateTime;
 
     /* The number of days to allow a line item to deliver past its
-     * {@link #endDateTime}. A maximum
-     *                 of 7 days is allowed. This is feature is only available
+     * {@link #endDateTime}. A maximum of
+     *                 7 days is allowed. This is feature is only available
      * for Ad Manager 360 accounts. */
     private java.lang.Integer autoExtensionDays;
 
     /* Specifies whether or not the {@code LineItem} has an end time.
-     * This
-     *                 attribute is optional and defaults to false. It can
-     * be be set to {@code
-     *                 true} for only line items of type {@link LineItemType#SPONSORSHIP},
-     * {@link LineItemType#NETWORK}, {@link LineItemType#PRICE_PRIORITY}
-     * and
-     *                 {@link LineItemType#HOUSE}. */
+     * This attribute is optional and
+     *                 defaults to false. It can be be set to {@code true}
+     * for only line items of type {@link
+     *                 LineItemType#SPONSORSHIP}, {@link LineItemType#NETWORK},
+     * {@link LineItemType#PRICE_PRIORITY}
+     *                 and {@link LineItemType#HOUSE}. */
     private java.lang.Boolean unlimitedEndDateTime;
 
     /* The strategy used for displaying multiple {@link Creative}
-     * objects that are
-     *                 associated with the {@code LineItem}. This attribute
-     * is required. */
+     * objects that are associated with the
+     *                 {@code LineItem}. This attribute is required. */
     private com.google.api.ads.admanager.axis.v202211.CreativeRotationType creativeRotationType;
 
     /* The strategy for delivering ads over the course of the line
      * item's duration. This attribute is
      *                 optional and defaults to {@link DeliveryRateType#EVENLY}
-     * or
-     *                 {@link DeliveryRateType#FRONTLOADED} depending on
-     * the network's configuration. */
+     * or {@link
+     *                 DeliveryRateType#FRONTLOADED} depending on the network's
+     * configuration. */
     private com.google.api.ads.admanager.axis.v202211.DeliveryRateType deliveryRateType;
 
     /* Strategy for choosing forecasted traffic shapes to pace line
@@ -115,10 +107,10 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.CustomPacingCurve customPacingCurve;
 
     /* The strategy for serving roadblocked creatives, i.e. instances
-     * where
-     *                 multiple creatives must be served together on a single
-     * web page. This
-     *                 attribute is optional and defaults to {@link RoadblockingType#ONE_OR_MORE}. */
+     * where multiple creatives must be
+     *                 served together on a single web page. This attribute
+     * is optional and defaults to {@link
+     *                 RoadblockingType#ONE_OR_MORE}. */
     private com.google.api.ads.admanager.axis.v202211.RoadblockingType roadblockingType;
 
     /* The nature of the line item's creatives' skippability. This
@@ -128,28 +120,26 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.SkippableAdType skippableAdType;
 
     /* The set of frequency capping units for this {@code LineItem}.
-     * This
-     *                 attribute is optional. */
+     * This attribute is optional. */
     private com.google.api.ads.admanager.axis.v202211.FrequencyCap[] frequencyCaps;
 
     /* Indicates the line item type of a {@code LineItem}. This attribute
      * is required.
      *                 
-     *                 The line item type determines the default priority
+     *                 <p>The line item type determines the default priority
      * of the line item. More information can be
-     *                 found on the <a href="https://support.google.com/dfp_premium/answer/177279">
-     * Ad Manager Help Center</a>. */
+     *                 found on the <a href="https://support.google.com/admanager/answer/177279">Ad
+     * Manager Help
+     *                 Center</a>. */
     private com.google.api.ads.admanager.axis.v202211.LineItemType lineItemType;
 
     /* The priority for the line item. Valid values range from 1 to
-     * 16. This
-     *                 field is optional and defaults to the default priority
-     * of the
-     *                 {@link LineItemType}.
-     *                 
+     * 16. This field is optional and
+     *                 defaults to the default priority of the {@link LineItemType}.
+     * 
      *                 <p>The following table shows the default, minimum,
-     * and maximum priority
-     *                 values are for each line item type:
+     * and maximum priority values are for each
+     *                 line item type:
      *                 
      *                 <table>
      *                 <tr>
@@ -199,74 +189,68 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 </table>
      *                 
      *                 <p>This field can only be edited by certain networks,
-     * otherwise a
-     *                 {@link PermissionError} will occur. */
+     * otherwise a {@link PermissionError} will
+     *                 occur. */
     private java.lang.Integer priority;
 
     /* The amount of money to spend per impression or click. This
-     * attribute is
-     *                 required for creating a {@code LineItem}. */
+     * attribute is required for creating a
+     *                 {@code LineItem}. */
     private com.google.api.ads.admanager.axis.v202211.Money costPerUnit;
 
-    /* An amount to help the adserver rank inventory. {@link
-     *                 LineItem#valueCostPerUnit} artificially raises the
-     * value of
-     *                 inventory over the {@link LineItem#costPerUnit} but
-     * avoids raising
-     *                 the actual {@link LineItem#costPerUnit}. This attribute
-     * is optional
-     *                 and defaults to a {@link Money} object in the local
-     * currency with {@link Money#microAmount} 0. */
+    /* An amount to help the adserver rank inventory. {@link LineItem#valueCostPerUnit}
+     * artificially
+     *                 raises the value of inventory over the {@link LineItem#costPerUnit}
+     * but avoids raising the
+     *                 actual {@link LineItem#costPerUnit}. This attribute
+     * is optional and defaults to a {@link Money}
+     *                 object in the local currency with {@link Money#microAmount}
+     * 0. */
     private com.google.api.ads.admanager.axis.v202211.Money valueCostPerUnit;
 
     /* The method used for billing this {@code LineItem}. This attribute
-     * is
-     *                 required. */
+     * is required. */
     private com.google.api.ads.admanager.axis.v202211.CostType costType;
 
     /* The type of discount being applied to a {@code LineItem}, either
-     * percentage
-     *                 based or absolute. This attribute is optional and
-     * defaults to
-     *                 {@link LineItemDiscountType#PERCENTAGE}. */
+     * percentage based or absolute.
+     *                 This attribute is optional and defaults to {@link
+     * LineItemDiscountType#PERCENTAGE}. */
     private com.google.api.ads.admanager.axis.v202211.LineItemDiscountType discountType;
 
     /* The number here is either a percentage or an absolute value
-     * depending on
-     *                 the {@code LineItemDiscountType}. If the {@code LineItemDiscountType}
-     * is
-     *                 {@link LineItemDiscountType#PERCENTAGE}, then only
-     * non-fractional values
-     *                 are supported. */
+     * depending on the {@code
+     *                 LineItemDiscountType}. If the {@code LineItemDiscountType}
+     * is {@link
+     *                 LineItemDiscountType#PERCENTAGE}, then only non-fractional
+     * values are supported. */
     private java.lang.Double discount;
 
     /* This attribute is only applicable for certain {@link #lineItemType
-     * line item types}
-     *                 and acts as an "FYI" or note, which does not impact
-     * adserving or other backend systems.
-     *                 <p>
-     *                 For {@link LineItemType#SPONSORSHIP} line items, this
-     * represents the minimum quantity,
-     *                 which is a lifetime impression volume goal for reporting
+     * line item types} and acts as
+     *                 an "FYI" or note, which does not impact adserving
+     * or other backend systems.
+     *                 
+     *                 <p>For {@link LineItemType#SPONSORSHIP} line items,
+     * this represents the minimum quantity, which
+     *                 is a lifetime impression volume goal for reporting
      * purposes only.
-     *                 <p>
-     *                 For {@link LineItemType#STANDARD} line items, this
-     * represent the contracted quantity,
-     *                 which is the number of units specified in the contract
-     * the advertiser has bought for
-     *                 this {@code LineItem}. This field is just a "FYI"
-     * for traffickers to manually intervene
-     *                 with the {@code LineItem} when needed. This attribute
-     * is only available for
-     *                 {@link LineItemType#STANDARD} line items if you have
-     * this feature enabled on your network. */
+     *                 
+     *                 <p>For {@link LineItemType#STANDARD} line items, this
+     * represent the contracted quantity, which
+     *                 is the number of units specified in the contract the
+     * advertiser has bought for this {@code
+     *                 LineItem}. This field is just a "FYI" for traffickers
+     * to manually intervene with the {@code
+     *                 LineItem} when needed. This attribute is only available
+     * for {@link LineItemType#STANDARD} line
+     *                 items if you have this feature enabled on your network. */
     private java.lang.Long contractedUnitsBought;
 
     /* Details about the creatives that are expected to serve through
-     * this
-     *                 {@code LineItem}. This attribute is required and replaces
-     * the
-     *                 {@code creativeSizes} attribute. */
+     * this {@code LineItem}. This
+     *                 attribute is required and replaces the {@code creativeSizes}
+     * attribute. */
     private com.google.api.ads.admanager.axis.v202211.CreativePlaceholder[] creativePlaceholders;
 
     /* This attribute is required and meaningful only if the {@link
@@ -275,59 +259,50 @@ public class LineItemSummary  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202211.LineItemActivityAssociation[] activityAssociations;
 
     /* The environment that the {@code LineItem} is targeting. The
-     * default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is
-     *                 {@link EnvironmentType#VIDEO_PLAYER}, then this line
-     * item can only target
-     *                 {@code AdUnits} that have {@code AdUnitSizes} whose
-     * {@code environmentType}
-     *                 is also {@code VIDEO_PLAYER}. */
+     * default value is {@link
+     *                 EnvironmentType#BROWSER}. If this value is {@link
+     * EnvironmentType#VIDEO_PLAYER}, then this line
+     *                 item can only target {@code AdUnits} that have {@code
+     * AdUnitSizes} whose {@code
+     *                 environmentType} is also {@code VIDEO_PLAYER}. */
     private com.google.api.ads.admanager.axis.v202211.EnvironmentType environmentType;
 
     /* The set of {@link allowedFormats} that this programmatic line
-     * item can have.
-     *                 If the set is empty, this line item allows all formats. */
+     * item can have. If the set is
+     *                 empty, this line item allows all formats. */
     private com.google.api.ads.admanager.axis.v202211.AllowedFormats[] allowedFormats;
 
     /* The delivery option for companions. Setting this field is only
-     * meaningful
-     *                 if the following conditions are met:
+     * meaningful if the following
+     *                 conditions are met:
+     *                 
      *                 <ol>
-     *                 <li>
-     *                 The <b>Guaranteed roadblocks</b> feature is enabled
+     *                 <li>The <b>Guaranteed roadblocks</b> feature is enabled
      * on your network.
-     *                 </li>
-     *                 <li>
-     *                 One of the following is true (both cannot be true,
-     * these are mutually
-     *                 exclusive).
+     *                 <li>One of the following is true (both cannot be true,
+     * these are mutually exclusive).
      *                 <ul>
-     *                 <li>
-     *                 The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
-     * </li>
-     *                 <li>
-     *                 The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
-     * </li>
-     *                 </ul>
-     *                 </li>
+     *                 <li>The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
+     * <li>The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
+     * </ul>
      *                 </ol>
-     *                 <p>
-     *                 This field is optional and defaults to
-     *                 {@link CompanionDeliveryOption#OPTIONAL} if the above
-     * conditions are met.
-     *                 In all other cases it defaults to {@link CompanionDeliveryOption#UNKNOWN}
-     * and is not meaningful. */
+     *                 
+     *                 <p>This field is optional and defaults to {@link CompanionDeliveryOption#OPTIONAL}
+     * if the above
+     *                 conditions are met. In all other cases it defaults
+     * to {@link CompanionDeliveryOption#UNKNOWN}
+     *                 and is not meaningful. */
     private com.google.api.ads.admanager.axis.v202211.CompanionDeliveryOption companionDeliveryOption;
 
     /* The flag indicates whether overbooking should be allowed when
-     * creating or
-     *                 updating reservations of line item types {@link LineItemType#SPONSORSHIP}
-     * and {@link LineItemType#STANDARD}. When true, operations on this line
-     * item will never trigger a {@link ForecastError}, which corresponds
-     * to an
-     *                 overbook warning in the UI. The default value is false.
-     * 
+     * creating or updating reservations
+     *                 of line item types {@link LineItemType#SPONSORSHIP}
+     * and {@link LineItemType#STANDARD}. When
+     *                 true, operations on this line item will never trigger
+     * a {@link ForecastError}, which
+     *                 corresponds to an overbook warning in the UI. The
+     * default value is false.
+     *                 
      *                 <p>Note: this field will not persist on the line item
      * itself, and the value will only affect
      *                 the current request. */
@@ -350,66 +325,58 @@ public class LineItemSummary  implements java.io.Serializable {
     private java.lang.Boolean skipCrossSellingRuleWarningChecks;
 
     /* The flag indicates whether inventory should be reserved when
-     * creating a
-     *                 line item of types {@link LineItemType#SPONSORSHIP}
-     * and
-     *                 {@link LineItemType#STANDARD} in an unapproved {@link
-     * Order}. The default
-     *                 value is false. */
+     * creating a line item of types
+     *                 {@link LineItemType#SPONSORSHIP} and {@link LineItemType#STANDARD}
+     * in an unapproved {@link
+     *                 Order}. The default value is false. */
     private java.lang.Boolean reserveAtCreation;
 
     /* Contains trafficking statistics for the line item. This attribute
-     * is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} in case
-     *                 there are no statistics for a line item yet. */
+     * is readonly and is populated
+     *                 by Google. This will be {@code null} in case there
+     * are no statistics for a line item yet. */
     private com.google.api.ads.admanager.axis.v202211.Stats stats;
 
     /* Indicates how well the line item has been performing. This
-     * attribute is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} if the
-     *                 delivery indicator information is not available due
-     * to one of the following
-     *                 reasons:
+     * attribute is readonly and is
+     *                 populated by Google. This will be {@code null} if
+     * the delivery indicator information is not
+     *                 available due to one of the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The line item is not delivering.</li>
-     *                 <li>The line item has an unlimited goal or cap.</li>
-     * <li>The line item has a percentage based goal or cap.</li>
-     *                 </ol> */
+     *                 <li>The line item is not delivering.
+     *                 <li>The line item has an unlimited goal or cap.
+     *                 <li>The line item has a percentage based goal or cap.
+     * </ol> */
     private com.google.api.ads.admanager.axis.v202211.DeliveryIndicator deliveryIndicator;
 
     /* Delivery data provides the number of clicks or impressions
-     * delivered for a
-     *                 {@link LineItem} in the last 7 days. This attribute
-     * is readonly and is
-     *                 populated by Google. This will be {@code null} if
-     * the delivery data cannot
-     *                 be computed due to one of the following reasons:
+     * delivered for a {@link LineItem} in
+     *                 the last 7 days. This attribute is readonly and is
+     * populated by Google. This will be {@code
+     *                 null} if the delivery data cannot be computed due
+     * to one of the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>
-     *                 The line item is not deliverable.</li>
-     *                 <li>
-     *                 The line item has completed delivering more than 7
-     * days ago.</li>
-     *                 <li>
-     *                 The line item has an absolute-based goal.
-     *                 {@link LineItem#deliveryIndicator} should be used
-     * to track its
-     *                 progress in this case.</li> */
+     *                 <li>The line item is not deliverable.
+     *                 <li>The line item has completed delivering more than
+     * 7 days ago.
+     *                 <li>The line item has an absolute-based goal. {@link
+     * LineItem#deliveryIndicator} should be
+     *                 used to track its progress in this case. */
     private com.google.api.ads.admanager.axis.v202211.DeliveryData deliveryData;
 
     /* The amount of money allocated to the {@code LineItem}. This
-     * attribute is
-     *                 readonly and is populated by Google. The currency
-     * code is readonly. */
+     * attribute is readonly and is
+     *                 populated by Google. The currency code is readonly. */
     private com.google.api.ads.admanager.axis.v202211.Money budget;
 
     /* The status of the {@code LineItem}. This attribute is readonly. */
     private com.google.api.ads.admanager.axis.v202211.ComputedStatus status;
 
     /* Describes whether or not inventory has been reserved for the
-     * {@code LineItem}. This attribute is readonly and is assigned by Google. */
+     * {@code LineItem}. This attribute
+     *                 is readonly and is assigned by Google. */
     private com.google.api.ads.admanager.axis.v202211.LineItemSummaryReservationStatus reservationStatus;
 
     /* The archival status of the {@code LineItem}. This attribute
@@ -417,42 +384,40 @@ public class LineItemSummary  implements java.io.Serializable {
     private java.lang.Boolean isArchived;
 
     /* The web property code used for dynamic allocation line items.
-     * This web
-     *                 property is only required with line item types
-     *                 {@link LineItemType#AD_EXCHANGE} and {@link LineItemType#ADSENSE}. */
+     * This web property is only
+     *                 required with line item types {@link LineItemType#AD_EXCHANGE}
+     * and {@link
+     *                 LineItemType#ADSENSE}. */
     private java.lang.String webPropertyCode;
 
     /* The set of labels applied directly to this line item. */
     private com.google.api.ads.admanager.axis.v202211.AppliedLabel[] appliedLabels;
 
     /* Contains the set of labels inherited from the order that contains
-     * this
-     *                 line item and the advertiser that owns the order.
-     * If a label has been
-     *                 negated, only the negated label is returned. This
-     * field is readonly
-     *                 and is assigned by Google. */
+     * this line item and the
+     *                 advertiser that owns the order. If a label has been
+     * negated, only the negated label is
+     *                 returned. This field is readonly and is assigned by
+     * Google. */
     private com.google.api.ads.admanager.axis.v202211.AppliedLabel[] effectiveAppliedLabels;
 
     /* If a line item has a series of competitive exclusions on it,
-     * it could be
-     *                 blocked from serving with line items from the same
-     * advertiser. Setting this
-     *                 to {@code true} will allow line items from the same
-     * advertiser to serve
-     *                 regardless of the other competitive exclusion labels
-     * being applied. */
+     * it could be blocked from serving
+     *                 with line items from the same advertiser. Setting
+     * this to {@code true} will allow line items
+     *                 from the same advertiser to serve regardless of the
+     * other competitive exclusion labels being
+     *                 applied. */
     private java.lang.Boolean disableSameAdvertiserCompetitiveExclusion;
 
     /* The application that last modified this line item. This attribute
-     * is read only
-     *                 and is assigned by Google. */
+     * is read only and is assigned
+     *                 by Google. */
     private java.lang.String lastModifiedByApp;
 
     /* Provides any additional notes that may annotate the {@code
-     * LineItem}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters. */
+     * LineItem}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters. */
     private java.lang.String notes;
 
     /* The {@code CompetitiveConstraintScope} for the competitive
@@ -499,19 +464,20 @@ public class LineItemSummary  implements java.io.Serializable {
     private java.lang.Boolean isMissingCreatives;
 
     /* Indicates the {@link ProgrammaticCreativeSource} of the programmatic
-     * line item.
-     *                 This is a read-only field. Any changes must be made
-     * on the {@link ProposalLineItem}. */
+     * line item. This is a
+     *                 read-only field. Any changes must be made on the {@link
+     * ProposalLineItem}. */
     private com.google.api.ads.admanager.axis.v202211.ProgrammaticCreativeSource programmaticCreativeSource;
 
     private com.google.api.ads.admanager.axis.v202211.ThirdPartyMeasurementSettings thirdPartyMeasurementSettings;
 
-    /* Designates this line item as intended for YT Kids app.
-     *                 If true, all creatives associated with this line item
-     * must be reviewed and approved. See the
-     *                 <a href="https://support.google.com/yt-partner-sales/answer/10015534">Ad
-     * Manager Help Center
-     *                 </a> for more information. */
+    /* Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with
+     *                 this line item must be reviewed and approved. See
+     * the <a
+     *                 href="https://support.google.com/yt-partner-sales/answer/10015534">Ad
+     * Manager Help Center </a>
+     *                 for more information. */
     private java.lang.Boolean youtubeKidsRestricted;
 
     /* The max duration of a video creative associated with this {@code
@@ -767,8 +733,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the orderId value for this LineItemSummary.
      * 
      * @return orderId   * The ID of the {@link Order} to which the {@code LineItem} belongs.
-     * This
-     *                 attribute is required.
+     * This attribute is required.
      */
     public java.lang.Long getOrderId() {
         return orderId;
@@ -779,8 +744,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the orderId value for this LineItemSummary.
      * 
      * @param orderId   * The ID of the {@link Order} to which the {@code LineItem} belongs.
-     * This
-     *                 attribute is required.
+     * This attribute is required.
      */
     public void setOrderId(java.lang.Long orderId) {
         this.orderId = orderId;
@@ -791,8 +755,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the id value for this LineItemSummary.
      * 
      * @return id   * Uniquely identifies the {@code LineItem}. This attribute is
-     * read-only and is
-     *                 assigned by Google when a line item is created.
+     * read-only and is assigned by Google
+     *                 when a line item is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -803,8 +767,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the id value for this LineItemSummary.
      * 
      * @param id   * Uniquely identifies the {@code LineItem}. This attribute is
-     * read-only and is
-     *                 assigned by Google when a line item is created.
+     * read-only and is assigned by Google
+     *                 when a line item is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -815,8 +779,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the name value for this LineItemSummary.
      * 
      * @return name   * The name of the line item. This attribute is required and has
-     * a maximum
-     *                 length of 255 characters.
+     * a maximum length of 255
+     *                 characters.
      */
     public java.lang.String getName() {
         return name;
@@ -827,8 +791,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the name value for this LineItemSummary.
      * 
      * @param name   * The name of the line item. This attribute is required and has
-     * a maximum
-     *                 length of 255 characters.
+     * a maximum length of 255
+     *                 characters.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -839,9 +803,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the externalId value for this LineItemSummary.
      * 
      * @return externalId   * An identifier for the {@code LineItem} that is meaningful to
-     * the publisher.
-     *                 This attribute is optional and has a maximum length
-     * of 255 characters.
+     * the publisher. This attribute is
+     *                 optional and has a maximum length of 255 characters.
      */
     public java.lang.String getExternalId() {
         return externalId;
@@ -852,9 +815,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the externalId value for this LineItemSummary.
      * 
      * @param externalId   * An identifier for the {@code LineItem} that is meaningful to
-     * the publisher.
-     *                 This attribute is optional and has a maximum length
-     * of 255 characters.
+     * the publisher. This attribute is
+     *                 optional and has a maximum length of 255 characters.
      */
     public void setExternalId(java.lang.String externalId) {
         this.externalId = externalId;
@@ -885,9 +847,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the startDateTime value for this LineItemSummary.
      * 
      * @return startDateTime   * The date and time on which the {@code LineItem} is enabled
-     * to begin
-     *                 serving. This attribute is required and must be in
-     * the future.
+     * to begin serving. This attribute is
+     *                 required and must be in the future.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getStartDateTime() {
         return startDateTime;
@@ -898,9 +859,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the startDateTime value for this LineItemSummary.
      * 
      * @param startDateTime   * The date and time on which the {@code LineItem} is enabled
-     * to begin
-     *                 serving. This attribute is required and must be in
-     * the future.
+     * to begin serving. This attribute is
+     *                 required and must be in the future.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202211.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -911,10 +871,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the startDateTimeType value for this LineItemSummary.
      * 
      * @return startDateTimeType   * Specifies whether to start serving to the {@code LineItem}
-     * right away, in
-     *                 an hour, etc. This attribute is optional and defaults
-     * to
-     *                 {@link StartDateTimeType#USE_START_DATE_TIME}.
+     * right away, in an hour, etc. This
+     *                 attribute is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}.
      */
     public com.google.api.ads.admanager.axis.v202211.StartDateTimeType getStartDateTimeType() {
         return startDateTimeType;
@@ -925,10 +883,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the startDateTimeType value for this LineItemSummary.
      * 
      * @param startDateTimeType   * Specifies whether to start serving to the {@code LineItem}
-     * right away, in
-     *                 an hour, etc. This attribute is optional and defaults
-     * to
-     *                 {@link StartDateTimeType#USE_START_DATE_TIME}.
+     * right away, in an hour, etc. This
+     *                 attribute is optional and defaults to {@link StartDateTimeType#USE_START_DATE_TIME}.
      */
     public void setStartDateTimeType(com.google.api.ads.admanager.axis.v202211.StartDateTimeType startDateTimeType) {
         this.startDateTimeType = startDateTimeType;
@@ -939,12 +895,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the endDateTime value for this LineItemSummary.
      * 
      * @return endDateTime   * The date and time on which the {@code LineItem} will stop serving.
-     * This
-     *                 attribute is required unless {@link LineItem#unlimitedEndDateTime}
-     * is set
-     *                 to {@code true}. If specified, it must be after the
-     * {@link LineItem#startDateTime}. This end date and time does not include
-     * auto extension days.
+     * This attribute is required
+     *                 unless {@link LineItem#unlimitedEndDateTime} is set
+     * to {@code true}. If specified, it must be
+     *                 after the {@link LineItem#startDateTime}. This end
+     * date and time does not include auto
+     *                 extension days.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getEndDateTime() {
         return endDateTime;
@@ -955,12 +911,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the endDateTime value for this LineItemSummary.
      * 
      * @param endDateTime   * The date and time on which the {@code LineItem} will stop serving.
-     * This
-     *                 attribute is required unless {@link LineItem#unlimitedEndDateTime}
-     * is set
-     *                 to {@code true}. If specified, it must be after the
-     * {@link LineItem#startDateTime}. This end date and time does not include
-     * auto extension days.
+     * This attribute is required
+     *                 unless {@link LineItem#unlimitedEndDateTime} is set
+     * to {@code true}. If specified, it must be
+     *                 after the {@link LineItem#startDateTime}. This end
+     * date and time does not include auto
+     *                 extension days.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202211.DateTime endDateTime) {
         this.endDateTime = endDateTime;
@@ -971,8 +927,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the autoExtensionDays value for this LineItemSummary.
      * 
      * @return autoExtensionDays   * The number of days to allow a line item to deliver past its
-     * {@link #endDateTime}. A maximum
-     *                 of 7 days is allowed. This is feature is only available
+     * {@link #endDateTime}. A maximum of
+     *                 7 days is allowed. This is feature is only available
      * for Ad Manager 360 accounts.
      */
     public java.lang.Integer getAutoExtensionDays() {
@@ -984,8 +940,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the autoExtensionDays value for this LineItemSummary.
      * 
      * @param autoExtensionDays   * The number of days to allow a line item to deliver past its
-     * {@link #endDateTime}. A maximum
-     *                 of 7 days is allowed. This is feature is only available
+     * {@link #endDateTime}. A maximum of
+     *                 7 days is allowed. This is feature is only available
      * for Ad Manager 360 accounts.
      */
     public void setAutoExtensionDays(java.lang.Integer autoExtensionDays) {
@@ -997,13 +953,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the unlimitedEndDateTime value for this LineItemSummary.
      * 
      * @return unlimitedEndDateTime   * Specifies whether or not the {@code LineItem} has an end time.
-     * This
-     *                 attribute is optional and defaults to false. It can
-     * be be set to {@code
-     *                 true} for only line items of type {@link LineItemType#SPONSORSHIP},
-     * {@link LineItemType#NETWORK}, {@link LineItemType#PRICE_PRIORITY}
-     * and
-     *                 {@link LineItemType#HOUSE}.
+     * This attribute is optional and
+     *                 defaults to false. It can be be set to {@code true}
+     * for only line items of type {@link
+     *                 LineItemType#SPONSORSHIP}, {@link LineItemType#NETWORK},
+     * {@link LineItemType#PRICE_PRIORITY}
+     *                 and {@link LineItemType#HOUSE}.
      */
     public java.lang.Boolean getUnlimitedEndDateTime() {
         return unlimitedEndDateTime;
@@ -1014,13 +969,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the unlimitedEndDateTime value for this LineItemSummary.
      * 
      * @param unlimitedEndDateTime   * Specifies whether or not the {@code LineItem} has an end time.
-     * This
-     *                 attribute is optional and defaults to false. It can
-     * be be set to {@code
-     *                 true} for only line items of type {@link LineItemType#SPONSORSHIP},
-     * {@link LineItemType#NETWORK}, {@link LineItemType#PRICE_PRIORITY}
-     * and
-     *                 {@link LineItemType#HOUSE}.
+     * This attribute is optional and
+     *                 defaults to false. It can be be set to {@code true}
+     * for only line items of type {@link
+     *                 LineItemType#SPONSORSHIP}, {@link LineItemType#NETWORK},
+     * {@link LineItemType#PRICE_PRIORITY}
+     *                 and {@link LineItemType#HOUSE}.
      */
     public void setUnlimitedEndDateTime(java.lang.Boolean unlimitedEndDateTime) {
         this.unlimitedEndDateTime = unlimitedEndDateTime;
@@ -1031,9 +985,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the creativeRotationType value for this LineItemSummary.
      * 
      * @return creativeRotationType   * The strategy used for displaying multiple {@link Creative}
-     * objects that are
-     *                 associated with the {@code LineItem}. This attribute
-     * is required.
+     * objects that are associated with the
+     *                 {@code LineItem}. This attribute is required.
      */
     public com.google.api.ads.admanager.axis.v202211.CreativeRotationType getCreativeRotationType() {
         return creativeRotationType;
@@ -1044,9 +997,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the creativeRotationType value for this LineItemSummary.
      * 
      * @param creativeRotationType   * The strategy used for displaying multiple {@link Creative}
-     * objects that are
-     *                 associated with the {@code LineItem}. This attribute
-     * is required.
+     * objects that are associated with the
+     *                 {@code LineItem}. This attribute is required.
      */
     public void setCreativeRotationType(com.google.api.ads.admanager.axis.v202211.CreativeRotationType creativeRotationType) {
         this.creativeRotationType = creativeRotationType;
@@ -1059,9 +1011,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * @return deliveryRateType   * The strategy for delivering ads over the course of the line
      * item's duration. This attribute is
      *                 optional and defaults to {@link DeliveryRateType#EVENLY}
-     * or
-     *                 {@link DeliveryRateType#FRONTLOADED} depending on
-     * the network's configuration.
+     * or {@link
+     *                 DeliveryRateType#FRONTLOADED} depending on the network's
+     * configuration.
      */
     public com.google.api.ads.admanager.axis.v202211.DeliveryRateType getDeliveryRateType() {
         return deliveryRateType;
@@ -1074,9 +1026,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * @param deliveryRateType   * The strategy for delivering ads over the course of the line
      * item's duration. This attribute is
      *                 optional and defaults to {@link DeliveryRateType#EVENLY}
-     * or
-     *                 {@link DeliveryRateType#FRONTLOADED} depending on
-     * the network's configuration.
+     * or {@link
+     *                 DeliveryRateType#FRONTLOADED} depending on the network's
+     * configuration.
      */
     public void setDeliveryRateType(com.google.api.ads.admanager.axis.v202211.DeliveryRateType deliveryRateType) {
         this.deliveryRateType = deliveryRateType;
@@ -1135,10 +1087,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the roadblockingType value for this LineItemSummary.
      * 
      * @return roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
-     * where
-     *                 multiple creatives must be served together on a single
-     * web page. This
-     *                 attribute is optional and defaults to {@link RoadblockingType#ONE_OR_MORE}.
+     * where multiple creatives must be
+     *                 served together on a single web page. This attribute
+     * is optional and defaults to {@link
+     *                 RoadblockingType#ONE_OR_MORE}.
      */
     public com.google.api.ads.admanager.axis.v202211.RoadblockingType getRoadblockingType() {
         return roadblockingType;
@@ -1149,10 +1101,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the roadblockingType value for this LineItemSummary.
      * 
      * @param roadblockingType   * The strategy for serving roadblocked creatives, i.e. instances
-     * where
-     *                 multiple creatives must be served together on a single
-     * web page. This
-     *                 attribute is optional and defaults to {@link RoadblockingType#ONE_OR_MORE}.
+     * where multiple creatives must be
+     *                 served together on a single web page. This attribute
+     * is optional and defaults to {@link
+     *                 RoadblockingType#ONE_OR_MORE}.
      */
     public void setRoadblockingType(com.google.api.ads.admanager.axis.v202211.RoadblockingType roadblockingType) {
         this.roadblockingType = roadblockingType;
@@ -1189,8 +1141,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the frequencyCaps value for this LineItemSummary.
      * 
      * @return frequencyCaps   * The set of frequency capping units for this {@code LineItem}.
-     * This
-     *                 attribute is optional.
+     * This attribute is optional.
      */
     public com.google.api.ads.admanager.axis.v202211.FrequencyCap[] getFrequencyCaps() {
         return frequencyCaps;
@@ -1201,8 +1152,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the frequencyCaps value for this LineItemSummary.
      * 
      * @param frequencyCaps   * The set of frequency capping units for this {@code LineItem}.
-     * This
-     *                 attribute is optional.
+     * This attribute is optional.
      */
     public void setFrequencyCaps(com.google.api.ads.admanager.axis.v202211.FrequencyCap[] frequencyCaps) {
         this.frequencyCaps = frequencyCaps;
@@ -1223,10 +1173,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * @return lineItemType   * Indicates the line item type of a {@code LineItem}. This attribute
      * is required.
      *                 
-     *                 The line item type determines the default priority
+     *                 <p>The line item type determines the default priority
      * of the line item. More information can be
-     *                 found on the <a href="https://support.google.com/dfp_premium/answer/177279">
-     * Ad Manager Help Center</a>.
+     *                 found on the <a href="https://support.google.com/admanager/answer/177279">Ad
+     * Manager Help
+     *                 Center</a>.
      */
     public com.google.api.ads.admanager.axis.v202211.LineItemType getLineItemType() {
         return lineItemType;
@@ -1239,10 +1190,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * @param lineItemType   * Indicates the line item type of a {@code LineItem}. This attribute
      * is required.
      *                 
-     *                 The line item type determines the default priority
+     *                 <p>The line item type determines the default priority
      * of the line item. More information can be
-     *                 found on the <a href="https://support.google.com/dfp_premium/answer/177279">
-     * Ad Manager Help Center</a>.
+     *                 found on the <a href="https://support.google.com/admanager/answer/177279">Ad
+     * Manager Help
+     *                 Center</a>.
      */
     public void setLineItemType(com.google.api.ads.admanager.axis.v202211.LineItemType lineItemType) {
         this.lineItemType = lineItemType;
@@ -1253,14 +1205,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the priority value for this LineItemSummary.
      * 
      * @return priority   * The priority for the line item. Valid values range from 1 to
-     * 16. This
-     *                 field is optional and defaults to the default priority
-     * of the
-     *                 {@link LineItemType}.
-     *                 
+     * 16. This field is optional and
+     *                 defaults to the default priority of the {@link LineItemType}.
+     * 
      *                 <p>The following table shows the default, minimum,
-     * and maximum priority
-     *                 values are for each line item type:
+     * and maximum priority values are for each
+     *                 line item type:
      *                 
      *                 <table>
      *                 <tr>
@@ -1310,8 +1260,8 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 </table>
      *                 
      *                 <p>This field can only be edited by certain networks,
-     * otherwise a
-     *                 {@link PermissionError} will occur.
+     * otherwise a {@link PermissionError} will
+     *                 occur.
      */
     public java.lang.Integer getPriority() {
         return priority;
@@ -1322,14 +1272,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the priority value for this LineItemSummary.
      * 
      * @param priority   * The priority for the line item. Valid values range from 1 to
-     * 16. This
-     *                 field is optional and defaults to the default priority
-     * of the
-     *                 {@link LineItemType}.
-     *                 
+     * 16. This field is optional and
+     *                 defaults to the default priority of the {@link LineItemType}.
+     * 
      *                 <p>The following table shows the default, minimum,
-     * and maximum priority
-     *                 values are for each line item type:
+     * and maximum priority values are for each
+     *                 line item type:
      *                 
      *                 <table>
      *                 <tr>
@@ -1379,8 +1327,8 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 </table>
      *                 
      *                 <p>This field can only be edited by certain networks,
-     * otherwise a
-     *                 {@link PermissionError} will occur.
+     * otherwise a {@link PermissionError} will
+     *                 occur.
      */
     public void setPriority(java.lang.Integer priority) {
         this.priority = priority;
@@ -1391,8 +1339,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the costPerUnit value for this LineItemSummary.
      * 
      * @return costPerUnit   * The amount of money to spend per impression or click. This
-     * attribute is
-     *                 required for creating a {@code LineItem}.
+     * attribute is required for creating a
+     *                 {@code LineItem}.
      */
     public com.google.api.ads.admanager.axis.v202211.Money getCostPerUnit() {
         return costPerUnit;
@@ -1403,8 +1351,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the costPerUnit value for this LineItemSummary.
      * 
      * @param costPerUnit   * The amount of money to spend per impression or click. This
-     * attribute is
-     *                 required for creating a {@code LineItem}.
+     * attribute is required for creating a
+     *                 {@code LineItem}.
      */
     public void setCostPerUnit(com.google.api.ads.admanager.axis.v202211.Money costPerUnit) {
         this.costPerUnit = costPerUnit;
@@ -1414,15 +1362,14 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the valueCostPerUnit value for this LineItemSummary.
      * 
-     * @return valueCostPerUnit   * An amount to help the adserver rank inventory. {@link
-     *                 LineItem#valueCostPerUnit} artificially raises the
-     * value of
-     *                 inventory over the {@link LineItem#costPerUnit} but
-     * avoids raising
-     *                 the actual {@link LineItem#costPerUnit}. This attribute
-     * is optional
-     *                 and defaults to a {@link Money} object in the local
-     * currency with {@link Money#microAmount} 0.
+     * @return valueCostPerUnit   * An amount to help the adserver rank inventory. {@link LineItem#valueCostPerUnit}
+     * artificially
+     *                 raises the value of inventory over the {@link LineItem#costPerUnit}
+     * but avoids raising the
+     *                 actual {@link LineItem#costPerUnit}. This attribute
+     * is optional and defaults to a {@link Money}
+     *                 object in the local currency with {@link Money#microAmount}
+     * 0.
      */
     public com.google.api.ads.admanager.axis.v202211.Money getValueCostPerUnit() {
         return valueCostPerUnit;
@@ -1432,15 +1379,14 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the valueCostPerUnit value for this LineItemSummary.
      * 
-     * @param valueCostPerUnit   * An amount to help the adserver rank inventory. {@link
-     *                 LineItem#valueCostPerUnit} artificially raises the
-     * value of
-     *                 inventory over the {@link LineItem#costPerUnit} but
-     * avoids raising
-     *                 the actual {@link LineItem#costPerUnit}. This attribute
-     * is optional
-     *                 and defaults to a {@link Money} object in the local
-     * currency with {@link Money#microAmount} 0.
+     * @param valueCostPerUnit   * An amount to help the adserver rank inventory. {@link LineItem#valueCostPerUnit}
+     * artificially
+     *                 raises the value of inventory over the {@link LineItem#costPerUnit}
+     * but avoids raising the
+     *                 actual {@link LineItem#costPerUnit}. This attribute
+     * is optional and defaults to a {@link Money}
+     *                 object in the local currency with {@link Money#microAmount}
+     * 0.
      */
     public void setValueCostPerUnit(com.google.api.ads.admanager.axis.v202211.Money valueCostPerUnit) {
         this.valueCostPerUnit = valueCostPerUnit;
@@ -1451,8 +1397,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the costType value for this LineItemSummary.
      * 
      * @return costType   * The method used for billing this {@code LineItem}. This attribute
-     * is
-     *                 required.
+     * is required.
      */
     public com.google.api.ads.admanager.axis.v202211.CostType getCostType() {
         return costType;
@@ -1463,8 +1408,7 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the costType value for this LineItemSummary.
      * 
      * @param costType   * The method used for billing this {@code LineItem}. This attribute
-     * is
-     *                 required.
+     * is required.
      */
     public void setCostType(com.google.api.ads.admanager.axis.v202211.CostType costType) {
         this.costType = costType;
@@ -1475,10 +1419,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the discountType value for this LineItemSummary.
      * 
      * @return discountType   * The type of discount being applied to a {@code LineItem}, either
-     * percentage
-     *                 based or absolute. This attribute is optional and
-     * defaults to
-     *                 {@link LineItemDiscountType#PERCENTAGE}.
+     * percentage based or absolute.
+     *                 This attribute is optional and defaults to {@link
+     * LineItemDiscountType#PERCENTAGE}.
      */
     public com.google.api.ads.admanager.axis.v202211.LineItemDiscountType getDiscountType() {
         return discountType;
@@ -1489,10 +1432,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the discountType value for this LineItemSummary.
      * 
      * @param discountType   * The type of discount being applied to a {@code LineItem}, either
-     * percentage
-     *                 based or absolute. This attribute is optional and
-     * defaults to
-     *                 {@link LineItemDiscountType#PERCENTAGE}.
+     * percentage based or absolute.
+     *                 This attribute is optional and defaults to {@link
+     * LineItemDiscountType#PERCENTAGE}.
      */
     public void setDiscountType(com.google.api.ads.admanager.axis.v202211.LineItemDiscountType discountType) {
         this.discountType = discountType;
@@ -1503,12 +1445,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the discount value for this LineItemSummary.
      * 
      * @return discount   * The number here is either a percentage or an absolute value
-     * depending on
-     *                 the {@code LineItemDiscountType}. If the {@code LineItemDiscountType}
-     * is
-     *                 {@link LineItemDiscountType#PERCENTAGE}, then only
-     * non-fractional values
-     *                 are supported.
+     * depending on the {@code
+     *                 LineItemDiscountType}. If the {@code LineItemDiscountType}
+     * is {@link
+     *                 LineItemDiscountType#PERCENTAGE}, then only non-fractional
+     * values are supported.
      */
     public java.lang.Double getDiscount() {
         return discount;
@@ -1519,12 +1460,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the discount value for this LineItemSummary.
      * 
      * @param discount   * The number here is either a percentage or an absolute value
-     * depending on
-     *                 the {@code LineItemDiscountType}. If the {@code LineItemDiscountType}
-     * is
-     *                 {@link LineItemDiscountType#PERCENTAGE}, then only
-     * non-fractional values
-     *                 are supported.
+     * depending on the {@code
+     *                 LineItemDiscountType}. If the {@code LineItemDiscountType}
+     * is {@link
+     *                 LineItemDiscountType#PERCENTAGE}, then only non-fractional
+     * values are supported.
      */
     public void setDiscount(java.lang.Double discount) {
         this.discount = discount;
@@ -1535,25 +1475,24 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the contractedUnitsBought value for this LineItemSummary.
      * 
      * @return contractedUnitsBought   * This attribute is only applicable for certain {@link #lineItemType
-     * line item types}
-     *                 and acts as an "FYI" or note, which does not impact
-     * adserving or other backend systems.
-     *                 <p>
-     *                 For {@link LineItemType#SPONSORSHIP} line items, this
-     * represents the minimum quantity,
-     *                 which is a lifetime impression volume goal for reporting
+     * line item types} and acts as
+     *                 an "FYI" or note, which does not impact adserving
+     * or other backend systems.
+     *                 
+     *                 <p>For {@link LineItemType#SPONSORSHIP} line items,
+     * this represents the minimum quantity, which
+     *                 is a lifetime impression volume goal for reporting
      * purposes only.
-     *                 <p>
-     *                 For {@link LineItemType#STANDARD} line items, this
-     * represent the contracted quantity,
-     *                 which is the number of units specified in the contract
-     * the advertiser has bought for
-     *                 this {@code LineItem}. This field is just a "FYI"
-     * for traffickers to manually intervene
-     *                 with the {@code LineItem} when needed. This attribute
-     * is only available for
-     *                 {@link LineItemType#STANDARD} line items if you have
-     * this feature enabled on your network.
+     *                 
+     *                 <p>For {@link LineItemType#STANDARD} line items, this
+     * represent the contracted quantity, which
+     *                 is the number of units specified in the contract the
+     * advertiser has bought for this {@code
+     *                 LineItem}. This field is just a "FYI" for traffickers
+     * to manually intervene with the {@code
+     *                 LineItem} when needed. This attribute is only available
+     * for {@link LineItemType#STANDARD} line
+     *                 items if you have this feature enabled on your network.
      */
     public java.lang.Long getContractedUnitsBought() {
         return contractedUnitsBought;
@@ -1564,25 +1503,24 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the contractedUnitsBought value for this LineItemSummary.
      * 
      * @param contractedUnitsBought   * This attribute is only applicable for certain {@link #lineItemType
-     * line item types}
-     *                 and acts as an "FYI" or note, which does not impact
-     * adserving or other backend systems.
-     *                 <p>
-     *                 For {@link LineItemType#SPONSORSHIP} line items, this
-     * represents the minimum quantity,
-     *                 which is a lifetime impression volume goal for reporting
+     * line item types} and acts as
+     *                 an "FYI" or note, which does not impact adserving
+     * or other backend systems.
+     *                 
+     *                 <p>For {@link LineItemType#SPONSORSHIP} line items,
+     * this represents the minimum quantity, which
+     *                 is a lifetime impression volume goal for reporting
      * purposes only.
-     *                 <p>
-     *                 For {@link LineItemType#STANDARD} line items, this
-     * represent the contracted quantity,
-     *                 which is the number of units specified in the contract
-     * the advertiser has bought for
-     *                 this {@code LineItem}. This field is just a "FYI"
-     * for traffickers to manually intervene
-     *                 with the {@code LineItem} when needed. This attribute
-     * is only available for
-     *                 {@link LineItemType#STANDARD} line items if you have
-     * this feature enabled on your network.
+     *                 
+     *                 <p>For {@link LineItemType#STANDARD} line items, this
+     * represent the contracted quantity, which
+     *                 is the number of units specified in the contract the
+     * advertiser has bought for this {@code
+     *                 LineItem}. This field is just a "FYI" for traffickers
+     * to manually intervene with the {@code
+     *                 LineItem} when needed. This attribute is only available
+     * for {@link LineItemType#STANDARD} line
+     *                 items if you have this feature enabled on your network.
      */
     public void setContractedUnitsBought(java.lang.Long contractedUnitsBought) {
         this.contractedUnitsBought = contractedUnitsBought;
@@ -1593,10 +1531,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the creativePlaceholders value for this LineItemSummary.
      * 
      * @return creativePlaceholders   * Details about the creatives that are expected to serve through
-     * this
-     *                 {@code LineItem}. This attribute is required and replaces
-     * the
-     *                 {@code creativeSizes} attribute.
+     * this {@code LineItem}. This
+     *                 attribute is required and replaces the {@code creativeSizes}
+     * attribute.
      */
     public com.google.api.ads.admanager.axis.v202211.CreativePlaceholder[] getCreativePlaceholders() {
         return creativePlaceholders;
@@ -1607,10 +1544,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the creativePlaceholders value for this LineItemSummary.
      * 
      * @param creativePlaceholders   * Details about the creatives that are expected to serve through
-     * this
-     *                 {@code LineItem}. This attribute is required and replaces
-     * the
-     *                 {@code creativeSizes} attribute.
+     * this {@code LineItem}. This
+     *                 attribute is required and replaces the {@code creativeSizes}
+     * attribute.
      */
     public void setCreativePlaceholders(com.google.api.ads.admanager.axis.v202211.CreativePlaceholder[] creativePlaceholders) {
         this.creativePlaceholders = creativePlaceholders;
@@ -1661,14 +1597,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the environmentType value for this LineItemSummary.
      * 
      * @return environmentType   * The environment that the {@code LineItem} is targeting. The
-     * default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is
-     *                 {@link EnvironmentType#VIDEO_PLAYER}, then this line
-     * item can only target
-     *                 {@code AdUnits} that have {@code AdUnitSizes} whose
-     * {@code environmentType}
-     *                 is also {@code VIDEO_PLAYER}.
+     * default value is {@link
+     *                 EnvironmentType#BROWSER}. If this value is {@link
+     * EnvironmentType#VIDEO_PLAYER}, then this line
+     *                 item can only target {@code AdUnits} that have {@code
+     * AdUnitSizes} whose {@code
+     *                 environmentType} is also {@code VIDEO_PLAYER}.
      */
     public com.google.api.ads.admanager.axis.v202211.EnvironmentType getEnvironmentType() {
         return environmentType;
@@ -1679,14 +1613,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the environmentType value for this LineItemSummary.
      * 
      * @param environmentType   * The environment that the {@code LineItem} is targeting. The
-     * default value
-     *                 is {@link EnvironmentType#BROWSER}. If this value
-     * is
-     *                 {@link EnvironmentType#VIDEO_PLAYER}, then this line
-     * item can only target
-     *                 {@code AdUnits} that have {@code AdUnitSizes} whose
-     * {@code environmentType}
-     *                 is also {@code VIDEO_PLAYER}.
+     * default value is {@link
+     *                 EnvironmentType#BROWSER}. If this value is {@link
+     * EnvironmentType#VIDEO_PLAYER}, then this line
+     *                 item can only target {@code AdUnits} that have {@code
+     * AdUnitSizes} whose {@code
+     *                 environmentType} is also {@code VIDEO_PLAYER}.
      */
     public void setEnvironmentType(com.google.api.ads.admanager.axis.v202211.EnvironmentType environmentType) {
         this.environmentType = environmentType;
@@ -1697,8 +1629,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the allowedFormats value for this LineItemSummary.
      * 
      * @return allowedFormats   * The set of {@link allowedFormats} that this programmatic line
-     * item can have.
-     *                 If the set is empty, this line item allows all formats.
+     * item can have. If the set is
+     *                 empty, this line item allows all formats.
      */
     public com.google.api.ads.admanager.axis.v202211.AllowedFormats[] getAllowedFormats() {
         return allowedFormats;
@@ -1709,8 +1641,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the allowedFormats value for this LineItemSummary.
      * 
      * @param allowedFormats   * The set of {@link allowedFormats} that this programmatic line
-     * item can have.
-     *                 If the set is empty, this line item allows all formats.
+     * item can have. If the set is
+     *                 empty, this line item allows all formats.
      */
     public void setAllowedFormats(com.google.api.ads.admanager.axis.v202211.AllowedFormats[] allowedFormats) {
         this.allowedFormats = allowedFormats;
@@ -1729,33 +1661,25 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the companionDeliveryOption value for this LineItemSummary.
      * 
      * @return companionDeliveryOption   * The delivery option for companions. Setting this field is only
-     * meaningful
-     *                 if the following conditions are met:
+     * meaningful if the following
+     *                 conditions are met:
+     *                 
      *                 <ol>
-     *                 <li>
-     *                 The <b>Guaranteed roadblocks</b> feature is enabled
+     *                 <li>The <b>Guaranteed roadblocks</b> feature is enabled
      * on your network.
-     *                 </li>
-     *                 <li>
-     *                 One of the following is true (both cannot be true,
-     * these are mutually
-     *                 exclusive).
+     *                 <li>One of the following is true (both cannot be true,
+     * these are mutually exclusive).
      *                 <ul>
-     *                 <li>
-     *                 The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
-     * </li>
-     *                 <li>
-     *                 The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
-     * </li>
-     *                 </ul>
-     *                 </li>
+     *                 <li>The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
+     * <li>The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
+     * </ul>
      *                 </ol>
-     *                 <p>
-     *                 This field is optional and defaults to
-     *                 {@link CompanionDeliveryOption#OPTIONAL} if the above
-     * conditions are met.
-     *                 In all other cases it defaults to {@link CompanionDeliveryOption#UNKNOWN}
-     * and is not meaningful.
+     *                 
+     *                 <p>This field is optional and defaults to {@link CompanionDeliveryOption#OPTIONAL}
+     * if the above
+     *                 conditions are met. In all other cases it defaults
+     * to {@link CompanionDeliveryOption#UNKNOWN}
+     *                 and is not meaningful.
      */
     public com.google.api.ads.admanager.axis.v202211.CompanionDeliveryOption getCompanionDeliveryOption() {
         return companionDeliveryOption;
@@ -1766,33 +1690,25 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the companionDeliveryOption value for this LineItemSummary.
      * 
      * @param companionDeliveryOption   * The delivery option for companions. Setting this field is only
-     * meaningful
-     *                 if the following conditions are met:
+     * meaningful if the following
+     *                 conditions are met:
+     *                 
      *                 <ol>
-     *                 <li>
-     *                 The <b>Guaranteed roadblocks</b> feature is enabled
+     *                 <li>The <b>Guaranteed roadblocks</b> feature is enabled
      * on your network.
-     *                 </li>
-     *                 <li>
-     *                 One of the following is true (both cannot be true,
-     * these are mutually
-     *                 exclusive).
+     *                 <li>One of the following is true (both cannot be true,
+     * these are mutually exclusive).
      *                 <ul>
-     *                 <li>
-     *                 The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
-     * </li>
-     *                 <li>
-     *                 The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
-     * </li>
-     *                 </ul>
-     *                 </li>
+     *                 <li>The {@link #environmentType} is {@link EnvironmentType#VIDEO_PLAYER}.
+     * <li>The {@link #roadblockingType} is {@link RoadblockingType#CREATIVE_SET}.
+     * </ul>
      *                 </ol>
-     *                 <p>
-     *                 This field is optional and defaults to
-     *                 {@link CompanionDeliveryOption#OPTIONAL} if the above
-     * conditions are met.
-     *                 In all other cases it defaults to {@link CompanionDeliveryOption#UNKNOWN}
-     * and is not meaningful.
+     *                 
+     *                 <p>This field is optional and defaults to {@link CompanionDeliveryOption#OPTIONAL}
+     * if the above
+     *                 conditions are met. In all other cases it defaults
+     * to {@link CompanionDeliveryOption#UNKNOWN}
+     *                 and is not meaningful.
      */
     public void setCompanionDeliveryOption(com.google.api.ads.admanager.axis.v202211.CompanionDeliveryOption companionDeliveryOption) {
         this.companionDeliveryOption = companionDeliveryOption;
@@ -1803,13 +1719,14 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the allowOverbook value for this LineItemSummary.
      * 
      * @return allowOverbook   * The flag indicates whether overbooking should be allowed when
-     * creating or
-     *                 updating reservations of line item types {@link LineItemType#SPONSORSHIP}
-     * and {@link LineItemType#STANDARD}. When true, operations on this line
-     * item will never trigger a {@link ForecastError}, which corresponds
-     * to an
-     *                 overbook warning in the UI. The default value is false.
-     * 
+     * creating or updating reservations
+     *                 of line item types {@link LineItemType#SPONSORSHIP}
+     * and {@link LineItemType#STANDARD}. When
+     *                 true, operations on this line item will never trigger
+     * a {@link ForecastError}, which
+     *                 corresponds to an overbook warning in the UI. The
+     * default value is false.
+     *                 
      *                 <p>Note: this field will not persist on the line item
      * itself, and the value will only affect
      *                 the current request.
@@ -1823,13 +1740,14 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the allowOverbook value for this LineItemSummary.
      * 
      * @param allowOverbook   * The flag indicates whether overbooking should be allowed when
-     * creating or
-     *                 updating reservations of line item types {@link LineItemType#SPONSORSHIP}
-     * and {@link LineItemType#STANDARD}. When true, operations on this line
-     * item will never trigger a {@link ForecastError}, which corresponds
-     * to an
-     *                 overbook warning in the UI. The default value is false.
-     * 
+     * creating or updating reservations
+     *                 of line item types {@link LineItemType#SPONSORSHIP}
+     * and {@link LineItemType#STANDARD}. When
+     *                 true, operations on this line item will never trigger
+     * a {@link ForecastError}, which
+     *                 corresponds to an overbook warning in the UI. The
+     * default value is false.
+     *                 
      *                 <p>Note: this field will not persist on the line item
      * itself, and the value will only affect
      *                 the current request.
@@ -1903,12 +1821,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the reserveAtCreation value for this LineItemSummary.
      * 
      * @return reserveAtCreation   * The flag indicates whether inventory should be reserved when
-     * creating a
-     *                 line item of types {@link LineItemType#SPONSORSHIP}
-     * and
-     *                 {@link LineItemType#STANDARD} in an unapproved {@link
-     * Order}. The default
-     *                 value is false.
+     * creating a line item of types
+     *                 {@link LineItemType#SPONSORSHIP} and {@link LineItemType#STANDARD}
+     * in an unapproved {@link
+     *                 Order}. The default value is false.
      */
     public java.lang.Boolean getReserveAtCreation() {
         return reserveAtCreation;
@@ -1919,12 +1835,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the reserveAtCreation value for this LineItemSummary.
      * 
      * @param reserveAtCreation   * The flag indicates whether inventory should be reserved when
-     * creating a
-     *                 line item of types {@link LineItemType#SPONSORSHIP}
-     * and
-     *                 {@link LineItemType#STANDARD} in an unapproved {@link
-     * Order}. The default
-     *                 value is false.
+     * creating a line item of types
+     *                 {@link LineItemType#SPONSORSHIP} and {@link LineItemType#STANDARD}
+     * in an unapproved {@link
+     *                 Order}. The default value is false.
      */
     public void setReserveAtCreation(java.lang.Boolean reserveAtCreation) {
         this.reserveAtCreation = reserveAtCreation;
@@ -1935,10 +1849,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the stats value for this LineItemSummary.
      * 
      * @return stats   * Contains trafficking statistics for the line item. This attribute
-     * is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} in case
-     *                 there are no statistics for a line item yet.
+     * is readonly and is populated
+     *                 by Google. This will be {@code null} in case there
+     * are no statistics for a line item yet.
      */
     public com.google.api.ads.admanager.axis.v202211.Stats getStats() {
         return stats;
@@ -1949,10 +1862,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the stats value for this LineItemSummary.
      * 
      * @param stats   * Contains trafficking statistics for the line item. This attribute
-     * is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} in case
-     *                 there are no statistics for a line item yet.
+     * is readonly and is populated
+     *                 by Google. This will be {@code null} in case there
+     * are no statistics for a line item yet.
      */
     public void setStats(com.google.api.ads.admanager.axis.v202211.Stats stats) {
         this.stats = stats;
@@ -1963,17 +1875,16 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the deliveryIndicator value for this LineItemSummary.
      * 
      * @return deliveryIndicator   * Indicates how well the line item has been performing. This
-     * attribute is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} if the
-     *                 delivery indicator information is not available due
-     * to one of the following
-     *                 reasons:
+     * attribute is readonly and is
+     *                 populated by Google. This will be {@code null} if
+     * the delivery indicator information is not
+     *                 available due to one of the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The line item is not delivering.</li>
-     *                 <li>The line item has an unlimited goal or cap.</li>
-     * <li>The line item has a percentage based goal or cap.</li>
-     *                 </ol>
+     *                 <li>The line item is not delivering.
+     *                 <li>The line item has an unlimited goal or cap.
+     *                 <li>The line item has a percentage based goal or cap.
+     * </ol>
      */
     public com.google.api.ads.admanager.axis.v202211.DeliveryIndicator getDeliveryIndicator() {
         return deliveryIndicator;
@@ -1984,17 +1895,16 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the deliveryIndicator value for this LineItemSummary.
      * 
      * @param deliveryIndicator   * Indicates how well the line item has been performing. This
-     * attribute is
-     *                 readonly and is populated by Google. This will be
-     * {@code null} if the
-     *                 delivery indicator information is not available due
-     * to one of the following
-     *                 reasons:
+     * attribute is readonly and is
+     *                 populated by Google. This will be {@code null} if
+     * the delivery indicator information is not
+     *                 available due to one of the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>The line item is not delivering.</li>
-     *                 <li>The line item has an unlimited goal or cap.</li>
-     * <li>The line item has a percentage based goal or cap.</li>
-     *                 </ol>
+     *                 <li>The line item is not delivering.
+     *                 <li>The line item has an unlimited goal or cap.
+     *                 <li>The line item has a percentage based goal or cap.
+     * </ol>
      */
     public void setDeliveryIndicator(com.google.api.ads.admanager.axis.v202211.DeliveryIndicator deliveryIndicator) {
         this.deliveryIndicator = deliveryIndicator;
@@ -2005,23 +1915,19 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the deliveryData value for this LineItemSummary.
      * 
      * @return deliveryData   * Delivery data provides the number of clicks or impressions
-     * delivered for a
-     *                 {@link LineItem} in the last 7 days. This attribute
-     * is readonly and is
-     *                 populated by Google. This will be {@code null} if
-     * the delivery data cannot
-     *                 be computed due to one of the following reasons:
+     * delivered for a {@link LineItem} in
+     *                 the last 7 days. This attribute is readonly and is
+     * populated by Google. This will be {@code
+     *                 null} if the delivery data cannot be computed due
+     * to one of the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>
-     *                 The line item is not deliverable.</li>
-     *                 <li>
-     *                 The line item has completed delivering more than 7
-     * days ago.</li>
-     *                 <li>
-     *                 The line item has an absolute-based goal.
-     *                 {@link LineItem#deliveryIndicator} should be used
-     * to track its
-     *                 progress in this case.</li>
+     *                 <li>The line item is not deliverable.
+     *                 <li>The line item has completed delivering more than
+     * 7 days ago.
+     *                 <li>The line item has an absolute-based goal. {@link
+     * LineItem#deliveryIndicator} should be
+     *                 used to track its progress in this case.
      */
     public com.google.api.ads.admanager.axis.v202211.DeliveryData getDeliveryData() {
         return deliveryData;
@@ -2032,23 +1938,19 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the deliveryData value for this LineItemSummary.
      * 
      * @param deliveryData   * Delivery data provides the number of clicks or impressions
-     * delivered for a
-     *                 {@link LineItem} in the last 7 days. This attribute
-     * is readonly and is
-     *                 populated by Google. This will be {@code null} if
-     * the delivery data cannot
-     *                 be computed due to one of the following reasons:
+     * delivered for a {@link LineItem} in
+     *                 the last 7 days. This attribute is readonly and is
+     * populated by Google. This will be {@code
+     *                 null} if the delivery data cannot be computed due
+     * to one of the following reasons:
+     *                 
      *                 <ol>
-     *                 <li>
-     *                 The line item is not deliverable.</li>
-     *                 <li>
-     *                 The line item has completed delivering more than 7
-     * days ago.</li>
-     *                 <li>
-     *                 The line item has an absolute-based goal.
-     *                 {@link LineItem#deliveryIndicator} should be used
-     * to track its
-     *                 progress in this case.</li>
+     *                 <li>The line item is not deliverable.
+     *                 <li>The line item has completed delivering more than
+     * 7 days ago.
+     *                 <li>The line item has an absolute-based goal. {@link
+     * LineItem#deliveryIndicator} should be
+     *                 used to track its progress in this case.
      */
     public void setDeliveryData(com.google.api.ads.admanager.axis.v202211.DeliveryData deliveryData) {
         this.deliveryData = deliveryData;
@@ -2059,9 +1961,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the budget value for this LineItemSummary.
      * 
      * @return budget   * The amount of money allocated to the {@code LineItem}. This
-     * attribute is
-     *                 readonly and is populated by Google. The currency
-     * code is readonly.
+     * attribute is readonly and is
+     *                 populated by Google. The currency code is readonly.
      */
     public com.google.api.ads.admanager.axis.v202211.Money getBudget() {
         return budget;
@@ -2072,9 +1973,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the budget value for this LineItemSummary.
      * 
      * @param budget   * The amount of money allocated to the {@code LineItem}. This
-     * attribute is
-     *                 readonly and is populated by Google. The currency
-     * code is readonly.
+     * attribute is readonly and is
+     *                 populated by Google. The currency code is readonly.
      */
     public void setBudget(com.google.api.ads.admanager.axis.v202211.Money budget) {
         this.budget = budget;
@@ -2105,7 +2005,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the reservationStatus value for this LineItemSummary.
      * 
      * @return reservationStatus   * Describes whether or not inventory has been reserved for the
-     * {@code LineItem}. This attribute is readonly and is assigned by Google.
+     * {@code LineItem}. This attribute
+     *                 is readonly and is assigned by Google.
      */
     public com.google.api.ads.admanager.axis.v202211.LineItemSummaryReservationStatus getReservationStatus() {
         return reservationStatus;
@@ -2116,7 +2017,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the reservationStatus value for this LineItemSummary.
      * 
      * @param reservationStatus   * Describes whether or not inventory has been reserved for the
-     * {@code LineItem}. This attribute is readonly and is assigned by Google.
+     * {@code LineItem}. This attribute
+     *                 is readonly and is assigned by Google.
      */
     public void setReservationStatus(com.google.api.ads.admanager.axis.v202211.LineItemSummaryReservationStatus reservationStatus) {
         this.reservationStatus = reservationStatus;
@@ -2149,9 +2051,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the webPropertyCode value for this LineItemSummary.
      * 
      * @return webPropertyCode   * The web property code used for dynamic allocation line items.
-     * This web
-     *                 property is only required with line item types
-     *                 {@link LineItemType#AD_EXCHANGE} and {@link LineItemType#ADSENSE}.
+     * This web property is only
+     *                 required with line item types {@link LineItemType#AD_EXCHANGE}
+     * and {@link
+     *                 LineItemType#ADSENSE}.
      */
     public java.lang.String getWebPropertyCode() {
         return webPropertyCode;
@@ -2162,9 +2065,10 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the webPropertyCode value for this LineItemSummary.
      * 
      * @param webPropertyCode   * The web property code used for dynamic allocation line items.
-     * This web
-     *                 property is only required with line item types
-     *                 {@link LineItemType#AD_EXCHANGE} and {@link LineItemType#ADSENSE}.
+     * This web property is only
+     *                 required with line item types {@link LineItemType#AD_EXCHANGE}
+     * and {@link
+     *                 LineItemType#ADSENSE}.
      */
     public void setWebPropertyCode(java.lang.String webPropertyCode) {
         this.webPropertyCode = webPropertyCode;
@@ -2203,12 +2107,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the effectiveAppliedLabels value for this LineItemSummary.
      * 
      * @return effectiveAppliedLabels   * Contains the set of labels inherited from the order that contains
-     * this
-     *                 line item and the advertiser that owns the order.
-     * If a label has been
-     *                 negated, only the negated label is returned. This
-     * field is readonly
-     *                 and is assigned by Google.
+     * this line item and the
+     *                 advertiser that owns the order. If a label has been
+     * negated, only the negated label is
+     *                 returned. This field is readonly and is assigned by
+     * Google.
      */
     public com.google.api.ads.admanager.axis.v202211.AppliedLabel[] getEffectiveAppliedLabels() {
         return effectiveAppliedLabels;
@@ -2219,12 +2122,11 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the effectiveAppliedLabels value for this LineItemSummary.
      * 
      * @param effectiveAppliedLabels   * Contains the set of labels inherited from the order that contains
-     * this
-     *                 line item and the advertiser that owns the order.
-     * If a label has been
-     *                 negated, only the negated label is returned. This
-     * field is readonly
-     *                 and is assigned by Google.
+     * this line item and the
+     *                 advertiser that owns the order. If a label has been
+     * negated, only the negated label is
+     *                 returned. This field is readonly and is assigned by
+     * Google.
      */
     public void setEffectiveAppliedLabels(com.google.api.ads.admanager.axis.v202211.AppliedLabel[] effectiveAppliedLabels) {
         this.effectiveAppliedLabels = effectiveAppliedLabels;
@@ -2243,13 +2145,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the disableSameAdvertiserCompetitiveExclusion value for this LineItemSummary.
      * 
      * @return disableSameAdvertiserCompetitiveExclusion   * If a line item has a series of competitive exclusions on it,
-     * it could be
-     *                 blocked from serving with line items from the same
-     * advertiser. Setting this
-     *                 to {@code true} will allow line items from the same
-     * advertiser to serve
-     *                 regardless of the other competitive exclusion labels
-     * being applied.
+     * it could be blocked from serving
+     *                 with line items from the same advertiser. Setting
+     * this to {@code true} will allow line items
+     *                 from the same advertiser to serve regardless of the
+     * other competitive exclusion labels being
+     *                 applied.
      */
     public java.lang.Boolean getDisableSameAdvertiserCompetitiveExclusion() {
         return disableSameAdvertiserCompetitiveExclusion;
@@ -2260,13 +2161,12 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the disableSameAdvertiserCompetitiveExclusion value for this LineItemSummary.
      * 
      * @param disableSameAdvertiserCompetitiveExclusion   * If a line item has a series of competitive exclusions on it,
-     * it could be
-     *                 blocked from serving with line items from the same
-     * advertiser. Setting this
-     *                 to {@code true} will allow line items from the same
-     * advertiser to serve
-     *                 regardless of the other competitive exclusion labels
-     * being applied.
+     * it could be blocked from serving
+     *                 with line items from the same advertiser. Setting
+     * this to {@code true} will allow line items
+     *                 from the same advertiser to serve regardless of the
+     * other competitive exclusion labels being
+     *                 applied.
      */
     public void setDisableSameAdvertiserCompetitiveExclusion(java.lang.Boolean disableSameAdvertiserCompetitiveExclusion) {
         this.disableSameAdvertiserCompetitiveExclusion = disableSameAdvertiserCompetitiveExclusion;
@@ -2277,8 +2177,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the lastModifiedByApp value for this LineItemSummary.
      * 
      * @return lastModifiedByApp   * The application that last modified this line item. This attribute
-     * is read only
-     *                 and is assigned by Google.
+     * is read only and is assigned
+     *                 by Google.
      */
     public java.lang.String getLastModifiedByApp() {
         return lastModifiedByApp;
@@ -2289,8 +2189,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the lastModifiedByApp value for this LineItemSummary.
      * 
      * @param lastModifiedByApp   * The application that last modified this line item. This attribute
-     * is read only
-     *                 and is assigned by Google.
+     * is read only and is assigned
+     *                 by Google.
      */
     public void setLastModifiedByApp(java.lang.String lastModifiedByApp) {
         this.lastModifiedByApp = lastModifiedByApp;
@@ -2301,9 +2201,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the notes value for this LineItemSummary.
      * 
      * @return notes   * Provides any additional notes that may annotate the {@code
-     * LineItem}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
+     * LineItem}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
      */
     public java.lang.String getNotes() {
         return notes;
@@ -2314,9 +2213,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the notes value for this LineItemSummary.
      * 
      * @param notes   * Provides any additional notes that may annotate the {@code
-     * LineItem}. This
-     *                 attribute is optional and has a maximum length of
-     * 65,535 characters.
+     * LineItem}. This attribute is
+     *                 optional and has a maximum length of 65,535 characters.
      */
     public void setNotes(java.lang.String notes) {
         this.notes = notes;
@@ -2491,9 +2389,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the programmaticCreativeSource value for this LineItemSummary.
      * 
      * @return programmaticCreativeSource   * Indicates the {@link ProgrammaticCreativeSource} of the programmatic
-     * line item.
-     *                 This is a read-only field. Any changes must be made
-     * on the {@link ProposalLineItem}.
+     * line item. This is a
+     *                 read-only field. Any changes must be made on the {@link
+     * ProposalLineItem}.
      */
     public com.google.api.ads.admanager.axis.v202211.ProgrammaticCreativeSource getProgrammaticCreativeSource() {
         return programmaticCreativeSource;
@@ -2504,9 +2402,9 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the programmaticCreativeSource value for this LineItemSummary.
      * 
      * @param programmaticCreativeSource   * Indicates the {@link ProgrammaticCreativeSource} of the programmatic
-     * line item.
-     *                 This is a read-only field. Any changes must be made
-     * on the {@link ProposalLineItem}.
+     * line item. This is a
+     *                 read-only field. Any changes must be made on the {@link
+     * ProposalLineItem}.
      */
     public void setProgrammaticCreativeSource(com.google.api.ads.admanager.axis.v202211.ProgrammaticCreativeSource programmaticCreativeSource) {
         this.programmaticCreativeSource = programmaticCreativeSource;
@@ -2536,12 +2434,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the youtubeKidsRestricted value for this LineItemSummary.
      * 
-     * @return youtubeKidsRestricted   * Designates this line item as intended for YT Kids app.
-     *                 If true, all creatives associated with this line item
-     * must be reviewed and approved. See the
-     *                 <a href="https://support.google.com/yt-partner-sales/answer/10015534">Ad
-     * Manager Help Center
-     *                 </a> for more information.
+     * @return youtubeKidsRestricted   * Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with
+     *                 this line item must be reviewed and approved. See
+     * the <a
+     *                 href="https://support.google.com/yt-partner-sales/answer/10015534">Ad
+     * Manager Help Center </a>
+     *                 for more information.
      */
     public java.lang.Boolean getYoutubeKidsRestricted() {
         return youtubeKidsRestricted;
@@ -2551,12 +2450,13 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the youtubeKidsRestricted value for this LineItemSummary.
      * 
-     * @param youtubeKidsRestricted   * Designates this line item as intended for YT Kids app.
-     *                 If true, all creatives associated with this line item
-     * must be reviewed and approved. See the
-     *                 <a href="https://support.google.com/yt-partner-sales/answer/10015534">Ad
-     * Manager Help Center
-     *                 </a> for more information.
+     * @param youtubeKidsRestricted   * Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with
+     *                 this line item must be reviewed and approved. See
+     * the <a
+     *                 href="https://support.google.com/yt-partner-sales/answer/10015534">Ad
+     * Manager Help Center </a>
+     *                 for more information.
      */
     public void setYoutubeKidsRestricted(java.lang.Boolean youtubeKidsRestricted) {
         this.youtubeKidsRestricted = youtubeKidsRestricted;

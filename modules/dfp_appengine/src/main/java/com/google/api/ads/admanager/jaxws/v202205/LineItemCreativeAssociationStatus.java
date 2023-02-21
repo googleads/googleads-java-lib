@@ -43,8 +43,7 @@ public enum LineItemCreativeAssociationStatus {
 
     /**
      * 
-     *                 The association is active and the associated {@link Creative} can be
-     *                 served.
+     *                 The association is active and the associated {@link Creative} can be served.
      *               
      * 
      */
@@ -52,8 +51,8 @@ public enum LineItemCreativeAssociationStatus {
 
     /**
      * 
-     *                 The association is active but the associated {@link Creative} may not be
-     *                 served, because its size is not targeted by the line item.
+     *                 The association is active but the associated {@link Creative} may not be served, because its
+     *                 size is not targeted by the line item.
      *               
      * 
      */
@@ -61,8 +60,8 @@ public enum LineItemCreativeAssociationStatus {
 
     /**
      * 
-     *                 The association is inactive and the associated {@link Creative} is
-     *                 ineligible for being served.
+     *                 The association is inactive and the associated {@link Creative} is ineligible for being
+     *                 served.
      *               
      * 
      */
@@ -70,8 +69,7 @@ public enum LineItemCreativeAssociationStatus {
 
     /**
      * 
-     *                 The value returned if the actual value is not exposed by the requested API
-     *                 version.
+     *                 The value returned if the actual value is not exposed by the requested API version.
      *               
      * 
      */

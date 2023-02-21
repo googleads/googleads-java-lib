@@ -25,12 +25,11 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             A {@code CreativeWrapper} allows the wrapping of HTML snippets to be
- *             served along with {@code Creative} objects.
- *             <p>
- *             Creative wrappers must be associated with a
- *             {@link LabelType#CREATIVE_WRAPPER} label and applied to ad units by
- *             {@link AdUnit#appliedLabels}.
+ *             A {@code CreativeWrapper} allows the wrapping of HTML snippets to be served along with {@code
+ *             Creative} objects.
+ *             
+ *             <p>Creative wrappers must be associated with a {@link LabelType#CREATIVE_WRAPPER} label and
+ *             applied to ad units by {@link AdUnit#appliedLabels}.
  *           
  * 
  * <p>Java class for CreativeWrapper complex type.

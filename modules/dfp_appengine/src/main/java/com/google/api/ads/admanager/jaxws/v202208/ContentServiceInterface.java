@@ -41,8 +41,8 @@ import javax.xml.ws.ResponseWrapper;
  *       <li>Using the {@link CustomTargetingService#getCustomTargetingValuesByStatement} method and a
  *       filter like "WHERE customTargetingKeyId = :genreKeyId and name = 'comedy'", retrieve the ID
  *       for the "comedy" custom targeting value.
- *       <li>Call {@link #getContentByStatementAndCustomTargetingValue} with a filter like "WHERE status =
- *       'ACTIVE'" and the ID of the custom targeting value from step 2.
+ *       <li>Call {@link #getContentByStatementAndCustomTargetingValue} with a filter like "WHERE status
+ *       = 'ACTIVE'" and the ID of the custom targeting value from step 2.
  *       </ul>
  *     
  * 
