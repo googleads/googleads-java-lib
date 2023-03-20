@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.ads.adwords.lib.soap.testing.SoapResponseXmlProvider;
+import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.soap.axis.HttpHandler.InputStreamEventListener;
 import com.google.api.ads.common.lib.testing.MockHttpServer;
 import com.google.api.ads.common.lib.testing.MockResponse;
@@ -50,8 +50,6 @@ import org.mockito.MockitoAnnotations;
 /** Tests for {@link HttpHandler}. */
 @RunWith(JUnit4.class)
 public class HttpHandlerTest {
-
-  private static final String API_VERSION = "v209901";
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -82,14 +80,16 @@ public class HttpHandlerTest {
    */
   @Test
   public void testInvokeReturnsValidXml() throws IOException {
+
     // Unlike the failure tests below, create the MessageContext here with an actual AxisClient,
     // not a mock AxisEngine. Otherwise, the call to getSOAPEnvelope below will fail.
     MessageContext messageContext = new MessageContext(new AxisClient());
     messageContext.setRequestMessage(requestMessage);
     messageContext.setProperty(MessageContext.TRANS_URL, mockHttpServer.getServerUrl());
-    SoapResponseXmlProvider.getTestSoapResponse(API_VERSION);
+
+    String apiVersion = "v209901";
     mockHttpServer.setMockResponse(
-        new MockResponse(SoapResponseXmlProvider.getTestSoapResponse(API_VERSION)));
+        new MockResponse(SoapResponseXmlProvider.getTestSoapResponse(apiVersion)));
 
     httpHandler.invoke(messageContext);
     assertNotNull(

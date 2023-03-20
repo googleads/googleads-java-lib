@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>4.21.1-SNAPSHOT</version>
+    <version>5.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -29,15 +29,15 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib</artifactId>
-  <version>4.21.1-SNAPSHOT</version>
+  <version>5.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads APIs Client Library common components</name>
   <description>
-    Client library for Java for accessing ads APIs including AdWords and DFP.
+    Client library for Java for accessing ads APIs including DFP.
     If you want to use this library, you must also include another Maven
     artifact to specify which framework you would like to use it with. For
-    example, to use AdWords with Axis, you should include the "adwords-axis"
+    example, to use DFP with Axis, you should include the "dfp-axis"
     artifact.
   </description>
 
@@ -72,7 +72,6 @@
             </goals>
             <configuration>
               <excludes>
-                <exclude>**/AdWordsLibConfigurationIntegrationTest.java</exclude>
                 <exclude>**/AdManagerLibConfigurationIntegrationTest.java</exclude>
                 <exclude>**/LoggingModuleTest.java</exclude>
               </excludes>
@@ -90,7 +89,6 @@
               <reuseForks>false</reuseForks>
               <forkCount>1</forkCount>
               <includes>
-                <include>**/AdWordsLibConfigurationIntegrationTest.java</include>
                 <include>**/AdManagerLibConfigurationIntegrationTest.java</include>
                 <include>**/LoggingModuleTest.java</include>
               </includes>
@@ -100,14 +98,6 @@
       </plugin>
     </plugins>
     <resources>
-      <resource>
-        <targetPath>com/google/api/ads/adwords/lib/conf/props</targetPath>
-        <filtering>false</filtering>
-        <directory>src/main/java/com/google/api/ads/adwords/lib/conf/props</directory>
-        <includes>
-          <include>*.properties</include>
-        </includes>
-      </resource>
       <resource>
         <targetPath>com/google/api/ads/admanager/lib/conf/props</targetPath>
         <filtering>false</filtering>
@@ -151,22 +141,6 @@
         <directory>src/test/java/com/google/api/ads/common/lib/conf/props</directory>
         <includes>
           <include>*.properties</include>
-        </includes>
-      </testResource>
-      <testResource>
-        <targetPath>com/google/api/ads/adwords/lib/soap/testing</targetPath>
-        <filtering>false</filtering>
-        <directory>src/test/java/com/google/api/ads/adwords/lib/soap/testing</directory>
-        <includes>
-          <include>*.xml</include>
-        </includes>
-      </testResource>
-      <testResource>
-        <targetPath>com/google/api/ads/adwords/lib/utils/testing</targetPath>
-        <filtering>false</filtering>
-        <directory>src/test/java/com/google/api/ads/adwords/lib/utils/testing</directory>
-        <includes>
-          <include>*.xml</include>
         </includes>
       </testResource>
       <testResource>

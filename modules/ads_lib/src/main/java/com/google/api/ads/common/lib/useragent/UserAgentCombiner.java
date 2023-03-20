@@ -14,7 +14,6 @@
 
 package com.google.api.ads.common.lib.useragent;
 
-import com.google.api.ads.adwords.lib.AdWordsPluginModule;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.common.base.Predicates;
@@ -121,7 +120,7 @@ public class UserAgentCombiner {
   /**
    * Holder that allows for <em>optional</em> injection of a {@link ExtensionUserAgentProvider}.
    * This is necessary because the {@link ExtensionUserAgentProvider} type will only be bound if an
-   * extension or application provided an {@link AdWordsPluginModule} to the Guice injector.
+   * extension or application provided an {@code AdWordsPluginModule} to the Guice injector.
    * Otherwise, the {@code value} will be null.
    */
   static class ExtensionProviderHolder {

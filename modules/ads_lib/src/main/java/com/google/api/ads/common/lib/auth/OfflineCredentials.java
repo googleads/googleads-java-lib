@@ -42,16 +42,17 @@ import org.apache.commons.configuration.Configuration;
  * OfflineCredentials offline OAuth2 provider.<br>
  * <br>
  * Example usage:
+ *
  * <pre><code>
  * Credential credential = new OfflineCredentials.Builder()
- *     .forApi(OfflineCredentials.Api.ADWORDS)
+ *     .forApi(OfflineCredentials.Api.AD_MANAGER)
  *     .fromFile()
  *     .build()
  *     .generateCredential();
  * </code></pre>
  *
- * Generate a refresh token or service account key file and place
- * it in your ads.properties file to be read by this utility.
+ * Generate a refresh token or service account key file and place it in your ads.properties file to
+ * be read by this utility.
  */
 public class OfflineCredentials {
 
@@ -60,7 +61,7 @@ public class OfflineCredentials {
 
     /**
      * Returns the property key prefix. This is the prefix that is in the properties file e.g.
-     * api.adwords
+     * api.admanager
      */
     String getPropertyKeyPrefix();
 
@@ -75,11 +76,8 @@ public class OfflineCredentials {
     Internals getInternals();
   }
 
-  /**
-   * Enum representing the API that OfflineCredentials can be used for.
-   */
+  /** Enum representing the API that OfflineCredentials can be used for. */
   public static enum Api implements OAuthConfig {
-    ADWORDS("api.adwords.", "https://www.googleapis.com/auth/adwords"),
     AD_MANAGER("api.admanager.", "https://www.googleapis.com/auth/dfp");
 
     private final String propKeyPrefix;
@@ -104,8 +102,6 @@ public class OfflineCredentials {
     @Override
     public Internals getInternals() {
       switch (this) {
-        case ADWORDS:
-          return com.google.api.ads.adwords.lib.utils.AdWordsInternals.getInstance();
         case AD_MANAGER:
           return com.google.api.ads.admanager.lib.utils.AdManagerInternals.getInstance();
         default:
@@ -399,8 +395,8 @@ public class OfflineCredentials {
      * </ul>
      *
      * <br>
-     * For example, the AdWords OAuth2 refresh token can be read from: <code>
-     * api.adwords.refreshToken</code>
+     * For example, the Ad Manager OAuth2 refresh token can be read from: <code>
+     * api.admanager.refreshToken</code>
      *
      * @param config the configuration
      * @return Builder populated from the Configuration
@@ -431,8 +427,8 @@ public class OfflineCredentials {
      * </ul>
      *
      * <br>
-     * For example, the AdWords OAuth2 refresh token can be read from: <code>
-     * api.adwords.refreshToken</code>
+     * For example, the Ad Manager OAuth2 refresh token can be read from: <code>
+     * api.admanager.refreshToken</code>
      *
      * @param config the configuration
      * @param filePath the file path of the configuration
@@ -482,9 +478,7 @@ public class OfflineCredentials {
      * Sets the service account user to impersonate. This attribute is optional, and only applicable
      * to the service account flow.
      *
-     * <p>See
-     * https://developers.google.com/adwords/api/docs/guides/authentication#granting_impersonation_abilities
-     * for details.
+     * <p>See https://support.google.com/a/answer/162106 for details.
      *
      * @param serviceAccountUser the email address of the account to impersonate.
      */

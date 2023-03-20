@@ -51,7 +51,7 @@ public class OfflineCredentialsTest {
   @Mock OAuth2Helper oAuth2Helper;
 
   @Rule public ExpectedException thrown = ExpectedException.none();
-  
+
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
@@ -76,7 +76,7 @@ public class OfflineCredentialsTest {
     assertEquals("refreshToken", offlineCredentials.getRefreshToken());
     assertSame(httpTransport, offlineCredentials.getHttpTransport());
   }
-  
+
   /**
    * Tests that the builder builds correctly using a service account key file.
    */
@@ -89,7 +89,7 @@ public class OfflineCredentialsTest {
 
     assertEquals("jsonKeyFilePath", offlineCredentials.getJsonKeyFilePath());
   }
-  
+
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
@@ -109,7 +109,7 @@ public class OfflineCredentialsTest {
     assertEquals("clientSecret", offlineCredentials.getClientSecret());
     assertEquals("refreshToken", offlineCredentials.getRefreshToken());
   }
-  
+
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
@@ -142,63 +142,14 @@ public class OfflineCredentialsTest {
    * Tests that the builder correctly reads properties from a configuration.
    */
   @Test
-  public void testReadPropertiesFromConfiguration_adwords() throws ValidationException {
-    PropertiesConfiguration config = new PropertiesConfiguration();
-    config.setProperty("api.adwords.clientId", "clientId");
-    config.setProperty("api.adwords.clientSecret", "clientSecret");
-    config.setProperty("api.adwords.refreshToken", "refreshToken");
-
-    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.ADWORDS)
-        .from(config)
-        .build();
-
-    assertEquals("clientId", offlineCredentials.getClientId());
-    assertEquals("clientSecret", offlineCredentials.getClientSecret());
-    assertEquals("refreshToken", offlineCredentials.getRefreshToken());
-  }
-  
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
-  @Test
-  public void testReadPropertiesFromConfiguration_adWordsServiceAccount() 
-      throws ValidationException {
-    PropertiesConfiguration config = new PropertiesConfiguration();
-    String jsonKeyFilePath = "someJsonKeyFilePath";
-    config.setProperty("api.adwords.jsonKeyFilePath", jsonKeyFilePath);
-    
-    OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.ADWORDS)
-        .from(config)
-        .build();
-
-    assertEquals(jsonKeyFilePath, offlineCredentials.getJsonKeyFilePath());
-    assertNull("service account user should be null", offlineCredentials.getServiceAccountUser());
-
-    // Create another credential with the service account user set.
-    String serviceAccountUser = "someUser@example.com";
-    offlineCredentials = new OfflineCredentials.Builder()
-        .forApi(OfflineCredentials.Api.ADWORDS)
-        .from(config)
-        .withServiceAccountUser(serviceAccountUser)
-        .build();
-    assertEquals(jsonKeyFilePath, offlineCredentials.getJsonKeyFilePath());
-    assertEquals(serviceAccountUser, offlineCredentials.getServiceAccountUser());
-  }
-
-  /**
-   * Tests that the builder correctly reads properties from a configuration.
-   */
-  @Test
   public void testReadPropertiesFromConfiguration_properPrefix() throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.admanager.clientId", "clientIdDfp");
     config.setProperty("api.admanager.clientSecret", "clientSecretDfp");
     config.setProperty("api.admanager.refreshToken", "refreshTokenDfp");
-    config.setProperty("api.adwords.clientId", "clientIdAdWords");
-    config.setProperty("api.adwords.clientSecret", "clientSecretAdWords");
-    config.setProperty("api.adwords.refreshToken", "refreshTokenAdWords");
+    config.setProperty("api.other.clientId", "clientIdAdWords");
+    config.setProperty("api.other.clientSecret", "clientSecretAdWords");
+    config.setProperty("api.other.refreshToken", "refreshTokenAdWords");
 
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
         .forApi(OfflineCredentials.Api.AD_MANAGER)
@@ -209,7 +160,7 @@ public class OfflineCredentialsTest {
     assertEquals("clientSecretDfp", offlineCredentials.getClientSecret());
     assertEquals("refreshTokenDfp", offlineCredentials.getRefreshToken());
   }
-  
+
   /**
    * Tests that the builder correctly reads properties from a configuration.
    */
@@ -218,7 +169,7 @@ public class OfflineCredentialsTest {
       throws ValidationException {
     PropertiesConfiguration config = new PropertiesConfiguration();
     config.setProperty("api.admanager.jsonKeyFilePath", "jsonKeyFilePathDfp");
-    config.setProperty("api.adwords.jsonKeyFilePath", "jsonKeyFilePathAdWords");
+    config.setProperty("api.other.jsonKeyFilePath", "jsonKeyFilePathOther");
 
     OfflineCredentials offlineCredentials = new OfflineCredentials.Builder()
         .forApi(OfflineCredentials.Api.AD_MANAGER)
@@ -275,7 +226,7 @@ public class OfflineCredentialsTest {
         .from(config)
         .build();
   }
-  
+
   /**
    * Tests that the builder does not fail when missing everything but a service account key.
    */
@@ -579,7 +530,7 @@ public class OfflineCredentialsTest {
     thrown.expect(OAuthException.class);
     offlineCredentials.generateCredential();
   }
- 
+
   /**
    * Tests generating OAuth2 credentials.
    */

@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>4.21.1-SNAPSHOT</version>
+    <version>5.0.0-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,14 +30,14 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib-appengine</artifactId>
-  <version>4.21.1-SNAPSHOT</version>
+  <version>5.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads APIs Client Library AppEngine components</name>
   <description>
     Ads APIs Client Library AppEngine components. Most users do not explicitly
     depend on this module, but instead depend on the AppEngine module for a
-    specific ads API, such as "adwords-appengine" or "dfp-appengine".
+    specific ads API, such as "dfp-appengine".
   </description>
 
   <build>
@@ -54,7 +54,7 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>4.21.1-SNAPSHOT</version>
+      <version>5.0.0-SNAPSHOT</version>
     </dependency>
     <!-- Third party dependencies -->
     <dependency>

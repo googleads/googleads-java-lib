@@ -1,3 +1,16 @@
+5.0.0 - 03/20/2023
+-------------------
+AdWords:
+ - Removed all AdWords API components from the library. The AdWords API
+   [sunset on April 27, 2022](https://ads-developers.googleblog.com/2021/04/upgrade-to-google-ads-api-from-adwords.html).
+   Upgrade to the [Google Ads API](https://developers.google.com/google-ads/api/docs/client-libs).
+
+Ad Manager:
+ - No changes.
+
+Common:
+ - No changes.
+
 4.21.0 - 02/21/2023
 -------------------
 AdWords:
