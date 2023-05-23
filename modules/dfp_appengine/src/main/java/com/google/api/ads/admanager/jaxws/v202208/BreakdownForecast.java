@@ -22,8 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Represents a single delivery data point, with both available
- *             and forecast number.
+ *             Represents a single delivery data point, with both available and forecast number.
  *           
  * 
  * <p>Java class for BreakdownForecast complex type.

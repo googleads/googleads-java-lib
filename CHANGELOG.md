@@ -1,3 +1,13 @@
+5.1.0 - 05/23/2023
+-------------------
+Ad Manager:
+ - Added support for v202305.
+ - Removed support for v202205.
+ - Removed examples for v202208.
+
+Common:
+ - No changes.
+
 5.0.0 - 03/20/2023
 -------------------
 AdWords:

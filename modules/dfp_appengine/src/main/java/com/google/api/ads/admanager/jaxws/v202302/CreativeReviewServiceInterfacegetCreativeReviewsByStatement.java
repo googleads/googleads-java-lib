@@ -28,6 +28,9 @@ import javax.xml.bind.annotation.XmlType;
  *             have displayed) on your pages or apps in the last 30 days. To ensure that you are always
  *             reviewing the most important creatives first, the {@link CreativeReview} objects are ranked
  *             according to the number of impressions that they've received.
+ *             
+ *             <p>This feature is not yet openly available. Publishers will need to apply for access for this
+ *             feature through their account managers.
  *           
  * 
  * <p>Java class for getCreativeReviewsByStatement element declaration.

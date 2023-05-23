@@ -51,7 +51,7 @@ public enum DaiIngestStatus {
 
     /**
      * 
-     *                 There was a non-fatal issue during the DAI ingestion proccess.
+     *                 There was a non-fatal issue during the DAI ingestion process.
      *               
      * 
      */
@@ -59,7 +59,7 @@ public enum DaiIngestStatus {
 
     /**
      * 
-     *                 There was a non-fatal issue during the DAI ingestion proccess and the content is not available
+     *                 There was a non-fatal issue during the DAI ingestion process and the content is not available
      *                 for dynamic ad insertion.
      *               
      * 

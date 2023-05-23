@@ -81,7 +81,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
 
     /* Overrides the value set for {@link LineItem#startDateTime}.
      * This value is optional and is only
-     *                 valid for Ad Manager 360 networks. */
+     *                 valid for Ad Manager 360 networks. If unset, the {@link
+     * LineItem#startDateTime} will be used. */
     private com.google.api.ads.admanager.axis.v202211.DateTime startDateTime;
 
     /* Specifies whether to start serving to the {@code LineItemCreativeAssociation}
@@ -93,7 +94,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
 
     /* Overrides {@link LineItem#endDateTime}. This value is optional
      * and is only valid for Ad Manager
-     *                 360 networks. */
+     *                 360 networks. If unset, the {@link LineItem#endDateTime}
+     * will be used. */
     private com.google.api.ads.admanager.axis.v202211.DateTime endDateTime;
 
     /* Overrides the value set for {@link HasDestinationUrlCreative#destinationUrl}.
@@ -360,7 +362,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * 
      * @return startDateTime   * Overrides the value set for {@link LineItem#startDateTime}.
      * This value is optional and is only
-     *                 valid for Ad Manager 360 networks.
+     *                 valid for Ad Manager 360 networks. If unset, the {@link
+     * LineItem#startDateTime} will be used.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getStartDateTime() {
         return startDateTime;
@@ -372,7 +375,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * 
      * @param startDateTime   * Overrides the value set for {@link LineItem#startDateTime}.
      * This value is optional and is only
-     *                 valid for Ad Manager 360 networks.
+     *                 valid for Ad Manager 360 networks. If unset, the {@link
+     * LineItem#startDateTime} will be used.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202211.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -412,7 +416,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * 
      * @return endDateTime   * Overrides {@link LineItem#endDateTime}. This value is optional
      * and is only valid for Ad Manager
-     *                 360 networks.
+     *                 360 networks. If unset, the {@link LineItem#endDateTime}
+     * will be used.
      */
     public com.google.api.ads.admanager.axis.v202211.DateTime getEndDateTime() {
         return endDateTime;
@@ -424,7 +429,8 @@ public class LineItemCreativeAssociation  implements java.io.Serializable {
      * 
      * @param endDateTime   * Overrides {@link LineItem#endDateTime}. This value is optional
      * and is only valid for Ad Manager
-     *                 360 networks.
+     *                 360 networks. If unset, the {@link LineItem#endDateTime}
+     * will be used.
      */
     public void setEndDateTime(com.google.api.ads.admanager.axis.v202211.DateTime endDateTime) {
         this.endDateTime = endDateTime;

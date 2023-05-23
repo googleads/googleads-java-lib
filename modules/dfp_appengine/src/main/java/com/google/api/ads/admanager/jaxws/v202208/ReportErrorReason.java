@@ -66,8 +66,7 @@ public enum ReportErrorReason {
 
     /**
      * 
-     *                 Default {@code ReportError} when the reason is not among any already
-     *                 defined.
+     *                 Default {@code ReportError} when the reason is not among any already defined.
      *               
      * 
      */
@@ -107,8 +106,8 @@ public enum ReportErrorReason {
 
     /**
      * 
-     *                 The user has exceeded the limit on the number of reports that can be run
-     *                 concurrently. The current limit is 30 per user.
+     *                 The user has exceeded the limit on the number of reports that can be run concurrently. The
+     *                 current limit is 30 per user.
      *               
      * 
      */
@@ -150,16 +149,15 @@ public enum ReportErrorReason {
      * 
      *                 The API error when running the report with {@link CmsMetadataKeyDimension}. There are three
      *                 reasons for this error.
+     *                 
      *                 <ol>
      *                 <li>{@link ReportQuery#dimensions} contains {@link Dimension#CONTENT_CMS_METADATA}, but
-     *                 {@link ReportQuery#cmsMetadataKeyIds} is empty.</li>
-     *                 
-     *                 <li>{@link ReportQuery#cmsMetadataKeyIds} is non-empty, but
-     *                 {@link ReportQuery#dimensions} does not contain {@link Dimension#CONTENT_CMS_METADATA}.</li>
-     *                 
-     *                 <li>The {@link ReportQuery#cmsMetadataKeyIds} specified along
-     *                 with the {@link Dimension#CONTENT_CMS_METADATA} are not valid, i.e., these IDs are not
-     *                 reportable cms metadata key defined by the publisher.</li>
+     *                 {@link ReportQuery#cmsMetadataKeyIds} is empty.
+     *                 <li>{@link ReportQuery#cmsMetadataKeyIds} is non-empty, but {@link ReportQuery#dimensions}
+     *                 does not contain {@link Dimension#CONTENT_CMS_METADATA}.
+     *                 <li>The {@link ReportQuery#cmsMetadataKeyIds} specified along with the {@link
+     *                 Dimension#CONTENT_CMS_METADATA} are not valid, i.e., these IDs are not reportable cms
+     *                 metadata key defined by the publisher.
      *                 </ol>
      *               
      * 
@@ -192,8 +190,7 @@ public enum ReportErrorReason {
 
     /**
      * 
-     *                 The start date for running the report should not be later than the end
-     *                 date.
+     *                 The start date for running the report should not be later than the end date.
      *               
      * 
      */
@@ -201,8 +198,7 @@ public enum ReportErrorReason {
 
     /**
      * 
-     *                 The start date for running the report should not be more than
-     *                 three years before now.
+     *                 The start date for running the report should not be more than three years before now.
      *               
      * 
      */

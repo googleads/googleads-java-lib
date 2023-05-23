@@ -33,6 +33,10 @@ public interface CreativeReviewServiceInterface extends java.rmi.Remote {
      *         reviewing the most important creatives first, the {@link CreativeReview}
      * objects are ranked
      *         according to the number of impressions that they've received.
+     * 
+     *         <p>This feature is not yet openly available. Publishers will
+     * need to apply for access for this
+     *         feature through their account managers.
      */
     public com.google.api.ads.admanager.axis.v202302.CreativeReviewPage getCreativeReviewsByStatement(com.google.api.ads.admanager.axis.v202302.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202302.ApiException;
 

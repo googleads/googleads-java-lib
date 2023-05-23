@@ -129,8 +129,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 {@code ForecastBreakdownOptions{targets=[IU=A, {IU=B,
      * creative=1x1}]}}, the {@link #breakdowns}
      *                 field may look like:
-     *                 [ForecastBreakdown{breakdownEntries=[availableUnits=10,
-     * availbleUnits=20]}]
+     *                 {@code [ForecastBreakdown{breakdownEntries=[availableUnits=10,
+     * availableUnits=20]}]}
      *                 where the entries correspond to {@code {IU=A}} and
      * {@code {IU=B, creative=1x1}} respectively.
      *                 
@@ -140,7 +140,7 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 look like: <pre>{@code
      *                 [
      *                 ForecastBreakdown{startTime=1am, endTime=2am, breakdownEntries=[availableUnits=10]},
-     * ForecastBreakdow{startTime=2am, endTime=3am, breakdownEntries=[availalbleUnits=20]}
+     * ForecastBreakdown{startTime=2am, endTime=3am, breakdownEntries=[availableUnits=20]}
      * ]
      *                 }</pre>
      *                 where the two {@link #ForecastBreakdown} correspond
@@ -155,7 +155,7 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 ForecastBreakdown{startTime=1am, endTime=2am,
      *                 breakdownEntries=[availableUnits=10, availableUnits=100]},
      * ForecastBreakdown{startTime=2am, endTime=3am,
-     *                 breakdownEntries=[availalbleUnits=20, availableUnits=200]}
+     *                 breakdownEntries=[availableUnits=20, availableUnits=200]}
      * ]
      *                 }</pre>
      *                 where the first ForecastBreakdown respresents the
@@ -480,8 +480,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 {@code ForecastBreakdownOptions{targets=[IU=A, {IU=B,
      * creative=1x1}]}}, the {@link #breakdowns}
      *                 field may look like:
-     *                 [ForecastBreakdown{breakdownEntries=[availableUnits=10,
-     * availbleUnits=20]}]
+     *                 {@code [ForecastBreakdown{breakdownEntries=[availableUnits=10,
+     * availableUnits=20]}]}
      *                 where the entries correspond to {@code {IU=A}} and
      * {@code {IU=B, creative=1x1}} respectively.
      *                 
@@ -491,7 +491,7 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 look like: <pre>{@code
      *                 [
      *                 ForecastBreakdown{startTime=1am, endTime=2am, breakdownEntries=[availableUnits=10]},
-     * ForecastBreakdow{startTime=2am, endTime=3am, breakdownEntries=[availalbleUnits=20]}
+     * ForecastBreakdown{startTime=2am, endTime=3am, breakdownEntries=[availableUnits=20]}
      * ]
      *                 }</pre>
      *                 where the two {@link #ForecastBreakdown} correspond
@@ -506,7 +506,7 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 ForecastBreakdown{startTime=1am, endTime=2am,
      *                 breakdownEntries=[availableUnits=10, availableUnits=100]},
      * ForecastBreakdown{startTime=2am, endTime=3am,
-     *                 breakdownEntries=[availalbleUnits=20, availableUnits=200]}
+     *                 breakdownEntries=[availableUnits=20, availableUnits=200]}
      * ]
      *                 }</pre>
      *                 where the first ForecastBreakdown respresents the
@@ -551,8 +551,8 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 {@code ForecastBreakdownOptions{targets=[IU=A, {IU=B,
      * creative=1x1}]}}, the {@link #breakdowns}
      *                 field may look like:
-     *                 [ForecastBreakdown{breakdownEntries=[availableUnits=10,
-     * availbleUnits=20]}]
+     *                 {@code [ForecastBreakdown{breakdownEntries=[availableUnits=10,
+     * availableUnits=20]}]}
      *                 where the entries correspond to {@code {IU=A}} and
      * {@code {IU=B, creative=1x1}} respectively.
      *                 
@@ -562,7 +562,7 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 look like: <pre>{@code
      *                 [
      *                 ForecastBreakdown{startTime=1am, endTime=2am, breakdownEntries=[availableUnits=10]},
-     * ForecastBreakdow{startTime=2am, endTime=3am, breakdownEntries=[availalbleUnits=20]}
+     * ForecastBreakdown{startTime=2am, endTime=3am, breakdownEntries=[availableUnits=20]}
      * ]
      *                 }</pre>
      *                 where the two {@link #ForecastBreakdown} correspond
@@ -577,7 +577,7 @@ public class AvailabilityForecast  implements java.io.Serializable {
      *                 ForecastBreakdown{startTime=1am, endTime=2am,
      *                 breakdownEntries=[availableUnits=10, availableUnits=100]},
      * ForecastBreakdown{startTime=2am, endTime=3am,
-     *                 breakdownEntries=[availalbleUnits=20, availableUnits=200]}
+     *                 breakdownEntries=[availableUnits=20, availableUnits=200]}
      * ]
      *                 }</pre>
      *                 where the first ForecastBreakdown respresents the

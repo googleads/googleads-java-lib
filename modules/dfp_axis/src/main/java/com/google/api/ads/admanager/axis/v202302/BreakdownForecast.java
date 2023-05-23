@@ -23,8 +23,8 @@ package com.google.api.ads.admanager.axis.v202302;
 
 
 /**
- * Represents a single delivery data point, with both available
- *             and forecast number.
+ * Represents a single delivery data point, with both available and
+ * forecast number.
  */
 public class BreakdownForecast  implements java.io.Serializable {
     private java.lang.Long matched;

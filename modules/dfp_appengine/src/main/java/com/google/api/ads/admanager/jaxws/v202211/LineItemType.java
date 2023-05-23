@@ -53,8 +53,8 @@ public enum LineItemType {
 
     /**
      * 
-     *                 The type of {@link LineItem} for which a percentage of all the impressions
-     *                 that are being sold are reserved.
+     *                 The type of {@link LineItem} for which a percentage of all the impressions that are being sold
+     *                 are reserved.
      *               
      * 
      */
