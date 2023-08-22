@@ -25,21 +25,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeWrapperError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="LABEL_ALREADY_ASSOCIATED_WITH_CREATIVE_WRAPPER"/>
- *     &lt;enumeration value="INVALID_LABEL_TYPE"/>
- *     &lt;enumeration value="UNRECOGNIZED_MACRO"/>
- *     &lt;enumeration value="NEITHER_HEADER_NOR_FOOTER_SPECIFIED"/>
- *     &lt;enumeration value="NEITHER_HEADER_NOR_FOOTER_NOR_VIDEO_TRACKING_URLS_SPECIFIED"/>
- *     &lt;enumeration value="CANNOT_USE_CREATIVE_WRAPPER_TYPE"/>
- *     &lt;enumeration value="CANNOT_UPDATE_LABEL_ID"/>
- *     &lt;enumeration value="CANNOT_APPLY_TO_AD_UNIT_WITH_VIDEO_SIZES"/>
- *     &lt;enumeration value="CANNOT_APPLY_TO_AD_UNIT_WITHOUT_VIDEO_SIZES"/>
- *     &lt;enumeration value="CANNOT_APPLY_TO_MOBILE_AD_UNIT"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeWrapperError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="LABEL_ALREADY_ASSOCIATED_WITH_CREATIVE_WRAPPER"/&gt;
+ *     &lt;enumeration value="INVALID_LABEL_TYPE"/&gt;
+ *     &lt;enumeration value="UNRECOGNIZED_MACRO"/&gt;
+ *     &lt;enumeration value="NEITHER_HEADER_NOR_FOOTER_SPECIFIED"/&gt;
+ *     &lt;enumeration value="NEITHER_HEADER_NOR_FOOTER_NOR_VIDEO_TRACKING_URLS_SPECIFIED"/&gt;
+ *     &lt;enumeration value="CANNOT_USE_CREATIVE_WRAPPER_TYPE"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_LABEL_ID"/&gt;
+ *     &lt;enumeration value="CANNOT_APPLY_TO_AD_UNIT_WITH_VIDEO_SIZES"/&gt;
+ *     &lt;enumeration value="CANNOT_APPLY_TO_AD_UNIT_WITHOUT_VIDEO_SIZES"/&gt;
+ *     &lt;enumeration value="CANNOT_APPLY_TO_MOBILE_AD_UNIT"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

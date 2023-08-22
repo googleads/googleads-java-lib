@@ -32,17 +32,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="RuleBasedFirstPartyAudienceSegmentSummary">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}FirstPartyAudienceSegment">
- *       &lt;sequence>
- *         &lt;element name="pageViews" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="recencyDays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="membershipExpirationDays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="RuleBasedFirstPartyAudienceSegmentSummary"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}FirstPartyAudienceSegment"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="pageViews" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="recencyDays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="membershipExpirationDays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

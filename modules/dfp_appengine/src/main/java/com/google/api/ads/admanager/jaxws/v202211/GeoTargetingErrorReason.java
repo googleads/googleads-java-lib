@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GeoTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TARGETED_LOCATIONS_NOT_EXCLUDABLE"/>
- *     &lt;enumeration value="EXCLUDED_LOCATIONS_CANNOT_HAVE_CHILDREN_TARGETED"/>
- *     &lt;enumeration value="POSTAL_CODES_CANNOT_BE_EXCLUDED"/>
- *     &lt;enumeration value="UNTARGETABLE_LOCATION"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GeoTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TARGETED_LOCATIONS_NOT_EXCLUDABLE"/&gt;
+ *     &lt;enumeration value="EXCLUDED_LOCATIONS_CANNOT_HAVE_CHILDREN_TARGETED"/&gt;
+ *     &lt;enumeration value="POSTAL_CODES_CANNOT_BE_EXCLUDED"/&gt;
+ *     &lt;enumeration value="UNTARGETABLE_LOCATION"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

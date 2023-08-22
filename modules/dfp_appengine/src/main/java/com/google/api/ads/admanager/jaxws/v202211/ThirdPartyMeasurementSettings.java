@@ -31,29 +31,29 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ThirdPartyMeasurementSettings">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="viewabilityPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyViewabilityIntegrationPartner" minOccurs="0"/>
- *         &lt;element name="viewabilityClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="viewabilityReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="publisherViewabilityPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyViewabilityIntegrationPartner" minOccurs="0"/>
- *         &lt;element name="publisherViewabilityClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="publisherViewabilityReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="brandLiftPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyBrandLiftIntegrationPartner" minOccurs="0"/>
- *         &lt;element name="brandLiftClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="brandLiftReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="reachPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyReachIntegrationPartner" minOccurs="0"/>
- *         &lt;element name="reachClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="reachReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="publisherReachPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyReachIntegrationPartner" minOccurs="0"/>
- *         &lt;element name="publisherReachClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="publisherReachReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ThirdPartyMeasurementSettings"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="viewabilityPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyViewabilityIntegrationPartner" minOccurs="0"/&gt;
+ *         &lt;element name="viewabilityClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="viewabilityReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="publisherViewabilityPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyViewabilityIntegrationPartner" minOccurs="0"/&gt;
+ *         &lt;element name="publisherViewabilityClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="publisherViewabilityReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="brandLiftPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyBrandLiftIntegrationPartner" minOccurs="0"/&gt;
+ *         &lt;element name="brandLiftClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="brandLiftReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="reachPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyReachIntegrationPartner" minOccurs="0"/&gt;
+ *         &lt;element name="reachClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="reachReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="publisherReachPartner" type="{https://www.google.com/apis/ads/publisher/v202211}ThirdPartyReachIntegrationPartner" minOccurs="0"/&gt;
+ *         &lt;element name="publisherReachClientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="publisherReachReportingId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="NielsenCtvPacingType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="NONE"/>
- *     &lt;enumeration value="COVIEW"/>
- *     &lt;enumeration value="STRICT_COVIEW"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="NielsenCtvPacingType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="NONE"/&gt;
+ *     &lt;enumeration value="COVIEW"/&gt;
+ *     &lt;enumeration value="STRICT_COVIEW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

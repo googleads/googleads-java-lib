@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CustomFieldDataType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="STRING"/>
- *     &lt;enumeration value="NUMBER"/>
- *     &lt;enumeration value="TOGGLE"/>
- *     &lt;enumeration value="DROP_DOWN"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CustomFieldDataType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="STRING"/&gt;
+ *     &lt;enumeration value="NUMBER"/&gt;
+ *     &lt;enumeration value="TOGGLE"/&gt;
+ *     &lt;enumeration value="DROP_DOWN"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

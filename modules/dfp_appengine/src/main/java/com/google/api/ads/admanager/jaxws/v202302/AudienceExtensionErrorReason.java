@@ -25,30 +25,30 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AudienceExtensionError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="FREQUENCY_CAPS_NOT_SUPPORTED"/>
- *     &lt;enumeration value="INVALID_TARGETING"/>
- *     &lt;enumeration value="INVENTORY_UNIT_TARGETING_INVALID"/>
- *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/>
- *     &lt;enumeration value="INVALID_EXTERNAL_ENTITY_ID"/>
- *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE"/>
- *     &lt;enumeration value="INVALID_MAX_BID"/>
- *     &lt;enumeration value="AUDIENCE_EXTENSION_BULK_UPDATE_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNEXPECTED_AUDIENCE_EXTENSION_ERROR"/>
- *     &lt;enumeration value="MAX_DAILY_BUDGET_AMOUNT_EXCEEDED"/>
- *     &lt;enumeration value="EXTERNAL_CAMPAIGN_ALREADY_EXISTS"/>
- *     &lt;enumeration value="AUDIENCE_EXTENSION_WITHOUT_FEATURE"/>
- *     &lt;enumeration value="AUDIENCE_EXTENSION_WITHOUT_LINKED_ACCOUNT"/>
- *     &lt;enumeration value="CANNOT_OVERRIDE_CREATIVE_SIZE_WITH_AUDIENCE_EXTENSION"/>
- *     &lt;enumeration value="CANNOT_OVERRIDE_FIELD_WITH_AUDIENCE_EXTENSION"/>
- *     &lt;enumeration value="ONLY_ONE_CREATIVE_PLACEHOLDER_ALLOWED"/>
- *     &lt;enumeration value="MULTIPLE_AUDIENCE_EXTENSION_LINE_ITEMS_ON_ORDER"/>
- *     &lt;enumeration value="CANNOT_COPY_AUDIENCE_EXTENSION_LINE_ITEMS_AND_CREATIVES_TOGETHER"/>
- *     &lt;enumeration value="FEATURE_DEPRECATED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AudienceExtensionError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FREQUENCY_CAPS_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="INVALID_TARGETING"/&gt;
+ *     &lt;enumeration value="INVENTORY_UNIT_TARGETING_INVALID"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/&gt;
+ *     &lt;enumeration value="INVALID_EXTERNAL_ENTITY_ID"/&gt;
+ *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_MAX_BID"/&gt;
+ *     &lt;enumeration value="AUDIENCE_EXTENSION_BULK_UPDATE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNEXPECTED_AUDIENCE_EXTENSION_ERROR"/&gt;
+ *     &lt;enumeration value="MAX_DAILY_BUDGET_AMOUNT_EXCEEDED"/&gt;
+ *     &lt;enumeration value="EXTERNAL_CAMPAIGN_ALREADY_EXISTS"/&gt;
+ *     &lt;enumeration value="AUDIENCE_EXTENSION_WITHOUT_FEATURE"/&gt;
+ *     &lt;enumeration value="AUDIENCE_EXTENSION_WITHOUT_LINKED_ACCOUNT"/&gt;
+ *     &lt;enumeration value="CANNOT_OVERRIDE_CREATIVE_SIZE_WITH_AUDIENCE_EXTENSION"/&gt;
+ *     &lt;enumeration value="CANNOT_OVERRIDE_FIELD_WITH_AUDIENCE_EXTENSION"/&gt;
+ *     &lt;enumeration value="ONLY_ONE_CREATIVE_PLACEHOLDER_ALLOWED"/&gt;
+ *     &lt;enumeration value="MULTIPLE_AUDIENCE_EXTENSION_LINE_ITEMS_ON_ORDER"/&gt;
+ *     &lt;enumeration value="CANNOT_COPY_AUDIENCE_EXTENSION_LINE_ITEMS_AND_CREATIVES_TOGETHER"/&gt;
+ *     &lt;enumeration value="FEATURE_DEPRECATED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ExchangeRateError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_CURRENCY_CODE"/>
- *     &lt;enumeration value="UNSUPPORTED_CURRENCY_CODE"/>
- *     &lt;enumeration value="CURRENCY_CODE_ALREADY_EXISTS"/>
- *     &lt;enumeration value="INVALID_EXCHANGE_RATE"/>
- *     &lt;enumeration value="EXCHANGE_RATE_NOT_FOUND"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ExchangeRateError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_CURRENCY_CODE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_CURRENCY_CODE"/&gt;
+ *     &lt;enumeration value="CURRENCY_CODE_ALREADY_EXISTS"/&gt;
+ *     &lt;enumeration value="INVALID_EXCHANGE_RATE"/&gt;
+ *     &lt;enumeration value="EXCHANGE_RATE_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

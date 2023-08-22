@@ -25,27 +25,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ForecastAdjustmentError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AD_REQUEST_SOURCE_PLATFORMS_MUST_MATCH_SEGMENT_PLATFORMS"/>
- *     &lt;enumeration value="AD_REQUEST_HISTORICAL_BASIS_DATE_RANGE_TOO_SHORT_RELATIVE_TO_ADJUSTMENT"/>
- *     &lt;enumeration value="ADJUSTED_VALUE_ABOVE_RECOMMENDED_RELATIVE_LIMIT"/>
- *     &lt;enumeration value="ADJUSTED_VALUE_TOO_HIGH_RELATIVE_TO_FORECAST"/>
- *     &lt;enumeration value="ADJUSTED_VALUE_TOO_LOW"/>
- *     &lt;enumeration value="ADJUSTED_VALUE_TOO_LOW_RELATIVE_TO_FORECAST"/>
- *     &lt;enumeration value="ADJUSTS_CROSS_SELL_INVENTORY"/>
- *     &lt;enumeration value="DATE_RANGE_OVERLAPS_ANOTHER_ADJUSTMENT"/>
- *     &lt;enumeration value="END_DATE_AFTER_FURTHEST_AVAILABLE_FORECAST_DATE"/>
- *     &lt;enumeration value="END_DATE_NOT_ON_OR_AFTER_START_DATE"/>
- *     &lt;enumeration value="HISTORICAL_BASIS_DATE_RANGE_TOO_SHORT"/>
- *     &lt;enumeration value="HISTORICAL_END_DATE_NOT_IN_PAST"/>
- *     &lt;enumeration value="HISTORICAL_START_DATE_TOO_FAR_BEFORE_ADJUSTMENT_END_DATE"/>
- *     &lt;enumeration value="NO_VOLUME_SETTINGS_PROVIDED"/>
- *     &lt;enumeration value="NUMBER_OF_VALUES_DOES_NOT_MATCH_DATE_RANGE"/>
- *     &lt;enumeration value="PARENT_SEGMENT_TARGETING_INCOMPATIBLE_WITH_HISTORICAL_BASIS_AD_REQUEST_SOURCE_SETTINGS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ForecastAdjustmentError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AD_REQUEST_SOURCE_PLATFORMS_MUST_MATCH_SEGMENT_PLATFORMS"/&gt;
+ *     &lt;enumeration value="AD_REQUEST_HISTORICAL_BASIS_DATE_RANGE_TOO_SHORT_RELATIVE_TO_ADJUSTMENT"/&gt;
+ *     &lt;enumeration value="ADJUSTED_VALUE_ABOVE_RECOMMENDED_RELATIVE_LIMIT"/&gt;
+ *     &lt;enumeration value="ADJUSTED_VALUE_TOO_HIGH_RELATIVE_TO_FORECAST"/&gt;
+ *     &lt;enumeration value="ADJUSTED_VALUE_TOO_LOW"/&gt;
+ *     &lt;enumeration value="ADJUSTED_VALUE_TOO_LOW_RELATIVE_TO_FORECAST"/&gt;
+ *     &lt;enumeration value="ADJUSTS_CROSS_SELL_INVENTORY"/&gt;
+ *     &lt;enumeration value="DATE_RANGE_OVERLAPS_ANOTHER_ADJUSTMENT"/&gt;
+ *     &lt;enumeration value="END_DATE_AFTER_FURTHEST_AVAILABLE_FORECAST_DATE"/&gt;
+ *     &lt;enumeration value="END_DATE_NOT_ON_OR_AFTER_START_DATE"/&gt;
+ *     &lt;enumeration value="HISTORICAL_BASIS_DATE_RANGE_TOO_SHORT"/&gt;
+ *     &lt;enumeration value="HISTORICAL_END_DATE_NOT_IN_PAST"/&gt;
+ *     &lt;enumeration value="HISTORICAL_START_DATE_TOO_FAR_BEFORE_ADJUSTMENT_END_DATE"/&gt;
+ *     &lt;enumeration value="NO_VOLUME_SETTINGS_PROVIDED"/&gt;
+ *     &lt;enumeration value="NUMBER_OF_VALUES_DOES_NOT_MATCH_DATE_RANGE"/&gt;
+ *     &lt;enumeration value="PARENT_SEGMENT_TARGETING_INCOMPATIBLE_WITH_HISTORICAL_BASIS_AD_REQUEST_SOURCE_SETTINGS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

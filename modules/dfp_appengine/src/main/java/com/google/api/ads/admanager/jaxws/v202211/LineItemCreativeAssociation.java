@@ -34,28 +34,28 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LineItemCreativeAssociation">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="lineItemId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="creativeId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="creativeSetId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="manualCreativeRotationWeight" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="sequentialCreativeRotationIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="startDateTimeType" type="{https://www.google.com/apis/ads/publisher/v202211}StartDateTimeType" minOccurs="0"/>
- *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="destinationUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="sizes" type="{https://www.google.com/apis/ads/publisher/v202211}Size" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202211}LineItemCreativeAssociation.Status" minOccurs="0"/>
- *         &lt;element name="stats" type="{https://www.google.com/apis/ads/publisher/v202211}LineItemCreativeAssociationStats" minOccurs="0"/>
- *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="targetingName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="LineItemCreativeAssociation"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="lineItemId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="creativeId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="creativeSetId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="manualCreativeRotationWeight" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
+ *         &lt;element name="sequentialCreativeRotationIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTimeType" type="{https://www.google.com/apis/ads/publisher/v202211}StartDateTimeType" minOccurs="0"/&gt;
+ *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="destinationUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="sizes" type="{https://www.google.com/apis/ads/publisher/v202211}Size" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202211}LineItemCreativeAssociation.Status" minOccurs="0"/&gt;
+ *         &lt;element name="stats" type="{https://www.google.com/apis/ads/publisher/v202211}LineItemCreativeAssociationStats" minOccurs="0"/&gt;
+ *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="targetingName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="VideoPositionTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CANNOT_MIX_BUMPER_AND_NON_BUMPER_TARGETING"/>
- *     &lt;enumeration value="INVALID_BUMPER_TARGETING"/>
- *     &lt;enumeration value="CAN_ONLY_TARGET_CUSTOM_AD_SPOTS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="VideoPositionTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CANNOT_MIX_BUMPER_AND_NON_BUMPER_TARGETING"/&gt;
+ *     &lt;enumeration value="INVALID_BUMPER_TARGETING"/&gt;
+ *     &lt;enumeration value="CAN_ONLY_TARGET_CUSTOM_AD_SPOTS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

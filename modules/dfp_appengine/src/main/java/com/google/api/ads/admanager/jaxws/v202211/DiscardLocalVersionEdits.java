@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="DiscardLocalVersionEdits">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}ProposalAction">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="DiscardLocalVersionEdits"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}ProposalAction"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

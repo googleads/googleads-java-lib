@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="SiteError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_CHILD_NETWORK_CODE"/>
- *     &lt;enumeration value="CANNOT_ARCHIVE_SITE_WITH_SUBSITES"/>
- *     &lt;enumeration value="INVALID_URL_FOR_SITE"/>
- *     &lt;enumeration value="MULTIPLE_UPDATES_FOR_SAME_SITE"/>
- *     &lt;enumeration value="TOO_MANY_SITES_PER_REVIEW_REQUEST"/>
- *     &lt;enumeration value="TOO_MANY_REVIEW_REQUESTS_FOR_SITE"/>
- *     &lt;enumeration value="INVALID_APPROVAL_STATUS_FOR_REVIEW"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="SiteError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_CHILD_NETWORK_CODE"/&gt;
+ *     &lt;enumeration value="CANNOT_ARCHIVE_SITE_WITH_SUBSITES"/&gt;
+ *     &lt;enumeration value="INVALID_URL_FOR_SITE"/&gt;
+ *     &lt;enumeration value="MULTIPLE_UPDATES_FOR_SAME_SITE"/&gt;
+ *     &lt;enumeration value="TOO_MANY_SITES_PER_REVIEW_REQUEST"/&gt;
+ *     &lt;enumeration value="TOO_MANY_REVIEW_REQUESTS_FOR_SITE"/&gt;
+ *     &lt;enumeration value="INVALID_APPROVAL_STATUS_FOR_REVIEW"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

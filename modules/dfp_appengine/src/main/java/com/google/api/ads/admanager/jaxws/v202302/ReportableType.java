@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ReportableType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="ON"/>
- *     &lt;enumeration value="OFF"/>
- *     &lt;enumeration value="CUSTOM_DIMENSION"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ReportableType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="ON"/&gt;
+ *     &lt;enumeration value="OFF"/&gt;
+ *     &lt;enumeration value="CUSTOM_DIMENSION"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

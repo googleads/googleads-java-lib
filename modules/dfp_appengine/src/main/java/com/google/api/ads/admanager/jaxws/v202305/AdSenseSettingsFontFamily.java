@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdSenseSettings.FontFamily">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DEFAULT"/>
- *     &lt;enumeration value="ARIAL"/>
- *     &lt;enumeration value="TAHOMA"/>
- *     &lt;enumeration value="GEORGIA"/>
- *     &lt;enumeration value="TIMES"/>
- *     &lt;enumeration value="VERDANA"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdSenseSettings.FontFamily"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DEFAULT"/&gt;
+ *     &lt;enumeration value="ARIAL"/&gt;
+ *     &lt;enumeration value="TAHOMA"/&gt;
+ *     &lt;enumeration value="GEORGIA"/&gt;
+ *     &lt;enumeration value="TIMES"/&gt;
+ *     &lt;enumeration value="VERDANA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LiveStreamEventSlateError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_SLATE_CREATIVE_ID"/>
- *     &lt;enumeration value="LIVE_STREAM_EVENT_SLATE_CREATIVE_ID_REQUIRED"/>
- *     &lt;enumeration value="MISSING_SOURCE_FOR_SLATE"/>
- *     &lt;enumeration value="INVALID_SLATE_TYPE"/>
- *     &lt;enumeration value="CANNOT_CHANGE_SLATE_VIDEO_SOURCE_URL"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LiveStreamEventSlateError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_SLATE_CREATIVE_ID"/&gt;
+ *     &lt;enumeration value="LIVE_STREAM_EVENT_SLATE_CREATIVE_ID_REQUIRED"/&gt;
+ *     &lt;enumeration value="MISSING_SOURCE_FOR_SLATE"/&gt;
+ *     &lt;enumeration value="INVALID_SLATE_TYPE"/&gt;
+ *     &lt;enumeration value="CANNOT_CHANGE_SLATE_VIDEO_SOURCE_URL"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

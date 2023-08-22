@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="OrderActionError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="PERMISSION_DENIED"/>
- *     &lt;enumeration value="NOT_APPLICABLE"/>
- *     &lt;enumeration value="IS_ARCHIVED"/>
- *     &lt;enumeration value="HAS_ENDED"/>
- *     &lt;enumeration value="CANNOT_APPROVE_WITH_UNRESERVED_LINE_ITEMS"/>
- *     &lt;enumeration value="CANNOT_DELETE_ORDER_WITH_DELIVERED_LINEITEMS"/>
- *     &lt;enumeration value="CANNOT_APPROVE_COMPANY_CREDIT_STATUS_NOT_ACTIVE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="OrderActionError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PERMISSION_DENIED"/&gt;
+ *     &lt;enumeration value="NOT_APPLICABLE"/&gt;
+ *     &lt;enumeration value="IS_ARCHIVED"/&gt;
+ *     &lt;enumeration value="HAS_ENDED"/&gt;
+ *     &lt;enumeration value="CANNOT_APPROVE_WITH_UNRESERVED_LINE_ITEMS"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_ORDER_WITH_DELIVERED_LINEITEMS"/&gt;
+ *     &lt;enumeration value="CANNOT_APPROVE_COMPANY_CREDIT_STATUS_NOT_ACTIVE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

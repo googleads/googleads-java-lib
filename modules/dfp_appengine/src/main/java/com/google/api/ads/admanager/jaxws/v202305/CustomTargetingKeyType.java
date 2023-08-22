@@ -25,12 +25,12 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CustomTargetingKey.Type">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="PREDEFINED"/>
- *     &lt;enumeration value="FREEFORM"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CustomTargetingKey.Type"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PREDEFINED"/&gt;
+ *     &lt;enumeration value="FREEFORM"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

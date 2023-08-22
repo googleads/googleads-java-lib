@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RateType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CPM"/>
- *     &lt;enumeration value="CPC"/>
- *     &lt;enumeration value="CPD"/>
- *     &lt;enumeration value="CPU"/>
- *     &lt;enumeration value="FLAT_FEE"/>
- *     &lt;enumeration value="VCPM"/>
- *     &lt;enumeration value="CPM_IN_TARGET"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RateType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CPM"/&gt;
+ *     &lt;enumeration value="CPC"/&gt;
+ *     &lt;enumeration value="CPD"/&gt;
+ *     &lt;enumeration value="CPU"/&gt;
+ *     &lt;enumeration value="FLAT_FEE"/&gt;
+ *     &lt;enumeration value="VCPM"/&gt;
+ *     &lt;enumeration value="CPM_IN_TARGET"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

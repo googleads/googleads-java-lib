@@ -25,34 +25,34 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ProposalError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AD_SERVER_UNKNOWN_ERROR"/>
- *     &lt;enumeration value="AD_SERVER_API_ERROR"/>
- *     &lt;enumeration value="UPDATE_ADVERTISER_NOT_ALLOWED"/>
- *     &lt;enumeration value="UPDATE_PROPOSAL_NOT_ALLOWED"/>
- *     &lt;enumeration value="CONTACT_UNSUPPORTED_FOR_ADVERTISER"/>
- *     &lt;enumeration value="INVALID_CONTACT"/>
- *     &lt;enumeration value="DUPLICATED_CONTACT"/>
- *     &lt;enumeration value="UNACCEPTABLE_COMPANY_CREDIT_STATUS"/>
- *     &lt;enumeration value="COMPANY_CREDIT_STATUS_NOT_ACTIVE"/>
- *     &lt;enumeration value="PRIMARY_AGENCY_REQUIRED"/>
- *     &lt;enumeration value="PRIMARY_AGENCY_NOT_UNIQUE"/>
- *     &lt;enumeration value="UNSUPPORTED_COMPANY_ASSOCIATION_TYPE_FOR_PROGRAMMATIC_PROPOSAL"/>
- *     &lt;enumeration value="DUPLICATED_COMPANY_ASSOCIATION"/>
- *     &lt;enumeration value="DUPLICATED_SALESPERSON"/>
- *     &lt;enumeration value="DUPLICATED_SALES_PLANNER"/>
- *     &lt;enumeration value="DUPLICATED_TRAFFICKER"/>
- *     &lt;enumeration value="HAS_NO_UNARCHIVED_PROPOSAL_LINEITEMS"/>
- *     &lt;enumeration value="DUPLICATE_TERMS_AND_CONDITIONS"/>
- *     &lt;enumeration value="UNSUPPORTED_PROPOSAL_CURRENCY_CODE"/>
- *     &lt;enumeration value="UNSUPPORTED_BUYER_CURRENCY_CODE"/>
- *     &lt;enumeration value="INVALID_POC"/>
- *     &lt;enumeration value="UPDATE_CURRENCY_NOT_ALLOWED"/>
- *     &lt;enumeration value="UPDATE_TIME_ZONE_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ProposalError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AD_SERVER_UNKNOWN_ERROR"/&gt;
+ *     &lt;enumeration value="AD_SERVER_API_ERROR"/&gt;
+ *     &lt;enumeration value="UPDATE_ADVERTISER_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UPDATE_PROPOSAL_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="CONTACT_UNSUPPORTED_FOR_ADVERTISER"/&gt;
+ *     &lt;enumeration value="INVALID_CONTACT"/&gt;
+ *     &lt;enumeration value="DUPLICATED_CONTACT"/&gt;
+ *     &lt;enumeration value="UNACCEPTABLE_COMPANY_CREDIT_STATUS"/&gt;
+ *     &lt;enumeration value="COMPANY_CREDIT_STATUS_NOT_ACTIVE"/&gt;
+ *     &lt;enumeration value="PRIMARY_AGENCY_REQUIRED"/&gt;
+ *     &lt;enumeration value="PRIMARY_AGENCY_NOT_UNIQUE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_COMPANY_ASSOCIATION_TYPE_FOR_PROGRAMMATIC_PROPOSAL"/&gt;
+ *     &lt;enumeration value="DUPLICATED_COMPANY_ASSOCIATION"/&gt;
+ *     &lt;enumeration value="DUPLICATED_SALESPERSON"/&gt;
+ *     &lt;enumeration value="DUPLICATED_SALES_PLANNER"/&gt;
+ *     &lt;enumeration value="DUPLICATED_TRAFFICKER"/&gt;
+ *     &lt;enumeration value="HAS_NO_UNARCHIVED_PROPOSAL_LINEITEMS"/&gt;
+ *     &lt;enumeration value="DUPLICATE_TERMS_AND_CONDITIONS"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_PROPOSAL_CURRENCY_CODE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_BUYER_CURRENCY_CODE"/&gt;
+ *     &lt;enumeration value="INVALID_POC"/&gt;
+ *     &lt;enumeration value="UPDATE_CURRENCY_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UPDATE_TIME_ZONE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

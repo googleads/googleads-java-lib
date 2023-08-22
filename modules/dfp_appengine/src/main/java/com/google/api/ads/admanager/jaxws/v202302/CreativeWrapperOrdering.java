@@ -25,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeWrapperOrdering">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NO_PREFERENCE"/>
- *     &lt;enumeration value="INNER"/>
- *     &lt;enumeration value="OUTER"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeWrapperOrdering"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NO_PREFERENCE"/&gt;
+ *     &lt;enumeration value="INNER"/&gt;
+ *     &lt;enumeration value="OUTER"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

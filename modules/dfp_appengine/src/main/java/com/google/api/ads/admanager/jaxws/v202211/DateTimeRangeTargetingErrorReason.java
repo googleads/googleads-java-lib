@@ -25,26 +25,26 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DateTimeRangeTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="EMPTY_RANGES"/>
- *     &lt;enumeration value="NOT_SPONSORSHIP_LINEITEM"/>
- *     &lt;enumeration value="NOT_SPONSORSHIP_OR_STANDARD_LINEITEM"/>
- *     &lt;enumeration value="UNSUPPORTED_LINEITEM_RESERVATION_TYPE"/>
- *     &lt;enumeration value="PAST_RANGES_CHANGED"/>
- *     &lt;enumeration value="RANGES_OVERLAP"/>
- *     &lt;enumeration value="FIRST_DATE_TIME_DOES_NOT_MATCH_START_TIME"/>
- *     &lt;enumeration value="LAST_DATE_TIME_DOES_NOT_MATCH_END_TIME"/>
- *     &lt;enumeration value="RANGES_OUT_OF_LINEITEM_ACTIVE_PERIOD"/>
- *     &lt;enumeration value="START_TIME_IS_NOT_START_OF_DAY"/>
- *     &lt;enumeration value="END_TIME_IS_NOT_END_OF_DAY"/>
- *     &lt;enumeration value="START_DATE_TIME_IS_IN_PAST"/>
- *     &lt;enumeration value="RANGE_END_TIME_BEFORE_START_TIME"/>
- *     &lt;enumeration value="END_DATE_TIME_IS_TOO_LATE"/>
- *     &lt;enumeration value="LIMITED_RANGES_IN_UNLIMITED_LINEITEM"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DateTimeRangeTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EMPTY_RANGES"/&gt;
+ *     &lt;enumeration value="NOT_SPONSORSHIP_LINEITEM"/&gt;
+ *     &lt;enumeration value="NOT_SPONSORSHIP_OR_STANDARD_LINEITEM"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_LINEITEM_RESERVATION_TYPE"/&gt;
+ *     &lt;enumeration value="PAST_RANGES_CHANGED"/&gt;
+ *     &lt;enumeration value="RANGES_OVERLAP"/&gt;
+ *     &lt;enumeration value="FIRST_DATE_TIME_DOES_NOT_MATCH_START_TIME"/&gt;
+ *     &lt;enumeration value="LAST_DATE_TIME_DOES_NOT_MATCH_END_TIME"/&gt;
+ *     &lt;enumeration value="RANGES_OUT_OF_LINEITEM_ACTIVE_PERIOD"/&gt;
+ *     &lt;enumeration value="START_TIME_IS_NOT_START_OF_DAY"/&gt;
+ *     &lt;enumeration value="END_TIME_IS_NOT_END_OF_DAY"/&gt;
+ *     &lt;enumeration value="START_DATE_TIME_IS_IN_PAST"/&gt;
+ *     &lt;enumeration value="RANGE_END_TIME_BEFORE_START_TIME"/&gt;
+ *     &lt;enumeration value="END_DATE_TIME_IS_TOO_LATE"/&gt;
+ *     &lt;enumeration value="LIMITED_RANGES_IN_UNLIMITED_LINEITEM"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

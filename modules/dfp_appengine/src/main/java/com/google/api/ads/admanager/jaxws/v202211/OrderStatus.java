@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="OrderStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DRAFT"/>
- *     &lt;enumeration value="PENDING_APPROVAL"/>
- *     &lt;enumeration value="APPROVED"/>
- *     &lt;enumeration value="DISAPPROVED"/>
- *     &lt;enumeration value="PAUSED"/>
- *     &lt;enumeration value="CANCELED"/>
- *     &lt;enumeration value="DELETED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="OrderStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DRAFT"/&gt;
+ *     &lt;enumeration value="PENDING_APPROVAL"/&gt;
+ *     &lt;enumeration value="APPROVED"/&gt;
+ *     &lt;enumeration value="DISAPPROVED"/&gt;
+ *     &lt;enumeration value="PAUSED"/&gt;
+ *     &lt;enumeration value="CANCELED"/&gt;
+ *     &lt;enumeration value="DELETED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

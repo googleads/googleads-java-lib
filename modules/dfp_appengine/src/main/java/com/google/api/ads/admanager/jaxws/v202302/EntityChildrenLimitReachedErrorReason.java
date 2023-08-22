@@ -25,27 +25,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="EntityChildrenLimitReachedError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="LINE_ITEM_LIMIT_FOR_ORDER_REACHED"/>
- *     &lt;enumeration value="CREATIVE_ASSOCIATION_LIMIT_FOR_LINE_ITEM_REACHED"/>
- *     &lt;enumeration value="AD_UNIT_LIMIT_FOR_PLACEMENT_REACHED"/>
- *     &lt;enumeration value="TARGETING_EXPRESSION_LIMIT_FOR_LINE_ITEM_REACHED"/>
- *     &lt;enumeration value="TARGETING_EXPRESSION_SIZE_LIMIT_REACHED"/>
- *     &lt;enumeration value="CUSTOM_TARGETING_VALUES_FOR_KEY_LIMIT_REACHED"/>
- *     &lt;enumeration value="TARGETING_EXPRESSION_LIMIT_FOR_CREATIVES_ON_LINE_ITEM_REACHED"/>
- *     &lt;enumeration value="ATTACHMENT_LIMIT_FOR_PROPOSAL_REACHED"/>
- *     &lt;enumeration value="PROPOSAL_LINE_ITEM_LIMIT_FOR_PROPOSAL_REACHED"/>
- *     &lt;enumeration value="PRODUCT_LIMIT_FOR_PRODUCT_PACKAGE_REACHED"/>
- *     &lt;enumeration value="PRODUCT_TEMPLATE_AND_PRODUCT_BASE_RATE_LIMIT_FOR_RATE_CARD_REACHED"/>
- *     &lt;enumeration value="PRODUCT_PACKAGE_ITEM_BASE_RATE_LIMIT_FOR_RATE_CARD_REACHED"/>
- *     &lt;enumeration value="PREMIUM_LIMIT_FOR_RATE_CARD_REACHED"/>
- *     &lt;enumeration value="AD_UNIT_LIMIT_FOR_AD_EXCLUSION_RULE_TARGETING_REACHED"/>
- *     &lt;enumeration value="NATIVE_STYLE_LIMIT_FOR_NATIVE_AD_FORMAT_REACHED"/>
- *     &lt;enumeration value="TARGETING_EXPRESSION_LIMIT_FOR_PRESENTATION_ASSIGNMENT_REACHED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="EntityChildrenLimitReachedError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="LINE_ITEM_LIMIT_FOR_ORDER_REACHED"/&gt;
+ *     &lt;enumeration value="CREATIVE_ASSOCIATION_LIMIT_FOR_LINE_ITEM_REACHED"/&gt;
+ *     &lt;enumeration value="AD_UNIT_LIMIT_FOR_PLACEMENT_REACHED"/&gt;
+ *     &lt;enumeration value="TARGETING_EXPRESSION_LIMIT_FOR_LINE_ITEM_REACHED"/&gt;
+ *     &lt;enumeration value="TARGETING_EXPRESSION_SIZE_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="CUSTOM_TARGETING_VALUES_FOR_KEY_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="TARGETING_EXPRESSION_LIMIT_FOR_CREATIVES_ON_LINE_ITEM_REACHED"/&gt;
+ *     &lt;enumeration value="ATTACHMENT_LIMIT_FOR_PROPOSAL_REACHED"/&gt;
+ *     &lt;enumeration value="PROPOSAL_LINE_ITEM_LIMIT_FOR_PROPOSAL_REACHED"/&gt;
+ *     &lt;enumeration value="PRODUCT_LIMIT_FOR_PRODUCT_PACKAGE_REACHED"/&gt;
+ *     &lt;enumeration value="PRODUCT_TEMPLATE_AND_PRODUCT_BASE_RATE_LIMIT_FOR_RATE_CARD_REACHED"/&gt;
+ *     &lt;enumeration value="PRODUCT_PACKAGE_ITEM_BASE_RATE_LIMIT_FOR_RATE_CARD_REACHED"/&gt;
+ *     &lt;enumeration value="PREMIUM_LIMIT_FOR_RATE_CARD_REACHED"/&gt;
+ *     &lt;enumeration value="AD_UNIT_LIMIT_FOR_AD_EXCLUSION_RULE_TARGETING_REACHED"/&gt;
+ *     &lt;enumeration value="NATIVE_STYLE_LIMIT_FOR_NATIVE_AD_FORMAT_REACHED"/&gt;
+ *     &lt;enumeration value="TARGETING_EXPRESSION_LIMIT_FOR_PRESENTATION_ASSIGNMENT_REACHED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

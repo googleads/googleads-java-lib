@@ -32,14 +32,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ProgrammaticCreative">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202302}Creative">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ProgrammaticCreative"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202302}Creative"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

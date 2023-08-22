@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdSenseSettings.BorderStyle">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DEFAULT"/>
- *     &lt;enumeration value="NOT_ROUNDED"/>
- *     &lt;enumeration value="SLIGHTLY_ROUNDED"/>
- *     &lt;enumeration value="VERY_ROUNDED"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdSenseSettings.BorderStyle"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DEFAULT"/&gt;
+ *     &lt;enumeration value="NOT_ROUNDED"/&gt;
+ *     &lt;enumeration value="SLIGHTLY_ROUNDED"/&gt;
+ *     &lt;enumeration value="VERY_ROUNDED"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -33,23 +33,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GrpSettings">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="minTargetAge" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="maxTargetAge" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="targetGender" type="{https://www.google.com/apis/ads/publisher/v202305}GrpTargetGender" minOccurs="0"/>
- *         &lt;element name="provider" type="{https://www.google.com/apis/ads/publisher/v202305}GrpProvider" minOccurs="0"/>
- *         &lt;element name="targetImpressionGoal" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="inTargetRatioEstimateMilliPercent" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="nielsenCtvPacingType" type="{https://www.google.com/apis/ads/publisher/v202305}NielsenCtvPacingType" minOccurs="0"/>
- *         &lt;element name="pacingDeviceCategorizationType" type="{https://www.google.com/apis/ads/publisher/v202305}PacingDeviceCategorizationType" minOccurs="0"/>
- *         &lt;element name="applyTrueCoview" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="GrpSettings"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="minTargetAge" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="maxTargetAge" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="targetGender" type="{https://www.google.com/apis/ads/publisher/v202305}GrpTargetGender" minOccurs="0"/&gt;
+ *         &lt;element name="provider" type="{https://www.google.com/apis/ads/publisher/v202305}GrpProvider" minOccurs="0"/&gt;
+ *         &lt;element name="targetImpressionGoal" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="inTargetRatioEstimateMilliPercent" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="nielsenCtvPacingType" type="{https://www.google.com/apis/ads/publisher/v202305}NielsenCtvPacingType" minOccurs="0"/&gt;
+ *         &lt;element name="pacingDeviceCategorizationType" type="{https://www.google.com/apis/ads/publisher/v202305}PacingDeviceCategorizationType" minOccurs="0"/&gt;
+ *         &lt;element name="applyTrueCoview" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

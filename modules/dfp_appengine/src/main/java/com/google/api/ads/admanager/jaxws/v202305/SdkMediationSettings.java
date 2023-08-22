@@ -29,17 +29,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SdkMediationSettings">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202305}AbstractDisplaySettings">
- *       &lt;sequence>
- *         &lt;element name="parameters" type="{https://www.google.com/apis/ads/publisher/v202305}YieldParameter_StringMapEntry" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="yieldIntegrationType" type="{https://www.google.com/apis/ads/publisher/v202305}YieldIntegrationType" minOccurs="0"/>
- *         &lt;element name="platform" type="{https://www.google.com/apis/ads/publisher/v202305}YieldPlatform" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="SdkMediationSettings"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202305}AbstractDisplaySettings"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="parameters" type="{https://www.google.com/apis/ads/publisher/v202305}YieldParameter_StringMapEntry" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="yieldIntegrationType" type="{https://www.google.com/apis/ads/publisher/v202305}YieldIntegrationType" minOccurs="0"/&gt;
+ *         &lt;element name="platform" type="{https://www.google.com/apis/ads/publisher/v202305}YieldPlatform" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

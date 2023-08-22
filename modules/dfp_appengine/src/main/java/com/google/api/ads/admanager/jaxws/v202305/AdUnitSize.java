@@ -35,19 +35,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AdUnitSize">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="size" type="{https://www.google.com/apis/ads/publisher/v202305}Size" minOccurs="0"/>
- *         &lt;element name="environmentType" type="{https://www.google.com/apis/ads/publisher/v202305}EnvironmentType" minOccurs="0"/>
- *         &lt;element name="companions" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnitSize" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="fullDisplayString" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isAudio" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AdUnitSize"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="size" type="{https://www.google.com/apis/ads/publisher/v202305}Size" minOccurs="0"/&gt;
+ *         &lt;element name="environmentType" type="{https://www.google.com/apis/ads/publisher/v202305}EnvironmentType" minOccurs="0"/&gt;
+ *         &lt;element name="companions" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnitSize" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="fullDisplayString" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="isAudio" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -33,23 +33,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VideoMetadata">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="scalableType" type="{https://www.google.com/apis/ads/publisher/v202211}ScalableType" minOccurs="0"/>
- *         &lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="bitRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="minimumBitRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="maximumBitRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="size" type="{https://www.google.com/apis/ads/publisher/v202211}Size" minOccurs="0"/>
- *         &lt;element name="mimeType" type="{https://www.google.com/apis/ads/publisher/v202211}MimeType" minOccurs="0"/>
- *         &lt;element name="deliveryType" type="{https://www.google.com/apis/ads/publisher/v202211}VideoDeliveryType" minOccurs="0"/>
- *         &lt;element name="codecs" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VideoMetadata"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="scalableType" type="{https://www.google.com/apis/ads/publisher/v202211}ScalableType" minOccurs="0"/&gt;
+ *         &lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="bitRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="minimumBitRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="maximumBitRate" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="size" type="{https://www.google.com/apis/ads/publisher/v202211}Size" minOccurs="0"/&gt;
+ *         &lt;element name="mimeType" type="{https://www.google.com/apis/ads/publisher/v202211}MimeType" minOccurs="0"/&gt;
+ *         &lt;element name="deliveryType" type="{https://www.google.com/apis/ads/publisher/v202211}VideoDeliveryType" minOccurs="0"/&gt;
+ *         &lt;element name="codecs" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

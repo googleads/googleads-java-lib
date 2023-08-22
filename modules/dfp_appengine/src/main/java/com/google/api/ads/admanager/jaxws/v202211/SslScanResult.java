@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="SslScanResult">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="UNSCANNED"/>
- *     &lt;enumeration value="SCANNED_SSL"/>
- *     &lt;enumeration value="SCANNED_NON_SSL"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="SslScanResult"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="UNSCANNED"/&gt;
+ *     &lt;enumeration value="SCANNED_SSL"/&gt;
+ *     &lt;enumeration value="SCANNED_NON_SSL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

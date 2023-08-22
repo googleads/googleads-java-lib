@@ -25,23 +25,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="MobileApplicationStore">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="APPLE_ITUNES"/>
- *     &lt;enumeration value="GOOGLE_PLAY"/>
- *     &lt;enumeration value="ROKU"/>
- *     &lt;enumeration value="AMAZON_FIRETV"/>
- *     &lt;enumeration value="PLAYSTATION"/>
- *     &lt;enumeration value="XBOX"/>
- *     &lt;enumeration value="SAMSUNG_TV"/>
- *     &lt;enumeration value="AMAZON_APP_STORE"/>
- *     &lt;enumeration value="OPPO_APP_STORE"/>
- *     &lt;enumeration value="SAMSUNG_APP_STORE"/>
- *     &lt;enumeration value="VIVO_APP_STORE"/>
- *     &lt;enumeration value="XIAOMI_APP_STORE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="MobileApplicationStore"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="APPLE_ITUNES"/&gt;
+ *     &lt;enumeration value="GOOGLE_PLAY"/&gt;
+ *     &lt;enumeration value="ROKU"/&gt;
+ *     &lt;enumeration value="AMAZON_FIRETV"/&gt;
+ *     &lt;enumeration value="PLAYSTATION"/&gt;
+ *     &lt;enumeration value="XBOX"/&gt;
+ *     &lt;enumeration value="SAMSUNG_TV"/&gt;
+ *     &lt;enumeration value="AMAZON_APP_STORE"/&gt;
+ *     &lt;enumeration value="OPPO_APP_STORE"/&gt;
+ *     &lt;enumeration value="SAMSUNG_APP_STORE"/&gt;
+ *     &lt;enumeration value="VIVO_APP_STORE"/&gt;
+ *     &lt;enumeration value="XIAOMI_APP_STORE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

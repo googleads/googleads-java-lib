@@ -1,3 +1,13 @@
+5.2.0 - 08/22/2023
+-------------------
+Ad Manager:
+ - Added support for v202308.
+ - Removed support for v202208.
+ - Removed examples for v202211.
+
+Common:
+ - No changes.
+
 5.1.0 - 05/23/2023
 -------------------
 Ad Manager:

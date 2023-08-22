@@ -33,16 +33,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LineItem">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202302}LineItemSummary">
- *       &lt;sequence>
- *         &lt;element name="targeting" type="{https://www.google.com/apis/ads/publisher/v202302}Targeting" minOccurs="0"/>
- *         &lt;element name="creativeTargetings" type="{https://www.google.com/apis/ads/publisher/v202302}CreativeTargeting" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="LineItem"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202302}LineItemSummary"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="targeting" type="{https://www.google.com/apis/ads/publisher/v202302}Targeting" minOccurs="0"/&gt;
+ *         &lt;element name="creativeTargetings" type="{https://www.google.com/apis/ads/publisher/v202302}CreativeTargeting" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -25,22 +25,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="EntityLimitReachedError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CUSTOM_TARGETING_VALUES_LIMIT_REACHED"/>
- *     &lt;enumeration value="AD_EXCLUSION_RULES_LIMIT_REACHED"/>
- *     &lt;enumeration value="FIRST_PARTY_AUDIENCE_SEGMENTS_LIMIT_REACHED"/>
- *     &lt;enumeration value="PLACEMENTS_LIMIT_REACHED"/>
- *     &lt;enumeration value="LINE_ITEMS_LIMIT_REACHED"/>
- *     &lt;enumeration value="ACTIVE_LINE_ITEMS_LIMIT_REACHED"/>
- *     &lt;enumeration value="DAI_ENCODING_PROFILES_LIMIT_REACHED"/>
- *     &lt;enumeration value="TRAFFIC_FORECAST_SEGMENTS_LIMIT_REACHED"/>
- *     &lt;enumeration value="FORECAST_ADJUSTMENTS_LIMIT_REACHED"/>
- *     &lt;enumeration value="ACTIVE_EXPERIMENTS_LIMIT_REACHED"/>
- *     &lt;enumeration value="SITES_LIMIT_REACHED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="EntityLimitReachedError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CUSTOM_TARGETING_VALUES_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="AD_EXCLUSION_RULES_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="FIRST_PARTY_AUDIENCE_SEGMENTS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="PLACEMENTS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="LINE_ITEMS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="ACTIVE_LINE_ITEMS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="DAI_ENCODING_PROFILES_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="TRAFFIC_FORECAST_SEGMENTS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="FORECAST_ADJUSTMENTS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="ACTIVE_EXPERIMENTS_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="SITES_LIMIT_REACHED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ProposalLineItemActionError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NOT_APPLICABLE"/>
- *     &lt;enumeration value="PROPOSAL_NOT_EDITABLE"/>
- *     &lt;enumeration value="CANNOT_SELECTIVELY_ARCHIVE_PROPOSAL_LINE_ITEMS_FROM_MANDATORY_PRODUCTS"/>
- *     &lt;enumeration value="CANNOT_SELECTIVELY_UNARCHIVE_PROPOSAL_LINE_ITEMS_FROM_MANDATORY_PRODUCTS"/>
- *     &lt;enumeration value="CANNOT_UNARCHIVE_SOLD_PROGRAMMATIC_PROPOSAL_LINE_ITEM"/>
- *     &lt;enumeration value="CANNOT_ARCHIVE_ONGOING_PROPOSAL_LINE_ITEM"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ProposalLineItemActionError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NOT_APPLICABLE"/&gt;
+ *     &lt;enumeration value="PROPOSAL_NOT_EDITABLE"/&gt;
+ *     &lt;enumeration value="CANNOT_SELECTIVELY_ARCHIVE_PROPOSAL_LINE_ITEMS_FROM_MANDATORY_PRODUCTS"/&gt;
+ *     &lt;enumeration value="CANNOT_SELECTIVELY_UNARCHIVE_PROPOSAL_LINE_ITEMS_FROM_MANDATORY_PRODUCTS"/&gt;
+ *     &lt;enumeration value="CANNOT_UNARCHIVE_SOLD_PROGRAMMATIC_PROPOSAL_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="CANNOT_ARCHIVE_ONGOING_PROPOSAL_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

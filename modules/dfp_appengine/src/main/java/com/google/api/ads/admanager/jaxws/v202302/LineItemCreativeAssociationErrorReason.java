@@ -25,32 +25,32 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LineItemCreativeAssociationError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CREATIVE_IN_WRONG_ADVERTISERS_LIBRARY"/>
- *     &lt;enumeration value="INVALID_LINEITEM_CREATIVE_PAIRING"/>
- *     &lt;enumeration value="STARTDATE_BEFORE_LINEITEM_STARTDATE"/>
- *     &lt;enumeration value="STARTDATE_NOT_BEFORE_LINEITEM_ENDDATE"/>
- *     &lt;enumeration value="ENDDATE_AFTER_LINEITEM_ENDDATE"/>
- *     &lt;enumeration value="ENDDATE_NOT_AFTER_LINEITEM_STARTDATE"/>
- *     &lt;enumeration value="ENDDATE_NOT_AFTER_STARTDATE"/>
- *     &lt;enumeration value="ENDDATE_IN_THE_PAST"/>
- *     &lt;enumeration value="CANNOT_COPY_WITHIN_SAME_LINE_ITEM"/>
- *     &lt;enumeration value="UNSUPPORTED_CREATIVE_VAST_REDIRECT_TYPE"/>
- *     &lt;enumeration value="UNSUPPORTED_YOUTUBE_HOSTED_CREATIVE"/>
- *     &lt;enumeration value="PROGRAMMATIC_CREATIVES_CAN_ONLY_BE_ASSIGNED_TO_ONE_LINE_ITEM"/>
- *     &lt;enumeration value="CANNOT_ACTIVATE_ASSOCIATION_WITH_INACTIVE_CREATIVE"/>
- *     &lt;enumeration value="CANNOT_CREATE_PROGRAMMATIC_CREATIVES"/>
- *     &lt;enumeration value="CANNOT_UPDATE_PROGRAMMATIC_CREATIVES"/>
- *     &lt;enumeration value="CREATIVE_AND_LINE_ITEM_MUST_BOTH_BE_SET_TOP_BOX_ENABLED"/>
- *     &lt;enumeration value="CANNOT_DELETE_SET_TOP_BOX_ENABLED_ASSOCIATIONS"/>
- *     &lt;enumeration value="SET_TOP_BOX_CREATIVE_ROTATION_WEIGHT_MUST_BE_INTEGER"/>
- *     &lt;enumeration value="INVALID_CREATIVE_ROTATION_TYPE_FOR_MANUAL_WEIGHT"/>
- *     &lt;enumeration value="CLICK_MACROS_REQUIRED"/>
- *     &lt;enumeration value="VIEW_MACROS_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LineItemCreativeAssociationError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CREATIVE_IN_WRONG_ADVERTISERS_LIBRARY"/&gt;
+ *     &lt;enumeration value="INVALID_LINEITEM_CREATIVE_PAIRING"/&gt;
+ *     &lt;enumeration value="STARTDATE_BEFORE_LINEITEM_STARTDATE"/&gt;
+ *     &lt;enumeration value="STARTDATE_NOT_BEFORE_LINEITEM_ENDDATE"/&gt;
+ *     &lt;enumeration value="ENDDATE_AFTER_LINEITEM_ENDDATE"/&gt;
+ *     &lt;enumeration value="ENDDATE_NOT_AFTER_LINEITEM_STARTDATE"/&gt;
+ *     &lt;enumeration value="ENDDATE_NOT_AFTER_STARTDATE"/&gt;
+ *     &lt;enumeration value="ENDDATE_IN_THE_PAST"/&gt;
+ *     &lt;enumeration value="CANNOT_COPY_WITHIN_SAME_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_CREATIVE_VAST_REDIRECT_TYPE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_YOUTUBE_HOSTED_CREATIVE"/&gt;
+ *     &lt;enumeration value="PROGRAMMATIC_CREATIVES_CAN_ONLY_BE_ASSIGNED_TO_ONE_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="CANNOT_ACTIVATE_ASSOCIATION_WITH_INACTIVE_CREATIVE"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_PROGRAMMATIC_CREATIVES"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_PROGRAMMATIC_CREATIVES"/&gt;
+ *     &lt;enumeration value="CREATIVE_AND_LINE_ITEM_MUST_BOTH_BE_SET_TOP_BOX_ENABLED"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_SET_TOP_BOX_ENABLED_ASSOCIATIONS"/&gt;
+ *     &lt;enumeration value="SET_TOP_BOX_CREATIVE_ROTATION_WEIGHT_MUST_BE_INTEGER"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVE_ROTATION_TYPE_FOR_MANUAL_WEIGHT"/&gt;
+ *     &lt;enumeration value="CLICK_MACROS_REQUIRED"/&gt;
+ *     &lt;enumeration value="VIEW_MACROS_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

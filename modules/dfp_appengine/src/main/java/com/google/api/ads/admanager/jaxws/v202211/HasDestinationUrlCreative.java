@@ -32,16 +32,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HasDestinationUrlCreative">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}Creative">
- *       &lt;sequence>
- *         &lt;element name="destinationUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="destinationUrlType" type="{https://www.google.com/apis/ads/publisher/v202211}DestinationUrlType" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="HasDestinationUrlCreative"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}Creative"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="destinationUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="destinationUrlType" type="{https://www.google.com/apis/ads/publisher/v202211}DestinationUrlType" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -52,12 +52,12 @@ import javax.xml.bind.annotation.XmlType;
     "destinationUrlType"
 })
 @XmlSeeAlso({
-    CustomCreative.class,
-    BaseVideoCreative.class,
-    BaseImageRedirectCreative.class,
-    BaseAudioCreative.class,
     AspectRatioImageCreative.class,
-    BaseImageCreative.class
+    BaseAudioCreative.class,
+    CustomCreative.class,
+    BaseImageCreative.class,
+    BaseImageRedirectCreative.class,
+    BaseVideoCreative.class
 })
 public abstract class HasDestinationUrlCreative
     extends Creative

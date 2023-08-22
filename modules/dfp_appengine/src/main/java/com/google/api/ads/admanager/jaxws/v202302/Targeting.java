@@ -30,28 +30,28 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Targeting">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="geoTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}GeoTargeting" minOccurs="0"/>
- *         &lt;element name="inventoryTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}InventoryTargeting" minOccurs="0"/>
- *         &lt;element name="dayPartTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DayPartTargeting" minOccurs="0"/>
- *         &lt;element name="dateTimeRangeTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DateTimeRangeTargeting" minOccurs="0"/>
- *         &lt;element name="technologyTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}TechnologyTargeting" minOccurs="0"/>
- *         &lt;element name="customTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}CustomCriteriaSet" minOccurs="0"/>
- *         &lt;element name="userDomainTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}UserDomainTargeting" minOccurs="0"/>
- *         &lt;element name="contentTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}ContentTargeting" minOccurs="0"/>
- *         &lt;element name="videoPositionTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}VideoPositionTargeting" minOccurs="0"/>
- *         &lt;element name="mobileApplicationTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileApplicationTargeting" minOccurs="0"/>
- *         &lt;element name="buyerUserListTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BuyerUserListTargeting" minOccurs="0"/>
- *         &lt;element name="inventoryUrlTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}InventoryUrlTargeting" minOccurs="0"/>
- *         &lt;element name="requestPlatformTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}RequestPlatformTargeting" minOccurs="0"/>
- *         &lt;element name="inventorySizeTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}InventorySizeTargeting" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Targeting"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="geoTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}GeoTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="inventoryTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}InventoryTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="dayPartTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DayPartTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="dateTimeRangeTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DateTimeRangeTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="technologyTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}TechnologyTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="customTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}CustomCriteriaSet" minOccurs="0"/&gt;
+ *         &lt;element name="userDomainTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}UserDomainTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="contentTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}ContentTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="videoPositionTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}VideoPositionTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="mobileApplicationTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileApplicationTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="buyerUserListTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BuyerUserListTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="inventoryUrlTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}InventoryUrlTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="requestPlatformTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}RequestPlatformTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="inventorySizeTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}InventorySizeTargeting" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

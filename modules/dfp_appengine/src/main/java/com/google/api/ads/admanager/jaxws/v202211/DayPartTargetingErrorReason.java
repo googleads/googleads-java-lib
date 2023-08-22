@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DayPartTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_HOUR"/>
- *     &lt;enumeration value="INVALID_MINUTE"/>
- *     &lt;enumeration value="END_TIME_NOT_AFTER_START_TIME"/>
- *     &lt;enumeration value="TIME_PERIODS_OVERLAP"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DayPartTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_HOUR"/&gt;
+ *     &lt;enumeration value="INVALID_MINUTE"/&gt;
+ *     &lt;enumeration value="END_TIME_NOT_AFTER_START_TIME"/&gt;
+ *     &lt;enumeration value="TIME_PERIODS_OVERLAP"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

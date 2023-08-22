@@ -35,40 +35,40 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Proposal">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="isProgrammatic" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="dfpOrderId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalStatus" minOccurs="0"/>
- *         &lt;element name="isArchived" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="advertiser" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalCompanyAssociation" minOccurs="0"/>
- *         &lt;element name="agencies" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalCompanyAssociation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="internalNotes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="primarySalesperson" type="{https://www.google.com/apis/ads/publisher/v202211}SalespersonSplit" minOccurs="0"/>
- *         &lt;element name="salesPlannerIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="primaryTraffickerId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="sellerContactIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="appliedTeamIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customFieldValues" type="{https://www.google.com/apis/ads/publisher/v202211}BaseCustomFieldValue" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="appliedLabels" type="{https://www.google.com/apis/ads/publisher/v202211}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="effectiveAppliedLabels" type="{https://www.google.com/apis/ads/publisher/v202211}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="currencyCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="isSold" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="marketplaceInfo" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalMarketplaceInfo" minOccurs="0"/>
- *         &lt;element name="buyerRfp" type="{https://www.google.com/apis/ads/publisher/v202211}BuyerRfp" minOccurs="0"/>
- *         &lt;element name="hasBuyerRfp" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="deliveryPausingEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Proposal"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="isProgrammatic" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dfpOrderId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalStatus" minOccurs="0"/&gt;
+ *         &lt;element name="isArchived" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="advertiser" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalCompanyAssociation" minOccurs="0"/&gt;
+ *         &lt;element name="agencies" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalCompanyAssociation" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="internalNotes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="primarySalesperson" type="{https://www.google.com/apis/ads/publisher/v202211}SalespersonSplit" minOccurs="0"/&gt;
+ *         &lt;element name="salesPlannerIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="primaryTraffickerId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="sellerContactIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="appliedTeamIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="customFieldValues" type="{https://www.google.com/apis/ads/publisher/v202211}BaseCustomFieldValue" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="appliedLabels" type="{https://www.google.com/apis/ads/publisher/v202211}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="effectiveAppliedLabels" type="{https://www.google.com/apis/ads/publisher/v202211}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="currencyCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="isSold" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="marketplaceInfo" type="{https://www.google.com/apis/ads/publisher/v202211}ProposalMarketplaceInfo" minOccurs="0"/&gt;
+ *         &lt;element name="buyerRfp" type="{https://www.google.com/apis/ads/publisher/v202211}BuyerRfp" minOccurs="0"/&gt;
+ *         &lt;element name="hasBuyerRfp" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="deliveryPausingEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

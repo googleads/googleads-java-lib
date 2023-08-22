@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CommonError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NOT_FOUND"/>
- *     &lt;enumeration value="ALREADY_EXISTS"/>
- *     &lt;enumeration value="NOT_APPLICABLE"/>
- *     &lt;enumeration value="DUPLICATE_OBJECT"/>
- *     &lt;enumeration value="CANNOT_UPDATE"/>
- *     &lt;enumeration value="UNSUPPORTED_OPERATION"/>
- *     &lt;enumeration value="CONCURRENT_MODIFICATION"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CommonError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NOT_FOUND"/&gt;
+ *     &lt;enumeration value="ALREADY_EXISTS"/&gt;
+ *     &lt;enumeration value="NOT_APPLICABLE"/&gt;
+ *     &lt;enumeration value="DUPLICATE_OBJECT"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_OPERATION"/&gt;
+ *     &lt;enumeration value="CONCURRENT_MODIFICATION"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

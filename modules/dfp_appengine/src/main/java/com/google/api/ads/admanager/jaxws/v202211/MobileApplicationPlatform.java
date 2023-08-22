@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="MobileApplicationPlatform">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="ANDROID"/>
- *     &lt;enumeration value="IOS"/>
- *     &lt;enumeration value="ROKU"/>
- *     &lt;enumeration value="AMAZON_FIRETV"/>
- *     &lt;enumeration value="PLAYSTATION"/>
- *     &lt;enumeration value="XBOX"/>
- *     &lt;enumeration value="SAMSUNG_TV"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="MobileApplicationPlatform"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="ANDROID"/&gt;
+ *     &lt;enumeration value="IOS"/&gt;
+ *     &lt;enumeration value="ROKU"/&gt;
+ *     &lt;enumeration value="AMAZON_FIRETV"/&gt;
+ *     &lt;enumeration value="PLAYSTATION"/&gt;
+ *     &lt;enumeration value="XBOX"/&gt;
+ *     &lt;enumeration value="SAMSUNG_TV"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

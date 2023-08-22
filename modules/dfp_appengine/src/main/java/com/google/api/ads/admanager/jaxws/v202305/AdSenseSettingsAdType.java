@@ -25,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdSenseSettings.AdType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TEXT"/>
- *     &lt;enumeration value="IMAGE"/>
- *     &lt;enumeration value="TEXT_AND_IMAGE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdSenseSettings.AdType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TEXT"/&gt;
+ *     &lt;enumeration value="IMAGE"/&gt;
+ *     &lt;enumeration value="TEXT_AND_IMAGE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -26,19 +26,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdBreakMarkupType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AD_BREAK_MARKUP_HLS_EXT_CUE"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_HLS_PRIMETIME_SPLICE"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_HLS_DATERANGE_SPLICE"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_XML_SPLICE_INSERT"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_SPLICE_INSERT"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_PROVIDER_AD_START_END"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_PROVIDER_PLACEMENT_OP_START_END"/>
- *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_BREAK_START_END"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdBreakMarkupType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_HLS_EXT_CUE"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_HLS_PRIMETIME_SPLICE"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_HLS_DATERANGE_SPLICE"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_XML_SPLICE_INSERT"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_SPLICE_INSERT"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_PROVIDER_AD_START_END"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_PROVIDER_PLACEMENT_OP_START_END"/&gt;
+ *     &lt;enumeration value="AD_BREAK_MARKUP_SCTE35_BINARY_BREAK_START_END"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

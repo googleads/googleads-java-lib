@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdUnitCodeError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_CHARACTERS"/>
- *     &lt;enumeration value="INVALID_CHARACTERS_WHEN_UTF_CHARACTERS_ARE_ALLOWED"/>
- *     &lt;enumeration value="INVALID_CHARACTERS_FOR_LEGACY_AD_EXCHANGE_TAG"/>
- *     &lt;enumeration value="LEADING_FORWARD_SLASH"/>
- *     &lt;enumeration value="RESERVED_CODE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdUnitCodeError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_CHARACTERS"/&gt;
+ *     &lt;enumeration value="INVALID_CHARACTERS_WHEN_UTF_CHARACTERS_ARE_ALLOWED"/&gt;
+ *     &lt;enumeration value="INVALID_CHARACTERS_FOR_LEGACY_AD_EXCHANGE_TAG"/&gt;
+ *     &lt;enumeration value="LEADING_FORWARD_SLASH"/&gt;
+ *     &lt;enumeration value="RESERVED_CODE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

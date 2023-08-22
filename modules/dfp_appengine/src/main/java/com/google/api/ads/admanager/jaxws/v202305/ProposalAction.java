@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ProposalAction">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ProposalAction"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -46,17 +46,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ProposalAction")
 @XmlSeeAlso({
-    EditProposalsForNegotiation.class,
-    UpdateOrderWithSellerData.class,
-    UnarchiveProposals.class,
-    RequestBuyerAcceptance.class,
-    ResumeProposals.class,
+    ArchiveProposals.class,
     DiscardLocalVersionEdits.class,
-    TerminateNegotiations.class,
+    EditProposalsForNegotiation.class,
     PauseProposals.class,
-    ReserveProposals.class,
+    RequestBuyerAcceptance.class,
     RequestBuyerReview.class,
-    ArchiveProposals.class
+    ReserveProposals.class,
+    ResumeProposals.class,
+    TerminateNegotiations.class,
+    UnarchiveProposals.class,
+    UpdateOrderWithSellerData.class
 })
 public abstract class ProposalAction {
 

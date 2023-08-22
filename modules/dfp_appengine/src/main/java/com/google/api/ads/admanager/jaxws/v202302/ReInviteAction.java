@@ -32,17 +32,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ReInviteAction">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202302}CompanyAction">
- *       &lt;sequence>
- *         &lt;element name="proposedDelegationType" type="{https://www.google.com/apis/ads/publisher/v202302}DelegationType" minOccurs="0"/>
- *         &lt;element name="proposedRevenueShareMillipercent" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="proposedEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ReInviteAction"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202302}CompanyAction"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="proposedDelegationType" type="{https://www.google.com/apis/ads/publisher/v202302}DelegationType" minOccurs="0"/&gt;
+ *         &lt;element name="proposedRevenueShareMillipercent" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="proposedEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

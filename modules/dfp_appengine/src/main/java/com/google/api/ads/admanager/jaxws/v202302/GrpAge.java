@@ -25,28 +25,28 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GrpAge">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="AGE_UNKNOWN"/>
- *     &lt;enumeration value="AGE_0_TO_17"/>
- *     &lt;enumeration value="AGE_18_TO_24"/>
- *     &lt;enumeration value="AGE_25_TO_34"/>
- *     &lt;enumeration value="AGE_35_TO_44"/>
- *     &lt;enumeration value="AGE_45_TO_54"/>
- *     &lt;enumeration value="AGE_55_TO_64"/>
- *     &lt;enumeration value="AGE_65_PLUS"/>
- *     &lt;enumeration value="AGE_18_TO_49"/>
- *     &lt;enumeration value="AGE_21_TO_34"/>
- *     &lt;enumeration value="AGE_21_TO_49"/>
- *     &lt;enumeration value="AGE_21_PLUS"/>
- *     &lt;enumeration value="AGE_25_TO_49"/>
- *     &lt;enumeration value="AGE_21_TO_44"/>
- *     &lt;enumeration value="AGE_21_TO_54"/>
- *     &lt;enumeration value="AGE_21_TO_64"/>
- *     &lt;enumeration value="AGE_35_TO_49"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GrpAge"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="AGE_UNKNOWN"/&gt;
+ *     &lt;enumeration value="AGE_0_TO_17"/&gt;
+ *     &lt;enumeration value="AGE_18_TO_24"/&gt;
+ *     &lt;enumeration value="AGE_25_TO_34"/&gt;
+ *     &lt;enumeration value="AGE_35_TO_44"/&gt;
+ *     &lt;enumeration value="AGE_45_TO_54"/&gt;
+ *     &lt;enumeration value="AGE_55_TO_64"/&gt;
+ *     &lt;enumeration value="AGE_65_PLUS"/&gt;
+ *     &lt;enumeration value="AGE_18_TO_49"/&gt;
+ *     &lt;enumeration value="AGE_21_TO_34"/&gt;
+ *     &lt;enumeration value="AGE_21_TO_49"/&gt;
+ *     &lt;enumeration value="AGE_21_PLUS"/&gt;
+ *     &lt;enumeration value="AGE_25_TO_49"/&gt;
+ *     &lt;enumeration value="AGE_21_TO_44"/&gt;
+ *     &lt;enumeration value="AGE_21_TO_54"/&gt;
+ *     &lt;enumeration value="AGE_21_TO_64"/&gt;
+ *     &lt;enumeration value="AGE_35_TO_49"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="PlacementError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_ENTITY_TYPE"/>
- *     &lt;enumeration value="SHARED_INVENTORY_ASSIGNED"/>
- *     &lt;enumeration value="PLACEMENTS_CANNOT_INCLUDE_INVENTORY_FROM_MULTIPLE_DISTRIBUTOR_NETWORKS"/>
- *     &lt;enumeration value="PLACEMENTS_CANNOT_INCLUDE_BOTH_LOCAL_AND_SHARED_INVENTORY"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="PlacementError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_ENTITY_TYPE"/&gt;
+ *     &lt;enumeration value="SHARED_INVENTORY_ASSIGNED"/&gt;
+ *     &lt;enumeration value="PLACEMENTS_CANNOT_INCLUDE_INVENTORY_FROM_MULTIPLE_DISTRIBUTOR_NETWORKS"/&gt;
+ *     &lt;enumeration value="PLACEMENTS_CANNOT_INCLUDE_BOTH_LOCAL_AND_SHARED_INVENTORY"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

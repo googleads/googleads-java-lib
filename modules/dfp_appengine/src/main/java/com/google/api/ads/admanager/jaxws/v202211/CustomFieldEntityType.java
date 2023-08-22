@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CustomFieldEntityType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="LINE_ITEM"/>
- *     &lt;enumeration value="ORDER"/>
- *     &lt;enumeration value="CREATIVE"/>
- *     &lt;enumeration value="PRODUCT_TEMPLATE"/>
- *     &lt;enumeration value="PRODUCT"/>
- *     &lt;enumeration value="PROPOSAL"/>
- *     &lt;enumeration value="PROPOSAL_LINE_ITEM"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CustomFieldEntityType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="LINE_ITEM"/&gt;
+ *     &lt;enumeration value="ORDER"/&gt;
+ *     &lt;enumeration value="CREATIVE"/&gt;
+ *     &lt;enumeration value="PRODUCT_TEMPLATE"/&gt;
+ *     &lt;enumeration value="PRODUCT"/&gt;
+ *     &lt;enumeration value="PROPOSAL"/&gt;
+ *     &lt;enumeration value="PROPOSAL_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

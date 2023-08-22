@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CustomCreativeError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DUPLICATE_MACRO_NAME_FOR_CREATIVE"/>
- *     &lt;enumeration value="SNIPPET_REFERENCES_MISSING_MACRO"/>
- *     &lt;enumeration value="UNRECOGNIZED_MACRO"/>
- *     &lt;enumeration value="CUSTOM_CREATIVE_NOT_ALLOWED"/>
- *     &lt;enumeration value="MISSING_INTERSTITIAL_MACRO"/>
- *     &lt;enumeration value="DUPLICATE_ASSET_IN_MACROS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CustomCreativeError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DUPLICATE_MACRO_NAME_FOR_CREATIVE"/&gt;
+ *     &lt;enumeration value="SNIPPET_REFERENCES_MISSING_MACRO"/&gt;
+ *     &lt;enumeration value="UNRECOGNIZED_MACRO"/&gt;
+ *     &lt;enumeration value="CUSTOM_CREATIVE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="MISSING_INTERSTITIAL_MACRO"/&gt;
+ *     &lt;enumeration value="DUPLICATE_ASSET_IN_MACROS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

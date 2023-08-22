@@ -25,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DeliveryRateType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="EVENLY"/>
- *     &lt;enumeration value="FRONTLOADED"/>
- *     &lt;enumeration value="AS_FAST_AS_POSSIBLE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DeliveryRateType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EVENLY"/&gt;
+ *     &lt;enumeration value="FRONTLOADED"/&gt;
+ *     &lt;enumeration value="AS_FAST_AS_POSSIBLE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

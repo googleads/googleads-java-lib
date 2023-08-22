@@ -25,39 +25,39 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ChangeHistoryEntityType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="BASE_RATE"/>
- *     &lt;enumeration value="COMPANY"/>
- *     &lt;enumeration value="CONTACT"/>
- *     &lt;enumeration value="CREATIVE"/>
- *     &lt;enumeration value="CREATIVE_SET"/>
- *     &lt;enumeration value="CUSTOM_FIELD"/>
- *     &lt;enumeration value="CUSTOM_KEY"/>
- *     &lt;enumeration value="CUSTOM_VALUE"/>
- *     &lt;enumeration value="PLACEMENT"/>
- *     &lt;enumeration value="AD_UNIT"/>
- *     &lt;enumeration value="LABEL"/>
- *     &lt;enumeration value="LINE_ITEM"/>
- *     &lt;enumeration value="NETWORK"/>
- *     &lt;enumeration value="ORDER"/>
- *     &lt;enumeration value="PREMIUM_RATE"/>
- *     &lt;enumeration value="PRODUCT"/>
- *     &lt;enumeration value="PRODUCT_PACKAGE"/>
- *     &lt;enumeration value="PRODUCT_PACKAGE_ITEM"/>
- *     &lt;enumeration value="PRODUCT_TEMPLATE"/>
- *     &lt;enumeration value="PROPOSAL"/>
- *     &lt;enumeration value="PROPOSAL_LINK"/>
- *     &lt;enumeration value="PROPOSAL_LINE_ITEM"/>
- *     &lt;enumeration value="PACKAGE"/>
- *     &lt;enumeration value="RATE_CARD"/>
- *     &lt;enumeration value="ROLE"/>
- *     &lt;enumeration value="TEAM"/>
- *     &lt;enumeration value="USER"/>
- *     &lt;enumeration value="WORKFLOW"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ChangeHistoryEntityType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="BASE_RATE"/&gt;
+ *     &lt;enumeration value="COMPANY"/&gt;
+ *     &lt;enumeration value="CONTACT"/&gt;
+ *     &lt;enumeration value="CREATIVE"/&gt;
+ *     &lt;enumeration value="CREATIVE_SET"/&gt;
+ *     &lt;enumeration value="CUSTOM_FIELD"/&gt;
+ *     &lt;enumeration value="CUSTOM_KEY"/&gt;
+ *     &lt;enumeration value="CUSTOM_VALUE"/&gt;
+ *     &lt;enumeration value="PLACEMENT"/&gt;
+ *     &lt;enumeration value="AD_UNIT"/&gt;
+ *     &lt;enumeration value="LABEL"/&gt;
+ *     &lt;enumeration value="LINE_ITEM"/&gt;
+ *     &lt;enumeration value="NETWORK"/&gt;
+ *     &lt;enumeration value="ORDER"/&gt;
+ *     &lt;enumeration value="PREMIUM_RATE"/&gt;
+ *     &lt;enumeration value="PRODUCT"/&gt;
+ *     &lt;enumeration value="PRODUCT_PACKAGE"/&gt;
+ *     &lt;enumeration value="PRODUCT_PACKAGE_ITEM"/&gt;
+ *     &lt;enumeration value="PRODUCT_TEMPLATE"/&gt;
+ *     &lt;enumeration value="PROPOSAL"/&gt;
+ *     &lt;enumeration value="PROPOSAL_LINK"/&gt;
+ *     &lt;enumeration value="PROPOSAL_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="PACKAGE"/&gt;
+ *     &lt;enumeration value="RATE_CARD"/&gt;
+ *     &lt;enumeration value="ROLE"/&gt;
+ *     &lt;enumeration value="TEAM"/&gt;
+ *     &lt;enumeration value="USER"/&gt;
+ *     &lt;enumeration value="WORKFLOW"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

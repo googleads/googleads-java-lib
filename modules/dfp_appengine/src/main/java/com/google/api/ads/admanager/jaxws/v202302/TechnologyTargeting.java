@@ -30,25 +30,25 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TechnologyTargeting">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="bandwidthGroupTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BandwidthGroupTargeting" minOccurs="0"/>
- *         &lt;element name="browserTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BrowserTargeting" minOccurs="0"/>
- *         &lt;element name="browserLanguageTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BrowserLanguageTargeting" minOccurs="0"/>
- *         &lt;element name="deviceCapabilityTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DeviceCapabilityTargeting" minOccurs="0"/>
- *         &lt;element name="deviceCategoryTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DeviceCategoryTargeting" minOccurs="0"/>
- *         &lt;element name="deviceManufacturerTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DeviceManufacturerTargeting" minOccurs="0"/>
- *         &lt;element name="mobileCarrierTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileCarrierTargeting" minOccurs="0"/>
- *         &lt;element name="mobileDeviceTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileDeviceTargeting" minOccurs="0"/>
- *         &lt;element name="mobileDeviceSubmodelTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileDeviceSubmodelTargeting" minOccurs="0"/>
- *         &lt;element name="operatingSystemTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}OperatingSystemTargeting" minOccurs="0"/>
- *         &lt;element name="operatingSystemVersionTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}OperatingSystemVersionTargeting" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="TechnologyTargeting"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="bandwidthGroupTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BandwidthGroupTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="browserTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BrowserTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="browserLanguageTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}BrowserLanguageTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="deviceCapabilityTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DeviceCapabilityTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="deviceCategoryTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DeviceCategoryTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="deviceManufacturerTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}DeviceManufacturerTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="mobileCarrierTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileCarrierTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="mobileDeviceTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileDeviceTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="mobileDeviceSubmodelTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}MobileDeviceSubmodelTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="operatingSystemTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}OperatingSystemTargeting" minOccurs="0"/&gt;
+ *         &lt;element name="operatingSystemVersionTargeting" type="{https://www.google.com/apis/ads/publisher/v202302}OperatingSystemVersionTargeting" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

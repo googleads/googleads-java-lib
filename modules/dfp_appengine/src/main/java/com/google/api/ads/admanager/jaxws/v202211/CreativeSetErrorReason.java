@@ -25,19 +25,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeSetError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="VIDEO_FEATURE_REQUIRED"/>
- *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_VIDEO_CREATIVES"/>
- *     &lt;enumeration value="ROADBLOCK_FEATURE_REQUIRED"/>
- *     &lt;enumeration value="MASTER_CREATIVE_CANNOT_BE_COMPANION"/>
- *     &lt;enumeration value="INVALID_ADVERTISER"/>
- *     &lt;enumeration value="UPDATE_MASTER_CREATIVE_NOT_ALLOWED"/>
- *     &lt;enumeration value="MASTER_CREATIVE_CANNOT_BELONG_TO_MULTIPLE_VIDEO_CREATIVE_SETS"/>
- *     &lt;enumeration value="SKIPPABLE_AD_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeSetError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="VIDEO_FEATURE_REQUIRED"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_VIDEO_CREATIVES"/&gt;
+ *     &lt;enumeration value="ROADBLOCK_FEATURE_REQUIRED"/&gt;
+ *     &lt;enumeration value="MASTER_CREATIVE_CANNOT_BE_COMPANION"/&gt;
+ *     &lt;enumeration value="INVALID_ADVERTISER"/&gt;
+ *     &lt;enumeration value="UPDATE_MASTER_CREATIVE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="MASTER_CREATIVE_CANNOT_BELONG_TO_MULTIPLE_VIDEO_CREATIVE_SETS"/&gt;
+ *     &lt;enumeration value="SKIPPABLE_AD_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,19 +25,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="TeamError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ENTITY_NOT_ON_USERS_TEAMS"/>
- *     &lt;enumeration value="AD_UNITS_NOT_ON_ORDER_TEAMS"/>
- *     &lt;enumeration value="PLACEMENTS_NOT_ON_ORDER_TEAMS"/>
- *     &lt;enumeration value="MISSING_USERS_TEAM"/>
- *     &lt;enumeration value="ALL_TEAM_ASSOCIATION_NOT_ALLOWED"/>
- *     &lt;enumeration value="INVALID_TEAM_ASSIGNMENT"/>
- *     &lt;enumeration value="ALL_TEAM_ACCESS_OVERRIDE_NOT_ALLOWED"/>
- *     &lt;enumeration value="CANNOT_UPDATE_INACTIVE_TEAM"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="TeamError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ENTITY_NOT_ON_USERS_TEAMS"/&gt;
+ *     &lt;enumeration value="AD_UNITS_NOT_ON_ORDER_TEAMS"/&gt;
+ *     &lt;enumeration value="PLACEMENTS_NOT_ON_ORDER_TEAMS"/&gt;
+ *     &lt;enumeration value="MISSING_USERS_TEAM"/&gt;
+ *     &lt;enumeration value="ALL_TEAM_ASSOCIATION_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="INVALID_TEAM_ASSIGNMENT"/&gt;
+ *     &lt;enumeration value="ALL_TEAM_ACCESS_OVERRIDE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_INACTIVE_TEAM"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

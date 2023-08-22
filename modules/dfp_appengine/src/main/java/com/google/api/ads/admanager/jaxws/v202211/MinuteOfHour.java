@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="MinuteOfHour">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ZERO"/>
- *     &lt;enumeration value="FIFTEEN"/>
- *     &lt;enumeration value="THIRTY"/>
- *     &lt;enumeration value="FORTY_FIVE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="MinuteOfHour"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ZERO"/&gt;
+ *     &lt;enumeration value="FIFTEEN"/&gt;
+ *     &lt;enumeration value="THIRTY"/&gt;
+ *     &lt;enumeration value="FORTY_FIVE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

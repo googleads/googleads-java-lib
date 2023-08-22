@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LiveStreamEventActionError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_STATUS_TRANSITION"/>
- *     &lt;enumeration value="IS_ARCHIVED"/>
- *     &lt;enumeration value="INVALID_SLATE_SETTING"/>
- *     &lt;enumeration value="SLATE_CREATIVE_NOT_TRANSCODED"/>
- *     &lt;enumeration value="SLATE_CREATIVE_ARCHIVED"/>
- *     &lt;enumeration value="CANNOT_ACTIVATE_IF_USING_INACTIVE_DAI_AUTHENTICATION_KEYS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LiveStreamEventActionError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_STATUS_TRANSITION"/&gt;
+ *     &lt;enumeration value="IS_ARCHIVED"/&gt;
+ *     &lt;enumeration value="INVALID_SLATE_SETTING"/&gt;
+ *     &lt;enumeration value="SLATE_CREATIVE_NOT_TRANSCODED"/&gt;
+ *     &lt;enumeration value="SLATE_CREATIVE_ARCHIVED"/&gt;
+ *     &lt;enumeration value="CANNOT_ACTIVATE_IF_USING_INACTIVE_DAI_AUTHENTICATION_KEYS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

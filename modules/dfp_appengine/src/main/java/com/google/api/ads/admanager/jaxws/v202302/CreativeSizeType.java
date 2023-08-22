@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeSizeType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="PIXEL"/>
- *     &lt;enumeration value="ASPECT_RATIO"/>
- *     &lt;enumeration value="INTERSTITIAL"/>
- *     &lt;enumeration value="IGNORED"/>
- *     &lt;enumeration value="NATIVE"/>
- *     &lt;enumeration value="AUDIO"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeSizeType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PIXEL"/&gt;
+ *     &lt;enumeration value="ASPECT_RATIO"/&gt;
+ *     &lt;enumeration value="INTERSTITIAL"/&gt;
+ *     &lt;enumeration value="IGNORED"/&gt;
+ *     &lt;enumeration value="NATIVE"/&gt;
+ *     &lt;enumeration value="AUDIO"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

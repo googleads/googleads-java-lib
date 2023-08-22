@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="YieldFormat">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="BANNER"/>
- *     &lt;enumeration value="INTERSTITIAL"/>
- *     &lt;enumeration value="NATIVE"/>
- *     &lt;enumeration value="VIDEO_VAST"/>
- *     &lt;enumeration value="REWARDED"/>
- *     &lt;enumeration value="REWARDED_INTERSTITIAL"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="YieldFormat"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="BANNER"/&gt;
+ *     &lt;enumeration value="INTERSTITIAL"/&gt;
+ *     &lt;enumeration value="NATIVE"/&gt;
+ *     &lt;enumeration value="VIDEO_VAST"/&gt;
+ *     &lt;enumeration value="REWARDED"/&gt;
+ *     &lt;enumeration value="REWARDED_INTERSTITIAL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

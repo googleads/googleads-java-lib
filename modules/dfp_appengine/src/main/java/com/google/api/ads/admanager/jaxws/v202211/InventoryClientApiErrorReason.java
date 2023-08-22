@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="InventoryClientApiError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ACCESS_DENIED"/>
- *     &lt;enumeration value="ADSENSE_AUTH_ERROR"/>
- *     &lt;enumeration value="ADSENSE_RPC_ERROR"/>
- *     &lt;enumeration value="DOMAIN_NO_SCHEME"/>
- *     &lt;enumeration value="DOMAIN_INVALID_HOST"/>
- *     &lt;enumeration value="DOMAIN_INVALID_TLD"/>
- *     &lt;enumeration value="DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX"/>
- *     &lt;enumeration value="DOMAIN_INVALID_INPUT"/>
- *     &lt;enumeration value="DOMAIN_NO_PUBLIC_SUFFIX"/>
- *     &lt;enumeration value="UNKNOWN_ERROR"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="InventoryClientApiError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACCESS_DENIED"/&gt;
+ *     &lt;enumeration value="ADSENSE_AUTH_ERROR"/&gt;
+ *     &lt;enumeration value="ADSENSE_RPC_ERROR"/&gt;
+ *     &lt;enumeration value="DOMAIN_NO_SCHEME"/&gt;
+ *     &lt;enumeration value="DOMAIN_INVALID_HOST"/&gt;
+ *     &lt;enumeration value="DOMAIN_INVALID_TLD"/&gt;
+ *     &lt;enumeration value="DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX"/&gt;
+ *     &lt;enumeration value="DOMAIN_INVALID_INPUT"/&gt;
+ *     &lt;enumeration value="DOMAIN_NO_PUBLIC_SUFFIX"/&gt;
+ *     &lt;enumeration value="UNKNOWN_ERROR"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

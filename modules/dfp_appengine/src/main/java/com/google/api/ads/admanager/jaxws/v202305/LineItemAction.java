@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LineItemAction">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="LineItemAction"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -46,14 +46,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LineItemAction")
 @XmlSeeAlso({
-    ArchiveLineItems.class,
-    PauseLineItems.class,
     ActivateLineItems.class,
+    ArchiveLineItems.class,
     DeleteLineItems.class,
+    PauseLineItems.class,
     ReleaseLineItems.class,
     ReserveLineItems.class,
-    UnarchiveLineItems.class,
-    ResumeLineItems.class
+    ResumeLineItems.class,
+    UnarchiveLineItems.class
 })
 public abstract class LineItemAction {
 

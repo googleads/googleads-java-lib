@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CustomTargetingValue.MatchType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="EXACT"/>
- *     &lt;enumeration value="BROAD"/>
- *     &lt;enumeration value="PREFIX"/>
- *     &lt;enumeration value="BROAD_PREFIX"/>
- *     &lt;enumeration value="SUFFIX"/>
- *     &lt;enumeration value="CONTAINS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CustomTargetingValue.MatchType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EXACT"/&gt;
+ *     &lt;enumeration value="BROAD"/&gt;
+ *     &lt;enumeration value="PREFIX"/&gt;
+ *     &lt;enumeration value="BROAD_PREFIX"/&gt;
+ *     &lt;enumeration value="SUFFIX"/&gt;
+ *     &lt;enumeration value="CONTAINS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

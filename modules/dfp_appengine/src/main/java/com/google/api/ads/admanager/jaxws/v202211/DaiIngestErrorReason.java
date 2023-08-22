@@ -26,58 +26,58 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DaiIngestErrorReason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_INGEST_URL"/>
- *     &lt;enumeration value="INVALID_CLOSED_CAPTION_URL"/>
- *     &lt;enumeration value="MISSING_CLOSED_CAPTION_URL"/>
- *     &lt;enumeration value="COULD_NOT_FETCH_HLS"/>
- *     &lt;enumeration value="COULD_NOT_FETCH_SUBTITLES"/>
- *     &lt;enumeration value="MISSING_SUBTITLE_LANGUAGE"/>
- *     &lt;enumeration value="COULD_NOT_FETCH_MEDIA"/>
- *     &lt;enumeration value="MALFORMED_MEDIA_BYTES"/>
- *     &lt;enumeration value="CHAPTER_TIME_OUT_OF_BOUNDS"/>
- *     &lt;enumeration value="INTERNAL_ERROR"/>
- *     &lt;enumeration value="CONTENT_HAS_CHAPTER_TIMES_BUT_NO_MIDROLL_SETTINGS"/>
- *     &lt;enumeration value="MALFORMED_MEDIA_PLAYLIST"/>
- *     &lt;enumeration value="MIXED_AD_BREAK_TAGS"/>
- *     &lt;enumeration value="AD_BREAK_TAGS_INCONSISTENT_ACROSS_VARIANTS"/>
- *     &lt;enumeration value="MALFORMED_SUBTITLES"/>
- *     &lt;enumeration value="PLAYLIST_ITEM_URL_DOES_NOT_MATCH_INGEST_COMMON_PATH"/>
- *     &lt;enumeration value="COULD_NOT_UPLOAD_SPLIT_MEDIA_AUTHENTICATION_FAILED"/>
- *     &lt;enumeration value="COULD_NOT_UPLOAD_SPLIT_MEDIA_CONNECTION_FAILED"/>
- *     &lt;enumeration value="COULD_NOT_UPLOAD_SPLIT_MEDIA_WRITE_FAILED"/>
- *     &lt;enumeration value="PLAYLISTS_HAVE_DIFFERENT_NUMBER_OF_DISCONTINUITIES"/>
- *     &lt;enumeration value="PLAYIST_HAS_NO_STARTING_PTS_VALUE"/>
- *     &lt;enumeration value="PLAYLIST_DISCONTINUITY_PTS_VALUES_DIFFER_TOO_MUCH"/>
- *     &lt;enumeration value="SEGMENT_HAS_NO_PTS"/>
- *     &lt;enumeration value="SUBTITLE_LANGUAGE_DOES_NOT_MATCH_LANGUAGE_IN_FEED"/>
- *     &lt;enumeration value="CANNOT_DETERMINE_CORRECT_SUBTITLES_FOR_LANGUAGE"/>
- *     &lt;enumeration value="NO_CDN_CONFIGURATION_FOUND"/>
- *     &lt;enumeration value="CONTENT_HAS_MIDROLLS_BUT_NO_SPLIT_CONTENT_CONFIG"/>
- *     &lt;enumeration value="CONTENT_HAS_MIDROLLS_BUT_SOURCE_HAS_MIDROLLS_DISABLED"/>
- *     &lt;enumeration value="ADTS_PARSE_ERROR"/>
- *     &lt;enumeration value="AAC_SPLIT_ERROR"/>
- *     &lt;enumeration value="AAC_PARSE_ERROR"/>
- *     &lt;enumeration value="TS_PARSE_ERROR"/>
- *     &lt;enumeration value="TS_SPLIT_ERROR"/>
- *     &lt;enumeration value="UNSUPPORTED_CONTAINER_FORMAT"/>
- *     &lt;enumeration value="MULTIPLE_ELEMENTARY_STREAMS_OF_SAME_MEDIA_TYPE_IN_TS"/>
- *     &lt;enumeration value="UNSUPPORTED_TS_MEDIA_FORMAT"/>
- *     &lt;enumeration value="NO_IFRAMES_NEAR_CUE_POINT"/>
- *     &lt;enumeration value="AC3_SPLIT_ERROR"/>
- *     &lt;enumeration value="AC3_PARSE_ERROR"/>
- *     &lt;enumeration value="EAC3_SPLIT_ERROR"/>
- *     &lt;enumeration value="INVALID_ENCRYPTION_KEY"/>
- *     &lt;enumeration value="EAC3_PARSE_ERROR"/>
- *     &lt;enumeration value="CUE_POINT_COUNT_DOES_NOT_MATCH_PTS_COUNT"/>
- *     &lt;enumeration value="CLOSED_CAPTION_LANGUAGE_VALUE_INVALID"/>
- *     &lt;enumeration value="CLOSED_CAPTION_NAME_VALUE_INVALID"/>
- *     &lt;enumeration value="CLOSED_CAPTION_CHARACTERISTICS_VALUE_UNEXPECTED"/>
- *     &lt;enumeration value="CLOSED_CAPTIONS_WITH_DUPLICATE_KEYS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DaiIngestErrorReason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_INGEST_URL"/&gt;
+ *     &lt;enumeration value="INVALID_CLOSED_CAPTION_URL"/&gt;
+ *     &lt;enumeration value="MISSING_CLOSED_CAPTION_URL"/&gt;
+ *     &lt;enumeration value="COULD_NOT_FETCH_HLS"/&gt;
+ *     &lt;enumeration value="COULD_NOT_FETCH_SUBTITLES"/&gt;
+ *     &lt;enumeration value="MISSING_SUBTITLE_LANGUAGE"/&gt;
+ *     &lt;enumeration value="COULD_NOT_FETCH_MEDIA"/&gt;
+ *     &lt;enumeration value="MALFORMED_MEDIA_BYTES"/&gt;
+ *     &lt;enumeration value="CHAPTER_TIME_OUT_OF_BOUNDS"/&gt;
+ *     &lt;enumeration value="INTERNAL_ERROR"/&gt;
+ *     &lt;enumeration value="CONTENT_HAS_CHAPTER_TIMES_BUT_NO_MIDROLL_SETTINGS"/&gt;
+ *     &lt;enumeration value="MALFORMED_MEDIA_PLAYLIST"/&gt;
+ *     &lt;enumeration value="MIXED_AD_BREAK_TAGS"/&gt;
+ *     &lt;enumeration value="AD_BREAK_TAGS_INCONSISTENT_ACROSS_VARIANTS"/&gt;
+ *     &lt;enumeration value="MALFORMED_SUBTITLES"/&gt;
+ *     &lt;enumeration value="PLAYLIST_ITEM_URL_DOES_NOT_MATCH_INGEST_COMMON_PATH"/&gt;
+ *     &lt;enumeration value="COULD_NOT_UPLOAD_SPLIT_MEDIA_AUTHENTICATION_FAILED"/&gt;
+ *     &lt;enumeration value="COULD_NOT_UPLOAD_SPLIT_MEDIA_CONNECTION_FAILED"/&gt;
+ *     &lt;enumeration value="COULD_NOT_UPLOAD_SPLIT_MEDIA_WRITE_FAILED"/&gt;
+ *     &lt;enumeration value="PLAYLISTS_HAVE_DIFFERENT_NUMBER_OF_DISCONTINUITIES"/&gt;
+ *     &lt;enumeration value="PLAYIST_HAS_NO_STARTING_PTS_VALUE"/&gt;
+ *     &lt;enumeration value="PLAYLIST_DISCONTINUITY_PTS_VALUES_DIFFER_TOO_MUCH"/&gt;
+ *     &lt;enumeration value="SEGMENT_HAS_NO_PTS"/&gt;
+ *     &lt;enumeration value="SUBTITLE_LANGUAGE_DOES_NOT_MATCH_LANGUAGE_IN_FEED"/&gt;
+ *     &lt;enumeration value="CANNOT_DETERMINE_CORRECT_SUBTITLES_FOR_LANGUAGE"/&gt;
+ *     &lt;enumeration value="NO_CDN_CONFIGURATION_FOUND"/&gt;
+ *     &lt;enumeration value="CONTENT_HAS_MIDROLLS_BUT_NO_SPLIT_CONTENT_CONFIG"/&gt;
+ *     &lt;enumeration value="CONTENT_HAS_MIDROLLS_BUT_SOURCE_HAS_MIDROLLS_DISABLED"/&gt;
+ *     &lt;enumeration value="ADTS_PARSE_ERROR"/&gt;
+ *     &lt;enumeration value="AAC_SPLIT_ERROR"/&gt;
+ *     &lt;enumeration value="AAC_PARSE_ERROR"/&gt;
+ *     &lt;enumeration value="TS_PARSE_ERROR"/&gt;
+ *     &lt;enumeration value="TS_SPLIT_ERROR"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_CONTAINER_FORMAT"/&gt;
+ *     &lt;enumeration value="MULTIPLE_ELEMENTARY_STREAMS_OF_SAME_MEDIA_TYPE_IN_TS"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_TS_MEDIA_FORMAT"/&gt;
+ *     &lt;enumeration value="NO_IFRAMES_NEAR_CUE_POINT"/&gt;
+ *     &lt;enumeration value="AC3_SPLIT_ERROR"/&gt;
+ *     &lt;enumeration value="AC3_PARSE_ERROR"/&gt;
+ *     &lt;enumeration value="EAC3_SPLIT_ERROR"/&gt;
+ *     &lt;enumeration value="INVALID_ENCRYPTION_KEY"/&gt;
+ *     &lt;enumeration value="EAC3_PARSE_ERROR"/&gt;
+ *     &lt;enumeration value="CUE_POINT_COUNT_DOES_NOT_MATCH_PTS_COUNT"/&gt;
+ *     &lt;enumeration value="CLOSED_CAPTION_LANGUAGE_VALUE_INVALID"/&gt;
+ *     &lt;enumeration value="CLOSED_CAPTION_NAME_VALUE_INVALID"/&gt;
+ *     &lt;enumeration value="CLOSED_CAPTION_CHARACTERISTICS_VALUE_UNEXPECTED"/&gt;
+ *     &lt;enumeration value="CLOSED_CAPTIONS_WITH_DUPLICATE_KEYS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

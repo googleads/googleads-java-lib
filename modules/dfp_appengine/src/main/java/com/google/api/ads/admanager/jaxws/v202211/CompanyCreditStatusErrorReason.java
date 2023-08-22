@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CompanyCreditStatusError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="COMPANY_CREDIT_STATUS_CHANGE_NOT_ALLOWED"/>
- *     &lt;enumeration value="CANNOT_USE_CREDIT_STATUS_SETTING"/>
- *     &lt;enumeration value="CANNOT_USE_ADVANCED_CREDIT_STATUS_SETTING"/>
- *     &lt;enumeration value="UNACCEPTABLE_COMPANY_CREDIT_STATUS_FOR_ORDER"/>
- *     &lt;enumeration value="UNACCEPTABLE_COMPANY_CREDIT_STATUS_FOR_LINE_ITEM"/>
- *     &lt;enumeration value="CANNOT_BLOCK_COMPANY_TOO_MANY_APPROVED_ORDERS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CompanyCreditStatusError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="COMPANY_CREDIT_STATUS_CHANGE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="CANNOT_USE_CREDIT_STATUS_SETTING"/&gt;
+ *     &lt;enumeration value="CANNOT_USE_ADVANCED_CREDIT_STATUS_SETTING"/&gt;
+ *     &lt;enumeration value="UNACCEPTABLE_COMPANY_CREDIT_STATUS_FOR_ORDER"/&gt;
+ *     &lt;enumeration value="UNACCEPTABLE_COMPANY_CREDIT_STATUS_FOR_LINE_ITEM"/&gt;
+ *     &lt;enumeration value="CANNOT_BLOCK_COMPANY_TOO_MANY_APPROVED_ORDERS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="SkippableAdType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="DISABLED"/>
- *     &lt;enumeration value="ENABLED"/>
- *     &lt;enumeration value="INSTREAM_SELECT"/>
- *     &lt;enumeration value="ANY"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="SkippableAdType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="DISABLED"/&gt;
+ *     &lt;enumeration value="ENABLED"/&gt;
+ *     &lt;enumeration value="INSTREAM_SELECT"/&gt;
+ *     &lt;enumeration value="ANY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

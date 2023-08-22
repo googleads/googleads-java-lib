@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CompanyError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CANNOT_SET_THIRD_PARTY_COMPANY_DUE_TO_TYPE"/>
- *     &lt;enumeration value="CANNOT_UPDATE_COMPANY_TYPE"/>
- *     &lt;enumeration value="INVALID_COMPANY_TYPE"/>
- *     &lt;enumeration value="PRIMARY_CONTACT_DOES_NOT_BELONG_TO_THIS_COMPANY"/>
- *     &lt;enumeration value="THIRD_PARTY_STATS_PROVIDER_IS_WRONG_ROLE_TYPE"/>
- *     &lt;enumeration value="INVALID_LABEL_ASSOCIATION"/>
- *     &lt;enumeration value="INVALID_COMPANY_TYPE_FOR_DEFAULT_BILLING_SETTING"/>
- *     &lt;enumeration value="INVALID_DEFAULT_BILLING_SETTING"/>
- *     &lt;enumeration value="COMPANY_HAS_ACTIVE_SHARE_ASSIGNMENTS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CompanyError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CANNOT_SET_THIRD_PARTY_COMPANY_DUE_TO_TYPE"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_COMPANY_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_COMPANY_TYPE"/&gt;
+ *     &lt;enumeration value="PRIMARY_CONTACT_DOES_NOT_BELONG_TO_THIS_COMPANY"/&gt;
+ *     &lt;enumeration value="THIRD_PARTY_STATS_PROVIDER_IS_WRONG_ROLE_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_LABEL_ASSOCIATION"/&gt;
+ *     &lt;enumeration value="INVALID_COMPANY_TYPE_FOR_DEFAULT_BILLING_SETTING"/&gt;
+ *     &lt;enumeration value="INVALID_DEFAULT_BILLING_SETTING"/&gt;
+ *     &lt;enumeration value="COMPANY_HAS_ACTIVE_SHARE_ASSIGNMENTS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

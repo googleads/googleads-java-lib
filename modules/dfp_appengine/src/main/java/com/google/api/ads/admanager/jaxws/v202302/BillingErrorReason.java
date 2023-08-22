@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="BillingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNSUPPORTED_BILLING_SCHEDULE"/>
- *     &lt;enumeration value="UNSUPPORTED_BILLING_CAP"/>
- *     &lt;enumeration value="MISSING_BILLING_SOURCE"/>
- *     &lt;enumeration value="MISSING_BILLING_SCHEDULE"/>
- *     &lt;enumeration value="MISSING_BILLING_CAP"/>
- *     &lt;enumeration value="INVALID_BILLING_SOURCE_FOR_OFFLINE"/>
- *     &lt;enumeration value="UPDATE_BILLING_NOT_ALLOWED"/>
- *     &lt;enumeration value="MISSING_BILLING_BASE"/>
- *     &lt;enumeration value="INVALID_BILLING_BASE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="BillingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNSUPPORTED_BILLING_SCHEDULE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_BILLING_CAP"/&gt;
+ *     &lt;enumeration value="MISSING_BILLING_SOURCE"/&gt;
+ *     &lt;enumeration value="MISSING_BILLING_SCHEDULE"/&gt;
+ *     &lt;enumeration value="MISSING_BILLING_CAP"/&gt;
+ *     &lt;enumeration value="INVALID_BILLING_SOURCE_FOR_OFFLINE"/&gt;
+ *     &lt;enumeration value="UPDATE_BILLING_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="MISSING_BILLING_BASE"/&gt;
+ *     &lt;enumeration value="INVALID_BILLING_BASE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

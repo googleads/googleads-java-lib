@@ -25,22 +25,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CrossSellError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="COMPANY_IS_NOT_DISTRIBUTION_PARTNER"/>
- *     &lt;enumeration value="CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED"/>
- *     &lt;enumeration value="MISSING_DISTRIBUTOR_PARTNER_NAME"/>
- *     &lt;enumeration value="DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE"/>
- *     &lt;enumeration value="CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE"/>
- *     &lt;enumeration value="INVALID_DISTRIBUTOR_PARTNER_NAME"/>
- *     &lt;enumeration value="INVALID_CONTENT_PROVIDER_NETWORK"/>
- *     &lt;enumeration value="CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK"/>
- *     &lt;enumeration value="CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING"/>
- *     &lt;enumeration value="DISTRIBUTOR_RULE_VIOLATION_ERROR"/>
- *     &lt;enumeration value="DISTRIBUTOR_RULE_VIOLATION_WARNING"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CrossSellError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="COMPANY_IS_NOT_DISTRIBUTION_PARTNER"/&gt;
+ *     &lt;enumeration value="CHANGING_PARTNER_NETWORK_IS_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="MISSING_DISTRIBUTOR_PARTNER_NAME"/&gt;
+ *     &lt;enumeration value="DISTRIBUTOR_NETWORK_MISSING_PUBLISHER_FEATURE"/&gt;
+ *     &lt;enumeration value="CONTENT_PROVIDER_NETWORK_MISSING_PUBLISHER_FEATURE"/&gt;
+ *     &lt;enumeration value="INVALID_DISTRIBUTOR_PARTNER_NAME"/&gt;
+ *     &lt;enumeration value="INVALID_CONTENT_PROVIDER_NETWORK"/&gt;
+ *     &lt;enumeration value="CONTENT_PROVIDER_NETWORK_CANNOT_BE_ACTIVE_NETWORK"/&gt;
+ *     &lt;enumeration value="CONTENT_PROVIDER_NETWORK_ALREADY_ENABLED_FOR_CROSS_SELLING"/&gt;
+ *     &lt;enumeration value="DISTRIBUTOR_RULE_VIOLATION_ERROR"/&gt;
+ *     &lt;enumeration value="DISTRIBUTOR_RULE_VIOLATION_WARNING"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

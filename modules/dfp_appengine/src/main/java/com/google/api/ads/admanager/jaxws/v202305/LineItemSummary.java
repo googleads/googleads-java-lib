@@ -35,77 +35,77 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LineItemSummary">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="orderId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="orderName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/>
- *         &lt;element name="startDateTimeType" type="{https://www.google.com/apis/ads/publisher/v202305}StartDateTimeType" minOccurs="0"/>
- *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/>
- *         &lt;element name="autoExtensionDays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="unlimitedEndDateTime" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="creativeRotationType" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeRotationType" minOccurs="0"/>
- *         &lt;element name="deliveryRateType" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryRateType" minOccurs="0"/>
- *         &lt;element name="deliveryForecastSource" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryForecastSource" minOccurs="0"/>
- *         &lt;element name="customPacingCurve" type="{https://www.google.com/apis/ads/publisher/v202305}CustomPacingCurve" minOccurs="0"/>
- *         &lt;element name="roadblockingType" type="{https://www.google.com/apis/ads/publisher/v202305}RoadblockingType" minOccurs="0"/>
- *         &lt;element name="skippableAdType" type="{https://www.google.com/apis/ads/publisher/v202305}SkippableAdType" minOccurs="0"/>
- *         &lt;element name="frequencyCaps" type="{https://www.google.com/apis/ads/publisher/v202305}FrequencyCap" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="lineItemType" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemType" minOccurs="0"/>
- *         &lt;element name="priority" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="costPerUnit" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/>
- *         &lt;element name="valueCostPerUnit" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/>
- *         &lt;element name="costType" type="{https://www.google.com/apis/ads/publisher/v202305}CostType" minOccurs="0"/>
- *         &lt;element name="discountType" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemDiscountType" minOccurs="0"/>
- *         &lt;element name="discount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
- *         &lt;element name="contractedUnitsBought" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="creativePlaceholders" type="{https://www.google.com/apis/ads/publisher/v202305}CreativePlaceholder" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="activityAssociations" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemActivityAssociation" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="environmentType" type="{https://www.google.com/apis/ads/publisher/v202305}EnvironmentType" minOccurs="0"/>
- *         &lt;element name="allowedFormats" type="{https://www.google.com/apis/ads/publisher/v202305}AllowedFormats" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="companionDeliveryOption" type="{https://www.google.com/apis/ads/publisher/v202305}CompanionDeliveryOption" minOccurs="0"/>
- *         &lt;element name="allowOverbook" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="skipInventoryCheck" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="skipCrossSellingRuleWarningChecks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="reserveAtCreation" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="stats" type="{https://www.google.com/apis/ads/publisher/v202305}Stats" minOccurs="0"/>
- *         &lt;element name="deliveryIndicator" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryIndicator" minOccurs="0"/>
- *         &lt;element name="deliveryData" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryData" minOccurs="0"/>
- *         &lt;element name="budget" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/>
- *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202305}ComputedStatus" minOccurs="0"/>
- *         &lt;element name="reservationStatus" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemSummary.ReservationStatus" minOccurs="0"/>
- *         &lt;element name="isArchived" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="webPropertyCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="appliedLabels" type="{https://www.google.com/apis/ads/publisher/v202305}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="effectiveAppliedLabels" type="{https://www.google.com/apis/ads/publisher/v202305}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="disableSameAdvertiserCompetitiveExclusion" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="lastModifiedByApp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="competitiveConstraintScope" type="{https://www.google.com/apis/ads/publisher/v202305}CompetitiveConstraintScope" minOccurs="0"/>
- *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/>
- *         &lt;element name="creationDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/>
- *         &lt;element name="customFieldValues" type="{https://www.google.com/apis/ads/publisher/v202305}BaseCustomFieldValue" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="isMissingCreatives" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="programmaticCreativeSource" type="{https://www.google.com/apis/ads/publisher/v202305}ProgrammaticCreativeSource" minOccurs="0"/>
- *         &lt;element name="thirdPartyMeasurementSettings" type="{https://www.google.com/apis/ads/publisher/v202305}ThirdPartyMeasurementSettings" minOccurs="0"/>
- *         &lt;element name="youtubeKidsRestricted" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="videoMaxDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="primaryGoal" type="{https://www.google.com/apis/ads/publisher/v202305}Goal" minOccurs="0"/>
- *         &lt;element name="secondaryGoals" type="{https://www.google.com/apis/ads/publisher/v202305}Goal" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="grpSettings" type="{https://www.google.com/apis/ads/publisher/v202305}GrpSettings" minOccurs="0"/>
- *         &lt;element name="dealInfo" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemDealInfoDto" minOccurs="0"/>
- *         &lt;element name="viewabilityProviderCompanyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="childContentEligibility" type="{https://www.google.com/apis/ads/publisher/v202305}ChildContentEligibility" minOccurs="0"/>
- *         &lt;element name="customVastExtension" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="LineItemSummary"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="orderId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="orderName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTimeType" type="{https://www.google.com/apis/ads/publisher/v202305}StartDateTimeType" minOccurs="0"/&gt;
+ *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="autoExtensionDays" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="unlimitedEndDateTime" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="creativeRotationType" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeRotationType" minOccurs="0"/&gt;
+ *         &lt;element name="deliveryRateType" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryRateType" minOccurs="0"/&gt;
+ *         &lt;element name="deliveryForecastSource" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryForecastSource" minOccurs="0"/&gt;
+ *         &lt;element name="customPacingCurve" type="{https://www.google.com/apis/ads/publisher/v202305}CustomPacingCurve" minOccurs="0"/&gt;
+ *         &lt;element name="roadblockingType" type="{https://www.google.com/apis/ads/publisher/v202305}RoadblockingType" minOccurs="0"/&gt;
+ *         &lt;element name="skippableAdType" type="{https://www.google.com/apis/ads/publisher/v202305}SkippableAdType" minOccurs="0"/&gt;
+ *         &lt;element name="frequencyCaps" type="{https://www.google.com/apis/ads/publisher/v202305}FrequencyCap" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="lineItemType" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemType" minOccurs="0"/&gt;
+ *         &lt;element name="priority" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="costPerUnit" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/&gt;
+ *         &lt;element name="valueCostPerUnit" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/&gt;
+ *         &lt;element name="costType" type="{https://www.google.com/apis/ads/publisher/v202305}CostType" minOccurs="0"/&gt;
+ *         &lt;element name="discountType" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemDiscountType" minOccurs="0"/&gt;
+ *         &lt;element name="discount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
+ *         &lt;element name="contractedUnitsBought" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="creativePlaceholders" type="{https://www.google.com/apis/ads/publisher/v202305}CreativePlaceholder" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="activityAssociations" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemActivityAssociation" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="environmentType" type="{https://www.google.com/apis/ads/publisher/v202305}EnvironmentType" minOccurs="0"/&gt;
+ *         &lt;element name="allowedFormats" type="{https://www.google.com/apis/ads/publisher/v202305}AllowedFormats" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="companionDeliveryOption" type="{https://www.google.com/apis/ads/publisher/v202305}CompanionDeliveryOption" minOccurs="0"/&gt;
+ *         &lt;element name="allowOverbook" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="skipInventoryCheck" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="skipCrossSellingRuleWarningChecks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="reserveAtCreation" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="stats" type="{https://www.google.com/apis/ads/publisher/v202305}Stats" minOccurs="0"/&gt;
+ *         &lt;element name="deliveryIndicator" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryIndicator" minOccurs="0"/&gt;
+ *         &lt;element name="deliveryData" type="{https://www.google.com/apis/ads/publisher/v202305}DeliveryData" minOccurs="0"/&gt;
+ *         &lt;element name="budget" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/&gt;
+ *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202305}ComputedStatus" minOccurs="0"/&gt;
+ *         &lt;element name="reservationStatus" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemSummary.ReservationStatus" minOccurs="0"/&gt;
+ *         &lt;element name="isArchived" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="webPropertyCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="appliedLabels" type="{https://www.google.com/apis/ads/publisher/v202305}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="effectiveAppliedLabels" type="{https://www.google.com/apis/ads/publisher/v202305}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="disableSameAdvertiserCompetitiveExclusion" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="lastModifiedByApp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="notes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="competitiveConstraintScope" type="{https://www.google.com/apis/ads/publisher/v202305}CompetitiveConstraintScope" minOccurs="0"/&gt;
+ *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="creationDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="customFieldValues" type="{https://www.google.com/apis/ads/publisher/v202305}BaseCustomFieldValue" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="isMissingCreatives" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="programmaticCreativeSource" type="{https://www.google.com/apis/ads/publisher/v202305}ProgrammaticCreativeSource" minOccurs="0"/&gt;
+ *         &lt;element name="thirdPartyMeasurementSettings" type="{https://www.google.com/apis/ads/publisher/v202305}ThirdPartyMeasurementSettings" minOccurs="0"/&gt;
+ *         &lt;element name="youtubeKidsRestricted" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="videoMaxDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="primaryGoal" type="{https://www.google.com/apis/ads/publisher/v202305}Goal" minOccurs="0"/&gt;
+ *         &lt;element name="secondaryGoals" type="{https://www.google.com/apis/ads/publisher/v202305}Goal" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="grpSettings" type="{https://www.google.com/apis/ads/publisher/v202305}GrpSettings" minOccurs="0"/&gt;
+ *         &lt;element name="dealInfo" type="{https://www.google.com/apis/ads/publisher/v202305}LineItemDealInfoDto" minOccurs="0"/&gt;
+ *         &lt;element name="viewabilityProviderCompanyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="childContentEligibility" type="{https://www.google.com/apis/ads/publisher/v202305}ChildContentEligibility" minOccurs="0"/&gt;
+ *         &lt;element name="customVastExtension" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

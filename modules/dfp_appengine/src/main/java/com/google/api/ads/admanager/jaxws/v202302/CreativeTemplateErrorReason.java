@@ -25,22 +25,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeTemplateError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CANNOT_PARSE_CREATIVE_TEMPLATE"/>
- *     &lt;enumeration value="VARIABLE_DUPLICATE_UNIQUE_NAME"/>
- *     &lt;enumeration value="VARIABLE_INVALID_UNIQUE_NAME"/>
- *     &lt;enumeration value="LIST_CHOICE_DUPLICATE_VALUE"/>
- *     &lt;enumeration value="LIST_CHOICE_NEEDS_DEFAULT"/>
- *     &lt;enumeration value="LIST_CHOICES_EMPTY"/>
- *     &lt;enumeration value="NO_TARGET_PLATFORMS"/>
- *     &lt;enumeration value="MULTIPLE_TARGET_PLATFORMS"/>
- *     &lt;enumeration value="UNRECOGNIZED_PLACEHOLDER"/>
- *     &lt;enumeration value="PLACEHOLDERS_NOT_IN_FORMATTER"/>
- *     &lt;enumeration value="MISSING_INTERSTITIAL_MACRO"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeTemplateError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CANNOT_PARSE_CREATIVE_TEMPLATE"/&gt;
+ *     &lt;enumeration value="VARIABLE_DUPLICATE_UNIQUE_NAME"/&gt;
+ *     &lt;enumeration value="VARIABLE_INVALID_UNIQUE_NAME"/&gt;
+ *     &lt;enumeration value="LIST_CHOICE_DUPLICATE_VALUE"/&gt;
+ *     &lt;enumeration value="LIST_CHOICE_NEEDS_DEFAULT"/&gt;
+ *     &lt;enumeration value="LIST_CHOICES_EMPTY"/&gt;
+ *     &lt;enumeration value="NO_TARGET_PLATFORMS"/&gt;
+ *     &lt;enumeration value="MULTIPLE_TARGET_PLATFORMS"/&gt;
+ *     &lt;enumeration value="UNRECOGNIZED_PLACEHOLDER"/&gt;
+ *     &lt;enumeration value="PLACEHOLDERS_NOT_IN_FORMATTER"/&gt;
+ *     &lt;enumeration value="MISSING_INTERSTITIAL_MACRO"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

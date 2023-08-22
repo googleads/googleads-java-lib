@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LineItemCreativeAssociationOperationError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NOT_ALLOWED"/>
- *     &lt;enumeration value="NOT_APPLICABLE"/>
- *     &lt;enumeration value="CANNOT_ACTIVATE_INVALID_CREATIVE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LineItemCreativeAssociationOperationError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="NOT_APPLICABLE"/&gt;
+ *     &lt;enumeration value="CANNOT_ACTIVATE_INVALID_CREATIVE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

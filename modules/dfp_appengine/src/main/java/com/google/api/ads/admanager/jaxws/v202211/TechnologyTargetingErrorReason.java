@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="TechnologyTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA"/>
- *     &lt;enumeration value="WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA"/>
- *     &lt;enumeration value="MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED"/>
- *     &lt;enumeration value="DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="TechnologyTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MOBILE_LINE_ITEM_CONTAINS_WEB_TECH_CRITERIA"/&gt;
+ *     &lt;enumeration value="WEB_LINE_ITEM_CONTAINS_MOBILE_TECH_CRITERIA"/&gt;
+ *     &lt;enumeration value="MOBILE_CARRIER_TARGETING_FEATURE_NOT_ENABLED"/&gt;
+ *     &lt;enumeration value="DEVICE_CAPABILITY_TARGETING_FEATURE_NOT_ENABLED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

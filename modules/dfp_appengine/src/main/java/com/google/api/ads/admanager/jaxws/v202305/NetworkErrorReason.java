@@ -25,23 +25,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="NetworkError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="MULTI_CURRENCY_NOT_SUPPORTED"/>
- *     &lt;enumeration value="UNSUPPORTED_CURRENCY"/>
- *     &lt;enumeration value="NETWORK_CURRENCY_CANNOT_BE_SAME_AS_SECONDARY"/>
- *     &lt;enumeration value="CANNOT_DELETE_CURRENCY_WITH_ACTIVE_RATE_CARDS"/>
- *     &lt;enumeration value="DELEGATION_CHILD_NETWORK_CANNOT_BECOME_A_PARENT"/>
- *     &lt;enumeration value="DELEGATION_PARENT_NETWORK_CANNOT_BECOME_A_CHILD"/>
- *     &lt;enumeration value="CANNOT_ADD_SAME_NETWORK_AS_DELEGATION_CHILD"/>
- *     &lt;enumeration value="MAX_APPROVED_DELEGATION_CHILD_NETWORKS_EXCEEDED"/>
- *     &lt;enumeration value="MAX_PENDING_DELEGATION_CHILD_NETWORKS_EXCEEDED"/>
- *     &lt;enumeration value="CHILD_NETWORK_ALREADY_EXISTS"/>
- *     &lt;enumeration value="CHILD_NETWORK_CANNOT_BE_DISAPPROVED"/>
- *     &lt;enumeration value="IN_PARENT_DELEGATION_UNSUPPORTED_FOR_NETWORK"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="NetworkError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="MULTI_CURRENCY_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_CURRENCY"/&gt;
+ *     &lt;enumeration value="NETWORK_CURRENCY_CANNOT_BE_SAME_AS_SECONDARY"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_CURRENCY_WITH_ACTIVE_RATE_CARDS"/&gt;
+ *     &lt;enumeration value="DELEGATION_CHILD_NETWORK_CANNOT_BECOME_A_PARENT"/&gt;
+ *     &lt;enumeration value="DELEGATION_PARENT_NETWORK_CANNOT_BECOME_A_CHILD"/&gt;
+ *     &lt;enumeration value="CANNOT_ADD_SAME_NETWORK_AS_DELEGATION_CHILD"/&gt;
+ *     &lt;enumeration value="MAX_APPROVED_DELEGATION_CHILD_NETWORKS_EXCEEDED"/&gt;
+ *     &lt;enumeration value="MAX_PENDING_DELEGATION_CHILD_NETWORKS_EXCEEDED"/&gt;
+ *     &lt;enumeration value="CHILD_NETWORK_ALREADY_EXISTS"/&gt;
+ *     &lt;enumeration value="CHILD_NETWORK_CANNOT_BE_DISAPPROVED"/&gt;
+ *     &lt;enumeration value="IN_PARENT_DELEGATION_UNSUPPORTED_FOR_NETWORK"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

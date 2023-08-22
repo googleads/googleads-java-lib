@@ -25,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LiveStreamEventCdnSettingsError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CDN_CONFIGURATIONS_MUST_HAVE_UNIQUE_CDN_URL_PREFIXES"/>
- *     &lt;enumeration value="MUST_BE_LIVE_CDN_CONFIGURATION"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LiveStreamEventCdnSettingsError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CDN_CONFIGURATIONS_MUST_HAVE_UNIQUE_CDN_URL_PREFIXES"/&gt;
+ *     &lt;enumeration value="MUST_BE_LIVE_CDN_CONFIGURATION"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

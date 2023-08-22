@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="Contact.Status">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNINVITED"/>
- *     &lt;enumeration value="INVITE_PENDNG"/>
- *     &lt;enumeration value="INVITE_EXPIRED"/>
- *     &lt;enumeration value="INVITE_CANCELED"/>
- *     &lt;enumeration value="USER_ACTIVE"/>
- *     &lt;enumeration value="USER_DISABLED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="Contact.Status"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNINVITED"/&gt;
+ *     &lt;enumeration value="INVITE_PENDNG"/&gt;
+ *     &lt;enumeration value="INVITE_EXPIRED"/&gt;
+ *     &lt;enumeration value="INVITE_CANCELED"/&gt;
+ *     &lt;enumeration value="USER_ACTIVE"/&gt;
+ *     &lt;enumeration value="USER_DISABLED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

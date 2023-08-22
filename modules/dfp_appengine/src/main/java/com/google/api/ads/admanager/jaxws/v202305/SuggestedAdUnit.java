@@ -35,21 +35,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SuggestedAdUnit">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="numRequests" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="path" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="parentPath" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnitParent" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="targetWindow" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnit.TargetWindow" minOccurs="0"/>
- *         &lt;element name="targetPlatform" type="{https://www.google.com/apis/ads/publisher/v202305}TargetPlatform" minOccurs="0"/>
- *         &lt;element name="suggestedAdUnitSizes" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnitSize" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="SuggestedAdUnit"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="numRequests" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="path" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="parentPath" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnitParent" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="targetWindow" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnit.TargetWindow" minOccurs="0"/&gt;
+ *         &lt;element name="targetPlatform" type="{https://www.google.com/apis/ads/publisher/v202305}TargetPlatform" minOccurs="0"/&gt;
+ *         &lt;element name="suggestedAdUnitSizes" type="{https://www.google.com/apis/ads/publisher/v202305}AdUnitSize" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

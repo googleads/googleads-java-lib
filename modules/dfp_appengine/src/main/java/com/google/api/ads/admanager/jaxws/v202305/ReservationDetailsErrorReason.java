@@ -25,21 +25,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ReservationDetailsError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNLIMITED_UNITS_BOUGHT_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNLIMITED_END_DATE_TIME_NOT_ALLOWED"/>
- *     &lt;enumeration value="PERCENTAGE_UNITS_BOUGHT_TOO_HIGH"/>
- *     &lt;enumeration value="DURATION_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNIT_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="COST_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="COST_TYPE_UNIT_TYPE_MISMATCH_NOT_ALLOWED"/>
- *     &lt;enumeration value="LINE_ITEM_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="NETWORK_REMNANT_ORDER_CANNOT_UPDATE_LINEITEM_TYPE"/>
- *     &lt;enumeration value="BACKFILL_WEBPROPERTY_CODE_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ReservationDetailsError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNLIMITED_UNITS_BOUGHT_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNLIMITED_END_DATE_TIME_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="PERCENTAGE_UNITS_BOUGHT_TOO_HIGH"/&gt;
+ *     &lt;enumeration value="DURATION_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNIT_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="COST_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="COST_TYPE_UNIT_TYPE_MISMATCH_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="LINE_ITEM_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="NETWORK_REMNANT_ORDER_CANNOT_UPDATE_LINEITEM_TYPE"/&gt;
+ *     &lt;enumeration value="BACKFILL_WEBPROPERTY_CODE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

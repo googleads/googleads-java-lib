@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ThirdPartyViewabilityIntegrationPartner">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NONE"/>
- *     &lt;enumeration value="MOAT"/>
- *     &lt;enumeration value="DOUBLE_VERIFY"/>
- *     &lt;enumeration value="INTEGRAL_AD_SCIENCE"/>
- *     &lt;enumeration value="COMSCORE"/>
- *     &lt;enumeration value="TELEMETRY"/>
- *     &lt;enumeration value="MEETRICS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ThirdPartyViewabilityIntegrationPartner"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NONE"/&gt;
+ *     &lt;enumeration value="MOAT"/&gt;
+ *     &lt;enumeration value="DOUBLE_VERIFY"/&gt;
+ *     &lt;enumeration value="INTEGRAL_AD_SCIENCE"/&gt;
+ *     &lt;enumeration value="COMSCORE"/&gt;
+ *     &lt;enumeration value="TELEMETRY"/&gt;
+ *     &lt;enumeration value="MEETRICS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

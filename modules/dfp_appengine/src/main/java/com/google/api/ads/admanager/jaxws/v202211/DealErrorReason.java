@@ -25,25 +25,25 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DealError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CANNOT_ADD_LINE_ITEM_WHEN_SOLD"/>
- *     &lt;enumeration value="CANNOT_ARCHIVE_LINE_ITEM_WHEN_SOLD"/>
- *     &lt;enumeration value="CANNOT_ARCHIVE_PROPOSAL_WHEN_SOLD"/>
- *     &lt;enumeration value="CANNOT_CHANGE_FIELD_REQUIRING_BUYER_APPROVAL"/>
- *     &lt;enumeration value="CANNOT_GET_SELLER_ID"/>
- *     &lt;enumeration value="CAN_ONLY_EXECUTE_IF_LOCAL_EDITS"/>
- *     &lt;enumeration value="MISSING_PROPOSAL_LINE_ITEMS"/>
- *     &lt;enumeration value="MISSING_ENVIRONMENT"/>
- *     &lt;enumeration value="MISSING_AD_EXCHANGE_PROPERTY"/>
- *     &lt;enumeration value="CANNOT_FIND_PROPOSAL_IN_MARKETPLACE"/>
- *     &lt;enumeration value="CANNOT_GET_PRODUCT"/>
- *     &lt;enumeration value="NEW_VERSION_FROM_BUYER"/>
- *     &lt;enumeration value="PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE"/>
- *     &lt;enumeration value="NO_PROPOSAL_CHANGES_FOUND"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DealError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CANNOT_ADD_LINE_ITEM_WHEN_SOLD"/&gt;
+ *     &lt;enumeration value="CANNOT_ARCHIVE_LINE_ITEM_WHEN_SOLD"/&gt;
+ *     &lt;enumeration value="CANNOT_ARCHIVE_PROPOSAL_WHEN_SOLD"/&gt;
+ *     &lt;enumeration value="CANNOT_CHANGE_FIELD_REQUIRING_BUYER_APPROVAL"/&gt;
+ *     &lt;enumeration value="CANNOT_GET_SELLER_ID"/&gt;
+ *     &lt;enumeration value="CAN_ONLY_EXECUTE_IF_LOCAL_EDITS"/&gt;
+ *     &lt;enumeration value="MISSING_PROPOSAL_LINE_ITEMS"/&gt;
+ *     &lt;enumeration value="MISSING_ENVIRONMENT"/&gt;
+ *     &lt;enumeration value="MISSING_AD_EXCHANGE_PROPERTY"/&gt;
+ *     &lt;enumeration value="CANNOT_FIND_PROPOSAL_IN_MARKETPLACE"/&gt;
+ *     &lt;enumeration value="CANNOT_GET_PRODUCT"/&gt;
+ *     &lt;enumeration value="NEW_VERSION_FROM_BUYER"/&gt;
+ *     &lt;enumeration value="PROPOSAL_OUT_OF_SYNC_WITH_MARKETPLACE"/&gt;
+ *     &lt;enumeration value="NO_PROPOSAL_CHANGES_FOUND"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,22 +25,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeTranscode.IdType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AD_ID"/>
- *     &lt;enumeration value="CREATIVE_ID"/>
- *     &lt;enumeration value="CREATIVE_ADID"/>
- *     &lt;enumeration value="UNIVERSAL_AD_ID"/>
- *     &lt;enumeration value="MEDIA_URI"/>
- *     &lt;enumeration value="MEDIA_URI_PATH"/>
- *     &lt;enumeration value="CREATIVE_ADID_WITH_FALLBACK"/>
- *     &lt;enumeration value="CANONICALIZED_MEDIA_URI"/>
- *     &lt;enumeration value="GV_REGISTRY_ID"/>
- *     &lt;enumeration value="UNKNOWN_ID_TYPE"/>
- *     &lt;enumeration value="MEDIA_URI_HASH"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeTranscode.IdType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AD_ID"/&gt;
+ *     &lt;enumeration value="CREATIVE_ID"/&gt;
+ *     &lt;enumeration value="CREATIVE_ADID"/&gt;
+ *     &lt;enumeration value="UNIVERSAL_AD_ID"/&gt;
+ *     &lt;enumeration value="MEDIA_URI"/&gt;
+ *     &lt;enumeration value="MEDIA_URI_PATH"/&gt;
+ *     &lt;enumeration value="CREATIVE_ADID_WITH_FALLBACK"/&gt;
+ *     &lt;enumeration value="CANONICALIZED_MEDIA_URI"/&gt;
+ *     &lt;enumeration value="GV_REGISTRY_ID"/&gt;
+ *     &lt;enumeration value="UNKNOWN_ID_TYPE"/&gt;
+ *     &lt;enumeration value="MEDIA_URI_HASH"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

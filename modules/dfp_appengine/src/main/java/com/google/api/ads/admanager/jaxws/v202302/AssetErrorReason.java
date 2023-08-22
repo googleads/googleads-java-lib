@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AssetError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NON_UNIQUE_NAME"/>
- *     &lt;enumeration value="FILE_NAME_TOO_LONG"/>
- *     &lt;enumeration value="FILE_SIZE_TOO_LARGE"/>
- *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_CLIENT"/>
- *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_HEIGHT"/>
- *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_WIDTH"/>
- *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_FORMAT"/>
- *     &lt;enumeration value="INVALID_CODE_SNIPPET_PARAMETER_VALUE"/>
- *     &lt;enumeration value="INVALID_ASSET_ID"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AssetError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NON_UNIQUE_NAME"/&gt;
+ *     &lt;enumeration value="FILE_NAME_TOO_LONG"/&gt;
+ *     &lt;enumeration value="FILE_SIZE_TOO_LARGE"/&gt;
+ *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_CLIENT"/&gt;
+ *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_HEIGHT"/&gt;
+ *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_WIDTH"/&gt;
+ *     &lt;enumeration value="MISSING_REQUIRED_DYNAMIC_ALLOCATION_FORMAT"/&gt;
+ *     &lt;enumeration value="INVALID_CODE_SNIPPET_PARAMETER_VALUE"/&gt;
+ *     &lt;enumeration value="INVALID_ASSET_ID"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

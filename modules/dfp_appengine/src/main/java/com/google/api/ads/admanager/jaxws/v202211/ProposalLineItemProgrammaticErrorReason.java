@@ -25,30 +25,30 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ProposalLineItemProgrammaticError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_PRODUCT_TYPE"/>
- *     &lt;enumeration value="VIDEO_NOT_SUPPORTED"/>
- *     &lt;enumeration value="ROADBLOCKING_NOT_SUPPORTED"/>
- *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/>
- *     &lt;enumeration value="INVALID_PROPOSAL_LINE_ITEM_TYPE"/>
- *     &lt;enumeration value="INVALID_RATE_TYPE"/>
- *     &lt;enumeration value="ZERO_COST_PER_UNIT_NOT_SUPPORTED"/>
- *     &lt;enumeration value="INVALID_PROGRAMMATIC_CREATIVE_SOURCE"/>
- *     &lt;enumeration value="INVALID_MAX_VIDEO_CREATIVE_DURATION"/>
- *     &lt;enumeration value="CANNOT_UPDATE_PROGRAMMATIC_CREATIVE_SOURCE"/>
- *     &lt;enumeration value="INVALID_NUM_UNITS"/>
- *     &lt;enumeration value="MIX_GUARANTEED_AND_PREFERRED_DEAL_NOT_ALLOWED"/>
- *     &lt;enumeration value="MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED"/>
- *     &lt;enumeration value="CANNOT_UPDATE_SIZES"/>
- *     &lt;enumeration value="INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT"/>
- *     &lt;enumeration value="INVALID_PROGRAMMATIC_PRICING_MODEL"/>
- *     &lt;enumeration value="BUYER_DISABLED_FOR_PG_VIOLATING_SLA"/>
- *     &lt;enumeration value="BUYER_NOT_FOUND"/>
- *     &lt;enumeration value="INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ProposalLineItemProgrammaticError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_PRODUCT_TYPE"/&gt;
+ *     &lt;enumeration value="VIDEO_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="ROADBLOCKING_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/&gt;
+ *     &lt;enumeration value="INVALID_PROPOSAL_LINE_ITEM_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_RATE_TYPE"/&gt;
+ *     &lt;enumeration value="ZERO_COST_PER_UNIT_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="INVALID_PROGRAMMATIC_CREATIVE_SOURCE"/&gt;
+ *     &lt;enumeration value="INVALID_MAX_VIDEO_CREATIVE_DURATION"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_PROGRAMMATIC_CREATIVE_SOURCE"/&gt;
+ *     &lt;enumeration value="INVALID_NUM_UNITS"/&gt;
+ *     &lt;enumeration value="MIX_GUARANTEED_AND_PREFERRED_DEAL_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="MIX_NATIVE_AND_BANNER_SIZE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_SIZES"/&gt;
+ *     &lt;enumeration value="INVALID_SPONSORSHIP_CONTRACTED_UNITS_BOUGHT"/&gt;
+ *     &lt;enumeration value="INVALID_PROGRAMMATIC_PRICING_MODEL"/&gt;
+ *     &lt;enumeration value="BUYER_DISABLED_FOR_PG_VIOLATING_SLA"/&gt;
+ *     &lt;enumeration value="BUYER_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="INVALID_ENVIRONMENT_PLATFORM_TYPE_PAIR"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */
@@ -147,8 +147,7 @@ public enum ProposalLineItemProgrammaticErrorReason {
 
     /**
      * 
-     *                 The {@link Goal#units} value is invalid. For {@link RateType#CPD}
-     *                 {@link ProposalLineItem proposal line items}, only 100% is allowed
+     *                 The {@link Goal#units} value is invalid.
      *               
      * 
      */

@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LiveStreamEventStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ACTIVE"/>
- *     &lt;enumeration value="ARCHIVED"/>
- *     &lt;enumeration value="PAUSED"/>
- *     &lt;enumeration value="ADS_PAUSED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LiveStreamEventStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACTIVE"/&gt;
+ *     &lt;enumeration value="ARCHIVED"/&gt;
+ *     &lt;enumeration value="PAUSED"/&gt;
+ *     &lt;enumeration value="ADS_PAUSED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="OnboardingTask">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="BILLING_PROFILE_CREATION"/>
- *     &lt;enumeration value="PHONE_PIN_VERIFICATION"/>
- *     &lt;enumeration value="AD_MANAGER_ACCOUNT_SETUP"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="OnboardingTask"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="BILLING_PROFILE_CREATION"/&gt;
+ *     &lt;enumeration value="PHONE_PIN_VERIFICATION"/&gt;
+ *     &lt;enumeration value="AD_MANAGER_ACCOUNT_SETUP"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

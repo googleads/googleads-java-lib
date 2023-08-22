@@ -25,23 +25,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AccountStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="INVITED"/>
- *     &lt;enumeration value="DECLINED"/>
- *     &lt;enumeration value="PENDING_GOOGLE_APPROVAL"/>
- *     &lt;enumeration value="APPROVED"/>
- *     &lt;enumeration value="CLOSED_POLICY_VIOLATION"/>
- *     &lt;enumeration value="CLOSED_INVALID_ACTIVITY"/>
- *     &lt;enumeration value="CLOSED_BY_PUBLISHER"/>
- *     &lt;enumeration value="DISAPPROVED_INELIGIBLE"/>
- *     &lt;enumeration value="DISAPPROVED_DUPLICATE_ACCOUNT"/>
- *     &lt;enumeration value="EXPIRED"/>
- *     &lt;enumeration value="INACTIVE"/>
- *     &lt;enumeration value="DEACTIVATED_BY_AD_MANAGER"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AccountStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="INVITED"/&gt;
+ *     &lt;enumeration value="DECLINED"/&gt;
+ *     &lt;enumeration value="PENDING_GOOGLE_APPROVAL"/&gt;
+ *     &lt;enumeration value="APPROVED"/&gt;
+ *     &lt;enumeration value="CLOSED_POLICY_VIOLATION"/&gt;
+ *     &lt;enumeration value="CLOSED_INVALID_ACTIVITY"/&gt;
+ *     &lt;enumeration value="CLOSED_BY_PUBLISHER"/&gt;
+ *     &lt;enumeration value="DISAPPROVED_INELIGIBLE"/&gt;
+ *     &lt;enumeration value="DISAPPROVED_DUPLICATE_ACCOUNT"/&gt;
+ *     &lt;enumeration value="EXPIRED"/&gt;
+ *     &lt;enumeration value="INACTIVE"/&gt;
+ *     &lt;enumeration value="DEACTIVATED_BY_AD_MANAGER"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdSenseSettings.FontSize">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DEFAULT"/>
- *     &lt;enumeration value="SMALL"/>
- *     &lt;enumeration value="MEDIUM"/>
- *     &lt;enumeration value="LARGE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdSenseSettings.FontSize"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DEFAULT"/&gt;
+ *     &lt;enumeration value="SMALL"/&gt;
+ *     &lt;enumeration value="MEDIUM"/&gt;
+ *     &lt;enumeration value="LARGE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

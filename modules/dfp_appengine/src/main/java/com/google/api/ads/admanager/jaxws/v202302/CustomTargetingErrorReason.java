@@ -25,50 +25,50 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CustomTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="KEY_NOT_FOUND"/>
- *     &lt;enumeration value="KEY_COUNT_TOO_LARGE"/>
- *     &lt;enumeration value="KEY_NAME_DUPLICATE"/>
- *     &lt;enumeration value="KEY_NAME_EMPTY"/>
- *     &lt;enumeration value="KEY_NAME_INVALID_LENGTH"/>
- *     &lt;enumeration value="KEY_NAME_INVALID_CHARS"/>
- *     &lt;enumeration value="KEY_NAME_RESERVED"/>
- *     &lt;enumeration value="KEY_DISPLAY_NAME_INVALID_LENGTH"/>
- *     &lt;enumeration value="KEY_STATUS_NOT_ACTIVE"/>
- *     &lt;enumeration value="VALUE_NOT_FOUND"/>
- *     &lt;enumeration value="GET_VALUES_BY_STATEMENT_MUST_CONTAIN_KEY_ID"/>
- *     &lt;enumeration value="VALUE_COUNT_FOR_KEY_TOO_LARGE"/>
- *     &lt;enumeration value="VALUE_NAME_DUPLICATE"/>
- *     &lt;enumeration value="VALUE_NAME_EMPTY"/>
- *     &lt;enumeration value="VALUE_NAME_INVALID_LENGTH"/>
- *     &lt;enumeration value="VALUE_NAME_INVALID_CHARS"/>
- *     &lt;enumeration value="VALUE_DISPLAY_NAME_INVALID_LENGTH"/>
- *     &lt;enumeration value="VALUE_MATCH_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="VALUE_MATCH_TYPE_NOT_EXACT_FOR_PREDEFINED_KEY"/>
- *     &lt;enumeration value="SUFFIX_MATCH_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="CONTAINS_MATCH_TYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="VALUE_STATUS_NOT_ACTIVE"/>
- *     &lt;enumeration value="KEY_WITH_MISSING_VALUES"/>
- *     &lt;enumeration value="INVALID_VALUE_FOR_KEY"/>
- *     &lt;enumeration value="CANNOT_OR_DIFFERENT_KEYS"/>
- *     &lt;enumeration value="INVALID_TARGETING_EXPRESSION"/>
- *     &lt;enumeration value="DELETED_KEY_CANNOT_BE_USED_FOR_TARGETING"/>
- *     &lt;enumeration value="DELETED_VALUE_CANNOT_BE_USED_FOR_TARGETING"/>
- *     &lt;enumeration value="VIDEO_BROWSE_BY_KEY_CANNOT_BE_USED_FOR_CUSTOM_TARGETING"/>
- *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_KEY_USED_IN_CONTENT_METADATA_MAPPING"/>
- *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_VALUE_USED_IN_CONTENT_METADATA_MAPPING"/>
- *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_KEY_USED_IN_PARTNER_ASSIGNMENT_TARGETING"/>
- *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_VALUE_USED_IN_PARTNER_ASSIGNMENT_TARGETING"/>
- *     &lt;enumeration value="CANNOT_TARGET_AUDIENCE_SEGMENT"/>
- *     &lt;enumeration value="CANNOT_TARGET_THIRD_PARTY_AUDIENCE_SEGMENT"/>
- *     &lt;enumeration value="CANNOT_TARGET_INACTIVE_AUDIENCE_SEGMENT"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENTS"/>
- *     &lt;enumeration value="CANNOT_TARGET_MAPPED_METADATA"/>
- *     &lt;enumeration value="ONLY_APPROVED_AUDIENCE_SEGMENTS_CAN_BE_TARGETED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CustomTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="KEY_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="KEY_COUNT_TOO_LARGE"/&gt;
+ *     &lt;enumeration value="KEY_NAME_DUPLICATE"/&gt;
+ *     &lt;enumeration value="KEY_NAME_EMPTY"/&gt;
+ *     &lt;enumeration value="KEY_NAME_INVALID_LENGTH"/&gt;
+ *     &lt;enumeration value="KEY_NAME_INVALID_CHARS"/&gt;
+ *     &lt;enumeration value="KEY_NAME_RESERVED"/&gt;
+ *     &lt;enumeration value="KEY_DISPLAY_NAME_INVALID_LENGTH"/&gt;
+ *     &lt;enumeration value="KEY_STATUS_NOT_ACTIVE"/&gt;
+ *     &lt;enumeration value="VALUE_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="GET_VALUES_BY_STATEMENT_MUST_CONTAIN_KEY_ID"/&gt;
+ *     &lt;enumeration value="VALUE_COUNT_FOR_KEY_TOO_LARGE"/&gt;
+ *     &lt;enumeration value="VALUE_NAME_DUPLICATE"/&gt;
+ *     &lt;enumeration value="VALUE_NAME_EMPTY"/&gt;
+ *     &lt;enumeration value="VALUE_NAME_INVALID_LENGTH"/&gt;
+ *     &lt;enumeration value="VALUE_NAME_INVALID_CHARS"/&gt;
+ *     &lt;enumeration value="VALUE_DISPLAY_NAME_INVALID_LENGTH"/&gt;
+ *     &lt;enumeration value="VALUE_MATCH_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="VALUE_MATCH_TYPE_NOT_EXACT_FOR_PREDEFINED_KEY"/&gt;
+ *     &lt;enumeration value="SUFFIX_MATCH_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="CONTAINS_MATCH_TYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="VALUE_STATUS_NOT_ACTIVE"/&gt;
+ *     &lt;enumeration value="KEY_WITH_MISSING_VALUES"/&gt;
+ *     &lt;enumeration value="INVALID_VALUE_FOR_KEY"/&gt;
+ *     &lt;enumeration value="CANNOT_OR_DIFFERENT_KEYS"/&gt;
+ *     &lt;enumeration value="INVALID_TARGETING_EXPRESSION"/&gt;
+ *     &lt;enumeration value="DELETED_KEY_CANNOT_BE_USED_FOR_TARGETING"/&gt;
+ *     &lt;enumeration value="DELETED_VALUE_CANNOT_BE_USED_FOR_TARGETING"/&gt;
+ *     &lt;enumeration value="VIDEO_BROWSE_BY_KEY_CANNOT_BE_USED_FOR_CUSTOM_TARGETING"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_KEY_USED_IN_CONTENT_METADATA_MAPPING"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_VALUE_USED_IN_CONTENT_METADATA_MAPPING"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_KEY_USED_IN_PARTNER_ASSIGNMENT_TARGETING"/&gt;
+ *     &lt;enumeration value="CANNOT_DELETE_CUSTOM_VALUE_USED_IN_PARTNER_ASSIGNMENT_TARGETING"/&gt;
+ *     &lt;enumeration value="CANNOT_TARGET_AUDIENCE_SEGMENT"/&gt;
+ *     &lt;enumeration value="CANNOT_TARGET_THIRD_PARTY_AUDIENCE_SEGMENT"/&gt;
+ *     &lt;enumeration value="CANNOT_TARGET_INACTIVE_AUDIENCE_SEGMENT"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENTS"/&gt;
+ *     &lt;enumeration value="CANNOT_TARGET_MAPPED_METADATA"/&gt;
+ *     &lt;enumeration value="ONLY_APPROVED_AUDIENCE_SEGMENTS_CAN_BE_TARGETED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

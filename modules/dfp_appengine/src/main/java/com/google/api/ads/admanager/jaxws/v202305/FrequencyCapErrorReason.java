@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="FrequencyCapError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="IMPRESSION_LIMIT_EXCEEDED"/>
- *     &lt;enumeration value="IMPRESSIONS_TOO_LOW"/>
- *     &lt;enumeration value="RANGE_LIMIT_EXCEEDED"/>
- *     &lt;enumeration value="RANGE_TOO_LOW"/>
- *     &lt;enumeration value="DUPLICATE_TIME_RANGE"/>
- *     &lt;enumeration value="TOO_MANY_FREQUENCY_CAPS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="FrequencyCapError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="IMPRESSION_LIMIT_EXCEEDED"/&gt;
+ *     &lt;enumeration value="IMPRESSIONS_TOO_LOW"/&gt;
+ *     &lt;enumeration value="RANGE_LIMIT_EXCEEDED"/&gt;
+ *     &lt;enumeration value="RANGE_TOO_LOW"/&gt;
+ *     &lt;enumeration value="DUPLICATE_TIME_RANGE"/&gt;
+ *     &lt;enumeration value="TOO_MANY_FREQUENCY_CAPS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

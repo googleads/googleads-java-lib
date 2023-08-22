@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RichMediaStudioChildAssetProperty.Type">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="FLASH"/>
- *     &lt;enumeration value="VIDEO"/>
- *     &lt;enumeration value="IMAGE"/>
- *     &lt;enumeration value="DATA"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RichMediaStudioChildAssetProperty.Type"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FLASH"/&gt;
+ *     &lt;enumeration value="VIDEO"/&gt;
+ *     &lt;enumeration value="IMAGE"/&gt;
+ *     &lt;enumeration value="DATA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

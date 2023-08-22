@@ -25,30 +25,30 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="FLASH_AND_FALLBACK_URL_ARE_SAME"/>
- *     &lt;enumeration value="INVALID_INTERNAL_REDIRECT_URL"/>
- *     &lt;enumeration value="DESTINATION_URL_REQUIRED"/>
- *     &lt;enumeration value="DESTINATION_URL_NOT_EMPTY"/>
- *     &lt;enumeration value="DESTINATION_URL_TYPE_NOT_SUPPORTED"/>
- *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE"/>
- *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE"/>
- *     &lt;enumeration value="MISSING_FEATURE"/>
- *     &lt;enumeration value="INVALID_COMPANY_TYPE"/>
- *     &lt;enumeration value="INVALID_ADSENSE_CREATIVE_SIZE"/>
- *     &lt;enumeration value="INVALID_AD_EXCHANGE_CREATIVE_SIZE"/>
- *     &lt;enumeration value="DUPLICATE_ASSET_IN_CREATIVE"/>
- *     &lt;enumeration value="CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY"/>
- *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE"/>
- *     &lt;enumeration value="CANNOT_CREATE_PROGRAMMATIC_CREATIVES"/>
- *     &lt;enumeration value="INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER"/>
- *     &lt;enumeration value="CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS"/>
- *     &lt;enumeration value="HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET"/>
- *     &lt;enumeration value="CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FLASH_AND_FALLBACK_URL_ARE_SAME"/&gt;
+ *     &lt;enumeration value="INVALID_INTERNAL_REDIRECT_URL"/&gt;
+ *     &lt;enumeration value="DESTINATION_URL_REQUIRED"/&gt;
+ *     &lt;enumeration value="DESTINATION_URL_NOT_EMPTY"/&gt;
+ *     &lt;enumeration value="DESTINATION_URL_TYPE_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE"/&gt;
+ *     &lt;enumeration value="MISSING_FEATURE"/&gt;
+ *     &lt;enumeration value="INVALID_COMPANY_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_ADSENSE_CREATIVE_SIZE"/&gt;
+ *     &lt;enumeration value="INVALID_AD_EXCHANGE_CREATIVE_SIZE"/&gt;
+ *     &lt;enumeration value="DUPLICATE_ASSET_IN_CREATIVE"/&gt;
+ *     &lt;enumeration value="CREATIVE_ASSET_CANNOT_HAVE_ID_AND_BYTE_ARRAY"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_UNSUPPORTED_CREATIVE"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_PROGRAMMATIC_CREATIVES"/&gt;
+ *     &lt;enumeration value="INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER"/&gt;
+ *     &lt;enumeration value="CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS"/&gt;
+ *     &lt;enumeration value="HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET"/&gt;
+ *     &lt;enumeration value="CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

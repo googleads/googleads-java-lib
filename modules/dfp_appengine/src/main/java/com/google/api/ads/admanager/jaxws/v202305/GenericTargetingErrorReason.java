@@ -25,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GenericTargetingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CONFLICTING_INCLUSION_OR_EXCLUSION_OF_SIBLINGS"/>
- *     &lt;enumeration value="INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GenericTargetingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CONFLICTING_INCLUSION_OR_EXCLUSION_OF_SIBLINGS"/&gt;
+ *     &lt;enumeration value="INCLUDING_DESCENDANTS_OF_EXCLUDED_CRITERIA"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

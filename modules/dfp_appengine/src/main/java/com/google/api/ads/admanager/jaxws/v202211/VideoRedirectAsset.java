@@ -30,15 +30,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="VideoRedirectAsset">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}RedirectAsset">
- *       &lt;sequence>
- *         &lt;element name="metadata" type="{https://www.google.com/apis/ads/publisher/v202211}VideoMetadata" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="VideoRedirectAsset"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}RedirectAsset"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="metadata" type="{https://www.google.com/apis/ads/publisher/v202211}VideoMetadata" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

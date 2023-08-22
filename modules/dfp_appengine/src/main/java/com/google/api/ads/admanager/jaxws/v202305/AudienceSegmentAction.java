@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AudienceSegmentAction">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AudienceSegmentAction"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -46,11 +46,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AudienceSegmentAction")
 @XmlSeeAlso({
-    PopulateAudienceSegments.class,
-    DeactivateAudienceSegments.class,
-    RejectAudienceSegments.class,
+    ActivateAudienceSegments.class,
     ApproveAudienceSegments.class,
-    ActivateAudienceSegments.class
+    DeactivateAudienceSegments.class,
+    PopulateAudienceSegments.class,
+    RejectAudienceSegments.class
 })
 public abstract class AudienceSegmentAction {
 

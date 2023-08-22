@@ -25,12 +25,12 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LineItemSummary.ReservationStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="RESERVED"/>
- *     &lt;enumeration value="UNRESERVED"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LineItemSummary.ReservationStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="RESERVED"/&gt;
+ *     &lt;enumeration value="UNRESERVED"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ClickTrackingLineItemError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TYPE_IMMUTABLE"/>
- *     &lt;enumeration value="INVALID_TARGETING_TYPE"/>
- *     &lt;enumeration value="INVALID_ROADBLOCKING_TYPE"/>
- *     &lt;enumeration value="INVALID_CREATIVEROTATION_TYPE"/>
- *     &lt;enumeration value="INVALID_DELIVERY_RATE_TYPE"/>
- *     &lt;enumeration value="UNSUPPORTED_FIELD"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ClickTrackingLineItemError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TYPE_IMMUTABLE"/&gt;
+ *     &lt;enumeration value="INVALID_TARGETING_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_ROADBLOCKING_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVEROTATION_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_DELIVERY_RATE_TYPE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_FIELD"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

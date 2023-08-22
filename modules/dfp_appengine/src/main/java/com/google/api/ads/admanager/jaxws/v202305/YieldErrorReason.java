@@ -25,27 +25,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="YieldError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_BACKEND_DATA"/>
- *     &lt;enumeration value="INVALID_REQUEST_DATA"/>
- *     &lt;enumeration value="AD_SOURCE_COMPANY_CHANGE"/>
- *     &lt;enumeration value="UNSUPPORTED_COMPANY_INTEGRATION_TYPE"/>
- *     &lt;enumeration value="UNSUPPORTED_BUYER_SETTINGS"/>
- *     &lt;enumeration value="DEPRECATED_AD_NETWORK_ADAPTER"/>
- *     &lt;enumeration value="TOO_MANY_UPDATES"/>
- *     &lt;enumeration value="DUPLICATE_YIELD_PARTNER"/>
- *     &lt;enumeration value="DUPLICATE_HEADER_BIDDER"/>
- *     &lt;enumeration value="INTERNAL_ERROR"/>
- *     &lt;enumeration value="INVALID_EXCHANGE_STATUS"/>
- *     &lt;enumeration value="INVALID_AD_SOURCE_STATUS"/>
- *     &lt;enumeration value="INVALID_SDK_ADAPTER_KEY_NAME"/>
- *     &lt;enumeration value="INVENTORY_UNIT_MAPPING_NOT_FOUND"/>
- *     &lt;enumeration value="NO_COMPANIES_PERMISSION"/>
- *     &lt;enumeration value="INVENTORY_UNIT_MAPPING_INVALID_PARAMETER"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="YieldError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_BACKEND_DATA"/&gt;
+ *     &lt;enumeration value="INVALID_REQUEST_DATA"/&gt;
+ *     &lt;enumeration value="AD_SOURCE_COMPANY_CHANGE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_COMPANY_INTEGRATION_TYPE"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_BUYER_SETTINGS"/&gt;
+ *     &lt;enumeration value="DEPRECATED_AD_NETWORK_ADAPTER"/&gt;
+ *     &lt;enumeration value="TOO_MANY_UPDATES"/&gt;
+ *     &lt;enumeration value="DUPLICATE_YIELD_PARTNER"/&gt;
+ *     &lt;enumeration value="DUPLICATE_HEADER_BIDDER"/&gt;
+ *     &lt;enumeration value="INTERNAL_ERROR"/&gt;
+ *     &lt;enumeration value="INVALID_EXCHANGE_STATUS"/&gt;
+ *     &lt;enumeration value="INVALID_AD_SOURCE_STATUS"/&gt;
+ *     &lt;enumeration value="INVALID_SDK_ADAPTER_KEY_NAME"/&gt;
+ *     &lt;enumeration value="INVENTORY_UNIT_MAPPING_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="NO_COMPANIES_PERMISSION"/&gt;
+ *     &lt;enumeration value="INVENTORY_UNIT_MAPPING_INVALID_PARAMETER"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

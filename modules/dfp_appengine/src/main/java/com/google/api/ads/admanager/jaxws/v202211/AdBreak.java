@@ -28,27 +28,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="AdBreak">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="rootAdResponses" type="{https://www.google.com/apis/ads/publisher/v202211}AdResponse" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="adDecisionCreatives" type="{https://www.google.com/apis/ads/publisher/v202211}AdDecisionCreative" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="podNum" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="linearAbsolutePodNum" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="adBreakDurationMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="filledDurationMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="servedDurationMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/>
- *         &lt;element name="startTimeOffsetMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="samError" type="{https://www.google.com/apis/ads/publisher/v202211}SamError" minOccurs="0"/>
- *         &lt;element name="midrollIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="decisionedAds" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="trackingEvents" type="{https://www.google.com/apis/ads/publisher/v202211}TrackingEvent" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="AdBreak"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="rootAdResponses" type="{https://www.google.com/apis/ads/publisher/v202211}AdResponse" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="adDecisionCreatives" type="{https://www.google.com/apis/ads/publisher/v202211}AdDecisionCreative" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="podNum" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="linearAbsolutePodNum" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="adBreakDurationMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="filledDurationMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="servedDurationMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202211}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="startTimeOffsetMillis" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="samError" type="{https://www.google.com/apis/ads/publisher/v202211}SamError" minOccurs="0"/&gt;
+ *         &lt;element name="midrollIndex" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="decisionedAds" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="trackingEvents" type="{https://www.google.com/apis/ads/publisher/v202211}TrackingEvent" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -25,21 +25,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="NativeStyleError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ACTIVE_CREATIVE_TEMPLATE_REQUIRED"/>
- *     &lt;enumeration value="INVALID_CUSTOM_TARGETING_MATCH_TYPE"/>
- *     &lt;enumeration value="INVALID_INVENTORY_TARTGETING_TYPE"/>
- *     &lt;enumeration value="INVALID_STATUS"/>
- *     &lt;enumeration value="INVALID_TARGETING_TYPE"/>
- *     &lt;enumeration value="NATIVE_CREATIVE_TEMPLATE_REQUIRED"/>
- *     &lt;enumeration value="TOO_MANY_CUSTOM_TARGETING_KEY_VALUES"/>
- *     &lt;enumeration value="UNIQUE_SNIPPET_REQUIRED"/>
- *     &lt;enumeration value="UNRECOGNIZED_MACRO"/>
- *     &lt;enumeration value="UNRECOGNIZED_PLACEHOLDER"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="NativeStyleError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACTIVE_CREATIVE_TEMPLATE_REQUIRED"/&gt;
+ *     &lt;enumeration value="INVALID_CUSTOM_TARGETING_MATCH_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_INVENTORY_TARTGETING_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_STATUS"/&gt;
+ *     &lt;enumeration value="INVALID_TARGETING_TYPE"/&gt;
+ *     &lt;enumeration value="NATIVE_CREATIVE_TEMPLATE_REQUIRED"/&gt;
+ *     &lt;enumeration value="TOO_MANY_CUSTOM_TARGETING_KEY_VALUES"/&gt;
+ *     &lt;enumeration value="UNIQUE_SNIPPET_REQUIRED"/&gt;
+ *     &lt;enumeration value="UNRECOGNIZED_MACRO"/&gt;
+ *     &lt;enumeration value="UNRECOGNIZED_PLACEHOLDER"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

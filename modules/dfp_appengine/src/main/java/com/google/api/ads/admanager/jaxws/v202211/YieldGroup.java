@@ -29,21 +29,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="YieldGroup">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="yieldGroupId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="yieldGroupName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="exchangeStatus" type="{https://www.google.com/apis/ads/publisher/v202211}YieldEntityStatus" minOccurs="0"/>
- *         &lt;element name="format" type="{https://www.google.com/apis/ads/publisher/v202211}YieldFormat" minOccurs="0"/>
- *         &lt;element name="environmentType" type="{https://www.google.com/apis/ads/publisher/v202211}YieldEnvironmentType" minOccurs="0"/>
- *         &lt;element name="targeting" type="{https://www.google.com/apis/ads/publisher/v202211}Targeting" minOccurs="0"/>
- *         &lt;element name="adSources" type="{https://www.google.com/apis/ads/publisher/v202211}YieldAdSource" maxOccurs="unbounded" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="YieldGroup"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="yieldGroupId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="yieldGroupName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="exchangeStatus" type="{https://www.google.com/apis/ads/publisher/v202211}YieldEntityStatus" minOccurs="0"/&gt;
+ *         &lt;element name="format" type="{https://www.google.com/apis/ads/publisher/v202211}YieldFormat" minOccurs="0"/&gt;
+ *         &lt;element name="environmentType" type="{https://www.google.com/apis/ads/publisher/v202211}YieldEnvironmentType" minOccurs="0"/&gt;
+ *         &lt;element name="targeting" type="{https://www.google.com/apis/ads/publisher/v202211}Targeting" minOccurs="0"/&gt;
+ *         &lt;element name="adSources" type="{https://www.google.com/apis/ads/publisher/v202211}YieldAdSource" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RequestPlatform">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="BROWSER"/>
- *     &lt;enumeration value="MOBILE_APP"/>
- *     &lt;enumeration value="VIDEO_PLAYER"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RequestPlatform"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="BROWSER"/&gt;
+ *     &lt;enumeration value="MOBILE_APP"/&gt;
+ *     &lt;enumeration value="VIDEO_PLAYER"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

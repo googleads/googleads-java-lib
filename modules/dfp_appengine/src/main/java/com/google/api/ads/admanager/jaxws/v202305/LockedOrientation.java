@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LockedOrientation">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="FREE_ORIENTATION"/>
- *     &lt;enumeration value="PORTRAIT_ONLY"/>
- *     &lt;enumeration value="LANDSCAPE_ONLY"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LockedOrientation"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="FREE_ORIENTATION"/&gt;
+ *     &lt;enumeration value="PORTRAIT_ONLY"/&gt;
+ *     &lt;enumeration value="LANDSCAPE_ONLY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

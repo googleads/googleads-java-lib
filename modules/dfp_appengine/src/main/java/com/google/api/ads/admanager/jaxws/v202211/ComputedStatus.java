@@ -25,21 +25,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ComputedStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DELIVERY_EXTENDED"/>
- *     &lt;enumeration value="DELIVERING"/>
- *     &lt;enumeration value="READY"/>
- *     &lt;enumeration value="PAUSED"/>
- *     &lt;enumeration value="INACTIVE"/>
- *     &lt;enumeration value="PAUSED_INVENTORY_RELEASED"/>
- *     &lt;enumeration value="PENDING_APPROVAL"/>
- *     &lt;enumeration value="COMPLETED"/>
- *     &lt;enumeration value="DISAPPROVED"/>
- *     &lt;enumeration value="DRAFT"/>
- *     &lt;enumeration value="CANCELED"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ComputedStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DELIVERY_EXTENDED"/&gt;
+ *     &lt;enumeration value="DELIVERING"/&gt;
+ *     &lt;enumeration value="READY"/&gt;
+ *     &lt;enumeration value="PAUSED"/&gt;
+ *     &lt;enumeration value="INACTIVE"/&gt;
+ *     &lt;enumeration value="PAUSED_INVENTORY_RELEASED"/&gt;
+ *     &lt;enumeration value="PENDING_APPROVAL"/&gt;
+ *     &lt;enumeration value="COMPLETED"/&gt;
+ *     &lt;enumeration value="DISAPPROVED"/&gt;
+ *     &lt;enumeration value="DRAFT"/&gt;
+ *     &lt;enumeration value="CANCELED"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

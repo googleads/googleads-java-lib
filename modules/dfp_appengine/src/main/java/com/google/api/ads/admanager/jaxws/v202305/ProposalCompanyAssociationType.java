@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ProposalCompanyAssociationType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="PRIMARY_AGENCY"/>
- *     &lt;enumeration value="BILLING_AGENCY"/>
- *     &lt;enumeration value="BRANDING_AGENCY"/>
- *     &lt;enumeration value="OTHER_AGENCY"/>
- *     &lt;enumeration value="ADVERTISER"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ProposalCompanyAssociationType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PRIMARY_AGENCY"/&gt;
+ *     &lt;enumeration value="BILLING_AGENCY"/&gt;
+ *     &lt;enumeration value="BRANDING_AGENCY"/&gt;
+ *     &lt;enumeration value="OTHER_AGENCY"/&gt;
+ *     &lt;enumeration value="ADVERTISER"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

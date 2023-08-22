@@ -25,24 +25,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LineItemType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="SPONSORSHIP"/>
- *     &lt;enumeration value="STANDARD"/>
- *     &lt;enumeration value="NETWORK"/>
- *     &lt;enumeration value="BULK"/>
- *     &lt;enumeration value="PRICE_PRIORITY"/>
- *     &lt;enumeration value="HOUSE"/>
- *     &lt;enumeration value="LEGACY_DFP"/>
- *     &lt;enumeration value="CLICK_TRACKING"/>
- *     &lt;enumeration value="ADSENSE"/>
- *     &lt;enumeration value="AD_EXCHANGE"/>
- *     &lt;enumeration value="BUMPER"/>
- *     &lt;enumeration value="ADMOB"/>
- *     &lt;enumeration value="PREFERRED_DEAL"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LineItemType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SPONSORSHIP"/&gt;
+ *     &lt;enumeration value="STANDARD"/&gt;
+ *     &lt;enumeration value="NETWORK"/&gt;
+ *     &lt;enumeration value="BULK"/&gt;
+ *     &lt;enumeration value="PRICE_PRIORITY"/&gt;
+ *     &lt;enumeration value="HOUSE"/&gt;
+ *     &lt;enumeration value="LEGACY_DFP"/&gt;
+ *     &lt;enumeration value="CLICK_TRACKING"/&gt;
+ *     &lt;enumeration value="ADSENSE"/&gt;
+ *     &lt;enumeration value="AD_EXCHANGE"/&gt;
+ *     &lt;enumeration value="BUMPER"/&gt;
+ *     &lt;enumeration value="ADMOB"/&gt;
+ *     &lt;enumeration value="PREFERRED_DEAL"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="PoddingError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_PODDING_TYPE_NONE"/>
- *     &lt;enumeration value="INVALID_PODDING_TYPE_STANDARD"/>
- *     &lt;enumeration value="INVALID_OPTIMIZED_POD_WITHOUT_DURATION"/>
- *     &lt;enumeration value="INVALID_OPTIMIZED_POD_WITHOUT_ADS"/>
- *     &lt;enumeration value="INVALID_POD_DURATION_RANGE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="PoddingError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_PODDING_TYPE_NONE"/&gt;
+ *     &lt;enumeration value="INVALID_PODDING_TYPE_STANDARD"/&gt;
+ *     &lt;enumeration value="INVALID_OPTIMIZED_POD_WITHOUT_DURATION"/&gt;
+ *     &lt;enumeration value="INVALID_OPTIMIZED_POD_WITHOUT_ADS"/&gt;
+ *     &lt;enumeration value="INVALID_POD_DURATION_RANGE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

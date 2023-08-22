@@ -25,37 +25,37 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ReportError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DEFAULT"/>
- *     &lt;enumeration value="REPORT_ACCESS_NOT_ALLOWED"/>
- *     &lt;enumeration value="DIMENSION_VIEW_NOT_ALLOWED"/>
- *     &lt;enumeration value="ATTRIBUTE_VIEW_NOT_ALLOWED"/>
- *     &lt;enumeration value="COLUMN_VIEW_NOT_ALLOWED"/>
- *     &lt;enumeration value="TOO_MANY_CONCURRENT_REPORTS"/>
- *     &lt;enumeration value="REPORT_QUERY_TOO_LONG"/>
- *     &lt;enumeration value="INVALID_OPERATION_FOR_REPORT_STATE"/>
- *     &lt;enumeration value="INVALID_DIMENSIONS"/>
- *     &lt;enumeration value="INVALID_ATTRIBUTES"/>
- *     &lt;enumeration value="INVALID_CMS_METADATA_DIMENSIONS"/>
- *     &lt;enumeration value="INVALID_COLUMNS"/>
- *     &lt;enumeration value="INVALID_DIMENSION_FILTERS"/>
- *     &lt;enumeration value="INVALID_DATE"/>
- *     &lt;enumeration value="END_DATE_TIME_NOT_AFTER_START_TIME"/>
- *     &lt;enumeration value="START_DATE_MORE_THAN_THREE_YEARS_AGO"/>
- *     &lt;enumeration value="NOT_NULL"/>
- *     &lt;enumeration value="ATTRIBUTES_NOT_SUPPORTED_FOR_REQUEST"/>
- *     &lt;enumeration value="COLUMNS_NOT_SUPPORTED_FOR_REQUESTED_DIMENSIONS"/>
- *     &lt;enumeration value="DATE_RANGE_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/>
- *     &lt;enumeration value="TIME_ZONE_TYPE_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/>
- *     &lt;enumeration value="CURRENCY_CODE_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/>
- *     &lt;enumeration value="FAILED_TO_STORE_REPORT"/>
- *     &lt;enumeration value="REPORT_NOT_FOUND"/>
- *     &lt;enumeration value="SR_CANNOT_RUN_REPORT_IN_ANOTHER_NETWORK"/>
- *     &lt;enumeration value="AD_UNIT_VIEW_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ReportError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DEFAULT"/&gt;
+ *     &lt;enumeration value="REPORT_ACCESS_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="DIMENSION_VIEW_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="ATTRIBUTE_VIEW_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="COLUMN_VIEW_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="TOO_MANY_CONCURRENT_REPORTS"/&gt;
+ *     &lt;enumeration value="REPORT_QUERY_TOO_LONG"/&gt;
+ *     &lt;enumeration value="INVALID_OPERATION_FOR_REPORT_STATE"/&gt;
+ *     &lt;enumeration value="INVALID_DIMENSIONS"/&gt;
+ *     &lt;enumeration value="INVALID_ATTRIBUTES"/&gt;
+ *     &lt;enumeration value="INVALID_CMS_METADATA_DIMENSIONS"/&gt;
+ *     &lt;enumeration value="INVALID_COLUMNS"/&gt;
+ *     &lt;enumeration value="INVALID_DIMENSION_FILTERS"/&gt;
+ *     &lt;enumeration value="INVALID_DATE"/&gt;
+ *     &lt;enumeration value="END_DATE_TIME_NOT_AFTER_START_TIME"/&gt;
+ *     &lt;enumeration value="START_DATE_MORE_THAN_THREE_YEARS_AGO"/&gt;
+ *     &lt;enumeration value="NOT_NULL"/&gt;
+ *     &lt;enumeration value="ATTRIBUTES_NOT_SUPPORTED_FOR_REQUEST"/&gt;
+ *     &lt;enumeration value="COLUMNS_NOT_SUPPORTED_FOR_REQUESTED_DIMENSIONS"/&gt;
+ *     &lt;enumeration value="DATE_RANGE_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/&gt;
+ *     &lt;enumeration value="TIME_ZONE_TYPE_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/&gt;
+ *     &lt;enumeration value="CURRENCY_CODE_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/&gt;
+ *     &lt;enumeration value="FAILED_TO_STORE_REPORT"/&gt;
+ *     &lt;enumeration value="REPORT_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="SR_CANNOT_RUN_REPORT_IN_ANOTHER_NETWORK"/&gt;
+ *     &lt;enumeration value="AD_UNIT_VIEW_NOT_SUPPORTED_FOR_REQUESTED_REPORT"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

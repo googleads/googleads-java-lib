@@ -25,27 +25,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="HtmlBundleProcessorError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CANNOT_EXTRACT_FILES_FROM_BUNDLE"/>
- *     &lt;enumeration value="CLICK_TAG_HARD_CODED"/>
- *     &lt;enumeration value="CLICK_TAG_IN_GWD_UNUPPORTED"/>
- *     &lt;enumeration value="CLICK_TAG_NOT_IN_PRIMARY_HTML"/>
- *     &lt;enumeration value="CLICK_TAG_INVALID"/>
- *     &lt;enumeration value="FILE_SIZE_TOO_LARGE"/>
- *     &lt;enumeration value="FILES_TOO_MANY"/>
- *     &lt;enumeration value="FLASH_UNSUPPORTED"/>
- *     &lt;enumeration value="GWD_COMPONENTS_UNSUPPORTED"/>
- *     &lt;enumeration value="GWD_ENABLER_METHODS_UNSUPPORTED"/>
- *     &lt;enumeration value="GWD_PROPERTIES_INVALID"/>
- *     &lt;enumeration value="LINKED_FILES_NOT_FOUND"/>
- *     &lt;enumeration value="PRIMARY_HTML_MISSING"/>
- *     &lt;enumeration value="PRIMARY_HTML_UNDETERMINED"/>
- *     &lt;enumeration value="SVG_BLOCK_INVALID"/>
- *     &lt;enumeration value="CANNOT_DECODE_BUNDLE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="HtmlBundleProcessorError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CANNOT_EXTRACT_FILES_FROM_BUNDLE"/&gt;
+ *     &lt;enumeration value="CLICK_TAG_HARD_CODED"/&gt;
+ *     &lt;enumeration value="CLICK_TAG_IN_GWD_UNUPPORTED"/&gt;
+ *     &lt;enumeration value="CLICK_TAG_NOT_IN_PRIMARY_HTML"/&gt;
+ *     &lt;enumeration value="CLICK_TAG_INVALID"/&gt;
+ *     &lt;enumeration value="FILE_SIZE_TOO_LARGE"/&gt;
+ *     &lt;enumeration value="FILES_TOO_MANY"/&gt;
+ *     &lt;enumeration value="FLASH_UNSUPPORTED"/&gt;
+ *     &lt;enumeration value="GWD_COMPONENTS_UNSUPPORTED"/&gt;
+ *     &lt;enumeration value="GWD_ENABLER_METHODS_UNSUPPORTED"/&gt;
+ *     &lt;enumeration value="GWD_PROPERTIES_INVALID"/&gt;
+ *     &lt;enumeration value="LINKED_FILES_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="PRIMARY_HTML_MISSING"/&gt;
+ *     &lt;enumeration value="PRIMARY_HTML_UNDETERMINED"/&gt;
+ *     &lt;enumeration value="SVG_BLOCK_INVALID"/&gt;
+ *     &lt;enumeration value="CANNOT_DECODE_BUNDLE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="UnitType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="IMPRESSIONS"/>
- *     &lt;enumeration value="CLICKS"/>
- *     &lt;enumeration value="CLICK_THROUGH_CPA_CONVERSIONS"/>
- *     &lt;enumeration value="VIEW_THROUGH_CPA_CONVERSIONS"/>
- *     &lt;enumeration value="TOTAL_CPA_CONVERSIONS"/>
- *     &lt;enumeration value="VIEWABLE_IMPRESSIONS"/>
- *     &lt;enumeration value="IN_TARGET_IMPRESSIONS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="UnitType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="IMPRESSIONS"/&gt;
+ *     &lt;enumeration value="CLICKS"/&gt;
+ *     &lt;enumeration value="CLICK_THROUGH_CPA_CONVERSIONS"/&gt;
+ *     &lt;enumeration value="VIEW_THROUGH_CPA_CONVERSIONS"/&gt;
+ *     &lt;enumeration value="TOTAL_CPA_CONVERSIONS"/&gt;
+ *     &lt;enumeration value="VIEWABLE_IMPRESSIONS"/&gt;
+ *     &lt;enumeration value="IN_TARGET_IMPRESSIONS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

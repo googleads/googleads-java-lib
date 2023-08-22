@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DaiIngestStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="SUCCESS"/>
- *     &lt;enumeration value="WARNING"/>
- *     &lt;enumeration value="INGESTED"/>
- *     &lt;enumeration value="INGESTED_WITH_WARNINGS"/>
- *     &lt;enumeration value="CONDITIONED"/>
- *     &lt;enumeration value="CONDITIONED_WITH_WARNINGS"/>
- *     &lt;enumeration value="FAILURE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DaiIngestStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SUCCESS"/&gt;
+ *     &lt;enumeration value="WARNING"/&gt;
+ *     &lt;enumeration value="INGESTED"/&gt;
+ *     &lt;enumeration value="INGESTED_WITH_WARNINGS"/&gt;
+ *     &lt;enumeration value="CONDITIONED"/&gt;
+ *     &lt;enumeration value="CONDITIONED_WITH_WARNINGS"/&gt;
+ *     &lt;enumeration value="FAILURE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

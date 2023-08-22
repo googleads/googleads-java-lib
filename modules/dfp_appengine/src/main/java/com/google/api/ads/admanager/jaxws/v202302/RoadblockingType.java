@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RoadblockingType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ONLY_ONE"/>
- *     &lt;enumeration value="ONE_OR_MORE"/>
- *     &lt;enumeration value="AS_MANY_AS_POSSIBLE"/>
- *     &lt;enumeration value="ALL_ROADBLOCK"/>
- *     &lt;enumeration value="CREATIVE_SET"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RoadblockingType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ONLY_ONE"/&gt;
+ *     &lt;enumeration value="ONE_OR_MORE"/&gt;
+ *     &lt;enumeration value="AS_MANY_AS_POSSIBLE"/&gt;
+ *     &lt;enumeration value="ALL_ROADBLOCK"/&gt;
+ *     &lt;enumeration value="CREATIVE_SET"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

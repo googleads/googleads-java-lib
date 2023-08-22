@@ -25,19 +25,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ForecastError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="SERVER_NOT_AVAILABLE"/>
- *     &lt;enumeration value="INTERNAL_ERROR"/>
- *     &lt;enumeration value="NO_FORECAST_YET"/>
- *     &lt;enumeration value="NOT_ENOUGH_INVENTORY"/>
- *     &lt;enumeration value="SUCCESS"/>
- *     &lt;enumeration value="ZERO_LENGTH_RESERVATION"/>
- *     &lt;enumeration value="EXCEEDED_QUOTA"/>
- *     &lt;enumeration value="OUTSIDE_AVAILABLE_DATE_RANGE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ForecastError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SERVER_NOT_AVAILABLE"/&gt;
+ *     &lt;enumeration value="INTERNAL_ERROR"/&gt;
+ *     &lt;enumeration value="NO_FORECAST_YET"/&gt;
+ *     &lt;enumeration value="NOT_ENOUGH_INVENTORY"/&gt;
+ *     &lt;enumeration value="SUCCESS"/&gt;
+ *     &lt;enumeration value="ZERO_LENGTH_RESERVATION"/&gt;
+ *     &lt;enumeration value="EXCEEDED_QUOTA"/&gt;
+ *     &lt;enumeration value="OUTSIDE_AVAILABLE_DATE_RANGE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

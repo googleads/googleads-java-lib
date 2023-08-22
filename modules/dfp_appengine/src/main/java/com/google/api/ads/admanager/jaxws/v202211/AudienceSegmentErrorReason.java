@@ -25,31 +25,31 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AudienceSegmentError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="FIRST_PARTY_AUDIENCE_SEGMENT_NOT_SUPPORTED"/>
- *     &lt;enumeration value="ONLY_RULE_BASED_FIRST_PARTY_AUDIENCE_SEGMENTS_CAN_BE_CREATED"/>
- *     &lt;enumeration value="AUDIENCE_SEGMENT_ID_NOT_FOUND"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_RULE"/>
- *     &lt;enumeration value="AUDIENCE_SEGMENT_RULE_TOO_LONG"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_NAME"/>
- *     &lt;enumeration value="DUPLICATE_AUDIENCE_SEGMENT_NAME"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_DESCRIPTION"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_PAGEVIEWS"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_RECENCY"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_MEMBERSHIP_EXPIRATION"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_CUSTOM_KEY_NAME"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_CUSTOM_VALUE_NAME"/>
- *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_CUSTOM_VALUE_MATCH_TYPE"/>
- *     &lt;enumeration value="INVALID_NESTED_FIRST_PARTY_AUDIENCE_SEGMENT"/>
- *     &lt;enumeration value="SHARED_SELLING_PARTNER_ROOT_CANNOT_BE_INCLUDED"/>
- *     &lt;enumeration value="INVALID_NESTED_THIRD_PARTY_AUDIENCE_SEGMENT"/>
- *     &lt;enumeration value="INACTIVE_NESTED_AUDIENCE_SEGMENT"/>
- *     &lt;enumeration value="AUDIENCE_SEGMENT_GLOBAL_LICENSE_ERROR"/>
- *     &lt;enumeration value="SEGMENT_VIOLATED_POLICY"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AudienceSegmentError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FIRST_PARTY_AUDIENCE_SEGMENT_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="ONLY_RULE_BASED_FIRST_PARTY_AUDIENCE_SEGMENTS_CAN_BE_CREATED"/&gt;
+ *     &lt;enumeration value="AUDIENCE_SEGMENT_ID_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_RULE"/&gt;
+ *     &lt;enumeration value="AUDIENCE_SEGMENT_RULE_TOO_LONG"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_NAME"/&gt;
+ *     &lt;enumeration value="DUPLICATE_AUDIENCE_SEGMENT_NAME"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_DESCRIPTION"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_PAGEVIEWS"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_RECENCY"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_MEMBERSHIP_EXPIRATION"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_CUSTOM_KEY_NAME"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_CUSTOM_VALUE_NAME"/&gt;
+ *     &lt;enumeration value="INVALID_AUDIENCE_SEGMENT_CUSTOM_VALUE_MATCH_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_NESTED_FIRST_PARTY_AUDIENCE_SEGMENT"/&gt;
+ *     &lt;enumeration value="SHARED_SELLING_PARTNER_ROOT_CANNOT_BE_INCLUDED"/&gt;
+ *     &lt;enumeration value="INVALID_NESTED_THIRD_PARTY_AUDIENCE_SEGMENT"/&gt;
+ *     &lt;enumeration value="INACTIVE_NESTED_AUDIENCE_SEGMENT"/&gt;
+ *     &lt;enumeration value="AUDIENCE_SEGMENT_GLOBAL_LICENSE_ERROR"/&gt;
+ *     &lt;enumeration value="SEGMENT_VIOLATED_POLICY"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

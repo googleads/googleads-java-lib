@@ -25,37 +25,37 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ImageError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_IMAGE"/>
- *     &lt;enumeration value="INVALID_SIZE"/>
- *     &lt;enumeration value="UNEXPECTED_SIZE"/>
- *     &lt;enumeration value="OVERLAY_SIZE_TOO_LARGE"/>
- *     &lt;enumeration value="ANIMATED_NOT_ALLOWED"/>
- *     &lt;enumeration value="ANIMATION_TOO_LONG"/>
- *     &lt;enumeration value="CMYK_JPEG_NOT_ALLOWED"/>
- *     &lt;enumeration value="FLASH_NOT_ALLOWED"/>
- *     &lt;enumeration value="FLASH_WITHOUT_CLICKTAG"/>
- *     &lt;enumeration value="ANIMATED_VISUAL_EFFECT"/>
- *     &lt;enumeration value="FLASH_ERROR"/>
- *     &lt;enumeration value="LAYOUT_PROBLEM"/>
- *     &lt;enumeration value="FLASH_HAS_NETWORK_OBJECTS"/>
- *     &lt;enumeration value="FLASH_HAS_NETWORK_METHODS"/>
- *     &lt;enumeration value="FLASH_HAS_URL"/>
- *     &lt;enumeration value="FLASH_HAS_MOUSE_TRACKING"/>
- *     &lt;enumeration value="FLASH_HAS_RANDOM_NUM"/>
- *     &lt;enumeration value="FLASH_SELF_TARGETS"/>
- *     &lt;enumeration value="FLASH_BAD_GETURL_TARGET"/>
- *     &lt;enumeration value="FLASH_VERSION_NOT_SUPPORTED"/>
- *     &lt;enumeration value="FILE_TOO_LARGE"/>
- *     &lt;enumeration value="SYSTEM_ERROR"/>
- *     &lt;enumeration value="UNEXPECTED_PRIMARY_ASSET_DENSITY"/>
- *     &lt;enumeration value="DUPLICATE_ASSET_DENSITY"/>
- *     &lt;enumeration value="MISSING_DEFAULT_ASSET"/>
- *     &lt;enumeration value="PREVERIFIED_MIMETYPE_NOT_ALLOWED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ImageError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_IMAGE"/&gt;
+ *     &lt;enumeration value="INVALID_SIZE"/&gt;
+ *     &lt;enumeration value="UNEXPECTED_SIZE"/&gt;
+ *     &lt;enumeration value="OVERLAY_SIZE_TOO_LARGE"/&gt;
+ *     &lt;enumeration value="ANIMATED_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="ANIMATION_TOO_LONG"/&gt;
+ *     &lt;enumeration value="CMYK_JPEG_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="FLASH_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="FLASH_WITHOUT_CLICKTAG"/&gt;
+ *     &lt;enumeration value="ANIMATED_VISUAL_EFFECT"/&gt;
+ *     &lt;enumeration value="FLASH_ERROR"/&gt;
+ *     &lt;enumeration value="LAYOUT_PROBLEM"/&gt;
+ *     &lt;enumeration value="FLASH_HAS_NETWORK_OBJECTS"/&gt;
+ *     &lt;enumeration value="FLASH_HAS_NETWORK_METHODS"/&gt;
+ *     &lt;enumeration value="FLASH_HAS_URL"/&gt;
+ *     &lt;enumeration value="FLASH_HAS_MOUSE_TRACKING"/&gt;
+ *     &lt;enumeration value="FLASH_HAS_RANDOM_NUM"/&gt;
+ *     &lt;enumeration value="FLASH_SELF_TARGETS"/&gt;
+ *     &lt;enumeration value="FLASH_BAD_GETURL_TARGET"/&gt;
+ *     &lt;enumeration value="FLASH_VERSION_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="FILE_TOO_LARGE"/&gt;
+ *     &lt;enumeration value="SYSTEM_ERROR"/&gt;
+ *     &lt;enumeration value="UNEXPECTED_PRIMARY_ASSET_DENSITY"/&gt;
+ *     &lt;enumeration value="DUPLICATE_ASSET_DENSITY"/&gt;
+ *     &lt;enumeration value="MISSING_DEFAULT_ASSET"/&gt;
+ *     &lt;enumeration value="PREVERIFIED_MIMETYPE_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

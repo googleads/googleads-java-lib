@@ -25,37 +25,37 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ConversionEvent">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="CREATIVE_VIEW"/>
- *     &lt;enumeration value="START"/>
- *     &lt;enumeration value="SKIP_SHOWN"/>
- *     &lt;enumeration value="FIRST_QUARTILE"/>
- *     &lt;enumeration value="MIDPOINT"/>
- *     &lt;enumeration value="THIRD_QUARTILE"/>
- *     &lt;enumeration value="ENGAGED_VIEW"/>
- *     &lt;enumeration value="COMPLETE"/>
- *     &lt;enumeration value="MUTE"/>
- *     &lt;enumeration value="UNMUTE"/>
- *     &lt;enumeration value="PAUSE"/>
- *     &lt;enumeration value="REWIND"/>
- *     &lt;enumeration value="RESUME"/>
- *     &lt;enumeration value="SKIPPED"/>
- *     &lt;enumeration value="FULLSCREEN"/>
- *     &lt;enumeration value="EXPAND"/>
- *     &lt;enumeration value="COLLAPSE"/>
- *     &lt;enumeration value="ACCEPT_INVITATION"/>
- *     &lt;enumeration value="CLOSE"/>
- *     &lt;enumeration value="CLICK_TRACKING"/>
- *     &lt;enumeration value="SURVEY"/>
- *     &lt;enumeration value="CUSTOM_CLICK"/>
- *     &lt;enumeration value="MEASURABLE_IMPRESSION"/>
- *     &lt;enumeration value="VIEWABLE_IMPRESSION"/>
- *     &lt;enumeration value="VIDEO_ABANDON"/>
- *     &lt;enumeration value="FULLY_VIEWABLE_AUDIBLE_HALF_DURATION_IMPRESSION"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ConversionEvent"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="CREATIVE_VIEW"/&gt;
+ *     &lt;enumeration value="START"/&gt;
+ *     &lt;enumeration value="SKIP_SHOWN"/&gt;
+ *     &lt;enumeration value="FIRST_QUARTILE"/&gt;
+ *     &lt;enumeration value="MIDPOINT"/&gt;
+ *     &lt;enumeration value="THIRD_QUARTILE"/&gt;
+ *     &lt;enumeration value="ENGAGED_VIEW"/&gt;
+ *     &lt;enumeration value="COMPLETE"/&gt;
+ *     &lt;enumeration value="MUTE"/&gt;
+ *     &lt;enumeration value="UNMUTE"/&gt;
+ *     &lt;enumeration value="PAUSE"/&gt;
+ *     &lt;enumeration value="REWIND"/&gt;
+ *     &lt;enumeration value="RESUME"/&gt;
+ *     &lt;enumeration value="SKIPPED"/&gt;
+ *     &lt;enumeration value="FULLSCREEN"/&gt;
+ *     &lt;enumeration value="EXPAND"/&gt;
+ *     &lt;enumeration value="COLLAPSE"/&gt;
+ *     &lt;enumeration value="ACCEPT_INVITATION"/&gt;
+ *     &lt;enumeration value="CLOSE"/&gt;
+ *     &lt;enumeration value="CLICK_TRACKING"/&gt;
+ *     &lt;enumeration value="SURVEY"/&gt;
+ *     &lt;enumeration value="CUSTOM_CLICK"/&gt;
+ *     &lt;enumeration value="MEASURABLE_IMPRESSION"/&gt;
+ *     &lt;enumeration value="VIEWABLE_IMPRESSION"/&gt;
+ *     &lt;enumeration value="VIDEO_ABANDON"/&gt;
+ *     &lt;enumeration value="FULLY_VIEWABLE_AUDIBLE_HALF_DURATION_IMPRESSION"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

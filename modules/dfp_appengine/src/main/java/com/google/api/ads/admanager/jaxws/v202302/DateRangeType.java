@@ -25,25 +25,25 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DateRangeType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TODAY"/>
- *     &lt;enumeration value="YESTERDAY"/>
- *     &lt;enumeration value="LAST_WEEK"/>
- *     &lt;enumeration value="LAST_MONTH"/>
- *     &lt;enumeration value="LAST_3_MONTHS"/>
- *     &lt;enumeration value="REACH_LIFETIME"/>
- *     &lt;enumeration value="CUSTOM_DATE"/>
- *     &lt;enumeration value="NEXT_DAY"/>
- *     &lt;enumeration value="NEXT_90_DAYS"/>
- *     &lt;enumeration value="NEXT_WEEK"/>
- *     &lt;enumeration value="NEXT_MONTH"/>
- *     &lt;enumeration value="CURRENT_AND_NEXT_MONTH"/>
- *     &lt;enumeration value="NEXT_QUARTER"/>
- *     &lt;enumeration value="NEXT_3_MONTHS"/>
- *     &lt;enumeration value="NEXT_12_MONTHS"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DateRangeType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TODAY"/&gt;
+ *     &lt;enumeration value="YESTERDAY"/&gt;
+ *     &lt;enumeration value="LAST_WEEK"/&gt;
+ *     &lt;enumeration value="LAST_MONTH"/&gt;
+ *     &lt;enumeration value="LAST_3_MONTHS"/&gt;
+ *     &lt;enumeration value="REACH_LIFETIME"/&gt;
+ *     &lt;enumeration value="CUSTOM_DATE"/&gt;
+ *     &lt;enumeration value="NEXT_DAY"/&gt;
+ *     &lt;enumeration value="NEXT_90_DAYS"/&gt;
+ *     &lt;enumeration value="NEXT_WEEK"/&gt;
+ *     &lt;enumeration value="NEXT_MONTH"/&gt;
+ *     &lt;enumeration value="CURRENT_AND_NEXT_MONTH"/&gt;
+ *     &lt;enumeration value="NEXT_QUARTER"/&gt;
+ *     &lt;enumeration value="NEXT_3_MONTHS"/&gt;
+ *     &lt;enumeration value="NEXT_12_MONTHS"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

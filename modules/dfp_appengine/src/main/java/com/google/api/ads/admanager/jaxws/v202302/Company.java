@@ -34,32 +34,32 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Company">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="type" type="{https://www.google.com/apis/ads/publisher/v202302}Company.Type" minOccurs="0"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="faxPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="primaryPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="comment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="creditStatus" type="{https://www.google.com/apis/ads/publisher/v202302}Company.CreditStatus" minOccurs="0"/>
- *         &lt;element name="settings" type="{https://www.google.com/apis/ads/publisher/v202302}CompanySettings" minOccurs="0"/>
- *         &lt;element name="appliedLabels" type="{https://www.google.com/apis/ads/publisher/v202302}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="primaryContactId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="appliedTeamIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="thirdPartyCompanyId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/>
- *         &lt;element name="childPublisher" type="{https://www.google.com/apis/ads/publisher/v202302}ChildPublisher" minOccurs="0"/>
- *         &lt;element name="viewabilityProvider" type="{https://www.google.com/apis/ads/publisher/v202302}ViewabilityProvider" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Company"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="type" type="{https://www.google.com/apis/ads/publisher/v202302}Company.Type" minOccurs="0"/&gt;
+ *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="faxPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="primaryPhone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="externalId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="comment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="creditStatus" type="{https://www.google.com/apis/ads/publisher/v202302}Company.CreditStatus" minOccurs="0"/&gt;
+ *         &lt;element name="settings" type="{https://www.google.com/apis/ads/publisher/v202302}CompanySettings" minOccurs="0"/&gt;
+ *         &lt;element name="appliedLabels" type="{https://www.google.com/apis/ads/publisher/v202302}AppliedLabel" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="primaryContactId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="appliedTeamIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="thirdPartyCompanyId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="childPublisher" type="{https://www.google.com/apis/ads/publisher/v202302}ChildPublisher" minOccurs="0"/&gt;
+ *         &lt;element name="viewabilityProvider" type="{https://www.google.com/apis/ads/publisher/v202302}ViewabilityProvider" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

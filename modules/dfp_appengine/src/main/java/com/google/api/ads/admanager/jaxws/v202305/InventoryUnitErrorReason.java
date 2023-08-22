@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="InventoryUnitError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="EXPLICIT_TARGETING_NOT_ALLOWED"/>
- *     &lt;enumeration value="TARGET_PLATFORM_NOT_APPLICABLE"/>
- *     &lt;enumeration value="ADSENSE_CANNOT_BE_ENABLED"/>
- *     &lt;enumeration value="ROOT_UNIT_CANNOT_BE_DEACTIVATED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="InventoryUnitError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EXPLICIT_TARGETING_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="TARGET_PLATFORM_NOT_APPLICABLE"/&gt;
+ *     &lt;enumeration value="ADSENSE_CANNOT_BE_ENABLED"/&gt;
+ *     &lt;enumeration value="ROOT_UNIT_CANNOT_BE_DEACTIVATED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

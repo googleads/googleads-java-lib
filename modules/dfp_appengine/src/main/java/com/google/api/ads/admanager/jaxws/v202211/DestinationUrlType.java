@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DestinationUrlType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="CLICK_TO_WEB"/>
- *     &lt;enumeration value="CLICK_TO_APP"/>
- *     &lt;enumeration value="CLICK_TO_CALL"/>
- *     &lt;enumeration value="NONE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DestinationUrlType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="CLICK_TO_WEB"/&gt;
+ *     &lt;enumeration value="CLICK_TO_APP"/&gt;
+ *     &lt;enumeration value="CLICK_TO_CALL"/&gt;
+ *     &lt;enumeration value="NONE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

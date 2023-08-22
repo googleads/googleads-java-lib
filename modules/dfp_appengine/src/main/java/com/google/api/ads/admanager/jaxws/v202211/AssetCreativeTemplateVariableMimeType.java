@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AssetCreativeTemplateVariable.MimeType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="JPG"/>
- *     &lt;enumeration value="PNG"/>
- *     &lt;enumeration value="GIF"/>
- *     &lt;enumeration value="SWF"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AssetCreativeTemplateVariable.MimeType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="JPG"/&gt;
+ *     &lt;enumeration value="PNG"/&gt;
+ *     &lt;enumeration value="GIF"/&gt;
+ *     &lt;enumeration value="SWF"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

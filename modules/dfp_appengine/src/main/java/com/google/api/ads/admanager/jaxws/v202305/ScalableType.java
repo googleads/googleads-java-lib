@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ScalableType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="NOT_SCALABLE"/>
- *     &lt;enumeration value="RATIO_SCALABLE"/>
- *     &lt;enumeration value="STRETCH_SCALABLE"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ScalableType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="NOT_SCALABLE"/&gt;
+ *     &lt;enumeration value="RATIO_SCALABLE"/&gt;
+ *     &lt;enumeration value="STRETCH_SCALABLE"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

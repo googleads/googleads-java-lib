@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="InventoryUnitSizesError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_SIZES"/>
- *     &lt;enumeration value="INVALID_SIZE_FOR_PLATFORM"/>
- *     &lt;enumeration value="VIDEO_FEATURE_MISSING"/>
- *     &lt;enumeration value="VIDEO_MOBILE_LINE_ITEM_FEATURE_MISSING"/>
- *     &lt;enumeration value="INVALID_SIZE_FOR_MASTER"/>
- *     &lt;enumeration value="INVALID_SIZE_FOR_COMPANION"/>
- *     &lt;enumeration value="DUPLICATE_MASTER_SIZES"/>
- *     &lt;enumeration value="ASPECT_RATIO_NOT_SUPPORTED"/>
- *     &lt;enumeration value="VIDEO_COMPANIONS_NOT_SUPPORTED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="InventoryUnitSizesError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_SIZES"/&gt;
+ *     &lt;enumeration value="INVALID_SIZE_FOR_PLATFORM"/&gt;
+ *     &lt;enumeration value="VIDEO_FEATURE_MISSING"/&gt;
+ *     &lt;enumeration value="VIDEO_MOBILE_LINE_ITEM_FEATURE_MISSING"/&gt;
+ *     &lt;enumeration value="INVALID_SIZE_FOR_MASTER"/&gt;
+ *     &lt;enumeration value="INVALID_SIZE_FOR_COMPANION"/&gt;
+ *     &lt;enumeration value="DUPLICATE_MASTER_SIZES"/&gt;
+ *     &lt;enumeration value="ASPECT_RATIO_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="VIDEO_COMPANIONS_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

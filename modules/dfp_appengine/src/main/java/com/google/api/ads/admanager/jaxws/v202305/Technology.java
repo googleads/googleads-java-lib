@@ -31,16 +31,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Technology">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Technology"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -51,17 +51,17 @@ import javax.xml.bind.annotation.XmlType;
     "name"
 })
 @XmlSeeAlso({
-    OperatingSystem.class,
+    BandwidthGroup.class,
+    Browser.class,
     BrowserLanguage.class,
+    DeviceCapability.class,
     DeviceCategory.class,
+    DeviceManufacturer.class,
     MobileCarrier.class,
     MobileDevice.class,
-    BandwidthGroup.class,
-    DeviceManufacturer.class,
-    OperatingSystemVersion.class,
-    DeviceCapability.class,
-    Browser.class,
-    MobileDeviceSubmodel.class
+    MobileDeviceSubmodel.class,
+    OperatingSystem.class,
+    OperatingSystemVersion.class
 })
 public class Technology {
 

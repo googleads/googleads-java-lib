@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="PreferredDealError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_PRIORITY"/>
- *     &lt;enumeration value="INVALID_RATE_TYPE"/>
- *     &lt;enumeration value="INVALID_FREQUENCY_CAPS"/>
- *     &lt;enumeration value="INVALID_ROADBLOCKING_TYPE"/>
- *     &lt;enumeration value="INVALID_DELIVERY_RATE_TYPE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="PreferredDealError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_PRIORITY"/&gt;
+ *     &lt;enumeration value="INVALID_RATE_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_FREQUENCY_CAPS"/&gt;
+ *     &lt;enumeration value="INVALID_ROADBLOCKING_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_DELIVERY_RATE_TYPE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

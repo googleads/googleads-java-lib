@@ -25,21 +25,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="OrderError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UPDATE_CANCELED_ORDER_NOT_ALLOWED"/>
- *     &lt;enumeration value="UPDATE_PENDING_APPROVAL_ORDER_NOT_ALLOWED"/>
- *     &lt;enumeration value="UPDATE_ARCHIVED_ORDER_NOT_ALLOWED"/>
- *     &lt;enumeration value="CANNOT_MODIFY_PROPOSAL_ID"/>
- *     &lt;enumeration value="PRIMARY_USER_REQUIRED"/>
- *     &lt;enumeration value="PRIMARY_USER_CANNOT_BE_SECONDARY"/>
- *     &lt;enumeration value="ORDER_TEAM_NOT_ASSOCIATED_WITH_ADVERTISER"/>
- *     &lt;enumeration value="USER_NOT_ON_ORDERS_TEAMS"/>
- *     &lt;enumeration value="AGENCY_NOT_ON_ORDERS_TEAMS"/>
- *     &lt;enumeration value="INVALID_FIELDS_SET_FOR_NON_PROGRAMMATIC_ORDER"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="OrderError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UPDATE_CANCELED_ORDER_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UPDATE_PENDING_APPROVAL_ORDER_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UPDATE_ARCHIVED_ORDER_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="CANNOT_MODIFY_PROPOSAL_ID"/&gt;
+ *     &lt;enumeration value="PRIMARY_USER_REQUIRED"/&gt;
+ *     &lt;enumeration value="PRIMARY_USER_CANNOT_BE_SECONDARY"/&gt;
+ *     &lt;enumeration value="ORDER_TEAM_NOT_ASSOCIATED_WITH_ADVERTISER"/&gt;
+ *     &lt;enumeration value="USER_NOT_ON_ORDERS_TEAMS"/&gt;
+ *     &lt;enumeration value="AGENCY_NOT_ON_ORDERS_TEAMS"/&gt;
+ *     &lt;enumeration value="INVALID_FIELDS_SET_FOR_NON_PROGRAMMATIC_ORDER"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

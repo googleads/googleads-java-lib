@@ -32,19 +32,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ThirdPartyAudienceSegment">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202305}AudienceSegment">
- *       &lt;sequence>
- *         &lt;element name="approvalStatus" type="{https://www.google.com/apis/ads/publisher/v202305}AudienceSegmentApprovalStatus" minOccurs="0"/>
- *         &lt;element name="cost" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/>
- *         &lt;element name="licenseType" type="{https://www.google.com/apis/ads/publisher/v202305}LicenseType" minOccurs="0"/>
- *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/>
- *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="ThirdPartyAudienceSegment"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202305}AudienceSegment"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="approvalStatus" type="{https://www.google.com/apis/ads/publisher/v202305}AudienceSegmentApprovalStatus" minOccurs="0"/&gt;
+ *         &lt;element name="cost" type="{https://www.google.com/apis/ads/publisher/v202305}Money" minOccurs="0"/&gt;
+ *         &lt;element name="licenseType" type="{https://www.google.com/apis/ads/publisher/v202305}LicenseType" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202305}DateTime" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

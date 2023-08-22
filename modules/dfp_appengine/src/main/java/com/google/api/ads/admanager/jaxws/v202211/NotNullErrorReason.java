@@ -26,15 +26,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="NotNullError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ARG1_NULL"/>
- *     &lt;enumeration value="ARG2_NULL"/>
- *     &lt;enumeration value="ARG3_NULL"/>
- *     &lt;enumeration value="NULL"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="NotNullError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ARG1_NULL"/&gt;
+ *     &lt;enumeration value="ARG2_NULL"/&gt;
+ *     &lt;enumeration value="ARG3_NULL"/&gt;
+ *     &lt;enumeration value="NULL"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

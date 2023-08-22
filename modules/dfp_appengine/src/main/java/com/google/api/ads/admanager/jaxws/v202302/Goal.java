@@ -31,17 +31,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Goal">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="goalType" type="{https://www.google.com/apis/ads/publisher/v202302}GoalType" minOccurs="0"/>
- *         &lt;element name="unitType" type="{https://www.google.com/apis/ads/publisher/v202302}UnitType" minOccurs="0"/>
- *         &lt;element name="units" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="Goal"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="goalType" type="{https://www.google.com/apis/ads/publisher/v202302}GoalType" minOccurs="0"/&gt;
+ *         &lt;element name="unitType" type="{https://www.google.com/apis/ads/publisher/v202302}UnitType" minOccurs="0"/&gt;
+ *         &lt;element name="units" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DelegationStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="APPROVED"/>
- *     &lt;enumeration value="PENDING"/>
- *     &lt;enumeration value="REJECTED"/>
- *     &lt;enumeration value="WITHDRAWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DelegationStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="APPROVED"/&gt;
+ *     &lt;enumeration value="PENDING"/&gt;
+ *     &lt;enumeration value="REJECTED"/&gt;
+ *     &lt;enumeration value="WITHDRAWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

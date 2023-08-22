@@ -34,23 +34,23 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="BaseAdRuleSlot">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="slotBehavior" type="{https://www.google.com/apis/ads/publisher/v202305}AdRuleSlotBehavior" minOccurs="0"/>
- *         &lt;element name="maxVideoAdDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="videoMidrollFrequencyType" type="{https://www.google.com/apis/ads/publisher/v202305}MidrollFrequencyType" minOccurs="0"/>
- *         &lt;element name="videoMidrollFrequency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="bumper" type="{https://www.google.com/apis/ads/publisher/v202305}AdRuleSlotBumper" minOccurs="0"/>
- *         &lt;element name="maxBumperDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="maxPodDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="maxAdsInPod" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="breakTemplateId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="BaseAdRuleSlot"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="slotBehavior" type="{https://www.google.com/apis/ads/publisher/v202305}AdRuleSlotBehavior" minOccurs="0"/&gt;
+ *         &lt;element name="maxVideoAdDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="videoMidrollFrequencyType" type="{https://www.google.com/apis/ads/publisher/v202305}MidrollFrequencyType" minOccurs="0"/&gt;
+ *         &lt;element name="videoMidrollFrequency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="bumper" type="{https://www.google.com/apis/ads/publisher/v202305}AdRuleSlotBumper" minOccurs="0"/&gt;
+ *         &lt;element name="maxBumperDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="maxPodDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="maxAdsInPod" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="breakTemplateId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -69,9 +69,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlSeeAlso({
     NoPoddingAdRuleSlot.class,
+    OptimizedPoddingAdRuleSlot.class,
     StandardPoddingAdRuleSlot.class,
-    UnknownAdRuleSlot.class,
-    OptimizedPoddingAdRuleSlot.class
+    UnknownAdRuleSlot.class
 })
 public abstract class BaseAdRuleSlot {
 

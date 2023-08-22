@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CdnConfigurationError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="URL_SHOULD_NOT_CONTAIN_SCHEME"/>
- *     &lt;enumeration value="INVALID_DELIVERY_LOCATION_NAMES"/>
- *     &lt;enumeration value="CANNOT_ARCHIVE_IF_USED_BY_ACTIVE_CONTENT_SOURCES"/>
- *     &lt;enumeration value="CANNOT_ARCHIVE_IF_USED_BY_ACTIVE_LIVE_STREAMS"/>
- *     &lt;enumeration value="UNSUPPORTED_SECURITY_POLICY_TYPE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CdnConfigurationError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="URL_SHOULD_NOT_CONTAIN_SCHEME"/&gt;
+ *     &lt;enumeration value="INVALID_DELIVERY_LOCATION_NAMES"/&gt;
+ *     &lt;enumeration value="CANNOT_ARCHIVE_IF_USED_BY_ACTIVE_CONTENT_SOURCES"/&gt;
+ *     &lt;enumeration value="CANNOT_ARCHIVE_IF_USED_BY_ACTIVE_LIVE_STREAMS"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_SECURITY_POLICY_TYPE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

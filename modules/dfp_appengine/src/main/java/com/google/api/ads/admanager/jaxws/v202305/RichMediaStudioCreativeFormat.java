@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RichMediaStudioCreativeFormat">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="IN_PAGE"/>
- *     &lt;enumeration value="EXPANDING"/>
- *     &lt;enumeration value="IM_EXPANDING"/>
- *     &lt;enumeration value="FLOATING"/>
- *     &lt;enumeration value="PEEL_DOWN"/>
- *     &lt;enumeration value="IN_PAGE_WITH_FLOATING"/>
- *     &lt;enumeration value="FLASH_IN_FLASH"/>
- *     &lt;enumeration value="FLASH_IN_FLASH_EXPANDING"/>
- *     &lt;enumeration value="IN_APP"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RichMediaStudioCreativeFormat"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="IN_PAGE"/&gt;
+ *     &lt;enumeration value="EXPANDING"/&gt;
+ *     &lt;enumeration value="IM_EXPANDING"/&gt;
+ *     &lt;enumeration value="FLOATING"/&gt;
+ *     &lt;enumeration value="PEEL_DOWN"/&gt;
+ *     &lt;enumeration value="IN_PAGE_WITH_FLOATING"/&gt;
+ *     &lt;enumeration value="FLASH_IN_FLASH"/&gt;
+ *     &lt;enumeration value="FLASH_IN_FLASH_EXPANDING"/&gt;
+ *     &lt;enumeration value="IN_APP"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

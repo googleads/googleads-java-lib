@@ -25,37 +25,37 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="SetTopBoxLineItemError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="NON_SET_TOP_BOX_AD_UNIT_TARGETED"/>
- *     &lt;enumeration value="AT_LEAST_ONE_AD_UNIT_MUST_BE_TARGETED"/>
- *     &lt;enumeration value="CANNOT_EXCLUDE_AD_UNITS"/>
- *     &lt;enumeration value="POD_POSITION_OUT_OF_RANGE"/>
- *     &lt;enumeration value="MIDROLL_POSITION_OUT_OF_RANGE"/>
- *     &lt;enumeration value="FEATURE_NOT_ENABLED"/>
- *     &lt;enumeration value="INVALID_ENVIRONMENT_TYPE"/>
- *     &lt;enumeration value="COMPANIONS_NOT_SUPPORTED"/>
- *     &lt;enumeration value="INVALID_CREATIVE_SIZE"/>
- *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE"/>
- *     &lt;enumeration value="ORDERS_WITH_STANDARD_LINE_ITEMS_CANNOT_CONTAIN_HOUSE_OR_SPONSORSHIP_LINE_ITEMS"/>
- *     &lt;enumeration value="INVALID_COST_TYPE"/>
- *     &lt;enumeration value="COST_PER_UNIT_NOT_ALLOWED"/>
- *     &lt;enumeration value="DISCOUNT_NOT_ALLOWED"/>
- *     &lt;enumeration value="FRONTLOADED_DELIVERY_RATE_NOT_SUPPORTED"/>
- *     &lt;enumeration value="INVALID_LINE_ITEM_STATUS_CHANGE"/>
- *     &lt;enumeration value="INVALID_LINE_ITEM_PRIORITY"/>
- *     &lt;enumeration value="SYNC_REVISION_NOT_INCREASING"/>
- *     &lt;enumeration value="SYNC_REVISION_MUST_BE_GREATER_THAN_ZERO"/>
- *     &lt;enumeration value="CANNOT_UNARCHIVE_SET_TOP_BOX_LINE_ITEMS"/>
- *     &lt;enumeration value="COPY_SET_TOP_BOX_ENABLED_LINE_ITEM_NOT_ALLOWED"/>
- *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE_CHANGE"/>
- *     &lt;enumeration value="CREATIVE_ROTATION_TYPE_MUST_BE_EVENLY_OR_WEIGHTED"/>
- *     &lt;enumeration value="INVALID_FREQUENCY_CAP_TIME_UNIT"/>
- *     &lt;enumeration value="INVALID_FREQUENCY_CAP_TIME_RANGE"/>
- *     &lt;enumeration value="INVALID_PRIMARY_GOAL_UNIT_TYPE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="SetTopBoxLineItemError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="NON_SET_TOP_BOX_AD_UNIT_TARGETED"/&gt;
+ *     &lt;enumeration value="AT_LEAST_ONE_AD_UNIT_MUST_BE_TARGETED"/&gt;
+ *     &lt;enumeration value="CANNOT_EXCLUDE_AD_UNITS"/&gt;
+ *     &lt;enumeration value="POD_POSITION_OUT_OF_RANGE"/&gt;
+ *     &lt;enumeration value="MIDROLL_POSITION_OUT_OF_RANGE"/&gt;
+ *     &lt;enumeration value="FEATURE_NOT_ENABLED"/&gt;
+ *     &lt;enumeration value="INVALID_ENVIRONMENT_TYPE"/&gt;
+ *     &lt;enumeration value="COMPANIONS_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVE_SIZE"/&gt;
+ *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE"/&gt;
+ *     &lt;enumeration value="ORDERS_WITH_STANDARD_LINE_ITEMS_CANNOT_CONTAIN_HOUSE_OR_SPONSORSHIP_LINE_ITEMS"/&gt;
+ *     &lt;enumeration value="INVALID_COST_TYPE"/&gt;
+ *     &lt;enumeration value="COST_PER_UNIT_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="DISCOUNT_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="FRONTLOADED_DELIVERY_RATE_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="INVALID_LINE_ITEM_STATUS_CHANGE"/&gt;
+ *     &lt;enumeration value="INVALID_LINE_ITEM_PRIORITY"/&gt;
+ *     &lt;enumeration value="SYNC_REVISION_NOT_INCREASING"/&gt;
+ *     &lt;enumeration value="SYNC_REVISION_MUST_BE_GREATER_THAN_ZERO"/&gt;
+ *     &lt;enumeration value="CANNOT_UNARCHIVE_SET_TOP_BOX_LINE_ITEMS"/&gt;
+ *     &lt;enumeration value="COPY_SET_TOP_BOX_ENABLED_LINE_ITEM_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE_CHANGE"/&gt;
+ *     &lt;enumeration value="CREATIVE_ROTATION_TYPE_MUST_BE_EVENLY_OR_WEIGHTED"/&gt;
+ *     &lt;enumeration value="INVALID_FREQUENCY_CAP_TIME_UNIT"/&gt;
+ *     &lt;enumeration value="INVALID_FREQUENCY_CAP_TIME_RANGE"/&gt;
+ *     &lt;enumeration value="INVALID_PRIMARY_GOAL_UNIT_TYPE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

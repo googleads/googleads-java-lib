@@ -34,31 +34,31 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="BaseRichMediaStudioCreative">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202305}Creative">
- *       &lt;sequence>
- *         &lt;element name="studioCreativeId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="creativeFormat" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioCreativeFormat" minOccurs="0"/>
- *         &lt;element name="artworkType" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioCreativeArtworkType" minOccurs="0"/>
- *         &lt;element name="totalFileSize" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="adTagKeys" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="customKeyValues" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="surveyUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="allImpressionsUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="richMediaImpressionsUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="backupImageImpressionsUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="overrideCss" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="requiredFlashPluginVersion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="billingAttribute" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioCreativeBillingAttribute" minOccurs="0"/>
- *         &lt;element name="richMediaStudioChildAssetProperties" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioChildAssetProperty" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="sslScanResult" type="{https://www.google.com/apis/ads/publisher/v202305}SslScanResult" minOccurs="0"/>
- *         &lt;element name="sslManualOverride" type="{https://www.google.com/apis/ads/publisher/v202305}SslManualOverride" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="BaseRichMediaStudioCreative"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202305}Creative"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="studioCreativeId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="creativeFormat" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioCreativeFormat" minOccurs="0"/&gt;
+ *         &lt;element name="artworkType" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioCreativeArtworkType" minOccurs="0"/&gt;
+ *         &lt;element name="totalFileSize" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="adTagKeys" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="customKeyValues" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="surveyUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="allImpressionsUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="richMediaImpressionsUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="backupImageImpressionsUrl" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="overrideCss" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="requiredFlashPluginVersion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="duration" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="billingAttribute" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioCreativeBillingAttribute" minOccurs="0"/&gt;
+ *         &lt;element name="richMediaStudioChildAssetProperties" type="{https://www.google.com/apis/ads/publisher/v202305}RichMediaStudioChildAssetProperty" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="sslScanResult" type="{https://www.google.com/apis/ads/publisher/v202305}SslScanResult" minOccurs="0"/&gt;
+ *         &lt;element name="sslManualOverride" type="{https://www.google.com/apis/ads/publisher/v202305}SslManualOverride" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

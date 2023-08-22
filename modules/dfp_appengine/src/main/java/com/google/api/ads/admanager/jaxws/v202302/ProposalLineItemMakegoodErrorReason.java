@@ -26,21 +26,21 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ProposalLineItemMakegoodError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ORIGINAL_ALREADY_HAS_MAKEGOOD"/>
- *     &lt;enumeration value="ORIGINAL_IS_MAKEGOOD"/>
- *     &lt;enumeration value="ORIGINAL_NOT_YET_SOLD"/>
- *     &lt;enumeration value="LINE_ITEM_IS_NOT_STANDARD"/>
- *     &lt;enumeration value="LINE_ITEM_IS_NOT_CPM"/>
- *     &lt;enumeration value="MAKEGOODS_NOT_SUPPORTED_FOR_COST_TYPE"/>
- *     &lt;enumeration value="ORIGINAL_TOO_FAR_IN_PAST"/>
- *     &lt;enumeration value="RATE_DIFFERENT_THAN_ORIGINAL"/>
- *     &lt;enumeration value="UNITS_MORE_THAN_ORIGINAL"/>
- *     &lt;enumeration value="MAKEGOODS_NOT_SUPPORTED_FOR_NON_DV360_BUYERS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ProposalLineItemMakegoodError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ORIGINAL_ALREADY_HAS_MAKEGOOD"/&gt;
+ *     &lt;enumeration value="ORIGINAL_IS_MAKEGOOD"/&gt;
+ *     &lt;enumeration value="ORIGINAL_NOT_YET_SOLD"/&gt;
+ *     &lt;enumeration value="LINE_ITEM_IS_NOT_STANDARD"/&gt;
+ *     &lt;enumeration value="LINE_ITEM_IS_NOT_CPM"/&gt;
+ *     &lt;enumeration value="MAKEGOODS_NOT_SUPPORTED_FOR_COST_TYPE"/&gt;
+ *     &lt;enumeration value="ORIGINAL_TOO_FAR_IN_PAST"/&gt;
+ *     &lt;enumeration value="RATE_DIFFERENT_THAN_ORIGINAL"/&gt;
+ *     &lt;enumeration value="UNITS_MORE_THAN_ORIGINAL"/&gt;
+ *     &lt;enumeration value="MAKEGOODS_NOT_SUPPORTED_FOR_NON_DV360_BUYERS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

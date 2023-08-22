@@ -25,27 +25,27 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ExchangeSignupApiError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ADSENSE_ACCOUNT_CREATION_ERROR"/>
- *     &lt;enumeration value="ADSENSE_ACCOUNT_ALREADY_HAS_EXCHANGE"/>
- *     &lt;enumeration value="FAILED_TO_ADD_WEBSITE_TO_PROPERTY"/>
- *     &lt;enumeration value="FAILED_TO_CREATE_LINK_FOR_NEW_ACCOUNT"/>
- *     &lt;enumeration value="CANNOT_CREATE_NEW_ACCOUNT_FOR_MAPPED_CUSTOMER"/>
- *     &lt;enumeration value="FAILED_TO_CREATE_EXCHANGE_SETTINGS"/>
- *     &lt;enumeration value="DUPLICATE_PRODUCT_TYPE"/>
- *     &lt;enumeration value="INVALID_SIGNUP_PRODUCT"/>
- *     &lt;enumeration value="UNKNOWN_PRODUCT"/>
- *     &lt;enumeration value="BAD_SITE_VERIFICATION_UPDATE_REQUEST"/>
- *     &lt;enumeration value="NO_EXCHANGE_ACCOUNT"/>
- *     &lt;enumeration value="SINGLE_SYNDICATION_PRODUCT"/>
- *     &lt;enumeration value="ACCOUNT_NOT_YET_READY"/>
- *     &lt;enumeration value="MULTIPLE_ADSENSE_ACCOUNTS_NOT_ALLOWED"/>
- *     &lt;enumeration value="MISSING_LEGAL_ENTITY_NAME"/>
- *     &lt;enumeration value="MISSING_ACTIVE_BILLING_PROFILE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ExchangeSignupApiError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ADSENSE_ACCOUNT_CREATION_ERROR"/&gt;
+ *     &lt;enumeration value="ADSENSE_ACCOUNT_ALREADY_HAS_EXCHANGE"/&gt;
+ *     &lt;enumeration value="FAILED_TO_ADD_WEBSITE_TO_PROPERTY"/&gt;
+ *     &lt;enumeration value="FAILED_TO_CREATE_LINK_FOR_NEW_ACCOUNT"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_NEW_ACCOUNT_FOR_MAPPED_CUSTOMER"/&gt;
+ *     &lt;enumeration value="FAILED_TO_CREATE_EXCHANGE_SETTINGS"/&gt;
+ *     &lt;enumeration value="DUPLICATE_PRODUCT_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_SIGNUP_PRODUCT"/&gt;
+ *     &lt;enumeration value="UNKNOWN_PRODUCT"/&gt;
+ *     &lt;enumeration value="BAD_SITE_VERIFICATION_UPDATE_REQUEST"/&gt;
+ *     &lt;enumeration value="NO_EXCHANGE_ACCOUNT"/&gt;
+ *     &lt;enumeration value="SINGLE_SYNDICATION_PRODUCT"/&gt;
+ *     &lt;enumeration value="ACCOUNT_NOT_YET_READY"/&gt;
+ *     &lt;enumeration value="MULTIPLE_ADSENSE_ACCOUNTS_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="MISSING_LEGAL_ENTITY_NAME"/&gt;
+ *     &lt;enumeration value="MISSING_ACTIVE_BILLING_PROFILE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

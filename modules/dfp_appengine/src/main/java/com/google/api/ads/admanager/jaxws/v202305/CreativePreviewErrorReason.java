@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativePreviewError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CANNOT_GENERATE_PREVIEW_URL"/>
- *     &lt;enumeration value="CANNOT_GENERATE_PREVIEW_URL_FOR_NATIVE_CREATIVES"/>
- *     &lt;enumeration value="HTML_SNIPPET_REQUIRED_FOR_THIRD_PARTY_CREATIVE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativePreviewError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CANNOT_GENERATE_PREVIEW_URL"/&gt;
+ *     &lt;enumeration value="CANNOT_GENERATE_PREVIEW_URL_FOR_NATIVE_CREATIVES"/&gt;
+ *     &lt;enumeration value="HTML_SNIPPET_REQUIRED_FOR_THIRD_PARTY_CREATIVE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

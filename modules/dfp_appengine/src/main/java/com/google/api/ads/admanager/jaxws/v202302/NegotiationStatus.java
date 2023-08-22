@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="NegotiationStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="SELLER_INITIATED"/>
- *     &lt;enumeration value="BUYER_INITIATED"/>
- *     &lt;enumeration value="AWAITING_SELLER_REVIEW"/>
- *     &lt;enumeration value="AWAITING_BUYER_REVIEW"/>
- *     &lt;enumeration value="ONLY_SELLER_ACCEPTED"/>
- *     &lt;enumeration value="FINALIZED"/>
- *     &lt;enumeration value="CANCELLED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="NegotiationStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="SELLER_INITIATED"/&gt;
+ *     &lt;enumeration value="BUYER_INITIATED"/&gt;
+ *     &lt;enumeration value="AWAITING_SELLER_REVIEW"/&gt;
+ *     &lt;enumeration value="AWAITING_BUYER_REVIEW"/&gt;
+ *     &lt;enumeration value="ONLY_SELLER_ACCEPTED"/&gt;
+ *     &lt;enumeration value="FINALIZED"/&gt;
+ *     &lt;enumeration value="CANCELLED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -346,6 +346,20 @@ public class SiteServiceSoapBindingStub extends org.apache.axis.client.Stub impl
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202302", "NullError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202302.NullError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202302", "NullError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202302.NullErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202302", "NumberValue");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202302.NumberValue.class;

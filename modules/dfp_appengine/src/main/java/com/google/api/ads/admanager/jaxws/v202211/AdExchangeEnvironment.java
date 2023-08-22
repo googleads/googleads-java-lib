@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdExchangeEnvironment">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DISPLAY"/>
- *     &lt;enumeration value="VIDEO"/>
- *     &lt;enumeration value="GAMES"/>
- *     &lt;enumeration value="MOBILE"/>
- *     &lt;enumeration value="MOBILE_OUTSTREAM_VIDEO"/>
- *     &lt;enumeration value="DISPLAY_OUTSTREAM_VIDEO"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdExchangeEnvironment"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DISPLAY"/&gt;
+ *     &lt;enumeration value="VIDEO"/&gt;
+ *     &lt;enumeration value="GAMES"/&gt;
+ *     &lt;enumeration value="MOBILE"/&gt;
+ *     &lt;enumeration value="MOBILE_OUTSTREAM_VIDEO"/&gt;
+ *     &lt;enumeration value="DISPLAY_OUTSTREAM_VIDEO"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

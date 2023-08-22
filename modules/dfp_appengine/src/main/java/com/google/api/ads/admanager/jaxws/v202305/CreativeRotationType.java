@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativeRotationType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="EVEN"/>
- *     &lt;enumeration value="OPTIMIZED"/>
- *     &lt;enumeration value="MANUAL"/>
- *     &lt;enumeration value="SEQUENTIAL"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativeRotationType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="EVEN"/&gt;
+ *     &lt;enumeration value="OPTIMIZED"/&gt;
+ *     &lt;enumeration value="MANUAL"/&gt;
+ *     &lt;enumeration value="SEQUENTIAL"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,17 +25,17 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DayOfWeek">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="MONDAY"/>
- *     &lt;enumeration value="TUESDAY"/>
- *     &lt;enumeration value="WEDNESDAY"/>
- *     &lt;enumeration value="THURSDAY"/>
- *     &lt;enumeration value="FRIDAY"/>
- *     &lt;enumeration value="SATURDAY"/>
- *     &lt;enumeration value="SUNDAY"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DayOfWeek"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MONDAY"/&gt;
+ *     &lt;enumeration value="TUESDAY"/&gt;
+ *     &lt;enumeration value="WEDNESDAY"/&gt;
+ *     &lt;enumeration value="THURSDAY"/&gt;
+ *     &lt;enumeration value="FRIDAY"/&gt;
+ *     &lt;enumeration value="SATURDAY"/&gt;
+ *     &lt;enumeration value="SUNDAY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

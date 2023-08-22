@@ -25,19 +25,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="MetadataMergeSpecError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INPUT_ID_ALREADY_USED"/>
- *     &lt;enumeration value="BOUND_SPECIFIED_WITHOUT_VALUE"/>
- *     &lt;enumeration value="VALUE_SPECIFIED_WITHOUT_BOUND"/>
- *     &lt;enumeration value="MIN_EXCEEDS_MAX"/>
- *     &lt;enumeration value="MORE_THAN_ONE_INPUT_KEY_HAS_VALUE_RULES"/>
- *     &lt;enumeration value="VALUE_SPECIFIED_DOES_NOT_MATCH_OUTPUT_KEY"/>
- *     &lt;enumeration value="CANNOT_MERGE_VALUES_WHERE_VALUE_BUCKET_EXISTS"/>
- *     &lt;enumeration value="CANNOT_MODIFY_RESERVED_KEY"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="MetadataMergeSpecError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INPUT_ID_ALREADY_USED"/&gt;
+ *     &lt;enumeration value="BOUND_SPECIFIED_WITHOUT_VALUE"/&gt;
+ *     &lt;enumeration value="VALUE_SPECIFIED_WITHOUT_BOUND"/&gt;
+ *     &lt;enumeration value="MIN_EXCEEDS_MAX"/&gt;
+ *     &lt;enumeration value="MORE_THAN_ONE_INPUT_KEY_HAS_VALUE_RULES"/&gt;
+ *     &lt;enumeration value="VALUE_SPECIFIED_DOES_NOT_MATCH_OUTPUT_KEY"/&gt;
+ *     &lt;enumeration value="CANNOT_MERGE_VALUES_WHERE_VALUE_BUCKET_EXISTS"/&gt;
+ *     &lt;enumeration value="CANNOT_MODIFY_RESERVED_KEY"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

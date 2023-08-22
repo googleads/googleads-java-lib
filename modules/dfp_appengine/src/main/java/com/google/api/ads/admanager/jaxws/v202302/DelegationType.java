@@ -25,13 +25,13 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DelegationType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="MANAGE_ACCOUNT"/>
- *     &lt;enumeration value="MANAGE_INVENTORY"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DelegationType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="MANAGE_ACCOUNT"/&gt;
+ *     &lt;enumeration value="MANAGE_INVENTORY"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

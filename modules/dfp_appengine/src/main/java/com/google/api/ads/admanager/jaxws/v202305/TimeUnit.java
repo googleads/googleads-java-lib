@@ -25,19 +25,19 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="TimeUnit">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="MINUTE"/>
- *     &lt;enumeration value="HOUR"/>
- *     &lt;enumeration value="DAY"/>
- *     &lt;enumeration value="WEEK"/>
- *     &lt;enumeration value="MONTH"/>
- *     &lt;enumeration value="LIFETIME"/>
- *     &lt;enumeration value="POD"/>
- *     &lt;enumeration value="STREAM"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="TimeUnit"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MINUTE"/&gt;
+ *     &lt;enumeration value="HOUR"/&gt;
+ *     &lt;enumeration value="DAY"/&gt;
+ *     &lt;enumeration value="WEEK"/&gt;
+ *     &lt;enumeration value="MONTH"/&gt;
+ *     &lt;enumeration value="LIFETIME"/&gt;
+ *     &lt;enumeration value="POD"/&gt;
+ *     &lt;enumeration value="STREAM"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

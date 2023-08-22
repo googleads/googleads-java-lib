@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RichMediaStudioCreativeBillingAttribute">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="IN_PAGE"/>
- *     &lt;enumeration value="FLOATING_EXPANDING"/>
- *     &lt;enumeration value="VIDEO"/>
- *     &lt;enumeration value="FLASH_IN_FLASH"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RichMediaStudioCreativeBillingAttribute"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="IN_PAGE"/&gt;
+ *     &lt;enumeration value="FLOATING_EXPANDING"/&gt;
+ *     &lt;enumeration value="VIDEO"/&gt;
+ *     &lt;enumeration value="FLASH_IN_FLASH"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

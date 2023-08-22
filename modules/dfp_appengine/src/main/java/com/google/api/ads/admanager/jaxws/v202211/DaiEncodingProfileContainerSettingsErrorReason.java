@@ -26,14 +26,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="DaiEncodingProfileContainerSettingsError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TS_MUST_HAVE_AUDIO_OR_VIDEO_SETTINGS"/>
- *     &lt;enumeration value="FMP4_MUST_HAVE_EITHER_AUDIO_OR_VIDEO_SETTINGS"/>
- *     &lt;enumeration value="HLS_AUDIO_MUST_HAVE_ONLY_AUDIO_SETTINGS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="DaiEncodingProfileContainerSettingsError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TS_MUST_HAVE_AUDIO_OR_VIDEO_SETTINGS"/&gt;
+ *     &lt;enumeration value="FMP4_MUST_HAVE_EITHER_AUDIO_OR_VIDEO_SETTINGS"/&gt;
+ *     &lt;enumeration value="HLS_AUDIO_MUST_HAVE_ONLY_AUDIO_SETTINGS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

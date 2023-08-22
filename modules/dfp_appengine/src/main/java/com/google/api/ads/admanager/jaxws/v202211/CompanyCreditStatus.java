@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="Company.CreditStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="ACTIVE"/>
- *     &lt;enumeration value="ON_HOLD"/>
- *     &lt;enumeration value="CREDIT_STOP"/>
- *     &lt;enumeration value="INACTIVE"/>
- *     &lt;enumeration value="BLOCKED"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="Company.CreditStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ACTIVE"/&gt;
+ *     &lt;enumeration value="ON_HOLD"/&gt;
+ *     &lt;enumeration value="CREDIT_STOP"/&gt;
+ *     &lt;enumeration value="INACTIVE"/&gt;
+ *     &lt;enumeration value="BLOCKED"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -31,15 +31,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HasHtmlSnippetDynamicAllocationCreative">
- *   &lt;complexContent>
- *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}BaseDynamicAllocationCreative">
- *       &lt;sequence>
- *         &lt;element name="codeSnippet" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/extension>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="HasHtmlSnippetDynamicAllocationCreative"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;extension base="{https://www.google.com/apis/ads/publisher/v202211}BaseDynamicAllocationCreative"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="codeSnippet" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/extension&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -49,8 +49,8 @@ import javax.xml.bind.annotation.XmlType;
     "codeSnippet"
 })
 @XmlSeeAlso({
-    AdSenseCreative.class,
-    AdExchangeCreative.class
+    AdExchangeCreative.class,
+    AdSenseCreative.class
 })
 public abstract class HasHtmlSnippetDynamicAllocationCreative
     extends BaseDynamicAllocationCreative

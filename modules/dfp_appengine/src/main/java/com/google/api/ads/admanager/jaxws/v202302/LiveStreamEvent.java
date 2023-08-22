@@ -39,55 +39,55 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="LiveStreamEvent">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202302}LiveStreamEventStatus" minOccurs="0"/>
- *         &lt;element name="creationDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/>
- *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/>
- *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/>
- *         &lt;element name="startDateTimeType" type="{https://www.google.com/apis/ads/publisher/v202302}StartDateTimeType" minOccurs="0"/>
- *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/>
- *         &lt;element name="unlimitedEndDateTime" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="totalEstimatedConcurrentUsers" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="contentUrls" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="adTags" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="assetKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="slateCreativeId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="dvrWindowSeconds" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="enableDaiAuthenticationKeys" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="adBreakFillType" type="{https://www.google.com/apis/ads/publisher/v202302}AdBreakFillType" minOccurs="0"/>
- *         &lt;element name="underfillAdBreakFillType" type="{https://www.google.com/apis/ads/publisher/v202302}AdBreakFillType" minOccurs="0"/>
- *         &lt;element name="adHolidayDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="enableMaxFillerDuration" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="maxFillerDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="enableDurationlessAdBreaks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="defaultAdBreakDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="streamCreateDaiAuthenticationKeyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="sourceContentConfigurationIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="hlsSettings" type="{https://www.google.com/apis/ads/publisher/v202302}HlsSettings" minOccurs="0"/>
- *         &lt;element name="enableAllowlistedIps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="dynamicAdInsertionType" type="{https://www.google.com/apis/ads/publisher/v202302}DynamicAdInsertionType" minOccurs="0"/>
- *         &lt;element name="enableRelativePlaylistDelivery" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="streamingFormat" type="{https://www.google.com/apis/ads/publisher/v202302}StreamingFormat" minOccurs="0"/>
- *         &lt;element name="prefetchEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="prefetchSettings" type="{https://www.google.com/apis/ads/publisher/v202302}PrefetchSettings" minOccurs="0"/>
- *         &lt;element name="enableForceCloseAdBreaks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="enableShortSegmentDropping" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="customAssetKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="daiEncodingProfileIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="segmentUrlAuthenticationKeyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="adBreakMarkups" type="{https://www.google.com/apis/ads/publisher/v202302}AdBreakMarkupType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="adBreakMarkupTypesEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="adServingFormat" type="{https://www.google.com/apis/ads/publisher/v202302}AdServingFormat" minOccurs="0"/>
- *         &lt;element name="liveStreamConditioning" type="{https://www.google.com/apis/ads/publisher/v202302}LiveStreamConditioning" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="LiveStreamEvent"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202302}LiveStreamEventStatus" minOccurs="0"/&gt;
+ *         &lt;element name="creationDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="lastModifiedDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="startDateTimeType" type="{https://www.google.com/apis/ads/publisher/v202302}StartDateTimeType" minOccurs="0"/&gt;
+ *         &lt;element name="endDateTime" type="{https://www.google.com/apis/ads/publisher/v202302}DateTime" minOccurs="0"/&gt;
+ *         &lt;element name="unlimitedEndDateTime" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="totalEstimatedConcurrentUsers" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="contentUrls" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="adTags" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="assetKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="slateCreativeId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="dvrWindowSeconds" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
+ *         &lt;element name="enableDaiAuthenticationKeys" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="adBreakFillType" type="{https://www.google.com/apis/ads/publisher/v202302}AdBreakFillType" minOccurs="0"/&gt;
+ *         &lt;element name="underfillAdBreakFillType" type="{https://www.google.com/apis/ads/publisher/v202302}AdBreakFillType" minOccurs="0"/&gt;
+ *         &lt;element name="adHolidayDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="enableMaxFillerDuration" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="maxFillerDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="enableDurationlessAdBreaks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="defaultAdBreakDuration" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="streamCreateDaiAuthenticationKeyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="sourceContentConfigurationIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="hlsSettings" type="{https://www.google.com/apis/ads/publisher/v202302}HlsSettings" minOccurs="0"/&gt;
+ *         &lt;element name="enableAllowlistedIps" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="dynamicAdInsertionType" type="{https://www.google.com/apis/ads/publisher/v202302}DynamicAdInsertionType" minOccurs="0"/&gt;
+ *         &lt;element name="enableRelativePlaylistDelivery" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="streamingFormat" type="{https://www.google.com/apis/ads/publisher/v202302}StreamingFormat" minOccurs="0"/&gt;
+ *         &lt;element name="prefetchEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="prefetchSettings" type="{https://www.google.com/apis/ads/publisher/v202302}PrefetchSettings" minOccurs="0"/&gt;
+ *         &lt;element name="enableForceCloseAdBreaks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="enableShortSegmentDropping" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="customAssetKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="daiEncodingProfileIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="segmentUrlAuthenticationKeyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="adBreakMarkups" type="{https://www.google.com/apis/ads/publisher/v202302}AdBreakMarkupType" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="adBreakMarkupTypesEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="adServingFormat" type="{https://www.google.com/apis/ads/publisher/v202302}AdServingFormat" minOccurs="0"/&gt;
+ *         &lt;element name="liveStreamConditioning" type="{https://www.google.com/apis/ads/publisher/v202302}LiveStreamConditioning" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

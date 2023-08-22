@@ -37,25 +37,25 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="CreativeWrapper">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="labelId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="creativeWrapperType" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeWrapperType" minOccurs="0"/>
- *         &lt;element name="htmlHeader" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="htmlFooter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ampHead" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="ampBody" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="videoTrackingUrls" type="{https://www.google.com/apis/ads/publisher/v202305}ConversionEvent_TrackingUrlsMapEntry" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="thirdPartyDataDeclaration" type="{https://www.google.com/apis/ads/publisher/v202305}ThirdPartyDataDeclaration" minOccurs="0"/>
- *         &lt;element name="ordering" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeWrapperOrdering" minOccurs="0"/>
- *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeWrapperStatus" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="CreativeWrapper"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="labelId" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="creativeWrapperType" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeWrapperType" minOccurs="0"/&gt;
+ *         &lt;element name="htmlHeader" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="htmlFooter" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ampHead" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="ampBody" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="videoTrackingUrls" type="{https://www.google.com/apis/ads/publisher/v202305}ConversionEvent_TrackingUrlsMapEntry" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="thirdPartyDataDeclaration" type="{https://www.google.com/apis/ads/publisher/v202305}ThirdPartyDataDeclaration" minOccurs="0"/&gt;
+ *         &lt;element name="ordering" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeWrapperOrdering" minOccurs="0"/&gt;
+ *         &lt;element name="status" type="{https://www.google.com/apis/ads/publisher/v202305}CreativeWrapperStatus" minOccurs="0"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

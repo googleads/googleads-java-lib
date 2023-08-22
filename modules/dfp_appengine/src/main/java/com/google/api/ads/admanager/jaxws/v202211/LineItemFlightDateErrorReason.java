@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LineItemFlightDateError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="START_DATE_TIME_IS_IN_PAST"/>
- *     &lt;enumeration value="END_DATE_TIME_IS_IN_PAST"/>
- *     &lt;enumeration value="END_DATE_TIME_NOT_AFTER_START_TIME"/>
- *     &lt;enumeration value="END_DATE_TIME_TOO_LATE"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LineItemFlightDateError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="START_DATE_TIME_IS_IN_PAST"/&gt;
+ *     &lt;enumeration value="END_DATE_TIME_IS_IN_PAST"/&gt;
+ *     &lt;enumeration value="END_DATE_TIME_NOT_AFTER_START_TIME"/&gt;
+ *     &lt;enumeration value="END_DATE_TIME_TOO_LATE"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

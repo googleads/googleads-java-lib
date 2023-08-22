@@ -25,14 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ThirdPartyBrandLiftIntegrationPartner">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="UNKNOWN"/>
- *     &lt;enumeration value="NONE"/>
- *     &lt;enumeration value="KANTAR_MILLWARD_BROWN"/>
- *     &lt;enumeration value="DYNATA"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ThirdPartyBrandLiftIntegrationPartner"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *     &lt;enumeration value="NONE"/&gt;
+ *     &lt;enumeration value="KANTAR_MILLWARD_BROWN"/&gt;
+ *     &lt;enumeration value="DYNATA"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

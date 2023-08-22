@@ -25,28 +25,28 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="CreativePolicyViolation">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="MALWARE_IN_CREATIVE"/>
- *     &lt;enumeration value="MALWARE_IN_LANDING_PAGE"/>
- *     &lt;enumeration value="LEGALLY_BLOCKED_REDIRECT_URL"/>
- *     &lt;enumeration value="MISREPRESENTATION_OF_PRODUCT"/>
- *     &lt;enumeration value="SELF_CLICKING_CREATIVE"/>
- *     &lt;enumeration value="GAMING_GOOGLE_NETWORK"/>
- *     &lt;enumeration value="DYNAMIC_DNS"/>
- *     &lt;enumeration value="CIRCUMVENTING_SYSTEMS"/>
- *     &lt;enumeration value="PHISHING"/>
- *     &lt;enumeration value="DOWNLOAD_PROMPT_IN_CREATIVE"/>
- *     &lt;enumeration value="UNAUTHORIZED_COOKIE_DETECTED"/>
- *     &lt;enumeration value="TEMPORARY_PAUSE_FOR_VENDOR_INVESTIGATION"/>
- *     &lt;enumeration value="ABUSIVE_EXPERIENCE"/>
- *     &lt;enumeration value="TRICK_TO_CLICK"/>
- *     &lt;enumeration value="USE_OF_NON_ALLOWLISTED_OMID_VERIFICATION_SCRIPT"/>
- *     &lt;enumeration value="MISUSE_OF_OMID_API"/>
- *     &lt;enumeration value="UNACCEPTABLE_HTML_AD"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="CreativePolicyViolation"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="MALWARE_IN_CREATIVE"/&gt;
+ *     &lt;enumeration value="MALWARE_IN_LANDING_PAGE"/&gt;
+ *     &lt;enumeration value="LEGALLY_BLOCKED_REDIRECT_URL"/&gt;
+ *     &lt;enumeration value="MISREPRESENTATION_OF_PRODUCT"/&gt;
+ *     &lt;enumeration value="SELF_CLICKING_CREATIVE"/&gt;
+ *     &lt;enumeration value="GAMING_GOOGLE_NETWORK"/&gt;
+ *     &lt;enumeration value="DYNAMIC_DNS"/&gt;
+ *     &lt;enumeration value="CIRCUMVENTING_SYSTEMS"/&gt;
+ *     &lt;enumeration value="PHISHING"/&gt;
+ *     &lt;enumeration value="DOWNLOAD_PROMPT_IN_CREATIVE"/&gt;
+ *     &lt;enumeration value="UNAUTHORIZED_COOKIE_DETECTED"/&gt;
+ *     &lt;enumeration value="TEMPORARY_PAUSE_FOR_VENDOR_INVESTIGATION"/&gt;
+ *     &lt;enumeration value="ABUSIVE_EXPERIENCE"/&gt;
+ *     &lt;enumeration value="TRICK_TO_CLICK"/&gt;
+ *     &lt;enumeration value="USE_OF_NON_ALLOWLISTED_OMID_VERIFICATION_SCRIPT"/&gt;
+ *     &lt;enumeration value="MISUSE_OF_OMID_API"/&gt;
+ *     &lt;enumeration value="UNACCEPTABLE_HTML_AD"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

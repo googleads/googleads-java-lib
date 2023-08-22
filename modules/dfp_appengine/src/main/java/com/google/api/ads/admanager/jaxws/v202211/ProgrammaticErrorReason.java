@@ -25,24 +25,24 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ProgrammaticError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AUDIENCE_EXTENSION_NOT_SUPPORTED"/>
- *     &lt;enumeration value="AUTO_EXTENSION_DAYS_NOT_SUPPORTED"/>
- *     &lt;enumeration value="VIDEO_NOT_SUPPORTED"/>
- *     &lt;enumeration value="ROADBLOCKING_NOT_SUPPORTED"/>
- *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/>
- *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE"/>
- *     &lt;enumeration value="INVALID_COST_TYPE"/>
- *     &lt;enumeration value="SIZE_NOT_SUPPORTED"/>
- *     &lt;enumeration value="ZERO_COST_PER_UNIT_NOT_SUPPORTED"/>
- *     &lt;enumeration value="CANNOT_UPDATE_FIELD_FOR_APPROVED_LINE_ITEMS"/>
- *     &lt;enumeration value="CANNOT_CREATE_LINE_ITEM_FOR_APPROVED_ORDER"/>
- *     &lt;enumeration value="CANNOT_UPDATE_BACKFILL_WEB_PROPERTY_FOR_APPROVED_LINE_ITEMS"/>
- *     &lt;enumeration value="COST_PER_UNIT_TOO_LOW"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ProgrammaticError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AUDIENCE_EXTENSION_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="AUTO_EXTENSION_DAYS_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="VIDEO_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="ROADBLOCKING_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVE_ROTATION"/&gt;
+ *     &lt;enumeration value="INVALID_LINE_ITEM_TYPE"/&gt;
+ *     &lt;enumeration value="INVALID_COST_TYPE"/&gt;
+ *     &lt;enumeration value="SIZE_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="ZERO_COST_PER_UNIT_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_FIELD_FOR_APPROVED_LINE_ITEMS"/&gt;
+ *     &lt;enumeration value="CANNOT_CREATE_LINE_ITEM_FOR_APPROVED_ORDER"/&gt;
+ *     &lt;enumeration value="CANNOT_UPDATE_BACKFILL_WEB_PROPERTY_FOR_APPROVED_LINE_ITEMS"/&gt;
+ *     &lt;enumeration value="COST_PER_UNIT_TOO_LOW"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

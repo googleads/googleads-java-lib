@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="SegmentPopulationStatus">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="FAILED"/>
- *     &lt;enumeration value="SUCCESS"/>
- *     &lt;enumeration value="PROCESSING"/>
- *     &lt;enumeration value="PREPARING"/>
- *     &lt;enumeration value="EXPIRED"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="SegmentPopulationStatus"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="FAILED"/&gt;
+ *     &lt;enumeration value="SUCCESS"/&gt;
+ *     &lt;enumeration value="PROCESSING"/&gt;
+ *     &lt;enumeration value="PREPARING"/&gt;
+ *     &lt;enumeration value="EXPIRED"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

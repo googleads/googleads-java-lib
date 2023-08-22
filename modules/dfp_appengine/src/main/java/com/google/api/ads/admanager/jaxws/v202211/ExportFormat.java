@@ -25,15 +25,15 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="ExportFormat">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="TSV"/>
- *     &lt;enumeration value="TSV_EXCEL"/>
- *     &lt;enumeration value="CSV_DUMP"/>
- *     &lt;enumeration value="XML"/>
- *     &lt;enumeration value="XLSX"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="ExportFormat"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="TSV"/&gt;
+ *     &lt;enumeration value="TSV_EXCEL"/&gt;
+ *     &lt;enumeration value="CSV_DUMP"/&gt;
+ *     &lt;enumeration value="XML"/&gt;
+ *     &lt;enumeration value="XLSX"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

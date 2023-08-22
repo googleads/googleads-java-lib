@@ -25,16 +25,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="LabelType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="COMPETITIVE_EXCLUSION"/>
- *     &lt;enumeration value="AD_UNIT_FREQUENCY_CAP"/>
- *     &lt;enumeration value="AD_EXCLUSION"/>
- *     &lt;enumeration value="CREATIVE_WRAPPER"/>
- *     &lt;enumeration value="CANONICAL_CATEGORY"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="LabelType"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="COMPETITIVE_EXCLUSION"/&gt;
+ *     &lt;enumeration value="AD_UNIT_FREQUENCY_CAP"/&gt;
+ *     &lt;enumeration value="AD_EXCLUSION"/&gt;
+ *     &lt;enumeration value="CREATIVE_WRAPPER"/&gt;
+ *     &lt;enumeration value="CANONICAL_CATEGORY"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

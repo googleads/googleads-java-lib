@@ -25,29 +25,29 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="TargetingDimension">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CUSTOM_CRITERIA"/>
- *     &lt;enumeration value="GEOGRAPHY"/>
- *     &lt;enumeration value="BROWSER"/>
- *     &lt;enumeration value="BROWSER_LANGUAGE"/>
- *     &lt;enumeration value="BANDWIDTH_GROUP"/>
- *     &lt;enumeration value="OPERATING_SYSTEM"/>
- *     &lt;enumeration value="USER_DOMAIN"/>
- *     &lt;enumeration value="CONTENT"/>
- *     &lt;enumeration value="VIDEO_POSITION"/>
- *     &lt;enumeration value="AD_SIZE"/>
- *     &lt;enumeration value="AD_UNIT"/>
- *     &lt;enumeration value="PLACEMENT"/>
- *     &lt;enumeration value="MOBILE_CARRIER"/>
- *     &lt;enumeration value="DEVICE_CAPABILITY"/>
- *     &lt;enumeration value="DEVICE_CATEGORY"/>
- *     &lt;enumeration value="DEVICE_MANUFACTURER"/>
- *     &lt;enumeration value="MOBILE_APPLICATION"/>
- *     &lt;enumeration value="FORECASTED_CREATIVE_RESTRICTION"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="TargetingDimension"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CUSTOM_CRITERIA"/&gt;
+ *     &lt;enumeration value="GEOGRAPHY"/&gt;
+ *     &lt;enumeration value="BROWSER"/&gt;
+ *     &lt;enumeration value="BROWSER_LANGUAGE"/&gt;
+ *     &lt;enumeration value="BANDWIDTH_GROUP"/&gt;
+ *     &lt;enumeration value="OPERATING_SYSTEM"/&gt;
+ *     &lt;enumeration value="USER_DOMAIN"/&gt;
+ *     &lt;enumeration value="CONTENT"/&gt;
+ *     &lt;enumeration value="VIDEO_POSITION"/&gt;
+ *     &lt;enumeration value="AD_SIZE"/&gt;
+ *     &lt;enumeration value="AD_UNIT"/&gt;
+ *     &lt;enumeration value="PLACEMENT"/&gt;
+ *     &lt;enumeration value="MOBILE_CARRIER"/&gt;
+ *     &lt;enumeration value="DEVICE_CAPABILITY"/&gt;
+ *     &lt;enumeration value="DEVICE_CATEGORY"/&gt;
+ *     &lt;enumeration value="DEVICE_MANUFACTURER"/&gt;
+ *     &lt;enumeration value="MOBILE_APPLICATION"/&gt;
+ *     &lt;enumeration value="FORECASTED_CREATIVE_RESTRICTION"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

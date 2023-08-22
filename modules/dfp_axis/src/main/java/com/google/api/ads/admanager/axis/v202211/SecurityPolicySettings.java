@@ -39,7 +39,13 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      *                 field is only applicable when the value of {@link
      * #securityPolicyType} is equal to {@link
      *                 SecurityPolicyType#AKAMAI} and will be set to null
-     * otherwise. */
+     * otherwise.
+     *                 
+     *                 <p>This field is required when the {@link CdnConfiguration#cdnConfigurationType}
+     * is equal to
+     *                 {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT}
+     * and this {@link SecurityPolicyDto} is
+     *                 being configured for {@link SourceContentConfiguration#ingestSettings}. */
     private java.lang.String tokenAuthenticationKey;
 
     /* Whether the segment URLs should be signed using the {@link
@@ -176,6 +182,12 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      * #securityPolicyType} is equal to {@link
      *                 SecurityPolicyType#AKAMAI} and will be set to null
      * otherwise.
+     *                 
+     *                 <p>This field is required when the {@link CdnConfiguration#cdnConfigurationType}
+     * is equal to
+     *                 {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT}
+     * and this {@link SecurityPolicyDto} is
+     *                 being configured for {@link SourceContentConfiguration#ingestSettings}.
      */
     public java.lang.String getTokenAuthenticationKey() {
         return tokenAuthenticationKey;
@@ -191,6 +203,12 @@ public class SecurityPolicySettings  implements java.io.Serializable {
      * #securityPolicyType} is equal to {@link
      *                 SecurityPolicyType#AKAMAI} and will be set to null
      * otherwise.
+     *                 
+     *                 <p>This field is required when the {@link CdnConfiguration#cdnConfigurationType}
+     * is equal to
+     *                 {@link CdnConfigurationType#LIVE_STREAM_SOURCE_CONTENT}
+     * and this {@link SecurityPolicyDto} is
+     *                 being configured for {@link SourceContentConfiguration#ingestSettings}.
      */
     public void setTokenAuthenticationKey(java.lang.String tokenAuthenticationKey) {
         this.tokenAuthenticationKey = tokenAuthenticationKey;

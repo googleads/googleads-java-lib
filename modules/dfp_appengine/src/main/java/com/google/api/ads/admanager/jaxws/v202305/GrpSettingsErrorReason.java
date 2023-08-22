@@ -25,32 +25,32 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="GrpSettingsError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="INVALID_AGE_RANGE"/>
- *     &lt;enumeration value="UNDER_18_MIN_AGE_REQUIRES_ALL_AGES"/>
- *     &lt;enumeration value="LINE_ITEM_ENVIRONMENT_TYPE_NOT_SUPPORTED"/>
- *     &lt;enumeration value="NIELSEN_DAR_REQUIRES_INSTREAM_VIDEO"/>
- *     &lt;enumeration value="LINE_ITEM_TYPE_NOT_SUPPORTED"/>
- *     &lt;enumeration value="CANNOT_SPECIFY_GENDER_FOR_GIVEN_AGE_RANGE"/>
- *     &lt;enumeration value="INVALID_MIN_AGE"/>
- *     &lt;enumeration value="INVALID_MAX_AGE"/>
- *     &lt;enumeration value="CANNOT_DISABLE_GRP_AFTER_ENABLING"/>
- *     &lt;enumeration value="CANNOT_CHANGE_GRP_PROVIDERS"/>
- *     &lt;enumeration value="CANNOT_CHANGE_GRP_SETTINGS"/>
- *     &lt;enumeration value="GRP_AUDIENCE_GOAL_NOT_SUPPORTED"/>
- *     &lt;enumeration value="DEMOG_GOAL_EXPECTED"/>
- *     &lt;enumeration value="CANNOT_SET_GRP_AUDIENCE_GOAL"/>
- *     &lt;enumeration value="CANNOT_REMOVE_GRP_AUDIENCE_GOAL"/>
- *     &lt;enumeration value="UNSUPPORTED_GEO_TARGETING"/>
- *     &lt;enumeration value="UNSUPPORTED_GRP_SETTING"/>
- *     &lt;enumeration value="SHOULD_SET_IN_TARGET_GOAL_THROUGH_GRP_SETTINGS"/>
- *     &lt;enumeration value="SHOULD_SET_IN_TARGET_GOAL_THROUGH_PRIMARY_GOAL"/>
- *     &lt;enumeration value="NIELSEN_REGISTRATION_FAILED"/>
- *     &lt;enumeration value="LEGACY_NIELSEN_CAMPAIGN_REGISTRATION_ATTEMPT"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="GrpSettingsError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="INVALID_AGE_RANGE"/&gt;
+ *     &lt;enumeration value="UNDER_18_MIN_AGE_REQUIRES_ALL_AGES"/&gt;
+ *     &lt;enumeration value="LINE_ITEM_ENVIRONMENT_TYPE_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="NIELSEN_DAR_REQUIRES_INSTREAM_VIDEO"/&gt;
+ *     &lt;enumeration value="LINE_ITEM_TYPE_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="CANNOT_SPECIFY_GENDER_FOR_GIVEN_AGE_RANGE"/&gt;
+ *     &lt;enumeration value="INVALID_MIN_AGE"/&gt;
+ *     &lt;enumeration value="INVALID_MAX_AGE"/&gt;
+ *     &lt;enumeration value="CANNOT_DISABLE_GRP_AFTER_ENABLING"/&gt;
+ *     &lt;enumeration value="CANNOT_CHANGE_GRP_PROVIDERS"/&gt;
+ *     &lt;enumeration value="CANNOT_CHANGE_GRP_SETTINGS"/&gt;
+ *     &lt;enumeration value="GRP_AUDIENCE_GOAL_NOT_SUPPORTED"/&gt;
+ *     &lt;enumeration value="DEMOG_GOAL_EXPECTED"/&gt;
+ *     &lt;enumeration value="CANNOT_SET_GRP_AUDIENCE_GOAL"/&gt;
+ *     &lt;enumeration value="CANNOT_REMOVE_GRP_AUDIENCE_GOAL"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_GEO_TARGETING"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_GRP_SETTING"/&gt;
+ *     &lt;enumeration value="SHOULD_SET_IN_TARGET_GOAL_THROUGH_GRP_SETTINGS"/&gt;
+ *     &lt;enumeration value="SHOULD_SET_IN_TARGET_GOAL_THROUGH_PRIMARY_GOAL"/&gt;
+ *     &lt;enumeration value="NIELSEN_REGISTRATION_FAILED"/&gt;
+ *     &lt;enumeration value="LEGACY_NIELSEN_CAMPAIGN_REGISTRATION_ATTEMPT"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

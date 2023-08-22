@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="OrderAction">
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType name="OrderAction"&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 
@@ -46,19 +46,19 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrderAction")
 @XmlSeeAlso({
-    UnarchiveOrders.class,
-    DeleteOrders.class,
-    ResumeOrders.class,
-    ArchiveOrders.class,
-    DisapproveOrdersWithoutReservationChanges.class,
-    RetractOrders.class,
-    PauseOrders.class,
-    SubmitOrdersForApproval.class,
-    ApproveOrdersWithoutReservationChanges.class,
-    DisapproveOrders.class,
     ApproveOrders.class,
+    ApproveOrdersWithoutReservationChanges.class,
+    ArchiveOrders.class,
+    DeleteOrders.class,
+    DisapproveOrders.class,
+    DisapproveOrdersWithoutReservationChanges.class,
+    PauseOrders.class,
+    ResumeOrders.class,
+    RetractOrders.class,
+    RetractOrdersWithoutReservationChanges.class,
+    SubmitOrdersForApproval.class,
     SubmitOrdersForApprovalWithoutReservationChanges.class,
-    RetractOrdersWithoutReservationChanges.class
+    UnarchiveOrders.class
 })
 public abstract class OrderAction {
 

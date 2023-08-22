@@ -25,22 +25,22 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AdRuleSlotError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="DIFFERENT_STATUS_THAN_AD_RULE"/>
- *     &lt;enumeration value="INVALID_VIDEO_AD_DURATION_RANGE"/>
- *     &lt;enumeration value="INVALID_VIDEO_MIDROLL_FREQUENCY_TYPE"/>
- *     &lt;enumeration value="MALFORMED_VIDEO_MIDROLL_FREQUENCY_CSV"/>
- *     &lt;enumeration value="MALFORMED_VIDEO_MIDROLL_FREQUENCY_SINGLE_NUMBER"/>
- *     &lt;enumeration value="INVALID_OVERLAY_AD_DURATION_RANGE"/>
- *     &lt;enumeration value="INVALID_OVERLAY_MIDROLL_FREQUENCY_TYPE"/>
- *     &lt;enumeration value="MALFORMED_OVERLAY_MIDROLL_FREQUENCY_CSV"/>
- *     &lt;enumeration value="MALFORMED_OVERLAY_MIDROLL_FREQUENCY_SINGLE_NUMBER"/>
- *     &lt;enumeration value="INVALID_BUMPER_MAX_DURATION"/>
- *     &lt;enumeration value="TOO_MANY_MIDROLL_SLOTS_WITHOUT_ADS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AdRuleSlotError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="DIFFERENT_STATUS_THAN_AD_RULE"/&gt;
+ *     &lt;enumeration value="INVALID_VIDEO_AD_DURATION_RANGE"/&gt;
+ *     &lt;enumeration value="INVALID_VIDEO_MIDROLL_FREQUENCY_TYPE"/&gt;
+ *     &lt;enumeration value="MALFORMED_VIDEO_MIDROLL_FREQUENCY_CSV"/&gt;
+ *     &lt;enumeration value="MALFORMED_VIDEO_MIDROLL_FREQUENCY_SINGLE_NUMBER"/&gt;
+ *     &lt;enumeration value="INVALID_OVERLAY_AD_DURATION_RANGE"/&gt;
+ *     &lt;enumeration value="INVALID_OVERLAY_MIDROLL_FREQUENCY_TYPE"/&gt;
+ *     &lt;enumeration value="MALFORMED_OVERLAY_MIDROLL_FREQUENCY_CSV"/&gt;
+ *     &lt;enumeration value="MALFORMED_OVERLAY_MIDROLL_FREQUENCY_SINGLE_NUMBER"/&gt;
+ *     &lt;enumeration value="INVALID_BUMPER_MAX_DURATION"/&gt;
+ *     &lt;enumeration value="TOO_MANY_MIDROLL_SLOTS_WITHOUT_ADS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

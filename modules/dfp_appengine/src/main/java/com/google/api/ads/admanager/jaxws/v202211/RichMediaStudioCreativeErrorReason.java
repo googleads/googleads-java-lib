@@ -25,20 +25,20 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="RichMediaStudioCreativeError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="CREATION_NOT_ALLOWED"/>
- *     &lt;enumeration value="UKNOWN_ERROR"/>
- *     &lt;enumeration value="INVALID_CODE_GENERATION_REQUEST"/>
- *     &lt;enumeration value="INVALID_CREATIVE_OBJECT"/>
- *     &lt;enumeration value="STUDIO_CONNECTION_ERROR"/>
- *     &lt;enumeration value="PUSHDOWN_DURATION_NOT_ALLOWED"/>
- *     &lt;enumeration value="INVALID_POSITION"/>
- *     &lt;enumeration value="INVALID_Z_INDEX"/>
- *     &lt;enumeration value="INVALID_PUSHDOWN_DURATION"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="RichMediaStudioCreativeError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="CREATION_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="UKNOWN_ERROR"/&gt;
+ *     &lt;enumeration value="INVALID_CODE_GENERATION_REQUEST"/&gt;
+ *     &lt;enumeration value="INVALID_CREATIVE_OBJECT"/&gt;
+ *     &lt;enumeration value="STUDIO_CONNECTION_ERROR"/&gt;
+ *     &lt;enumeration value="PUSHDOWN_DURATION_NOT_ALLOWED"/&gt;
+ *     &lt;enumeration value="INVALID_POSITION"/&gt;
+ *     &lt;enumeration value="INVALID_Z_INDEX"/&gt;
+ *     &lt;enumeration value="INVALID_PUSHDOWN_DURATION"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

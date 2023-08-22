@@ -25,18 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="Activity.Type">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="PAGE_VIEWS"/>
- *     &lt;enumeration value="DAILY_VISITS"/>
- *     &lt;enumeration value="CUSTOM"/>
- *     &lt;enumeration value="ITEMS_PURCHASED"/>
- *     &lt;enumeration value="TRANSACTIONS"/>
- *     &lt;enumeration value="IOS_APPLICATION_DOWNLOADS"/>
- *     &lt;enumeration value="ANDROID_APPLICATION_DOWNLOADS"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="Activity.Type"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="PAGE_VIEWS"/&gt;
+ *     &lt;enumeration value="DAILY_VISITS"/&gt;
+ *     &lt;enumeration value="CUSTOM"/&gt;
+ *     &lt;enumeration value="ITEMS_PURCHASED"/&gt;
+ *     &lt;enumeration value="TRANSACTIONS"/&gt;
+ *     &lt;enumeration value="IOS_APPLICATION_DOWNLOADS"/&gt;
+ *     &lt;enumeration value="ANDROID_APPLICATION_DOWNLOADS"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */

@@ -25,26 +25,26 @@ import javax.xml.bind.annotation.XmlType;
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="AuthenticationError.Reason">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="AMBIGUOUS_SOAP_REQUEST_HEADER"/>
- *     &lt;enumeration value="INVALID_EMAIL"/>
- *     &lt;enumeration value="AUTHENTICATION_FAILED"/>
- *     &lt;enumeration value="INVALID_OAUTH_SIGNATURE"/>
- *     &lt;enumeration value="INVALID_SERVICE"/>
- *     &lt;enumeration value="MISSING_SOAP_REQUEST_HEADER"/>
- *     &lt;enumeration value="MISSING_AUTHENTICATION_HTTP_HEADER"/>
- *     &lt;enumeration value="MISSING_AUTHENTICATION"/>
- *     &lt;enumeration value="NETWORK_API_ACCESS_DISABLED"/>
- *     &lt;enumeration value="NO_NETWORKS_TO_ACCESS"/>
- *     &lt;enumeration value="NETWORK_NOT_FOUND"/>
- *     &lt;enumeration value="NETWORK_CODE_REQUIRED"/>
- *     &lt;enumeration value="CONNECTION_ERROR"/>
- *     &lt;enumeration value="GOOGLE_ACCOUNT_ALREADY_ASSOCIATED_WITH_NETWORK"/>
- *     &lt;enumeration value="UNDER_INVESTIGATION"/>
- *     &lt;enumeration value="UNKNOWN"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
+ * &lt;simpleType name="AuthenticationError.Reason"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="AMBIGUOUS_SOAP_REQUEST_HEADER"/&gt;
+ *     &lt;enumeration value="INVALID_EMAIL"/&gt;
+ *     &lt;enumeration value="AUTHENTICATION_FAILED"/&gt;
+ *     &lt;enumeration value="INVALID_OAUTH_SIGNATURE"/&gt;
+ *     &lt;enumeration value="INVALID_SERVICE"/&gt;
+ *     &lt;enumeration value="MISSING_SOAP_REQUEST_HEADER"/&gt;
+ *     &lt;enumeration value="MISSING_AUTHENTICATION_HTTP_HEADER"/&gt;
+ *     &lt;enumeration value="MISSING_AUTHENTICATION"/&gt;
+ *     &lt;enumeration value="NETWORK_API_ACCESS_DISABLED"/&gt;
+ *     &lt;enumeration value="NO_NETWORKS_TO_ACCESS"/&gt;
+ *     &lt;enumeration value="NETWORK_NOT_FOUND"/&gt;
+ *     &lt;enumeration value="NETWORK_CODE_REQUIRED"/&gt;
+ *     &lt;enumeration value="CONNECTION_ERROR"/&gt;
+ *     &lt;enumeration value="GOOGLE_ACCOUNT_ALREADY_ASSOCIATED_WITH_NETWORK"/&gt;
+ *     &lt;enumeration value="UNDER_INVESTIGATION"/&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
  * </pre>
  * 
  */
