@@ -123,7 +123,8 @@ public enum ProposalLineItemErrorReason {
 
     /**
      * 
-     *                 The proposal line item's start date time is too late in the month.
+     *                 The proposal line item's start date time is too late in the month. This error applies to
+     *                 Programmatic Guaranteed deals sold on Nielsen audience measurement.
      *               
      * 
      */

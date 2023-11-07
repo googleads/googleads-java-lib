@@ -224,9 +224,7 @@ public class ProposalLineItem  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202308.CreativePlaceholder[] creativePlaceholders;
 
     /* Contains the targeting criteria for the {@code ProposalLineItem}.
-     * This attribute is optional
-     *                 during creation and defaults to the {@link Product#targeting
-     * product's targeting}. */
+     * <span class="constraint Required">This attribute is required.</span> */
     private com.google.api.ads.admanager.axis.v202308.Targeting targeting;
 
     /* The values of the custom fields associated with the {@code
@@ -1305,9 +1303,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Gets the targeting value for this ProposalLineItem.
      * 
      * @return targeting   * Contains the targeting criteria for the {@code ProposalLineItem}.
-     * This attribute is optional
-     *                 during creation and defaults to the {@link Product#targeting
-     * product's targeting}.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public com.google.api.ads.admanager.axis.v202308.Targeting getTargeting() {
         return targeting;
@@ -1318,9 +1314,7 @@ public class ProposalLineItem  implements java.io.Serializable {
      * Sets the targeting value for this ProposalLineItem.
      * 
      * @param targeting   * Contains the targeting criteria for the {@code ProposalLineItem}.
-     * This attribute is optional
-     *                 during creation and defaults to the {@link Product#targeting
-     * product's targeting}.
+     * <span class="constraint Required">This attribute is required.</span>
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202308.Targeting targeting) {
         this.targeting = targeting;

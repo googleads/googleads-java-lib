@@ -21,6 +21,12 @@
 
 package com.google.api.ads.admanager.axis.v202305;
 
+
+/**
+ * This class is unused. It exists only to provide reference documentation
+ * of the possible values
+ *             for {@link ChangeHistoryEntityType type} and {@link ChangeHistoryOperation}.
+ */
 public class ChangeHistoryValue  extends com.google.api.ads.admanager.axis.v202305.ObjectValue  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202305.ChangeHistoryEntityType entityType;
 

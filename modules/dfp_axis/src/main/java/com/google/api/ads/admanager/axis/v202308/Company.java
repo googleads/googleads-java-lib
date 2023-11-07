@@ -43,7 +43,7 @@ public class Company  implements java.io.Serializable {
 
     /* Specifies the address of the company. This attribute is optional
      * and has a maximum length of
-     *                 65,535 characters. */
+     *                 1024 characters. */
     private java.lang.String address;
 
     /* Specifies the email of the company. This attribute is optional
@@ -250,7 +250,7 @@ public class Company  implements java.io.Serializable {
      * 
      * @return address   * Specifies the address of the company. This attribute is optional
      * and has a maximum length of
-     *                 65,535 characters.
+     *                 1024 characters.
      */
     public java.lang.String getAddress() {
         return address;
@@ -262,7 +262,7 @@ public class Company  implements java.io.Serializable {
      * 
      * @param address   * Specifies the address of the company. This attribute is optional
      * and has a maximum length of
-     *                 65,535 characters.
+     *                 1024 characters.
      */
     public void setAddress(java.lang.String address) {
         this.address = address;

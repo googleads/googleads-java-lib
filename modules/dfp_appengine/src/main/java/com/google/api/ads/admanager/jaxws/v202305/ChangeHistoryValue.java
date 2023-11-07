@@ -22,6 +22,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             This class is unused. It exists only to provide reference documentation of the possible values
+ *             for {@link ChangeHistoryEntityType type} and {@link ChangeHistoryOperation}.
+ *           
+ * 
  * <p>Java class for ChangeHistoryValue complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

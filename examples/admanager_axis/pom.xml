@@ -23,7 +23,7 @@
 
   <groupId>com.google.api-ads.examples</groupId>
   <artifactId>admanager-axis-examples</artifactId>
-  <version>5.2.0</version>
+  <version>5.3.0</version>
 
   <packaging>jar</packaging>
   <name>Ad Manager Examples using Axis</name>
@@ -35,7 +35,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <smokeMainClass>admanager.axis.v202308.companyservice.GetAllCompanies</smokeMainClass>
+    <smokeMainClass>admanager.axis.v202311.companyservice.GetAllCompanies</smokeMainClass>
   </properties>
 
   <build>
@@ -86,12 +86,12 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>5.2.0</version>
+      <version>5.3.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>dfp-axis</artifactId>
-      <version>5.2.0</version>
+      <version>5.3.0</version>
     </dependency>
 
     <!-- Third party dependencies -->

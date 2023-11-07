@@ -2366,8 +2366,9 @@ public enum Column {
 
     /**
      * 
-     *                 The number of impressions for video realtime reporting.
-     *                 <p>Corresponds to "Total impressions" in the Ad Manager UI.</p>
+     *                 Total impressions from the Google Ad Manager server, AdSense, Ad Exchange, and yield group
+     *                 partners.
+     *                 <p>Corresponds to "Total impressions" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2375,8 +2376,8 @@ public enum Column {
 
     /**
      * 
-     *                 The number of matched queries for video realtime reporting.
-     *                 <p>Corresponds to "Total responses served" in the Ad Manager UI.</p>
+     *                 Total number of matched queries.
+     *                 <p>Corresponds to "Total responses served" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2384,8 +2385,8 @@ public enum Column {
 
     /**
      * 
-     *                 The number of unmatched queries for video realtime reporting.
-     *                 <p>Corresponds to "Total unmatched ad requests" in the Ad Manager UI.</p>
+     *                 Total number of unmatched queries.
+     *                 <p>Corresponds to "Total unmatched ad requests" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2393,8 +2394,8 @@ public enum Column {
 
     /**
      * 
-     *                 The number of total queries for video realtime reporting.
-     *                 <p>Corresponds to "Total ad requests" in the Ad Manager UI.</p>
+     *                 Total number of ad requests.
+     *                 <p>Corresponds to "Total ad requests" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2402,8 +2403,8 @@ public enum Column {
 
     /**
      * 
-     *                 The number of queries on creative level for video realtime reporting.
-     *                 <p>Corresponds to "Total creative serves" in the Ad Manager UI.</p>
+     *                 Total number of creatives served.
+     *                 <p>Corresponds to "Total creative serves" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2411,8 +2412,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 100 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 100 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 100.
+     *                 <p>Corresponds to "VAST error 100 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2421,8 +2422,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 101 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 101 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 101.
+     *                 <p>Corresponds to "VAST error 101 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2431,8 +2432,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 102 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 102 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 102.
+     *                 <p>Corresponds to "VAST error 102 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2441,8 +2442,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 200 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 200 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 200.
+     *                 <p>Corresponds to "VAST error 200 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2451,8 +2452,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 201 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 201 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 201.
+     *                 <p>Corresponds to "VAST error 201 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2461,8 +2462,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 202 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 202 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 202.
+     *                 <p>Corresponds to "VAST error 202 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2471,8 +2472,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 203 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 203 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 203.
+     *                 <p>Corresponds to "VAST error 203 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2481,8 +2482,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 300 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 300 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 300.
+     *                 <p>Corresponds to "VAST error 300 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2491,8 +2492,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 301 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 301 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 301.
+     *                 <p>Corresponds to "VAST error 301 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2501,8 +2502,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 302 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 302 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 302.
+     *                 <p>Corresponds to "VAST error 302 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2511,8 +2512,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 303 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 303 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 303.
+     *                 <p>Corresponds to "VAST error 303 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2521,8 +2522,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 400 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 400 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 400.
+     *                 <p>Corresponds to "VAST error 400 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2531,8 +2532,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 401 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 401 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 401.
+     *                 <p>Corresponds to "VAST error 401 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2541,8 +2542,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 402 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 402 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 402.
+     *                 <p>Corresponds to "VAST error 402 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2551,8 +2552,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 403 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 403 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 403.
+     *                 <p>Corresponds to "VAST error 403 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2561,8 +2562,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 405 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 405 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 405.
+     *                 <p>Corresponds to "VAST error 405 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2571,8 +2572,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 500 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 500 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 500.
+     *                 <p>Corresponds to "VAST error 500 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2581,8 +2582,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 501 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 501 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 501.
+     *                 <p>Corresponds to "VAST error 501 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2591,8 +2592,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 502 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 502 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 502.
+     *                 <p>Corresponds to "VAST error 502 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2601,8 +2602,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 503 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 503 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 503.
+     *                 <p>Corresponds to "VAST error 503 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2611,8 +2612,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 600 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 600 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 600.
+     *                 <p>Corresponds to "VAST error 600 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2621,8 +2622,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 601 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 601 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 601.
+     *                 <p>Corresponds to "VAST error 601 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2631,8 +2632,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 602 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 602 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 602.
+     *                 <p>Corresponds to "VAST error 602 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2641,8 +2642,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 603 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 603 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 603.
+     *                 <p>Corresponds to "VAST error 603 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2651,8 +2652,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 604 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 604 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 604.
+     *                 <p>Corresponds to "VAST error 604 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2661,8 +2662,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 900 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 900 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 900.
+     *                 <p>Corresponds to "VAST error 900 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2671,8 +2672,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 901 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 901 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 901.
+     *                 <p>Corresponds to "VAST error 901 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2681,8 +2682,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 406 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 406 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 406.
+     *                 <p>Corresponds to "VAST error 406 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2691,8 +2692,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 407 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 407 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 407.
+     *                 <p>Corresponds to "VAST error 407 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2701,8 +2702,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 408 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 408 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 408.
+     *                 <p>Corresponds to "VAST error 408 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2711,8 +2712,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 409 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 409 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 409.
+     *                 <p>Corresponds to "VAST error 409 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2721,8 +2722,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of VAST video errors of type 410 for video realtime reporting.
-     *                 <p>Corresponds to "VAST error 410 count" in the Ad Manager UI.</p>
+     *                 Number of VAST video errors of type 410.
+     *                 <p>Corresponds to "VAST error 410 count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2731,8 +2732,8 @@ public enum Column {
 
     /**
      * 
-     *                 Number of total VAST video errors for video realtime reporting.
-     *                 <p>Corresponds to "Total error count" in the Ad Manager UI.</p>
+     *                 Number of total VAST video errors.
+     *                 <p>Corresponds to "Total error count" in the Ad Manager UI. Compatible with the "Real-time video" report type.</p>
      *               
      * 
      */
@@ -2915,7 +2916,7 @@ public enum Column {
      *                 Active View AdSense revenue.
      *                 
      *                 <p>This field is deprecated and will be removed in v202308.
-     *                 <p>Corresponds to "AdSense Active View revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -2984,7 +2985,7 @@ public enum Column {
      *                 Active View AdExchange revenue.
      *                 
      *                 <p>This field is deprecated and will be removed in v202308.
-     *                 <p>Corresponds to "Ad Exchange Active View revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */

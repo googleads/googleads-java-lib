@@ -259,7 +259,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by date in the network time zone. Can be used to filter by date
      *                 using ISO 8601's format 'YYYY-MM-DD'".
-     *                 <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, YouTube consolidated.</p>
+     *                 <p>Corresponds to "Date" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, Real-time video, YouTube consolidated.</p>
      *               
      * 
      */
@@ -280,7 +280,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by hour of the day in the network time zone. Can
      *                 be used to filter by hour of the day (from 0 to 23).
-     *                 <p>Corresponds to "Hour" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Hour" in the Ad Manager UI. Compatible with any of the following report types: Historical, Real-time video.</p>
      *               
      * 
      */
@@ -331,7 +331,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#id}. Can be used to
      *                 filter by {@link LineItem#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -342,7 +342,7 @@ public enum Dimension {
      *                 Breaks down reporting data by line item. {@link LineItem#name} and
      *                 {@link LineItem#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link LineItem#name}.
-     *                 <p>Corresponds to "Line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Corresponds to "Line item" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -352,7 +352,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by {@link LineItem#lineItemType}. Can be used
      *                 to filter by line item type using {@link LineItemType} enumeration names.
-     *                 <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Corresponds to "Line item type" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -464,7 +464,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link Creative#id} or creative set id
      *                 (master's {@link Creative#id}) if the creative is part of a creative set.
      *                 Can be used to filter by {@link Creative#id}.
-     *                 <p>Compatible with any of the following report types: Historical, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -475,7 +475,7 @@ public enum Dimension {
      *                 Breaks down reporting data by creative. {@link Creative#name} and
      *                 {@link Creative#id} are automatically included as columns in the report.
      *                 Can be used to filter by {@link Creative#name}.
-     *                 <p>Corresponds to "Creative" in the Ad Manager UI. Compatible with any of the following report types: Historical, Ad speed.</p>
+     *                 <p>Corresponds to "Creative" in the Ad Manager UI. Compatible with any of the following report types: Historical, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -541,7 +541,7 @@ public enum Dimension {
      *                 Breaks down reporting data by {@link AdUnit#id}. Can be used to filter by
      *                 {@link AdUnit#id}. {@link #AD_UNIT_NAME}, i.e. {@link AdUnit#name}, is
      *                 automatically included as a dimension in the report.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -552,7 +552,7 @@ public enum Dimension {
      *                 Breaks down reporting data by ad unit. {@link AdUnit#name} and
      *                 {@link AdUnit#id} are automatically included as columns in the report. Can
      *                 be used to filter by {@link AdUnit#name}.
-     *                 <p>Corresponds to "Ad unit" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Ad speed.</p>
+     *                 <p>Corresponds to "Ad unit" in the Ad Manager UI. Compatible with any of the following report types: Historical, Future sell-through, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -562,7 +562,7 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#id}. Not available as a
      *                 dimension to report on.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -572,7 +572,7 @@ public enum Dimension {
      * 
      *                 Used to filter on all the descendants of an ad unit by {@link AdUnit#name}. Not available as a
      *                 dimension to report on.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -635,7 +635,7 @@ public enum Dimension {
      *                 The ID of the device category to which an ad is being targeted.
      *                 
      *                 Can be used to filter by device category ID.
-     *                 <p>Compatible with any of the following report types: Historical, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -647,7 +647,7 @@ public enum Dimension {
      *                 targeted.
      *                 
      *                 Can be used to filter by device category name.
-     *                 <p>Corresponds to "Device category" in the Ad Manager UI. Compatible with any of the following report types: Historical, Ad speed.</p>
+     *                 <p>Corresponds to "Device category" in the Ad Manager UI. Compatible with any of the following report types: Historical, Ad speed, Real-time video.</p>
      *               
      * 
      */
@@ -948,7 +948,7 @@ public enum Dimension {
      *                 {@code UNKNOWN_POSITION}, {@code PREROLL}, {@code POSTROLL}, {@code UNKNOWN_MIDROLL},
      *                 {@code MIDROLL_1}, {@code MIDROLL_2}, etc. {@code UNKNOWN_MIDROLL} represents a midroll, but
      *                 which specific midroll is unknown. Can be used for filtering.
-     *                 <p>Corresponds to "Position of pod" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Position of pod" in the Ad Manager UI. Compatible with any of the following report types: Historical, Real-time video.</p>
      *               
      * 
      */
@@ -1419,7 +1419,7 @@ public enum Dimension {
      *                 Status of the ad unit. Not available as a dimension to report on,
      *                 but exists as a dimension in order to filter on it using PQL.
      *                 Valid values correspond to {@link InventoryStatus}.
-     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Ad speed.</p>
+     *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Ad speed, Real-time video.</p>
      *               
      * 
      */
