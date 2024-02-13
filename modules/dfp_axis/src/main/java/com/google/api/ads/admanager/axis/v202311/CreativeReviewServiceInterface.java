@@ -39,17 +39,4 @@ public interface CreativeReviewServiceInterface extends java.rmi.Remote {
      *         feature through their account managers.
      */
     public com.google.api.ads.admanager.axis.v202311.CreativeReviewPage getCreativeReviewsByStatement(com.google.api.ads.admanager.axis.v202311.Statement statement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202311.ApiException;
-
-    /**
-     * Performs actions on {@link CreativeReview} objects that match
-     * the given {@link
-     *         Statement#query}. You can use actions to approve (allow) or
-     * disapprove (block) creatives, as
-     *         seen in the corresponding {@link CreativeReview} objects.
-     * You can also archive creatives to
-     *         allow you to retrieve new {@link CreativeReview} objects while
-     * previously retrieved {@link
-     *         CreativeReview} objects are in pending approval.
-     */
-    public com.google.api.ads.admanager.axis.v202311.UpdateResult performCreativeReviewAction(com.google.api.ads.admanager.axis.v202311.CreativeReviewAction creativeReviewAction, com.google.api.ads.admanager.axis.v202311.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202311.ApiException;
 }

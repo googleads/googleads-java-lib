@@ -43,6 +43,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVENTORY_UNIT_MAPPING_NOT_FOUND"/&gt;
  *     &lt;enumeration value="NO_COMPANIES_PERMISSION"/&gt;
  *     &lt;enumeration value="INVENTORY_UNIT_MAPPING_INVALID_PARAMETER"/&gt;
+ *     &lt;enumeration value="UNSUPPORTED_FORMAT_AND_ENVIRONMENT"/&gt;
  *     &lt;enumeration value="UNKNOWN"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
@@ -69,6 +70,7 @@ public enum YieldErrorReason {
     INVENTORY_UNIT_MAPPING_NOT_FOUND,
     NO_COMPANIES_PERMISSION,
     INVENTORY_UNIT_MAPPING_INVALID_PARAMETER,
+    UNSUPPORTED_FORMAT_AND_ENVIRONMENT,
     UNKNOWN;
 
     public String value() {

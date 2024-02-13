@@ -31,9 +31,11 @@ public class CustomFieldVisibility implements java.io.Serializable {
         _table_.put(_value_,this);
     }
 
+    public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final java.lang.String _API_ONLY = "API_ONLY";
     public static final java.lang.String _READ_ONLY = "READ_ONLY";
     public static final java.lang.String _FULL = "FULL";
+    public static final CustomFieldVisibility UNKNOWN = new CustomFieldVisibility(_UNKNOWN);
     public static final CustomFieldVisibility API_ONLY = new CustomFieldVisibility(_API_ONLY);
     public static final CustomFieldVisibility READ_ONLY = new CustomFieldVisibility(_READ_ONLY);
     public static final CustomFieldVisibility FULL = new CustomFieldVisibility(_FULL);

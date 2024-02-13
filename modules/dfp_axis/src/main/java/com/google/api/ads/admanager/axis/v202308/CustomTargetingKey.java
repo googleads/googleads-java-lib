@@ -30,16 +30,11 @@ public class CustomTargetingKey  implements java.io.Serializable {
      * and is populated by Google. */
     private java.lang.Long id;
 
-    /* Name of the key. This can be used for encoding . If you don't
-     * want users to be able to see
-     *                 potentially sensitive targeting information in the
-     * ad tags of your site, you can encode your
-     *                 key/values. For example, you can create key/value
-     * g1=abc to represent gender=female. Keys can
-     *                 contain up to 10 characters each. You can use alphanumeric
-     * characters and symbols other than
-     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ], the white space character. */
+    /* Name of the key. Keys can contain up to 10 characters each.
+     * You can use alphanumeric characters
+     *                 and symbols other than the following: ", ', =, !,
+     * +, #, *, ~, ;, ^, (, ), <, >, [, ], the white
+     *                 space character. */
     private java.lang.String name;
 
     /* Descriptive name for the key. */
@@ -115,16 +110,11 @@ public class CustomTargetingKey  implements java.io.Serializable {
     /**
      * Gets the name value for this CustomTargetingKey.
      * 
-     * @return name   * Name of the key. This can be used for encoding . If you don't
-     * want users to be able to see
-     *                 potentially sensitive targeting information in the
-     * ad tags of your site, you can encode your
-     *                 key/values. For example, you can create key/value
-     * g1=abc to represent gender=female. Keys can
-     *                 contain up to 10 characters each. You can use alphanumeric
-     * characters and symbols other than
-     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ], the white space character.
+     * @return name   * Name of the key. Keys can contain up to 10 characters each.
+     * You can use alphanumeric characters
+     *                 and symbols other than the following: ", ', =, !,
+     * +, #, *, ~, ;, ^, (, ), <, >, [, ], the white
+     *                 space character.
      */
     public java.lang.String getName() {
         return name;
@@ -134,16 +124,11 @@ public class CustomTargetingKey  implements java.io.Serializable {
     /**
      * Sets the name value for this CustomTargetingKey.
      * 
-     * @param name   * Name of the key. This can be used for encoding . If you don't
-     * want users to be able to see
-     *                 potentially sensitive targeting information in the
-     * ad tags of your site, you can encode your
-     *                 key/values. For example, you can create key/value
-     * g1=abc to represent gender=female. Keys can
-     *                 contain up to 10 characters each. You can use alphanumeric
-     * characters and symbols other than
-     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ], the white space character.
+     * @param name   * Name of the key. Keys can contain up to 10 characters each.
+     * You can use alphanumeric characters
+     *                 and symbols other than the following: ", ', =, !,
+     * +, #, *, ~, ;, ^, (, ), <, >, [, ], the white
+     *                 space character.
      */
     public void setName(java.lang.String name) {
         this.name = name;

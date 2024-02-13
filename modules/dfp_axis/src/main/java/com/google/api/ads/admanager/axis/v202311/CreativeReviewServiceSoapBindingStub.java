@@ -30,7 +30,7 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[2];
+        _operations = new org.apache.axis.description.OperationDesc[1];
         _initOperationDesc1();
     }
 
@@ -54,27 +54,6 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
                       true
                      ));
         _operations[0] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("performCreativeReviewAction");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "creativeReviewAction"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "CreativeReviewAction"), com.google.api.ads.admanager.axis.v202311.CreativeReviewAction.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "filterStatement"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "Statement"), com.google.api.ads.admanager.axis.v202311.Statement.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "UpdateResult"));
-        oper.setReturnClass(com.google.api.ads.admanager.axis.v202311.UpdateResult.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "rval"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        oper.addFault(new org.apache.axis.description.FaultDesc(
-                      new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "ApiExceptionFault"),
-                      "com.google.api.ads.admanager.axis.v202311.ApiException",
-                      new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "ApiException"), 
-                      true
-                     ));
-        _operations[1] = oper;
 
     }
 
@@ -142,20 +121,6 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "ApproveCreativeReviews");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202311.ApproveCreativeReviews.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "ArchiveCreativeReviews");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202311.ArchiveCreativeReviews.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "AuthenticationError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202311.AuthenticationError.class;
@@ -212,13 +177,6 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "CreativeReviewAction");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202311.CreativeReviewAction.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "CreativeReviewPage");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202311.CreativeReviewPage.class;
@@ -250,13 +208,6 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "DateValue");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202311.DateValue.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "DisapproveCreativeReviews");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202311.DisapproveCreativeReviews.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -520,13 +471,6 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "UpdateResult");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202311.UpdateResult.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "Value");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202311.Value.class;
@@ -627,48 +571,6 @@ public class CreativeReviewServiceSoapBindingStub extends org.apache.axis.client
                 return (com.google.api.ads.admanager.axis.v202311.CreativeReviewPage) _resp;
             } catch (java.lang.Exception _exception) {
                 return (com.google.api.ads.admanager.axis.v202311.CreativeReviewPage) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.admanager.axis.v202311.CreativeReviewPage.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-    if (axisFaultException.detail != null) {
-        if (axisFaultException.detail instanceof java.rmi.RemoteException) {
-              throw (java.rmi.RemoteException) axisFaultException.detail;
-         }
-        if (axisFaultException.detail instanceof com.google.api.ads.admanager.axis.v202311.ApiException) {
-              throw (com.google.api.ads.admanager.axis.v202311.ApiException) axisFaultException.detail;
-         }
-   }
-  throw axisFaultException;
-}
-    }
-
-    public com.google.api.ads.admanager.axis.v202311.UpdateResult performCreativeReviewAction(com.google.api.ads.admanager.axis.v202311.CreativeReviewAction creativeReviewAction, com.google.api.ads.admanager.axis.v202311.Statement filterStatement) throws java.rmi.RemoteException, com.google.api.ads.admanager.axis.v202311.ApiException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202311", "performCreativeReviewAction"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {creativeReviewAction, filterStatement});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (com.google.api.ads.admanager.axis.v202311.UpdateResult) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (com.google.api.ads.admanager.axis.v202311.UpdateResult) org.apache.axis.utils.JavaUtils.convert(_resp, com.google.api.ads.admanager.axis.v202311.UpdateResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

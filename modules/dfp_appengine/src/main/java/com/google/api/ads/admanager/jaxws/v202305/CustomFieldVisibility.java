@@ -27,6 +27,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="CustomFieldVisibility"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="UNKNOWN"/&gt;
  *     &lt;enumeration value="API_ONLY"/&gt;
  *     &lt;enumeration value="READ_ONLY"/&gt;
  *     &lt;enumeration value="FULL"/&gt;
@@ -39,6 +40,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum CustomFieldVisibility {
 
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
+    UNKNOWN,
 
     /**
      * 

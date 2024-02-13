@@ -35,18 +35,13 @@ public class CustomTargetingValue  implements java.io.Serializable {
      * and is populated by Google. */
     private java.lang.Long id;
 
-    /* Name of the value. This can be used for encoding . If you don't
-     * want users to be able to see
-     *                 potentially sensitive targeting information in the
-     * ad tags of your site, you can encode your
-     *                 key/values. For example, you can create key/value
-     * g1=abc to represent gender=female. Values can
-     *                 contain up to 40 characters each. You can use alphanumeric
-     * characters and symbols other than
-     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ]. Values are not data-specific;
-     *                 all values are treated as string. For example, instead
-     * of using "age>=18 AND <=34", try "18-34" */
+    /* Name of the value. Values can contain up to 40 characters each.
+     * You can use alphanumeric
+     *                 characters and symbols other than the following: ",
+     * ', =, !, +, #, *, ~, ;, ^, (, ), <, >, [,
+     *                 ]. Values are not data-specific; all values are treated
+     * as string. For example, instead of
+     *                 using "age>=18 AND <=34", try "18-34" */
     private java.lang.String name;
 
     /* Descriptive name for the value. */
@@ -139,18 +134,13 @@ public class CustomTargetingValue  implements java.io.Serializable {
     /**
      * Gets the name value for this CustomTargetingValue.
      * 
-     * @return name   * Name of the value. This can be used for encoding . If you don't
-     * want users to be able to see
-     *                 potentially sensitive targeting information in the
-     * ad tags of your site, you can encode your
-     *                 key/values. For example, you can create key/value
-     * g1=abc to represent gender=female. Values can
-     *                 contain up to 40 characters each. You can use alphanumeric
-     * characters and symbols other than
-     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ]. Values are not data-specific;
-     *                 all values are treated as string. For example, instead
-     * of using "age>=18 AND <=34", try "18-34"
+     * @return name   * Name of the value. Values can contain up to 40 characters each.
+     * You can use alphanumeric
+     *                 characters and symbols other than the following: ",
+     * ', =, !, +, #, *, ~, ;, ^, (, ), <, >, [,
+     *                 ]. Values are not data-specific; all values are treated
+     * as string. For example, instead of
+     *                 using "age>=18 AND <=34", try "18-34"
      */
     public java.lang.String getName() {
         return name;
@@ -160,18 +150,13 @@ public class CustomTargetingValue  implements java.io.Serializable {
     /**
      * Sets the name value for this CustomTargetingValue.
      * 
-     * @param name   * Name of the value. This can be used for encoding . If you don't
-     * want users to be able to see
-     *                 potentially sensitive targeting information in the
-     * ad tags of your site, you can encode your
-     *                 key/values. For example, you can create key/value
-     * g1=abc to represent gender=female. Values can
-     *                 contain up to 40 characters each. You can use alphanumeric
-     * characters and symbols other than
-     *                 the following: ", ', =, !, +, #, *, ~, ;, ^, (, ),
-     * <, >, [, ]. Values are not data-specific;
-     *                 all values are treated as string. For example, instead
-     * of using "age>=18 AND <=34", try "18-34"
+     * @param name   * Name of the value. Values can contain up to 40 characters each.
+     * You can use alphanumeric
+     *                 characters and symbols other than the following: ",
+     * ', =, !, +, #, *, ~, ;, ^, (, ), <, >, [,
+     *                 ]. Values are not data-specific; all values are treated
+     * as string. For example, instead of
+     *                 using "age>=18 AND <=34", try "18-34"
      */
     public void setName(java.lang.String name) {
         this.name = name;

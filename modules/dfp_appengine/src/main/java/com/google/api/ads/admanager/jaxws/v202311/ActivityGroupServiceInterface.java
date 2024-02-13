@@ -27,7 +27,10 @@ import javax.xml.ws.ResponseWrapper;
 
 /**
  * 
- *       Provides methods for creating, updating and retrieving {@link ActivityGroup} objects.
+ *       As of February 22, 2024 this service will become read only as part of Spotlight deprecation, <a
+ *       href="https://support.google.com/admanager/answer/7519021#spotlight">learn more</a>..
+ *       
+ *       <p>Provides methods for creating, updating and retrieving {@link ActivityGroup} objects.
  *       
  *       <p>An activity group contains {@link Activity} objects. Activities have a many-to-one
  *       relationship with activity groups, meaning each activity can belong to only one activity group,

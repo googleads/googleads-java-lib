@@ -4506,22 +4506,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ApproveCreativeReviews }
-     * 
-     */
-    public ApproveCreativeReviews createApproveCreativeReviews() {
-        return new ApproveCreativeReviews();
-    }
-
-    /**
-     * Create an instance of {@link ArchiveCreativeReviews }
-     * 
-     */
-    public ArchiveCreativeReviews createArchiveCreativeReviews() {
-        return new ArchiveCreativeReviews();
-    }
-
-    /**
      * Create an instance of {@link CreativeReview }
      * 
      */
@@ -4535,14 +4519,6 @@ public class ObjectFactory {
      */
     public CreativeReviewPage createCreativeReviewPage() {
         return new CreativeReviewPage();
-    }
-
-    /**
-     * Create an instance of {@link DisapproveCreativeReviews }
-     * 
-     */
-    public DisapproveCreativeReviews createDisapproveCreativeReviews() {
-        return new DisapproveCreativeReviews();
     }
 
     /**

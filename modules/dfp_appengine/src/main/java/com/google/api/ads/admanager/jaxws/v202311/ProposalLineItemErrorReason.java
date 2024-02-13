@@ -575,8 +575,8 @@ public enum ProposalLineItemErrorReason {
 
     /**
      * 
-     *                 Cannot update video creative skippability on a YouTube-targeted proposal line item once it's
-     *                 pushed to an order line item.
+     *                 Cannot update video creative skippability on a YouTube-targeted proposal line item once it
+     *                 has been sold (pushed to an order line item).
      *               
      * 
      */

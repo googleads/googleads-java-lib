@@ -1047,7 +1047,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by video placement.
-     *                 <p>Corresponds to "Video Placement" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Video placement" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1351,9 +1351,9 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by mobile app 'resolved' id - either the app store id or '(Not
-     *                 applicable)' if the app is not registered in the app store. Note: app ids are not guaranteed to
-     *                 be unique across different app stores. Can be used for filtering.
+     *                 Breaks down reporting data by mobile app ID received in the ad request (which may be made up).
+     *                 If app ID is not available, '(Not applicable)' will be returned. Special values like 'null' and
+     *                 'unidentified' will be reported as '(Not applicable)'. Can be used for filtering.
      *                 <p>Corresponds to "App ID" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 

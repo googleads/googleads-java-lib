@@ -64,31 +64,4 @@ public interface CreativeReviewServiceInterface {
         throws ApiException_Exception
     ;
 
-    /**
-     * 
-     *         Performs actions on {@link CreativeReview} objects that match the given {@link
-     *         Statement#query}. You can use actions to approve (allow) or disapprove (block) creatives, as
-     *         seen in the corresponding {@link CreativeReview} objects. You can also archive creatives to
-     *         allow you to retrieve new {@link CreativeReview} objects while previously retrieved {@link
-     *         CreativeReview} objects are in pending approval.
-     *       
-     * 
-     * @param filterStatement
-     * @param creativeReviewAction
-     * @return
-     *     returns com.google.api.ads.admanager.jaxws.v202305.UpdateResult
-     * @throws ApiException_Exception
-     */
-    @WebMethod
-    @WebResult(name = "rval", targetNamespace = "https://www.google.com/apis/ads/publisher/v202305")
-    @RequestWrapper(localName = "performCreativeReviewAction", targetNamespace = "https://www.google.com/apis/ads/publisher/v202305", className = "com.google.api.ads.admanager.jaxws.v202305.CreativeReviewServiceInterfaceperformCreativeReviewAction")
-    @ResponseWrapper(localName = "performCreativeReviewActionResponse", targetNamespace = "https://www.google.com/apis/ads/publisher/v202305", className = "com.google.api.ads.admanager.jaxws.v202305.CreativeReviewServiceInterfaceperformCreativeReviewActionResponse")
-    public UpdateResult performCreativeReviewAction(
-        @WebParam(name = "creativeReviewAction", targetNamespace = "https://www.google.com/apis/ads/publisher/v202305")
-        CreativeReviewAction creativeReviewAction,
-        @WebParam(name = "filterStatement", targetNamespace = "https://www.google.com/apis/ads/publisher/v202305")
-        Statement filterStatement)
-        throws ApiException_Exception
-    ;
-
 }

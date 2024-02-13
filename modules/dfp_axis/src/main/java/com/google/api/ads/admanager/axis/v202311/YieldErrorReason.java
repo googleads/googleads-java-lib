@@ -47,6 +47,7 @@ public class YieldErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVENTORY_UNIT_MAPPING_NOT_FOUND = "INVENTORY_UNIT_MAPPING_NOT_FOUND";
     public static final java.lang.String _NO_COMPANIES_PERMISSION = "NO_COMPANIES_PERMISSION";
     public static final java.lang.String _INVENTORY_UNIT_MAPPING_INVALID_PARAMETER = "INVENTORY_UNIT_MAPPING_INVALID_PARAMETER";
+    public static final java.lang.String _UNSUPPORTED_FORMAT_AND_ENVIRONMENT = "UNSUPPORTED_FORMAT_AND_ENVIRONMENT";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final YieldErrorReason INVALID_BACKEND_DATA = new YieldErrorReason(_INVALID_BACKEND_DATA);
     public static final YieldErrorReason INVALID_REQUEST_DATA = new YieldErrorReason(_INVALID_REQUEST_DATA);
@@ -64,6 +65,7 @@ public class YieldErrorReason implements java.io.Serializable {
     public static final YieldErrorReason INVENTORY_UNIT_MAPPING_NOT_FOUND = new YieldErrorReason(_INVENTORY_UNIT_MAPPING_NOT_FOUND);
     public static final YieldErrorReason NO_COMPANIES_PERMISSION = new YieldErrorReason(_NO_COMPANIES_PERMISSION);
     public static final YieldErrorReason INVENTORY_UNIT_MAPPING_INVALID_PARAMETER = new YieldErrorReason(_INVENTORY_UNIT_MAPPING_INVALID_PARAMETER);
+    public static final YieldErrorReason UNSUPPORTED_FORMAT_AND_ENVIRONMENT = new YieldErrorReason(_UNSUPPORTED_FORMAT_AND_ENVIRONMENT);
     public static final YieldErrorReason UNKNOWN = new YieldErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static YieldErrorReason fromValue(java.lang.String value)

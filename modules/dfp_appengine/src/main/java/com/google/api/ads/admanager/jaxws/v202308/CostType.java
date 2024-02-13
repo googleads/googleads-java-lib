@@ -46,12 +46,17 @@ public enum CostType {
 
     /**
      * 
-     *                 Cost per action. The {@link LineItem#lineItemType} must be one of:
+     *                 Starting February 22, 2024 the CPA {@link CostType} will be read only as part of Spotlight
+     *                 deprecation, <a href="https://support.google.com/admanager/answer/7519021#spotlight">learn
+     *                 more</a>.
+     *                 
+     *                 <p>Cost per action. The {@link LineItem#lineItemType} must be one of:
+     *                 
      *                 <ul>
-     *                 <li>{@link LineItemType#SPONSORSHIP}</li>
-     *                 <li>{@link LineItemType#STANDARD}</li>
-     *                 <li>{@link LineItemType#BULK}</li>
-     *                 <li>{@link LineItemType#NETWORK}</li>
+     *                 <li>{@link LineItemType#SPONSORSHIP}
+     *                 <li>{@link LineItemType#STANDARD}
+     *                 <li>{@link LineItemType#BULK}
+     *                 <li>{@link LineItemType#NETWORK}
      *                 </ul>
      *               
      * 

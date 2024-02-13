@@ -272,9 +272,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 'USD', then $123.4567 could be represented
      *                 as 123456700, but further precision is not supported.
      * 
-     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate},and
-     * {@link
-     *                 ProposalLineItem#netCost} is required. */
+     *                 <p>The field {@link ProposalLineItem#netRate} is required,
+     * and used to calculate {@link
+     *                 ProposalLineItem#netCost} if unspecified. */
     private com.google.api.ads.admanager.axis.v202308.Money netRate;
 
     /* The cost of the {@code ProposalLineItem} in proposal currency.
@@ -288,9 +288,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 'USD', then $123.45 could be represented as
      *                 123450000, but further precision is not supported.
      * 
-     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate}
-     * and {@link
-     *                 ProposalLineItem#netCost} is required. */
+     *                 <p>The field {@link ProposalLineItem#netRate} is required,
+     * and used to calculate {@link
+     *                 ProposalLineItem#netCost} if unspecified. */
     private com.google.api.ads.admanager.axis.v202308.Money netCost;
 
     /* Indicates how well the line item generated from this proposal
@@ -1497,9 +1497,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 'USD', then $123.4567 could be represented
      *                 as 123456700, but further precision is not supported.
      * 
-     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate},and
-     * {@link
-     *                 ProposalLineItem#netCost} is required.
+     *                 <p>The field {@link ProposalLineItem#netRate} is required,
+     * and used to calculate {@link
+     *                 ProposalLineItem#netCost} if unspecified.
      */
     public com.google.api.ads.admanager.axis.v202308.Money getNetRate() {
         return netRate;
@@ -1520,9 +1520,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 'USD', then $123.4567 could be represented
      *                 as 123456700, but further precision is not supported.
      * 
-     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate},and
-     * {@link
-     *                 ProposalLineItem#netCost} is required.
+     *                 <p>The field {@link ProposalLineItem#netRate} is required,
+     * and used to calculate {@link
+     *                 ProposalLineItem#netCost} if unspecified.
      */
     public void setNetRate(com.google.api.ads.admanager.axis.v202308.Money netRate) {
         this.netRate = netRate;
@@ -1543,9 +1543,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 'USD', then $123.45 could be represented as
      *                 123450000, but further precision is not supported.
      * 
-     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate}
-     * and {@link
-     *                 ProposalLineItem#netCost} is required.
+     *                 <p>The field {@link ProposalLineItem#netRate} is required,
+     * and used to calculate {@link
+     *                 ProposalLineItem#netCost} if unspecified.
      */
     public com.google.api.ads.admanager.axis.v202308.Money getNetCost() {
         return netCost;
@@ -1566,9 +1566,9 @@ public class ProposalLineItem  implements java.io.Serializable {
      * 'USD', then $123.45 could be represented as
      *                 123450000, but further precision is not supported.
      * 
-     *                 <p>At least one of the two fields {@link ProposalLineItem#netRate}
-     * and {@link
-     *                 ProposalLineItem#netCost} is required.
+     *                 <p>The field {@link ProposalLineItem#netRate} is required,
+     * and used to calculate {@link
+     *                 ProposalLineItem#netCost} if unspecified.
      */
     public void setNetCost(com.google.api.ads.admanager.axis.v202308.Money netCost) {
         this.netCost = netCost;
