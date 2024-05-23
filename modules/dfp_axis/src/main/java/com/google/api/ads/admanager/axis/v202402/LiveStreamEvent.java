@@ -16,7 +16,7 @@
  * LiveStreamEvent.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ * by the Apache Axis 1.4.1-SNAPSHOT Mar 20, 2024 (11:59:10 PDT) WSDL2Java emitter.
  */
 
 package com.google.api.ads.admanager.axis.v202402;
@@ -36,7 +36,8 @@ package com.google.api.ads.admanager.axis.v202402;
 public class LiveStreamEvent  implements java.io.Serializable {
     /* The unique ID of the {@code LiveStreamEvent}. This value is
      * read-only and is assigned by
-     *                 Google. */
+     *                 Google.
+     *                 This attribute is read-only. */
     private java.lang.Long id;
 
     /* The name of the {@code LiveStreamEvent}. This value is required
@@ -47,15 +48,18 @@ public class LiveStreamEvent  implements java.io.Serializable {
     /* The status of this {@code LiveStreamEvent}. This attribute
      * is read-only and is assigned by
      *                 Google. Live stream events are created in the {@link
-     * LiveStreamEventStatus#PAUSED} state. */
+     * LiveStreamEventStatus#PAUSED} state.
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202402.LiveStreamEventStatus status;
 
     /* The date and time this {@code LiveStreamEvent} was created.
-     * This attribute is read-only. */
+     * This attribute is read-only.
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202402.DateTime creationDateTime;
 
     /* The date and time this {@code LiveStreamEvent} was last modified.
-     * This attribute is read-only. */
+     * This attribute is read-only.
+     *                 This attribute is read-only. */
     private com.google.api.ads.admanager.axis.v202402.DateTime lastModifiedDateTime;
 
     /* The start date and time of this {@code LiveStreamEvent}. This
@@ -109,7 +113,8 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * playlist URL. This attribute is
      *                 read-only and is assigned by Google. {@code liveStreamEventCode}
      * was renamed {@code assetKey}
-     *                 in v201911. */
+     *                 in v201911.
+     *                 This attribute is read-only. */
     private java.lang.String assetKey;
 
     /* ID corresponding to the slate for this live event. If not set,
@@ -444,6 +449,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * @return id   * The unique ID of the {@code LiveStreamEvent}. This value is
      * read-only and is assigned by
      *                 Google.
+     *                 This attribute is read-only.
      */
     public java.lang.Long getId() {
         return id;
@@ -456,6 +462,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * @param id   * The unique ID of the {@code LiveStreamEvent}. This value is
      * read-only and is assigned by
      *                 Google.
+     *                 This attribute is read-only.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -493,6 +500,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * is read-only and is assigned by
      *                 Google. Live stream events are created in the {@link
      * LiveStreamEventStatus#PAUSED} state.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202402.LiveStreamEventStatus getStatus() {
         return status;
@@ -506,6 +514,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * is read-only and is assigned by
      *                 Google. Live stream events are created in the {@link
      * LiveStreamEventStatus#PAUSED} state.
+     *                 This attribute is read-only.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202402.LiveStreamEventStatus status) {
         this.status = status;
@@ -517,6 +526,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return creationDateTime   * The date and time this {@code LiveStreamEvent} was created.
      * This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202402.DateTime getCreationDateTime() {
         return creationDateTime;
@@ -528,6 +538,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param creationDateTime   * The date and time this {@code LiveStreamEvent} was created.
      * This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setCreationDateTime(com.google.api.ads.admanager.axis.v202402.DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
@@ -539,6 +550,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @return lastModifiedDateTime   * The date and time this {@code LiveStreamEvent} was last modified.
      * This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public com.google.api.ads.admanager.axis.v202402.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -550,6 +562,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      * 
      * @param lastModifiedDateTime   * The date and time this {@code LiveStreamEvent} was last modified.
      * This attribute is read-only.
+     *                 This attribute is read-only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.admanager.axis.v202402.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;
@@ -772,6 +785,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      *                 read-only and is assigned by Google. {@code liveStreamEventCode}
      * was renamed {@code assetKey}
      *                 in v201911.
+     *                 This attribute is read-only.
      */
     public java.lang.String getAssetKey() {
         return assetKey;
@@ -786,6 +800,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
      *                 read-only and is assigned by Google. {@code liveStreamEventCode}
      * was renamed {@code assetKey}
      *                 in v201911.
+     *                 This attribute is read-only.
      */
     public void setAssetKey(java.lang.String assetKey) {
         this.assetKey = assetKey;
@@ -1615,7 +1630,6 @@ public class LiveStreamEvent  implements java.io.Serializable {
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof LiveStreamEvent)) return false;
         LiveStreamEvent other = (LiveStreamEvent) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);

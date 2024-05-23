@@ -16,7 +16,7 @@
  * ReportQuery.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ * by the Apache Axis 1.4.1-SNAPSHOT Mar 20, 2024 (11:59:10 PDT) WSDL2Java emitter.
  */
 
 package com.google.api.ads.admanager.axis.v202308;
@@ -165,7 +165,7 @@ public class ReportQuery  implements java.io.Serializable {
      * this. */
     private com.google.api.ads.admanager.axis.v202308.Date startDate;
 
-    /* The end date upto which the reporting information is gathered.
+    /* The end date up to which the reporting information is gathered.
      * The
      *                 {@code ReportQuery#dateRangeType} field must be set
      * to
@@ -710,7 +710,7 @@ public class ReportQuery  implements java.io.Serializable {
     /**
      * Gets the endDate value for this ReportQuery.
      * 
-     * @return endDate   * The end date upto which the reporting information is gathered.
+     * @return endDate   * The end date up to which the reporting information is gathered.
      * The
      *                 {@code ReportQuery#dateRangeType} field must be set
      * to
@@ -725,7 +725,7 @@ public class ReportQuery  implements java.io.Serializable {
     /**
      * Sets the endDate value for this ReportQuery.
      * 
-     * @param endDate   * The end date upto which the reporting information is gathered.
+     * @param endDate   * The end date up to which the reporting information is gathered.
      * The
      *                 {@code ReportQuery#dateRangeType} field must be set
      * to
@@ -898,7 +898,6 @@ public class ReportQuery  implements java.io.Serializable {
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ReportQuery)) return false;
         ReportQuery other = (ReportQuery) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);

@@ -16,7 +16,7 @@
  * OrderActionError.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ * by the Apache Axis 1.4.1-SNAPSHOT Mar 20, 2024 (11:59:10 PDT) WSDL2Java emitter.
  */
 
 package com.google.api.ads.admanager.axis.v202402;
@@ -82,7 +82,6 @@ public class OrderActionError  extends com.google.api.ads.admanager.axis.v202402
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof OrderActionError)) return false;
         OrderActionError other = (OrderActionError) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);

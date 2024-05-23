@@ -16,7 +16,7 @@
  * User.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ * by the Apache Axis 1.4.1-SNAPSHOT Mar 20, 2024 (11:59:10 PDT) WSDL2Java emitter.
  */
 
 package com.google.api.ads.admanager.axis.v202308;
@@ -41,8 +41,7 @@ public class User  extends com.google.api.ads.admanager.axis.v202308.UserRecord 
     /* Specifies whether or not the {@code User} wants to permit the
      * Publisher Display Ads system to
      *                     send email notifications to their email address.
-     * This attribute is optional and defaults to
-     *                     {@code true}. */
+     * This attribute is read-only. */
     private java.lang.Boolean isEmailNotificationAllowed;
 
     /* An identifier for the {@code User} that is meaningful to the
@@ -144,8 +143,7 @@ public class User  extends com.google.api.ads.admanager.axis.v202308.UserRecord 
      * @return isEmailNotificationAllowed   * Specifies whether or not the {@code User} wants to permit the
      * Publisher Display Ads system to
      *                     send email notifications to their email address.
-     * This attribute is optional and defaults to
-     *                     {@code true}.
+     * This attribute is read-only.
      */
     public java.lang.Boolean getIsEmailNotificationAllowed() {
         return isEmailNotificationAllowed;
@@ -158,8 +156,7 @@ public class User  extends com.google.api.ads.admanager.axis.v202308.UserRecord 
      * @param isEmailNotificationAllowed   * Specifies whether or not the {@code User} wants to permit the
      * Publisher Display Ads system to
      *                     send email notifications to their email address.
-     * This attribute is optional and defaults to
-     *                     {@code true}.
+     * This attribute is read-only.
      */
     public void setIsEmailNotificationAllowed(java.lang.Boolean isEmailNotificationAllowed) {
         this.isEmailNotificationAllowed = isEmailNotificationAllowed;
@@ -257,7 +254,6 @@ public class User  extends com.google.api.ads.admanager.axis.v202308.UserRecord 
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof User)) return false;
         User other = (User) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);

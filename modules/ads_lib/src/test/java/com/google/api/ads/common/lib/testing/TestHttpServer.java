@@ -25,6 +25,7 @@ import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.Deque;
 import java.util.List;
+import java.util.Objects;
 import java.util.zip.GZIPInputStream;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -161,7 +162,7 @@ public class TestHttpServer {
 
               // Inflate the raw bytes if they are in gzip format.
               boolean isGzipFormat =
-                  "gzip".equals(request.getHeader(HttpHeader.CONTENT_ENCODING.asString()));
+                  Objects.equals(request.getHeader(HttpHeader.CONTENT_ENCODING.asString()), "gzip");
 
               byte[] requestBytes;
               if (isGzipFormat) {

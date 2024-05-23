@@ -90,7 +90,7 @@ public class CustomDifferenceEvaluator implements DifferenceEvaluator {
     }
     String itemNamespace = getNamespaceURI(node);
     String localName = node.getLocalName();
-    return "http://www.w3.org/2001/XMLSchema-instance".equals(itemNamespace)
-        && "type".equals(localName);
+    return java.util.Objects.equals(itemNamespace, "http://www.w3.org/2001/XMLSchema-instance")
+        && java.util.Objects.equals(localName, "type");
   }
 }

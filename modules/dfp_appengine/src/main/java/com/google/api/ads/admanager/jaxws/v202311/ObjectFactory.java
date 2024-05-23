@@ -754,6 +754,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link McmError }
+     * 
+     */
+    public McmError createMcmError() {
+        return new McmError();
+    }
+
+    /**
      * Create an instance of {@link NetworkError }
      * 
      */

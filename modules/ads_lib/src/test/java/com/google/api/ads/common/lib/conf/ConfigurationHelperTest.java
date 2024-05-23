@@ -36,6 +36,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.SystemConfiguration;
@@ -214,7 +215,7 @@ public class ConfigurationHelperTest {
     for (Entry<String, String> entry : properties.entrySet()) {
       String[] actualValues = systemConfiguration.getStringArray(entry.getKey());
       String[] expectedValues;
-      if ("line.separator".equals(entry.getKey())) {
+      if (Objects.equals(entry.getKey(), "line.separator")) {
         expectedValues = new String[] {SystemUtils.LINE_SEPARATOR};
       } else {
         expectedValues = splitter.splitToList(entry.getValue()).toArray(new String[0]);
@@ -233,7 +234,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlOverride() throws Exception {
     test1Properties.forEach(System::setProperty);
 
@@ -249,7 +249,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlNoOverride() throws Exception {
     System.setProperty("testProperty", "testValue");
 
@@ -262,7 +261,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_optionalUrlOverride() throws Exception {
     test1Properties.forEach(System::setProperty);
 
@@ -278,7 +276,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_optionalUrlNotFound() throws Exception {
     test1Properties.forEach(System::setProperty);
 
@@ -294,7 +291,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlNotFound() throws Exception {
     test1Properties.forEach(System::setProperty);
 
@@ -307,7 +303,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlOptionalPathOverride() throws Exception {
     System.setProperty("e.f.h", "5678");
 
@@ -325,7 +320,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlrequiredPathNoOverride() throws Exception {
     System.setProperty("testProperty", "testValue");
 
@@ -345,7 +339,6 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
   public void testCreateCombinedConfiguration_requiredUrlrequiredPathOptionalNotExist()
       throws Exception {
     System.setProperty("testProperty", "testValue");
@@ -363,9 +356,7 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
-  public void testCreateCombinedConfiguration_requiredPathsOverride()
-      throws Exception {
+  public void testCreateCombinedConfiguration_requiredPathsOverride() throws Exception {
     System.setProperty("testProperty", "testValue");
 
     Configuration configuration = configurationHelper.createCombinedConfiguration(
@@ -382,9 +373,7 @@ public class ConfigurationHelperTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
-  public void testCreateCombinedConfiguration_requiredPathsOverrideUrl()
-      throws Exception {
+  public void testCreateCombinedConfiguration_requiredPathsOverrideUrl() throws Exception {
     System.setProperty("testProperty", "testValue");
 
     Configuration configuration = configurationHelper.createCombinedConfiguration(

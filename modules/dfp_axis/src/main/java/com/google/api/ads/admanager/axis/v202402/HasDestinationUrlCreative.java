@@ -16,7 +16,7 @@
  * HasDestinationUrlCreative.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis 1.4 Mar 02, 2009 (07:08:06 PST) WSDL2Java emitter.
+ * by the Apache Axis 1.4.1-SNAPSHOT Mar 20, 2024 (11:59:10 PDT) WSDL2Java emitter.
  */
 
 package com.google.api.ads.admanager.axis.v202402;
@@ -143,7 +143,6 @@ public abstract class HasDestinationUrlCreative  extends com.google.api.ads.adma
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof HasDestinationUrlCreative)) return false;
         HasDestinationUrlCreative other = (HasDestinationUrlCreative) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);

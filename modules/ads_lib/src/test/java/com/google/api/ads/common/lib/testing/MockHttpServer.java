@@ -32,6 +32,7 @@ import java.util.Collection;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -82,7 +83,7 @@ public class MockHttpServer {
     boolean isGzipFormat = false;
     List<String> contentEncodingValues = request.getHeaders().get("Content-Encoding");
     if (contentEncodingValues != null && !contentEncodingValues.isEmpty()) {
-      isGzipFormat = "gzip".equals(contentEncodingValues.get(0));
+      isGzipFormat = Objects.equals(contentEncodingValues.get(0), "gzip");
     }
 
     byte[] requestBytes;

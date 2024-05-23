@@ -106,6 +106,7 @@ import javax.xml.bind.annotation.XmlType;
     ExchangeSignupApiError.class,
     InvalidEmailError.class,
     InventoryClientApiError.class,
+    McmError.class,
     NetworkError.class,
     SiteError.class,
     AssetError.class,

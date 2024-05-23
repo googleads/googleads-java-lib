@@ -898,7 +898,6 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by {@link CustomTargetingKey#id}.
-     *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -906,10 +905,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by custom targeting key. {@link CustomTargetingKey#name} and
-     *                 {@link CustomTargetingKey#id} are automatically included as columns in the
-     *                 report.
-     *                 <p>Corresponds to "Metadata key" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 Breaks down reporting data by custom targeting key. {@link CustomTargetingKey#name} and {@link
+     *                 CustomTargetingKey#id} are automatically included as columns in the report.
      *               
      * 
      */
