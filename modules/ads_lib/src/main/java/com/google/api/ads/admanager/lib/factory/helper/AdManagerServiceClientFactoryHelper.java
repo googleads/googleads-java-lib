@@ -25,7 +25,7 @@ import com.google.api.ads.common.lib.factory.helper.BaseAdsServiceClientFactoryH
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /** Factory helper for Ad Manager. */
 public class AdManagerServiceClientFactoryHelper

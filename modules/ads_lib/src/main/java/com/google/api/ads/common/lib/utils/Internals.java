@@ -20,7 +20,7 @@ import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
 import com.google.api.client.http.HttpTransport;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * Provides access to internal utilities.

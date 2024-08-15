@@ -29,7 +29,7 @@ import com.google.common.base.Preconditions;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Hashtable;
 import java.util.Map;
-import javax.inject.Inject;
+import com.google.inject.Inject;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPException;
 import org.apache.axis.EngineConfiguration;

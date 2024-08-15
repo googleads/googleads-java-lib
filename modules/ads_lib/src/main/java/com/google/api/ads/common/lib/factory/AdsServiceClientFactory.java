@@ -24,7 +24,7 @@ import com.google.common.collect.Sets;
 import java.lang.reflect.Proxy;
 import java.util.Set;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * Factory which creates ads service clients.

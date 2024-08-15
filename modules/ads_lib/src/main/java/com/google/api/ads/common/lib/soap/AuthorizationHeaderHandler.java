@@ -20,7 +20,7 @@ import com.google.api.ads.common.lib.exception.AuthenticationException;
 
 import java.util.HashMap;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * Handler for {@code Authorization} headers that can be set on the SOAP

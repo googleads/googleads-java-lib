@@ -19,7 +19,7 @@ import com.google.inject.name.Named;
 
 import org.apache.commons.configuration.Configuration;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * Provides the Axis user agent.
