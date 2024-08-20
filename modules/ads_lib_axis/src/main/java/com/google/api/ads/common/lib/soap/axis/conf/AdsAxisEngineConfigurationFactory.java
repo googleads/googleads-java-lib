@@ -15,7 +15,7 @@
 package com.google.api.ads.common.lib.soap.axis.conf;
 
 import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
-import javax.inject.Inject;
+import com.google.inject.Inject;
 import org.apache.axis.EngineConfiguration;
 import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.configuration.EngineConfigurationFactoryDefault;

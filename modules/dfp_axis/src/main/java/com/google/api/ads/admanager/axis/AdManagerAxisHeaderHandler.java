@@ -27,7 +27,7 @@ import com.google.api.ads.common.lib.soap.axis.AxisHandler;
 import com.google.api.ads.common.lib.useragent.UserAgentCombiner;
 import com.google.common.base.Preconditions;
 import java.lang.reflect.InvocationTargetException;
-import javax.inject.Inject;
+import com.google.inject.Inject;
 import org.apache.axis.client.Stub;
 import org.apache.commons.beanutils.BeanUtils;
 

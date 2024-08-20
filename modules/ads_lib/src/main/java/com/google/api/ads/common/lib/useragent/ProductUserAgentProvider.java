@@ -16,7 +16,7 @@ package com.google.api.ads.common.lib.useragent;
 
 import com.google.api.ads.common.lib.conf.ProductConfiguration;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * Provides product user agent.

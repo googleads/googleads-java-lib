@@ -23,7 +23,7 @@ import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 
 import javax.annotation.Nullable;
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * Authorization header provider that can delegate between different

@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
+import com.google.inject.Inject;
 
 /**
  * OAuth2 helper functions.

@@ -17,7 +17,7 @@ package com.google.api.ads.common.lib.utils.logging;
 import com.google.api.ads.common.lib.client.RemoteCallReturn;
 import com.google.api.ads.common.lib.utils.logging.RemoteCallLoggerDelegate.RemoteCallType;
 import com.google.inject.name.Named;
-import javax.inject.Inject;
+import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
