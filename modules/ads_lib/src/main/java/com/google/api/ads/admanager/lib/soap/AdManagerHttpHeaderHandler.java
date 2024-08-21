@@ -17,8 +17,8 @@ package com.google.api.ads.admanager.lib.soap;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.common.collect.Maps;
-import java.util.Map;
 import com.google.inject.Inject;
+import java.util.Map;
 
 /** Handler used to set the HTTP headers on a SOAP client. */
 public class AdManagerHttpHeaderHandler {

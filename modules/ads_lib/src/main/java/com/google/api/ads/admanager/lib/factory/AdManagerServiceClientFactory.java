@@ -21,8 +21,8 @@ import com.google.api.ads.common.lib.factory.AdsServiceClientFactory;
 import com.google.api.ads.common.lib.factory.BaseAdsServiceClientFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.AbstractModule;
-import com.google.inject.Injector;
 import com.google.inject.Inject;
+import com.google.inject.Injector;
 
 /** Factory which creates Ad Manager service clients. */
 public class AdManagerServiceClientFactory

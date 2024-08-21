@@ -19,10 +19,10 @@ import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
 import com.google.api.ads.common.lib.soap.compatability.JaxWsCompatible;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.inject.Inject;
 import com.google.inject.assistedinject.Assisted;
 import java.net.MalformedURLException;
 import java.net.URL;
-import com.google.inject.Inject;
 
 /**
  * {@code AdManagerServiceDescriptor} provides a class which defines a service that can be

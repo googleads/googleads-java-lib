@@ -14,9 +14,12 @@
 
 package com.google.api.ads.admanager.jaxws;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 import com.google.api.ads.admanager.jaxws.factory.AdManagerServices;
-import com.google.api.ads.admanager.jaxws.v202405.Company;
-import com.google.api.ads.admanager.jaxws.v202405.CompanyServiceInterface;
+import com.google.api.ads.admanager.jaxws.v202408.Company;
+import com.google.api.ads.admanager.jaxws.v202408.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
@@ -26,9 +29,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.collect.Lists;
 import javax.xml.ws.WebServiceException;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -36,9 +37,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class AdManagerJaxWsSoapTimeoutIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202405";
-
-  @Rule public final ExpectedException thrown = ExpectedException.none();
+  private static final String API_VERSION = "v202408";
 
   @BeforeClass
   public static void setupClass() {
@@ -69,8 +68,10 @@ public class AdManagerJaxWsSoapTimeoutIntegrationTest extends MockHttpIntegratio
     CompanyServiceInterface companyService =
         new AdManagerServices().get(session, CompanyServiceInterface.class);
 
-    thrown.expect(WebServiceException.class);
-    thrown.expectMessage("Read timed out");
-    companyService.createCompanies(Lists.newArrayList(new Company()));
+    WebServiceException e =
+        assertThrows(
+            WebServiceException.class,
+            () -> companyService.createCompanies(Lists.newArrayList(new Company())));
+    assertEquals("java.net.SocketTimeoutException: Read timed out", e.getMessage());
   }
 }

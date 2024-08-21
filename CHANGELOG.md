@@ -1,3 +1,12 @@
+5.6.0 - 08/20/2024
+------------------
+Ad Manager:
+ - Added support for v202408.
+ - Removed examples for v202311.
+ - Removed support for v202308.
+ - Changed to use Guice native Inject annotation.
+   Fixes https://github.com/googleads/googleads-java-lib/issues/277.
+
 5.5.0 - 05/21/2024
 ------------------
 Ad Manager:

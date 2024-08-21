@@ -55,7 +55,7 @@ public enum AdSenseAccountErrorReason {
 
     /**
      * 
-     *                 An error occured while trying to get an associated web property's ad slots. Unable to
+     *                 An error occurred while trying to get an associated web property's ad slots. Unable to
      *                 retrieve ad slot information from AdSense or Ad Exchange account.
      *               
      * 
@@ -72,7 +72,7 @@ public enum AdSenseAccountErrorReason {
 
     /**
      * 
-     *                 An error occured while trying to retrieve account statues from AdSense API. Unable to
+     *                 An error occurred while trying to retrieve account statues from AdSense API. Unable to
      *                 retrieve account status information. Please try again later.
      *               
      * 
@@ -81,7 +81,7 @@ public enum AdSenseAccountErrorReason {
 
     /**
      * 
-     *                 An error occured while trying to resend the account association verification email. Error
+     *                 An error occurred while trying to resend the account association verification email. Error
      *                 resending verification email. Please try again.
      *               
      * 
@@ -90,7 +90,7 @@ public enum AdSenseAccountErrorReason {
 
     /**
      * 
-     *                 An error occured while trying to retrieve a response from the AdSense API. There was a
+     *                 An error occurred while trying to retrieve a response from the AdSense API. There was a
      *                 problem processing your request. Please try again later.
      *               
      * 

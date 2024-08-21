@@ -19,8 +19,8 @@ import com.google.api.ads.common.lib.client.HeaderHandler;
 import com.google.api.ads.common.lib.soap.SoapClientHandlerInterface;
 import com.google.api.ads.common.lib.soap.SoapServiceClient;
 import com.google.api.ads.common.lib.utils.logging.AdsServiceLoggers;
-import com.google.inject.assistedinject.Assisted;
 import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
 
 /**
  * Wrapper of underlying SOAP client which allows access for setting headers retrieved from the

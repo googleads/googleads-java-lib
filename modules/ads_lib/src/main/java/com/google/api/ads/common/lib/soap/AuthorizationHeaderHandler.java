@@ -17,10 +17,8 @@ package com.google.api.ads.common.lib.soap;
 import com.google.api.ads.common.lib.auth.AuthorizationHeaderProvider;
 import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
-
-import java.util.HashMap;
-
 import com.google.inject.Inject;
+import java.util.HashMap;
 
 /**
  * Handler for {@code Authorization} headers that can be set on the SOAP

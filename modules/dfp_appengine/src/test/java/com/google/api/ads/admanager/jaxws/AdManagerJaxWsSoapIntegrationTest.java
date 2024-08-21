@@ -19,8 +19,8 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.admanager.jaxws.factory.AdManagerServices;
 import com.google.api.ads.admanager.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.jaxws.v202405.Company;
-import com.google.api.ads.admanager.jaxws.v202405.CompanyServiceInterface;
+import com.google.api.ads.admanager.jaxws.v202408.Company;
+import com.google.api.ads.admanager.jaxws.v202408.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
@@ -30,9 +30,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.collect.Lists;
 import java.util.List;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.xmlunit.builder.DiffBuilder;
@@ -42,9 +40,7 @@ import org.xmlunit.diff.Diff;
 @RunWith(JUnit4.class)
 public class AdManagerJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202405";
-
-  @Rule public final ExpectedException thrown = ExpectedException.none();
+  private static final String API_VERSION = "v202408";
 
   @BeforeClass
   public static void setupClass() {

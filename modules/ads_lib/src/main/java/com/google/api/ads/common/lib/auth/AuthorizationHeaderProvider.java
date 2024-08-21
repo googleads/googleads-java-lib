@@ -19,11 +19,9 @@ import com.google.api.ads.common.lib.conf.AdsLibConfiguration;
 import com.google.api.ads.common.lib.exception.AuthenticationException;
 import com.google.api.ads.common.lib.exception.OAuthException;
 import com.google.common.annotations.VisibleForTesting;
-
-import java.io.IOException;
-
-import javax.annotation.Nullable;
 import com.google.inject.Inject;
+import java.io.IOException;
+import javax.annotation.Nullable;
 
 /**
  * Authorization header provider that can delegate between different

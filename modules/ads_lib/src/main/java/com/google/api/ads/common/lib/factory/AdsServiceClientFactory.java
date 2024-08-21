@@ -20,11 +20,9 @@ import com.google.api.ads.common.lib.client.AdsSession;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.factory.helper.AdsServiceClientFactoryHelper;
 import com.google.common.collect.Sets;
-
+import com.google.inject.Inject;
 import java.lang.reflect.Proxy;
 import java.util.Set;
-
-import com.google.inject.Inject;
 
 /**
  * Factory which creates ads service clients.

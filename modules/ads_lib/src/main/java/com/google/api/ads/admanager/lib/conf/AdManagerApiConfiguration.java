@@ -15,8 +15,8 @@
 package com.google.api.ads.admanager.lib.conf;
 
 import com.google.api.ads.common.lib.conf.AdsApiConfiguration;
-import com.google.inject.name.Named;
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import org.apache.commons.configuration.Configuration;
 
 /** Configuration information for Ad Manager library. */

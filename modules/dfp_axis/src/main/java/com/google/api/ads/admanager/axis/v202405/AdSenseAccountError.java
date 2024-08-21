@@ -21,10 +21,6 @@
 
 package com.google.api.ads.admanager.axis.v202405;
 
-
-/**
- * Error for AdSense related API calls.
- */
 public class AdSenseAccountError  extends com.google.api.ads.admanager.axis.v202405.ApiError  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202405.AdSenseAccountErrorReason reason;
 
