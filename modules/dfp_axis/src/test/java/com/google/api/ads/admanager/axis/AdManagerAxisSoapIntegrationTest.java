@@ -20,8 +20,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.ads.admanager.axis.factory.AdManagerServices;
 import com.google.api.ads.admanager.axis.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.axis.v202408.Company;
-import com.google.api.ads.admanager.axis.v202408.CompanyServiceInterface;
+import com.google.api.ads.admanager.axis.v202411.Company;
+import com.google.api.ads.admanager.axis.v202411.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.auth.OfflineCredentials;
@@ -43,7 +43,7 @@ import org.xmlunit.diff.Diff;
 @RunWith(JUnit4.class)
 public class AdManagerAxisSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202408";
+  private static final String API_VERSION = "v202411";
 
   @BeforeClass
   public static void setupClass() {

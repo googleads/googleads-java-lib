@@ -28,13 +28,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;simpleType name="CreativeError.Reason"&gt;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
  *     &lt;enumeration value="FLASH_AND_FALLBACK_URL_ARE_SAME"/&gt;
- *     &lt;enumeration value="INVALID_INTERNAL_REDIRECT_URL"/&gt;
- *     &lt;enumeration value="DESTINATION_URL_REQUIRED"/&gt;
  *     &lt;enumeration value="DESTINATION_URL_NOT_EMPTY"/&gt;
  *     &lt;enumeration value="DESTINATION_URL_TYPE_NOT_SUPPORTED"/&gt;
  *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE"/&gt;
  *     &lt;enumeration value="CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE"/&gt;
- *     &lt;enumeration value="MISSING_FEATURE"/&gt;
  *     &lt;enumeration value="INVALID_COMPANY_TYPE"/&gt;
  *     &lt;enumeration value="INVALID_ADSENSE_CREATIVE_SIZE"/&gt;
  *     &lt;enumeration value="INVALID_AD_EXCHANGE_CREATIVE_SIZE"/&gt;
@@ -45,7 +42,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER"/&gt;
  *     &lt;enumeration value="CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS"/&gt;
  *     &lt;enumeration value="HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET"/&gt;
- *     &lt;enumeration value="CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS"/&gt;
  *     &lt;enumeration value="UNKNOWN"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
@@ -66,23 +62,6 @@ public enum CreativeErrorReason {
      * 
      */
     FLASH_AND_FALLBACK_URL_ARE_SAME,
-
-    /**
-     * 
-     *                 The internal redirect URL was invalid. The URL must have the following
-     *                 syntax http://ad.doubleclick.net/ad/sitename/;sz=size.
-     *               
-     * 
-     */
-    INVALID_INTERNAL_REDIRECT_URL,
-
-    /**
-     * 
-     *                 {@link HasDestinationUrlCreative#destinationUrl} is required.
-     *               
-     * 
-     */
-    DESTINATION_URL_REQUIRED,
 
     /**
      * 
@@ -117,14 +96,6 @@ public enum CreativeErrorReason {
      * 
      */
     CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE,
-
-    /**
-     * 
-     *                 The user is missing a necessary feature.
-     *               
-     * 
-     */
-    MISSING_FEATURE,
 
     /**
      * 
@@ -208,14 +179,6 @@ public enum CreativeErrorReason {
      * 
      */
     HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET,
-
-    /**
-     * 
-     *                 {@link ImageCreative#thirdPartyImpressionTrackingUrls} should not contain more than one url.
-     *               
-     * 
-     */
-    CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS,
 
     /**
      * 

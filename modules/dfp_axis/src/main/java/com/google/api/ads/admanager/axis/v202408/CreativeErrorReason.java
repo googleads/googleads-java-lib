@@ -32,13 +32,10 @@ public class CreativeErrorReason implements java.io.Serializable {
     }
 
     public static final java.lang.String _FLASH_AND_FALLBACK_URL_ARE_SAME = "FLASH_AND_FALLBACK_URL_ARE_SAME";
-    public static final java.lang.String _INVALID_INTERNAL_REDIRECT_URL = "INVALID_INTERNAL_REDIRECT_URL";
-    public static final java.lang.String _DESTINATION_URL_REQUIRED = "DESTINATION_URL_REQUIRED";
     public static final java.lang.String _DESTINATION_URL_NOT_EMPTY = "DESTINATION_URL_NOT_EMPTY";
     public static final java.lang.String _DESTINATION_URL_TYPE_NOT_SUPPORTED = "DESTINATION_URL_TYPE_NOT_SUPPORTED";
     public static final java.lang.String _CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE = "CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE";
     public static final java.lang.String _CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE = "CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE";
-    public static final java.lang.String _MISSING_FEATURE = "MISSING_FEATURE";
     public static final java.lang.String _INVALID_COMPANY_TYPE = "INVALID_COMPANY_TYPE";
     public static final java.lang.String _INVALID_ADSENSE_CREATIVE_SIZE = "INVALID_ADSENSE_CREATIVE_SIZE";
     public static final java.lang.String _INVALID_AD_EXCHANGE_CREATIVE_SIZE = "INVALID_AD_EXCHANGE_CREATIVE_SIZE";
@@ -49,16 +46,12 @@ public class CreativeErrorReason implements java.io.Serializable {
     public static final java.lang.String _INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER = "INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER";
     public static final java.lang.String _CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS = "CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS";
     public static final java.lang.String _HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET = "HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET";
-    public static final java.lang.String _CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS = "CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final CreativeErrorReason FLASH_AND_FALLBACK_URL_ARE_SAME = new CreativeErrorReason(_FLASH_AND_FALLBACK_URL_ARE_SAME);
-    public static final CreativeErrorReason INVALID_INTERNAL_REDIRECT_URL = new CreativeErrorReason(_INVALID_INTERNAL_REDIRECT_URL);
-    public static final CreativeErrorReason DESTINATION_URL_REQUIRED = new CreativeErrorReason(_DESTINATION_URL_REQUIRED);
     public static final CreativeErrorReason DESTINATION_URL_NOT_EMPTY = new CreativeErrorReason(_DESTINATION_URL_NOT_EMPTY);
     public static final CreativeErrorReason DESTINATION_URL_TYPE_NOT_SUPPORTED = new CreativeErrorReason(_DESTINATION_URL_TYPE_NOT_SUPPORTED);
     public static final CreativeErrorReason CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE = new CreativeErrorReason(_CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_CREATIVE);
     public static final CreativeErrorReason CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE = new CreativeErrorReason(_CANNOT_CREATE_OR_UPDATE_LEGACY_DFP_MOBILE_CREATIVE);
-    public static final CreativeErrorReason MISSING_FEATURE = new CreativeErrorReason(_MISSING_FEATURE);
     public static final CreativeErrorReason INVALID_COMPANY_TYPE = new CreativeErrorReason(_INVALID_COMPANY_TYPE);
     public static final CreativeErrorReason INVALID_ADSENSE_CREATIVE_SIZE = new CreativeErrorReason(_INVALID_ADSENSE_CREATIVE_SIZE);
     public static final CreativeErrorReason INVALID_AD_EXCHANGE_CREATIVE_SIZE = new CreativeErrorReason(_INVALID_AD_EXCHANGE_CREATIVE_SIZE);
@@ -69,7 +62,6 @@ public class CreativeErrorReason implements java.io.Serializable {
     public static final CreativeErrorReason INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER = new CreativeErrorReason(_INVALID_SIZE_FOR_THIRD_PARTY_IMPRESSION_TRACKER);
     public static final CreativeErrorReason CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS = new CreativeErrorReason(_CANNOT_DEACTIVATE_CREATIVES_IN_CREATIVE_SETS);
     public static final CreativeErrorReason HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET = new CreativeErrorReason(_HOSTED_VIDEO_CREATIVE_REQUIRES_VIDEO_ASSET);
-    public static final CreativeErrorReason CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS = new CreativeErrorReason(_CANNOT_SET_MULTIPLE_IMPRESSION_TRACKING_URLS);
     public static final CreativeErrorReason UNKNOWN = new CreativeErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static CreativeErrorReason fromValue(java.lang.String value)

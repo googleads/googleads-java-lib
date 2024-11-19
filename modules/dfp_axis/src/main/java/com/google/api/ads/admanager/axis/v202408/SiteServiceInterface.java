@@ -54,10 +54,6 @@ public interface SiteServiceInterface extends java.rmi.Remote {
      *         <td>{@link Site#approvalStatus}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code active}</td>
-     *         <td>{@link Site#active}</td>
-     *         </tr>
-     *         <tr>
      *         <td>{@code lastModifiedApprovalStatusDateTime}</td>
      *         <td></td>
      *         </tr>

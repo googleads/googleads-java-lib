@@ -55,7 +55,7 @@ public interface MobileApplicationServiceInterface extends java.rmi.Remote {
      *         <td>{@link MobileApplication#appStore}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code appStoreId}</td>
+     *         <td>{@code mobileApplicationExternalId}</td>
      *         <td>{@link MobileApplication#appStoreId}</td>
      *         <tr/>
      *         <tr>

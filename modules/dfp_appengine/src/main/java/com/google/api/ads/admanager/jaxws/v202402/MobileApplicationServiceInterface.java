@@ -87,7 +87,7 @@ public interface MobileApplicationServiceInterface {
      *         <td>{@link MobileApplication#appStore}</td>
      *         </tr>
      *         <tr>
-     *         <td>{@code appStoreId}</td>
+     *         <td>{@code mobileApplicationExternalId}</td>
      *         <td>{@link MobileApplication#appStoreId}</td>
      *         <tr/>
      *         <tr>

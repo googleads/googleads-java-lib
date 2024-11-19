@@ -655,8 +655,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by country criteria ID. Can be used to filter by
-     *                 country criteria ID.
+     *                 Breaks down reporting data by country criteria ID. Can be used to filter by country criteria
+     *                 ID.
      *                 <p>Compatible with any of the following report types: Historical, Future sell-through, Reach, Ad speed, YouTube consolidated.</p>
      *               
      * 
@@ -1369,7 +1369,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by device name. Can be used for filtering.
-     *                 <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Can correspond to any of the following in the Ad Manager UI: Mobile OS, Devices. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
