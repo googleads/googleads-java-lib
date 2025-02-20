@@ -26,7 +26,9 @@ package com.google.api.ads.admanager.axis.v202405;
  * A {@code Creative} that is created by the specified creative template.
  */
 public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202405.Creative  implements java.io.Serializable {
-    /* Creative template ID that this creative is created from. */
+    /* Creative template ID that this creative is created from. This
+     * field is required for creation
+     *                     and immutable. */
     private java.lang.Long creativeTemplateId;
 
     /* {@code true} if this template instantiated creative is interstitial.
@@ -147,7 +149,9 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202405
     /**
      * Gets the creativeTemplateId value for this TemplateCreative.
      * 
-     * @return creativeTemplateId   * Creative template ID that this creative is created from.
+     * @return creativeTemplateId   * Creative template ID that this creative is created from. This
+     * field is required for creation
+     *                     and immutable.
      */
     public java.lang.Long getCreativeTemplateId() {
         return creativeTemplateId;
@@ -157,7 +161,9 @@ public class TemplateCreative  extends com.google.api.ads.admanager.axis.v202405
     /**
      * Sets the creativeTemplateId value for this TemplateCreative.
      * 
-     * @param creativeTemplateId   * Creative template ID that this creative is created from.
+     * @param creativeTemplateId   * Creative template ID that this creative is created from. This
+     * field is required for creation
+     *                     and immutable.
      */
     public void setCreativeTemplateId(java.lang.Long creativeTemplateId) {
         this.creativeTemplateId = creativeTemplateId;

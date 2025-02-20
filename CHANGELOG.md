@@ -1,3 +1,10 @@
+5.8.0 - 02/20/2025
+------------------
+Ad Manager:
+ - Added support for v202502.
+ - Removed examples for v202405.
+ - Removed support for v202402.
+
 5.7.0 - 11/19/2024
 ------------------
 Ad Manager:
@@ -639,7 +646,7 @@ AdWords:
   - Updated generated Axis objects to include a meaningful `toString`
     implementation. Fixes github issue:
     https://github.com/googleads/googleads-java-lib/issues/98
-  - Updated generated Axis Page objects to implement Iterable<T>, where
+  - Updated generated Axis Page objects to implement Iterable\<T\>, where
     T is the type of page entry.
     Fixes github issues:
     https://github.com/googleads/googleads-java-lib/issues/109
@@ -652,7 +659,7 @@ DFP:
   - Updated generated Axis objects to include a meaningful `toString`
     implementation. Fixes github issue:
     https://github.com/googleads/googleads-java-lib/issues/98
-  - Updated generated Axis Page objects to implement Iterable<T>, where
+  - Updated generated Axis Page objects to implement Iterable\<T\>, where
     T is the type of page results.
     Fixes github issues:
     https://github.com/googleads/googleads-java-lib/issues/109
@@ -1078,7 +1085,7 @@ AdWords:
     the new VIDEO_PERFORMANCE_REPORT enum value. Fixes
     [issue 52](https://github.com/googleads/googleads-java-lib/issues/52).
   - Removed all references to ClientLogin from examples.
-  - Added missing <p> tags to Javadocs.
+  - Added missing \<p\> tags to Javadocs.
   - Introduced a separate logger for BatchJob uploads and downloads. Upload
   contents are logged to this logger using the FINE level since they can be
   considerably larger than other requests.

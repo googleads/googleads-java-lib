@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * 
- *             Provides line items the ability to target or exclude users' mobile applications.
+ *             Provides the ability to target or exclude users' mobile applications.
  *           
  * 
  * <p>Java class for MobileApplicationTargeting complex type.

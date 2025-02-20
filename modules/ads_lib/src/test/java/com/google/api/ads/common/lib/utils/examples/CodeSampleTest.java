@@ -54,7 +54,8 @@ public class CodeSampleTest {
   @Rule
   public final ExpectedException exception = ExpectedException.none();
 
-  private Runtime mockRuntime = Mockito.mock(Runtime.class);
+  private CodeSampleParams.RuntimeWrapper mockRuntime =
+      Mockito.mock(CodeSampleParams.RuntimeWrapper.class);
 
   @Before
   public void before() {

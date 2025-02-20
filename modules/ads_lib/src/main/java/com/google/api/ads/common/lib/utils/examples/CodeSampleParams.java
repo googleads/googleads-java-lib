@@ -27,11 +27,10 @@ public abstract class CodeSampleParams {
   protected boolean help = false;
 
   public boolean parseArguments(String[] args) {
-    return parseArguments(args, Runtime.getRuntime(), System.err);
+    return parseArguments(args, Runtime.getRuntime()::exit, System.err);
   }
 
-  boolean parseArguments(String[] args, Runtime runtime,
-      PrintStream usageStream) {
+  boolean parseArguments(String[] args, RuntimeWrapper runtime, PrintStream usageStream) {
     JCommander jc = new JCommander(this);
 
     if (args.length == 0) {
@@ -48,5 +47,9 @@ public abstract class CodeSampleParams {
     }
 
     return true;
+  }
+
+  interface RuntimeWrapper {
+    void exit(int exitCode);
   }
 }
