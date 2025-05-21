@@ -70,6 +70,9 @@ public class GrpSettings  implements java.io.Serializable {
      * in Nielsen Line Item auto pacing. */
     private com.google.api.ads.admanager.axis.v202411.PacingDeviceCategorizationType pacingDeviceCategorizationType;
 
+    /* Specifies whether to apply true coviewing in Nielsen Line Item
+     * auto pacing. This field can only
+     *                 be true if NielsenCtvPacingType is not NONE. */
     private java.lang.Boolean applyTrueCoview;
 
     public GrpSettings() {
@@ -290,7 +293,9 @@ public class GrpSettings  implements java.io.Serializable {
     /**
      * Gets the applyTrueCoview value for this GrpSettings.
      * 
-     * @return applyTrueCoview
+     * @return applyTrueCoview   * Specifies whether to apply true coviewing in Nielsen Line Item
+     * auto pacing. This field can only
+     *                 be true if NielsenCtvPacingType is not NONE.
      */
     public java.lang.Boolean getApplyTrueCoview() {
         return applyTrueCoview;
@@ -300,7 +305,9 @@ public class GrpSettings  implements java.io.Serializable {
     /**
      * Sets the applyTrueCoview value for this GrpSettings.
      * 
-     * @param applyTrueCoview
+     * @param applyTrueCoview   * Specifies whether to apply true coviewing in Nielsen Line Item
+     * auto pacing. This field can only
+     *                 be true if NielsenCtvPacingType is not NONE.
      */
     public void setApplyTrueCoview(java.lang.Boolean applyTrueCoview) {
         this.applyTrueCoview = applyTrueCoview;

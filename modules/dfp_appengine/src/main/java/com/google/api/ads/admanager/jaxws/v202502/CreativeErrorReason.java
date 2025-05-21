@@ -108,8 +108,7 @@ public enum CreativeErrorReason {
 
     /**
      * 
-     *                 Invalid size for AdSense dynamic allocation creative.
-     *                 Only valid AFC sizes are allowed.
+     *                 Invalid size for AdSense dynamic allocation creative. Only valid AFC sizes are allowed.
      *               
      * 
      */
@@ -117,8 +116,8 @@ public enum CreativeErrorReason {
 
     /**
      * 
-     *                 Invalid size for Ad Exchange dynamic allocation creative.
-     *                 Only valid Ad Exchange sizes are allowed.
+     *                 Invalid size for Ad Exchange dynamic allocation creative. Only valid Ad Exchange sizes are
+     *                 allowed.
      *               
      * 
      */

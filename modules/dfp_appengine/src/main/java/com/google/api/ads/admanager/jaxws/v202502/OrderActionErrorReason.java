@@ -108,8 +108,8 @@ public enum OrderActionErrorReason {
 
     /**
      * 
-     *                 Cannot update (archive, pause, resume) an {@link Order} because it has more than the allowed
-     *                 number of {@link LineItem}s.
+     *                 Cannot update an {@link Order} because it has more than the allowed number of {@link
+     *                 LineItem}s.
      *               
      * 
      */
