@@ -22,7 +22,7 @@
   <parent>
     <groupId>com.google.api-ads</groupId>
     <artifactId>client-libs-parent</artifactId>
-    <version>5.9.0</version>
+    <version>5.9.1-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
@@ -30,7 +30,7 @@
 
   <groupId>com.google.api-ads</groupId>
   <artifactId>ads-lib-appengine</artifactId>
-  <version>5.9.0</version>
+  <version>5.9.1-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ads APIs Client Library AppEngine components</name>
@@ -54,7 +54,7 @@
     <dependency>
       <groupId>com.google.api-ads</groupId>
       <artifactId>ads-lib</artifactId>
-      <version>5.9.0</version>
+      <version>5.9.1-SNAPSHOT</version>
     </dependency>
     <!-- Third party dependencies -->
     <dependency>
