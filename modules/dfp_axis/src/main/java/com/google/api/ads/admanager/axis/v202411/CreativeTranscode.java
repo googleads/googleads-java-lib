@@ -21,11 +21,20 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Contains information needed to identify a Truman creative transcode.
+ */
 public class CreativeTranscode  implements java.io.Serializable {
+    /* The ad system that the creative is associated with. */
     private java.lang.String adServer;
 
+    /* The {@link IdType} that describes the type of {@code creativeId}. */
     private com.google.api.ads.admanager.axis.v202411.CreativeTranscodeIdType creativeIdType;
 
+    /* An ID (either an ad ID, a creative ID, or a concatenation of
+     * the two) that identifies a
+     *                 creative. */
     private java.lang.String creativeId;
 
     public CreativeTranscode() {
@@ -53,7 +62,7 @@ public class CreativeTranscode  implements java.io.Serializable {
     /**
      * Gets the adServer value for this CreativeTranscode.
      * 
-     * @return adServer
+     * @return adServer   * The ad system that the creative is associated with.
      */
     public java.lang.String getAdServer() {
         return adServer;
@@ -63,7 +72,7 @@ public class CreativeTranscode  implements java.io.Serializable {
     /**
      * Sets the adServer value for this CreativeTranscode.
      * 
-     * @param adServer
+     * @param adServer   * The ad system that the creative is associated with.
      */
     public void setAdServer(java.lang.String adServer) {
         this.adServer = adServer;
@@ -73,7 +82,7 @@ public class CreativeTranscode  implements java.io.Serializable {
     /**
      * Gets the creativeIdType value for this CreativeTranscode.
      * 
-     * @return creativeIdType
+     * @return creativeIdType   * The {@link IdType} that describes the type of {@code creativeId}.
      */
     public com.google.api.ads.admanager.axis.v202411.CreativeTranscodeIdType getCreativeIdType() {
         return creativeIdType;
@@ -83,7 +92,7 @@ public class CreativeTranscode  implements java.io.Serializable {
     /**
      * Sets the creativeIdType value for this CreativeTranscode.
      * 
-     * @param creativeIdType
+     * @param creativeIdType   * The {@link IdType} that describes the type of {@code creativeId}.
      */
     public void setCreativeIdType(com.google.api.ads.admanager.axis.v202411.CreativeTranscodeIdType creativeIdType) {
         this.creativeIdType = creativeIdType;
@@ -93,7 +102,9 @@ public class CreativeTranscode  implements java.io.Serializable {
     /**
      * Gets the creativeId value for this CreativeTranscode.
      * 
-     * @return creativeId
+     * @return creativeId   * An ID (either an ad ID, a creative ID, or a concatenation of
+     * the two) that identifies a
+     *                 creative.
      */
     public java.lang.String getCreativeId() {
         return creativeId;
@@ -103,7 +114,9 @@ public class CreativeTranscode  implements java.io.Serializable {
     /**
      * Sets the creativeId value for this CreativeTranscode.
      * 
-     * @param creativeId
+     * @param creativeId   * An ID (either an ad ID, a creative ID, or a concatenation of
+     * the two) that identifies a
+     *                 creative.
      */
     public void setCreativeId(java.lang.String creativeId) {
         this.creativeId = creativeId;

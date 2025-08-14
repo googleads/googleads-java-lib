@@ -21,11 +21,19 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Captures a page of {@link YieldGroup} objects.
+ */
 public class YieldGroupPage  implements java.io.Serializable , Iterable<com.google.api.ads.admanager.axis.v202505.YieldGroup>{
+    /* The size of the total result set to which this page belongs. */
     private java.lang.Integer totalResultSetSize;
 
+    /* The absolute index in the total result set on which this page
+     * begins. */
     private java.lang.Integer startIndex;
 
+    /* The collection of yield groups contained within this page. */
     private com.google.api.ads.admanager.axis.v202505.YieldGroup[] results;
 
     public YieldGroupPage() {
@@ -54,7 +62,7 @@ public class YieldGroupPage  implements java.io.Serializable , Iterable<com.goog
     /**
      * Gets the totalResultSetSize value for this YieldGroupPage.
      * 
-     * @return totalResultSetSize
+     * @return totalResultSetSize   * The size of the total result set to which this page belongs.
      */
     public java.lang.Integer getTotalResultSetSize() {
         return totalResultSetSize;
@@ -64,7 +72,7 @@ public class YieldGroupPage  implements java.io.Serializable , Iterable<com.goog
     /**
      * Sets the totalResultSetSize value for this YieldGroupPage.
      * 
-     * @param totalResultSetSize
+     * @param totalResultSetSize   * The size of the total result set to which this page belongs.
      */
     public void setTotalResultSetSize(java.lang.Integer totalResultSetSize) {
         this.totalResultSetSize = totalResultSetSize;
@@ -74,7 +82,8 @@ public class YieldGroupPage  implements java.io.Serializable , Iterable<com.goog
     /**
      * Gets the startIndex value for this YieldGroupPage.
      * 
-     * @return startIndex
+     * @return startIndex   * The absolute index in the total result set on which this page
+     * begins.
      */
     public java.lang.Integer getStartIndex() {
         return startIndex;
@@ -84,7 +93,8 @@ public class YieldGroupPage  implements java.io.Serializable , Iterable<com.goog
     /**
      * Sets the startIndex value for this YieldGroupPage.
      * 
-     * @param startIndex
+     * @param startIndex   * The absolute index in the total result set on which this page
+     * begins.
      */
     public void setStartIndex(java.lang.Integer startIndex) {
         this.startIndex = startIndex;
@@ -94,7 +104,7 @@ public class YieldGroupPage  implements java.io.Serializable , Iterable<com.goog
     /**
      * Gets the results value for this YieldGroupPage.
      * 
-     * @return results
+     * @return results   * The collection of yield groups contained within this page.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldGroup[] getResults() {
         return results;
@@ -104,7 +114,7 @@ public class YieldGroupPage  implements java.io.Serializable , Iterable<com.goog
     /**
      * Sets the results value for this YieldGroupPage.
      * 
-     * @param results
+     * @param results   * The collection of yield groups contained within this page.
      */
     public void setResults(com.google.api.ads.admanager.axis.v202505.YieldGroup[] results) {
         this.results = results;

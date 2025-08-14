@@ -40,9 +40,37 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum DisapprovalReasonType {
 
+
+    /**
+     * 
+     *                 The site has content that violates policy.
+     *               
+     * 
+     */
     CONTENT,
+
+    /**
+     * 
+     *                 The parent must be an authorized seller of the child network's inventory.
+     *               
+     * 
+     */
     OWNERSHIP,
+
+    /**
+     * 
+     *                 Generic error type.
+     *               
+     * 
+     */
     OTHER,
+
+    /**
+     * 
+     *                 The value returned if the actual value is not exposed by the requested API version.
+     *               
+     * 
+     */
     UNKNOWN;
 
     public String value() {

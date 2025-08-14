@@ -21,6 +21,17 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * A {@code TrackingEvent} contains information about an event that
+ * triggered a URL to get pinged.
+ *             
+ *             <p>For example, a VAST response could contain a URL to
+ * ping if an ad is clicked on. For VAST
+ *             redirects there may be multiple tracking events for a
+ * single event because every ad server
+ *             involved will get pinged.
+ */
 public class TrackingEvent  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202502.TrackingEventPing[] pings;
 

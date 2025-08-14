@@ -21,6 +21,11 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Base class for information necessary to call an ad network as part
+ * of mediation or open bidding.
+ */
 public abstract class AbstractDisplaySettings  implements java.io.Serializable {
     public AbstractDisplaySettings() {
     }

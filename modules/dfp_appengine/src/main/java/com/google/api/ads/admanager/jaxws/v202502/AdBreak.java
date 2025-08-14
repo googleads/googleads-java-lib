@@ -23,6 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains debugging information for a single ad break in a stream.
+ *           
+ * 
  * <p>Java class for AdBreak complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -23,6 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             A Partner that can be added to a yield group.
+ *           
+ * 
  * <p>Java class for YieldPartner complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

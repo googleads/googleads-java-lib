@@ -22,6 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains information about an error that occurred during a SAM session.
+ *           
+ * 
  * <p>Java class for SamError complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -21,6 +21,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains debugging information about a creative that was served during an ad break.
+ *           
+ * 
  * <p>Java class for AdDecisionCreative complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

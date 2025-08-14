@@ -21,6 +21,10 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * The action used for deactivating {@link Site} objects.
+ */
 public class DeactivateSite  extends com.google.api.ads.admanager.axis.v202411.SiteAction  implements java.io.Serializable {
     public DeactivateSite() {
     }

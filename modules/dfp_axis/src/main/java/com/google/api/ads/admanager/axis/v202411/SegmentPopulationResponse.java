@@ -21,9 +21,15 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Response returned by {@link SegmentPopulationService}
+ */
 public class SegmentPopulationResponse  implements java.io.Serializable {
+    /* The batch ID used to look up the results. */
     private java.lang.Long batchUploadId;
 
+    /* Individual identifier errors. */
     private com.google.api.ads.admanager.axis.v202411.IdError[] idErrors;
 
     public SegmentPopulationResponse() {
@@ -48,7 +54,7 @@ public class SegmentPopulationResponse  implements java.io.Serializable {
     /**
      * Gets the batchUploadId value for this SegmentPopulationResponse.
      * 
-     * @return batchUploadId
+     * @return batchUploadId   * The batch ID used to look up the results.
      */
     public java.lang.Long getBatchUploadId() {
         return batchUploadId;
@@ -58,7 +64,7 @@ public class SegmentPopulationResponse  implements java.io.Serializable {
     /**
      * Sets the batchUploadId value for this SegmentPopulationResponse.
      * 
-     * @param batchUploadId
+     * @param batchUploadId   * The batch ID used to look up the results.
      */
     public void setBatchUploadId(java.lang.Long batchUploadId) {
         this.batchUploadId = batchUploadId;
@@ -68,7 +74,7 @@ public class SegmentPopulationResponse  implements java.io.Serializable {
     /**
      * Gets the idErrors value for this SegmentPopulationResponse.
      * 
-     * @return idErrors
+     * @return idErrors   * Individual identifier errors.
      */
     public com.google.api.ads.admanager.axis.v202411.IdError[] getIdErrors() {
         return idErrors;
@@ -78,7 +84,7 @@ public class SegmentPopulationResponse  implements java.io.Serializable {
     /**
      * Sets the idErrors value for this SegmentPopulationResponse.
      * 
-     * @param idErrors
+     * @param idErrors   * Individual identifier errors.
      */
     public void setIdErrors(com.google.api.ads.admanager.axis.v202411.IdError[] idErrors) {
         this.idErrors = idErrors;

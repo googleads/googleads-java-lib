@@ -21,15 +21,24 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * The results of a SegmentPopulationRequest.
+ */
 public class SegmentPopulationResults  implements java.io.Serializable {
+    /* The batch ID to look up the results. */
     private java.lang.Long batchUploadId;
 
+    /* The segment ID associated with the segment population job. */
     private java.lang.Long segmentId;
 
+    /* The current status of the upload request. */
     private com.google.api.ads.admanager.axis.v202411.SegmentPopulationStatus status;
 
+    /* The number of IDs that were processed successfully. */
     private java.lang.Long numSuccessfulIdsProcessed;
 
+    /* Identifiers with errors. */
     private com.google.api.ads.admanager.axis.v202411.IdError[] errors;
 
     public SegmentPopulationResults() {
@@ -63,7 +72,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Gets the batchUploadId value for this SegmentPopulationResults.
      * 
-     * @return batchUploadId
+     * @return batchUploadId   * The batch ID to look up the results.
      */
     public java.lang.Long getBatchUploadId() {
         return batchUploadId;
@@ -73,7 +82,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Sets the batchUploadId value for this SegmentPopulationResults.
      * 
-     * @param batchUploadId
+     * @param batchUploadId   * The batch ID to look up the results.
      */
     public void setBatchUploadId(java.lang.Long batchUploadId) {
         this.batchUploadId = batchUploadId;
@@ -83,7 +92,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Gets the segmentId value for this SegmentPopulationResults.
      * 
-     * @return segmentId
+     * @return segmentId   * The segment ID associated with the segment population job.
      */
     public java.lang.Long getSegmentId() {
         return segmentId;
@@ -93,7 +102,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Sets the segmentId value for this SegmentPopulationResults.
      * 
-     * @param segmentId
+     * @param segmentId   * The segment ID associated with the segment population job.
      */
     public void setSegmentId(java.lang.Long segmentId) {
         this.segmentId = segmentId;
@@ -103,7 +112,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Gets the status value for this SegmentPopulationResults.
      * 
-     * @return status
+     * @return status   * The current status of the upload request.
      */
     public com.google.api.ads.admanager.axis.v202411.SegmentPopulationStatus getStatus() {
         return status;
@@ -113,7 +122,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Sets the status value for this SegmentPopulationResults.
      * 
-     * @param status
+     * @param status   * The current status of the upload request.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202411.SegmentPopulationStatus status) {
         this.status = status;
@@ -123,7 +132,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Gets the numSuccessfulIdsProcessed value for this SegmentPopulationResults.
      * 
-     * @return numSuccessfulIdsProcessed
+     * @return numSuccessfulIdsProcessed   * The number of IDs that were processed successfully.
      */
     public java.lang.Long getNumSuccessfulIdsProcessed() {
         return numSuccessfulIdsProcessed;
@@ -133,7 +142,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Sets the numSuccessfulIdsProcessed value for this SegmentPopulationResults.
      * 
-     * @param numSuccessfulIdsProcessed
+     * @param numSuccessfulIdsProcessed   * The number of IDs that were processed successfully.
      */
     public void setNumSuccessfulIdsProcessed(java.lang.Long numSuccessfulIdsProcessed) {
         this.numSuccessfulIdsProcessed = numSuccessfulIdsProcessed;
@@ -143,7 +152,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Gets the errors value for this SegmentPopulationResults.
      * 
-     * @return errors
+     * @return errors   * Identifiers with errors.
      */
     public com.google.api.ads.admanager.axis.v202411.IdError[] getErrors() {
         return errors;
@@ -153,7 +162,7 @@ public class SegmentPopulationResults  implements java.io.Serializable {
     /**
      * Sets the errors value for this SegmentPopulationResults.
      * 
-     * @param errors
+     * @param errors   * Identifiers with errors.
      */
     public void setErrors(com.google.api.ads.admanager.axis.v202411.IdError[] errors) {
         this.errors = errors;

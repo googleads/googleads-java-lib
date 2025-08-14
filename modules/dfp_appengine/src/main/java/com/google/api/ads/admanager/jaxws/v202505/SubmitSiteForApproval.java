@@ -21,6 +21,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             The action used for submitting {@link Site} objects for approval. All newly created sites must be
+ *             approved before they can be served ads.
+ *           
+ * 
  * <p>Java class for SubmitSiteForApproval complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

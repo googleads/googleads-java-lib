@@ -21,21 +21,39 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * Contains debugging information about a creative that was served
+ * during an ad break.
+ */
 public class AdDecisionCreative  implements java.io.Serializable {
+    /* The position of the ad within the ad break. */
     private java.lang.Integer sequence;
 
+    /* The duration of the slate if this creative is a slate, 0 if
+     * this is an ad. */
     private java.lang.Long slateDurationMills;
 
+    /* The duration of the creative, 0 if this is a slate. */
     private java.lang.Long creativeDurationMills;
 
+    /* Information about the transcoded creative. */
     private com.google.api.ads.admanager.axis.v202502.CreativeTranscode creativeTranscode;
 
+    /* Google-owned user-facing universal identifier for the creative.
+     * Will only be populated if the
+     *                 creative was successfully acquired. */
     private java.lang.String googleVideoId;
 
+    /* Information about any error associated with this creative,
+     * or null if there was no error. */
     private com.google.api.ads.admanager.axis.v202502.SamError samError;
 
+    /* Whether this creative is transcoded. */
     private java.lang.Boolean isTranscoded;
 
+    /* Whether this creative was dropped from the AdDecision during
+     * serving. */
     private java.lang.Boolean isDropped;
 
     public AdDecisionCreative() {
@@ -78,7 +96,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the sequence value for this AdDecisionCreative.
      * 
-     * @return sequence
+     * @return sequence   * The position of the ad within the ad break.
      */
     public java.lang.Integer getSequence() {
         return sequence;
@@ -88,7 +106,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the sequence value for this AdDecisionCreative.
      * 
-     * @param sequence
+     * @param sequence   * The position of the ad within the ad break.
      */
     public void setSequence(java.lang.Integer sequence) {
         this.sequence = sequence;
@@ -98,7 +116,8 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the slateDurationMills value for this AdDecisionCreative.
      * 
-     * @return slateDurationMills
+     * @return slateDurationMills   * The duration of the slate if this creative is a slate, 0 if
+     * this is an ad.
      */
     public java.lang.Long getSlateDurationMills() {
         return slateDurationMills;
@@ -108,7 +127,8 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the slateDurationMills value for this AdDecisionCreative.
      * 
-     * @param slateDurationMills
+     * @param slateDurationMills   * The duration of the slate if this creative is a slate, 0 if
+     * this is an ad.
      */
     public void setSlateDurationMills(java.lang.Long slateDurationMills) {
         this.slateDurationMills = slateDurationMills;
@@ -118,7 +138,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the creativeDurationMills value for this AdDecisionCreative.
      * 
-     * @return creativeDurationMills
+     * @return creativeDurationMills   * The duration of the creative, 0 if this is a slate.
      */
     public java.lang.Long getCreativeDurationMills() {
         return creativeDurationMills;
@@ -128,7 +148,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the creativeDurationMills value for this AdDecisionCreative.
      * 
-     * @param creativeDurationMills
+     * @param creativeDurationMills   * The duration of the creative, 0 if this is a slate.
      */
     public void setCreativeDurationMills(java.lang.Long creativeDurationMills) {
         this.creativeDurationMills = creativeDurationMills;
@@ -138,7 +158,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the creativeTranscode value for this AdDecisionCreative.
      * 
-     * @return creativeTranscode
+     * @return creativeTranscode   * Information about the transcoded creative.
      */
     public com.google.api.ads.admanager.axis.v202502.CreativeTranscode getCreativeTranscode() {
         return creativeTranscode;
@@ -148,7 +168,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the creativeTranscode value for this AdDecisionCreative.
      * 
-     * @param creativeTranscode
+     * @param creativeTranscode   * Information about the transcoded creative.
      */
     public void setCreativeTranscode(com.google.api.ads.admanager.axis.v202502.CreativeTranscode creativeTranscode) {
         this.creativeTranscode = creativeTranscode;
@@ -158,7 +178,9 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the googleVideoId value for this AdDecisionCreative.
      * 
-     * @return googleVideoId
+     * @return googleVideoId   * Google-owned user-facing universal identifier for the creative.
+     * Will only be populated if the
+     *                 creative was successfully acquired.
      */
     public java.lang.String getGoogleVideoId() {
         return googleVideoId;
@@ -168,7 +190,9 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the googleVideoId value for this AdDecisionCreative.
      * 
-     * @param googleVideoId
+     * @param googleVideoId   * Google-owned user-facing universal identifier for the creative.
+     * Will only be populated if the
+     *                 creative was successfully acquired.
      */
     public void setGoogleVideoId(java.lang.String googleVideoId) {
         this.googleVideoId = googleVideoId;
@@ -178,7 +202,8 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the samError value for this AdDecisionCreative.
      * 
-     * @return samError
+     * @return samError   * Information about any error associated with this creative,
+     * or null if there was no error.
      */
     public com.google.api.ads.admanager.axis.v202502.SamError getSamError() {
         return samError;
@@ -188,7 +213,8 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the samError value for this AdDecisionCreative.
      * 
-     * @param samError
+     * @param samError   * Information about any error associated with this creative,
+     * or null if there was no error.
      */
     public void setSamError(com.google.api.ads.admanager.axis.v202502.SamError samError) {
         this.samError = samError;
@@ -198,7 +224,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the isTranscoded value for this AdDecisionCreative.
      * 
-     * @return isTranscoded
+     * @return isTranscoded   * Whether this creative is transcoded.
      */
     public java.lang.Boolean getIsTranscoded() {
         return isTranscoded;
@@ -208,7 +234,7 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the isTranscoded value for this AdDecisionCreative.
      * 
-     * @param isTranscoded
+     * @param isTranscoded   * Whether this creative is transcoded.
      */
     public void setIsTranscoded(java.lang.Boolean isTranscoded) {
         this.isTranscoded = isTranscoded;
@@ -218,7 +244,8 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Gets the isDropped value for this AdDecisionCreative.
      * 
-     * @return isDropped
+     * @return isDropped   * Whether this creative was dropped from the AdDecision during
+     * serving.
      */
     public java.lang.Boolean getIsDropped() {
         return isDropped;
@@ -228,7 +255,8 @@ public class AdDecisionCreative  implements java.io.Serializable {
     /**
      * Sets the isDropped value for this AdDecisionCreative.
      * 
-     * @param isDropped
+     * @param isDropped   * Whether this creative was dropped from the AdDecision during
+     * serving.
      */
     public void setIsDropped(java.lang.Boolean isDropped) {
         this.isDropped = isDropped;

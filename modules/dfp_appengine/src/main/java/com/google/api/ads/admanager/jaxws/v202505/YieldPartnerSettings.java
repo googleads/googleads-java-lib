@@ -24,6 +24,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Settings for a yield partner.
+ *           
+ * 
  * <p>Java class for YieldPartnerSettings complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

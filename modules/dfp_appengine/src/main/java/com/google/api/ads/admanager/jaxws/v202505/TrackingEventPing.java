@@ -21,6 +21,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains a URI that was pinged and indicates if there was an error during the ping.
+ *           
+ * 
  * <p>Java class for TrackingEvent.Ping complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -24,6 +24,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             A Yield Group represents a segment of inventory and a set of networks to which the inventory is
+ *             made available for yield.
+ *           
+ * 
  * <p>Java class for YieldGroup complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

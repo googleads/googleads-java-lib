@@ -21,15 +21,28 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * Contains debugging information about the request that usually happens
+ * once per session from the
+ *             video player to retrieve the streaming URL chunks that
+ * are constantly updated as the stream
+ *             progresses.
+ */
 public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v202502.StreamCreateRequest  implements java.io.Serializable {
+    /* The content source ID associated with the session. */
     private java.lang.Long contentSourceId;
 
+    /* The video ID associated with the session. */
     private java.lang.String videoId;
 
+    /* The Ad Manager content ID associated with the session. */
     private java.lang.Long contentId;
 
+    /* The content name associated with the session. */
     private java.lang.String contentName;
 
+    /* The cue points of the content associated with the session. */
     private long[] cuePoints;
 
     public VodStreamCreateRequest() {
@@ -73,7 +86,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Gets the contentSourceId value for this VodStreamCreateRequest.
      * 
-     * @return contentSourceId
+     * @return contentSourceId   * The content source ID associated with the session.
      */
     public java.lang.Long getContentSourceId() {
         return contentSourceId;
@@ -83,7 +96,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Sets the contentSourceId value for this VodStreamCreateRequest.
      * 
-     * @param contentSourceId
+     * @param contentSourceId   * The content source ID associated with the session.
      */
     public void setContentSourceId(java.lang.Long contentSourceId) {
         this.contentSourceId = contentSourceId;
@@ -93,7 +106,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Gets the videoId value for this VodStreamCreateRequest.
      * 
-     * @return videoId
+     * @return videoId   * The video ID associated with the session.
      */
     public java.lang.String getVideoId() {
         return videoId;
@@ -103,7 +116,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Sets the videoId value for this VodStreamCreateRequest.
      * 
-     * @param videoId
+     * @param videoId   * The video ID associated with the session.
      */
     public void setVideoId(java.lang.String videoId) {
         this.videoId = videoId;
@@ -113,7 +126,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Gets the contentId value for this VodStreamCreateRequest.
      * 
-     * @return contentId
+     * @return contentId   * The Ad Manager content ID associated with the session.
      */
     public java.lang.Long getContentId() {
         return contentId;
@@ -123,7 +136,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Sets the contentId value for this VodStreamCreateRequest.
      * 
-     * @param contentId
+     * @param contentId   * The Ad Manager content ID associated with the session.
      */
     public void setContentId(java.lang.Long contentId) {
         this.contentId = contentId;
@@ -133,7 +146,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Gets the contentName value for this VodStreamCreateRequest.
      * 
-     * @return contentName
+     * @return contentName   * The content name associated with the session.
      */
     public java.lang.String getContentName() {
         return contentName;
@@ -143,7 +156,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Sets the contentName value for this VodStreamCreateRequest.
      * 
-     * @param contentName
+     * @param contentName   * The content name associated with the session.
      */
     public void setContentName(java.lang.String contentName) {
         this.contentName = contentName;
@@ -153,7 +166,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Gets the cuePoints value for this VodStreamCreateRequest.
      * 
-     * @return cuePoints
+     * @return cuePoints   * The cue points of the content associated with the session.
      */
     public long[] getCuePoints() {
         return cuePoints;
@@ -163,7 +176,7 @@ public class VodStreamCreateRequest  extends com.google.api.ads.admanager.axis.v
     /**
      * Sets the cuePoints value for this VodStreamCreateRequest.
      * 
-     * @param cuePoints
+     * @param cuePoints   * The cue points of the content associated with the session.
      */
     public void setCuePoints(long[] cuePoints) {
         this.cuePoints = cuePoints;

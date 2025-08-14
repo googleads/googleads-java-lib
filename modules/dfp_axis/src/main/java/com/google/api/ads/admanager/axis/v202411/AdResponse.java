@@ -21,17 +21,38 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Contains debugging information from an ad response, which is the
+ * response to an ad request that
+ *             contains the creatives that should be served into the
+ * ad break.
+ *             
+ *             <p>The response can either be a VAST Inline, which contains
+ * an actual creative from an ad server,
+ *             a VAST Redirect, which contains a redirect URL that should
+ * be pinged via another VAST ad request,
+ *             or a VMAP response.
+ */
 public class AdResponse  implements java.io.Serializable {
+    /* The ad tag URL. */
     private java.lang.String requestUrl;
 
+    /* Whether the request associated with this ad response is VMAP. */
     private java.lang.Boolean isVmapRequest;
 
+    /* The contents of the response body. */
     private java.lang.String responseBody;
 
+    /* The subsequent ad responses that were triggered due to a VAST
+     * redirect in this ad response. */
     private com.google.api.ads.admanager.axis.v202411.AdResponse[] redirectResponses;
 
+    /* Information about any generic error that occurred. */
     private com.google.api.ads.admanager.axis.v202411.SamError samError;
 
+    /* Information about any errors that occurred while parsing the
+     * ad response. */
     private com.google.api.ads.admanager.axis.v202411.SamError[] adErrors;
 
     public AdResponse() {
@@ -68,7 +89,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Gets the requestUrl value for this AdResponse.
      * 
-     * @return requestUrl
+     * @return requestUrl   * The ad tag URL.
      */
     public java.lang.String getRequestUrl() {
         return requestUrl;
@@ -78,7 +99,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Sets the requestUrl value for this AdResponse.
      * 
-     * @param requestUrl
+     * @param requestUrl   * The ad tag URL.
      */
     public void setRequestUrl(java.lang.String requestUrl) {
         this.requestUrl = requestUrl;
@@ -88,7 +109,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Gets the isVmapRequest value for this AdResponse.
      * 
-     * @return isVmapRequest
+     * @return isVmapRequest   * Whether the request associated with this ad response is VMAP.
      */
     public java.lang.Boolean getIsVmapRequest() {
         return isVmapRequest;
@@ -98,7 +119,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Sets the isVmapRequest value for this AdResponse.
      * 
-     * @param isVmapRequest
+     * @param isVmapRequest   * Whether the request associated with this ad response is VMAP.
      */
     public void setIsVmapRequest(java.lang.Boolean isVmapRequest) {
         this.isVmapRequest = isVmapRequest;
@@ -108,7 +129,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Gets the responseBody value for this AdResponse.
      * 
-     * @return responseBody
+     * @return responseBody   * The contents of the response body.
      */
     public java.lang.String getResponseBody() {
         return responseBody;
@@ -118,7 +139,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Sets the responseBody value for this AdResponse.
      * 
-     * @param responseBody
+     * @param responseBody   * The contents of the response body.
      */
     public void setResponseBody(java.lang.String responseBody) {
         this.responseBody = responseBody;
@@ -128,7 +149,8 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Gets the redirectResponses value for this AdResponse.
      * 
-     * @return redirectResponses
+     * @return redirectResponses   * The subsequent ad responses that were triggered due to a VAST
+     * redirect in this ad response.
      */
     public com.google.api.ads.admanager.axis.v202411.AdResponse[] getRedirectResponses() {
         return redirectResponses;
@@ -138,7 +160,8 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Sets the redirectResponses value for this AdResponse.
      * 
-     * @param redirectResponses
+     * @param redirectResponses   * The subsequent ad responses that were triggered due to a VAST
+     * redirect in this ad response.
      */
     public void setRedirectResponses(com.google.api.ads.admanager.axis.v202411.AdResponse[] redirectResponses) {
         this.redirectResponses = redirectResponses;
@@ -156,7 +179,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Gets the samError value for this AdResponse.
      * 
-     * @return samError
+     * @return samError   * Information about any generic error that occurred.
      */
     public com.google.api.ads.admanager.axis.v202411.SamError getSamError() {
         return samError;
@@ -166,7 +189,7 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Sets the samError value for this AdResponse.
      * 
-     * @param samError
+     * @param samError   * Information about any generic error that occurred.
      */
     public void setSamError(com.google.api.ads.admanager.axis.v202411.SamError samError) {
         this.samError = samError;
@@ -176,7 +199,8 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Gets the adErrors value for this AdResponse.
      * 
-     * @return adErrors
+     * @return adErrors   * Information about any errors that occurred while parsing the
+     * ad response.
      */
     public com.google.api.ads.admanager.axis.v202411.SamError[] getAdErrors() {
         return adErrors;
@@ -186,7 +210,8 @@ public class AdResponse  implements java.io.Serializable {
     /**
      * Sets the adErrors value for this AdResponse.
      * 
-     * @param adErrors
+     * @param adErrors   * Information about any errors that occurred while parsing the
+     * ad response.
      */
     public void setAdErrors(com.google.api.ads.admanager.axis.v202411.SamError[] adErrors) {
         this.adErrors = adErrors;

@@ -22,6 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Base class for information necessary to call an ad network as part of mediation or open bidding.
+ *           
+ * 
  * <p>Java class for AbstractDisplaySettings complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

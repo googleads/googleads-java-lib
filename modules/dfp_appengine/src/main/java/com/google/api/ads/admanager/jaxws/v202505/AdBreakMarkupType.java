@@ -67,8 +67,7 @@ public enum AdBreakMarkupType {
 
     /**
      * 
-     *                 The DATERANGE (Anvato) ad break marker type. This mark up type is only applicable for HLS live
-     *                 streams.
+     *                 The DATERANGE ad break marker type. This mark up type is only applicable for HLS live streams.
      *               
      * 
      */

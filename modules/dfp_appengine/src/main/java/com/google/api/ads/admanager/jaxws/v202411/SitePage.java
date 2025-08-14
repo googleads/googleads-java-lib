@@ -23,6 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Captures a page of {@link Site} objects.
+ *           
+ * 
  * <p>Java class for SitePage complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

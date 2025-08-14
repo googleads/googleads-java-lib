@@ -21,9 +21,15 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Represents the reason for which Google disapproved the site.
+ */
 public class DisapprovalReason  implements java.io.Serializable {
+    /* The type of policy violation found for the {@code Site}. */
     private com.google.api.ads.admanager.axis.v202505.DisapprovalReasonType type;
 
+    /* Additional details for the disapproval of the {@code Site}. */
     private java.lang.String details;
 
     public DisapprovalReason() {
@@ -48,7 +54,7 @@ public class DisapprovalReason  implements java.io.Serializable {
     /**
      * Gets the type value for this DisapprovalReason.
      * 
-     * @return type
+     * @return type   * The type of policy violation found for the {@code Site}.
      */
     public com.google.api.ads.admanager.axis.v202505.DisapprovalReasonType getType() {
         return type;
@@ -58,7 +64,7 @@ public class DisapprovalReason  implements java.io.Serializable {
     /**
      * Sets the type value for this DisapprovalReason.
      * 
-     * @param type
+     * @param type   * The type of policy violation found for the {@code Site}.
      */
     public void setType(com.google.api.ads.admanager.axis.v202505.DisapprovalReasonType type) {
         this.type = type;
@@ -68,7 +74,7 @@ public class DisapprovalReason  implements java.io.Serializable {
     /**
      * Gets the details value for this DisapprovalReason.
      * 
-     * @return details
+     * @return details   * Additional details for the disapproval of the {@code Site}.
      */
     public java.lang.String getDetails() {
         return details;
@@ -78,7 +84,7 @@ public class DisapprovalReason  implements java.io.Serializable {
     /**
      * Sets the details value for this DisapprovalReason.
      * 
-     * @param details
+     * @param details   * Additional details for the disapproval of the {@code Site}.
      */
     public void setDetails(java.lang.String details) {
         this.details = details;

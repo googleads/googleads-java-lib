@@ -23,6 +23,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Response returned by {@link SegmentPopulationService}
+ *           
+ * 
  * <p>Java class for SegmentPopulationResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

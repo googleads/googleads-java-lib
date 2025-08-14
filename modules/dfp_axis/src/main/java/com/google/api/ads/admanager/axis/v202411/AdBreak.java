@@ -21,31 +21,83 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Contains debugging information for a single ad break in a stream.
+ */
 public class AdBreak  implements java.io.Serializable {
+    /* The root ad responses to the {@code adRequest}. If this is
+     * a staged request, there may be two
+     *                 root ad responses - one for the prefetch stage and
+     * another if there is a follow up request at
+     *                 the ad break.
+     *                 
+     *                 <p>A VAST redirect response triggers another ad request
+     * (that is not recorded), and thus a
+     *                 response for that request, which is why there can
+     * be multiple ad responses nested within an ad
+     *                 response.
+     *                 
+     *                 <p>For more information, see https://support.google.com/admanager/answer/7009058 */
     private com.google.api.ads.admanager.axis.v202411.AdResponse[] rootAdResponses;
 
+    /* Contains information about the creatives that were served in
+     * the ad break, such as the ad
+     *                 system that served them and whether they were transcoded
+     * by Truman already. */
     private com.google.api.ads.admanager.axis.v202411.AdDecisionCreative[] adDecisionCreatives;
 
+    /* 1-based index of this pod within the whole stream. */
     private java.lang.Integer podNum;
 
+    /* Pod number of the ad break, for "ad break specific" records
+     * like AdRequest, AdResponse,
+     *                 AdDecision, etc. This field is only used for Linear
+     * streams. */
     private java.lang.Integer linearAbsolutePodNum;
 
+    /* The duration in milliseconds of the entire ad break, from when
+     * content stops playing until it
+     *                 resumes. */
     private java.lang.Long adBreakDurationMillis;
 
+    /* The sum of the durations in milliseconds of the ads within
+     * this ad break.
+     *                 
+     *                 <p>If the ad break is 60 seconds and two 25 second
+     * ads are returned in an ad response the
+     *                 filled time would be 50000 milliseconds. */
     private java.lang.Long filledDurationMillis;
 
+    /* The amount of ad time in milliseconds a user actually sees.
+     * 
+     *                 <p>If the ad break is 60 seconds and two 25 second
+     * ads are returned but one of these ads wasn't
+     *                 transcoded so a slate was used, the served time would
+     * be 25 seconds. */
     private java.lang.Long servedDurationMillis;
 
+    /* The date and time this ad break started (the time the ad request
+     * was made). */
     private com.google.api.ads.admanager.axis.v202411.DateTime startDateTime;
 
+    /* The offset of the ad break within the content in milliseconds.
+     * Used for VOD sessions only. */
     private java.lang.Long startTimeOffsetMillis;
 
+    /* Any error that occurred while attempting to stitch the ad break
+     * into the stream. */
     private com.google.api.ads.admanager.axis.v202411.SamError samError;
 
+    /* For break type MIDROLL, the 1-based index of the mid-roll position.
+     * Only applies to VOD VMAP ad
+     *                 breaks. */
     private java.lang.Integer midrollIndex;
 
+    /* Whether ads were decisioned for this ad break. */
     private java.lang.Boolean decisionedAds;
 
+    /* The list of tracking events associated with this ad break. */
     private com.google.api.ads.admanager.axis.v202411.TrackingEvent[] trackingEvents;
 
     public AdBreak() {
@@ -103,7 +155,19 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the rootAdResponses value for this AdBreak.
      * 
-     * @return rootAdResponses
+     * @return rootAdResponses   * The root ad responses to the {@code adRequest}. If this is
+     * a staged request, there may be two
+     *                 root ad responses - one for the prefetch stage and
+     * another if there is a follow up request at
+     *                 the ad break.
+     *                 
+     *                 <p>A VAST redirect response triggers another ad request
+     * (that is not recorded), and thus a
+     *                 response for that request, which is why there can
+     * be multiple ad responses nested within an ad
+     *                 response.
+     *                 
+     *                 <p>For more information, see https://support.google.com/admanager/answer/7009058
      */
     public com.google.api.ads.admanager.axis.v202411.AdResponse[] getRootAdResponses() {
         return rootAdResponses;
@@ -113,7 +177,19 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the rootAdResponses value for this AdBreak.
      * 
-     * @param rootAdResponses
+     * @param rootAdResponses   * The root ad responses to the {@code adRequest}. If this is
+     * a staged request, there may be two
+     *                 root ad responses - one for the prefetch stage and
+     * another if there is a follow up request at
+     *                 the ad break.
+     *                 
+     *                 <p>A VAST redirect response triggers another ad request
+     * (that is not recorded), and thus a
+     *                 response for that request, which is why there can
+     * be multiple ad responses nested within an ad
+     *                 response.
+     *                 
+     *                 <p>For more information, see https://support.google.com/admanager/answer/7009058
      */
     public void setRootAdResponses(com.google.api.ads.admanager.axis.v202411.AdResponse[] rootAdResponses) {
         this.rootAdResponses = rootAdResponses;
@@ -131,7 +207,10 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the adDecisionCreatives value for this AdBreak.
      * 
-     * @return adDecisionCreatives
+     * @return adDecisionCreatives   * Contains information about the creatives that were served in
+     * the ad break, such as the ad
+     *                 system that served them and whether they were transcoded
+     * by Truman already.
      */
     public com.google.api.ads.admanager.axis.v202411.AdDecisionCreative[] getAdDecisionCreatives() {
         return adDecisionCreatives;
@@ -141,7 +220,10 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the adDecisionCreatives value for this AdBreak.
      * 
-     * @param adDecisionCreatives
+     * @param adDecisionCreatives   * Contains information about the creatives that were served in
+     * the ad break, such as the ad
+     *                 system that served them and whether they were transcoded
+     * by Truman already.
      */
     public void setAdDecisionCreatives(com.google.api.ads.admanager.axis.v202411.AdDecisionCreative[] adDecisionCreatives) {
         this.adDecisionCreatives = adDecisionCreatives;
@@ -159,7 +241,7 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the podNum value for this AdBreak.
      * 
-     * @return podNum
+     * @return podNum   * 1-based index of this pod within the whole stream.
      */
     public java.lang.Integer getPodNum() {
         return podNum;
@@ -169,7 +251,7 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the podNum value for this AdBreak.
      * 
-     * @param podNum
+     * @param podNum   * 1-based index of this pod within the whole stream.
      */
     public void setPodNum(java.lang.Integer podNum) {
         this.podNum = podNum;
@@ -179,7 +261,10 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the linearAbsolutePodNum value for this AdBreak.
      * 
-     * @return linearAbsolutePodNum
+     * @return linearAbsolutePodNum   * Pod number of the ad break, for "ad break specific" records
+     * like AdRequest, AdResponse,
+     *                 AdDecision, etc. This field is only used for Linear
+     * streams.
      */
     public java.lang.Integer getLinearAbsolutePodNum() {
         return linearAbsolutePodNum;
@@ -189,7 +274,10 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the linearAbsolutePodNum value for this AdBreak.
      * 
-     * @param linearAbsolutePodNum
+     * @param linearAbsolutePodNum   * Pod number of the ad break, for "ad break specific" records
+     * like AdRequest, AdResponse,
+     *                 AdDecision, etc. This field is only used for Linear
+     * streams.
      */
     public void setLinearAbsolutePodNum(java.lang.Integer linearAbsolutePodNum) {
         this.linearAbsolutePodNum = linearAbsolutePodNum;
@@ -199,7 +287,9 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the adBreakDurationMillis value for this AdBreak.
      * 
-     * @return adBreakDurationMillis
+     * @return adBreakDurationMillis   * The duration in milliseconds of the entire ad break, from when
+     * content stops playing until it
+     *                 resumes.
      */
     public java.lang.Long getAdBreakDurationMillis() {
         return adBreakDurationMillis;
@@ -209,7 +299,9 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the adBreakDurationMillis value for this AdBreak.
      * 
-     * @param adBreakDurationMillis
+     * @param adBreakDurationMillis   * The duration in milliseconds of the entire ad break, from when
+     * content stops playing until it
+     *                 resumes.
      */
     public void setAdBreakDurationMillis(java.lang.Long adBreakDurationMillis) {
         this.adBreakDurationMillis = adBreakDurationMillis;
@@ -219,7 +311,12 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the filledDurationMillis value for this AdBreak.
      * 
-     * @return filledDurationMillis
+     * @return filledDurationMillis   * The sum of the durations in milliseconds of the ads within
+     * this ad break.
+     *                 
+     *                 <p>If the ad break is 60 seconds and two 25 second
+     * ads are returned in an ad response the
+     *                 filled time would be 50000 milliseconds.
      */
     public java.lang.Long getFilledDurationMillis() {
         return filledDurationMillis;
@@ -229,7 +326,12 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the filledDurationMillis value for this AdBreak.
      * 
-     * @param filledDurationMillis
+     * @param filledDurationMillis   * The sum of the durations in milliseconds of the ads within
+     * this ad break.
+     *                 
+     *                 <p>If the ad break is 60 seconds and two 25 second
+     * ads are returned in an ad response the
+     *                 filled time would be 50000 milliseconds.
      */
     public void setFilledDurationMillis(java.lang.Long filledDurationMillis) {
         this.filledDurationMillis = filledDurationMillis;
@@ -239,7 +341,12 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the servedDurationMillis value for this AdBreak.
      * 
-     * @return servedDurationMillis
+     * @return servedDurationMillis   * The amount of ad time in milliseconds a user actually sees.
+     * 
+     *                 <p>If the ad break is 60 seconds and two 25 second
+     * ads are returned but one of these ads wasn't
+     *                 transcoded so a slate was used, the served time would
+     * be 25 seconds.
      */
     public java.lang.Long getServedDurationMillis() {
         return servedDurationMillis;
@@ -249,7 +356,12 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the servedDurationMillis value for this AdBreak.
      * 
-     * @param servedDurationMillis
+     * @param servedDurationMillis   * The amount of ad time in milliseconds a user actually sees.
+     * 
+     *                 <p>If the ad break is 60 seconds and two 25 second
+     * ads are returned but one of these ads wasn't
+     *                 transcoded so a slate was used, the served time would
+     * be 25 seconds.
      */
     public void setServedDurationMillis(java.lang.Long servedDurationMillis) {
         this.servedDurationMillis = servedDurationMillis;
@@ -259,7 +371,8 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the startDateTime value for this AdBreak.
      * 
-     * @return startDateTime
+     * @return startDateTime   * The date and time this ad break started (the time the ad request
+     * was made).
      */
     public com.google.api.ads.admanager.axis.v202411.DateTime getStartDateTime() {
         return startDateTime;
@@ -269,7 +382,8 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the startDateTime value for this AdBreak.
      * 
-     * @param startDateTime
+     * @param startDateTime   * The date and time this ad break started (the time the ad request
+     * was made).
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202411.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -279,7 +393,8 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the startTimeOffsetMillis value for this AdBreak.
      * 
-     * @return startTimeOffsetMillis
+     * @return startTimeOffsetMillis   * The offset of the ad break within the content in milliseconds.
+     * Used for VOD sessions only.
      */
     public java.lang.Long getStartTimeOffsetMillis() {
         return startTimeOffsetMillis;
@@ -289,7 +404,8 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the startTimeOffsetMillis value for this AdBreak.
      * 
-     * @param startTimeOffsetMillis
+     * @param startTimeOffsetMillis   * The offset of the ad break within the content in milliseconds.
+     * Used for VOD sessions only.
      */
     public void setStartTimeOffsetMillis(java.lang.Long startTimeOffsetMillis) {
         this.startTimeOffsetMillis = startTimeOffsetMillis;
@@ -299,7 +415,8 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the samError value for this AdBreak.
      * 
-     * @return samError
+     * @return samError   * Any error that occurred while attempting to stitch the ad break
+     * into the stream.
      */
     public com.google.api.ads.admanager.axis.v202411.SamError getSamError() {
         return samError;
@@ -309,7 +426,8 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the samError value for this AdBreak.
      * 
-     * @param samError
+     * @param samError   * Any error that occurred while attempting to stitch the ad break
+     * into the stream.
      */
     public void setSamError(com.google.api.ads.admanager.axis.v202411.SamError samError) {
         this.samError = samError;
@@ -319,7 +437,9 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the midrollIndex value for this AdBreak.
      * 
-     * @return midrollIndex
+     * @return midrollIndex   * For break type MIDROLL, the 1-based index of the mid-roll position.
+     * Only applies to VOD VMAP ad
+     *                 breaks.
      */
     public java.lang.Integer getMidrollIndex() {
         return midrollIndex;
@@ -329,7 +449,9 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the midrollIndex value for this AdBreak.
      * 
-     * @param midrollIndex
+     * @param midrollIndex   * For break type MIDROLL, the 1-based index of the mid-roll position.
+     * Only applies to VOD VMAP ad
+     *                 breaks.
      */
     public void setMidrollIndex(java.lang.Integer midrollIndex) {
         this.midrollIndex = midrollIndex;
@@ -339,7 +461,7 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the decisionedAds value for this AdBreak.
      * 
-     * @return decisionedAds
+     * @return decisionedAds   * Whether ads were decisioned for this ad break.
      */
     public java.lang.Boolean getDecisionedAds() {
         return decisionedAds;
@@ -349,7 +471,7 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the decisionedAds value for this AdBreak.
      * 
-     * @param decisionedAds
+     * @param decisionedAds   * Whether ads were decisioned for this ad break.
      */
     public void setDecisionedAds(java.lang.Boolean decisionedAds) {
         this.decisionedAds = decisionedAds;
@@ -359,7 +481,7 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Gets the trackingEvents value for this AdBreak.
      * 
-     * @return trackingEvents
+     * @return trackingEvents   * The list of tracking events associated with this ad break.
      */
     public com.google.api.ads.admanager.axis.v202411.TrackingEvent[] getTrackingEvents() {
         return trackingEvents;
@@ -369,7 +491,7 @@ public class AdBreak  implements java.io.Serializable {
     /**
      * Sets the trackingEvents value for this AdBreak.
      * 
-     * @param trackingEvents
+     * @param trackingEvents   * The list of tracking events associated with this ad break.
      */
     public void setTrackingEvents(com.google.api.ads.admanager.axis.v202411.TrackingEvent[] trackingEvents) {
         this.trackingEvents = trackingEvents;

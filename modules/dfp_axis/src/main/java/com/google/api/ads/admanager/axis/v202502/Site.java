@@ -21,17 +21,40 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * A {@code Site} represents a domain owned or represented by a network.
+ * For a parent network
+ *             managing other networks as part of Multiple Customer Management
+ * "Manage Inventory" model, it
+ *             could be the child's site.
+ */
 public class Site  implements java.io.Serializable {
+    /* Uniquely identifies the {@code Site}. This value is read-only
+     * and is assigned by Google when
+     *                 the site is created. */
     private java.lang.Long id;
 
+    /* The URL of the {@code Site}. */
     private java.lang.String url;
 
+    /* The {@link Network#networkCode} of the child if the {@code
+     * Site} is being managed for an MCM
+     *                 child network, or null if owned by this network. */
     private java.lang.String childNetworkCode;
 
+    /* Status of the review performed on the {@code Site} by Google.
+     * This field is read-only and is
+     *                 assigned by Google. */
     private com.google.api.ads.admanager.axis.v202502.ApprovalStatus approvalStatus;
 
+    /* The latest site approval status change time. */
     private com.google.api.ads.admanager.axis.v202502.DateTime approvalStatusUpdateTime;
 
+    /* Provides reasons for disapproving the site. It is {@code null}
+     * when the {@code Site} is not
+     *                 disapproved. This is field is read-only and is assigned
+     * by Google. */
     private com.google.api.ads.admanager.axis.v202502.DisapprovalReason[] disapprovalReasons;
 
     public Site() {
@@ -68,7 +91,9 @@ public class Site  implements java.io.Serializable {
     /**
      * Gets the id value for this Site.
      * 
-     * @return id
+     * @return id   * Uniquely identifies the {@code Site}. This value is read-only
+     * and is assigned by Google when
+     *                 the site is created.
      */
     public java.lang.Long getId() {
         return id;
@@ -78,7 +103,9 @@ public class Site  implements java.io.Serializable {
     /**
      * Sets the id value for this Site.
      * 
-     * @param id
+     * @param id   * Uniquely identifies the {@code Site}. This value is read-only
+     * and is assigned by Google when
+     *                 the site is created.
      */
     public void setId(java.lang.Long id) {
         this.id = id;
@@ -88,7 +115,7 @@ public class Site  implements java.io.Serializable {
     /**
      * Gets the url value for this Site.
      * 
-     * @return url
+     * @return url   * The URL of the {@code Site}.
      */
     public java.lang.String getUrl() {
         return url;
@@ -98,7 +125,7 @@ public class Site  implements java.io.Serializable {
     /**
      * Sets the url value for this Site.
      * 
-     * @param url
+     * @param url   * The URL of the {@code Site}.
      */
     public void setUrl(java.lang.String url) {
         this.url = url;
@@ -108,7 +135,9 @@ public class Site  implements java.io.Serializable {
     /**
      * Gets the childNetworkCode value for this Site.
      * 
-     * @return childNetworkCode
+     * @return childNetworkCode   * The {@link Network#networkCode} of the child if the {@code
+     * Site} is being managed for an MCM
+     *                 child network, or null if owned by this network.
      */
     public java.lang.String getChildNetworkCode() {
         return childNetworkCode;
@@ -118,7 +147,9 @@ public class Site  implements java.io.Serializable {
     /**
      * Sets the childNetworkCode value for this Site.
      * 
-     * @param childNetworkCode
+     * @param childNetworkCode   * The {@link Network#networkCode} of the child if the {@code
+     * Site} is being managed for an MCM
+     *                 child network, or null if owned by this network.
      */
     public void setChildNetworkCode(java.lang.String childNetworkCode) {
         this.childNetworkCode = childNetworkCode;
@@ -128,7 +159,9 @@ public class Site  implements java.io.Serializable {
     /**
      * Gets the approvalStatus value for this Site.
      * 
-     * @return approvalStatus
+     * @return approvalStatus   * Status of the review performed on the {@code Site} by Google.
+     * This field is read-only and is
+     *                 assigned by Google.
      */
     public com.google.api.ads.admanager.axis.v202502.ApprovalStatus getApprovalStatus() {
         return approvalStatus;
@@ -138,7 +171,9 @@ public class Site  implements java.io.Serializable {
     /**
      * Sets the approvalStatus value for this Site.
      * 
-     * @param approvalStatus
+     * @param approvalStatus   * Status of the review performed on the {@code Site} by Google.
+     * This field is read-only and is
+     *                 assigned by Google.
      */
     public void setApprovalStatus(com.google.api.ads.admanager.axis.v202502.ApprovalStatus approvalStatus) {
         this.approvalStatus = approvalStatus;
@@ -148,7 +183,7 @@ public class Site  implements java.io.Serializable {
     /**
      * Gets the approvalStatusUpdateTime value for this Site.
      * 
-     * @return approvalStatusUpdateTime
+     * @return approvalStatusUpdateTime   * The latest site approval status change time.
      */
     public com.google.api.ads.admanager.axis.v202502.DateTime getApprovalStatusUpdateTime() {
         return approvalStatusUpdateTime;
@@ -158,7 +193,7 @@ public class Site  implements java.io.Serializable {
     /**
      * Sets the approvalStatusUpdateTime value for this Site.
      * 
-     * @param approvalStatusUpdateTime
+     * @param approvalStatusUpdateTime   * The latest site approval status change time.
      */
     public void setApprovalStatusUpdateTime(com.google.api.ads.admanager.axis.v202502.DateTime approvalStatusUpdateTime) {
         this.approvalStatusUpdateTime = approvalStatusUpdateTime;
@@ -168,7 +203,10 @@ public class Site  implements java.io.Serializable {
     /**
      * Gets the disapprovalReasons value for this Site.
      * 
-     * @return disapprovalReasons
+     * @return disapprovalReasons   * Provides reasons for disapproving the site. It is {@code null}
+     * when the {@code Site} is not
+     *                 disapproved. This is field is read-only and is assigned
+     * by Google.
      */
     public com.google.api.ads.admanager.axis.v202502.DisapprovalReason[] getDisapprovalReasons() {
         return disapprovalReasons;
@@ -178,7 +216,10 @@ public class Site  implements java.io.Serializable {
     /**
      * Sets the disapprovalReasons value for this Site.
      * 
-     * @param disapprovalReasons
+     * @param disapprovalReasons   * Provides reasons for disapproving the site. It is {@code null}
+     * when the {@code Site} is not
+     *                 disapproved. This is field is read-only and is assigned
+     * by Google.
      */
     public void setDisapprovalReasons(com.google.api.ads.admanager.axis.v202502.DisapprovalReason[] disapprovalReasons) {
         this.disapprovalReasons = disapprovalReasons;

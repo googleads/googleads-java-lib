@@ -24,6 +24,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             The results of a SegmentPopulationRequest.
+ *           
+ * 
  * <p>Java class for SegmentPopulationResults complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

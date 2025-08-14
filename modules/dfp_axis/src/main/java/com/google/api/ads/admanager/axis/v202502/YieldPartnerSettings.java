@@ -21,6 +21,10 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * Settings for a yield partner.
+ */
 public class YieldPartnerSettings  implements java.io.Serializable {
     private com.google.api.ads.admanager.axis.v202502.PartnerSettingStatus status;
 

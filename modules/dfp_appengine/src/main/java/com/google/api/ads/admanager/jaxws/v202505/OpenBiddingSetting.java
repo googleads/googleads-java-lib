@@ -22,6 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Configuration for Open Bidding in a {@link YieldAdSource}.
+ *           
+ * 
  * <p>Java class for OpenBiddingSetting complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

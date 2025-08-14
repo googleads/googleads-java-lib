@@ -24,6 +24,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Display settings for mobile SDK adapters.
+ *           
+ * 
  * <p>Java class for SdkMediationSettings complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -21,9 +21,16 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * Contains information about an error that occurred during a SAM
+ * session.
+ */
 public class SamError  implements java.io.Serializable {
+    /* The type of error that occurred. */
     private com.google.api.ads.admanager.axis.v202502.SamErrorType samErrorType;
 
+    /* Any details about the error that ocurred. */
     private java.lang.String errorDetails;
 
     public SamError() {
@@ -48,7 +55,7 @@ public class SamError  implements java.io.Serializable {
     /**
      * Gets the samErrorType value for this SamError.
      * 
-     * @return samErrorType
+     * @return samErrorType   * The type of error that occurred.
      */
     public com.google.api.ads.admanager.axis.v202502.SamErrorType getSamErrorType() {
         return samErrorType;
@@ -58,7 +65,7 @@ public class SamError  implements java.io.Serializable {
     /**
      * Sets the samErrorType value for this SamError.
      * 
-     * @param samErrorType
+     * @param samErrorType   * The type of error that occurred.
      */
     public void setSamErrorType(com.google.api.ads.admanager.axis.v202502.SamErrorType samErrorType) {
         this.samErrorType = samErrorType;
@@ -68,7 +75,7 @@ public class SamError  implements java.io.Serializable {
     /**
      * Gets the errorDetails value for this SamError.
      * 
-     * @return errorDetails
+     * @return errorDetails   * Any details about the error that ocurred.
      */
     public java.lang.String getErrorDetails() {
         return errorDetails;
@@ -78,7 +85,7 @@ public class SamError  implements java.io.Serializable {
     /**
      * Sets the errorDetails value for this SamError.
      * 
-     * @param errorDetails
+     * @param errorDetails   * Any details about the error that ocurred.
      */
     public void setErrorDetails(java.lang.String errorDetails) {
         this.errorDetails = errorDetails;

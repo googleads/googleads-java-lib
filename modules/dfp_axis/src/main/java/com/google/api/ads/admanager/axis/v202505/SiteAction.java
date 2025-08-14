@@ -21,6 +21,10 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Represents the actions that can be performed on {@code Site} objects.
+ */
 public abstract class SiteAction  implements java.io.Serializable {
     public SiteAction() {
     }

@@ -21,6 +21,11 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Contains a URI that was pinged and indicates if there was an error
+ * during the ping.
+ */
 public class TrackingEventPing  implements java.io.Serializable {
     private java.lang.String uri;
 

@@ -22,6 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains information needed to identify a Truman creative transcode.
+ *           
+ * 
  * <p>Java class for CreativeTranscode complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

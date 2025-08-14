@@ -23,6 +23,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains the debugging information that was logged for a Stream Activity Monitor (SAM) session.
+ *             
+ *             <p>This object will grow and get updated over the course of the stream.
+ *           
+ * 
  * <p>Java class for SamSession complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

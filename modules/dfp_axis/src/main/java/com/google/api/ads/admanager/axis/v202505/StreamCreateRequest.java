@@ -21,11 +21,22 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Contains debugging information about the request that usually happens
+ * once per session from the
+ *             video player to retrieve the streaming URL chunks that
+ * are constantly updated as the stream
+ *             progresses.
+ */
 public abstract class StreamCreateRequest  implements java.io.Serializable {
+    /* The ad request URL. */
     private java.lang.String url;
 
+    /* The user agent (i.e. device) the session is on. */
     private java.lang.String userAgent;
 
+    /* Indicates how ad tracking URLs are pinged. */
     private com.google.api.ads.admanager.axis.v202505.ReportingType reportingType;
 
     public StreamCreateRequest() {
@@ -53,7 +64,7 @@ public abstract class StreamCreateRequest  implements java.io.Serializable {
     /**
      * Gets the url value for this StreamCreateRequest.
      * 
-     * @return url
+     * @return url   * The ad request URL.
      */
     public java.lang.String getUrl() {
         return url;
@@ -63,7 +74,7 @@ public abstract class StreamCreateRequest  implements java.io.Serializable {
     /**
      * Sets the url value for this StreamCreateRequest.
      * 
-     * @param url
+     * @param url   * The ad request URL.
      */
     public void setUrl(java.lang.String url) {
         this.url = url;
@@ -73,7 +84,7 @@ public abstract class StreamCreateRequest  implements java.io.Serializable {
     /**
      * Gets the userAgent value for this StreamCreateRequest.
      * 
-     * @return userAgent
+     * @return userAgent   * The user agent (i.e. device) the session is on.
      */
     public java.lang.String getUserAgent() {
         return userAgent;
@@ -83,7 +94,7 @@ public abstract class StreamCreateRequest  implements java.io.Serializable {
     /**
      * Sets the userAgent value for this StreamCreateRequest.
      * 
-     * @param userAgent
+     * @param userAgent   * The user agent (i.e. device) the session is on.
      */
     public void setUserAgent(java.lang.String userAgent) {
         this.userAgent = userAgent;
@@ -93,7 +104,7 @@ public abstract class StreamCreateRequest  implements java.io.Serializable {
     /**
      * Gets the reportingType value for this StreamCreateRequest.
      * 
-     * @return reportingType
+     * @return reportingType   * Indicates how ad tracking URLs are pinged.
      */
     public com.google.api.ads.admanager.axis.v202505.ReportingType getReportingType() {
         return reportingType;
@@ -103,7 +114,7 @@ public abstract class StreamCreateRequest  implements java.io.Serializable {
     /**
      * Sets the reportingType value for this StreamCreateRequest.
      * 
-     * @param reportingType
+     * @param reportingType   * Indicates how ad tracking URLs are pinged.
      */
     public void setReportingType(com.google.api.ads.admanager.axis.v202505.ReportingType reportingType) {
         this.reportingType = reportingType;

@@ -23,6 +23,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains debugging information from an ad response, which is the response to an ad request that
+ *             contains the creatives that should be served into the ad break.
+ *             
+ *             <p>The response can either be a VAST Inline, which contains an actual creative from an ad server,
+ *             a VAST Redirect, which contains a redirect URL that should be pinged via another VAST ad request,
+ *             or a VMAP response.
+ *           
+ * 
  * <p>Java class for AdResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

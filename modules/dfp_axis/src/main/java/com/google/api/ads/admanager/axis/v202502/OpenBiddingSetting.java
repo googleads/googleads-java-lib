@@ -21,7 +21,14 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * Configuration for Open Bidding in a {@link YieldAdSource}.
+ */
 public class OpenBiddingSetting  extends com.google.api.ads.admanager.axis.v202502.AbstractDisplaySettings  implements java.io.Serializable {
+    /* Integration type of the demand syndication setting. This must
+     * be either {@code
+     *                     EXCHANGE_BIDDING} or {@code NETWORK_BIDDING}. */
     private com.google.api.ads.admanager.axis.v202502.YieldIntegrationType yieldIntegrationType;
 
     public OpenBiddingSetting() {
@@ -43,7 +50,9 @@ public class OpenBiddingSetting  extends com.google.api.ads.admanager.axis.v2025
     /**
      * Gets the yieldIntegrationType value for this OpenBiddingSetting.
      * 
-     * @return yieldIntegrationType
+     * @return yieldIntegrationType   * Integration type of the demand syndication setting. This must
+     * be either {@code
+     *                     EXCHANGE_BIDDING} or {@code NETWORK_BIDDING}.
      */
     public com.google.api.ads.admanager.axis.v202502.YieldIntegrationType getYieldIntegrationType() {
         return yieldIntegrationType;
@@ -53,7 +62,9 @@ public class OpenBiddingSetting  extends com.google.api.ads.admanager.axis.v2025
     /**
      * Sets the yieldIntegrationType value for this OpenBiddingSetting.
      * 
-     * @param yieldIntegrationType
+     * @param yieldIntegrationType   * Integration type of the demand syndication setting. This must
+     * be either {@code
+     *                     EXCHANGE_BIDDING} or {@code NETWORK_BIDDING}.
      */
     public void setYieldIntegrationType(com.google.api.ads.admanager.axis.v202502.YieldIntegrationType yieldIntegrationType) {
         this.yieldIntegrationType = yieldIntegrationType;

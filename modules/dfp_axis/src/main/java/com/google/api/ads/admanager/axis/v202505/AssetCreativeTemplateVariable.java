@@ -31,10 +31,9 @@ package com.google.api.ads.admanager.axis.v202505;
  * from the {@link TemplateCreative}.
  */
 public class AssetCreativeTemplateVariable  extends com.google.api.ads.admanager.axis.v202505.CreativeTemplateVariable  implements java.io.Serializable {
-    /* A set of supported mime types. This set can be empty or null
-     * if there's no
-     *                     constraint, meaning files of any mime types are
-     * allowed. */
+    /* A set of supported mime types. This set can be empty if there's
+     * no constraint, meaning files of
+     *                     any mime types are allowed. */
     private com.google.api.ads.admanager.axis.v202505.AssetCreativeTemplateVariableMimeType[] mimeTypes;
 
     public AssetCreativeTemplateVariable() {
@@ -69,10 +68,9 @@ public class AssetCreativeTemplateVariable  extends com.google.api.ads.admanager
     /**
      * Gets the mimeTypes value for this AssetCreativeTemplateVariable.
      * 
-     * @return mimeTypes   * A set of supported mime types. This set can be empty or null
-     * if there's no
-     *                     constraint, meaning files of any mime types are
-     * allowed.
+     * @return mimeTypes   * A set of supported mime types. This set can be empty if there's
+     * no constraint, meaning files of
+     *                     any mime types are allowed.
      */
     public com.google.api.ads.admanager.axis.v202505.AssetCreativeTemplateVariableMimeType[] getMimeTypes() {
         return mimeTypes;
@@ -82,10 +80,9 @@ public class AssetCreativeTemplateVariable  extends com.google.api.ads.admanager
     /**
      * Sets the mimeTypes value for this AssetCreativeTemplateVariable.
      * 
-     * @param mimeTypes   * A set of supported mime types. This set can be empty or null
-     * if there's no
-     *                     constraint, meaning files of any mime types are
-     * allowed.
+     * @param mimeTypes   * A set of supported mime types. This set can be empty if there's
+     * no constraint, meaning files of
+     *                     any mime types are allowed.
      */
     public void setMimeTypes(com.google.api.ads.admanager.axis.v202505.AssetCreativeTemplateVariableMimeType[] mimeTypes) {
         this.mimeTypes = mimeTypes;

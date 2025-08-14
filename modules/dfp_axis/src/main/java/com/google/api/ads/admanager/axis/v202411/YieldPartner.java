@@ -21,9 +21,18 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * A Partner that can be added to a yield group.
+ */
 public class YieldPartner  implements java.io.Serializable {
+    /* The company id of the partner, uniquely identifying it in the
+     * publisher network. If this id is
+     *                 null, then this represents a canonical third party
+     * company ad network. */
     private java.lang.Long companyId;
 
+    /* The settings of the partner, representing its capabilities. */
     private com.google.api.ads.admanager.axis.v202411.YieldPartnerSettings[] settings;
 
     public YieldPartner() {
@@ -48,7 +57,10 @@ public class YieldPartner  implements java.io.Serializable {
     /**
      * Gets the companyId value for this YieldPartner.
      * 
-     * @return companyId
+     * @return companyId   * The company id of the partner, uniquely identifying it in the
+     * publisher network. If this id is
+     *                 null, then this represents a canonical third party
+     * company ad network.
      */
     public java.lang.Long getCompanyId() {
         return companyId;
@@ -58,7 +70,10 @@ public class YieldPartner  implements java.io.Serializable {
     /**
      * Sets the companyId value for this YieldPartner.
      * 
-     * @param companyId
+     * @param companyId   * The company id of the partner, uniquely identifying it in the
+     * publisher network. If this id is
+     *                 null, then this represents a canonical third party
+     * company ad network.
      */
     public void setCompanyId(java.lang.Long companyId) {
         this.companyId = companyId;
@@ -68,7 +83,7 @@ public class YieldPartner  implements java.io.Serializable {
     /**
      * Gets the settings value for this YieldPartner.
      * 
-     * @return settings
+     * @return settings   * The settings of the partner, representing its capabilities.
      */
     public com.google.api.ads.admanager.axis.v202411.YieldPartnerSettings[] getSettings() {
         return settings;
@@ -78,7 +93,7 @@ public class YieldPartner  implements java.io.Serializable {
     /**
      * Sets the settings value for this YieldPartner.
      * 
-     * @param settings
+     * @param settings   * The settings of the partner, representing its capabilities.
      */
     public void setSettings(com.google.api.ads.admanager.axis.v202411.YieldPartnerSettings[] settings) {
         this.settings = settings;

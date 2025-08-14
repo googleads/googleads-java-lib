@@ -21,6 +21,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             The action used for deactivating {@link Site} objects.
+ *           
+ * 
  * <p>Java class for DeactivateSite complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

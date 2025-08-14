@@ -21,17 +21,43 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * A yield ad source represents an opportunity for a third party network
+ * to be mediated on a segment
+ *             of inventory described in a {@link YieldGroupDto}.
+ */
 public class YieldAdSource  implements java.io.Serializable {
+    /* The unique ID of the ad source. This attribute is read-only
+     * and is assigned by Google when the
+     *                 ad source is created. */
     private java.lang.Long adSourceId;
 
+    /* The id of the partner owning the ad source. This should be
+     * the ID of the {@link Company}
+     *                 representing the yield partner. */
     private java.lang.Long companyId;
 
+    /* Data that describe how to call an ad network. */
     private com.google.api.ads.admanager.axis.v202411.AbstractDisplaySettings displaySettings;
 
+    /* User-assigned status of the ad source. Note that this can be
+     * different than the status on the
+     *                 {@link YieldGroup} this ad source belongs to. Set
+     * this to {@code DELETED} to remove it from the
+     *                 {@link YieldGroup}. */
     private com.google.api.ads.admanager.axis.v202411.YieldEntityStatus status;
 
+    /* CPM manually assigned to this source. This will be used as
+     * a default CPM until automatic data
+     *                 collection is available for the ad source, or always
+     * if {@code overrideDynamicCpm} is set to
+     *                 true. */
     private com.google.api.ads.admanager.axis.v202411.Money manualCpm;
 
+    /* If true, then the automatically collected CPM, if available,
+     * is ignored in favor of {@code
+     *                 manualCpm}. */
     private java.lang.Boolean overrideDynamicCpm;
 
     public YieldAdSource() {
@@ -68,7 +94,9 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Gets the adSourceId value for this YieldAdSource.
      * 
-     * @return adSourceId
+     * @return adSourceId   * The unique ID of the ad source. This attribute is read-only
+     * and is assigned by Google when the
+     *                 ad source is created.
      */
     public java.lang.Long getAdSourceId() {
         return adSourceId;
@@ -78,7 +106,9 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Sets the adSourceId value for this YieldAdSource.
      * 
-     * @param adSourceId
+     * @param adSourceId   * The unique ID of the ad source. This attribute is read-only
+     * and is assigned by Google when the
+     *                 ad source is created.
      */
     public void setAdSourceId(java.lang.Long adSourceId) {
         this.adSourceId = adSourceId;
@@ -88,7 +118,9 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Gets the companyId value for this YieldAdSource.
      * 
-     * @return companyId
+     * @return companyId   * The id of the partner owning the ad source. This should be
+     * the ID of the {@link Company}
+     *                 representing the yield partner.
      */
     public java.lang.Long getCompanyId() {
         return companyId;
@@ -98,7 +130,9 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Sets the companyId value for this YieldAdSource.
      * 
-     * @param companyId
+     * @param companyId   * The id of the partner owning the ad source. This should be
+     * the ID of the {@link Company}
+     *                 representing the yield partner.
      */
     public void setCompanyId(java.lang.Long companyId) {
         this.companyId = companyId;
@@ -108,7 +142,7 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Gets the displaySettings value for this YieldAdSource.
      * 
-     * @return displaySettings
+     * @return displaySettings   * Data that describe how to call an ad network.
      */
     public com.google.api.ads.admanager.axis.v202411.AbstractDisplaySettings getDisplaySettings() {
         return displaySettings;
@@ -118,7 +152,7 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Sets the displaySettings value for this YieldAdSource.
      * 
-     * @param displaySettings
+     * @param displaySettings   * Data that describe how to call an ad network.
      */
     public void setDisplaySettings(com.google.api.ads.admanager.axis.v202411.AbstractDisplaySettings displaySettings) {
         this.displaySettings = displaySettings;
@@ -128,7 +162,11 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Gets the status value for this YieldAdSource.
      * 
-     * @return status
+     * @return status   * User-assigned status of the ad source. Note that this can be
+     * different than the status on the
+     *                 {@link YieldGroup} this ad source belongs to. Set
+     * this to {@code DELETED} to remove it from the
+     *                 {@link YieldGroup}.
      */
     public com.google.api.ads.admanager.axis.v202411.YieldEntityStatus getStatus() {
         return status;
@@ -138,7 +176,11 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Sets the status value for this YieldAdSource.
      * 
-     * @param status
+     * @param status   * User-assigned status of the ad source. Note that this can be
+     * different than the status on the
+     *                 {@link YieldGroup} this ad source belongs to. Set
+     * this to {@code DELETED} to remove it from the
+     *                 {@link YieldGroup}.
      */
     public void setStatus(com.google.api.ads.admanager.axis.v202411.YieldEntityStatus status) {
         this.status = status;
@@ -148,7 +190,11 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Gets the manualCpm value for this YieldAdSource.
      * 
-     * @return manualCpm
+     * @return manualCpm   * CPM manually assigned to this source. This will be used as
+     * a default CPM until automatic data
+     *                 collection is available for the ad source, or always
+     * if {@code overrideDynamicCpm} is set to
+     *                 true.
      */
     public com.google.api.ads.admanager.axis.v202411.Money getManualCpm() {
         return manualCpm;
@@ -158,7 +204,11 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Sets the manualCpm value for this YieldAdSource.
      * 
-     * @param manualCpm
+     * @param manualCpm   * CPM manually assigned to this source. This will be used as
+     * a default CPM until automatic data
+     *                 collection is available for the ad source, or always
+     * if {@code overrideDynamicCpm} is set to
+     *                 true.
      */
     public void setManualCpm(com.google.api.ads.admanager.axis.v202411.Money manualCpm) {
         this.manualCpm = manualCpm;
@@ -168,7 +218,9 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Gets the overrideDynamicCpm value for this YieldAdSource.
      * 
-     * @return overrideDynamicCpm
+     * @return overrideDynamicCpm   * If true, then the automatically collected CPM, if available,
+     * is ignored in favor of {@code
+     *                 manualCpm}.
      */
     public java.lang.Boolean getOverrideDynamicCpm() {
         return overrideDynamicCpm;
@@ -178,7 +230,9 @@ public class YieldAdSource  implements java.io.Serializable {
     /**
      * Sets the overrideDynamicCpm value for this YieldAdSource.
      * 
-     * @param overrideDynamicCpm
+     * @param overrideDynamicCpm   * If true, then the automatically collected CPM, if available,
+     * is ignored in favor of {@code
+     *                 manualCpm}.
      */
     public void setOverrideDynamicCpm(java.lang.Boolean overrideDynamicCpm) {
         this.overrideDynamicCpm = overrideDynamicCpm;

@@ -24,6 +24,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             A {@code Site} represents a domain owned or represented by a network. For a parent network
+ *             managing other networks as part of Multiple Customer Management "Manage Inventory" model, it
+ *             could be the child's site.
+ *           
+ * 
  * <p>Java class for Site complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

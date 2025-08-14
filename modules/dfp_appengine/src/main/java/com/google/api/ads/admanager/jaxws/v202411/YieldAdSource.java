@@ -22,6 +22,11 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             A yield ad source represents an opportunity for a third party network to be mediated on a segment
+ *             of inventory described in a {@link YieldGroupDto}.
+ *           
+ * 
  * <p>Java class for YieldAdSource complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

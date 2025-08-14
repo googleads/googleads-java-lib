@@ -21,11 +21,19 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Captures a page of {@link Site} objects.
+ */
 public class SitePage  implements java.io.Serializable , Iterable<com.google.api.ads.admanager.axis.v202411.Site>{
+    /* The size of the total result set to which this page belongs. */
     private java.lang.Integer totalResultSetSize;
 
+    /* The absolute index in the total result set on which this page
+     * begins. */
     private java.lang.Integer startIndex;
 
+    /* The collection of sites contained within this page. */
     private com.google.api.ads.admanager.axis.v202411.Site[] results;
 
     public SitePage() {
@@ -54,7 +62,7 @@ public class SitePage  implements java.io.Serializable , Iterable<com.google.api
     /**
      * Gets the totalResultSetSize value for this SitePage.
      * 
-     * @return totalResultSetSize
+     * @return totalResultSetSize   * The size of the total result set to which this page belongs.
      */
     public java.lang.Integer getTotalResultSetSize() {
         return totalResultSetSize;
@@ -64,7 +72,7 @@ public class SitePage  implements java.io.Serializable , Iterable<com.google.api
     /**
      * Sets the totalResultSetSize value for this SitePage.
      * 
-     * @param totalResultSetSize
+     * @param totalResultSetSize   * The size of the total result set to which this page belongs.
      */
     public void setTotalResultSetSize(java.lang.Integer totalResultSetSize) {
         this.totalResultSetSize = totalResultSetSize;
@@ -74,7 +82,8 @@ public class SitePage  implements java.io.Serializable , Iterable<com.google.api
     /**
      * Gets the startIndex value for this SitePage.
      * 
-     * @return startIndex
+     * @return startIndex   * The absolute index in the total result set on which this page
+     * begins.
      */
     public java.lang.Integer getStartIndex() {
         return startIndex;
@@ -84,7 +93,8 @@ public class SitePage  implements java.io.Serializable , Iterable<com.google.api
     /**
      * Sets the startIndex value for this SitePage.
      * 
-     * @param startIndex
+     * @param startIndex   * The absolute index in the total result set on which this page
+     * begins.
      */
     public void setStartIndex(java.lang.Integer startIndex) {
         this.startIndex = startIndex;
@@ -94,7 +104,7 @@ public class SitePage  implements java.io.Serializable , Iterable<com.google.api
     /**
      * Gets the results value for this SitePage.
      * 
-     * @return results
+     * @return results   * The collection of sites contained within this page.
      */
     public com.google.api.ads.admanager.axis.v202411.Site[] getResults() {
         return results;
@@ -104,7 +114,7 @@ public class SitePage  implements java.io.Serializable , Iterable<com.google.api
     /**
      * Sets the results value for this SitePage.
      * 
-     * @param results
+     * @param results   * The collection of sites contained within this page.
      */
     public void setResults(com.google.api.ads.admanager.axis.v202411.Site[] results) {
         this.results = results;

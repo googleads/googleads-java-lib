@@ -22,6 +22,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Represents the actions that can be performed on {@code Site} objects.
+ *           
+ * 
  * <p>Java class for SiteAction complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

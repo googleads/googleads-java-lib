@@ -21,9 +21,16 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Class that describes a field used by a mobile adapter to call an
+ * ad network, e.g. pubid.
+ */
 public class YieldParameter  implements java.io.Serializable {
+    /* Identifier of the parameter. */
     private java.lang.String name;
 
+    /* Whether or not this parameter is optional. */
     private java.lang.Boolean isOptional;
 
     public YieldParameter() {
@@ -48,7 +55,7 @@ public class YieldParameter  implements java.io.Serializable {
     /**
      * Gets the name value for this YieldParameter.
      * 
-     * @return name
+     * @return name   * Identifier of the parameter.
      */
     public java.lang.String getName() {
         return name;
@@ -58,7 +65,7 @@ public class YieldParameter  implements java.io.Serializable {
     /**
      * Sets the name value for this YieldParameter.
      * 
-     * @param name
+     * @param name   * Identifier of the parameter.
      */
     public void setName(java.lang.String name) {
         this.name = name;
@@ -68,7 +75,7 @@ public class YieldParameter  implements java.io.Serializable {
     /**
      * Gets the isOptional value for this YieldParameter.
      * 
-     * @return isOptional
+     * @return isOptional   * Whether or not this parameter is optional.
      */
     public java.lang.Boolean getIsOptional() {
         return isOptional;
@@ -78,7 +85,7 @@ public class YieldParameter  implements java.io.Serializable {
     /**
      * Sets the isOptional value for this YieldParameter.
      * 
-     * @param isOptional
+     * @param isOptional   * Whether or not this parameter is optional.
      */
     public void setIsOptional(java.lang.Boolean isOptional) {
         this.isOptional = isOptional;

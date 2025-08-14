@@ -21,6 +21,12 @@
 
 package com.google.api.ads.admanager.axis.v202502;
 
+
+/**
+ * The action used for submitting {@link Site} objects for approval.
+ * All newly created sites must be
+ *             approved before they can be served ads.
+ */
 public class SubmitSiteForApproval  extends com.google.api.ads.admanager.axis.v202502.SiteAction  implements java.io.Serializable {
     public SubmitSiteForApproval() {
     }

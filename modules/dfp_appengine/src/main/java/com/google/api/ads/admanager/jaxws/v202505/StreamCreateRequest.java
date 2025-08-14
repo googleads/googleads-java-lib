@@ -23,6 +23,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Contains debugging information about the request that usually happens once per session from the
+ *             video player to retrieve the streaming URL chunks that are constantly updated as the stream
+ *             progresses.
+ *           
+ * 
  * <p>Java class for StreamCreateRequest complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

@@ -21,19 +21,38 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * A Yield Group represents a segment of inventory and a set of networks
+ * to which the inventory is
+ *             made available for yield.
+ */
 public class YieldGroup  implements java.io.Serializable {
+    /* The unique ID of the {@code YieldGroup}. This attribute is
+     * read-only and is assigned by Google. */
     private java.lang.Long yieldGroupId;
 
+    /* The display name of the yield group. */
     private java.lang.String yieldGroupName;
 
+    /* Status of the Ad Exchange on for this yield group. This can
+     * be used to create a yield group
+     *                 with only the Ad Exchange enabled. If there are any
+     * active {@code adSources}, this must be
+     *                 {@code ACTIVE}. */
     private com.google.api.ads.admanager.axis.v202505.YieldEntityStatus exchangeStatus;
 
+    /* The format for the group. */
     private com.google.api.ads.admanager.axis.v202505.YieldFormat format;
 
+    /* The environment type of the group. */
     private com.google.api.ads.admanager.axis.v202505.YieldEnvironmentType environmentType;
 
+    /* This yield's group targeting. Only the following targeting
+     * types are available: TODO: List them */
     private com.google.api.ads.admanager.axis.v202505.Targeting targeting;
 
+    /* The ad sources belonging to this yield group. */
     private com.google.api.ads.admanager.axis.v202505.YieldAdSource[] adSources;
 
     public YieldGroup() {
@@ -73,7 +92,8 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the yieldGroupId value for this YieldGroup.
      * 
-     * @return yieldGroupId
+     * @return yieldGroupId   * The unique ID of the {@code YieldGroup}. This attribute is
+     * read-only and is assigned by Google.
      */
     public java.lang.Long getYieldGroupId() {
         return yieldGroupId;
@@ -83,7 +103,8 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the yieldGroupId value for this YieldGroup.
      * 
-     * @param yieldGroupId
+     * @param yieldGroupId   * The unique ID of the {@code YieldGroup}. This attribute is
+     * read-only and is assigned by Google.
      */
     public void setYieldGroupId(java.lang.Long yieldGroupId) {
         this.yieldGroupId = yieldGroupId;
@@ -93,7 +114,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the yieldGroupName value for this YieldGroup.
      * 
-     * @return yieldGroupName
+     * @return yieldGroupName   * The display name of the yield group.
      */
     public java.lang.String getYieldGroupName() {
         return yieldGroupName;
@@ -103,7 +124,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the yieldGroupName value for this YieldGroup.
      * 
-     * @param yieldGroupName
+     * @param yieldGroupName   * The display name of the yield group.
      */
     public void setYieldGroupName(java.lang.String yieldGroupName) {
         this.yieldGroupName = yieldGroupName;
@@ -113,7 +134,11 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the exchangeStatus value for this YieldGroup.
      * 
-     * @return exchangeStatus
+     * @return exchangeStatus   * Status of the Ad Exchange on for this yield group. This can
+     * be used to create a yield group
+     *                 with only the Ad Exchange enabled. If there are any
+     * active {@code adSources}, this must be
+     *                 {@code ACTIVE}.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldEntityStatus getExchangeStatus() {
         return exchangeStatus;
@@ -123,7 +148,11 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the exchangeStatus value for this YieldGroup.
      * 
-     * @param exchangeStatus
+     * @param exchangeStatus   * Status of the Ad Exchange on for this yield group. This can
+     * be used to create a yield group
+     *                 with only the Ad Exchange enabled. If there are any
+     * active {@code adSources}, this must be
+     *                 {@code ACTIVE}.
      */
     public void setExchangeStatus(com.google.api.ads.admanager.axis.v202505.YieldEntityStatus exchangeStatus) {
         this.exchangeStatus = exchangeStatus;
@@ -133,7 +162,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the format value for this YieldGroup.
      * 
-     * @return format
+     * @return format   * The format for the group.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldFormat getFormat() {
         return format;
@@ -143,7 +172,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the format value for this YieldGroup.
      * 
-     * @param format
+     * @param format   * The format for the group.
      */
     public void setFormat(com.google.api.ads.admanager.axis.v202505.YieldFormat format) {
         this.format = format;
@@ -153,7 +182,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the environmentType value for this YieldGroup.
      * 
-     * @return environmentType
+     * @return environmentType   * The environment type of the group.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldEnvironmentType getEnvironmentType() {
         return environmentType;
@@ -163,7 +192,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the environmentType value for this YieldGroup.
      * 
-     * @param environmentType
+     * @param environmentType   * The environment type of the group.
      */
     public void setEnvironmentType(com.google.api.ads.admanager.axis.v202505.YieldEnvironmentType environmentType) {
         this.environmentType = environmentType;
@@ -173,7 +202,8 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the targeting value for this YieldGroup.
      * 
-     * @return targeting
+     * @return targeting   * This yield's group targeting. Only the following targeting
+     * types are available: TODO: List them
      */
     public com.google.api.ads.admanager.axis.v202505.Targeting getTargeting() {
         return targeting;
@@ -183,7 +213,8 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the targeting value for this YieldGroup.
      * 
-     * @param targeting
+     * @param targeting   * This yield's group targeting. Only the following targeting
+     * types are available: TODO: List them
      */
     public void setTargeting(com.google.api.ads.admanager.axis.v202505.Targeting targeting) {
         this.targeting = targeting;
@@ -193,7 +224,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Gets the adSources value for this YieldGroup.
      * 
-     * @return adSources
+     * @return adSources   * The ad sources belonging to this yield group.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldAdSource[] getAdSources() {
         return adSources;
@@ -203,7 +234,7 @@ public class YieldGroup  implements java.io.Serializable {
     /**
      * Sets the adSources value for this YieldGroup.
      * 
-     * @param adSources
+     * @param adSources   * The ad sources belonging to this yield group.
      */
     public void setAdSources(com.google.api.ads.admanager.axis.v202505.YieldAdSource[] adSources) {
         this.adSources = adSources;

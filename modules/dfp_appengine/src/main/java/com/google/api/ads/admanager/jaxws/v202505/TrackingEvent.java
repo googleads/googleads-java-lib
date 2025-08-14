@@ -23,6 +23,14 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             A {@code TrackingEvent} contains information about an event that triggered a URL to get pinged.
+ *             
+ *             <p>For example, a VAST response could contain a URL to ping if an ad is clicked on. For VAST
+ *             redirects there may be multiple tracking events for a single event because every ad server
+ *             involved will get pinged.
+ *           
+ * 
  * <p>Java class for TrackingEvent complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

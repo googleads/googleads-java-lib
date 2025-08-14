@@ -21,11 +21,19 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Display settings for mobile SDK adapters.
+ */
 public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v202505.AbstractDisplaySettings  implements java.io.Serializable {
+    /* A map of key-value pairs to be used by this mobile adapter. */
     private com.google.api.ads.admanager.axis.v202505.YieldParameter_StringMapEntry[] parameters;
 
+    /* The integration type of the adapter. This may be {@code CUSTOM_EVENT}
+     * or {@code SDK}. */
     private com.google.api.ads.admanager.axis.v202505.YieldIntegrationType yieldIntegrationType;
 
+    /* The platform of the adapter. */
     private com.google.api.ads.admanager.axis.v202505.YieldPlatform platform;
 
     public SdkMediationSettings() {
@@ -53,7 +61,7 @@ public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v20
     /**
      * Gets the parameters value for this SdkMediationSettings.
      * 
-     * @return parameters
+     * @return parameters   * A map of key-value pairs to be used by this mobile adapter.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldParameter_StringMapEntry[] getParameters() {
         return parameters;
@@ -63,7 +71,7 @@ public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v20
     /**
      * Sets the parameters value for this SdkMediationSettings.
      * 
-     * @param parameters
+     * @param parameters   * A map of key-value pairs to be used by this mobile adapter.
      */
     public void setParameters(com.google.api.ads.admanager.axis.v202505.YieldParameter_StringMapEntry[] parameters) {
         this.parameters = parameters;
@@ -81,7 +89,8 @@ public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v20
     /**
      * Gets the yieldIntegrationType value for this SdkMediationSettings.
      * 
-     * @return yieldIntegrationType
+     * @return yieldIntegrationType   * The integration type of the adapter. This may be {@code CUSTOM_EVENT}
+     * or {@code SDK}.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldIntegrationType getYieldIntegrationType() {
         return yieldIntegrationType;
@@ -91,7 +100,8 @@ public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v20
     /**
      * Sets the yieldIntegrationType value for this SdkMediationSettings.
      * 
-     * @param yieldIntegrationType
+     * @param yieldIntegrationType   * The integration type of the adapter. This may be {@code CUSTOM_EVENT}
+     * or {@code SDK}.
      */
     public void setYieldIntegrationType(com.google.api.ads.admanager.axis.v202505.YieldIntegrationType yieldIntegrationType) {
         this.yieldIntegrationType = yieldIntegrationType;
@@ -101,7 +111,7 @@ public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v20
     /**
      * Gets the platform value for this SdkMediationSettings.
      * 
-     * @return platform
+     * @return platform   * The platform of the adapter.
      */
     public com.google.api.ads.admanager.axis.v202505.YieldPlatform getPlatform() {
         return platform;
@@ -111,7 +121,7 @@ public class SdkMediationSettings  extends com.google.api.ads.admanager.axis.v20
     /**
      * Sets the platform value for this SdkMediationSettings.
      * 
-     * @param platform
+     * @param platform   * The platform of the adapter.
      */
     public void setPlatform(com.google.api.ads.admanager.axis.v202505.YieldPlatform platform) {
         this.platform = platform;

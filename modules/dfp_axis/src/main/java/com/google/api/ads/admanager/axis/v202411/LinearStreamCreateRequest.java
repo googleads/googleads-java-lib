@@ -21,19 +21,34 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * Contains linear specific debugging information about the request
+ * that happens once per session
+ *             from the video player to retrieve the streaming URL chunks
+ * that are constantly updated as the
+ *             stream progresses.
+ */
 public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axis.v202411.StreamCreateRequest  implements java.io.Serializable {
+    /* The {@link LiveStreamEvent} event code. */
     private java.lang.String liveStreamEventAssetKey;
 
+    /* The {@link LiveStreamEvent} event name. */
     private java.lang.String eventName;
 
+    /* The {@link LiveStreamEvent} event id. */
     private java.lang.Long liveStreamEventId;
 
+    /* The date and time the event started. */
     private com.google.api.ads.admanager.axis.v202411.DateTime eventStartDateTime;
 
+    /* The date and time the event ended. */
     private com.google.api.ads.admanager.axis.v202411.DateTime eventEndDateTime;
 
+    /* Whether the stream has prefetch enabled. */
     private java.lang.Boolean prefetchEnabled;
 
+    /* Whether this stream has pod trimming enabled. */
     private java.lang.Boolean podTrimmingEnabled;
 
     public LinearStreamCreateRequest() {
@@ -83,7 +98,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the liveStreamEventAssetKey value for this LinearStreamCreateRequest.
      * 
-     * @return liveStreamEventAssetKey
+     * @return liveStreamEventAssetKey   * The {@link LiveStreamEvent} event code.
      */
     public java.lang.String getLiveStreamEventAssetKey() {
         return liveStreamEventAssetKey;
@@ -93,7 +108,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the liveStreamEventAssetKey value for this LinearStreamCreateRequest.
      * 
-     * @param liveStreamEventAssetKey
+     * @param liveStreamEventAssetKey   * The {@link LiveStreamEvent} event code.
      */
     public void setLiveStreamEventAssetKey(java.lang.String liveStreamEventAssetKey) {
         this.liveStreamEventAssetKey = liveStreamEventAssetKey;
@@ -103,7 +118,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the eventName value for this LinearStreamCreateRequest.
      * 
-     * @return eventName
+     * @return eventName   * The {@link LiveStreamEvent} event name.
      */
     public java.lang.String getEventName() {
         return eventName;
@@ -113,7 +128,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the eventName value for this LinearStreamCreateRequest.
      * 
-     * @param eventName
+     * @param eventName   * The {@link LiveStreamEvent} event name.
      */
     public void setEventName(java.lang.String eventName) {
         this.eventName = eventName;
@@ -123,7 +138,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the liveStreamEventId value for this LinearStreamCreateRequest.
      * 
-     * @return liveStreamEventId
+     * @return liveStreamEventId   * The {@link LiveStreamEvent} event id.
      */
     public java.lang.Long getLiveStreamEventId() {
         return liveStreamEventId;
@@ -133,7 +148,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the liveStreamEventId value for this LinearStreamCreateRequest.
      * 
-     * @param liveStreamEventId
+     * @param liveStreamEventId   * The {@link LiveStreamEvent} event id.
      */
     public void setLiveStreamEventId(java.lang.Long liveStreamEventId) {
         this.liveStreamEventId = liveStreamEventId;
@@ -143,7 +158,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the eventStartDateTime value for this LinearStreamCreateRequest.
      * 
-     * @return eventStartDateTime
+     * @return eventStartDateTime   * The date and time the event started.
      */
     public com.google.api.ads.admanager.axis.v202411.DateTime getEventStartDateTime() {
         return eventStartDateTime;
@@ -153,7 +168,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the eventStartDateTime value for this LinearStreamCreateRequest.
      * 
-     * @param eventStartDateTime
+     * @param eventStartDateTime   * The date and time the event started.
      */
     public void setEventStartDateTime(com.google.api.ads.admanager.axis.v202411.DateTime eventStartDateTime) {
         this.eventStartDateTime = eventStartDateTime;
@@ -163,7 +178,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the eventEndDateTime value for this LinearStreamCreateRequest.
      * 
-     * @return eventEndDateTime
+     * @return eventEndDateTime   * The date and time the event ended.
      */
     public com.google.api.ads.admanager.axis.v202411.DateTime getEventEndDateTime() {
         return eventEndDateTime;
@@ -173,7 +188,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the eventEndDateTime value for this LinearStreamCreateRequest.
      * 
-     * @param eventEndDateTime
+     * @param eventEndDateTime   * The date and time the event ended.
      */
     public void setEventEndDateTime(com.google.api.ads.admanager.axis.v202411.DateTime eventEndDateTime) {
         this.eventEndDateTime = eventEndDateTime;
@@ -183,7 +198,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the prefetchEnabled value for this LinearStreamCreateRequest.
      * 
-     * @return prefetchEnabled
+     * @return prefetchEnabled   * Whether the stream has prefetch enabled.
      */
     public java.lang.Boolean getPrefetchEnabled() {
         return prefetchEnabled;
@@ -193,7 +208,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the prefetchEnabled value for this LinearStreamCreateRequest.
      * 
-     * @param prefetchEnabled
+     * @param prefetchEnabled   * Whether the stream has prefetch enabled.
      */
     public void setPrefetchEnabled(java.lang.Boolean prefetchEnabled) {
         this.prefetchEnabled = prefetchEnabled;
@@ -203,7 +218,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Gets the podTrimmingEnabled value for this LinearStreamCreateRequest.
      * 
-     * @return podTrimmingEnabled
+     * @return podTrimmingEnabled   * Whether this stream has pod trimming enabled.
      */
     public java.lang.Boolean getPodTrimmingEnabled() {
         return podTrimmingEnabled;
@@ -213,7 +228,7 @@ public class LinearStreamCreateRequest  extends com.google.api.ads.admanager.axi
     /**
      * Sets the podTrimmingEnabled value for this LinearStreamCreateRequest.
      * 
-     * @param podTrimmingEnabled
+     * @param podTrimmingEnabled   * Whether this stream has pod trimming enabled.
      */
     public void setPodTrimmingEnabled(java.lang.Boolean podTrimmingEnabled) {
         this.podTrimmingEnabled = podTrimmingEnabled;

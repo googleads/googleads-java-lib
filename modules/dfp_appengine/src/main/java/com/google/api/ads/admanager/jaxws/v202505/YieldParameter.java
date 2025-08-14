@@ -21,6 +21,10 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
+ * 
+ *             Class that describes a field used by a mobile adapter to call an ad network, e.g. pubid.
+ *           
+ * 
  * <p>Java class for YieldParameter complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.

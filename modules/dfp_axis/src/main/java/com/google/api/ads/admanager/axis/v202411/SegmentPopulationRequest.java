@@ -21,17 +21,32 @@
 
 package com.google.api.ads.admanager.axis.v202411;
 
+
+/**
+ * A request to upload identifiers to an AudienceSegment.
+ */
 public class SegmentPopulationRequest  implements java.io.Serializable {
+    /* The ID of the batch that will process {@link identifiers}.
+     * If not specified, it will be
+     *                 provided by Google. The same ID can be used in subsequent
+     * requests to group them together as
+     *                 part of the same batch. */
     private java.lang.Long batchUploadId;
 
+    /* The ID of the segment to populate. This segment must be active. */
     private java.lang.Long segmentId;
 
+    /* Whether the identifiers should be added or removed. */
     private java.lang.Boolean isDeletion;
 
+    /* The type of identifier being operated upon. */
     private com.google.api.ads.admanager.axis.v202411.IdentifierType identifierType;
 
+    /* The identifiers to upload. This field may have a maximum size
+     * of 100,000 elements. */
     private java.lang.String[] ids;
 
+    /* Consent type gathered for all identifiers in this request. */
     private com.google.api.ads.admanager.axis.v202411.ConsentType consentType;
 
     public SegmentPopulationRequest() {
@@ -68,7 +83,11 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Gets the batchUploadId value for this SegmentPopulationRequest.
      * 
-     * @return batchUploadId
+     * @return batchUploadId   * The ID of the batch that will process {@link identifiers}.
+     * If not specified, it will be
+     *                 provided by Google. The same ID can be used in subsequent
+     * requests to group them together as
+     *                 part of the same batch.
      */
     public java.lang.Long getBatchUploadId() {
         return batchUploadId;
@@ -78,7 +97,11 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Sets the batchUploadId value for this SegmentPopulationRequest.
      * 
-     * @param batchUploadId
+     * @param batchUploadId   * The ID of the batch that will process {@link identifiers}.
+     * If not specified, it will be
+     *                 provided by Google. The same ID can be used in subsequent
+     * requests to group them together as
+     *                 part of the same batch.
      */
     public void setBatchUploadId(java.lang.Long batchUploadId) {
         this.batchUploadId = batchUploadId;
@@ -88,7 +111,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Gets the segmentId value for this SegmentPopulationRequest.
      * 
-     * @return segmentId
+     * @return segmentId   * The ID of the segment to populate. This segment must be active.
      */
     public java.lang.Long getSegmentId() {
         return segmentId;
@@ -98,7 +121,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Sets the segmentId value for this SegmentPopulationRequest.
      * 
-     * @param segmentId
+     * @param segmentId   * The ID of the segment to populate. This segment must be active.
      */
     public void setSegmentId(java.lang.Long segmentId) {
         this.segmentId = segmentId;
@@ -108,7 +131,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Gets the isDeletion value for this SegmentPopulationRequest.
      * 
-     * @return isDeletion
+     * @return isDeletion   * Whether the identifiers should be added or removed.
      */
     public java.lang.Boolean getIsDeletion() {
         return isDeletion;
@@ -118,7 +141,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Sets the isDeletion value for this SegmentPopulationRequest.
      * 
-     * @param isDeletion
+     * @param isDeletion   * Whether the identifiers should be added or removed.
      */
     public void setIsDeletion(java.lang.Boolean isDeletion) {
         this.isDeletion = isDeletion;
@@ -128,7 +151,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Gets the identifierType value for this SegmentPopulationRequest.
      * 
-     * @return identifierType
+     * @return identifierType   * The type of identifier being operated upon.
      */
     public com.google.api.ads.admanager.axis.v202411.IdentifierType getIdentifierType() {
         return identifierType;
@@ -138,7 +161,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Sets the identifierType value for this SegmentPopulationRequest.
      * 
-     * @param identifierType
+     * @param identifierType   * The type of identifier being operated upon.
      */
     public void setIdentifierType(com.google.api.ads.admanager.axis.v202411.IdentifierType identifierType) {
         this.identifierType = identifierType;
@@ -148,7 +171,8 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Gets the ids value for this SegmentPopulationRequest.
      * 
-     * @return ids
+     * @return ids   * The identifiers to upload. This field may have a maximum size
+     * of 100,000 elements.
      */
     public java.lang.String[] getIds() {
         return ids;
@@ -158,7 +182,8 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Sets the ids value for this SegmentPopulationRequest.
      * 
-     * @param ids
+     * @param ids   * The identifiers to upload. This field may have a maximum size
+     * of 100,000 elements.
      */
     public void setIds(java.lang.String[] ids) {
         this.ids = ids;
@@ -176,7 +201,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Gets the consentType value for this SegmentPopulationRequest.
      * 
-     * @return consentType
+     * @return consentType   * Consent type gathered for all identifiers in this request.
      */
     public com.google.api.ads.admanager.axis.v202411.ConsentType getConsentType() {
         return consentType;
@@ -186,7 +211,7 @@ public class SegmentPopulationRequest  implements java.io.Serializable {
     /**
      * Sets the consentType value for this SegmentPopulationRequest.
      * 
-     * @param consentType
+     * @param consentType   * Consent type gathered for all identifiers in this request.
      */
     public void setConsentType(com.google.api.ads.admanager.axis.v202411.ConsentType consentType) {
         this.consentType = consentType;

@@ -21,19 +21,43 @@
 
 package com.google.api.ads.admanager.axis.v202505;
 
+
+/**
+ * Contains the debugging information that was logged for a Stream
+ * Activity Monitor (SAM) session.
+ *             
+ *             <p>This object will grow and get updated over the course
+ * of the stream.
+ */
 public class SamSession  implements java.io.Serializable {
+    /* The UUID that uniquely identifies this session. */
     private java.lang.String sessionId;
 
+    /* Whether this is a VOD session. */
     private java.lang.Boolean isVodSession;
 
+    /* The initial request from the video player to retrieve the streaming
+     * URL chunks that are updated
+     *                 as the stream progresses. */
     private com.google.api.ads.admanager.axis.v202505.StreamCreateRequest streamCreateRequest;
 
+    /* The list of debugging information that occurred at each ad
+     * break in the stream. */
     private com.google.api.ads.admanager.axis.v202505.AdBreak[] adBreaks;
 
+    /* The date and time the session started. */
     private com.google.api.ads.admanager.axis.v202505.DateTime startDateTime;
 
+    /* The duration of the session in milliseconds. For live this
+     * is calculated by subtracting the
+     *                 timestamp on the oldest log from the timestamp on
+     * the newest log. For VOD this is the total
+     *                 duration of the content plus the ads that have been
+     * inserted. */
     private java.lang.Long sessionDurationMillis;
 
+    /* The duration of the content in milliseconds. This is for VOD
+     * debugging only. */
     private java.lang.Long contentDurationMillis;
 
     public SamSession() {
@@ -73,7 +97,7 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the sessionId value for this SamSession.
      * 
-     * @return sessionId
+     * @return sessionId   * The UUID that uniquely identifies this session.
      */
     public java.lang.String getSessionId() {
         return sessionId;
@@ -83,7 +107,7 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the sessionId value for this SamSession.
      * 
-     * @param sessionId
+     * @param sessionId   * The UUID that uniquely identifies this session.
      */
     public void setSessionId(java.lang.String sessionId) {
         this.sessionId = sessionId;
@@ -93,7 +117,7 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the isVodSession value for this SamSession.
      * 
-     * @return isVodSession
+     * @return isVodSession   * Whether this is a VOD session.
      */
     public java.lang.Boolean getIsVodSession() {
         return isVodSession;
@@ -103,7 +127,7 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the isVodSession value for this SamSession.
      * 
-     * @param isVodSession
+     * @param isVodSession   * Whether this is a VOD session.
      */
     public void setIsVodSession(java.lang.Boolean isVodSession) {
         this.isVodSession = isVodSession;
@@ -113,7 +137,9 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the streamCreateRequest value for this SamSession.
      * 
-     * @return streamCreateRequest
+     * @return streamCreateRequest   * The initial request from the video player to retrieve the streaming
+     * URL chunks that are updated
+     *                 as the stream progresses.
      */
     public com.google.api.ads.admanager.axis.v202505.StreamCreateRequest getStreamCreateRequest() {
         return streamCreateRequest;
@@ -123,7 +149,9 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the streamCreateRequest value for this SamSession.
      * 
-     * @param streamCreateRequest
+     * @param streamCreateRequest   * The initial request from the video player to retrieve the streaming
+     * URL chunks that are updated
+     *                 as the stream progresses.
      */
     public void setStreamCreateRequest(com.google.api.ads.admanager.axis.v202505.StreamCreateRequest streamCreateRequest) {
         this.streamCreateRequest = streamCreateRequest;
@@ -133,7 +161,8 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the adBreaks value for this SamSession.
      * 
-     * @return adBreaks
+     * @return adBreaks   * The list of debugging information that occurred at each ad
+     * break in the stream.
      */
     public com.google.api.ads.admanager.axis.v202505.AdBreak[] getAdBreaks() {
         return adBreaks;
@@ -143,7 +172,8 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the adBreaks value for this SamSession.
      * 
-     * @param adBreaks
+     * @param adBreaks   * The list of debugging information that occurred at each ad
+     * break in the stream.
      */
     public void setAdBreaks(com.google.api.ads.admanager.axis.v202505.AdBreak[] adBreaks) {
         this.adBreaks = adBreaks;
@@ -161,7 +191,7 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the startDateTime value for this SamSession.
      * 
-     * @return startDateTime
+     * @return startDateTime   * The date and time the session started.
      */
     public com.google.api.ads.admanager.axis.v202505.DateTime getStartDateTime() {
         return startDateTime;
@@ -171,7 +201,7 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the startDateTime value for this SamSession.
      * 
-     * @param startDateTime
+     * @param startDateTime   * The date and time the session started.
      */
     public void setStartDateTime(com.google.api.ads.admanager.axis.v202505.DateTime startDateTime) {
         this.startDateTime = startDateTime;
@@ -181,7 +211,12 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the sessionDurationMillis value for this SamSession.
      * 
-     * @return sessionDurationMillis
+     * @return sessionDurationMillis   * The duration of the session in milliseconds. For live this
+     * is calculated by subtracting the
+     *                 timestamp on the oldest log from the timestamp on
+     * the newest log. For VOD this is the total
+     *                 duration of the content plus the ads that have been
+     * inserted.
      */
     public java.lang.Long getSessionDurationMillis() {
         return sessionDurationMillis;
@@ -191,7 +226,12 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the sessionDurationMillis value for this SamSession.
      * 
-     * @param sessionDurationMillis
+     * @param sessionDurationMillis   * The duration of the session in milliseconds. For live this
+     * is calculated by subtracting the
+     *                 timestamp on the oldest log from the timestamp on
+     * the newest log. For VOD this is the total
+     *                 duration of the content plus the ads that have been
+     * inserted.
      */
     public void setSessionDurationMillis(java.lang.Long sessionDurationMillis) {
         this.sessionDurationMillis = sessionDurationMillis;
@@ -201,7 +241,8 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Gets the contentDurationMillis value for this SamSession.
      * 
-     * @return contentDurationMillis
+     * @return contentDurationMillis   * The duration of the content in milliseconds. This is for VOD
+     * debugging only.
      */
     public java.lang.Long getContentDurationMillis() {
         return contentDurationMillis;
@@ -211,7 +252,8 @@ public class SamSession  implements java.io.Serializable {
     /**
      * Sets the contentDurationMillis value for this SamSession.
      * 
-     * @param contentDurationMillis
+     * @param contentDurationMillis   * The duration of the content in milliseconds. This is for VOD
+     * debugging only.
      */
     public void setContentDurationMillis(java.lang.Long contentDurationMillis) {
         this.contentDurationMillis = contentDurationMillis;
