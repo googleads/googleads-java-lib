@@ -3497,7 +3497,7 @@ public enum Column {
     /**
      * 
      *                 The host clicks in the partner management.
-     *                 <p>Corresponds to "Host clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management host clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3506,7 +3506,7 @@ public enum Column {
     /**
      * 
      *                 The host CTR in the partner management.
-     *                 <p>Corresponds to "Host CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management host CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3515,7 +3515,7 @@ public enum Column {
     /**
      * 
      *                 The unfilled impressions in the partner management.
-     *                 <p>Corresponds to "Unfilled impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
+     *                 <p>Corresponds to "Partner management unfilled impressions" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
      *               
      * 
      */
@@ -3524,7 +3524,7 @@ public enum Column {
     /**
      * 
      *                 The partner impressions in the partner management.
-     *                 <p>Corresponds to "Partner impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management partner impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3533,7 +3533,7 @@ public enum Column {
     /**
      * 
      *                 The partner clicks in the partner management.
-     *                 <p>Corresponds to "Partner clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management partner clicks" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3542,7 +3542,7 @@ public enum Column {
     /**
      * 
      *                 The partner CTR in the partner management.
-     *                 <p>Corresponds to "Partner CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management partner CTR" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */

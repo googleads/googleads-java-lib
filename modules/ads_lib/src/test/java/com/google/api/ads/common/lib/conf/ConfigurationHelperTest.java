@@ -40,7 +40,6 @@ import java.util.Objects;
 import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.SystemConfiguration;
-import org.apache.commons.lang.SystemUtils;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -216,7 +215,7 @@ public class ConfigurationHelperTest {
       String[] actualValues = systemConfiguration.getStringArray(entry.getKey());
       String[] expectedValues;
       if (Objects.equals(entry.getKey(), "line.separator")) {
-        expectedValues = new String[] {SystemUtils.LINE_SEPARATOR};
+        expectedValues = new String[] {System.getProperty("line.separator")};
       } else {
         expectedValues = splitter.splitToList(entry.getValue()).toArray(new String[0]);
       }

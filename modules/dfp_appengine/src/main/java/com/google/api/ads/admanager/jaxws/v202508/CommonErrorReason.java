@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="CANNOT_UPDATE"/&gt;
  *     &lt;enumeration value="UNSUPPORTED_OPERATION"/&gt;
  *     &lt;enumeration value="CONCURRENT_MODIFICATION"/&gt;
+ *     &lt;enumeration value="REQUEST_TOO_LARGE"/&gt;
  *     &lt;enumeration value="UNKNOWN"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
@@ -103,6 +104,18 @@ public enum CommonErrorReason {
      * 
      */
     CONCURRENT_MODIFICATION,
+
+    /**
+     * 
+     *                 Indicates that the request is too large to be processed.
+     *                 
+     *                 <p>This error is thrown when internal system limits are exceeded due to the number of
+     *                 affected entities implied by the input parameters. Clients should reduce the number of
+     *                 affected entities and try again.
+     *               
+     * 
+     */
+    REQUEST_TOO_LARGE,
 
     /**
      * 

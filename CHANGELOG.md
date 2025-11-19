@@ -1,3 +1,9 @@
+5.11.0 - 11/18/2025
+-------------------
+ - Added support for v202511.
+ - Removed examples for v202502.
+ - Removed support for v202411.
+
 5.10.0 - 08/14/2025
 -------------------
 Ad Manager:

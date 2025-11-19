@@ -19,8 +19,8 @@ import static org.junit.Assert.assertFalse;
 
 import com.google.api.ads.admanager.jaxws.factory.AdManagerServices;
 import com.google.api.ads.admanager.jaxws.testing.SoapRequestXmlProvider;
-import com.google.api.ads.admanager.jaxws.v202508.Company;
-import com.google.api.ads.admanager.jaxws.v202508.CompanyServiceInterface;
+import com.google.api.ads.admanager.jaxws.v202511.Company;
+import com.google.api.ads.admanager.jaxws.v202511.CompanyServiceInterface;
 import com.google.api.ads.admanager.lib.client.AdManagerSession;
 import com.google.api.ads.admanager.lib.soap.testing.SoapResponseXmlProvider;
 import com.google.api.ads.common.lib.testing.MockHttpIntegrationTest;
@@ -40,7 +40,7 @@ import org.xmlunit.diff.Diff;
 @RunWith(JUnit4.class)
 public class AdManagerJaxWsSoapIntegrationTest extends MockHttpIntegrationTest {
 
-  private static final String API_VERSION = "v202508";
+  private static final String API_VERSION = "v202511";
 
   @BeforeClass
   public static void setupClass() {

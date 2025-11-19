@@ -14,31 +14,30 @@
 
 package com.google.api.ads.admanager.axis.testing;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.ads.admanager.axis.AdManagerAxisModule;
 import com.google.api.ads.common.lib.soap.testing.SoapXmlTemplater;
 import com.google.api.ads.common.lib.utils.Streams;
 import java.io.IOException;
-import java.nio.charset.Charset;
 
 /**
  * Provides Axis Ad Manager API SOAP requests.
  */
 public class SoapRequestXmlProvider {
-  
+
   private static final String PRODUCT_FRAMEWORK_NAME = "Dfp-Axis";
- 
+
   /**
    * Get a request made using OAuth2 authentication.
    */
   public static String getOAuth2SoapRequest(String apiVersion) throws IOException {
-    String soapXml = Streams.readAll(
-        SoapRequestXmlProvider.class.getResourceAsStream("test_request_oauth2.xml"),
-        Charset.forName(UTF_8));
+    String soapXml =
+        Streams.readAll(
+            SoapRequestXmlProvider.class.getResourceAsStream("test_request_oauth2.xml"), UTF_8);
     return getTemplatedXml(soapXml, apiVersion);
   }
-  
+
   /**
    * Get the templated SOAP XML.
    */

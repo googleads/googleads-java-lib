@@ -14,7 +14,7 @@
 
 package com.google.api.ads.common.lib.testing;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteSink;
@@ -22,7 +22,6 @@ import com.google.common.io.ByteSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.charset.Charset;
 import java.util.Deque;
 import java.util.List;
 import java.util.Objects;
@@ -179,7 +178,7 @@ public class TestHttpServer {
 
               // Convert the (possibly inflated) request bytes to a string.
               requestBodies.add(
-                  ByteSource.wrap(requestBytes).asCharSource(Charset.forName(UTF_8)).read());
+                  ByteSource.wrap(requestBytes).asCharSource(UTF_8).read());
               requestBodiesCompressionStates.add(isGzipFormat);
 
               // Simulate a delay in processing.
@@ -196,7 +195,7 @@ public class TestHttpServer {
                       throw new RuntimeException(e);
                     }
                   }
-                }.asCharSink(Charset.forName(UTF_8)).write(responseContent);
+                }.asCharSink(UTF_8).write(responseContent);
               } else {
                 response.sendError(500, "error: no mockResponseBodies");
               }
@@ -226,14 +225,14 @@ public class TestHttpServer {
     private String getLastRequestBody() {
       return requestBodies.getLast();
     }
-    
+
     /**
      * Returns if the last request body was compressed.
      */
     private boolean wasLastRequestBodyCompressed() {
       return requestBodiesCompressionStates.getLast();
     }
-    
+
     /**
      * Gets the authorization header of the last request made to the server or
      * {@code null} if none.

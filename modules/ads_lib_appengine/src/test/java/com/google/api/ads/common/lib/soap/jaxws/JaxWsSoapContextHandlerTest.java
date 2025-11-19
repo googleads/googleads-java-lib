@@ -14,7 +14,7 @@
 
 package com.google.api.ads.common.lib.soap.jaxws;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
@@ -29,7 +29,6 @@ import com.google.api.ads.common.lib.utils.NodeExtractor;
 import com.google.api.ads.common.lib.utils.Streams;
 import com.google.common.base.Supplier;
 import java.io.OutputStream;
-import java.nio.charset.Charset;
 import java.util.HashSet;
 import java.util.Set;
 import javax.xml.namespace.QName;
@@ -55,7 +54,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.stubbing.Answer;
 import org.slf4j.Logger;
 
-/** 
+/**
  * Tests for the {@link JaxWsSoapContextHandler} class.
  */
 @RunWith(JUnit4.class)
@@ -104,7 +103,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> writeXml =
         (invocation) -> {
           OutputStream stream = (OutputStream) invocation.getArguments()[0];
-          Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
+          Streams.write(mockSoapXml, stream, UTF_8);
           return null;
         };
 
@@ -124,7 +123,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> transform =
         (invocation) -> {
           StreamResult stream = (StreamResult) invocation.getArguments()[1];
-          Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
+          Streams.write(mockSoapXml, stream.getOutputStream(), UTF_8);
           return null;
         };
 
@@ -162,7 +161,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> transform =
         (invocation) -> {
           StreamResult stream = (StreamResult) invocation.getArguments()[1];
-          Streams.write(mockSoapXml, stream.getOutputStream(), Charset.forName(UTF_8));
+          Streams.write(mockSoapXml, stream.getOutputStream(), UTF_8);
           return null;
         };
 
@@ -209,7 +208,7 @@ public class JaxWsSoapContextHandlerTest {
     Answer<Object> writeXml =
         (invocation) -> {
           OutputStream stream = (OutputStream) invocation.getArguments()[0];
-          Streams.write(mockSoapXml, stream, Charset.forName(UTF_8));
+          Streams.write(mockSoapXml, stream, UTF_8);
           return null;
         };
 

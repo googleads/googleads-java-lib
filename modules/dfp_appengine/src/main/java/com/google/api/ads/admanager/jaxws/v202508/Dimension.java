@@ -1035,7 +1035,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by partner {@link Company#name} and {@link Company#id} are
      *                 automatically included as columns in the report.
-     *                 <p>Corresponds to "Partner" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
+     *                 <p>Corresponds to "Partner management partner" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
      *               
      * 
      */
@@ -1073,7 +1073,7 @@ public enum Dimension {
      * 
      *                 Breaks down reporting data by partner assignment name. PartnerAssignment name and id are
      *                 automatically included as columns in the report.
-     *                 <p>Corresponds to "Assignment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
+     *                 <p>Corresponds to "Partner management assignment" in the Ad Manager UI. Compatible with any of the following report types: Historical, Partner finance.</p>
      *               
      * 
      */
@@ -1341,7 +1341,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by device name. Can be used for filtering.
-     *                 <p>Can correspond to any of the following in the Ad Manager UI: Mobile OS, Devices. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Devices" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1588,7 +1588,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by programmatic buyer name.
-     *                 <p>Corresponds to "Programmatic buyer" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Deal buyer" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1915,7 +1915,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by programmatic deal ID.
-     *                 <p>Corresponds to "Programmatic deal ID" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Deal ID" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -1924,7 +1924,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by programmatic deal name.
-     *                 <p>Corresponds to "Programmatic deal name" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Deal name" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */

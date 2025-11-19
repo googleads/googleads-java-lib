@@ -14,12 +14,10 @@
 
 package com.google.api.ads.common.lib.auth.testing;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.ads.common.lib.utils.Streams;
-
 import java.io.IOException;
-import java.nio.charset.Charset;
 
 /**
  * Provides standard auth responses useful for testing.
@@ -31,9 +29,9 @@ public class AuthResponseProvider {
    */
   public static String getTestOAuthResponse(String accessToken, Long expirationInSeconds,
       String refreshToken) throws IOException {
-    String response = Streams.readAll(
-        AuthResponseProvider.class.getResourceAsStream("test_oauth_response.txt"),
-        Charset.forName(UTF_8));
+    String response =
+        Streams.readAll(
+            AuthResponseProvider.class.getResourceAsStream("test_oauth_response.txt"), UTF_8);
     return response.replace("#ACCESS_TOKEN#", accessToken)
         .replace("#EXPIRATION_SECONDS#", expirationInSeconds.toString())
         .replace("#REFRESH_TOKEN#", refreshToken);

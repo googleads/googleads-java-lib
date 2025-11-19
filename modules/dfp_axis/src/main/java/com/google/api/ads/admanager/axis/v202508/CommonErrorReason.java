@@ -38,6 +38,7 @@ public class CommonErrorReason implements java.io.Serializable {
     public static final java.lang.String _CANNOT_UPDATE = "CANNOT_UPDATE";
     public static final java.lang.String _UNSUPPORTED_OPERATION = "UNSUPPORTED_OPERATION";
     public static final java.lang.String _CONCURRENT_MODIFICATION = "CONCURRENT_MODIFICATION";
+    public static final java.lang.String _REQUEST_TOO_LARGE = "REQUEST_TOO_LARGE";
     public static final java.lang.String _UNKNOWN = "UNKNOWN";
     public static final CommonErrorReason NOT_FOUND = new CommonErrorReason(_NOT_FOUND);
     public static final CommonErrorReason ALREADY_EXISTS = new CommonErrorReason(_ALREADY_EXISTS);
@@ -46,6 +47,7 @@ public class CommonErrorReason implements java.io.Serializable {
     public static final CommonErrorReason CANNOT_UPDATE = new CommonErrorReason(_CANNOT_UPDATE);
     public static final CommonErrorReason UNSUPPORTED_OPERATION = new CommonErrorReason(_UNSUPPORTED_OPERATION);
     public static final CommonErrorReason CONCURRENT_MODIFICATION = new CommonErrorReason(_CONCURRENT_MODIFICATION);
+    public static final CommonErrorReason REQUEST_TOO_LARGE = new CommonErrorReason(_REQUEST_TOO_LARGE);
     public static final CommonErrorReason UNKNOWN = new CommonErrorReason(_UNKNOWN);
     public java.lang.String getValue() { return _value_;}
     public static CommonErrorReason fromValue(java.lang.String value)
