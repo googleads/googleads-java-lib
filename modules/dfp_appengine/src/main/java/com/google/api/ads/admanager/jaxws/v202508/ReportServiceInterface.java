@@ -27,7 +27,13 @@ import javax.xml.ws.ResponseWrapper;
 /**
  * 
  *       Provides methods for executing a {@link ReportJob} and retrieving performance and statistics
- *       about ad campaigns, networks, inventory and sales.
+ *       about ad campaigns, networks, inventory and sales. <hr> <b>Note: This service is only for the
+ *       legacy Reports tool.</b>
+ *       
+ *       <p>For Interactive Reports, use the <a
+ *       href="https://developers.google.com/ad-manager/api/beta">REST API</a>. This service will continue
+ *       to be supported for the regular SOAP API lifecycle. For more information, see the <a
+ *       href="https://developers.google.com/ad-manager/api/deprecation">deprecation schedule</a>. <hr>
  *       
  *       <p>Follow the steps outlined below:
  *       

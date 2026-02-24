@@ -28,7 +28,8 @@ package com.google.api.ads.admanager.axis.v202508;
  */
 public class LineItemSummary  implements java.io.Serializable {
     /* The ID of the {@link Order} to which the {@code LineItem} belongs.
-     * This attribute is required. */
+     * This attribute is required
+     *                 on create and ignored on update. */
     private java.lang.Long orderId;
 
     /* Uniquely identifies the {@code LineItem}. This attribute is
@@ -427,7 +428,8 @@ public class LineItemSummary  implements java.io.Serializable {
      *                 applies to video line items. */
     private com.google.api.ads.admanager.axis.v202508.CompetitiveConstraintScope competitiveConstraintScope;
 
-    /* The date and time this line item was last modified. */
+    /* The date and time this line item was last modified. This attribute
+     * is read only. */
     private com.google.api.ads.admanager.axis.v202508.DateTime lastModifiedDateTime;
 
     /* This attribute may be {@code null} for line items created before
@@ -740,7 +742,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Gets the orderId value for this LineItemSummary.
      * 
      * @return orderId   * The ID of the {@link Order} to which the {@code LineItem} belongs.
-     * This attribute is required.
+     * This attribute is required
+     *                 on create and ignored on update.
      */
     public java.lang.Long getOrderId() {
         return orderId;
@@ -751,7 +754,8 @@ public class LineItemSummary  implements java.io.Serializable {
      * Sets the orderId value for this LineItemSummary.
      * 
      * @param orderId   * The ID of the {@link Order} to which the {@code LineItem} belongs.
-     * This attribute is required.
+     * This attribute is required
+     *                 on create and ignored on update.
      */
     public void setOrderId(java.lang.Long orderId) {
         this.orderId = orderId;
@@ -2259,7 +2263,8 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Gets the lastModifiedDateTime value for this LineItemSummary.
      * 
-     * @return lastModifiedDateTime   * The date and time this line item was last modified.
+     * @return lastModifiedDateTime   * The date and time this line item was last modified. This attribute
+     * is read only.
      */
     public com.google.api.ads.admanager.axis.v202508.DateTime getLastModifiedDateTime() {
         return lastModifiedDateTime;
@@ -2269,7 +2274,8 @@ public class LineItemSummary  implements java.io.Serializable {
     /**
      * Sets the lastModifiedDateTime value for this LineItemSummary.
      * 
-     * @param lastModifiedDateTime   * The date and time this line item was last modified.
+     * @param lastModifiedDateTime   * The date and time this line item was last modified. This attribute
+     * is read only.
      */
     public void setLastModifiedDateTime(com.google.api.ads.admanager.axis.v202508.DateTime lastModifiedDateTime) {
         this.lastModifiedDateTime = lastModifiedDateTime;

@@ -1840,7 +1840,7 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by unified pricing rule id.
+     *                 Breaks down reporting data by pricing rule id.
      *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1849,8 +1849,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by unified pricing rule name.
-     *                 <p>Corresponds to "Unified pricing rule" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 Breaks down reporting data by pricing rule name.
+     *                 <p>Corresponds to "Pricing rule" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */

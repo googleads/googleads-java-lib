@@ -3488,7 +3488,7 @@ public enum Column {
     /**
      * 
      *                 The host impressions in the partner management.
-     *                 <p>Corresponds to "Host impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management host impressions" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
@@ -3551,7 +3551,7 @@ public enum Column {
     /**
      * 
      *                 The gross revenue in the partner management.
-     *                 <p>Corresponds to "Gross revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Partner management gross revenue" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
