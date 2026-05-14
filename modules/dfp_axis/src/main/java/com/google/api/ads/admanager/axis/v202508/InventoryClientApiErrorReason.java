@@ -34,22 +34,10 @@ public class InventoryClientApiErrorReason implements java.io.Serializable {
     public static final java.lang.String _ACCESS_DENIED = "ACCESS_DENIED";
     public static final java.lang.String _ADSENSE_AUTH_ERROR = "ADSENSE_AUTH_ERROR";
     public static final java.lang.String _ADSENSE_RPC_ERROR = "ADSENSE_RPC_ERROR";
-    public static final java.lang.String _DOMAIN_NO_SCHEME = "DOMAIN_NO_SCHEME";
-    public static final java.lang.String _DOMAIN_INVALID_HOST = "DOMAIN_INVALID_HOST";
-    public static final java.lang.String _DOMAIN_INVALID_TLD = "DOMAIN_INVALID_TLD";
-    public static final java.lang.String _DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX = "DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX";
-    public static final java.lang.String _DOMAIN_INVALID_INPUT = "DOMAIN_INVALID_INPUT";
-    public static final java.lang.String _DOMAIN_NO_PUBLIC_SUFFIX = "DOMAIN_NO_PUBLIC_SUFFIX";
     public static final java.lang.String _UNKNOWN_ERROR = "UNKNOWN_ERROR";
     public static final InventoryClientApiErrorReason ACCESS_DENIED = new InventoryClientApiErrorReason(_ACCESS_DENIED);
     public static final InventoryClientApiErrorReason ADSENSE_AUTH_ERROR = new InventoryClientApiErrorReason(_ADSENSE_AUTH_ERROR);
     public static final InventoryClientApiErrorReason ADSENSE_RPC_ERROR = new InventoryClientApiErrorReason(_ADSENSE_RPC_ERROR);
-    public static final InventoryClientApiErrorReason DOMAIN_NO_SCHEME = new InventoryClientApiErrorReason(_DOMAIN_NO_SCHEME);
-    public static final InventoryClientApiErrorReason DOMAIN_INVALID_HOST = new InventoryClientApiErrorReason(_DOMAIN_INVALID_HOST);
-    public static final InventoryClientApiErrorReason DOMAIN_INVALID_TLD = new InventoryClientApiErrorReason(_DOMAIN_INVALID_TLD);
-    public static final InventoryClientApiErrorReason DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX = new InventoryClientApiErrorReason(_DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX);
-    public static final InventoryClientApiErrorReason DOMAIN_INVALID_INPUT = new InventoryClientApiErrorReason(_DOMAIN_INVALID_INPUT);
-    public static final InventoryClientApiErrorReason DOMAIN_NO_PUBLIC_SUFFIX = new InventoryClientApiErrorReason(_DOMAIN_NO_PUBLIC_SUFFIX);
     public static final InventoryClientApiErrorReason UNKNOWN_ERROR = new InventoryClientApiErrorReason(_UNKNOWN_ERROR);
     public java.lang.String getValue() { return _value_;}
     public static InventoryClientApiErrorReason fromValue(java.lang.String value)

@@ -153,20 +153,6 @@ public class LineItemTemplateServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "AudienceExtensionError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.AudienceExtensionError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "AudienceExtensionError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.AudienceExtensionErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "AudienceSegmentError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202508.AudienceSegmentError.class;
@@ -804,6 +790,20 @@ public class LineItemTemplateServiceSoapBindingStub extends org.apache.axis.clie
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "ProgrammaticError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.ProgrammaticError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "ProgrammaticError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.ProgrammaticErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -819,20 +819,6 @@ public class LineItemTemplateServiceSoapBindingStub extends org.apache.axis.clie
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "ProgrammaticError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.ProgrammaticError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "ProgrammaticError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.ProgrammaticErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "PublisherQueryLanguageContextError");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202508.PublisherQueryLanguageContextError.class;
@@ -899,6 +885,20 @@ public class LineItemTemplateServiceSoapBindingStub extends org.apache.axis.clie
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RegExError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202508.RegExErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RequestError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.RequestError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RequestError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.RequestErrorReason.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);

@@ -246,20 +246,6 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "AudienceExtensionError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.AudienceExtensionError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "AudienceExtensionError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.AudienceExtensionErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "AudienceSegmentCriteria");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202508.AudienceSegmentCriteria.class;
@@ -862,6 +848,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "EnvironmentType");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.EnvironmentType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "FeatureError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.FeatureError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
     }
     private void addBindings1() {
             java.lang.Class cls;
@@ -877,20 +877,6 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "EnvironmentType");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.EnvironmentType.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "FeatureError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.FeatureError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "FeatureError.Reason");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202508.FeatureErrorReason.class;
@@ -1577,6 +1563,20 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RegExError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.RegExError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RegExError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.RegExErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
     }
     private void addBindings2() {
             java.lang.Class cls;
@@ -1592,26 +1592,26 @@ public class LineItemServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RegExError");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.RegExError.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RegExError.Reason");
-            cachedSerQNames.add(qName);
-            cls = com.google.api.ads.admanager.axis.v202508.RegExErrorReason.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(enumsf);
-            cachedDeserFactories.add(enumdf);
-
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "ReleaseLineItems");
             cachedSerQNames.add(qName);
             cls = com.google.api.ads.admanager.axis.v202508.ReleaseLineItems.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RequestError");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.RequestError.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RequestError.Reason");
+            cachedSerQNames.add(qName);
+            cls = com.google.api.ads.admanager.axis.v202508.RequestErrorReason.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202508", "RequestPlatform");
             cachedSerQNames.add(qName);

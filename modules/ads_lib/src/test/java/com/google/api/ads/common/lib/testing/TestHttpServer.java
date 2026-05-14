@@ -17,21 +17,21 @@ package com.google.api.ads.common.lib.testing;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.collect.Lists;
-import com.google.common.io.ByteSink;
 import com.google.common.io.ByteSource;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Deque;
 import java.util.List;
 import java.util.Objects;
 import java.util.zip.GZIPInputStream;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.http.HttpHeader;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
+import com.google.common.io.ByteSink;
+import java.io.OutputStream;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
 /** HTTP server used to verify requests and send mocked responses. */
@@ -161,7 +161,8 @@ public class TestHttpServer {
 
               // Inflate the raw bytes if they are in gzip format.
               boolean isGzipFormat =
-                  Objects.equals(request.getHeader(HttpHeader.CONTENT_ENCODING.asString()), "gzip");
+                  Objects.equals(
+                      request.getHeader(HttpHeader.CONTENT_ENCODING.asString()), "gzip");
 
               byte[] requestBytes;
               if (isGzipFormat) {
@@ -177,8 +178,7 @@ public class TestHttpServer {
               }
 
               // Convert the (possibly inflated) request bytes to a string.
-              requestBodies.add(
-                  ByteSource.wrap(requestBytes).asCharSource(UTF_8).read());
+              requestBodies.add(ByteSource.wrap(requestBytes).asCharSource(UTF_8).read());
               requestBodiesCompressionStates.add(isGzipFormat);
 
               // Simulate a delay in processing.

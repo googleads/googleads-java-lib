@@ -30,12 +30,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="ACCESS_DENIED"/&gt;
  *     &lt;enumeration value="ADSENSE_AUTH_ERROR"/&gt;
  *     &lt;enumeration value="ADSENSE_RPC_ERROR"/&gt;
- *     &lt;enumeration value="DOMAIN_NO_SCHEME"/&gt;
- *     &lt;enumeration value="DOMAIN_INVALID_HOST"/&gt;
- *     &lt;enumeration value="DOMAIN_INVALID_TLD"/&gt;
- *     &lt;enumeration value="DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX"/&gt;
- *     &lt;enumeration value="DOMAIN_INVALID_INPUT"/&gt;
- *     &lt;enumeration value="DOMAIN_NO_PUBLIC_SUFFIX"/&gt;
  *     &lt;enumeration value="UNKNOWN_ERROR"/&gt;
  *   &lt;/restriction&gt;
  * &lt;/simpleType&gt;
@@ -49,12 +43,6 @@ public enum InventoryClientApiErrorReason {
     ACCESS_DENIED,
     ADSENSE_AUTH_ERROR,
     ADSENSE_RPC_ERROR,
-    DOMAIN_NO_SCHEME,
-    DOMAIN_INVALID_HOST,
-    DOMAIN_INVALID_TLD,
-    DOMAIN_ONE_STRING_AND_PUBLIC_SUFFIX,
-    DOMAIN_INVALID_INPUT,
-    DOMAIN_NO_PUBLIC_SUFFIX,
     UNKNOWN_ERROR;
 
     public String value() {

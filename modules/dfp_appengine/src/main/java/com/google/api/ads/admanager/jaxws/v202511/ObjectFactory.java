@@ -834,14 +834,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AudienceExtensionError }
-     * 
-     */
-    public AudienceExtensionError createAudienceExtensionError() {
-        return new AudienceExtensionError();
-    }
-
-    /**
      * Create an instance of {@link ClickTrackingLineItemError }
      * 
      */
@@ -1095,6 +1087,14 @@ public class ObjectFactory {
      */
     public PublisherProvidedSignalsTargetingError createPublisherProvidedSignalsTargetingError() {
         return new PublisherProvidedSignalsTargetingError();
+    }
+
+    /**
+     * Create an instance of {@link RequestError }
+     * 
+     */
+    public RequestError createRequestError() {
+        return new RequestError();
     }
 
     /**
@@ -2703,14 +2703,6 @@ public class ObjectFactory {
      */
     public Network createNetwork() {
         return new Network();
-    }
-
-    /**
-     * Create an instance of {@link RequestError }
-     * 
-     */
-    public RequestError createRequestError() {
-        return new RequestError();
     }
 
     /**

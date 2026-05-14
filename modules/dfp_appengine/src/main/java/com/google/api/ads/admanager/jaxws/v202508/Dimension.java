@@ -998,7 +998,7 @@ public enum Dimension {
      *                 inputted URL parameters. The values of "interstitial" and "no content" are populated
      *                 automatically based on the declared inventory type. The video placement dimension only applies
      *                 to backfill traffic.
-     *                 <p>Corresponds to "Video placement (new)" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Video placement" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */
