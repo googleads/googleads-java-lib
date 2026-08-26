@@ -14,7 +14,7 @@
 
 package com.google.api.ads.common.lib.soap.jaxb;
 
-import org.apache.commons.lang.SerializationException;
+import org.apache.commons.lang3.SerializationException;
 
 import java.io.StringWriter;
 

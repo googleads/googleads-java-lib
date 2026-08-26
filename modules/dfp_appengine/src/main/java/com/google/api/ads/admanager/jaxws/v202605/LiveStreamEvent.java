@@ -79,6 +79,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="prefetchSettings" type="{https://www.google.com/apis/ads/publisher/v202605}PrefetchSettings" minOccurs="0"/&gt;
  *         &lt;element name="enableForceCloseAdBreaks" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *         &lt;element name="enableShortSegmentDropping" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
+ *         &lt;element name="ebnMultiBreakSchedulingEnabled" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/&gt;
  *         &lt;element name="customAssetKey" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="daiEncodingProfileIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="segmentUrlAuthenticationKeyIds" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
@@ -132,6 +133,7 @@ import javax.xml.bind.annotation.XmlType;
     "prefetchSettings",
     "enableForceCloseAdBreaks",
     "enableShortSegmentDropping",
+    "ebnMultiBreakSchedulingEnabled",
     "customAssetKey",
     "daiEncodingProfileIds",
     "segmentUrlAuthenticationKeyIds",
@@ -186,6 +188,7 @@ public class LiveStreamEvent {
     protected PrefetchSettings prefetchSettings;
     protected Boolean enableForceCloseAdBreaks;
     protected Boolean enableShortSegmentDropping;
+    protected Boolean ebnMultiBreakSchedulingEnabled;
     protected String customAssetKey;
     @XmlElement(type = Long.class)
     protected List<Long> daiEncodingProfileIds;
@@ -1080,6 +1083,30 @@ public class LiveStreamEvent {
      */
     public void setEnableShortSegmentDropping(Boolean value) {
         this.enableShortSegmentDropping = value;
+    }
+
+    /**
+     * Gets the value of the ebnMultiBreakSchedulingEnabled property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isEbnMultiBreakSchedulingEnabled() {
+        return ebnMultiBreakSchedulingEnabled;
+    }
+
+    /**
+     * Sets the value of the ebnMultiBreakSchedulingEnabled property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setEbnMultiBreakSchedulingEnabled(Boolean value) {
+        this.ebnMultiBreakSchedulingEnabled = value;
     }
 
     /**

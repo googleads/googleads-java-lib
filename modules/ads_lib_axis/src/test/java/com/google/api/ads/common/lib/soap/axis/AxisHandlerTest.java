@@ -26,8 +26,8 @@ import com.google.api.ads.common.lib.soap.ResponseInfoXPathSet;
 import com.google.api.ads.common.lib.soap.SoapServiceDescriptor;
 import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201611.MockAxisCompatibleServiceDescriptor;
 import com.google.api.ads.common.lib.soap.axis.testing.mocks.v201611.MockAxisServiceInterface;
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.client.Stub;
@@ -106,7 +106,7 @@ public class AxisHandlerTest {
   
   @Test
   public void testSetChildHeader_valid() {
-    Map<String, String> parentValue = Maps.newHashMap();
+    Map<String, String> parentValue = new HashMap<>();
     axisHandler.setHeader(stub, "namespace", "parent", parentValue);
     String childValue = "123";
     axisHandler.setHeaderChild(stub, "parent", "child", childValue);

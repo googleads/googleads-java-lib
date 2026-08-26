@@ -27,13 +27,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import javax.annotation.Nullable;
-import org.apache.commons.configuration.AbstractConfiguration;
-import org.apache.commons.configuration.CombinedConfiguration;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.MapConfiguration;
-import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.configuration.tree.OverrideCombiner;
+import org.apache.commons.configuration2.AbstractConfiguration;
+import org.apache.commons.configuration2.CombinedConfiguration;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.MapConfiguration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.convert.DefaultListDelimiterHandler;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.commons.configuration2.io.FileHandler;
+import org.apache.commons.configuration2.tree.OverrideCombiner;
 
 /**
  * Helper class that loads {@link Configuration} from various sources.
@@ -53,9 +55,9 @@ public class ConfigurationHelper {
   public Configuration fromFile(String path) throws ConfigurationLoadException {
     PropertiesConfiguration propertiesConfiguration =
         setupConfiguration(new PropertiesConfiguration());
-    propertiesConfiguration.setFileName(path);
+    FileHandler handler = new FileHandler(propertiesConfiguration);
     try {
-      propertiesConfiguration.load();
+      handler.load(path);
     } catch (ConfigurationException e) {
       if (Throwables.getRootCause(e) instanceof AccessControlException){
         AdsServiceLoggers.ADS_API_LIB_LOG.debug("Properties could not be loaded.", e);
@@ -77,9 +79,9 @@ public class ConfigurationHelper {
    */
   public Configuration fromFile(File path) throws ConfigurationLoadException {
     PropertiesConfiguration configuration = setupConfiguration(new PropertiesConfiguration());
-    configuration.setFile(path);
+    FileHandler handler = new FileHandler(configuration);
     try {
-      configuration.load();
+      handler.load(path);
       return configuration;
     } catch (ConfigurationException e) {
       throw new ConfigurationLoadException(
@@ -97,9 +99,9 @@ public class ConfigurationHelper {
    */
   public Configuration fromFile(URL path) throws ConfigurationLoadException {
     PropertiesConfiguration configuration = setupConfiguration(new PropertiesConfiguration());
-    configuration.setURL(path);
+    FileHandler handler = new FileHandler(configuration);
     try {
-      configuration.load();
+      handler.load(path);
       return configuration;
     } catch (ConfigurationException e) {
       throw new ConfigurationLoadException(
@@ -194,29 +196,38 @@ public class ConfigurationHelper {
       combinedConfiguration.addConfiguration(setupConfiguration(new AbstractConfiguration() {
 
         @Override
-        public boolean isEmpty() {
+        protected boolean isEmptyInternal() {
           return configuration.isEmpty();
         }
 
         @Override
-        public Object getProperty(String key) {
+        protected Object getPropertyInternal(String key) {
           return configuration.getProperty(key);
         }
 
         @Override
-        @SuppressWarnings("rawtypes") // No rawtype in class.
-        public Iterator getKeys() {
+        protected Iterator<String> getKeysInternal() {
           return configuration.getKeys();
         }
 
         @Override
-        public boolean containsKey(String key) {
+        protected boolean containsKeyInternal(String key) {
           return configuration.containsKey(key);
         }
 
         @Override
         protected void addPropertyDirect(String key, Object value) {
           configuration.addProperty(key, value);
+        }
+
+        @Override
+        protected void clearPropertyDirect(String key) {
+          configuration.clearProperty(key);
+        }
+
+        @Override
+        protected boolean containsValueInternal(Object value) {
+          return configuration.containsValue(value);
         }
       }));
     }
@@ -260,8 +271,7 @@ public class ConfigurationHelper {
    * @return the same configuration that was passed, updated with common attribute values
    */
   private <C extends AbstractConfiguration> C setupConfiguration(C configuration) {
-    configuration.setListDelimiter(',');
-    configuration.setDelimiterParsingDisabled(false);
+    configuration.setListDelimiterHandler(new DefaultListDelimiterHandler(','));
     return configuration;
   }
   

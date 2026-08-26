@@ -22,7 +22,7 @@ import com.google.api.ads.common.lib.auth.GoogleClientSecretsBuilder.GoogleClien
 import com.google.api.ads.common.lib.conf.ConfigurationHelper;
 import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
-import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;

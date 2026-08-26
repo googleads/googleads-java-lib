@@ -24,7 +24,7 @@ import com.google.common.base.Strings;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.File;
 import java.net.URL;
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Builder for {@link GoogleClientSecrets}.

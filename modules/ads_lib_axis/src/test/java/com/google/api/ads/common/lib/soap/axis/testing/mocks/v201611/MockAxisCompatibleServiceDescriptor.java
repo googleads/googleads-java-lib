@@ -18,7 +18,7 @@ import com.google.api.ads.common.lib.client.AdsServiceDescriptor;
 import com.google.api.ads.common.lib.exception.ServiceException;
 import com.google.api.ads.common.lib.soap.compatability.AxisCompatible;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.MalformedURLException;
 

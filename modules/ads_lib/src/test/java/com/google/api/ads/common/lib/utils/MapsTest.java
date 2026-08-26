@@ -22,14 +22,13 @@ import static org.junit.Assert.assertSame;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
-
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * Tests for {@link Maps}.
@@ -45,10 +44,8 @@ public class MapsTest {
 
   private List<Entry> entriesList = Lists.newArrayList(entry1, entry2);
 
-  /**
-   * Map of test entries. Uses a LinkedHashMap to ensure that insertion order is preserved.
-   */
-  private Map<String, String> entriesMap = com.google.common.collect.Maps.newLinkedHashMap();
+  /** Map of test entries. Uses a LinkedHashMap to ensure that insertion order is preserved. */
+  private Map<String, String> entriesMap = new LinkedHashMap<>();
 
   @Before
   public void setUp() throws Exception {

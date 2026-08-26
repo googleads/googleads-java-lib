@@ -37,7 +37,7 @@ import java.text.ParseException;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  * A utility class for handling PQL objects. A typical use case is to combine result sets from the

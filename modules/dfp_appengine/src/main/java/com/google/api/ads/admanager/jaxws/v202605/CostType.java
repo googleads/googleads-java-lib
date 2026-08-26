@@ -120,8 +120,8 @@ public enum CostType {
 
     /**
      * 
-     *                 Cost per thousand in-target impressions. The {@link LineItem#lineItemType}
-     *                 must be {@link LineItemType#STANDARD}.
+     *                 Cost per thousand in-target impressions. The {@link LineItem#lineItemType} must be {@link
+     *                 LineItemType#STANDARD}.
      *               
      * 
      */

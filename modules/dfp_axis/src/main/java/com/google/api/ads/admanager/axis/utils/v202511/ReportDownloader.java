@@ -14,7 +14,7 @@
 
 package com.google.api.ads.admanager.axis.utils.v202511;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import java.nio.charset.StandardCharsets;
 
 import com.google.api.ads.admanager.axis.v202511.ExportFormat;
 import com.google.api.ads.admanager.axis.v202511.ReportDownloadOptions;
@@ -52,7 +52,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class ReportDownloader {
 
-  public static final Charset REPORT_CHARSET = Charset.forName(UTF_8);
+  public static final Charset REPORT_CHARSET = StandardCharsets.UTF_8;
 
   /** The time to sleep before each request to the service. */
   public static final int SLEEP_TIMER = 30000;

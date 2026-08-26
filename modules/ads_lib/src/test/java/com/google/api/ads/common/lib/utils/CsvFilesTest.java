@@ -21,13 +21,14 @@ import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -61,7 +62,7 @@ public class CsvFilesTest {
           new String[] {"c", "c1"});
 
   /** Data list, modified based on {@code headerPresent}. */
-  private List<String[]> dataList = Lists.newArrayList(originalDataList);
+  private List<String[]> dataList = new ArrayList<>(originalDataList);
 
   /** File containing {@code csvString} as its contents. */
   private File csvStringFile;
@@ -75,7 +76,7 @@ public class CsvFilesTest {
 
   @Parameters(name = "headerPresent={0}")
   public static List<Object[]> data() {
-    List<Object[]> data = Lists.newArrayList();
+    List<Object[]> data = new ArrayList<>();
     data.add(new Object[] {Boolean.FALSE});
     data.add(new Object[] {Boolean.TRUE});
     return data;
@@ -133,7 +134,7 @@ public class CsvFilesTest {
   public void testGetCsvDataMapArray() throws IOException {
     Map<String, String[]> actualDataMapArray =
         CsvFiles.getCsvDataMapArray(csvStringFile.getPath(), headerPresent);
-    Map<String, List<String>> actualDataMapList = Maps.newHashMap();
+    Map<String, List<String>> actualDataMapList = new HashMap<>();
     for (Entry<String, String[]> actualDataMapEntry : actualDataMapArray.entrySet()) {
       actualDataMapList.put(
           actualDataMapEntry.getKey(), Arrays.asList(actualDataMapEntry.getValue()));
@@ -178,7 +179,7 @@ public class CsvFilesTest {
   @Test
   public void testGetCsvDataListMap() throws IOException {
     // Construct the expected list of row maps.
-    List<Map<String, String>> expectedDataListMap = Lists.newArrayList();
+    List<Map<String, String>> expectedDataListMap = new ArrayList<>();
     String[] columnHeaders = new String[4];
     if (headerPresent) {
       columnHeaders = originalDataList.get(0);
@@ -188,7 +189,7 @@ public class CsvFilesTest {
       }
     }
     for (String[] rowData : dataList) {
-      Map<String, String> rowMap = Maps.newHashMap();
+      Map<String, String> rowMap = new HashMap<>();
       for (int i = 0; i < rowData.length; i++) {
         rowMap.put(columnHeaders[i], rowData[i]);
       }
@@ -203,7 +204,7 @@ public class CsvFilesTest {
 
   @Test
   public void testGetCsvDataByColumn() throws IOException {
-    List<List<String>> expectedData = Lists.newArrayList();
+    List<List<String>> expectedData = new ArrayList<>();
     expectedData.add(Lists.newArrayList("a", "b", "c"));
     expectedData.add(Lists.newArrayList("a1", "b1", "c1"));
     for (int column = 0; column < 2; column++) {

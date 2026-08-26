@@ -285,8 +285,8 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by date in the PT time zone. Can be used to filter by date
-     *                 using ISO 8601's format 'YYYY-MM-DD'". Can only be used when time zone type is PACIFIC.
+     *                 Breaks down reporting data by date in the PT time zone. Can be used to filter by date using ISO
+     *                 8601's format 'YYYY-MM-DD'". Can only be used when time zone type is PACIFIC.
      *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -315,9 +315,9 @@ public enum Dimension {
 
     /**
      * 
-     *                 Breaks down reporting data by day of the week in the PT time zone. Can
-     *                 be used to filter by day of the week using the index of the day (from 1 for
-     *                 Monday is 1 to 7 for Sunday). Can only be used when time zone type is PACIFIC.
+     *                 Breaks down reporting data by day of the week in the PT time zone. Can be used to filter by day
+     *                 of the week using the index of the day (from 1 for Monday is 1 to 7 for Sunday). Can only be
+     *                 used when time zone type is PACIFIC.
      *                 <p>Compatible with the "Historical" report type.</p>
      *               
      * 
@@ -1498,7 +1498,7 @@ public enum Dimension {
     /**
      * 
      *                 Breaks down reporting data by advertiser domain.
-     *                 <p>Corresponds to "Advertiser domain" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
+     *                 <p>Corresponds to "Landing page domain" in the Ad Manager UI. Compatible with the "Historical" report type.</p>
      *               
      * 
      */

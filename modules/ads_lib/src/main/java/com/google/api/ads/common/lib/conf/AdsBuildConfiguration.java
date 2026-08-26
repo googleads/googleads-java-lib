@@ -16,7 +16,7 @@ package com.google.api.ads.common.lib.conf;
 
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Configuration of lib properties.

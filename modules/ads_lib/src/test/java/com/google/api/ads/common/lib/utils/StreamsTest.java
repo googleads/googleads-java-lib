@@ -14,8 +14,7 @@
 
 package com.google.api.ads.common.lib.utils;
 
-import static org.apache.commons.lang.CharEncoding.ISO_8859_1;
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import java.nio.charset.StandardCharsets;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -61,8 +60,8 @@ public class StreamsTest {
   @Test
   public void testWrapString_wrongCharset() throws Exception {
     String testString = "Testing©ÿ»";
-    final InputStream inputStream = Streams.wrapString(testString, Charset.forName(UTF_8));
-    byte[] stringBytes = testString.getBytes(Charset.forName(ISO_8859_1));
+    final InputStream inputStream = Streams.wrapString(testString, StandardCharsets.UTF_8);
+    byte[] stringBytes = testString.getBytes(StandardCharsets.ISO_8859_1);
     stringBytes = Arrays.copyOf(stringBytes, stringBytes.length);
 
     assertFalse("Streams should not be equal",
@@ -76,8 +75,8 @@ public class StreamsTest {
   @Test
   public void testWrapString_sameCharset() throws Exception {
     String testString = "Testing©ÿ»";
-    final InputStream inputStream = Streams.wrapString(testString, Charset.forName(UTF_8));
-    byte[] stringBytes = testString.getBytes(Charset.forName(UTF_8));
+    final InputStream inputStream = Streams.wrapString(testString, StandardCharsets.UTF_8);
+    byte[] stringBytes = testString.getBytes(StandardCharsets.UTF_8);
     stringBytes = Arrays.copyOf(stringBytes, stringBytes.length);
 
     assertTrue("Streams should be equal",
@@ -107,8 +106,8 @@ public class StreamsTest {
   public void testReadAll_wrongCharset() throws Exception {
     String testString = "Testing©ÿ»";
     String actual = Streams.readAll(
-        new ByteArrayInputStream(testString.getBytes(Charset.forName(UTF_8))),
-        Charset.forName(ISO_8859_1));
+        new ByteArrayInputStream(testString.getBytes(StandardCharsets.UTF_8)),
+        StandardCharsets.ISO_8859_1);
     assertFalse("String should not be equal", testString.equals(actual));
   }
   
@@ -120,8 +119,8 @@ public class StreamsTest {
   public void testReadAll_sameCharset() throws Exception {
     String testString = "Testing©ÿ»";
     String actual = Streams.readAll(
-        new ByteArrayInputStream(testString.getBytes(Charset.forName(UTF_8))),
-        Charset.forName(UTF_8));
+        new ByteArrayInputStream(testString.getBytes(StandardCharsets.UTF_8)),
+        StandardCharsets.UTF_8);
     assertEquals(testString, actual);  }
 
   /**
@@ -158,14 +157,14 @@ public class StreamsTest {
   public void testWriteStringOutputStream_wrongCharset() throws Exception {
     String testString = "Testing©ÿ»";
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    Streams.write(testString, outputStream, Charset.forName(UTF_8));
-    byte[] stringBytes = testString.getBytes(Charset.forName(ISO_8859_1));
+    Streams.write(testString, outputStream, StandardCharsets.UTF_8);
+    byte[] stringBytes = testString.getBytes(StandardCharsets.ISO_8859_1);
     stringBytes = Arrays.copyOf(stringBytes, stringBytes.length);
     
     assertFalse(
         "Byte arrays should be not equal", Arrays.equals(stringBytes, outputStream.toByteArray()));
     
-    String actual = new String(outputStream.toByteArray(), Charset.forName(UTF_8));
+    String actual = new String(outputStream.toByteArray(), StandardCharsets.UTF_8);
     assertEquals(testString, actual);
   }
   
@@ -177,14 +176,14 @@ public class StreamsTest {
   public void testWriteStringOutputStream_sameCharset() throws Exception {
     String testString = "Testing©ÿ»";
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    Streams.write(testString, outputStream, Charset.forName(UTF_8));
-    byte[] stringBytes = testString.getBytes(Charset.forName(UTF_8));
+    Streams.write(testString, outputStream, StandardCharsets.UTF_8);
+    byte[] stringBytes = testString.getBytes(StandardCharsets.UTF_8);
     stringBytes = Arrays.copyOf(stringBytes, stringBytes.length);
     
     assertTrue(
         "Byte arrays shoud be equal", Arrays.equals(stringBytes, outputStream.toByteArray()));
     
-    String actual = new String(outputStream.toByteArray(), Charset.forName(UTF_8));
+    String actual = new String(outputStream.toByteArray(), StandardCharsets.UTF_8);
     assertEquals(testString, actual);
   }
 

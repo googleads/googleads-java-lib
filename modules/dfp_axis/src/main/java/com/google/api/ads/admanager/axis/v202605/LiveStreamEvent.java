@@ -263,6 +263,11 @@ public class LiveStreamEvent  implements java.io.Serializable {
      *                 stream short segment dropping" feature enabled. */
     private java.lang.Boolean enableShortSegmentDropping;
 
+    /* Whether multi-break scheduling for live stream events via Early
+     * Break Notification (EBN) is
+     *                 enabled. */
+    private java.lang.Boolean ebnMultiBreakSchedulingEnabled;
+
     /* An additional code that can be used in constructing live stream
      * event URLs. This field is
      *                 immutable after creation and can only be set for pod
@@ -351,6 +356,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
            com.google.api.ads.admanager.axis.v202605.PrefetchSettings prefetchSettings,
            java.lang.Boolean enableForceCloseAdBreaks,
            java.lang.Boolean enableShortSegmentDropping,
+           java.lang.Boolean ebnMultiBreakSchedulingEnabled,
            java.lang.String customAssetKey,
            long[] daiEncodingProfileIds,
            long[] segmentUrlAuthenticationKeyIds,
@@ -394,6 +400,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
            this.prefetchSettings = prefetchSettings;
            this.enableForceCloseAdBreaks = enableForceCloseAdBreaks;
            this.enableShortSegmentDropping = enableShortSegmentDropping;
+           this.ebnMultiBreakSchedulingEnabled = ebnMultiBreakSchedulingEnabled;
            this.customAssetKey = customAssetKey;
            this.daiEncodingProfileIds = daiEncodingProfileIds;
            this.segmentUrlAuthenticationKeyIds = segmentUrlAuthenticationKeyIds;
@@ -421,6 +428,7 @@ public class LiveStreamEvent  implements java.io.Serializable {
             .add("defaultAdBreakDuration", getDefaultAdBreakDuration())
             .add("dvrWindowSeconds", getDvrWindowSeconds())
             .add("dynamicAdInsertionType", getDynamicAdInsertionType())
+            .add("ebnMultiBreakSchedulingEnabled", getEbnMultiBreakSchedulingEnabled())
             .add("enableAllowlistedIps", getEnableAllowlistedIps())
             .add("enableDaiAuthenticationKeys", getEnableDaiAuthenticationKeys())
             .add("enableDurationlessAdBreaks", getEnableDurationlessAdBreaks())
@@ -1448,6 +1456,30 @@ public class LiveStreamEvent  implements java.io.Serializable {
 
 
     /**
+     * Gets the ebnMultiBreakSchedulingEnabled value for this LiveStreamEvent.
+     * 
+     * @return ebnMultiBreakSchedulingEnabled   * Whether multi-break scheduling for live stream events via Early
+     * Break Notification (EBN) is
+     *                 enabled.
+     */
+    public java.lang.Boolean getEbnMultiBreakSchedulingEnabled() {
+        return ebnMultiBreakSchedulingEnabled;
+    }
+
+
+    /**
+     * Sets the ebnMultiBreakSchedulingEnabled value for this LiveStreamEvent.
+     * 
+     * @param ebnMultiBreakSchedulingEnabled   * Whether multi-break scheduling for live stream events via Early
+     * Break Notification (EBN) is
+     *                 enabled.
+     */
+    public void setEbnMultiBreakSchedulingEnabled(java.lang.Boolean ebnMultiBreakSchedulingEnabled) {
+        this.ebnMultiBreakSchedulingEnabled = ebnMultiBreakSchedulingEnabled;
+    }
+
+
+    /**
      * Gets the customAssetKey value for this LiveStreamEvent.
      * 
      * @return customAssetKey   * An additional code that can be used in constructing live stream
@@ -1783,6 +1815,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
             ((this.enableShortSegmentDropping==null && other.getEnableShortSegmentDropping()==null) || 
              (this.enableShortSegmentDropping!=null &&
               this.enableShortSegmentDropping.equals(other.getEnableShortSegmentDropping()))) &&
+            ((this.ebnMultiBreakSchedulingEnabled==null && other.getEbnMultiBreakSchedulingEnabled()==null) || 
+             (this.ebnMultiBreakSchedulingEnabled!=null &&
+              this.ebnMultiBreakSchedulingEnabled.equals(other.getEbnMultiBreakSchedulingEnabled()))) &&
             ((this.customAssetKey==null && other.getCustomAssetKey()==null) || 
              (this.customAssetKey!=null &&
               this.customAssetKey.equals(other.getCustomAssetKey()))) &&
@@ -1954,6 +1989,9 @@ public class LiveStreamEvent  implements java.io.Serializable {
         }
         if (getEnableShortSegmentDropping() != null) {
             _hashCode += getEnableShortSegmentDropping().hashCode();
+        }
+        if (getEbnMultiBreakSchedulingEnabled() != null) {
+            _hashCode += getEbnMultiBreakSchedulingEnabled().hashCode();
         }
         if (getCustomAssetKey() != null) {
             _hashCode += getCustomAssetKey().hashCode();
@@ -2262,6 +2300,13 @@ public class LiveStreamEvent  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("enableShortSegmentDropping");
         elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202605", "enableShortSegmentDropping"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ebnMultiBreakSchedulingEnabled");
+        elemField.setXmlName(new javax.xml.namespace.QName("https://www.google.com/apis/ads/publisher/v202605", "ebnMultiBreakSchedulingEnabled"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

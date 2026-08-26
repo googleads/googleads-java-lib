@@ -14,7 +14,7 @@
 
 package com.google.api.ads.common.lib.conf;
 
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Base configuration class.

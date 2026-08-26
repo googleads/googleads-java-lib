@@ -21,7 +21,7 @@ import com.google.inject.name.Names;
 import java.net.URL;
 import java.util.List;
 import javax.annotation.Nullable;
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Module for configuration.

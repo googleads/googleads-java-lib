@@ -14,7 +14,7 @@
 
 package com.google.api.ads.admanager.jaxws.utils.v202602;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import java.nio.charset.StandardCharsets;
 
 import com.google.api.ads.admanager.jaxws.v202602.ApiException_Exception;
 import com.google.api.ads.admanager.jaxws.v202602.ExportFormat;
@@ -50,7 +50,7 @@ import java.util.zip.GZIPInputStream;
  */
 public class ReportDownloader {
 
-  public static final Charset REPORT_CHARSET = Charset.forName(UTF_8);
+  public static final Charset REPORT_CHARSET = StandardCharsets.UTF_8;
 
   /** The time to sleep before each request to the service. */
   public static final int SLEEP_TIMER = 30000;

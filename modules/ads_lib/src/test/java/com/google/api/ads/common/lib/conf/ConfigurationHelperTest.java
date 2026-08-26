@@ -25,21 +25,21 @@ import com.google.api.ads.common.lib.conf.ConfigurationHelper.ConfigurationInfo;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
-import org.apache.commons.configuration.AbstractConfiguration;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.SystemConfiguration;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.SystemConfiguration;
+import org.apache.commons.configuration2.convert.DefaultListDelimiterHandler;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -65,7 +65,6 @@ public class ConfigurationHelperTest {
 
   @Before
   public void setUp() {
-    AbstractConfiguration.setDefaultListDelimiter(',');
     clearTestSystemProperties();
     this.configurationHelper = new ConfigurationHelper();
     this.test1Properties =
@@ -181,20 +180,6 @@ public class ConfigurationHelperTest {
     assertArrayEquals(new String[]{"foo", "bar"}, stringArray);
   }
 
-  /**
-   * Asserts that reading list values from a properties file works properly when the default
-   * list delimiter is modified.
-   */
-  @Test
-  public void testFromFile_listValuesWithDefaultDelimiterChanged() throws Exception {
-    AbstractConfiguration.setDefaultListDelimiter('|');
-    Configuration configuration = configurationHelper.fromFile(
-        ConfigurationHelperTest.class.getResource("props/test3.properties"));
-    assertPropertiesEquals(test3Properties, configuration);
-    String[] stringArray = configuration.getStringArray("i.j.k");
-    assertArrayEquals(new String[] {"foo", "bar"}, stringArray);
-  }
-
   @Test
   public void testFromSystem() throws Exception {
     test3Properties.forEach(System::setProperty);
@@ -203,8 +188,7 @@ public class ConfigurationHelperTest {
 
   @Test
   public void testFromSystem_containsListValues() throws Exception {
-    AbstractConfiguration.setDefaultListDelimiter('|');
-    Map<String, String> properties = Maps.newHashMap();
+    Map<String, String> properties = new HashMap<>();
     properties.put("testProperty", "b,bee");
 
     properties.forEach(System::setProperty);
@@ -228,6 +212,7 @@ public class ConfigurationHelperTest {
   public void testCreateCombinedConfiguration_justSystem() throws Exception {
     SystemConfiguration systemConfig = new SystemConfiguration();
     systemConfig.setTrimmingDisabled(true);
+    systemConfig.setListDelimiterHandler(new DefaultListDelimiterHandler(','));
     assertContains(systemConfig,
         configurationHelper.createCombinedConfiguration(null, null));
   }

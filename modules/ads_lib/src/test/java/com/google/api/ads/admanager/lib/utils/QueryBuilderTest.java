@@ -16,7 +16,7 @@ package com.google.api.ads.admanager.lib.utils;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.Maps;
+import java.util.HashMap;
 import java.util.Map;
 import org.hamcrest.Matchers;
 import org.junit.Rule;
@@ -195,7 +195,7 @@ public class QueryBuilderTest {
     String key2 = "key2";
     String value2 = "value2";
 
-    Map<String, Object> valueMap = Maps.newHashMap();
+    Map<String, Object> valueMap = new HashMap<>();
     valueMap.put(key, value);
     valueMap.put(key2, value2);
 

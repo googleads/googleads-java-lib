@@ -19,7 +19,7 @@ import com.google.api.ads.common.lib.conf.ConfigurationProvider;
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
 
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 import java.net.URL;
 

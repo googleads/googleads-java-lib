@@ -58,8 +58,7 @@ public enum RequestErrorReason {
 
     /**
      * 
-     *                 The api version in the request has been discontinued. Please update
-     *                 to the new AdWords API version.
+     *                 The api version in the request has been discontinued. Please update to a newer API version.
      *               
      * 
      */

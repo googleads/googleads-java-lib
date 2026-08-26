@@ -18,7 +18,7 @@ import com.google.api.ads.common.lib.conf.ConfigurationHelper.ConfigurationInfo;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.inject.Provider;
 
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 import java.net.URL;
 import java.util.List;

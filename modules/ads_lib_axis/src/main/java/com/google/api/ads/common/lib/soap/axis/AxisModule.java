@@ -26,7 +26,7 @@ import com.google.inject.name.Names;
 
 import org.apache.axis.EngineConfigurationFactory;
 import org.apache.axis.Version;
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Module for SOAP client handler.

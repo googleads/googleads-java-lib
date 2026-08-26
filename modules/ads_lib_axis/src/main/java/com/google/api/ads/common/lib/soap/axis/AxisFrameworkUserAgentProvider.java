@@ -17,7 +17,7 @@ package com.google.api.ads.common.lib.soap.axis;
 import com.google.api.ads.common.lib.useragent.FrameworkUserAgentProvider;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Provides the Axis user agent.

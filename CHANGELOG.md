@@ -1,3 +1,13 @@
+5.14.0 - 08/25/2026
+-------------------
+ - Added support for v202608.
+ - Removed examples for v202511.
+ - Removed support for v202508.
+
+5.13.1 - 06/17/2026
+-------------------
+ - Fixed LiveStreamEvent generated stub.
+
 5.13.0 - 05/14/2026
 -------------------
  - Added support for v202605.

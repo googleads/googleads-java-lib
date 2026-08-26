@@ -18,7 +18,7 @@ import com.google.api.ads.admanager.axis.v202605.Date;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.TimeZone;
-import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.junit.Assert;

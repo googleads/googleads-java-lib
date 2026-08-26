@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import javax.annotation.Nullable;
-import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * OfflineCredentials offline OAuth2 provider.<br>

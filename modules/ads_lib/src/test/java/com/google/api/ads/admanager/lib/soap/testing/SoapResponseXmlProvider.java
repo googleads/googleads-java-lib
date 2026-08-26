@@ -14,12 +14,11 @@
 
 package com.google.api.ads.admanager.lib.soap.testing;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import java.nio.charset.StandardCharsets;
 
 import com.google.api.ads.common.lib.soap.testing.SoapXmlTemplater;
 import com.google.api.ads.common.lib.utils.Streams;
 import java.io.IOException;
-import java.nio.charset.Charset;
 
 /**
  * Provides Ad Manager API SOAP responses.
@@ -32,7 +31,7 @@ public class SoapResponseXmlProvider {
   public static String getTestSoapResponse(String apiVersion) throws IOException {
     String soapXml = Streams.readAll(
         SoapResponseXmlProvider.class.getResourceAsStream("test_response.xml"),
-        Charset.forName(UTF_8));
+        StandardCharsets.UTF_8);
     return SoapXmlTemplater.templateResponse(soapXml, apiVersion);
   }
 }

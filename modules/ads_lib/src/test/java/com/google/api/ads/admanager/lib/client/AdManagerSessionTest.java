@@ -20,16 +20,16 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.ads.admanager.lib.client.AdManagerSession.Builder;
 import com.google.api.ads.admanager.lib.client.AdManagerSession.ImmutableAdManagerSession;
+import com.google.api.ads.common.lib.exception.ValidationException;
 import com.google.api.client.auth.oauth2.BearerToken;
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.common.collect.Lists;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
-import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.hamcrest.CustomTypeSafeMatcher;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
@@ -57,7 +57,7 @@ public class AdManagerSessionTest {
 
   @Parameters(name = "{index}: isImmutable={0}")
   public static List<Object[]> data() {
-    List<Object[]> data = Lists.newArrayList();
+    List<Object[]> data = new ArrayList<>();
     data.add(new Object[] {false});
     data.add(new Object[] {true});
     return data;
